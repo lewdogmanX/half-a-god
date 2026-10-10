@@ -116,6 +116,9 @@ def build(goal_text):
         if rel.startswith("courier_deliveries/") and c["trigger"].get("quest"):
             add_edge(c["trigger"]["quest"], c["delivery"]["quest_book"], "letter")
 
+    # "A Way Out" is sent by the mod partway through the Green Trade
+    add_edge(qid("gt4_the_hash_market"), qid("go0_a_way_out"), "letter")
+
     # ---- Mebahel's questlines, in the chapter whose act they belong to
     import base_graph
     succ = base_graph.graph()
@@ -131,6 +134,7 @@ def build(goal_text):
                 add_edge(i, "mebahelrpgrquest:" + s, "next")
         for s in starters + books:
             add_edge(qid(gate), "mebahelrpgrquest:" + s, "unlocks")
+            edges.discard((qid(gate), "mebahelrpgrquest:" + s, "letter"))
 
     # ---- quests without a rule take the chapter of whatever leads to them
     preds = defaultdict(list)
@@ -193,14 +197,27 @@ def build(goal_text):
                     rows += max(sub_rows.values())
                 lanes_used.append({"id": lane_id, "name": lane_name, "color": color, "rows": rows})
                 continue
-            # squeeze this lane's columns into the chapter's column grid, stacking nodes that share a column
+            # squeeze this lane's columns into the chapter's column grid; a quest keeps the row of the quest before it
+            # (so each branch reads as its own track), otherwise takes the first free row in its column
             ln.sort(key=lambda n: (rank.get(n["id"], 0), n["id"]))
-            sub_rows = defaultdict(int)
+            taken = set()
+            row_of = {}
+            in_lane = {n["id"] for n in ln}
             for n in ln:
                 c = col_of[rank.get(n["id"], 0)]
-                placed.append(dict(n, col=c, row=sub_rows[c]))
-                sub_rows[c] += 1
-            lanes_used.append({"id": lane_id, "name": lane_name, "color": color, "rows": max(sub_rows.values())})
+                want = None
+                for p in sorted(preds.get(n["id"], [])):
+                    if p in in_lane and p in row_of and (c, row_of[p]) not in taken:
+                        want = row_of[p]
+                        break
+                if want is None:
+                    want = 0
+                    while (c, want) in taken:
+                        want += 1
+                taken.add((c, want))
+                row_of[n["id"]] = want
+                placed.append(dict(n, col=c, row=want))
+            lanes_used.append({"id": lane_id, "name": lane_name, "color": color, "rows": max(r for _, r in taken) + 1})
         if cid == "anytime":
             # nothing leads to these in order; lay each lane out in a single row
             for lane in lanes_used:

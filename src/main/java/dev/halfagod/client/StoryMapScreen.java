@@ -345,7 +345,11 @@ public final class StoryMapScreen extends Screen {
         for (String[] e : c.edges()) {
             Node a = byId.get(e[0]);
             Node b = byId.get(e[1]);
-            if (a != null && b != null && reached(a) && reached(b)) {
+            // "requires" and "unlocks" links into other lanes are listed in the side panel instead of drawn,
+            // so long lines don't cut across the whole act
+            boolean sameLane = a != null && b != null && a.lane().equals(b.lane());
+            boolean story = e[2].equals("next") || e[2].equals("spare") || e[2].equals("kill") || e[2].equals("letter");
+            if (a != null && b != null && reached(a) && reached(b) && (sameLane || story)) {
                 drawEdge(g, a, b, e[2]);
             }
         }
@@ -600,12 +604,41 @@ public final class StoryMapScreen extends Screen {
                     out.addAll(font.split(Component.literal("• " + goal).withColor(0xB8D8F0), w));
                 }
             }
+            List<String> after = new ArrayList<>();
+            List<String> next = new ArrayList<>();
+            for (Chapter ch : chapters) {
+                for (String[] e : ch.edges()) {
+                    if (e[1].equals(n.id())) after.add(titleOf(e[0]));
+                    if (e[0].equals(n.id())) next.add(titleOf(e[1]));
+                }
+            }
+            if (!after.isEmpty()) {
+                out.add(FormattedCharSequence.EMPTY);
+                out.addAll(font.split(Component.literal("Comes after").withColor(0xF2C14E), w));
+                for (String t : after) out.addAll(font.split(Component.literal("• " + t).withColor(0xC8C0B0), w));
+            }
+            if (!next.isEmpty()) {
+                out.add(FormattedCharSequence.EMPTY);
+                out.addAll(font.split(Component.literal("Leads to").withColor(0xF2C14E), w));
+                for (String t : next) out.addAll(font.split(Component.literal("• " + t).withColor(0xC8C0B0), w));
+            }
             if (n.choice()) {
                 out.add(FormattedCharSequence.EMPTY);
                 out.addAll(font.split(Component.literal("A decision: spare or strike. It changes what comes next.").withColor(0xE07F6F), w));
             }
         }
         detail = out;
+    }
+
+    private String titleOf(String id) {
+        for (Chapter ch : chapters) {
+            for (Node x : ch.nodes()) {
+                if (x.id().equals(id)) {
+                    return reached(x) ? x.title() : "???";
+                }
+            }
+        }
+        return "???";
     }
 
     // ------------------------------------------------------------------ input

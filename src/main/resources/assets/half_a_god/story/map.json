@@ -1101,7 +1101,7 @@
      "title": "The Lantern Oath",
      "lane": "road",
      "col": 3,
-     "row": 0,
+     "row": 1,
      "summary": "[Reputation: Saint] Halden heard what you did for Corwin. He wants you to take the old Watch-oath: keep the roads lit so no traveller walks in the dark. Hang twelve lanterns along the road, then walk a returning Ashford family home along it. Then a deserter from the raiders comes looking for you.",
      "goals": [
       "Talk to Reeve Halden",
@@ -1117,7 +1117,7 @@
      "title": "Ash on Your Hands",
      "lane": "road",
      "col": 3,
-     "row": 1,
+     "row": 0,
      "summary": "[Reputation: Wavering] Ashford knows what you did. The village elder says there is one way to start making it right: feed the families through the winter. Then a deserter from the raiders comes looking for you.",
      "goals": [
       "Collect 32 x bread",
@@ -3212,11 +3212,6 @@
     [
      "mebahelrpgrquest:hag_h1_a_light_above_the_pit",
      "mebahelrpgrquest:questbook_a_very_reasonable_treasure_map",
-     "letter"
-    ],
-    [
-     "mebahelrpgrquest:hag_h1_a_light_above_the_pit",
-     "mebahelrpgrquest:questbook_a_very_reasonable_treasure_map",
      "unlocks"
     ],
     [
@@ -3898,17 +3893,7 @@
     [
      "mebahelrpgrquest:hag_e1_the_librarians_request",
      "mebahelrpgrquest:questbook_the_fourth_member",
-     "letter"
-    ],
-    [
-     "mebahelrpgrquest:hag_e1_the_librarians_request",
-     "mebahelrpgrquest:questbook_the_fourth_member",
      "unlocks"
-    ],
-    [
-     "mebahelrpgrquest:hag_e1_the_librarians_request",
-     "mebahelrpgrquest:questbook_the_house_that_owes_me_money",
-     "letter"
     ],
     [
      "mebahelrpgrquest:hag_e1_the_librarians_request",
@@ -4119,7 +4104,7 @@
      "id": "mebahelrpgrquest:hag_s1_cold_hearths",
      "title": "Cold Hearths",
      "lane": "main",
-     "col": 1,
+     "col": 0,
      "row": 0,
      "summary": "Mara writes that five more beasts stir, and asks you to start in the snow. A snowy village is freezing because its men won't leave the old garrison post. Bring coal and logs and talk to them.",
      "goals": [
@@ -4134,7 +4119,7 @@
      "id": "mebahelrpgrquest:hag_s2_the_frozen_garrison",
      "title": "The Frozen Garrison",
      "lane": "main",
-     "col": 2,
+     "col": 1,
      "row": 0,
      "summary": "The old garrison still patrols the Yeti Hideout in the snowy plains. Find it, lay the frozen soldiers to rest, kill Skor the Yeti (Bosses' Rise) and read the garrison roll in its barrel.",
      "goals": [
@@ -4150,7 +4135,7 @@
      "id": "mebahelrpgrquest:hag_s3_lost_in_the_snow",
      "title": "Lost in the Snow",
      "lane": "main",
-     "col": 5,
+     "col": 4,
      "row": 0,
      "summary": "Skor is dead. Tell the snowy village their grandfathers can rest.",
      "goals": [
@@ -4163,7 +4148,7 @@
      "id": "mebahelrpgrquest:hag_d1_the_buried_well",
      "title": "The Buried Well",
      "lane": "main",
-     "col": 6,
+     "col": 5,
      "row": 0,
      "summary": "A desert village filled in its own well 'so the ground would stop breathing'. Their sick need milk, and the husks need clearing. Then tend the sick.",
      "goals": [
@@ -4178,7 +4163,7 @@
      "id": "mebahelrpgrquest:hag_d2_the_nest_road",
      "title": "The Nest Road",
      "lane": "main",
-     "col": 7,
+     "col": 6,
      "row": 0,
      "summary": "The husks are being herded toward the Sandworm Nest. Kill the Dune Faithful, find the nest and kill Sirok, the Sandworm.",
      "goals": [
@@ -4193,7 +4178,7 @@
      "id": "mebahelrpgrquest:hag_d3_the_beast_below",
      "title": "The Beast Below",
      "lane": "main",
-     "col": 8,
+     "col": 7,
      "row": 0,
      "summary": "Sirok is dead. Tell the desert village they can dig their well out.",
      "goals": [
@@ -4206,7 +4191,7 @@
      "id": "mebahelrpgrquest:hag_c1_nets_and_knives",
      "title": "Nets and Knives",
      "lane": "main",
-     "col": 9,
+     "col": 8,
      "row": 0,
      "summary": "A fishing village won't sail past the black ship anchored offshore. Help them rebuild their dock so they can fish closer to shore.",
      "goals": [
@@ -4221,7 +4206,7 @@
      "id": "mebahelrpgrquest:hag_c2_the_tidecaller",
      "title": "The Tidecaller",
      "lane": "main",
-     "col": 10,
+     "col": 9,
      "row": 0,
      "summary": "Drowned are coming up the beach at night, led by something that calls the tide. Hold the beach.",
      "goals": [
@@ -4236,7 +4221,7 @@
      "id": "mebahelrpgrquest:hag_c3_the_black_ship",
      "title": "The Black Ship",
      "lane": "main",
-     "col": 11,
+     "col": 10,
      "row": 0,
      "summary": "Board the Kraken Ship in the deep ocean. Kill its crossbowman, rook and captain, and the Kraken, Nerakyss, will rise. Kill it too.",
      "goals": [
@@ -4253,7 +4238,7 @@
      "id": "mebahelrpgrquest:hag_c4_terror_of_the_depths",
      "title": "Terror of the Depths",
      "lane": "main",
-     "col": 12,
+     "col": 11,
      "row": 0,
      "summary": "Nerakyss is dead. Tell the fishing village the black ship is gone.",
      "goals": [
@@ -4266,7 +4251,7 @@
      "id": "mebahelrpgrquest:hag_u1_the_soul_guard",
      "title": "The Soul Guard",
      "lane": "main",
-     "col": 13,
+     "col": 12,
      "row": 0,
      "summary": "In the Nether's wastes or soul sand valleys stands the Underworld Arena. Clear its soul guard and kill Helvar, the Underworld Knight who holds its gate.",
      "goals": [
@@ -4282,7 +4267,7 @@
      "id": "mebahelrpgrquest:hag_u2_helvars_oath",
      "title": "Helvar's Oath",
      "lane": "main",
-     "col": 14,
+     "col": 13,
      "row": 0,
      "summary": "Helvar couldn't speak. He left his oath written down in a barrel in the arena. Read it.",
      "goals": [
@@ -4295,7 +4280,7 @@
      "id": "mebahelrpgrquest:hag_u3_back_into_hell",
      "title": "Out of the Underworld",
      "lane": "main",
-     "col": 15,
+     "col": 14,
      "row": 0,
      "summary": "Leave the Nether. What Helvar wrote is going to follow you.",
      "goals": [
@@ -4308,7 +4293,7 @@
      "id": "mebahelrpgrquest:hag_f1_the_last_road",
      "title": "The Last Road",
      "lane": "main",
-     "col": 16,
+     "col": 15,
      "row": 0,
      "summary": "Mara writes: 'The last one was his once. His mount.' Find the Dragon Tower, fight its skeleton guards, and kill Ashlord, the Infernal Dragon.",
      "goals": [
@@ -4324,7 +4309,7 @@
      "id": "mebahelrpgrquest:hag_f2_dragon_slayer",
      "title": "Dragon Slayer",
      "lane": "main",
-     "col": 17,
+     "col": 16,
      "row": 0,
      "summary": "Bring Ashlord's bones home to show the smith. (They're given back.)",
      "goals": [
@@ -4337,7 +4322,7 @@
      "id": "mebahelrpgrquest:hag_f3_unbound",
      "title": "Unbound",
      "lane": "main",
-     "col": 18,
+     "col": 17,
      "row": 0,
      "summary": "All seven Wardens are dead. Tell someone.",
      "goals": [
@@ -4347,23 +4332,10 @@
      "choice": false
     },
     {
-     "id": "mebahelrpgrquest:hag_go0_a_way_out",
-     "title": "A Way Out",
-     "lane": "underworld",
-     "col": 0,
-     "row": 0,
-     "summary": "Reeve Halden knows what you've been growing. He also knows you've been doing good lately. He's offering one way out.",
-     "goals": [
-      "Talk to Reeve Halden"
-     ],
-     "icon": "minecraft:writable_book",
-     "choice": false
-    },
-    {
      "id": "mebahelrpgrquest:hag_br1_the_watch_needs_eyes",
      "title": "The Watch Needs Eyes",
      "lane": "underworld",
-     "col": 3,
+     "col": 2,
      "row": 0,
      "summary": "Halden writes that the Blackwater Cartel is poisoning the valley and paying a third of every emerald to the cult. The Watch can't get close. You can. Meet the Captain of the Watch.",
      "goals": [
@@ -4376,7 +4348,7 @@
      "id": "mebahelrpgrquest:hag_gt1_a_note_in_the_stash",
      "title": "A Note in the Stash",
      "lane": "underworld",
-     "col": 3,
+     "col": 2,
      "row": 1,
      "summary": "Mara writes that the Blackwater Cartel's drug money pays the cult's keepers in the snow, the sand and the sea. The only way to their Don is from inside. Grow a sample of weed (Create: Addictives) and find the Fixer, who is hiring growers.",
      "goals": [
@@ -4390,7 +4362,7 @@
      "id": "mebahelrpgrquest:hag_tm1_a_generous_offer",
      "title": "A Generous Offer",
      "lane": "underworld",
-     "col": 3,
+     "col": 2,
      "row": 2,
      "summary": "A letter with a green wax seal: someone wants to meet you on the road. Blackwater has heard you're the kind of hero who can be talked to. Hear the offer. Take it, or refuse it in a way they'll remember.",
      "goals": [
@@ -4403,7 +4375,7 @@
      "id": "mebahelrpgrquest:hag_br2_the_supply_line",
      "title": "The Supply Line",
      "lane": "underworld",
-     "col": 4,
+     "col": 3,
      "row": 0,
      "summary": "Blackwater moves product through a pillager outpost. Break the runners there and take their manifest.",
      "goals": [
@@ -4417,8 +4389,8 @@
      "id": "mebahelrpgrquest:hag_gt1b_the_recruiters_terms",
      "title": "The Recruiter's Terms",
      "lane": "underworld",
-     "col": 4,
-     "row": 1,
+     "col": 3,
+     "row": 2,
      "summary": "You said yes. Blackwater wants proof you can grow: sixteen weed (Create: Addictives), handed to the Fixer.",
      "goals": [
       "Collect 16 x weed",
@@ -4431,7 +4403,7 @@
      "id": "mebahelrpgrquest:hag_br3_the_bookkeeper",
      "title": "The Bookkeeper",
      "lane": "underworld",
-     "col": 5,
+     "col": 4,
      "row": 0,
      "summary": "The manifest leads to Blackwater's bookkeeper: an illager Sorcerer in a dark-forest hut. Take his ledger. With it, the Watch can name every buyer, seller and bribed guard.",
      "goals": [
@@ -4446,7 +4418,7 @@
      "id": "mebahelrpgrquest:hag_gt2_seeds_of_the_trade",
      "title": "Seeds of the Trade",
      "lane": "underworld",
-     "col": 5,
+     "col": 4,
      "row": 1,
      "summary": "The Fixer wants a real operation, not a windowsill. Plant a field and fill an order.",
      "goals": [
@@ -4460,7 +4432,7 @@
      "id": "mebahelrpgrquest:hag_br4_medicine_for_the_valley",
      "title": "Medicine for the Valley",
      "lane": "underworld",
-     "col": 6,
+     "col": 5,
      "row": 0,
      "summary": "The ledger lists the villages Blackwater sells to, and the cleric says three people there are already sick from it. Make Narcan (Create: Addictives) and bring it to the cleric before the raid.",
      "goals": [
@@ -4474,7 +4446,7 @@
      "id": "mebahelrpgrquest:hag_gt3_first_customers",
      "title": "First Customers",
      "lane": "underworld",
-     "col": 6,
+     "col": 5,
      "row": 1,
      "summary": "A nervous buyer in another village wants rolled product, delivered by hand.",
      "goals": [
@@ -4488,7 +4460,7 @@
      "id": "mebahelrpgrquest:hag_br5_don_vasco_answers",
      "title": "Don Vasco Answers",
      "lane": "underworld",
-     "col": 7,
+     "col": 6,
      "row": 0,
      "summary": "Don Vasco, head of Blackwater, waits in the Labyrinth. The Watch wants him alive to stand trial. Some in the valley would rather you didn't bother.",
      "goals": [
@@ -4502,7 +4474,7 @@
      "id": "mebahelrpgrquest:hag_gt4_the_hash_market",
      "title": "The Hash Market",
      "lane": "underworld",
-     "col": 7,
+     "col": 6,
      "row": 1,
      "summary": "Hash moves faster and pays better. Set up your Create machines and fill the Fixer's order.",
      "goals": [
@@ -4516,7 +4488,7 @@
      "id": "mebahelrpgrquest:hag_br6_the_valley_breathes",
      "title": "The Valley Breathes",
      "lane": "underworld",
-     "col": 8,
+     "col": 7,
      "row": 0,
      "summary": "Blackwater is broken. Tell the Captain of the Watch.",
      "goals": [
@@ -4526,11 +4498,24 @@
      "choice": false
     },
     {
+     "id": "mebahelrpgrquest:hag_go0_a_way_out",
+     "title": "A Way Out",
+     "lane": "underworld",
+     "col": 7,
+     "row": 1,
+     "summary": "Reeve Halden knows what you've been growing. He also knows you've been doing good lately. He's offering one way out.",
+     "goals": [
+      "Talk to Reeve Halden"
+     ],
+     "icon": "minecraft:writable_book",
+     "choice": false
+    },
+    {
      "id": "mebahelrpgrquest:hag_gt5_blackwater_wants_a_word",
      "title": "Blackwater Wants a Word",
      "lane": "underworld",
-     "col": 8,
-     "row": 1,
+     "col": 7,
+     "row": 2,
      "summary": "The Blackwater Cartel runs this valley, and Blackwater is run by illagers. They've noticed a new grower.",
      "goals": [
       "Defeat 4 x vindicator"
@@ -4542,8 +4527,8 @@
      "id": "mebahelrpgrquest:hag_gt6_the_coca_fields",
      "title": "The Coca Fields",
      "lane": "underworld",
-     "col": 9,
-     "row": 0,
+     "col": 8,
+     "row": 2,
      "summary": "The Fixer wants to move into white. Plant coca and bring in a harvest.",
      "goals": [
       "Place 16 x coca crop",
@@ -4556,8 +4541,8 @@
      "id": "mebahelrpgrquest:hag_gt7_white_powder_money",
      "title": "White Powder Money",
      "lane": "underworld",
-     "col": 10,
-     "row": 0,
+     "col": 9,
+     "row": 2,
      "summary": "Process the leaves and bring the Fixer his first big order.",
      "goals": [
       "Collect 16 x cocaine",
@@ -4570,8 +4555,8 @@
      "id": "mebahelrpgrquest:hag_gt8_a_customer_goes_under",
      "title": "A Customer Goes Under",
      "lane": "underworld",
-     "col": 11,
-     "row": 0,
+     "col": 10,
+     "row": 2,
      "summary": "The nervous buyer's friend comes running: he took too much of what you sold and isn't waking up. Bring Narcan, fast. Afterwards his friend has something to say to you, and what you do about it decides whether you're still in this trade.",
      "goals": [
       "Collect 1 x narcan",
@@ -4585,8 +4570,8 @@
      "id": "mebahelrpgrquest:hag_go1_burn_it_down",
      "title": "Burn It Down",
      "lane": "underworld",
-     "col": 12,
-     "row": 0,
+     "col": 11,
+     "row": 1,
      "summary": "Getting out starts with the fields. The Watch needs to see them gone, every plant, so nobody can ever say you kept a stash for later. Tear up sixteen of your weed plants (plant more first if you've harvested them), then tell Halden it's done.",
      "goals": [
       "Break 16 x weed crop",
@@ -4599,8 +4584,8 @@
      "id": "mebahelrpgrquest:hag_gt9_turf_war",
      "title": "Turf War",
      "lane": "underworld",
-     "col": 12,
-     "row": 1,
+     "col": 11,
+     "row": 2,
      "summary": "Blackwater is done being polite. Their crew is hitting your fields tonight.",
      "goals": [
       "Wait for next night",
@@ -4615,8 +4600,8 @@
      "id": "mebahelrpgrquest:hag_go2_blackwater_sends_regards",
      "title": "Blackwater Sends Its Regards",
      "lane": "underworld",
-     "col": 13,
-     "row": 0,
+     "col": 12,
+     "row": 1,
      "summary": "Blackwater doesn't let growers retire. Their crew is coming tonight to remind you whose you are. Make sure they never deliver that message to anyone again.",
      "goals": [
       "Wait for next night",
@@ -4629,8 +4614,8 @@
      "id": "mebahelrpgrquest:hag_gt10_the_sorcerers_books",
      "title": "The Sorcerer's Books",
      "lane": "underworld",
-     "col": 13,
-     "row": 1,
+     "col": 12,
+     "row": 2,
      "summary": "Blackwater's accounts are kept by an illager Sorcerer in a dark-forest hut. Take the books.",
      "goals": [
       "Reach a sorcerer hut",
@@ -4644,8 +4629,8 @@
      "id": "mebahelrpgrquest:hag_go3_testimony",
      "title": "Testimony",
      "lane": "underworld",
-     "col": 14,
-     "row": 0,
+     "col": 13,
+     "row": 1,
      "summary": "Halden can't touch Blackwater without proof. Their books are kept by an illager Sorcerer in a dark-forest hut. Take the ledger and put it in Halden's hands. Your name is in it too. That's the price of getting out.",
      "goals": [
       "Reach a sorcerer hut",
@@ -4660,8 +4645,8 @@
      "id": "mebahelrpgrquest:hag_gt11_crystal",
      "title": "Crystal",
      "lane": "underworld",
-     "col": 14,
-     "row": 1,
+     "col": 13,
+     "row": 2,
      "summary": "The Fixer wants the one product Blackwater can't make: crystal. Nobody in the valley makes it purer.",
      "goals": [
       "Collect 16 x meth",
@@ -4674,8 +4659,8 @@
      "id": "mebahelrpgrquest:hag_gt12_don_vasco",
      "title": "Don Vasco",
      "lane": "underworld",
-     "col": 15,
-     "row": 0,
+     "col": 14,
+     "row": 2,
      "summary": "Don Vasco, head of Blackwater, waits in the Labyrinth. Make him a partner, or make him an example.",
      "goals": [
       "Reach a labyrinth",
@@ -4688,8 +4673,8 @@
      "id": "mebahelrpgrquest:hag_gt13p_the_big_shipment",
      "title": "The Big Shipment",
      "lane": "underworld",
-     "col": 16,
-     "row": 0,
+     "col": 15,
+     "row": 2,
      "summary": "With Blackwater as partners, the first joint shipment goes out. Fill your half.",
      "goals": [
       "Collect 32 x cocaine",
@@ -4703,8 +4688,8 @@
      "id": "mebahelrpgrquest:hag_gt13w_remnants",
      "title": "Remnants",
      "lane": "underworld",
-     "col": 16,
-     "row": 1,
+     "col": 15,
+     "row": 0,
      "summary": "Blackwater's survivors want revenge for their Don. Finish the war.",
      "goals": [
       "Defeat 8 x vindicator"
@@ -4716,8 +4701,8 @@
      "id": "mebahelrpgrquest:hag_gt14_king_of_the_valley",
      "title": "King of the Valley",
      "lane": "underworld",
-     "col": 17,
-     "row": 0,
+     "col": 16,
+     "row": 2,
      "summary": "You run the valley's green trade now. Show the Fixer what you've built.",
      "goals": [
       "Talk to The Fixer"
@@ -4729,7 +4714,7 @@
      "id": "mebahelrpgrquest:hag_rc5_fallen",
      "title": "Salt in the Wound",
      "lane": "road",
-     "col": 2,
+     "col": 1,
      "row": 0,
      "summary": "[Reputation: Fallen] Drowned followed your trail to a fishing village and are coming up the shore tonight because of you. Stop them. Then the wrecker who called them is dragged in front of you.",
      "goals": [
@@ -4744,7 +4729,7 @@
      "id": "mebahelrpgrquest:hag_rc5_good",
      "title": "Warm Hands",
      "lane": "road",
-     "col": 2,
+     "col": 1,
      "row": 1,
      "summary": "[Reputation: Good] The snowy village is still short of fires. Campfires don't go out in the wind. Bring six. Then the harbour asks you to decide what happens to a captured wrecker.",
      "goals": [
@@ -4759,7 +4744,7 @@
      "id": "mebahelrpgrquest:hag_rc5_saint",
      "title": "The Fisher's Debt",
      "lane": "road",
-     "col": 2,
+     "col": 1,
      "row": 2,
      "summary": "[Reputation: Saint] The fishing village lost its boats to the Kraken. Without boats they starve. Bring them four boats. Then the harbour catches the wrecker who lit false lights on the rocks.",
      "goals": [
@@ -4774,7 +4759,7 @@
      "id": "mebahelrpgrquest:hag_rc5_waver",
      "title": "Cold Welcome",
      "lane": "road",
-     "col": 2,
+     "col": 1,
      "row": 3,
      "summary": "[Reputation: Wavering] The snowy village heard about you before you arrived. They won't trade until you prove you're here to help: clear twelve strays stalking their woodcutters. Then a captured wrecker is brought to you.",
      "goals": [
@@ -4788,7 +4773,7 @@
      "id": "mebahelrpgrquest:hag_rc5_wicked",
      "title": "The Harbour Tax",
      "lane": "road",
-     "col": 2,
+     "col": 1,
      "row": 4,
      "summary": "[Reputation: Wicked] The fishing village refuses to pay the Hand. Silas wants their iron golem dead as a lesson. Then he wants the wrecker who knows where the Hand's cargo went silenced.",
      "goals": [
@@ -4802,7 +4787,7 @@
      "id": "mebahelrpgrquest:hag_x5_the_last_garrison_man",
      "title": "The Last Garrison Man",
      "lane": "choices",
-     "col": 3,
+     "col": 2,
      "row": 0,
      "summary": "One soldier of the frozen garrison is still alive: Brann, half-mad from cold, who led the Yeti's hunters to the village for food. He wants to go home. The snowy village wants him dead.",
      "goals": [
@@ -4815,7 +4800,7 @@
      "id": "mebahelrpgrquest:hag_x5_the_last_garrison_man_after",
      "title": "Snow on the Grave",
      "lane": "choices",
-     "col": 4,
+     "col": 3,
      "row": 0,
      "summary": "You ended Brann in the snow. Someone in the village should know.",
      "goals": [
@@ -4828,7 +4813,7 @@
      "id": "mebahelrpgrquest:hag_x5s_brann_comes_home",
      "title": "Brann Comes Home",
      "lane": "choices",
-     "col": 4,
+     "col": 3,
      "row": 1,
      "summary": "Brann's wife writes. The village didn't hang him. It put him to work rebuilding the walls he helped break.",
      "goals": [
@@ -4841,7 +4826,7 @@
      "id": "mebahelrpgrquest:hag_x5k_a_widows_letter",
      "title": "A Widow's Letter",
      "lane": "choices",
-     "col": 5,
+     "col": 4,
      "row": 0,
      "summary": "Brann's wife learned what happened in the snow. She wants his medal back. You have it.",
      "goals": [
@@ -4986,7 +4971,7 @@
      "id": "mebahelrpgrquest:hag_sq_frost_patrol",
      "title": "Frost Patrol",
      "lane": "side",
-     "col": 3,
+     "col": 2,
      "row": 0,
      "summary": "The snowy village wants the strays that drift down from the hideout cleared.",
      "goals": [
@@ -4999,7 +4984,7 @@
      "id": "mebahelrpgrquest:hag_sq_husk_plague",
      "title": "Husk Plague",
      "lane": "side",
-     "col": 7,
+     "col": 6,
      "row": 0,
      "summary": "The desert village is still overrun with husks from the nest.",
      "goals": [
@@ -5012,7 +4997,7 @@
      "id": "mebahelrpgrquest:hag_sq_drowned_nets",
      "title": "Drowned Nets",
      "lane": "side",
-     "col": 11,
+     "col": 10,
      "row": 0,
      "summary": "The fishing village can't cast a net without drowned climbing up it.",
      "goals": [
@@ -5025,7 +5010,7 @@
      "id": "mebahelrpgrquest:hag_sq_pirate_hoard",
      "title": "The Pirate Hoard",
      "lane": "side",
-     "col": 12,
+     "col": 11,
      "row": 0,
      "summary": "The harbourmaster says the black ship's surviving crew are picking over shipwrecks for its lost cargo. Find a shipwreck and stop them.",
      "goals": [
@@ -5039,7 +5024,7 @@
      "id": "mebahelrpgrquest:hag_sq_soul_lanterns",
      "title": "Soul Lanterns",
      "lane": "side",
-     "col": 14,
+     "col": 13,
      "row": 0,
      "summary": "Villagers want soul lanterns hung for the dead the Underworld Knight guarded.",
      "goals": [
@@ -5052,7 +5037,7 @@
      "id": "mebahelrpgrquest:hag_sq_ash_cleanup",
      "title": "Ash Cleanup",
      "lane": "side",
-     "col": 17,
+     "col": 16,
      "row": 0,
      "summary": "The Dragon Tower's spawners still pour out Ashlord's skeleton guards, and they wander down to burn the farms. Go back to the tower and thin them out.",
      "goals": [
@@ -5240,6 +5225,11 @@
     ],
     [
      "mebahelrpgrquest:hag_gt4_the_hash_market",
+     "mebahelrpgrquest:hag_go0_a_way_out",
+     "letter"
+    ],
+    [
+     "mebahelrpgrquest:hag_gt4_the_hash_market",
      "mebahelrpgrquest:hag_gt5_blackwater_wants_a_word",
      "next"
     ],
@@ -5341,17 +5331,7 @@
     [
      "mebahelrpgrquest:hag_s1_cold_hearths",
      "mebahelrpgrquest:questbook_please_return_the_ship",
-     "letter"
-    ],
-    [
-     "mebahelrpgrquest:hag_s1_cold_hearths",
-     "mebahelrpgrquest:questbook_please_return_the_ship",
      "unlocks"
-    ],
-    [
-     "mebahelrpgrquest:hag_s1_cold_hearths",
-     "mebahelrpgrquest:questbook_the_captains_share",
-     "letter"
     ],
     [
      "mebahelrpgrquest:hag_s1_cold_hearths",
@@ -6019,27 +5999,12 @@
     [
      "mebahelrpgrquest:hag_v1_blood_in_the_wells",
      "mebahelrpgrquest:questbook_instructions_for_my_own_funeral",
-     "letter"
-    ],
-    [
-     "mebahelrpgrquest:hag_v1_blood_in_the_wells",
-     "mebahelrpgrquest:questbook_instructions_for_my_own_funeral",
      "unlocks"
     ],
     [
      "mebahelrpgrquest:hag_v1_blood_in_the_wells",
      "mebahelrpgrquest:questbook_the_man_who_buried_himself",
-     "letter"
-    ],
-    [
-     "mebahelrpgrquest:hag_v1_blood_in_the_wells",
-     "mebahelrpgrquest:questbook_the_man_who_buried_himself",
      "unlocks"
-    ],
-    [
-     "mebahelrpgrquest:hag_v1_blood_in_the_wells",
-     "mebahelrpgrquest:questbook_the_man_who_came_back_warm",
-     "letter"
     ],
     [
      "mebahelrpgrquest:hag_v1_blood_in_the_wells",
@@ -6463,11 +6428,6 @@
     [
      "mebahelrpgrquest:hag_m1_follow_the_crimson_bee",
      "mebahelrpgrquest:questbook_the_ash_merchant",
-     "letter"
-    ],
-    [
-     "mebahelrpgrquest:hag_m1_follow_the_crimson_bee",
-     "mebahelrpgrquest:questbook_the_ash_merchant",
      "unlocks"
     ],
     [
@@ -6802,7 +6762,7 @@
      "id": "main",
      "name": "Main story",
      "color": 15909198,
-     "rows": 3
+     "rows": 2
     }
    ],
    "nodes": [
@@ -6903,8 +6863,8 @@
      "id": "mebahelrpgrquest:hag_ha4_the_hand_of_azazel",
      "title": "The Hand of Azazel",
      "lane": "main",
-     "col": 3,
-     "row": 2,
+     "col": 4,
+     "row": 1,
      "summary": "The roads are yours. Bring your god his tithe, and take your place at his right hand.",
      "goals": [
       "Collect 16 x gold block"

@@ -14,7 +14,7 @@ Install: put `half_a_god-<version>.jar` in `mods/` on the client **and** the ser
 
 ## The reputation bar
 
-Always on screen, beside your hotbar on the side away from your offhand. It moves out of the way of the attack indicator and your offhand item, and sits clear of Tough As Nails' thirst and temperature, Mebahel's quest tracker and potion icons.
+A slim bar at the top centre of the screen, away from the hotbar where Tough As Nails, stamina and rolling mods draw. It steps down below boss bars, and shows your tier's name for a moment whenever your reputation changes.
 
 > **Wicked · Fallen · Wavering · Good · Saint** (-100 to +100)
 
@@ -41,10 +41,31 @@ What it changes:
 
 Settings are in `config/half_a_god-client.toml`:
 
-- `anchor`: AUTO, BOTTOM_RIGHT, BOTTOM_LEFT, TOP_RIGHT or TOP_LEFT
-- `offset_x` / `offset_y`: pixel nudges
+- `position`: TOP_CENTER, TOP_LEFT, TOP_RIGHT, BOTTOM_LEFT or BOTTOM_RIGHT
+- `width`, `offset_x` / `offset_y`: size and pixel nudges
 - `show_number`
 - `screen_shake`
+- `replace_quest_map`: open the story map instead of Mebahel's quest map
+
+## The story map
+
+Mebahel's quest-map key opens the Half a God story map (or use `/halfagod map`). One page per act; inside an act the quests
+run left to right in story order, in lanes: the main story, each side arc, the reputation road, choices that come back,
+Mebahel's questlines and side quests. Done quests are green, the one you're on glows gold, ones ready to start are white,
+and anything you haven't reached yet stays hidden. Click a quest for its story, goals and what it leads to. Drag to move,
+Ctrl+scroll to zoom. The "Mebahel's map" button opens the original.
+
+## Antique Atlas
+
+With Antique Atlas (and Surveyor) installed, every story quest with a destination puts a marker on your atlas. It moves
+when the target moves and disappears when the quest is done.
+
+## Characters stay put
+
+Every story character lives somewhere: Reeve Halden and Ashford's people in Ashford, the elder and the cleric in your
+home village, the snowy village's people in a snowy village, and so on. When a quest needs someone, they're in their
+village, standing where you last saw them, and there's only ever one of them. Characters you meet for the first time
+settle in the village they're placed in. Guard Villagers and iron golems won't touch anyone you need to talk to or judge.
 
 ## What the mod adds to the story
 
