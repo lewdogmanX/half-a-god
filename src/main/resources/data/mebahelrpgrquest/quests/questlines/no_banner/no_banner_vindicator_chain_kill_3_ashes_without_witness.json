@@ -1,0 +1,159 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.title",
+    "fallback": "Ashes Without a Witness"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.summary",
+    "fallback": "Rurik is dead, but his warning may still have been true. Search the outpost for the prison keys and end the raiders guarding them."
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.dialogue.intro",
+      "fallback": "A dead raider cannot lie, but neither can he explain himself. We are left with ash, doubt, and a road still leading to the outpost."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.dialogue.offer.0.0",
+          "fallback": "You still believe there are captives?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.dialogue.offer.0.1",
+          "fallback": "I believe fear makes fools of everyone. If captives are there and we ignore them because we hated the messenger, their chains are partly ours."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.dialogue.offer.1.0",
+          "fallback": "What should I do?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.dialogue.offer.1.1",
+          "fallback": "Search the outpost. Kill the guards who keep the lower rooms, and bring back any keys or ledgers you find. Let the dead raider be wrong, if mercy allows it."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.dialogue.return",
+      "fallback": "Keys and names. Then the raider told the truth, and we killed the only man who tried to carry it back."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.dialogue.reward",
+      "fallback": "Take this, but understand what it is: payment for captives saved too late to thank the witness who named them. The village will remember both the rescue and the cost of silence."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.dialogue.done",
+      "fallback": "The captives are free, but there is an empty place beside the shrine where a harder ending might have stood."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_prison_guards",
+      "kill": "minecraft:pillager",
+      "amount": 3
+    },
+    {
+      "id": "bring_prison_key",
+      "collect": "minecraft:tripwire_hook",
+      "amount": 1,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 4000,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.goals.1.name",
+        "fallback": "Outpost Prison Key"
+      },
+      "tag": "no_banner_prison_proof",
+      "in_chest": true
+    },
+    {
+      "id": "bring_prison_ledger",
+      "collect": "minecraft:book",
+      "amount": 1,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 4000,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.goals.2.name",
+        "fallback": "Outpost Prison Ledger"
+      },
+      "tag": "no_banner_prison_proof",
+      "in_chest": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.threats.0.name",
+        "fallback": "Ledger Guard"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 70.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchantments": [
+            {
+              "id": "minecraft:piercing",
+              "level": 1
+            }
+          ]
+        }
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_kill_3_ashes_without_witness.threats.0.offer_line",
+        "fallback": "The outpost guards its lower rooms with crossbows and locked doors."
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 60.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 60.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 420,
+    "items": {
+      "minecraft:emerald": 14,
+      "minecraft:golden_apple": 1,
+      "minecraft:crossbow": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:quick_charge",
+            "level": 2
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 2
+          }
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_base_no_banner_done"
+    ]
+  }
+}

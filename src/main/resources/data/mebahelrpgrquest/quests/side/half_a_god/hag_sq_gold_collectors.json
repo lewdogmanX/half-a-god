@@ -1,0 +1,63 @@
+{
+  "title": "The Gold Collectors",
+  "summary": "Men who bought the Peddler's 'protection' are collecting payment. In blood if not gold.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_p7_gold_at_double_weight"
+    ]
+  },
+  "dialogue": {
+    "intro": "They say the Peddler sold us safety. Now they want the price.",
+    "reward": "No more payments. No more eyes on the door.",
+    "offer": [
+      [
+        "Collectors?",
+        "They say the Peddler sold us safety. Now they want the price."
+      ],
+      [
+        "Where?",
+        "They come at dusk. Three of them."
+      ]
+    ],
+    "return": "Are they gone?"
+  },
+  "goals": [
+    {
+      "id": "collectors",
+      "kill": "minecraft:vindicator",
+      "amount": 3,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Gold Collector",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "count": 3,
+      "max_health": 44,
+      "equipment": {
+        "mainhand": "minecraft:golden_axe"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 350,
+    "items": {
+      "minecraft:gold_ingot": 6
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_gold_collectors_done"
+    ]
+  }
+}

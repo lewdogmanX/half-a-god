@@ -1,0 +1,45 @@
+{
+  "title": "Sky Amber",
+  "summary": "The cleric heard of golden amber from the sky trees. She wants it for her medicines.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_h2_hostile_paradise"
+    ]
+  },
+  "dialogue": {
+    "intro": "Golden oaks above the clouds. Their sap heals.",
+    "reward": "It smells like summer.",
+    "offer": [
+      [
+        "Sky trees?",
+        "Golden oaks above the clouds. Their sap heals."
+      ],
+      [
+        "Twelve pieces?",
+        "Twelve. And don't eat any."
+      ]
+    ],
+    "return": "Any amber?"
+  },
+  "goals": [
+    {
+      "id": "amber",
+      "collect": "aether:golden_amber",
+      "amount": 12,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 400,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_sky_amber_done"
+    ]
+  }
+}

@@ -1,0 +1,46 @@
+{
+  "title": "The Last Raid on Ashford",
+  "summary": "The cult's last raiders want to burn Ashford before the end. Hold it one more time.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_z1_caution"
+    ]
+  },
+  "dialogue": {
+    "intro": "They know the end is coming. They want us to burn first.",
+    "reward": "Ashford stands.",
+    "offer": [
+      [
+        "One more time?",
+        "They know the end is coming. They want us to burn first."
+      ],
+      [
+        "Not while I'm here.",
+        "That's what Halden said you'd say."
+      ]
+    ],
+    "return": "They're at the gate!"
+  },
+  "goals": [
+    {
+      "id": "hold_ashford",
+      "type": "defend_raid",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Ashford stands. It always will now."
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:diamond_block": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_the_last_raid_done"
+    ]
+  }
+}

@@ -1,0 +1,162 @@
+{
+  "title": "Amends",
+  "summary": "[Reputation: Wavering] Halden sends for you. He wants to see whether you'll pay a debt nobody can make you pay: gold for the families of everyone who died since you came. Then a man sick on cult blood is brought to you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "gold",
+      "collect": "minecraft:gold_ingot",
+      "amount": 32,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "face_halden",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "name": "Reeve Halden"
+    },
+    {
+      "id": "judge_6",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Ansel drank from the blood wells and can't stop. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Ansel the Blood-Drinker",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "The village wants you gone.",
+          "So do I. I can't stop drinking."
+        ],
+        [
+          "What would you have me do?",
+          "What you'd want done for you."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Reeve Halden",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "The gold.",
+          "...You didn't have to."
+        ],
+        [
+          "I know.",
+          "Then maybe you're not who I thought you were. Not all the way."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Help him through it",
+      "line": "Ansel shakes through the night. By morning he asks for water. Just water.",
+      "traits": [
+        "hag_mercy_6"
+      ]
+    },
+    "attack": {
+      "label": "Put him down",
+      "traits": [
+        "hag_cruelty_6"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:totem_of_undying": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc6_waver_done",
+      "hag_route_seg6",
+      "hag_ch6_waver"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_v2_the_sinful_church"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc7_good",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc7_fallen",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  },
+  "recruit_companion": true
+}

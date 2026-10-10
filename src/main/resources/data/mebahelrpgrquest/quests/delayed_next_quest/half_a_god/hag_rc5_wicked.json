@@ -1,0 +1,130 @@
+{
+  "title": "The Harbour Tax",
+  "summary": "[Reputation: Wicked] The fishing village refuses to pay the Hand. Silas wants their iron golem dead as a lesson. Then he wants the wrecker who knows where the Hand's cargo went silenced.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "harbour_golem",
+      "kill": "minecraft:iron_golem",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The fishermen pay the next morning. All of them."
+    },
+    {
+      "id": "judge_5",
+      "kill": "minecraft:pillager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Mott lit false lights on the rocks to wreck ships for cult gold. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:iron_golem",
+      "name": "Harbour Golem",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "min_structure_distance": 300,
+      "max_health": 120
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": "Saltjaw Mott",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 50,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "Silas wants your silence.",
+          "Course he does. My cargo went to him."
+        ],
+        [
+          "Then you know what happens now.",
+          "Only if you're as bad as him. Are you?"
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Turn him over to the harbour",
+      "line": "The harbourmaster takes him in chains. 'He'll work the nets till the dead come home.'",
+      "traits": [
+        "hag_mercy_5"
+      ]
+    },
+    "attack": {
+      "label": "Drown him",
+      "traits": [
+        "hag_cruelty_5"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1400,
+    "items": {
+      "minecraft:emerald": 24
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc5_wicked_done",
+      "hag_route_seg5",
+      "hag_ch5_wicked"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_s1_cold_hearths"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc6_fallen",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc6_wicked",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  }
+}

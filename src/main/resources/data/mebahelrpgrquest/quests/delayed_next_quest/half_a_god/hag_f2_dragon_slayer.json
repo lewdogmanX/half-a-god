@@ -1,0 +1,41 @@
+{
+  "title": "Dragon Slayer",
+  "summary": "Bring Ashlord's bones home to show the smith. (They're given back.)",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "dragon_bones",
+      "collect": "block_factorys_bosses:dragon_bone",
+      "amount": 8,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The smith turns a bone over in his hands. 'Nothing in the world is this hard. Nothing alive.' (The bones go back in your pack.)"
+    }
+  ],
+  "rewards": {
+    "xp": 4000,
+    "items": {
+      "minecraft:diamond": 8,
+      "block_factorys_bosses:dragon_bone": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_f3_unbound",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_f2_dragon_slayer_done"
+    ]
+  }
+}

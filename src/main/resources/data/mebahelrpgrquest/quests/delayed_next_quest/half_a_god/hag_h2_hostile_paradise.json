@@ -1,0 +1,59 @@
+{
+  "title": "Hostile Paradise",
+  "summary": "You are in the Aether, a sky realm that should be full of light and is strangely empty. Gather what you need to survive: holystone, ambrosium and skyroot.",
+  "sequential_objectives": true,
+  "requires": {
+    "advancements": [
+      "aether:enter_aether"
+    ]
+  },
+  "goals": [
+    {
+      "id": "holystone",
+      "collect": "aether:holystone",
+      "amount": 32,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "ambrosium",
+      "collect": "aether:ambrosium_shard",
+      "amount": 24,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "skyroot",
+      "collect": "aether:skyroot_log",
+      "amount": 16,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "You find a chariot wheel half buried in a cloud. Far too large for any cart."
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "aether:golden_amber": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_h3_do_you_believe_in_magic",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "aether:the_aether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_h2_hostile_paradise_done"
+    ]
+  }
+}

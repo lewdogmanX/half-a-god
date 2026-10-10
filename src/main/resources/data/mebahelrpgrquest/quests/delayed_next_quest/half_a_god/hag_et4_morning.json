@@ -1,0 +1,68 @@
+{
+  "title": "Morning",
+  "summary": "The throne is empty for good. Go home. Ring the bell.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "elder",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Village Elder"
+    }
+  ],
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "minecraft:bell": 1,
+      "minecraft:cake": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_et4_morning_done",
+      "hag_empty_throne_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "talk": [
+        [
+          "It's over.",
+          "Is it? Truly?"
+        ],
+        [
+          "Truly.",
+          "Then ring the bell. It's been a long time since it rang for something good."
+        ]
+      ]
+    }
+  ]
+}

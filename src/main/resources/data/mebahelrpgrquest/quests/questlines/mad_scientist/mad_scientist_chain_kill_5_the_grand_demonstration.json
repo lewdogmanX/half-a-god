@@ -1,0 +1,237 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.title",
+    "fallback": "The Grand Demonstration"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.summary",
+    "fallback": "Doctor Vale is ready to prove his restorative before the entire village. Sera is gone, the apparatus is full, and the bell square has become his laboratory."
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:mad_scientist_chain_4_patient_thirteen"
+    ],
+    "traits": [
+      "sera_killed"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.intro",
+      "fallback": "Welcome. Mind the copper wire, do not touch the bell rope, and please ignore any breathing you hear beneath the canvas."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.offer.0.0",
+          "fallback": "Why is the experiment in the village square?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.offer.0.1",
+          "fallback": "Because discovery without witnesses is merely a suspicious noise in a basement."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.offer.1.0",
+          "fallback": "What is under the canvas?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.offer.1.1",
+          "fallback": "Patient Fourteen. Deceased before treatment, regrettably anonymous, and therefore free of the psychological complications that affected Sera."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.offer.2.0",
+          "fallback": "Sera said the growth was the failure."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.offer.2.1",
+          "fallback": "Sera feared scale. I do not. If the body cannot contain the cure, we improve the body."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.offer.3.0",
+          "fallback": "This is insane."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.offer.3.1",
+          "fallback": "That is an emotional diagnosis. Stand back from the bell rope. I am about to make medicine very difficult to ignore."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.return",
+      "fallback": "Remarkable. Catastrophic, yes, but remarkable. Did you see the muscle retention after enlargement? We were one adjustment away from history."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.return_steps.0.0",
+          "fallback": "It tried to eat the bell."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.return_steps.0.1",
+          "fallback": "With excellent posture. Please record that if anyone asks."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.return_steps.1.0",
+          "fallback": "I killed Sera because you said she was beyond saving."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.return_steps.1.1",
+          "fallback": "And she was. Her data was not. Do not confuse tragedy with waste."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.return_steps.2.0",
+          "fallback": "The village could have been destroyed."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.return_steps.2.1",
+          "fallback": "And yet it was not. That makes this a failed experiment, not a disaster. Precision matters."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.reward",
+      "fallback": "You handled the field portion magnificently. Consider this hazard pay. I suspect the village council will soon restrict my access to bells."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.dialogue.done",
+      "fallback": "I have been informed that I am no longer permitted to borrow redstone, bells, livestock, cadavers, or village property of any kind. Their wording was surprisingly thorough."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_patient_fourteen",
+      "kill": "minecraft:giant",
+      "amount": 1,
+      "quest_giver_resistance_seconds": 60,
+      "from_threats": true
+    },
+    {
+      "id": "kill_overflow_subjects",
+      "kill": "minecraft:zombie",
+      "amount": 4,
+      "from_threats": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:giant",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.threats.0.name",
+        "fallback": "Patient Fourteen, Considerably Recovered"
+      },
+      "spawn_min_radius": 14,
+      "spawn_max_radius": 22,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 520.0,
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "duration_seconds": 3600,
+          "amplifier": 1,
+          "ambient": false,
+          "show_particles": true,
+          "show_icon": true
+        },
+        {
+          "id": "minecraft:resistance",
+          "duration_seconds": 3600,
+          "amplifier": 0,
+          "ambient": false,
+          "show_particles": false,
+          "show_icon": true
+        }
+      ],
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.threats.0.offer_line",
+        "fallback": "Do not panic when the canvas moves. Panic contaminates observation."
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.threats.0.target_line",
+        "fallback": "It remembered too much."
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.threats.1.name",
+        "fallback": "Overflow Subject"
+      },
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 38.0
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.threats.2.name",
+        "fallback": "Overflow Subject"
+      },
+      "spawn_min_radius": 7,
+      "spawn_max_radius": 12,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 38.0
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.threats.3.name",
+        "fallback": "Overflow Subject"
+      },
+      "spawn_min_radius": 9,
+      "spawn_max_radius": 14,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 38.0
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_kill_5_the_grand_demonstration.threats.4.name",
+        "fallback": "Overflow Subject"
+      },
+      "spawn_min_radius": 11,
+      "spawn_max_radius": 16,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 38.0
+    }
+  ],
+  "rewards": {
+    "xp": 850,
+    "items": {
+      "minecraft:emerald": 24,
+      "minecraft:golden_apple": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "vale_grand_experiment_survived",
+      "sera_silenced",
+      "hag_base_mad_scientist_done"
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "title": "The Warden Journal",
+  "summary": "The cult was looking for a journal in the stronghold library. Find it in a barrel before they do.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "warden_journal",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:stronghold",
+      "radius": 30000000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "The Warden Journal",
+      "tag": "hag_warden_journal",
+      "quest_book": {
+        "title": "The Warden Journal",
+        "author": "M.",
+        "pages": [
+          "Seven hold the Nails. Seven keep the halves apart.",
+          "Ash below. Silence beyond. Frost, Sand, Tide. The Gate. The Flame.",
+          "[A page has been torn out here. Recently. The tear is clean.]"
+        ]
+      },
+      "stage": 0,
+      "auto_advance": true,
+      "say": "One page is missing. Someone tore it out, and not long ago."
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:experience_bottle": 10
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_e5_free_the_end",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_e4_the_warden_journal_done"
+    ]
+  }
+}

@@ -1,0 +1,61 @@
+{
+  "title": "The Bastille",
+  "summary": "The ledger says Ashford's fourteen men are held in a Bastille, an illager fortress paid for with cult gold (It Takes a Pillage). Storm it: kill its legioners, archers and skirmishers.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_bastille",
+      "reach": "takesapillage:bastille",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Stone walls, a gate, and a golden eye painted over the illager banner."
+    },
+    {
+      "id": "legioners",
+      "kill": "takesapillage:legioner",
+      "amount": 8,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "archers",
+      "kill": "takesapillage:archer",
+      "amount": 6,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "skirmishers",
+      "kill": "takesapillage:skirmisher",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The cells are half empty. The rest were already taken."
+    }
+  ],
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:diamond": 3,
+      "minecraft:totem_of_undying": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_x2_the_bastille_warden",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a7_the_bastille_done"
+    ]
+  }
+}

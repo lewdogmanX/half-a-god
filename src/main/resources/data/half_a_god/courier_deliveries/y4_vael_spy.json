@@ -1,0 +1,15 @@
+{
+  "id": "half_a_god:y4_vael_spy",
+  "trigger": {
+    "type": "custom"
+  },
+  "delay": {
+    "min_ticks": 36000,
+    "max_ticks": 60000
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "A courier who won't give a name",
+    "quest_book": "mebahelrpgrquest:hag_y4_vaels_last_letter"
+  }
+}

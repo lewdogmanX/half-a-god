@@ -1,0 +1,70 @@
+{
+  "title": "The Bookkeeper",
+  "summary": "The manifest leads to Blackwater's bookkeeper: an illager Sorcerer in a dark-forest hut. Take his ledger. With it, the Watch can name every buyer, seller and bribed guard.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_hut",
+      "reach": "illagerinvasion:sorcerer_hut",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "sorcerer",
+      "kill": "illagerinvasion:sorcerer",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "ledger",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "illagerinvasion:sorcerer_hut",
+      "radius": 30000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "Blackwater Ledger",
+      "tag": "hag_blackwater_ledger_raid",
+      "quest_book": {
+        "title": "Blackwater Ledger",
+        "author": "The Sorcerer",
+        "pages": [
+          "Weekly takings: 3,000 emeralds. Tithe to the Chariot: one third.",
+          "Don Vasco holds court in the Labyrinth. Bring tribute or bring an army."
+        ]
+      },
+      "stage": 2,
+      "auto_advance": true,
+      "say": "A third of everything goes to the Chariot. Even the cartel pays the cult."
+    }
+  ],
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "minecraft:emerald": 32
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_br4_medicine_for_the_valley",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_br3_the_bookkeeper_done"
+    ]
+  }
+}

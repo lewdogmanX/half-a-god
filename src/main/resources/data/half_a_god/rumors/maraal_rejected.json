@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:maraal_rejected",
+  "weight": 12,
+  "line": "An old woman sits alone at the crossroads, writing letters she never sends.",
+  "conditions": {
+    "required_traits": [
+      "maraal_rejected"
+    ]
+  }
+}

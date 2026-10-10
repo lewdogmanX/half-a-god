@@ -1,0 +1,46 @@
+{
+  "title": "The Queen's Desire",
+  "summary": "You traded with the Queen, and now she has desires for you to fulfil (see 'The Queen's Desire' in your advancements). Complete any of them and she rewards you with Royal Jelly. Bring one bottle back for Wren. (You keep it.)",
+  "sequential_objectives": true,
+  "requires": {
+    "advancements": [
+      "the_bumblezone:the_queens_desire/the_beginning"
+    ]
+  },
+  "goals": [
+    {
+      "id": "royal_jelly",
+      "collect": "the_bumblezone:royal_jelly_bottle",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Royal Jelly. Wren's grandmother's glowing honey."
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "the_bumblezone:royal_jelly_bottle": 1,
+      "minecraft:diamond": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_bz10_the_honey_crown",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 400,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_bz9_the_queens_desire_done"
+    ]
+  }
+}

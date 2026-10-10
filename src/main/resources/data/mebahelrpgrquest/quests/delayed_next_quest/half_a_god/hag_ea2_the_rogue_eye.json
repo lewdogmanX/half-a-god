@@ -1,0 +1,38 @@
+{
+  "title": "The Rogue Eye",
+  "summary": "The eye that taught our ancestors redstone. Where: jungle temples.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_eye",
+      "collect": "endrem:rogue_eye",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The Rogue Eye stares back at you. (It goes back in your pack.)",
+      "name": "Rogue Eye (given back)"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "endrem:rogue_eye": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_ea3_the_cold_eye",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ea2_the_rogue_eye_done"
+    ]
+  }
+}

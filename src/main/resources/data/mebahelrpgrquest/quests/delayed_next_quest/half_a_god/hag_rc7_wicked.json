@@ -1,0 +1,214 @@
+{
+  "title": "Golden Chains",
+  "summary": "The Siege: The siege isn't the Hand's. It's Ashford's. They've set their golems on you. Then: [Reputation: Wicked] The quarries are broken but their gold is still lying there. Carry four blocks out for Silas, and hear his last advice. Then he wants the neighbour who knows his name silenced.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "siege_night",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Night falls. Horns on the road. The siege has come."
+    },
+    {
+      "id": "siege_iron_golem",
+      "kill": "minecraft:iron_golem",
+      "amount": 2,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "siege_vindicator",
+      "kill": "minecraft:vindicator",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The siege isn't the Hand's. It's Ashford's. They've set their golems on you."
+    },
+    {
+      "id": "gold_blocks",
+      "collect": "minecraft:gold_block",
+      "amount": 4,
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "last_meeting",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 3,
+      "auto_advance": true,
+      "name": "Silas of the Gilded Hand"
+    },
+    {
+      "id": "judge_7",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 4,
+      "auto_advance": true,
+      "say": "Garret sold his neighbours to the cult, and was found among the freed. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:iron_golem",
+      "name": "Ashford Golem",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 26,
+      "count": 2,
+      "max_health": 60
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Hand Deserter",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 26,
+      "count": 4,
+      "max_health": 60
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Garret of Ashford",
+      "stage": 4,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "Silas paid you.",
+          "Silas paid both of us. Look where it got me."
+        ],
+        [
+          "You're asking for mercy?",
+          "I'm asking you to look where it's getting you."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Silas of the Gilded Hand",
+      "stage": 3,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "Quarry gold.",
+          "Mined by your Ashford friends. Funny old world."
+        ],
+        [
+          "Anything else?",
+          "When he offers you mercy, take it. He pays better than I do."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Let Halden judge him",
+      "line": "Halden looks at Garret for a long time. 'You'll rebuild every house you emptied.'",
+      "traits": [
+        "hag_mercy_7"
+      ]
+    },
+    "attack": {
+      "label": "Judge him yourself",
+      "traits": [
+        "hag_cruelty_7"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "minecraft:diamond": 5
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc7_wicked_done",
+      "hag_route_seg7",
+      "hag_ch7_wicked",
+      "hag_siege_wicked"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_m2_the_cursed_quarries"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rep_end_fallen",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rep_end_wicked",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  }
+}

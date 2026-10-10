@@ -1,0 +1,101 @@
+{
+  "title": "Smite the Dead",
+  "summary": "The cult wants the Wither. You'll be fighting the dead for a while, and the armourer can forge a weapon 'that hates the dead' if you bring blaze rods and bones.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "blaze_rods",
+      "collect": "minecraft:blaze_rod",
+      "amount": 12,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "bones",
+      "collect": "minecraft:bone",
+      "amount": 32,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "visit_the_armourer",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "'Steel hates the dead if you teach it to.'",
+      "name": "The Armourer"
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:enchanted_book": {
+        "count": 1,
+        "enchants": {
+          "minecraft:smite": 5
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_w3_the_skull_harvest",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_w2_smite_the_dead_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "The Armourer",
+      "stage": 2,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "'Steel hates the dead if you teach it to.'",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "I brought the makings.",
+          "Good. Steel hates the dead if you teach it to."
+        ],
+        [
+          "Why do the dead matter?",
+          "The Wither is made from dead things. So is its army."
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,38 @@
+{
+  "title": "The First Command",
+  "summary": "Azazel is whole and you are his Hand. His first command: the beacon you lit over the village must go dark. It offends him.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_beacon",
+      "break": "minecraft:beacon",
+      "amount": 1,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The light goes out. Somewhere a child asks why."
+    }
+  ],
+  "rewards": {
+    "xp": 1500
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_ha2_ashford_must_kneel",
+      "delay_ticks": 2400,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ha1_the_first_command_done"
+    ]
+  }
+}

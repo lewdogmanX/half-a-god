@@ -1,0 +1,203 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.title",
+    "fallback": "The Ledger Must Burn"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.summary",
+    "fallback": "Strike the Quiet Ledger's counting room and kill the assassin-master who paid to turn your reputation into a corpse."
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.intro",
+      "fallback": "The villager has stopped whispering. Fear is still there, but now it has a direction."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.offer.0.0",
+          "fallback": "Who leads them?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.offer.0.1",
+          "fallback": "A man named Sable Varr. Not a raider, not a soldier. A buyer of endings. He believes villages stay obedient when their heroes die early."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.offer.1.0",
+          "fallback": "Why me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.offer.1.1",
+          "fallback": "Because you proved a bell can be answered. If that story spreads, every frightened village starts looking at its own hands and wondering what they can hold."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.offer.2.0",
+          "fallback": "Then the Ledger burns."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.offer.2.1",
+          "fallback": "Burn the ledger, kill Varr, and leave enough ashes that every paid knife knows the price for hunting hope has gone up."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.return",
+      "fallback": "Sable Varr is dead? Then tonight the road carries a different rumor."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.return_steps.0.0",
+          "fallback": "The ledger is gone."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.return_steps.0.1",
+          "fallback": "Then those names are people again, not prices."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.return_steps.1.0",
+          "fallback": "They wanted the story dead."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.return_steps.1.1",
+          "fallback": "Then let the story answer properly: the one who held the bell lived, and the men who bought his grave did not."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.reward",
+      "fallback": "This is from everyone whose name was written in that book. They may never know how close the knife came, but they will live loudly enough to repay you."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.dialogue.done",
+      "fallback": "The Quiet Ledger is ash. Some contracts deserve no archive."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_sable_varr",
+      "kill": "minecraft:evoker",
+      "amount": 1
+    },
+    {
+      "id": "kill_ledger_assassins",
+      "kill": "minecraft:vindicator",
+      "amount": 2
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:evoker",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.threats.0.name",
+        "fallback": "Sable Varr, Master of the Quiet Ledger"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 180.0,
+      "equipment": {
+        "head": {
+          "item": "minecraft:golden_helmet",
+          "enchantments": [
+            {
+              "id": "minecraft:protection",
+              "level": 2
+            }
+          ]
+        }
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.threats.0.offer_line",
+        "fallback": "Sable Varr keeps the Quiet Ledger near the outpost road, guarded by oathless blades paid to kill names before they become legends."
+      }
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.threats.1.name",
+        "fallback": "Quiet Ledger Red Knife"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 135.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "level": 3
+            },
+            {
+              "id": "minecraft:unbreaking",
+              "level": 2
+            }
+          ]
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_defense_chain_6_the_second_bell.threats.2.name",
+        "fallback": "Quiet Ledger Black Knife"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 135.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "level": 3
+            }
+          ]
+        },
+        "head": "minecraft:chainmail_helmet"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 850,
+    "items": {
+      "minecraft:emerald": 30,
+      "minecraft:diamond_sword": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:sharpness",
+            "level": 4
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 3
+          }
+        ]
+      },
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "village_defender"
+    ]
+  }
+}

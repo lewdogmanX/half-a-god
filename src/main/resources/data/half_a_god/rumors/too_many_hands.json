@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:too_many_hands",
+  "weight": 12,
+  "line": "Something crawled out of the church the night the midwife died. It had too many hands.",
+  "conditions": {
+    "required_traits": [
+      "midwife_slain"
+    ]
+  }
+}

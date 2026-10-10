@@ -1,0 +1,295 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.title",
+    "fallback": "No Banner Behind Me"
+  },
+  "offer_summary_line": {
+    "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.offer_summary_line",
+    "fallback": "Walk with me to the outpost. I want the ledger taken intact, even the pages that make me look exactly like what I was."
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:false_hero_rusk_debt_of_breath"
+    ],
+    "traits": [
+      "false_hero_witness_spared",
+      "rusk_heard_out_after_courier"
+    ]
+  },
+  "recruit_companion": true,
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.intro",
+      "fallback": "You came twice when killing me would have been simpler. Do not mistake that for trust. I am only asking you to see what I do with the third chance."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.offer.0.0",
+          "fallback": "Who keeps the ledger?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.offer.0.1",
+          "fallback": "Hadrik Black-Sash. He kept routes, bribes, villages that paid, villages that burned, and which of us earned coin from each."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.offer.1.0",
+          "fallback": "And your name is there."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.offer.1.1",
+          "fallback": "Three times that I remember. Maybe more. I stopped counting when counting started sounding like confession."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.offer.2.0",
+          "fallback": "Why not burn it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.offer.2.1",
+          "fallback": "Because a burned ledger lets me invent a better man afterward. I have had enough of men polishing themselves into heroes."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.offer.3.0",
+          "fallback": "What happens when we have it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.offer.3.1",
+          "fallback": "You read it. All of it. Then you decide whether I am still someone worth keeping at your back."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.return",
+      "fallback": "You read my mark, then. Good. I was afraid I might ask you to skip those pages when the moment came."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.return_steps.0.0",
+          "fallback": "Three villages. Your mark beside all three."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.return_steps.0.1",
+          "fallback": "I led men to one. Scouted another. At the third I stood watch while a house burned and called myself merciful because I never held the torch."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.return_steps.1.0",
+          "fallback": "Why show me this?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.return_steps.1.1",
+          "fallback": "Because if I hide the worst of me and then call myself changed, I am only your false hero with uglier armor."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.return_steps.2.0",
+          "fallback": "What will you do now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.return_steps.2.1",
+          "fallback": "I do not have a banner. I do not want another one."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.return_steps.3.0",
+          "fallback": "Then what do you want?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.return_steps.3.1",
+          "fallback": "A road. Someone near enough to tell me when I am walking it wrong."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.return_steps.4.0",
+          "fallback": "You want to travel with me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.return_steps.4.1",
+          "fallback": "If you will have a pillager who knows exactly why you should not."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.reward",
+      "fallback": "You spared me when my word was all I had. You came back when I finally brought proof against myself. I will not ask you to call me good. Just point me at something worse than I was."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.dialogue.done",
+      "fallback": "No banner. No captain. Just the road. That is enough."
+    }
+  },
+  "goals": [
+    {
+      "id": "escort_rusk_to_black_sash_outpost",
+      "type": "escort_entity",
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 5000,
+      "completion_range": 64,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "kill_hadrik_black_sash",
+      "kill": "minecraft:vindicator",
+      "amount": 1,
+      "stage": 1,
+      "from_threats": true
+    },
+    {
+      "id": "kill_black_sash_keepers",
+      "kill": "minecraft:pillager",
+      "amount": 2,
+      "stage": 1,
+      "from_threats": true,
+      "auto_advance": true
+    },
+    {
+      "id": "read_black_road_ledger",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 5000,
+      "stage": 2,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.goals.read_black_road_ledger.name",
+        "fallback": "Black-Road Ledger"
+      },
+      "tag": "rusk_black_road_ledger",
+      "quest_book": {
+        "title": "Black-Road Ledger",
+        "author": "Hadrik Black-Sash",
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.ledger.pages.0",
+            "fallback": "WEST ROAD ACCOUNTS\n\nVale crossing - paid.\nMill bridge - paid.\nBluebell village - refused.\nNorth ford - route sold."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.ledger.pages.1",
+            "fallback": "Rusk: scouted Bluebell approach. Two guards, one golem, weak eastern fence. Full share."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.ledger.pages.2",
+            "fallback": "Rusk: led west-road party. Merchant cart taken intact. Driver survived. Half share after dispute."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.ledger.pages.3",
+            "fallback": "Rusk: night watch at Harth farm. House burned during collection. Claims he did not light it. Captain notes that ash spends the same."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.ledger.pages.4",
+            "fallback": "Rusk: unreliable since medal affair. Asked twice whether prisoners were necessary. Watch him."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.ledger.pages.5",
+            "fallback": "Rusk: gone. If found, kill before he learns how much of this ledger has his name in it."
+          }
+        ]
+      }
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.threats.0.name",
+        "fallback": "Hadrik Black-Sash"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 5000,
+      "stage": 1,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 180.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 3,
+            "minecraft:unbreaking": 2
+          }
+        },
+        "head": "minecraft:iron_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.threats.1.name",
+        "fallback": "Black-Sash Ledger Keeper"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 5000,
+      "stage": 1,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 75.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchants": {
+            "minecraft:quick_charge": 1
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_no_banner_behind_me.threats.2.name",
+        "fallback": "Black-Sash Ledger Keeper"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 5000,
+      "stage": 1,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 7,
+      "spawn_max_radius": 13,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 75.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchants": {
+            "minecraft:piercing": 1
+          }
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 620,
+    "items": {
+      "minecraft:emerald": 10,
+      "minecraft:arrow": 32
+    }
+  },
+  "traits_on_complete": [
+    "rusk_recruited",
+    "rusk_black_ledger_exposed"
+  ]
+}

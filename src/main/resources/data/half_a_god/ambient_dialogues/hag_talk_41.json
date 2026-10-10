@@ -1,0 +1,25 @@
+{
+  "id": "hag_talk_41",
+  "type": "villager_conversation",
+  "required_story_flags": [
+    "hag_mercy_x1_the_informant"
+  ],
+  "forbidden_story_flags": [],
+  "weight": 8,
+  "cooldown": 24000,
+  "max_player_distance": 16,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": 1,
+      "text": "The hero let that scout go.",
+      "translation_key": "ambient.half_a_god.hag_talk_41.0"
+    },
+    {
+      "speaker": 1,
+      "look_at": 0,
+      "text": "Wick? He'll be back. Maybe that's the point.",
+      "translation_key": "ambient.half_a_god.hag_talk_41.1"
+    }
+  ]
+}

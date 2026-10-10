@@ -1,0 +1,80 @@
+{
+  "title": "Sinbuster",
+  "summary": "You wear the Sinbuster now: armour that can 'imprison attacks too brutal for the mortals'. Show the smith.",
+  "sequential_objectives": true,
+  "requires": {
+    "advancements": [
+      "sons_of_sins:sinbuster_armor"
+    ],
+    "traits": [
+      "hag_route_seg6",
+      "hag_base_mad_scientist_done",
+      "hag_base_funeral_done",
+      "hag_base_came_back_warm_done",
+      "hag_base_buried_himself_done"
+    ]
+  },
+  "goals": [
+    {
+      "id": "show_the_smith",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The smith won't touch it. 'That's not armour. That's a cage you wear.'",
+      "name": "The Smith"
+    }
+  ],
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "minecraft:enchanted_golden_apple": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v8_sinbuster_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "The Smith",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "The smith won't touch it. 'That's not armour. That's a cage you wear.'",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "What do you think?",
+          "That's not armour. That's a cage you wear."
+        ],
+        [
+          "It'll hold.",
+          "Against what? ...Don't tell me."
+        ]
+      ]
+    }
+  ]
+}

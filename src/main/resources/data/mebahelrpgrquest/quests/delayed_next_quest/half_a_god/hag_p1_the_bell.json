@@ -1,0 +1,57 @@
+{
+  "title": "The Bell That Won't Ring",
+  "summary": "The village elder told you their bell was sold to a smiling stranger who paid 'twice its weight in gold'. Without a bell the village can't raise the alarm. Bring the smith iron and gold, then hang the new bell.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "iron_for_the_bell",
+      "collect": "minecraft:iron_ingot",
+      "amount": 6,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The smith takes the iron and frowns. 'Gold too. Old bells were part gold.'"
+    },
+    {
+      "id": "gold_for_the_bell",
+      "collect": "minecraft:gold_ingot",
+      "amount": 2,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "hang_the_bell",
+      "place": "minecraft:bell",
+      "amount": 1,
+      "range": 64,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "The bell rings. Every villager stops, and listens, and smiles."
+    }
+  ],
+  "rewards": {
+    "xp": 120,
+    "items": {
+      "minecraft:emerald": 6,
+      "minecraft:shield": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_p2_winter_stores",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_p1_the_bell_done"
+    ]
+  }
+}

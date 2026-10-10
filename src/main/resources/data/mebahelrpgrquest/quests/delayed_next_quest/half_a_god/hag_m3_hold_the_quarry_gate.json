@@ -1,0 +1,106 @@
+{
+  "title": "Hold the Quarry Gate",
+  "summary": "The freed prisoners need time to reach your portal. Hold the quarry gate against the piglin wardens.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "gold_wardens",
+      "kill": "minecraft:piglin_brute",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "gold_warden_captain",
+      "kill": "minecraft:piglin_brute",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The last prisoner runs through the portal. Halden will cry when he sees his son."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:piglin_brute",
+      "name": "Gold-Warden",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "count": 4,
+      "max_health": 70,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:golden_axe",
+          "enchants": {
+            "minecraft:sharpness": 4
+          }
+        },
+        "head": "minecraft:golden_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:piglin_brute",
+      "name": "Gold-Warden Captain",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 16,
+      "max_health": 160,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:golden_axe",
+          "enchants": {
+            "minecraft:sharpness": 5
+          }
+        },
+        "chest": "minecraft:golden_chestplate"
+      },
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 2500,
+    "items": {
+      "minecraft:totem_of_undying": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_m4_gilded_hunger",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_m3_hold_the_quarry_gate_done"
+    ]
+  }
+}

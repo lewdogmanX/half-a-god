@@ -1,0 +1,117 @@
+{
+  "title": "Don Vasco Answers",
+  "summary": "Don Vasco, head of Blackwater, waits in the Labyrinth. The Watch wants him alive to stand trial. Some in the valley would rather you didn't bother.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_labyrinth",
+      "reach": "illagerinvasion:labyrinth",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "don_vasco",
+      "kill": "minecraft:evoker",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:evoker",
+      "name": "Don Vasco",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "structure": "illagerinvasion:labyrinth",
+      "search_radius": 30000,
+      "max_health": 260,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:strength",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "Don Vasco.",
+          "The Watch's dog. Sit. Nobody fights in my house unless I say so."
+        ],
+        [
+          "You're under arrest.",
+          "By whom? Twelve farmers with spears?"
+        ],
+        [
+          "By me.",
+          "...Then I suppose I'll see you in court. Or I'll see you dead. Your choice."
+        ]
+      ],
+      "attack_ambushes": [
+        {
+          "entity": "minecraft:vindicator",
+          "name": "Vasco's Bodyguard",
+          "count": 4,
+          "max_health": 70,
+          "equipment": {
+            "mainhand": "minecraft:diamond_axe"
+          }
+        }
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Arrest him for the Watch",
+      "line": "Vasco holds out his wrists. 'You'll regret being fair.'",
+      "traits": [
+        "gt_vasco_arrested"
+      ]
+    },
+    "attack": {
+      "label": "End him here",
+      "traits": [
+        "gt_vasco_killed"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "minecraft:emerald_block": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_br6_the_valley_breathes",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_br5_don_vasco_answers_done"
+    ]
+  }
+}

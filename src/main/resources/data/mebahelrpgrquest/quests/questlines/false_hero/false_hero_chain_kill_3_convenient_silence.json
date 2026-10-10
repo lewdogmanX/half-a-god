@@ -1,0 +1,163 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.title",
+    "fallback": "Convenient Silence"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.summary",
+    "fallback": "The witness is dead, and raiders are cleaning up the outpost road. Stop them before the lie becomes permanent."
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:false_hero_chain_2_the_last_witness"
+    ],
+    "traits": [
+      "false_hero_witness_killed"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.dialogue.intro",
+      "fallback": "The village is celebrating the champion again. I hear their cheers from here, and every cheer sounds like a shovel striking dirt."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.dialogue.offer.0.0",
+          "fallback": "You still think he lied?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.dialogue.offer.0.1",
+          "fallback": "I think dead witnesses make liars comfortable. Raiders are gathering where the trail began. That means someone is cleaning up loose ends."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.dialogue.offer.1.0",
+          "fallback": "What do you want done?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.dialogue.offer.1.1",
+          "fallback": "End the cleanup. Kill the raiders still holding the outpost road. We may not get the truth, but we can at least stop more blood from being buried under it."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.dialogue.return",
+      "fallback": "The outpost road is quiet, then. Quiet is not the same as clean, but it is all we have left."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.dialogue.reward",
+      "fallback": "Take this from the village stores. You ended the raiders who came to bury the trail. As for the champion, he has left before dawn. Heroes rarely flee their own songs."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.dialogue.done",
+      "fallback": "The champion is gone, the witness is dead, and the village has learned to cheer more carefully."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_cleanup_raiders",
+      "kill": "minecraft:pillager",
+      "amount": 4,
+      "from_threats": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.threats.0.name",
+        "fallback": "Brannoc Trail-Burrier"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 55.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.threats.0.offer_line",
+        "fallback": "Raiders are sweeping the outpost road, searching for whatever proof remains."
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.threats.1.name",
+        "fallback": "Merek Loose-End"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 55.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.threats.2.name",
+        "fallback": "Tovin Ashknife"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 55.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_kill_3_convenient_silence.threats.3.name",
+        "fallback": "Captain Varric Hush"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 75.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchants": {
+            "minecraft:piercing": 2
+          }
+        },
+        "head": "minecraft:iron_helmet"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 360,
+    "items": {
+      "minecraft:emerald": 12,
+      "minecraft:crossbow": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:quick_charge",
+            "level": 2
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 2
+          }
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "false_hero_silenced",
+      "hag_base_false_hero_done"
+    ]
+  }
+}

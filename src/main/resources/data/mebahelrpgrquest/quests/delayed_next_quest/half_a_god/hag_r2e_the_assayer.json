@@ -1,0 +1,105 @@
+{
+  "title": "The Assayer",
+  "summary": "[Reputation: Fallen] You executed a bound man, and word travels. Morrow, an assayer for the Gilded Hand (the merchants who fund the Faithful), wants to hire you. Take his gold (you become Wicked), or cut him down (you climb back to Wavering).",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "judge_morrow",
+      "kill": "minecraft:wandering_trader",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The road ahead just narrowed."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wandering_trader",
+      "name": "Morrow the Assayer",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 60,
+      "talk": [
+        [
+          "What do you want?",
+          "To pay you. Gold, steady. You only have to keep doing what you're good at."
+        ],
+        [
+          "And if I say no?",
+          "Then you're a man who kills prisoners, with no friends. Ashford won't forgive you. We would."
+        ],
+        [
+          "Who do you work for?",
+          "The Gilded Hand. My master Silas buys what others won't sell."
+        ],
+        [
+          "And the beasts I'm hunting?",
+          "Kill them. Please. The Hand wants them dead even more than your Old Mara does."
+        ]
+      ],
+      "spare_handoff": {
+        "item": "minecraft:gold_ingot",
+        "name": "The Hand's Advance",
+        "count": 16
+      }
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Take his gold",
+      "line": "'Welcome to the Hand. Silas will be in touch.'",
+      "traits": [
+        "took_the_gold"
+      ]
+    },
+    "attack": {
+      "label": "Cut him down",
+      "traits": [
+        "morrow_slain"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 300
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc1_waver",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc1_wicked",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_r2e_the_assayer_done"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "title": "The Guardian Eye",
+  "summary": "It has watched warriors drown in the deep. Where: the Elder Guardian of an ocean monument.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "elder_guardian",
+      "kill": "minecraft:elder_guardian",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "the_eye",
+      "collect": "endrem:guardian_eye",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Guardian Eye stares back at you. (It goes back in your pack.)",
+      "name": "Guardian Eye (given back)"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "endrem:guardian_eye": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_e3_the_road_underground",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ea7_the_guardian_eye_done"
+    ]
+  }
+}

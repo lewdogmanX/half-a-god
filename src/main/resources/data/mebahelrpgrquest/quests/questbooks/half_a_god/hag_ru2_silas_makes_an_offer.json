@@ -1,0 +1,99 @@
+{
+  "title": "Silas Makes an Offer",
+  "summary": "Your name frightens people now, and Silas of the Gilded Hand has noticed. He wants to make you a partner. Meet him, hear him out, and take his first job: break a village's iron golem so it learns who protects it now.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "silas",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Silas of the Gilded Hand"
+    },
+    {
+      "id": "golem",
+      "kill": "minecraft:iron_golem",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The village pays Silas the next morning. Silas pays you."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:iron_golem",
+      "name": "Stubborn Golem",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 16,
+      "max_health": 100
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Silas of the Gilded Hand",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You wanted me.",
+          "Everybody wants you. Most of them want you dead. I want you rich."
+        ],
+        [
+          "What's the job?",
+          "A village that won't pay. Their golem is the only reason. Remove the reason."
+        ]
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:emerald_block": 6,
+      "minecraft:gold_block": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ru2_silas_makes_an_offer_done",
+      "hag_silas_partner"
+    ]
+  },
+  "quest_book": {
+    "title": "A Business Proposal",
+    "author": "Silas of the Gilded Hand",
+    "color": "yellow",
+    "pages": [
+      "I've followed your career with interest.\n\nYou and I want the same things. Gold. Fear. Quiet.",
+      "Come and talk. Bring nothing but ambition.\n\n- S."
+    ],
+    "auto_claim_rewards": true
+  }
+}

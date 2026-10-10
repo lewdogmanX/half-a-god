@@ -1,0 +1,45 @@
+{
+  "title": "The Blood Tithe",
+  "summary": "The cleric wants to study the cult's blood so she can cleanse the wells.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_v1_blood_in_the_wells"
+    ]
+  },
+  "dialogue": {
+    "intro": "If I know what it is, I can boil it out.",
+    "reward": "...It's warm. It shouldn't be warm.",
+    "offer": [
+      [
+        "Study it?",
+        "If I know what it is, I can boil it out."
+      ],
+      [
+        "Three bottles.",
+        "Corked. Please."
+      ]
+    ],
+    "return": "The blood?"
+  },
+  "goals": [
+    {
+      "id": "blood",
+      "collect": "sons_of_sins:bottle_of_blood",
+      "amount": 3,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_blood_tithe_done"
+    ]
+  }
+}

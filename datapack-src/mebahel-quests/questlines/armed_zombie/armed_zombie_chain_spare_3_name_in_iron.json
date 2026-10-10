@@ -1,0 +1,69 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_3_name_in_iron.title",
+    "fallback": "A Name in Iron"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_3_name_in_iron.summary",
+    "fallback": "The zombie remembers hiding keepsakes before the portal broke. It asks for iron and a red flower to steady the memory."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:armed_zombie_chain_spare_4_oath_of_ash"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_3_name_in_iron.dialogue.intro",
+      "fallback": "The zombie kneels near the village well and scrapes old rust from its helmet."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_3_name_in_iron.dialogue.offer.0.0",
+          "fallback": "Did you remember your name?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_3_name_in_iron.dialogue.offer.0.1",
+          "fallback": "Not all of it. Maar... Maren... no. But I remember being sworn to guard something, and I remember failing."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_3_name_in_iron.dialogue.offer.1.0",
+          "fallback": "What do you need from me now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_3_name_in_iron.dialogue.offer.1.1",
+          "fallback": "Iron, for the oath-mark. A poppy, for the grave I never had. Bring them and perhaps the rest will open."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_3_name_in_iron.dialogue.return",
+      "fallback": "Iron and red petals. I know this rite. I know the hand that taught it to me."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_3_name_in_iron.dialogue.reward",
+      "fallback": "Take what I no longer need. When the last memory comes, stand back if my eyes change."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_3_name_in_iron.dialogue.done",
+      "fallback": "The name is close now. Too close."
+    }
+  },
+  "goals": [
+    "collect 3 minecraft:iron_ingot",
+    "collect minecraft:poppy"
+  ],
+  "rewards": {
+    "xp": 180,
+    "items": {
+      "minecraft:diamond": 1,
+      "minecraft:golden_apple": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "oath_of_ash"
+    ]
+  }
+}

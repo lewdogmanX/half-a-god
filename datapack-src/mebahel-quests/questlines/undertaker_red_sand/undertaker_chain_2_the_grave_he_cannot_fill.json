@@ -1,0 +1,105 @@
+{
+  "title": "The Grave He Cannot Fill",
+  "summary": "Amar remembers that his body was removed during an old desert plague. Escort him to the ruined portal where the dead were taken and recover the order that condemned him to an unmarked disposal.",
+  "flow": {
+    "next": "mebahelrpgrquest:undertaker_chain_3_where_the_dead_were_sent"
+  },
+  "required_traits": [
+    "amar_heard_out"
+  ],
+  "sequential_objectives": true,
+  "offer_intro_line": "Amar rests both hands on the head of his shovel. For a dead man, he looks unusually reluctant to discuss burial.",
+  "offer_dialogue_steps": [
+    {
+      "choice": "What do you remember?",
+      "line": "A fever. Too many bodies. Too little ground. Then men in cloth masks arguing that the dead were still contagious."
+    },
+    {
+      "choice": "And your body?",
+      "line": "Removed before I could supervise the matter. A professional humiliation."
+    },
+    {
+      "choice": "Where did they take it?",
+      "line": "There was a ruined portal beyond the dunes. The council called it a disposal site. I called it blasphemous bookkeeping."
+    },
+    {
+      "choice": "You want to go back?",
+      "line": "I want the record. Graves are for the dead. Records are for everyone who might otherwise pretend the dead were never there."
+    }
+  ],
+  "objectives": [
+    {
+      "id": "escort_amar_to_the_disposal_site",
+      "type": "escort_entity",
+      "structure": "minecraft:ruined_portal",
+      "search_radius": 7000,
+      "completion_range": 56,
+      "stage": 0,
+      "auto_advance": true,
+      "completion_dialogue_line": "Yes. This is the place. The stone was already broken when I was alive. Bureaucracy, at least, was maintained."
+    },
+    {
+      "id": "read_the_quarantine_order",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:ruined_portal",
+      "search_radius": 7000,
+      "stage": 1,
+      "spawn_in_chest": true,
+      "container": "minecraft:chest",
+      "quest_item_name": "Quarantine Order",
+      "quest_item_tag": "amar_quarantine_order",
+      "quest_book": {
+        "title": "Quarantine Order",
+        "author": "Council of Qasra",
+        "pages": [
+          "By order of the council, fever dead are no longer to be interred within Qasra or its outer cemetery.",
+          "Bodies are to be wrapped, marked where possible, and carried to the western black gate.",
+          "The gate is not to be lit for travel. Disposal crews will pass the dead through and withdraw immediately.",
+          "No family member is permitted to follow.",
+          "Amar ibn Sahl, undertaker. Deceased after third week of service.",
+          "No family present. Guild shovel remained with the body.",
+          "Disposition: western black gate.\nBurial rites: none.",
+          "The council considers this matter closed."
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "speak_to_amar_about_the_order",
+      "type": "return_to_quest_giver",
+      "stage": 2
+    }
+  ],
+  "return_dialogue_line": "They sent me through with my shovel. I had wondered why I woke holding it.",
+  "return_dialogue_steps": [
+    {
+      "choice": "They threw you through the portal.",
+      "line": "They threw everyone through. I am not offended on my own behalf. That would be inefficient."
+    },
+    {
+      "choice": "They denied you burial rites.",
+      "line": "Yes. That part I am willing to take personally."
+    },
+    {
+      "choice": "Do you think something of you is still there?",
+      "line": "A burial token. A wrapping clasp. A name scratched into metal. Something that proves I did not simply vanish between one ledger entry and the next."
+    },
+    {
+      "choice": "And if we find it?",
+      "line": "Then I bury what remains, close my own account, and discover whether death finally notices the error."
+    }
+  ],
+  "reward_dialogue_line": "Keep the order. Institutions become remarkably forgetful once everyone responsible is dead.",
+  "already_completed_line": "The portal still stands. I have decided not to take that personally either.",
+  "rewards": {
+    "xp": 320,
+    "items": {
+      "minecraft:gold_nugget": 12
+    }
+  },
+  "traits_on_complete": [
+    "amar_disposal_record_found"
+  ]
+}

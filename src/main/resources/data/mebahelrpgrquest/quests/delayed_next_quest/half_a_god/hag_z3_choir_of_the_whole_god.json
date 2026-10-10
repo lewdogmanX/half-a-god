@@ -1,0 +1,153 @@
+{
+  "title": "The Choir of the Whole God",
+  "summary": "Everything the cult has left comes to the altar, to stop the reunion or to watch it. Kill them all.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "vindicators",
+      "kill": "minecraft:vindicator",
+      "amount": 6,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "evokers",
+      "kill": "minecraft:evoker",
+      "amount": 3,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "ravager",
+      "kill": "minecraft:ravager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "choirmaster",
+      "kill": "minecraft:evoker",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Silence. Then the altar begins to breathe. Join head to body, and he will speak."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Choir of the Whole God",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "count": 6,
+      "structure": "netherman:head_altar",
+      "search_radius": 30000,
+      "max_health": 60,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:diamond_axe",
+          "enchants": {
+            "minecraft:sharpness": 3
+          }
+        },
+        "chest": "minecraft:golden_chestplate"
+      },
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    },
+    {
+      "entity": "minecraft:evoker",
+      "name": "Choir Cantor",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "count": 3,
+      "structure": "netherman:head_altar",
+      "search_radius": 30000,
+      "max_health": 70
+    },
+    {
+      "entity": "minecraft:ravager",
+      "name": "The Altar Beast",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "structure": "netherman:head_altar",
+      "search_radius": 30000,
+      "max_health": 220,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    },
+    {
+      "entity": "minecraft:evoker",
+      "name": "The Choirmaster",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "structure": "netherman:head_altar",
+      "search_radius": 30000,
+      "max_health": 250,
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 5000,
+    "items": {
+      "minecraft:totem_of_undying": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_b1_bow_at_my_feet",
+      "delay_ticks": 40,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_z3_choir_of_the_whole_god_done"
+    ]
+  }
+}

@@ -1,0 +1,41 @@
+{
+  "title": "Soul Steel",
+  "summary": "Dip iron ingots into blood, or smelt Iron and Ether, to make Soul Steel. Craft a Soul Steel block and place it. Then craft the Remnant (Sinbuster) armour: the next chapter begins the first time its chestplate catches a heavy blow while you carry an Urn of ether ashes.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "soul_steel_block",
+      "place": "sons_of_sins:soul_steel_block",
+      "amount": 1,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Remarkable resistance. You will need it."
+    }
+  ],
+  "rewards": {
+    "xp": 1600,
+    "items": {
+      "minecraft:diamond": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_v8_sinbuster",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 400,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v7_soul_steel_done"
+    ]
+  }
+}

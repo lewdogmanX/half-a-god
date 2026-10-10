@@ -1,0 +1,119 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.title",
+    "fallback": "A Cure for the Common Death"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.summary",
+    "fallback": "Doctor Edrin Vale claims he is close to a cheaper cure for zombification. Bring him the first ingredients for his restorative."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:mad_scientist_chain_2_the_control_group"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.intro",
+      "fallback": "You're the one they told me about, yes? Good. Come closer. I need someone with a strong stomach and a flexible definition of medicine."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.offer.0.0",
+          "fallback": "You are a physician?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.offer.0.1",
+          "fallback": "Physician, natural philosopher, and increasingly unwilling customer of clerics. Zombification should not require a golden apple and a small miracle every time."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.offer.1.0",
+          "fallback": "You think you can cure it another way?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.offer.1.1",
+          "fallback": "I think dead flesh is not dead so much as badly instructed. Give it the correct instructions and it may remember what shape it used to be."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.offer.2.0",
+          "fallback": "What do you need?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.offer.2.1",
+          "fallback": "Rotten flesh for comparison, honey to slow decay, and redstone to keep the reaction awake. Nothing dangerous. If it explodes, it will be a very small explosion."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.return",
+      "fallback": "Excellent. The tissue is reacting already. Do not be alarmed by the twitching. Twitching is considerably closer to life than not twitching."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.return_steps.0.0",
+          "fallback": "Did it just move?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.return_steps.0.1",
+          "fallback": "Only locally. A hand remembering that it once belonged to an arm is not the same thing as a resurrection."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.return_steps.1.0",
+          "fallback": "That distinction does not comfort me."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.return_steps.1.1",
+          "fallback": "Comfort has delayed more discoveries than ignorance ever did."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.reward",
+      "fallback": "You supplied the first proper trial. Take this, and come back when I have something alive enough to disappoint me."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_1_a_cure_for_the_common_death.dialogue.done",
+      "fallback": "The first batch is stable. Stable is a generous word, but it is the word I am using."
+    }
+  },
+  "goals": [
+    {
+      "id": "collect_decay_sample",
+      "collect": "minecraft:rotten_flesh",
+      "amount": 12
+    },
+    {
+      "id": "collect_honey",
+      "collect": "minecraft:honey_bottle",
+      "amount": 2
+    },
+    {
+      "id": "collect_redstone",
+      "collect": "minecraft:redstone",
+      "amount": 6
+    }
+  ],
+  "rewards": {
+    "xp": 180,
+    "items": {
+      "minecraft:emerald": 6,
+      "minecraft:golden_carrot": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "vale_research_started"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_v1_blood_in_the_wells"
+    ]
+  }
+}

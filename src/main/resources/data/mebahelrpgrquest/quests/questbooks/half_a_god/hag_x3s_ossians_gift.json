@@ -1,0 +1,39 @@
+{
+  "title": "Ossian's Gift",
+  "summary": "Ossian writes (badly, in gold ink) that he found his quiet place: a bastion the piglins abandoned. He left something there for the only fair customer he ever had.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_bastion",
+      "reach": "minecraft:bastion_remnant",
+      "radius": 12000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "A pile of gold with a note: 'For the fair one.'"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:netherite_scrap": 2,
+      "minecraft:gold_block": 3
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x3s_ossians_gift_done",
+      "hag_payoff_ossians_gift"
+    ]
+  },
+  "quest_book": {
+    "title": "For the Fair One",
+    "author": "Ossian",
+    "color": "yellow",
+    "pages": [
+      "You paid me!\n\nNobody pays Ossian. They threaten Ossian.",
+      "I found a quiet place. Old bastion. I left you something on the top floor. Gold for gold.\n\n- O."
+    ],
+    "auto_claim_rewards": true
+  }
+}

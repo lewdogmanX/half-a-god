@@ -1,0 +1,372 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.title",
+    "fallback": "The Captain's Share"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.summary",
+    "fallback": "Follow the articles of the lost Saint Marrow, settle the crew's dead accounts, and decide who is entitled to the captain's final share."
+  },
+  "sequential_objectives": true,
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:captains_share_return_the_shares",
+        "delay_ticks": 160,
+        "conditions": {
+          "dimensions": [
+            "minecraft:overworld"
+          ],
+          "player_not_in_combat": true
+        },
+        "retry_delay_ticks": 200
+      }
+    }
+  },
+  "goals": [
+    {
+      "id": "find_the_saint_marrow",
+      "reach": "minecraft:shipwreck",
+      "radius": 5200,
+      "range": 18,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "read_the_ship_articles",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:shipwreck",
+      "radius": 5200,
+      "stage": 1,
+      "in_chest": true,
+      "allow_water_placement": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.goals.1.name",
+        "fallback": "Saint Marrow's Articles"
+      },
+      "tag": "saint_marrow_articles",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.goals.1.quest_book.title",
+          "fallback": "Saint Marrow's Articles"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.goals.1.quest_book.author",
+          "fallback": "First Mate Orren"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.goals.1.quest_book.pages.0",
+            "fallback": "SHIP'S ARTICLES\n\nSaint Marrow. Seven crew. Five passengers. Twelve shares of salvage. One additional captain's share after all other shares are paid."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.goals.1.quest_book.pages.1",
+            "fallback": "No share passes to another sailor by death. A dead man's portion remains his until landfall, where it is delivered to his family or buried with his name."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.goals.1.quest_book.pages.2",
+            "fallback": "First Mate Orren. Mara Fen. Hobb Tanner. Lysa Pell. Corven Dey. Neral Pike. Captain Vale.\n\nFive passengers entered separately in the manifest."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.goals.1.quest_book.pages.3",
+            "fallback": "ADDENDUM, hand of Captain Vale:\n\nOrren drowned first. His share remained aboard. Mara followed two nights later. I moved both portions to the captain's chest for safekeeping."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.goals.1.quest_book.pages.4",
+            "fallback": "SECOND ADDENDUM:\n\nHobb is dead. The others refuse to touch the chest. They say the articles were not a suggestion. Superstition is becoming expensive."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.goals.1.quest_book.pages.5",
+            "fallback": "FINAL ENTRY:\n\nThere are more shares in my chest than living names on my deck. The arithmetic is excellent. Everything else is not."
+          }
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "put_the_crew_to_rest",
+      "kill": "minecraft:drowned",
+      "amount": 3,
+      "stage": 2,
+      "from_threats": true,
+      "auto_advance": true
+    },
+    {
+      "id": "hear_captain_vale",
+      "talk": "minecraft:drowned",
+      "amount": 1,
+      "stage": 3,
+      "quest_item_name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.goals.3.quest_item_name",
+        "fallback": "Captain Vale"
+      }
+    },
+    {
+      "id": "take_the_final_share",
+      "kill": "minecraft:drowned",
+      "amount": 1,
+      "stage": 3,
+      "attack_only": true,
+      "from_threats": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:drowned",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threats.0.name",
+        "fallback": "First Mate Orren"
+      },
+      "stage": 2,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 9,
+      "spawn_on_accept": true,
+      "allow_water_spawn": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword"
+      }
+    },
+    {
+      "entity": "minecraft:drowned",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threats.1.name",
+        "fallback": "Mara Fen"
+      },
+      "stage": 2,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "allow_water_spawn": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 55,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword"
+      }
+    },
+    {
+      "entity": "minecraft:drowned",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threats.2.name",
+        "fallback": "Old Hobb"
+      },
+      "stage": 2,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 11,
+      "spawn_on_accept": true,
+      "allow_water_spawn": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 70,
+      "equipment": {
+        "mainhand": "minecraft:iron_shovel"
+      }
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:drowned",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.name",
+      "fallback": "Captain Vale"
+    },
+    "structure": "minecraft:shipwreck",
+    "search_radius": 5200,
+    "stage": 3,
+    "spawn_origin": "quest_target",
+    "spawn_min_radius": 3,
+    "spawn_max_radius": 7,
+    "spawn_on_accept": true,
+    "allow_water_spawn": true,
+    "spare": true,
+    "glow": false,
+    "max_health": 180,
+    "equipment": {
+      "mainhand": "minecraft:golden_sword",
+      "head": "minecraft:golden_helmet"
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.target_line",
+      "fallback": "Don't touch the chest. If you've read the articles, you know what happens when the shares are wrong."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.talk.0.0",
+          "fallback": "Your crew died over gold."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.talk.0.1",
+          "fallback": "They died before I understood the rule. I only made myself rich afterward. That distinction is not the defense I once thought it was."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.talk.1.0",
+          "fallback": "You took their shares."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.talk.1.1",
+          "fallback": "Yes. Orren's first. Then Mara's. Then Hobb's. Each time I moved a dead man's share, another name disappeared from the manifest by morning."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.talk.2.0",
+          "fallback": "Then the gold is cursed."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.talk.2.1",
+          "fallback": "Gold is gold. Promises are the dangerous part."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.talk.3.0",
+          "fallback": "How do I end it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.talk.3.1",
+          "fallback": "Twelve ingots. One for every share I stole from the dead. Give them to Orren. He still counts."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.talk.4.0",
+          "fallback": "Orren is dead."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.talk.4.1",
+          "fallback": "So am I. That has not stopped either of us from keeping accounts."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.attack_choice_label",
+      "fallback": "Then I will take the final share."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.spare_choice_label",
+      "fallback": "The dead get their shares back."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.spared_line",
+      "fallback": "Better than I deserve."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.post_spare_line",
+      "fallback": "Orren will be waiting. He always was the better bookkeeper."
+    },
+    "spare_handoff": {
+      "item": "minecraft:written_book",
+      "count": 1,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.spare_handoff.name",
+        "fallback": "Captain's Division"
+      },
+      "depart_after_spare": true,
+      "consume_on_claim": false,
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.spare_handoff.quest_book.title",
+          "fallback": "Captain's Division"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.spare_handoff.quest_book.author",
+          "fallback": "Captain Vale"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.spare_handoff.quest_book.pages.0",
+            "fallback": "Twelve shares were stolen from the dead. Twelve are owed. No interest. The dead have always been more reasonable than merchants."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.spare_handoff.quest_book.pages.1",
+            "fallback": "Orren kept the original count. If he asks for twelve, give him twelve. If he asks for thirteen, run."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.threat.spare_handoff.quest_book.pages.2",
+            "fallback": "Do not return a captain's share. I have had enough of those."
+          }
+        ]
+      }
+    },
+    "drop_on_death": [
+      {
+        "type": "item",
+        "item": "minecraft:gold_ingot",
+        "count": 24
+      }
+    ]
+  },
+  "rewards": {
+    "xp": 420,
+    "items": {
+      "minecraft:emerald": 4
+    }
+  },
+  "traits": {
+    "attack": [
+      "captains_final_share_taken"
+    ],
+    "spare": [
+      "captain_vale_spared"
+    ],
+    "complete": [
+      "saint_marrow_accounts_opened",
+      "hag_base_captains_share_done"
+    ]
+  },
+  "quest_book": {
+    "title": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.quest_book.title",
+      "fallback": "The Captain's Share"
+    },
+    "author": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.quest_book.author",
+      "fallback": "Harbor Clerk Edden"
+    },
+    "color": "blue",
+    "pages": [
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.quest_book.pages.0",
+        "fallback": "SALVAGE NOTICE\n\nThe Saint Marrow failed to arrive with twelve registered shares of cargo and one captain's share."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.quest_book.pages.1",
+        "fallback": "Wreckage has been reported along the coast. Any licensed or unlicensed finder may inspect the vessel provided the ship's articles are preserved."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.quest_book.pages.2",
+        "fallback": "The crew were known to be unusually strict about division of salvage. First Mate Orren once delayed unloading for six hours over a missing copper coin."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.quest_book.pages.3",
+        "fallback": "If the captain's chest is found sealed, do not assume the contents belong to the captain. Read the articles first."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_captains_share.quest_book.pages.4",
+        "fallback": "Last known master: Captain Vale. Last known first mate: Orren. No survivors have reported to port."
+      }
+    ],
+    "loot": [
+      {
+        "table": "minecraft:chests/village/village_cartographer",
+        "chance": 0.06
+      },
+      {
+        "table": "minecraft:chests/shipwreck_map",
+        "chance": 0.045
+      }
+    ],
+    "auto_claim_rewards": true
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.title",
+    "fallback": "Ashes at the Frame"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.summary",
+    "fallback": "Breaking the portal stone stirred the things bound to it. The village asks you to clear the last dead drawn to the frame."
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.dialogue.intro",
+      "fallback": "The stone screamed last night. No one slept."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.dialogue.offer.0.0",
+          "fallback": "What came through?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.dialogue.offer.0.1",
+          "fallback": "Not through. Around. Dead things in old scraps of gold, circling the frame like they were waiting for orders."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.dialogue.offer.1.0",
+          "fallback": "You want them destroyed?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.dialogue.offer.1.1",
+          "fallback": "Yes. And if any wore the same mark as the armed corpse, bring that mark back buried in ash."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.dialogue.return",
+      "fallback": "The frame is quiet. Maybe killing the guard was mercy after all. Maybe it only made us inherit his watch."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.dialogue.reward",
+      "fallback": "This is village coin, and a charm from the old stores. Keep both. You earned them."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.dialogue.done",
+      "fallback": "The portal is quiet now. I hope quiet is enough."
+    }
+  },
+  "goals": [
+    "kill 3 minecraft:zombified_piglin"
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombified_piglin",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.threats.0.name",
+        "fallback": "Gilded Ashguard"
+      },
+      "structure": "minecraft:ruined_portal",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 70,
+      "equipment": {
+        "mainhand": "minecraft:golden_sword",
+        "head": "minecraft:golden_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:zombified_piglin",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.threats.1.name",
+        "fallback": "Emberbound Watcher"
+      },
+      "structure": "minecraft:ruined_portal",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 70,
+      "equipment": {
+        "mainhand": "minecraft:golden_sword"
+      }
+    },
+    {
+      "entity": "minecraft:zombified_piglin",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_3_ashes_at_the_frame.threats.2.name",
+        "fallback": "Gate-Cinder Thrall"
+      },
+      "structure": "minecraft:ruined_portal",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 70,
+      "equipment": {
+        "mainhand": "minecraft:golden_sword"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 360,
+    "items": {
+      "minecraft:emerald": 14,
+      "minecraft:golden_apple": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_base_armed_zombie_done"
+    ]
+  }
+}

@@ -1,0 +1,54 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.blaze_mineshaft_threat.title",
+    "fallback": "Flame in the Mineshaft"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.blaze_mineshaft_threat.summary",
+    "fallback": "A villager reports a blaze burning through an abandoned mineshaft."
+  },
+  "goals": [
+    {
+      "kill": "minecraft:blaze",
+      "amount": 1
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:blaze",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.blaze_mineshaft_threat.threat.name",
+      "fallback": "Ignivar the Mineflame"
+    },
+    "structure": "minecraft:mineshaft",
+    "search_radius": 4000,
+    "spawn_on_accept": true,
+    "spare": false,
+    "max_health": 150.0,
+    "offer_line": {
+      "translate": "quest.mebahelrpgrquest.blaze_mineshaft_threat.threat.offer_line",
+      "fallback": "Something from the Nether is burning through an old mineshaft. If it spreads, the whole area could go up in flames."
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.blaze_mineshaft_threat.threat.target_line",
+      "fallback": "The blaze crackles with hostile heat. There is no sign it understands mercy."
+    }
+  },
+  "rewards": {
+    "xp": 260,
+    "items": {
+      "minecraft:emerald": 12,
+      "minecraft:blaze_rod": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "mine_fire_quencher",
+      "hag_base_blaze_mineshaft_done"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w1_the_skull_market"
+    ]
+  }
+}

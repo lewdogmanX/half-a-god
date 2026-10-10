@@ -1,0 +1,40 @@
+{
+  "title": "Clogged Channels",
+  "summary": "Slimes have got into the honey channels and the bees can't get through them. Clear them out (slimes only: leave the bees and honey slimes alone).",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "slimes",
+      "kill": "minecraft:slime",
+      "amount": 12,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The channels run gold again. A swarm flies past, humming."
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "the_bumblezone:bee_bread": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_bz5_the_cell_maze",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "the_bumblezone:the_bumblezone"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_bz4_clogged_channels_done"
+    ]
+  }
+}

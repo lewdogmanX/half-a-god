@@ -1,0 +1,86 @@
+{
+ "names": [
+  "Dunn the Deserter",
+  "Corwin the Refugee",
+  "Ansel the Blood-Drinker"
+ ],
+ "profiles": {
+  "Dunn the Deserter": "dunn",
+  "Corwin the Refugee": "corwin",
+  "Ansel the Blood-Drinker": "ansel"
+ },
+ "reactions": [
+  {
+   "trait": "hag_w6_the_withered_crown_done",
+   "lines": {
+    "Dunn the Deserter": "The Wither. The actual Wither. The camps used to scare recruits with stories of it.",
+    "Corwin the Refugee": "My children won't believe this. I barely do.",
+    "Ansel the Blood-Drinker": "Its blood was black. I'm glad I didn't want it."
+   }
+  },
+  {
+   "trait": "hag_e5_free_the_end_done",
+   "lines": {
+    "Dunn the Deserter": "A dragon. If my old captain could see me now.",
+    "Corwin the Refugee": "I farmed turnips a year ago.",
+    "Ansel the Blood-Drinker": "Everyone's dreaming of a headless king. Me too."
+   }
+  },
+  {
+   "trait": "hag_f3_unbound_done",
+   "lines": {
+    "Dunn the Deserter": "Seven. Something's wrong. It's too quiet.",
+    "Corwin the Refugee": "Why don't I feel safer?",
+    "Ansel the Blood-Drinker": "I can feel something waking up. Like hunger."
+   }
+  },
+  {
+   "trait": "hag_v10_maraal_done",
+   "lines": {
+    "Dunn the Deserter": "The old woman lied to you for years. I know what that's like, from the other side.",
+    "Corwin the Refugee": "She sent you letters every week. Liars don't usually bother.",
+    "Ansel the Blood-Drinker": "She's older than she looks. A lot older."
+   }
+  },
+  {
+   "trait": "hag_m7_hand_over_your_weapon_done",
+   "lines": {
+    "Dunn the Deserter": "Whatever you decide in there, I'm still behind you.",
+    "Corwin the Refugee": "Come back. That's all. Just come back.",
+    "Ansel the Blood-Drinker": "He offered you something, didn't he? I know that look."
+   }
+  },
+  {
+   "trait": "hag_good_ending",
+   "lines": {
+    "Dunn the Deserter": "It's over. I don't know what to do with my hands.",
+    "Corwin the Refugee": "I'm going to plant something. Anything. Just to watch it grow.",
+    "Ansel the Blood-Drinker": "Thank you. For all of it. For sitting with me."
+   }
+  },
+  {
+   "trait": "hag_sworn",
+   "lines": {
+    "Dunn the Deserter": "You knelt. I ran from men like you once. I'm too tired to run again.",
+    "Corwin the Refugee": "...I'll stay. Someone has to remember who you were.",
+    "Ansel the Blood-Drinker": "Now you're the one with the hunger."
+   }
+  },
+  {
+   "trait": "gt_silenced_the_witness",
+   "lines": {
+    "Dunn the Deserter": "He was just a boy with a sick friend.",
+    "Corwin the Refugee": "I stole grain to feed my children. What was that for?",
+    "Ansel the Blood-Drinker": "I know that look. I wore it for two years."
+   }
+  },
+  {
+   "trait": "gt_got_out",
+   "lines": {
+    "Dunn the Deserter": "You walked away from the camp too. Welcome to the club.",
+    "Corwin the Refugee": "Good. Good.",
+    "Ansel the Blood-Drinker": "Getting clean is the hardest thing. You did it."
+   }
+  }
+ ]
+}

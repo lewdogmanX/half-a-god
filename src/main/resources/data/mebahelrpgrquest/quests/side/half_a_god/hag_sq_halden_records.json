@@ -1,0 +1,53 @@
+{
+  "title": "Halden's Records",
+  "summary": "Halden wants the outpost that bought Ashford's men burned to the ground.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_a3_roof_and_hearth"
+    ]
+  },
+  "dialogue": {
+    "intro": "The one with gold under its banner. Nearest one, I'd wager.",
+    "reward": "Then Ashford's debt is paid in their coin.",
+    "offer": [
+      [
+        "Which outpost?",
+        "The one with gold under its banner. Nearest one, I'd wager."
+      ],
+      [
+        "Burned?",
+        "Emptied, then. I'm not a cruel man."
+      ]
+    ],
+    "return": "Is it done?"
+  },
+  "goals": [
+    {
+      "id": "find_outpost",
+      "reach": "minecraft:pillager_outpost",
+      "radius": 8000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "outpost_pillagers",
+      "kill": "minecraft:pillager",
+      "amount": 8,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 450,
+    "items": {
+      "minecraft:diamond": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_halden_records_done"
+    ]
+  }
+}

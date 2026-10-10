@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:letter_go_to_the_end",
+  "trigger": {
+    "type": "quest_success",
+    "quest": "mebahelrpgrquest:hag_e0_the_road_to_the_end"
+  },
+  "delay": {
+    "min_ticks": 400,
+    "max_ticks": 800
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "Old Mara",
+    "quest_book": "mebahelrpgrquest:hag_e1_the_librarians_request"
+  }
+}

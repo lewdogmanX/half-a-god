@@ -1,0 +1,61 @@
+{
+  "title": "The Dead King",
+  "summary": "With the Wither dead, the dead are restless, and the priest has traced it to the Catacombs. Something is waking under them. Find the Catacombs and kill the Dead King when he rises from his throne.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_catacombs",
+      "reach": "irons_spellbooks:catacombs",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "the_dead_king",
+      "kill": "irons_spellbooks:dead_king",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "On his crown, in the Old Tongue: 'Champion of M. Second of seven. Failed.' You are not the first she sent."
+    }
+  ],
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "minecraft:diamond": 4,
+      "irons_spellbooks:arcane_essence": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_i6_the_mountain_tower",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_i5_the_dead_king_done"
+    ]
+  },
+  "quest_book": {
+    "title": "The Dead Are Restless",
+    "author": "The Priest",
+    "color": "purple",
+    "pages": [
+      "The Wither's death rang through every grave. In the Catacombs, a king sat up.",
+      "He was a hero once, they say. Someone sent him to kill a god. Go and ask him how that went."
+    ],
+    "auto_claim_rewards": true
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w6_the_withered_crown"
+    ]
+  }
+}

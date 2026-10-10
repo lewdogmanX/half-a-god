@@ -1,0 +1,229 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.title",
+    "fallback": "The Bone Anchor"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.summary",
+    "fallback": "Destroy the skeleton spawner that has been packed with Nether ash before it draws stronger dead through."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:ash_court_chain_3_a_skull_for_proof"
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.intro",
+      "fallback": "The bones you brought back were full of ash, and the pattern is too clean to be natural. Someone has turned an old spawner into an anchor."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.offer.0.0",
+          "fallback": "An anchor for what?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.offer.0.1",
+          "fallback": "For attention. For passage. For revenge, perhaps. A thing in the Nether can reach farther when the dead here answer it."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.offer.1.0",
+          "fallback": "Can the spawner be saved?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.offer.1.1",
+          "fallback": "No. Break it. If the ash has reached the cage, every skeleton it spits out becomes another thread tied to the other side."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.offer.2.0",
+          "fallback": "What should I watch for?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.offer.2.1",
+          "fallback": "Soul sand where stone should be, a heatless red glow, and skeletons that stand guard instead of wandering."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.return",
+      "fallback": "When the anchor broke, the ash should have scattered. Instead it burned inward. Something on the other side pulled it home."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.return_steps.0.0",
+          "fallback": "That sounds deliberate."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.return_steps.0.1",
+          "fallback": "It was. The anchor was only a finger through the wall. Break the finger and the hand remembers who hurt it."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.return_steps.1.0",
+          "fallback": "How do we prove who is behind it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.return_steps.1.1",
+          "fallback": "A Wither skull. Not as a trophy. As proof that the source is Nether-born and organized enough to send captains."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.reward",
+      "fallback": "You broke the anchor, but this is no village cleanup anymore. If we take proof from a Wither captain, the Nether will know we answered."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.dialogue.done",
+      "fallback": "The anchor is gone. The mark it made is not."
+    }
+  },
+  "goals": [
+    {
+      "id": "break_skeleton_spawner",
+      "break": "minecraft:spawner",
+      "required_mob": "minecraft:skeleton",
+      "structure": "minecraft:mineshaft",
+      "radius": 2200,
+      "range": 96,
+      "force_place_block": true,
+      "spawn_equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchantments": [
+            {
+              "id": "minecraft:fire_aspect",
+              "level": 2
+            }
+          ]
+        }
+      },
+      "block_patch": {
+        "radius": 6,
+        "replace_solid_only": true,
+        "palette": [
+          {
+            "block": "minecraft:netherrack",
+            "weight": 10
+          },
+          {
+            "block": "minecraft:nether_gold_ore",
+            "weight": 2
+          },
+          {
+            "block": "minecraft:nether_quartz_ore",
+            "weight": 2
+          }
+        ]
+      },
+      "auto_advance": true,
+      "amount": 1
+    },
+    {
+      "id": "kill_anchor_guards",
+      "kill": "minecraft:skeleton",
+      "amount": 3
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.threats.0.name",
+        "fallback": "Anchor Guard Vel"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 2200,
+      "stage": 1,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 3,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 85.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:fire_aspect": 2
+          }
+        },
+        "head": "minecraft:golden_helmet"
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.threats.0.offer_line",
+        "fallback": "Ash-bound skeletons guard the anchor beneath the hills. They are not lost dead; they are sentries."
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.threats.1.name",
+        "fallback": "Anchor Guard Sarn"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 2200,
+      "stage": 1,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 3,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 85.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:fire_aspect": 2
+          }
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_2_the_bone_anchor.threats.2.name",
+        "fallback": "Anchor Guard Maul"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 2200,
+      "stage": 1,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 3,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 90.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:fire_aspect": 2
+          }
+        },
+        "head": "minecraft:chainmail_helmet",
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 260,
+    "items": {
+      "minecraft:emerald": 12
+    }
+  },
+  "traits": {
+    "complete": [
+      "bone_anchor_broken"
+    ]
+  }
+}

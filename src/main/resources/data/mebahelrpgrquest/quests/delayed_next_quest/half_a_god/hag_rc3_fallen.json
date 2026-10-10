@@ -1,0 +1,157 @@
+{
+  "title": "Fall from Grace",
+  "summary": "[Reputation: Fallen] The burned farmer's barn went too. Skyroot from the Aether won't catch fire. Bring him thirty-two logs. Then the old cleric asks to see you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "skyroot",
+      "collect": "aether:skyroot_log",
+      "amount": 32,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "give_to_the_farmer",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "name": "The Farmer"
+    },
+    {
+      "id": "judge_3",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Sister Ysolde was the village cleric before this one. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Sister Ysolde",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 30,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "A cult painter.",
+          "And you're a killer. We could stand here calling each other names."
+        ],
+        [
+          "Or?",
+          "Or you could decide what kind of person you are today."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "The Farmer",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "Skyroot, for the barn.",
+          "...That's more than I asked for. Huh."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Forgive her",
+      "line": "'Then I'll spend whatever I have left making it right.'",
+      "traits": [
+        "hag_mercy_3"
+      ]
+    },
+    "attack": {
+      "label": "Punish her",
+      "traits": [
+        "hag_cruelty_3"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1000,
+    "items": {
+      "minecraft:diamond": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc3_fallen_done",
+      "hag_route_seg3",
+      "hag_ch3_fallen"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_h2_hostile_paradise"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc4_waver",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc4_wicked",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  }
+}

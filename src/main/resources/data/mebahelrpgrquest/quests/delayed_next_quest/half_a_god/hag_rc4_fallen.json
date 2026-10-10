@@ -1,0 +1,173 @@
+{
+  "title": "Old Debts",
+  "summary": "[Reputation: Fallen] Everyone you've wronged has a family. One of them has stopped hiring killers and come himself, with everyone he could pay. Survive. Then a cult scholar surrenders to you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "kinsmen",
+      "kill": "minecraft:vindicator",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "the_avenger",
+      "kill": "minecraft:evoker",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Dying, he says: 'I hope it was worth it.' You aren't sure it was."
+    },
+    {
+      "id": "judge_4",
+      "kill": "minecraft:evoker",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Brother Hale stole the librarian's copy of the journal, then surrendered. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Avenger",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 22,
+      "count": 4,
+      "max_health": 56,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:evoker",
+      "name": "Aldo the Avenger",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 20,
+      "max_health": 90,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    },
+    {
+      "entity": "minecraft:evoker",
+      "name": "Brother Hale",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 60,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "Give me one reason.",
+          "The Old Tongue. You'll hear it at the end. You won't understand it without me."
+        ],
+        [
+          "And if I don't care?",
+          "Then you'll kneel without knowing what you're kneeling to."
+        ]
+      ],
+      "spare_handoff": {
+        "item": "minecraft:written_book",
+        "name": "Hale's Primer",
+        "count": 1,
+        "quest_book": {
+          "title": "Hale's Primer",
+          "author": "Brother Hale",
+          "pages": [
+            "The Old Tongue has no word for 'god'. The nearest is 'the one who is whole'.",
+            "So when they pray for him to be whole again, they are praying for a god.\n\nDo not let them."
+          ]
+        }
+      }
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Let him teach you",
+      "line": "Hale hands you a primer of the Old Tongue. 'Read it before the end. You'll need to understand what he says.'",
+      "traits": [
+        "hag_mercy_4"
+      ]
+    },
+    "attack": {
+      "label": "End him",
+      "traits": [
+        "hag_cruelty_4"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1400,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc4_fallen_done",
+      "hag_route_seg4",
+      "hag_ch4_fallen"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_e4_the_warden_journal"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc5_waver",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc5_wicked",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  }
+}

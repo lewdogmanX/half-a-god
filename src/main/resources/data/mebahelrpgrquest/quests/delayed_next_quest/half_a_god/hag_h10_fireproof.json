@@ -1,0 +1,96 @@
+{
+  "title": "Fireproof",
+  "summary": "You came back with a name you can't stop thinking about: Maraal. Tell someone what you saw up there.",
+  "sequential_objectives": true,
+  "requires": {
+    "advancements": [
+      "aether:gold_dungeon"
+    ],
+    "traits": [
+      "hag_route_seg3",
+      "hag_base_blackthorn_done",
+      "hag_base_sculk_done",
+      "hag_base_treasure_map_done"
+    ],
+    "quests": [
+      "mebahelrpgrquest:hag_bz10_the_honey_crown"
+    ]
+  },
+  "goals": [
+    {
+      "id": "tell_a_villager",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "A courier is already waiting. The handwriting on the letter is shakier than usual.",
+      "name": "Village Elder"
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:experience_bottle": 10
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_e0_the_road_to_the_end",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 400,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_h10_fireproof_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "A courier is already waiting. The handwriting on the letter is shakier than usual.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "I've been to the sky.",
+          "The sky? You're joking. ...You're not joking."
+        ],
+        [
+          "There was a name. Maraal.",
+          "Like Mara? Old Mara? ...A courier came for you while you were gone."
+        ]
+      ]
+    }
+  ]
+}

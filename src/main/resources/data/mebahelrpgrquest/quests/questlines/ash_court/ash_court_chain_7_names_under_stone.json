@@ -1,0 +1,546 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.title",
+    "fallback": "Names Under Stone"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.summary",
+    "fallback": "Descend into an ancient city, recover the founders' ledger, and survive the Ash Court's attempt to erase its last witness."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:ash_court_chain_8_the_last_debt"
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:ash_court_chain_6_the_court_answers"
+    ],
+    "traits": [
+      "ash_court_answered"
+    ]
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.intro",
+      "fallback": "The resonator cracked when the Court's second wave died. Inside the fracture is the same route carved into the black-glass waystone you recovered from the bastion. One end lies beneath the village bell. The other lies below an ancient city."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.offer.0.0",
+          "fallback": "What is the black-glass stone?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.offer.0.1",
+          "fallback": "A waystone. The Court's collectors used it to open a short passage between the village road and the Nether. The founders hid it in a bastion when they stopped paying."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.offer.1.0",
+          "fallback": "Then what did we defeat at the bell?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.offer.1.1",
+          "fallback": "Collectors and soldiers sent through that passage. We broke the route at the bell, but we still do not know what the founders promised them—or what happened to the people they collected."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.offer.2.0",
+          "fallback": "Why would the records be in an ancient city?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.offer.2.1",
+          "fallback": "The first bell-keeper buried them where thieves would fear to search and where the Wardens would kill anyone sent to recover them. The resonator is following the waystone's old route to that archive."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.offer.3.0",
+          "fallback": "What happens when I take it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.offer.3.1",
+          "fallback": "The waystone has already contaminated the archive. Look for netherrack and blackstone cutting through the deepslate. When you open the ledger, the surviving collectors will know."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.return",
+      "fallback": "The bell attacks were not random. The Court came to reopen a collection route our founders used for twelve winters."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.return_steps.0.0",
+          "fallback": "What exactly is written in it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.return_steps.0.1",
+          "fallback": "A winter plague killed thirty-one villagers. Avar Khel supplied medicine, undead sentries, and a ward around the bell."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.return_steps.1.0",
+          "fallback": "What did the village pay?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.return_steps.1.1",
+          "fallback": "One living prisoner every winter. It began with a murderer and a captured raider. By the ninth payment, the council was abducting travelers whose only crime was having nobody nearby to defend them."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.return_steps.2.0",
+          "fallback": "And the black-glass waystone?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.return_steps.2.1",
+          "fallback": "It opened the collection passage when the bell rang at midnight. The founders paid piglins to hide it after they stopped the deliveries."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.return_steps.3.0",
+          "fallback": "What did killing the envoys accomplish?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.return_steps.3.1",
+          "fallback": "It closed the collection passage and proved the Court could bleed. The ledger tells us where the agreement is kept and that some of the prisoners may still be held there."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.reward",
+      "fallback": "Give me the founders' ledger and Orr Veyl's iron record. Both will be sealed beneath the bell until we confront Avar Khel. Take this compass; it was found beside Selka's wooden horse in the archive."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.dialogue.done",
+      "fallback": "The ledger remains open on the ninth payment. Nobody in the village has yet volunteered to read Selka's entry aloud."
+    }
+  },
+  "goals": [
+    {
+      "id": "reach_buried_archive",
+      "reach": "minecraft:ancient_city",
+      "radius": 15000,
+      "range": 96,
+      "auto_advance": true,
+      "stage": 0,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.0.say",
+        "fallback": "The resonator pulls toward a patch of deepslate split by netherrack and blackstone. The old collection route ends here."
+      }
+    },
+    {
+      "id": "recover_founders_ledger",
+      "collect": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:ancient_city",
+      "radius": 15000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.1.name",
+        "fallback": "Ledger of the First Bell"
+      },
+      "tag": "ash_court_founders_ledger",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.1.quest_book.title",
+          "fallback": "Ledger of the First Bell"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.1.quest_book.author",
+          "fallback": "Edran Vale, First Bell-Keeper"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.1.quest_book.pages.0",
+            "fallback": "Winter, Year 0\n\nThe red fever has taken thirty-one villagers. Avar Khel offers medicine, armed sentries, and a ward against undead in return for one living prisoner each winter."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.1.quest_book.pages.1",
+            "fallback": "The prisoner must be delivered alive to the black-glass waystone beyond the north road. When the village bell rings at midnight, the Court's collectors will open the passage and take custody."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.1.quest_book.pages.2",
+            "fallback": "First payment: Harl Fen, condemned for murdering the miller's son.\nSecond: Mara Voss, raider captured at the east field.\nBoth deliveries were witnessed by Edran Vale and Tomas Reed."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.1.quest_book.pages.3",
+            "fallback": "Fifth payment: an unknown traveler found sleeping in the hayloft. No charge was proven. The council voted four to three that breaking the agreement would endanger forty-seven villagers."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.1.quest_book.pages.4",
+            "fallback": "Ninth payment: Selka, called a thief. Her pack contained bread and a child's wooden horse. Tomas objected. We rang the bell before he could warn her."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.1.quest_book.pages.5",
+            "fallback": "After the twelfth winter, we refused another delivery. Brakka's piglins agreed to hide the waystone in their bastion. We buried this ledger below the ancient city and told our children the ward was a blessing."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.1.quest_book.pages.6",
+            "fallback": "The agreement remains recorded in the Hall Beneath the Eye. Destroying the collectors does not end it. The village representative must renounce it before Avar Khel—or kill him and break the ward by force."
+          }
+        ]
+      },
+      "block_patch": {
+        "radius": 16,
+        "replace_solid_only": true,
+        "palette": [
+          {
+            "block": "minecraft:netherrack",
+            "weight": 12
+          },
+          {
+            "block": "minecraft:blackstone",
+            "weight": 4
+          },
+          {
+            "block": "minecraft:basalt",
+            "weight": 3
+          },
+          {
+            "block": "minecraft:magma_block",
+            "weight": 1
+          }
+        ]
+      },
+      "auto_advance": true,
+      "stage": 1,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.1.say",
+        "fallback": "The ledger lists twelve deliveries: prisoners, raiders, exiles, then innocent travelers. The waystone burns the floor around you as three collectors arrive to recover the evidence."
+      }
+    },
+    {
+      "id": "kill_ledger_collectors",
+      "kill": "minecraft:skeleton",
+      "amount": 4,
+      "from_threats": true,
+      "stage": 2,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.2.say",
+        "fallback": "The ground collectors are dead. Bring down their phantom before Orr Veyl arrives."
+      }
+    },
+    {
+      "id": "kill_collection_phantom",
+      "kill": "minecraft:phantom",
+      "amount": 1,
+      "from_threats": true,
+      "auto_advance": true,
+      "stage": 2,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.3.say",
+        "fallback": "The phantom crashes into the dark. Deeper in the city, Orr Veyl closes his iron record and comes to recover the village ledger personally."
+      }
+    },
+    {
+      "id": "speak_with_orr_veyl",
+      "talk": "minecraft:wither_skeleton",
+      "amount": 1,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.4.name",
+        "fallback": "Orr Veyl, Keeper of Deliveries"
+      },
+      "stage": 3,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.4.say",
+        "fallback": "Orr Veyl admits that five prisoners remain alive and that his iron record identifies the Hall Beneath the Eye."
+      }
+    },
+    {
+      "id": "kill_court_archivist",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 1,
+      "attack_only": true,
+      "from_threats": true,
+      "stage": 3,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.goals.5.say",
+        "fallback": "Orr Veyl's iron record names the Hall Beneath the Eye and confirms that Avar Khel still holds the prisoners taken through the waystone."
+      }
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.0.name",
+        "fallback": "Ash Court Chain Collector"
+      },
+      "stage": 2,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 24,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 105.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:bow",
+          "enchants": {
+            "minecraft:power": 2
+          }
+        },
+        "head": "minecraft:chainmail_helmet"
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.0.offer_line",
+        "fallback": "Breaking the ledger's seal summons three collectors. They have orders to recover the evidence and leave no witness."
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.1.name",
+        "fallback": "Ash Court Road Collector"
+      },
+      "stage": 2,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 24,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 110.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_sword",
+          "enchants": {
+            "minecraft:knockback": 1
+          }
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.2.name",
+        "fallback": "Ash Court Ledger Guard"
+      },
+      "stage": 2,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 24,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 115.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_sword",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.3.name",
+        "fallback": "Vask, Court Sky-Collector"
+      },
+      "stage": 2,
+      "spawn_origin": "player",
+      "spawn_min_radius": 16,
+      "spawn_max_radius": 28,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 120.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:bow",
+          "enchants": {
+            "minecraft:power": 3,
+            "minecraft:punch": 1
+          }
+        },
+        "head": "minecraft:iron_helmet",
+        "chest": "minecraft:chainmail_chestplate"
+      },
+      "mount": {
+        "entity": "minecraft:phantom",
+        "name": {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.3.mount.name",
+          "fallback": "Black-Wing Collection Beast"
+        },
+        "max_health": 55.0
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.name",
+        "fallback": "Orr Veyl, Keeper of Deliveries"
+      },
+      "stage": 3,
+      "spawn_origin": "player",
+      "spawn_min_radius": 14,
+      "spawn_max_radius": 26,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": false,
+      "max_health": 240.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_sword",
+          "enchants": {
+            "minecraft:sharpness": 4,
+            "minecraft:fire_aspect": 1
+          }
+        },
+        "head": "minecraft:wither_skeleton_skull",
+        "chest": {
+          "item": "minecraft:iron_chestplate",
+          "enchants": {
+            "minecraft:protection": 3
+          }
+        }
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.offer_line",
+        "fallback": "The collectors are gone. Orr Veyl, keeper of the delivery records, has come for the village ledger."
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.target_line",
+        "fallback": "Put down the ledger. Your village survived because twelve prisoners crossed that road. Truth will not make their bargain less useful."
+      },
+      "talk": [
+        [
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.talk.0.0",
+            "fallback": "Are any of the prisoners still alive?"
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.talk.0.1",
+            "fallback": "Five. The Court does not waste useful hands. They work beneath the Hall and remember exactly who delivered them."
+          }
+        ],
+        [
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.talk.1.0",
+            "fallback": "Why keep a second record?"
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.talk.1.1",
+            "fallback": "Because your founders lied even to one another. My iron book records the prisoners, the payments, and the location where the agreement can be revoked."
+          }
+        ],
+        [
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.talk.2.0",
+            "fallback": "Give me the iron record."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.talk.2.1",
+            "fallback": "Take it, and Avar Khel will know I failed. Kill me, and you take it from my corpse. Either road ends my service."
+          }
+        ]
+      ],
+      "attack_choice_label": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.attack_choice_label",
+        "fallback": "Then die serving him."
+      },
+      "spare_choice_label": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.spare_choice_label",
+        "fallback": "Surrender the record and leave."
+      },
+      "attack_return_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.attack_return_line",
+        "fallback": "Orr Veyl reaches for his sword. The iron record hangs from his belt."
+      },
+      "spared_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.spared_line",
+        "fallback": "Orr Veyl unchains the iron record and places it beside the village ledger."
+      },
+      "post_spare_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.post_spare_line",
+        "fallback": "The Hall Beneath the Eye lies beyond the old Nether fortress gate. Five prisoners remain. If you intend to judge Avar Khel, do it before he moves them."
+      },
+      "villager_spared_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.villager_spared_line",
+        "fallback": "You let the archivist go, but brought both records. That is evidence enough—and perhaps one less servant for Avar Khel."
+      },
+      "rewards_from_giver": true,
+      "spare_handoff": {
+        "item": "minecraft:written_book",
+        "count": 1,
+        "name": {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.spare_handoff.name",
+          "fallback": "Orr Veyl's Iron Record"
+        },
+        "depart_after_spare": true,
+        "consume_on_claim": true,
+        "quest_book": {
+          "title": {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.spare_handoff.quest_book.title",
+            "fallback": "Iron Record of Deliveries"
+          },
+          "author": {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.spare_handoff.quest_book.author",
+            "fallback": "Orr Veyl"
+          },
+          "pages": [
+            {
+              "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.spare_handoff.quest_book.pages.0",
+              "fallback": "FIRST BELL AGREEMENT\n\nReceiving officer: Avar Khel.\nVillage signatory: Edran Vale.\nCollection point: black-glass waystone at the north road."
+            },
+            {
+              "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.spare_handoff.quest_book.pages.1",
+              "fallback": "Twelve prisoners received over twelve winters. Five remain in service beneath the Hall Beneath the Eye. Seven died in labor, escape attempts, or Court campaigns."
+            },
+            {
+              "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.spare_handoff.quest_book.pages.2",
+              "fallback": "Living prisoners:\nSelka of the East Road\nMara Voss\nTomas Reed\nUnknown man called Finch\nPell Arden, exile"
+            },
+            {
+              "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.spare_handoff.quest_book.pages.3",
+              "fallback": "Access route: ruined Nether fortress gate beneath the Eye chamber. The village ledger and waystone resonance are sufficient to open the old collection passage."
+            },
+            {
+              "translate": "quest.mebahelrpgrquest.ash_court_chain_7_names_under_stone.threats.4.spare_handoff.quest_book.pages.4",
+              "fallback": "Termination clause: the village representative may surrender the ward before Avar Khel. If Avar Khel dies, the ward and all Court claims created by the agreement end with him."
+            }
+          ]
+        }
+      },
+      "spare_rewards": {
+        "xp": 950,
+        "items": {
+          "minecraft:recovery_compass": 1,
+          "minecraft:diamond": 7
+        }
+      },
+      "mercy": {
+        "offer_chance": 0,
+        "ambush_player": 0,
+        "nothing_chance": 100
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 950,
+    "items": {
+      "minecraft:recovery_compass": 1,
+      "minecraft:diamond": 7
+    }
+  },
+  "traits": {
+    "complete": [
+      "ash_court_first_debt_known"
+    ],
+    "spare": [
+      "orr_veyl_spared"
+    ]
+  }
+}

@@ -1,0 +1,57 @@
+{
+  "title": "Chains at the Fortress",
+  "summary": "The prisoners' trail leads to a Nether fortress. Find it, kill its wither skeletons, and bring whoever is still chained there back to the Overworld.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_fortress",
+      "reach": "minecraft:fortress",
+      "radius": 12000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "guards",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 8,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Three Ashford men are chained in a corridor. 'North,' they say. 'To the city with the eye.'",
+      "from_threats": false
+    },
+    {
+      "id": "lead_them_out",
+      "type": "leave_nether",
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Back home, Ashford counts three more survivors."
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:emerald": 12,
+      "minecraft:golden_apple": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_a12_brother_vael",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a11_chains_at_the_fortress_done"
+    ]
+  }
+}

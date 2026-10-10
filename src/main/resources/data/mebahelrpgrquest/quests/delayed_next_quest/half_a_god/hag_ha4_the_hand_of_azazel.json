@@ -1,0 +1,27 @@
+{
+  "title": "The Hand of Azazel",
+  "summary": "The roads are yours. Bring your god his tithe, and take your place at his right hand.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "tithe",
+      "collect": "minecraft:gold_block",
+      "amount": 16,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Azazel smiles. It is not a human smile."
+    }
+  ],
+  "rewards": {
+    "xp": 4000,
+    "items": {
+      "minecraft:enchanted_golden_apple": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ha4_the_hand_of_azazel_done",
+      "hag_hand_of_azazel_done"
+    ]
+  }
+}

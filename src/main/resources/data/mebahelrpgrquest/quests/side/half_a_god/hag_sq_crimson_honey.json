@@ -1,0 +1,45 @@
+{
+  "title": "Crimson Honey",
+  "summary": "The cleric wants Ghastly honey. She thinks it might heal the cursed.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_v11_the_crimson_guide"
+    ]
+  },
+  "dialogue": {
+    "intro": "The bees serve the cult. Maybe their honey can unserve it.",
+    "reward": "Sweet. Bitter. Like penance.",
+    "offer": [
+      [
+        "Heal the cursed?",
+        "The bees serve the cult. Maybe their honey can unserve it."
+      ],
+      [
+        "Four bottles.",
+        "Careful. The bees are protective."
+      ]
+    ],
+    "return": "Honey?"
+  },
+  "goals": [
+    {
+      "id": "honey",
+      "collect": "netherman:crimson_honey_bottle",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:enchanted_golden_apple": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_crimson_honey_done"
+    ]
+  }
+}

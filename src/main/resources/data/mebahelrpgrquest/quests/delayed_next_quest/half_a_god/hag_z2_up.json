@@ -1,0 +1,42 @@
+{
+  "title": "Up",
+  "summary": "Above the maze waits the head altar, with 'God?' carved into the stone. Find it.",
+  "sequential_objectives": true,
+  "requires": {
+    "advancements": [
+      "netherman:enter_maze"
+    ]
+  },
+  "goals": [
+    {
+      "id": "find_the_altar",
+      "reach": "netherman:head_altar",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 2500
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_z3_choir_of_the_whole_god",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_z2_up_done"
+    ]
+  }
+}

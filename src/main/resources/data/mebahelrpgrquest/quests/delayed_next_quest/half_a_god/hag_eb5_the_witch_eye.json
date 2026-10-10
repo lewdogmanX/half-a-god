@@ -1,0 +1,38 @@
+{
+  "title": "The Witch Eye",
+  "summary": "Craft it from a Witch Pupil. Where: witches drop pupils, then craft the eye.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_eye",
+      "collect": "endrem:witch_eye",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The Witch Eye stares back at you. (It goes back in your pack.)",
+      "name": "Witch Eye (given back)"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "endrem:witch_eye": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_eb6_the_undead_eye",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_eb5_the_witch_eye_done"
+    ]
+  }
+}

@@ -1,0 +1,100 @@
+{
+  "title": "The Informant",
+  "summary": "The watch caught the man who sold the village's patrol times to the raiders: Wick, a pillager scout who lost his nerve. He says he knows who paid for the raid and will tell you, if he lives. Hear him out, then decide.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "judge_x1_the_informant",
+      "kill": "minecraft:pillager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": "Wick the Informant",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You sold our patrols.",
+          "For bread. They don't feed us, you know. The gold goes up, never down."
+        ],
+        [
+          "Who paid for the raid?",
+          "Men with gold eyes on their coats. They came from the east, toward the old camp."
+        ],
+        [
+          "Why should I let you live?",
+          "Because I'll owe you. And a scout who owes you is worth ten who don't."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Let him go, and keep him owing you",
+      "line": "Wick bolts, then stops and looks back. 'I won't forget. Honest.'",
+      "traits": [
+        "hag_mercy_x1_the_informant"
+      ]
+    },
+    "attack": {
+      "label": "Hang him as a lesson",
+      "traits": [
+        "hag_cruelty_x1_the_informant"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 400
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_x1_the_informant_after",
+        "delay_ticks": 200,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_p9_who_pays_in_gold",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x1_the_informant_done"
+    ]
+  }
+}

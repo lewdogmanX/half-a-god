@@ -1,0 +1,29 @@
+{
+  "slots": {
+    "right_hand": [
+      {
+        "id": "minecraft:iron_sword",
+        "weight": 10,
+        "enchantments": [
+          {
+            "id": "minecraft:fire_aspect",
+            "min_level": 1,
+            "max_level": 1
+          }
+        ]
+      }
+    ],
+    "helmet": [
+      {
+        "id": "minecraft:golden_helmet",
+        "weight": 10
+      }
+    ],
+    "chestplate": [
+      {
+        "id": "minecraft:golden_chestplate",
+        "weight": 10
+      }
+    ]
+  }
+}

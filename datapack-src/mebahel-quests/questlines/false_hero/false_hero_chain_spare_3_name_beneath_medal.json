@@ -1,0 +1,124 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.title",
+    "fallback": "The Name Beneath the Medal"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.summary",
+    "fallback": "Recover the dead guard's sword, written proof, and village cloth from the outpost road."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:false_hero_chain_spare_4_the_false_hero"
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:false_hero_chain_2_the_last_witness"
+    ],
+    "traits": [
+      "false_hero_witness_spared"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.dialogue.intro",
+      "fallback": "The raider's words have made the air heavier. If he lied, we lose little. If he spoke truth, we have been cheering a coward while a better soul lies unnamed."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.dialogue.offer.0.0",
+          "fallback": "What did the witness tell you?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.dialogue.offer.0.1",
+          "fallback": "That the medal belonged to an old guard who stayed behind. That our champion found it after the killing and wore it home like a song."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.dialogue.offer.1.0",
+          "fallback": "What proof do we need?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.dialogue.offer.1.1",
+          "fallback": "The guard's sword, a written page, and a strip of blue cloth from the village colors. Bring them here. I will not accuse a man before the bell without proof in my hands."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.dialogue.offer.2.0",
+          "fallback": "And if the proof is real?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.dialogue.offer.2.1",
+          "fallback": "Then the champion answers before the village, or he answers by steel."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.dialogue.return",
+      "fallback": "The sword is notched where a shield would catch it. The paper names the guard. The cloth is ours. By the bell... the raider told the truth."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.dialogue.reward",
+      "fallback": "Take this for finding the dead man's name. Keep your weapon close. A coward cornered by truth may prove braver with someone else's blade."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.dialogue.done",
+      "fallback": "The guard has a name again. That alone was worth the risk."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_guard_sword",
+      "collect": "minecraft:iron_sword",
+      "amount": 1,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 4000,
+      "in_chest": true,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.goals.0.name",
+        "fallback": "Old Guard's Notched Sword"
+      },
+      "tag": "false_hero_guard_proof"
+    },
+    {
+      "id": "bring_written_proof",
+      "collect": "minecraft:paper",
+      "amount": 3,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 4000,
+      "in_chest": true,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.goals.1.name",
+        "fallback": "Guard's Written Proof"
+      },
+      "tag": "false_hero_guard_proof"
+    },
+    {
+      "id": "bring_village_cloth",
+      "collect": "minecraft:blue_wool",
+      "amount": 1,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 4000,
+      "in_chest": true,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_3_name_beneath_medal.goals.2.name",
+        "fallback": "Blue Village Cloth"
+      },
+      "tag": "false_hero_guard_proof"
+    }
+  ],
+  "rewards": {
+    "xp": 220,
+    "items": {
+      "minecraft:emerald": 8,
+      "minecraft:golden_apple": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "false_hero_exposed"
+    ]
+  }
+}

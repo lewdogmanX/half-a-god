@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:base_came_back_warm",
+  "trigger": {
+    "type": "quest_success",
+    "quest": "mebahelrpgrquest:hag_v1_blood_in_the_wells"
+  },
+  "delay": {
+    "min_ticks": 2400,
+    "max_ticks": 6000
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "A stranger",
+    "quest_book": "mebahelrpgrquest:questbook_the_man_who_came_back_warm"
+  }
+}

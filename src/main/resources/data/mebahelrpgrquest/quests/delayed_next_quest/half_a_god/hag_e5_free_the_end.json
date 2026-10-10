@@ -1,0 +1,45 @@
+{
+  "title": "Free the End",
+  "summary": "Through the stronghold's portal is the End. The journal calls its dragon the second Warden. Kill it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_dragon",
+      "kill": "minecraft:ender_dragon",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The second Warden falls. That night every villager in the world dreams of a king with no head."
+    }
+  ],
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "minecraft:diamond_chestplate": {
+        "count": 1,
+        "enchants": {
+          "minecraft:protection": 4
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_e6_edge_of_the_world",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_end"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_e5_free_the_end_done"
+    ]
+  }
+}

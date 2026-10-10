@@ -1,0 +1,111 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.title",
+    "fallback": "The Control Group"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.summary",
+    "fallback": "Doctor Vale needs one perfectly healthy chicken for what he insists is a rigorous control experiment."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:mad_scientist_chain_3_the_assistants_last_notes"
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:mad_scientist_chain_1_a_cure_for_the_common_death"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.intro",
+      "fallback": "Perfect timing. I require a chicken, and before you ask, yes, this is absolutely medical work."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.offer.0.0",
+          "fallback": "Why is there a chicken pen in your laboratory?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.offer.0.1",
+          "fallback": "Because villagers ask too many questions when I call them a control group."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.offer.1.0",
+          "fallback": "What exactly are you testing on it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.offer.1.1",
+          "fallback": "Nothing. That is the beauty of a control. It receives no serum, no infection, no treatment, and ideally no opinions."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.offer.2.0",
+          "fallback": "And this helps cure zombies?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.offer.2.1",
+          "fallback": "If the chicken remains an ordinary chicken while the treated tissue changes, then I know the apparatus is not poisoning everything nearby. Science is mostly proving the obvious in expensive ways."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.return",
+      "fallback": "There. Healthy feathers, normal eyes, standard contempt for personal space. The control survives."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.return_steps.0.0",
+          "fallback": "It pecked your apparatus."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.return_steps.0.1",
+          "fallback": "And the apparatus did not peck back. Another successful observation."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.return_steps.1.0",
+          "fallback": "Was this really necessary?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.return_steps.1.1",
+          "fallback": "Absolutely. Also, my assistant Sera refused to fetch me a chicken, and I had become curious whether anyone would."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.reward",
+      "fallback": "A proper control deserves proper funding. The chicken may stay. It has shown more discipline than several apprentices I have had."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_2_the_control_group.dialogue.done",
+      "fallback": "The control group remains healthy, insubordinate, and determined to eat my notes. I consider that a triumph."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_healthy_control",
+      "bring": "minecraft:chicken",
+      "threat_target_only": false,
+      "amount": 1,
+      "range": 28
+    }
+  ],
+  "rewards": {
+    "xp": 200,
+    "items": {
+      "minecraft:emerald": 7,
+      "minecraft:egg": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "vale_control_test_complete"
+    ]
+  }
+}

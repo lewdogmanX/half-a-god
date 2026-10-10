@@ -1,0 +1,107 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.title",
+    "fallback": "The Knife Behind the Praise"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.summary",
+    "fallback": "After The Bell and the Raid, a worried villager warns you that fame has made you dangerous to powerful people. Find the first proof of a contract placed on your life."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:village_defense_chain_5_smoke_on_the_milestones"
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:village_defense_chain_3_the_bell_and_the_raid",
+      "mebahelrpgrquest:hag_a1_ashford_burns"
+    ],
+    "advancements": [
+      "mebahelrpgrquest:quests/village_defender"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.dialogue.intro",
+      "fallback": "The villager does not greet you like a hero. They look around first, then step close enough to whisper."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.dialogue.offer.0.0",
+          "fallback": "Why are you afraid of me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.dialogue.offer.0.1",
+          "fallback": "Not of you. Because of you. People have started saying one armed traveler can make a village refuse fear. That sort of story gets men killed."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.dialogue.offer.1.0",
+          "fallback": "Who wants me dead?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.dialogue.offer.1.1",
+          "fallback": "Someone calling themselves the Quiet Ledger. They buy blades before heroes become banners. Your name was spoken in the back room of a trader's house."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.dialogue.offer.2.0",
+          "fallback": "What proof do you have?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.dialogue.offer.2.1",
+          "fallback": "Only scraps. A black-thread token, a payment mark, and a list of villages that cheered when our bell survived. Find the rest before the knife finds you."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.dialogue.return",
+      "fallback": "Black thread, half a contract, and the names of villages that heard about the raid. Then I was right. They are not hunting what you did. They are hunting what people might do because of it."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.dialogue.reward",
+      "fallback": "Take this quietly. If the Quiet Ledger has paid for your death, we answer with proof before we answer with steel."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.dialogue.done",
+      "fallback": "Keep your back to walls when you can. Praise travels fast, but knives travel quieter."
+    }
+  },
+  "goals": [
+    {
+      "id": "recover_black_thread_tokens",
+      "collect": "minecraft:string",
+      "amount": 4,
+      "structure": "minecraft:village_plains",
+      "radius": 2500,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.goals.0.name",
+        "fallback": "Black-Thread Token"
+      },
+      "tag": "quiet_ledger_contract",
+      "in_chest": true
+    },
+    {
+      "id": "recover_contract_scraps",
+      "collect": "minecraft:paper",
+      "amount": 2,
+      "structure": "minecraft:village_plains",
+      "radius": 2500,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_defense_chain_4_the_road_remembers.goals.1.name",
+        "fallback": "Torn Assassin Contract"
+      },
+      "tag": "quiet_ledger_contract",
+      "in_chest": true
+    }
+  ],
+  "rewards": {
+    "xp": 320,
+    "items": {
+      "minecraft:emerald": 10,
+      "minecraft:spyglass": 1
+    }
+  }
+}

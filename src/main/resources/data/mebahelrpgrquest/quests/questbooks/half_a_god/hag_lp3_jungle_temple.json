@@ -1,0 +1,38 @@
+{
+  "title": "Lost Page 3: Her Name",
+  "summary": "A loose page from the Warden Journal, written by Mara's first champion. It mentions a place. Go and see it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_place",
+      "reach": "minecraft:jungle_pyramid",
+      "radius": 15000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "You stand where the first champion stood. It feels colder than it should."
+    }
+  ],
+  "rewards": {
+    "xp": 550,
+    "items": {
+      "minecraft:experience_bottle": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_lp3_jungle_temple_done",
+      "hag_lost_page_3"
+    ]
+  },
+  "quest_book": {
+    "title": "Warden Journal, Page 3",
+    "author": "The First Champion",
+    "color": "gray",
+    "pages": [
+      "She has two names. I only know the second one.",
+      "At night she writes letters to someone who will never answer."
+    ],
+    "auto_claim_rewards": true
+  }
+}

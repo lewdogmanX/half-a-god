@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:maraal_forgiven",
+  "weight": 12,
+  "line": "The old woman walks with you now. People say she looks younger every day she's near you.",
+  "conditions": {
+    "required_traits": [
+      "maraal_forgiven"
+    ]
+  }
+}

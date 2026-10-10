@@ -1,0 +1,103 @@
+{
+  "title": "The Pilgrim of the Sun",
+  "summary": "A pilgrim has climbed to the Aether to pray to the Sun Spirit you're about to kill. He begs you to spare it. He also carries a sunstone charm the cult would pay a fortune for.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "judge_x4_the_pilgrim_of_the_sun",
+      "kill": "minecraft:wandering_trader",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wandering_trader",
+      "name": "Pilgrim of the Sun",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "max_health": 30,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You came all this way to pray?",
+          "Forty years I walked. The Sun answered once. Once is enough."
+        ],
+        [
+          "The Sun Spirit threw two people out of heaven.",
+          "Then it is a hard god. I did not say it was a kind one."
+        ],
+        [
+          "What's that charm?",
+          "Sunstone. Mine. It keeps the cold off old bones. Please don't."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Let him pray in peace",
+      "line": "The pilgrim kneels and doesn't look up again. You hear him praying for you too.",
+      "traits": [
+        "hag_mercy_x4_the_pilgrim_of_the_sun"
+      ]
+    },
+    "attack": {
+      "label": "Take the sunstone",
+      "traits": [
+        "hag_cruelty_x4_the_pilgrim_of_the_sun"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 400
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun_after",
+        "delay_ticks": 200,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "aether:the_aether"
+          ]
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_h9_extinguished",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "aether:the_aether"
+          ]
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x4_the_pilgrim_of_the_sun_done"
+    ]
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "title": "The Beast Below",
+  "summary": "Sirok is dead. Tell the desert village they can dig their well out.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "tell_the_desert_village",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The desert village digs its well back out. The water comes up clean.",
+      "name": "Village Elder"
+    }
+  ],
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "minecraft:diamond": 5
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_c1_nets_and_knives",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_d3_the_beast_below_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "The desert village digs its well back out. The water comes up clean.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "Who are you?",
+          "The one people come to when something is wrong. Lately, that is often."
+        ]
+      ]
+    }
+  ]
+}

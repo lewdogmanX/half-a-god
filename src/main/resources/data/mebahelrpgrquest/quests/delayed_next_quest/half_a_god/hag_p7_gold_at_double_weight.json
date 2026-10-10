@@ -1,0 +1,121 @@
+{
+  "title": "Gold at Double Weight",
+  "summary": "The smiling stranger is back in the village, buying gold and asking about people. He is the one behind the bell, the sheep, the eyes and the raiders. Hear him out, then let him walk or drive him out with steel.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "face_the_peddler",
+      "kill": "minecraft:wandering_trader",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Whatever you chose, the village will remember it."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wandering_trader",
+      "name": "The Smiling Peddler",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 16,
+      "max_health": 60,
+      "talk": [
+        [
+          "Who are you?",
+          "A merchant. I buy gold. I buy all sorts of things. I pay double."
+        ],
+        [
+          "Why the eyes on the chapels?",
+          "So He can see you. He likes to see the ones who are worth something."
+        ],
+        [
+          "Who is 'He'?",
+          "Spare me and I will give you His book. Strike me and my friends will come to collect."
+        ]
+      ],
+      "attack_ambushes": [
+        {
+          "entity": "minecraft:vindicator",
+          "name": "Peddler's Bodyguard",
+          "count": 2,
+          "max_health": 50,
+          "equipment": {
+            "mainhand": "minecraft:iron_axe"
+          }
+        }
+      ],
+      "spare_handoff": {
+        "item": "minecraft:written_book",
+        "name": "The Book of Belial",
+        "count": 1,
+        "quest_book": {
+          "title": "The Book of Belial",
+          "author": "The Faithful",
+          "pages": [
+            "For He commands His angels concerning you, to guard you in all your ways.\n\n- Belial 8:12",
+            "Gold is faith made solid. Give your gold and you give your faith. Give enough, and He will give you back your life."
+          ]
+        }
+      },
+      "target": "The Smiling Peddler is waiting near the village."
+    }
+  ],
+  "choice": {
+    "attack": {
+      "label": "Drive him out with steel",
+      "traits": [
+        "peddler_slain"
+      ]
+    },
+    "spare": {
+      "label": "Let him walk",
+      "line": "He bows far too low. 'He will remember your kindness.'",
+      "traits": [
+        "heard_the_word"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 300,
+    "items": {
+      "minecraft:emerald": 8
+    }
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_p7b_peddlers_debt",
+        "delay_ticks": 24000,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_p7s_the_peddlers_gift",
+        "delay_ticks": 600,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_p7_gold_at_double_weight_done"
+    ]
+  }
+}

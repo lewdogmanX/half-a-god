@@ -1,0 +1,67 @@
+{
+  "display_name": "companion.half_a_god.ansel.dark.name",
+  "quest_ids": [],
+  "entity_types": [],
+  "entity_names": [],
+  "priority": 10,
+  "responses": {
+    "follow": [
+      "companion.half_a_god.ansel.dark.follow.1",
+      "companion.half_a_god.ansel.dark.follow.2"
+    ],
+    "wait": [
+      "companion.half_a_god.ansel.dark.wait.1",
+      "companion.half_a_god.ansel.dark.wait.2"
+    ],
+    "set_home": [
+      "companion.half_a_god.ansel.dark.set_home.1",
+      "companion.half_a_god.ansel.dark.set_home.2"
+    ],
+    "go_home": [
+      "companion.half_a_god.ansel.dark.go_home.1",
+      "companion.half_a_god.ansel.dark.go_home.2"
+    ],
+    "guard": [
+      "companion.half_a_god.ansel.dark.guard.1",
+      "companion.half_a_god.ansel.dark.guard.2"
+    ],
+    "guard_home": [
+      "companion.half_a_god.ansel.dark.guard_home.1"
+    ],
+    "stop_guard": [
+      "companion.half_a_god.ansel.dark.stop_guard.1"
+    ],
+    "combat_menu": [
+      "companion.half_a_god.ansel.dark.combat_menu.1"
+    ],
+    "passive": [
+      "companion.half_a_god.ansel.dark.passive.1"
+    ],
+    "defensive": [
+      "companion.half_a_god.ansel.dark.defensive.1"
+    ],
+    "aggressive": [
+      "companion.half_a_god.ansel.dark.aggressive.1"
+    ],
+    "equipment": [
+      "companion.half_a_god.ansel.dark.equipment.1"
+    ],
+    "farewell": [
+      "companion.half_a_god.ansel.dark.farewell.1"
+    ],
+    "greeting": [
+      "companion.half_a_god.ansel.dark.greeting.1",
+      "companion.half_a_god.ansel.dark.greeting.2"
+    ]
+  },
+  "stories": [
+    {
+      "question": "companion.half_a_god.ansel.dark.story.1.question",
+      "answer": "companion.half_a_god.ansel.dark.story.1.answer"
+    },
+    {
+      "question": "companion.half_a_god.ansel.dark.story.2.question",
+      "answer": "companion.half_a_god.ansel.dark.story.2.answer"
+    }
+  ]
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Shulker Shells",
+  "summary": "The village builder wants shulker shells for storage that never forgets.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_e6_edge_of_the_world"
+    ]
+  },
+  "dialogue": {
+    "intro": "A box that keeps everything. I want three.",
+    "reward": "Look, a box inside a box!",
+    "offer": [
+      [
+        "Never forgets?",
+        "A box that keeps everything. I want three."
+      ],
+      [
+        "Six shells.",
+        "Six. Please don't fall off the edge of the world."
+      ]
+    ],
+    "return": "Shells?"
+  },
+  "goals": [
+    {
+      "id": "shells",
+      "collect": "minecraft:shulker_shell",
+      "amount": 6,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:diamond": 3
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_shulker_shells_done"
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "title": "Remnants",
+  "summary": "Blackwater's survivors want revenge for their Don. Finish the war.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "remnants",
+      "kill": "minecraft:vindicator",
+      "amount": 8,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Blackwater is finished. The valley is yours."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Blackwater Remnant",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 24,
+      "count": 8,
+      "max_health": 60,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:diamond_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "minecraft:emerald_block": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_gt14_king_of_the_valley",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_gt13w_remnants_done"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:bees_home",
+  "weight": 12,
+  "line": "Wren's bees came home! Hundreds of them. She won't stop smiling.",
+  "conditions": {
+    "required_traits": [
+      "hag_bz10_the_honey_crown_done"
+    ]
+  }
+}

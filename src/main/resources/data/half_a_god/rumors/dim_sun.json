@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:dim_sun",
+  "weight": 12,
+  "line": "The sun looked dimmer today. Just for a moment.",
+  "conditions": {
+    "required_traits": [
+      "hag_h9_extinguished_done"
+    ]
+  }
+}

@@ -1,0 +1,108 @@
+{
+  "title": "The Frozen Garrison",
+  "summary": "The old garrison still patrols the Yeti Hideout in the snowy plains. Find it, lay the frozen soldiers to rest, kill Skor the Yeti (Bosses' Rise) and read the garrison roll in its barrel.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_hideout",
+      "reach": "block_factorys_bosses:yeti_hideout",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "frozen_garrison",
+      "kill": "minecraft:stray",
+      "amount": 8,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The last of the garrison lowers its bow, as if relieved."
+    },
+    {
+      "id": "skor",
+      "kill": "block_factorys_bosses:yeti",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The third Warden falls. No snow falls anywhere in the world for a day.",
+      "from_threats": false
+    },
+    {
+      "id": "garrison_roll",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "block_factorys_bosses:yeti_hideout",
+      "radius": 30000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "Garrison Roll",
+      "tag": "hag_garrison_roll",
+      "quest_book": {
+        "title": "Garrison Roll",
+        "author": "Sergeant Halm",
+        "pages": [
+          "We guard the Nail of Frost. We do not leave our post.",
+          "If the beast wakes, the Nail goes with it. Do not wake the beast.\n\nWhoever reads this: please, do not wake the beast."
+        ]
+      },
+      "stage": 2,
+      "auto_advance": true,
+      "say": "They were not guarding the village from the beast. They were guarding the beast."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:stray",
+      "name": "Frozen Garrison",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "count": 8,
+      "structure": "block_factorys_bosses:yeti_hideout",
+      "search_radius": 30000,
+      "max_health": 40,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:bow",
+          "enchants": {
+            "minecraft:power": 2
+          }
+        },
+        "head": "minecraft:iron_helmet"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:enchanted_book": {
+        "count": 1,
+        "enchants": {
+          "minecraft:frost_walker": 2
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_x5_the_last_garrison_man",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_s2_the_frozen_garrison_done"
+    ]
+  }
+}

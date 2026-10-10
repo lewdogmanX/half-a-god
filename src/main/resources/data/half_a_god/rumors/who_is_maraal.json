@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:who_is_maraal",
+  "weight": 12,
+  "line": "Who's Maraal? You keep saying the name in your sleep.",
+  "conditions": {
+    "required_traits": [
+      "hag_h7_medals_of_the_silver_court_done"
+    ]
+  }
+}

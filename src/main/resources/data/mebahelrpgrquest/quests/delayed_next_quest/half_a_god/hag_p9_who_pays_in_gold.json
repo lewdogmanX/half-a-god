@@ -1,0 +1,64 @@
+{
+  "title": "Who Pays in Gold",
+  "summary": "The raiders carried gold they never looted, which means someone paid them to attack. Follow their tracks to a Pillager Camp (It Takes a Pillage), kill eight pillagers (patrols and outposts count too) and find their ledger in a barrel.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_camp",
+      "reach": "takesapillage:pillager_camp",
+      "radius": 20000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Smoke, palisades, and a banner with a golden eye stitched over the illager face."
+    },
+    {
+      "id": "camp_pillagers",
+      "kill": "minecraft:pillager",
+      "amount": 8,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "ledger_of_tithes",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "takesapillage:pillager_camp",
+      "radius": 20000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "Ledger of Tithes",
+      "tag": "hag_ledger_of_tithes",
+      "quest_book": {
+        "title": "Ledger of Tithes",
+        "author": "Camp Quartermaster",
+        "pages": [
+          "Received of the Faithful: 40 gold. For the village by the hill. Burn nothing. Take people.",
+          "Payment owed on delivery to the Sacred City. Souls by weight. The Chariot pays in full.",
+          "Next contract: ASHFORD. Tonight."
+        ]
+      },
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Ashford. Tonight. You have to warn them."
+    }
+  ],
+  "rewards": {
+    "xp": 520,
+    "items": {
+      "minecraft:enchanted_book": {
+        "count": 1,
+        "enchants": {
+          "minecraft:protection": 3
+        }
+      },
+      "minecraft:emerald": 12
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_p9_who_pays_in_gold_done"
+    ]
+  }
+}

@@ -1,0 +1,45 @@
+{
+  "title": "Ash Cleanup",
+  "summary": "The Dragon Tower's spawners still pour out Ashlord's skeleton guards, and they wander down to burn the farms. Go back to the tower and thin them out.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_f1_the_last_road"
+    ]
+  },
+  "dialogue": {
+    "intro": "Burning crops. Burning goats. They come from the tower, the cages inside it keep making more.",
+    "reward": "The plains are green again.",
+    "offer": [
+      [
+        "Still roaming?",
+        "Burning crops. Burning goats. They come from the tower, the cages inside it keep making more."
+      ],
+      [
+        "Four guards.",
+        "Four fewer fires."
+      ]
+    ],
+    "return": "Smoke's gone?"
+  },
+  "goals": [
+    {
+      "id": "ash_guards",
+      "kill": "block_factorys_bosses:dragon_guard_sword",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:diamond": 3
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_ash_cleanup_done"
+    ]
+  }
+}

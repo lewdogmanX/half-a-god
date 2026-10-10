@@ -1,0 +1,63 @@
+{
+  "title": "The Bronze Halls",
+  "summary": "The dungeons hold the Aether's history, and maybe the truth about the light from the pit. Find the Bronze Dungeon, clear its sentries and mimic, and kill the Slider in its heart.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_bronze",
+      "reach": "aether:bronze_dungeon",
+      "radius": 12000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "sentries",
+      "kill": "aether:sentry",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "mimics",
+      "kill": "aether:mimic",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "A carving on the wall: a chariot falling from the sun, and a woman falling beside it."
+    },
+    {
+      "id": "the_slider",
+      "kill": "aether:slider",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Slider grinds to a stop. The halls go quiet for the first time in an age."
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:diamond": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_h6_like_a_bossaru",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "aether:the_aether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_h5_the_bronze_halls_done"
+    ]
+  }
+}

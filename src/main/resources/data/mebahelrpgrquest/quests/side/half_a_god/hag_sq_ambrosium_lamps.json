@@ -1,0 +1,46 @@
+{
+  "title": "Ambrosium Lamps",
+  "summary": "The village wants lamps that burn with heaven's light.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_h5_the_bronze_halls"
+    ]
+  },
+  "dialogue": {
+    "intro": "They say it keeps the dead away.",
+    "reward": "Every house is lit.",
+    "offer": [
+      [
+        "Heaven's light?",
+        "They say it keeps the dead away."
+      ],
+      [
+        "Thirty-two?",
+        "One lamp per house."
+      ]
+    ],
+    "return": "The shards?"
+  },
+  "goals": [
+    {
+      "id": "shards",
+      "collect": "aether:ambrosium_shard",
+      "amount": 32,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 450,
+    "items": {
+      "minecraft:lantern": 8,
+      "minecraft:emerald": 10
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_ambrosium_lamps_done"
+    ]
+  }
+}

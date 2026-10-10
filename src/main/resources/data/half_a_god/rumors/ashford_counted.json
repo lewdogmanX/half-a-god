@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:ashford_counted",
+  "weight": 12,
+  "line": "The Ashford men weren't killed. They were counted.",
+  "conditions": {
+    "required_traits": [
+      "hag_a1_ashford_burns_done"
+    ]
+  }
+}

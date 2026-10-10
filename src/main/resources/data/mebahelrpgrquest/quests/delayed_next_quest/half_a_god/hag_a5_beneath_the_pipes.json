@@ -1,0 +1,61 @@
+{
+  "title": "Beneath the Pipes",
+  "summary": "The Faithful talked about pipes, and Mara's note agrees: the cult moves its prisoners through old rusted pipes (a Cult of Azazel structure). Find the pipes and the keeper's log hidden in a barrel there.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_pipes",
+      "reach": "netherman:pipes",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Old pipes, rusted, going nowhere. Underneath: cracks, and a cold breath coming up."
+    },
+    {
+      "id": "pipe_keepers_log",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "netherman:pipes",
+      "radius": 30000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "Pipe-Keeper's Log",
+      "tag": "hag_pipe_log",
+      "quest_book": {
+        "title": "Pipe-Keeper's Log",
+        "author": "A Believer",
+        "pages": [
+          "The pipes carry the prayers down. Do not ask where down is.",
+          "New stock moved to the believer house. Keep them fed. The Sacred City wants them alive."
+        ]
+      },
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The log names a believer house."
+    }
+  ],
+  "rewards": {
+    "xp": 380,
+    "items": {
+      "minecraft:ender_pearl": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_a6_believers_house",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a5_beneath_the_pipes_done"
+    ]
+  }
+}

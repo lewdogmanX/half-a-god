@@ -1,0 +1,38 @@
+{
+  "title": "The Corrupted Eye",
+  "summary": "The eye of a greedy king. The cult would love it. Where: pillager outposts.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_eye",
+      "collect": "endrem:corrupted_eye",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The Corrupted Eye stares back at you. (It goes back in your pack.)",
+      "name": "Corrupted Eye (given back)"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "endrem:corrupted_eye": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_ea7_the_guardian_eye",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ea6_the_corrupted_eye_done"
+    ]
+  }
+}

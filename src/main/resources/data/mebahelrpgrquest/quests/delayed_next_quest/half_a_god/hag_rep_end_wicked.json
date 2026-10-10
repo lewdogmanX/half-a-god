@@ -1,0 +1,75 @@
+{
+  "title": "The Gilded Throne",
+  "summary": "[Reputation: Wicked] The god is dead or crowned, and you are the one who decided. This is who the valley thinks you are. Go and hear it.",
+  "sequential_objectives": true,
+  "requires": {
+    "traits": [
+      "hag_ending_reached"
+    ]
+  },
+  "goals": [
+    {
+      "id": "hear_it",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Silas of the Gilded Hand"
+    }
+  ],
+  "rewards": {
+    "xp": 4000,
+    "items": {
+      "minecraft:gold_block": 16,
+      "minecraft:emerald_block": 8,
+      "minecraft:netherite_ingot": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rep_end_wicked_done",
+      "hag_rep_wicked"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Silas of the Gilded Hand",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "It's over.",
+          "For him. Not for us. The Hand always finds a new master, and you've proven you're worth paying."
+        ],
+        [
+          "And if I'm done?",
+          "Nobody is ever done with gold. Come and collect your share."
+        ]
+      ]
+    }
+  ]
+}

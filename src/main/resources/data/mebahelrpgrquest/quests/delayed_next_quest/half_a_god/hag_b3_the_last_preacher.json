@@ -1,0 +1,79 @@
+{
+  "title": "The Last Preacher",
+  "summary": "He is whole now, so she can finally die. His first command: find Maraal.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "maraal",
+      "kill": "minecraft:wandering_trader",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wandering_trader",
+      "name": "Maraal",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 300,
+      "talk": [
+        [
+          "He sent me.",
+          "I know. I made you, and you went home to him. I'm sorry."
+        ],
+        [
+          "Any last words?",
+          "Kneel well."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "attack": {
+      "label": "Obey him",
+      "traits": [
+        "maraal_killed_by_hand"
+      ]
+    },
+    "spare": {
+      "label": "Let her live forever, half-alive",
+      "line": "'That is crueller than the knife. You learned from the best.'",
+      "traits": [
+        "maraal_left"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 4000,
+    "items": {
+      "netherman:faith_essence": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_b3_the_last_preacher_done",
+      "hag_hand_of_azazel"
+    ]
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_ha1_the_first_command",
+      "delay_ticks": 6000,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  }
+}

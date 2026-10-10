@@ -1,0 +1,182 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.title",
+    "fallback": "Names in the Quiet Ledger"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.summary",
+    "fallback": "The contract points to assassins hiding near the outpost road. Kill the collectors carrying the ledger pages before more names are marked for death."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:village_defense_chain_6_the_second_bell"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.dialogue.intro",
+      "fallback": "The villager has spread the contract pieces across a table like wounds that can be read."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.dialogue.offer.0.0",
+          "fallback": "What did the scraps say?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.dialogue.offer.0.1",
+          "fallback": "Not enough names. Enough prices. Yours is not the only one. Any villager who rallied others during the raid has a mark beside them."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.dialogue.offer.1.0",
+          "fallback": "Where are the assassins?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.dialogue.offer.1.1",
+          "fallback": "Near the old outpost road, using raiders as noise and smoke. They do not wear banners. They wear black thread around the wrist."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.dialogue.offer.2.0",
+          "fallback": "Then we take the ledger."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.dialogue.offer.2.1",
+          "fallback": "Take the pages if you can. Kill the collectors if you must. If we learn who pays them, the network stops being a shadow and becomes a target."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.dialogue.return",
+      "fallback": "The collectors are dead? Good. Their pages name a place: the counting room beneath a ruined tower. That is where contracts become graves."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.dialogue.reward",
+      "fallback": "You have cut the fingers from the hand. Now we know where the wrist is."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.dialogue.done",
+      "fallback": "The collectors will not carry another name. But the Ledger itself still breathes."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_ledger_collectors",
+      "kill": "minecraft:pillager",
+      "amount": 2
+    },
+    {
+      "id": "kill_black_thread_axes",
+      "kill": "minecraft:vindicator",
+      "amount": 1
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.threats.0.name",
+        "fallback": "Quiet Ledger Collector"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 135.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchantments": [
+            {
+              "id": "minecraft:piercing",
+              "level": 2
+            },
+            {
+              "id": "minecraft:quick_charge",
+              "level": 2
+            }
+          ]
+        },
+        "head": "minecraft:leather_helmet"
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.threats.0.offer_line",
+        "fallback": "Two collectors of the Quiet Ledger wait near the outpost road with a black-thread axe sworn to erase witnesses."
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.threats.1.name",
+        "fallback": "Black-Thread Paymaster"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 145.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchantments": [
+            {
+              "id": "minecraft:multishot",
+              "level": 1
+            },
+            {
+              "id": "minecraft:quick_charge",
+              "level": 2
+            }
+          ]
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_defense_chain_5_smoke_on_the_milestones.threats.2.name",
+        "fallback": "Ledger Knife-Axe"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 125.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "level": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:emerald": 16,
+      "minecraft:crossbow": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:quick_charge",
+            "level": 2
+          },
+          {
+            "id": "minecraft:piercing",
+            "level": 2
+          }
+        ]
+      }
+    }
+  }
+}

@@ -1,0 +1,76 @@
+{
+  "title": "The Recruiter's Terms",
+  "summary": "You said yes. Blackwater wants proof you can grow: sixteen weed (Create: Addictives), handed to the Fixer.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "sample",
+      "collect": "addictives:weed",
+      "amount": 16,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "meet_the_fixer",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Fixer weighs the sample in one hand and you in the other. 'You'll do.'",
+      "name": "The Fixer"
+    }
+  ],
+  "rewards": {
+    "xp": 300,
+    "items": {
+      "minecraft:emerald": 16
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_gt2_seeds_of_the_trade",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_gt1b_the_recruiters_terms_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "The Fixer",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "The Fixer weighs the sample in one hand and you in the other. 'You'll do.'",
+      "min_structure_distance": 300
+    }
+  ]
+}

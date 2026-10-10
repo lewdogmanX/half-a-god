@@ -1,0 +1,13 @@
+{
+  "id": "half_a_god:rep_saint",
+  "weight": 12,
+  "line": "They say the one who paid for Corwin's grain keeps the roads lit now. Lanterns every hundred paces.",
+  "conditions": {
+    "required_traits": [
+      "hag_ch1_saint"
+    ],
+    "forbidden_traits": [
+      "hag_route_seg2"
+    ]
+  }
+}

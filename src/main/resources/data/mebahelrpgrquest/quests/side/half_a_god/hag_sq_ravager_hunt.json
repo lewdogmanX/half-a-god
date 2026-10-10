@@ -1,0 +1,46 @@
+{
+  "title": "Ravager Hunt",
+  "summary": "Freed ravagers from the Bastille are trampling the fields.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_a8_ravagers_horn"
+    ]
+  },
+  "dialogue": {
+    "intro": "Three. They flattened the wheat and the fence and Old Pell.",
+    "reward": "Pell says thank you. Slowly.",
+    "offer": [
+      [
+        "Loose ravagers?",
+        "Three. They flattened the wheat and the fence and Old Pell."
+      ],
+      [
+        "Is Pell all right?",
+        "He's flat. But alive."
+      ]
+    ],
+    "return": "Are they down?"
+  },
+  "goals": [
+    {
+      "id": "ravagers",
+      "kill": "minecraft:ravager",
+      "amount": 3,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:saddle": 1,
+      "minecraft:emerald": 10
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_ravager_hunt_done"
+    ]
+  }
+}

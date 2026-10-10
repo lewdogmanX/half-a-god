@@ -1,0 +1,198 @@
+{
+  "title": "Where the Dead Were Sent",
+  "summary": "Cross the ruined portal with Amar, follow the plague dead into the Nether, and search a fossil field for the last proof that Amar was ever meant to have a grave.",
+  "flow": {
+    "next": "mebahelrpgrquest:undertaker_chain_4_not_currently_available"
+  },
+  "required_completed_quests": [
+    "mebahelrpgrquest:undertaker_chain_2_the_grave_he_cannot_fill"
+  ],
+  "required_traits": [
+    "amar_disposal_record_found"
+  ],
+  "sequential_objectives": true,
+  "offer_intro_line": "Amar examines the ruined portal as though it were a badly maintained cemetery gate.",
+  "offer_dialogue_steps": [
+    {
+      "choice": "Still want to go through?",
+      "line": "No. Want has very little to do with funerary work."
+    },
+    {
+      "choice": "What are we looking for?",
+      "line": "A marked token, most likely iron or brass. Undertakers tied them to unclaimed bodies when names could not be trusted to paper."
+    },
+    {
+      "choice": "What if there is nothing left?",
+      "line": "Then I will have travelled to the Nether to confirm that my paperwork was destroyed. It would not be my worst professional day."
+    },
+    {
+      "choice": "Stay close.",
+      "line": "I intend to. You are, at present, my only living witness."
+    }
+  ],
+  "objectives": [
+    {
+      "id": "enter_the_nether_with_amar",
+      "type": "enter_nether",
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "escort_amar_to_the_fossil_field",
+      "type": "escort_entity",
+      "structure": "minecraft:nether_fossil",
+      "search_radius": 6000,
+      "completion_range": 64,
+      "stage": 1,
+      "auto_advance": true,
+      "completion_dialogue_line": "Bones. Too many to count, which has never stopped anyone from making me try."
+    },
+    {
+      "id": "read_the_disposal_roll",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:nether_fossil",
+      "search_radius": 6000,
+      "stage": 2,
+      "auto_advance": true,
+      "spawn_in_chest": true,
+      "container": "minecraft:chest",
+      "quest_item_name": "Red Sand Disposal Roll",
+      "quest_item_tag": "amar_disposal_roll",
+      "quest_book": {
+        "title": "Red Sand Disposal Roll",
+        "author": "Qasra Disposal Crew",
+        "pages": [
+          "WESTERN GATE DISPOSAL ROLL\n\nBatch 14. Twenty-three bodies. Fourteen marked.",
+          "Batch 15. Thirty-one bodies. Nine marked. Gate unstable. Two wrappings lost to fire.",
+          "Batch 16. Amar ibn Sahl. Undertaker. Guild token attached at left wrist. Diamond shovel left with body by order of foreman.",
+          "Foreman objected to retaining the shovel. Crew refused to remove it.",
+          "Reason recorded: 'He buried our families.'",
+          "Body passed through alone after the final cart.",
+          "No retrieval authorized.",
+          "No further batches recorded."
+        ]
+      }
+    },
+    {
+      "id": "drive_off_the_bone_collectors",
+      "type": "kill_entity",
+      "entity": "minecraft:wither_skeleton",
+      "amount": 3,
+      "stage": 3,
+      "from_threats": true,
+      "auto_advance": true
+    },
+    {
+      "id": "leave_the_nether_with_amar",
+      "type": "leave_nether",
+      "stage": 4,
+      "auto_advance": true
+    },
+    {
+      "id": "escort_amar_back_to_the_desert",
+      "type": "escort_entity",
+      "structure": "minecraft:desert_pyramid",
+      "search_radius": 7000,
+      "completion_range": 72,
+      "stage": 5,
+      "auto_advance": true
+    },
+    {
+      "id": "speak_to_amar_after_the_search",
+      "type": "return_to_quest_giver",
+      "stage": 6
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": "Bone Collector",
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 7,
+      "spawn_max_radius": 14,
+      "spare": false,
+      "glow": false,
+      "max_health": 75.0,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword"
+      },
+      "target_line": "The dead here have had enough hands laid on them."
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": "Bone Collector",
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 16,
+      "spare": false,
+      "glow": false,
+      "max_health": 75.0,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword"
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": "Keeper of the Pit",
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 18,
+      "spare": false,
+      "glow": false,
+      "max_health": 110.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_sword",
+          "count": 1,
+          "enchantments": [
+            {
+              "id": "minecraft:unbreaking",
+              "level": 2
+            }
+          ]
+        }
+      },
+      "target_line": "Another name for the pile."
+    }
+  ],
+  "return_dialogue_line": "I found my entry. I found the place. I even found men who remembered enough to leave me my shovel. I did not find what I came for.",
+  "return_dialogue_steps": [
+    {
+      "choice": "Your body is standing here.",
+      "line": "Yes. That observation has become increasingly difficult to ignore."
+    },
+    {
+      "choice": "Then what were you looking for?",
+      "line": "Proof that someone had noticed I was gone."
+    },
+    {
+      "choice": "The crew did.",
+      "line": "They left the shovel. I thought that was carelessness. It appears I have been insulting dead men for a century."
+    },
+    {
+      "choice": "You still want the grave?",
+      "line": "Yes. But I no longer think it is meant to hold me."
+    },
+    {
+      "choice": "Then what is it for?",
+      "line": "To mark the fact that Amar the Undertaker died. What happens to Amar afterward may be a separate administrative matter."
+    }
+  ],
+  "reward_dialogue_line": "Take nothing from that place. The dead there have been handled enough.",
+  "already_completed_line": "The Nether kept the bones. I kept the name. I consider that an acceptable division.",
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:gold_ingot": 4
+    }
+  },
+  "traits_on_complete": [
+    "amar_found_his_record",
+    "amar_accepts_his_death"
+  ]
+}

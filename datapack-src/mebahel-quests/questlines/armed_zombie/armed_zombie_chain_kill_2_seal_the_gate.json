@@ -1,0 +1,69 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_2_seal_the_gate.title",
+    "fallback": "Seal the Restless Gate"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_2_seal_the_gate.summary",
+    "fallback": "The armed zombie is dead, but the village wants proof that the ruined portal is no longer calling the dead."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:armed_zombie_chain_kill_3_ashes_at_the_frame"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_2_seal_the_gate.dialogue.intro",
+      "fallback": "You did what I asked, but I cannot stop thinking about that portal."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_2_seal_the_gate.dialogue.offer.0.0",
+          "fallback": "What worries you now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_2_seal_the_gate.dialogue.offer.0.1",
+          "fallback": "A corpse with a diamond sword does not choose guard duty. Something near that frame kept it there."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_2_seal_the_gate.dialogue.offer.1.0",
+          "fallback": "What should I do?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_2_seal_the_gate.dialogue.offer.1.1",
+          "fallback": "Break a piece of the weeping stone from the portal. If the gate is still hungry, it will answer."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_2_seal_the_gate.dialogue.return",
+      "fallback": "You brought the sound back with you. I can hear it in the stone dust."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_2_seal_the_gate.dialogue.reward",
+      "fallback": "Take this. If the portal answered, then we need to finish what the dead guard started."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_kill_2_seal_the_gate.dialogue.done",
+      "fallback": "That gate still makes my teeth hurt when the wind turns."
+    }
+  },
+  "goals": [
+    {
+      "id": "break_crying_obsidian",
+      "break": "minecraft:crying_obsidian",
+      "near": "minecraft:ruined_portal",
+      "radius": 4000,
+      "range": 96
+    }
+  ],
+  "rewards": {
+    "xp": 180,
+    "items": {
+      "minecraft:emerald": 6,
+      "minecraft:obsidian": 4
+    }
+  }
+}

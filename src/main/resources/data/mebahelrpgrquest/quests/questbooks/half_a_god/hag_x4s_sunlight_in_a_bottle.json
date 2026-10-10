@@ -1,0 +1,79 @@
+{
+  "title": "Sunlight in a Bottle",
+  "summary": "The pilgrim came down from the clouds. He's resting in a village and asked for you by description: 'the one who let me finish.'",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "pilgrim",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "The Pilgrim"
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:golden_apple": 3,
+      "minecraft:glowstone": 16
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x4s_sunlight_in_a_bottle_done",
+      "hag_payoff_pilgrim_blessing"
+    ]
+  },
+  "quest_book": {
+    "title": "To the One Who Let Me Finish",
+    "author": "The Pilgrim",
+    "color": "yellow",
+    "pages": [
+      "I saw the light go out.\n\nI am not angry. I had my prayer.",
+      "Come to the village by the river, if you pass. I have something that remembers the Sun."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "The Pilgrim",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You came down.",
+          "The Sun is gone. You did it, didn't you? I heard it stop."
+        ],
+        [
+          "I'm sorry.",
+          "Don't be. You let me say goodbye. Most people don't get that with their gods."
+        ]
+      ]
+    }
+  ]
+}

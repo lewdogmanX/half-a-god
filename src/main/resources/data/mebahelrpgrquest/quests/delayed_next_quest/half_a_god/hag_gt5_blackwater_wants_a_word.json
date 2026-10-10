@@ -1,0 +1,69 @@
+{
+  "title": "Blackwater Wants a Word",
+  "summary": "The Blackwater Cartel runs this valley, and Blackwater is run by illagers. They've noticed a new grower.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "enforcers",
+      "kill": "minecraft:vindicator",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The last one gasps: 'Don Vasco says... this is a courtesy.'"
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Blackwater Enforcer",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 20,
+      "count": 4,
+      "max_health": 56,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        },
+        "head": "minecraft:leather_helmet"
+      },
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:emerald": 24
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_gt6_the_coca_fields",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_gt5_blackwater_wants_a_word_done"
+    ]
+  }
+}

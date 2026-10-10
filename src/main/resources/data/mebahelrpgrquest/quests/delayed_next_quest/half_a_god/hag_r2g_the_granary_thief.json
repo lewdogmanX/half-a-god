@@ -1,0 +1,97 @@
+{
+  "title": "The Granary Thief",
+  "summary": "[Reputation: Good] You showed Orsk mercy, and Ashford is watching to see if you meant it. Someone has been stealing from the granary you filled before winter: Corwin, an Ashford refugee. Let him go and cover the loss yourself (you become a Saint), or punish him (you slip to Wavering).",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "judge_corwin",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The village will tell this story for years."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Corwin the Refugee",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 30,
+      "talk": [
+        [
+          "You stole the grain?",
+          "For my sister's children. Ashford has nothing left."
+        ],
+        [
+          "The village needs it for winter.",
+          "I know. I'd do it again. I'm sorry."
+        ],
+        [
+          "What would you have me do?",
+          "Whatever you think is right. You're the only one here they listen to."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Let him go, and pay for the grain yourself",
+      "line": "Corwin cries. The village elder looks at you differently now.",
+      "traits": [
+        "corwin_spared"
+      ]
+    },
+    "attack": {
+      "label": "Punish him with steel",
+      "traits": [
+        "corwin_slain"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 300
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc1_waver",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc1_saint",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_r2g_the_granary_thief_done"
+    ]
+  },
+  "recruit_companion": true
+}

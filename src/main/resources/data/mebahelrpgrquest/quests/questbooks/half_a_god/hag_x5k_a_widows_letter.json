@@ -1,0 +1,80 @@
+{
+  "title": "A Widow's Letter",
+  "summary": "Brann's wife learned what happened in the snow. She wants his medal back. You have it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "brann_widow",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Ilse"
+    }
+  ],
+  "rewards": {
+    "xp": 300
+  },
+  "traits": {
+    "complete": [
+      "hag_x5k_a_widows_letter_done",
+      "hag_payoff_widows_letter"
+    ]
+  },
+  "quest_book": {
+    "title": "Give Me His Medal",
+    "author": "Ilse",
+    "color": "gray",
+    "pages": [
+      "You found my husband alive after ten years, and you killed him.\n\nI'm told you had reasons.",
+      "Bring me his medal. That's all I want from you."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Ilse",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "I'm sorry.",
+          "He survived ten years in the ice. He didn't survive you."
+        ],
+        [
+          "He led the Yeti to you.",
+          "I know. I would have forgiven him. I'll never know if he'd have forgiven himself."
+        ]
+      ]
+    }
+  ],
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_x5_the_last_garrison_man_after"
+    ]
+  }
+}

@@ -1,0 +1,305 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.title",
+    "fallback": "A Place Set for No One"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.summary",
+    "fallback": "Blackthorn House has invited you to dinner. The family has been dead for two centuries, but someone is still laying the table."
+  },
+  "sequential_objectives": true,
+  "requires": {
+    "traits": [
+      "blackthorn_name_found"
+    ]
+  },
+  "goals": [
+    {
+      "id": "find_blackthorn_house",
+      "reach": "minecraft:mansion",
+      "radius": 24000,
+      "range": 80,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "read_guest_ledger",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:mansion",
+      "radius": 24000,
+      "stage": 1,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.name",
+        "fallback": "Blackthorn Guest Ledger"
+      },
+      "tag": "blackthorn_guest_ledger",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.quest_book.title",
+          "fallback": "Blackthorn Guest Ledger"
+        },
+        "author": "Merrin",
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.quest_book.pages.0",
+            "fallback": "BLACKTHORN HOUSE\nDINNER REGISTER\n\nLord Alistair Blackthorn\nLady Ysabet Blackthorn\nTwelve invited guests."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.quest_book.pages.1",
+            "fallback": "1. Lord Peregrin Vale\n2. Mara Vale\n3. Father Elric\n4. Magistrate Hobb\n5. Ysra Pell\n6. Dorn Fell"
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.quest_book.pages.2",
+            "fallback": "7. Lady Morwen Ash\n8. Sir Tavin Reed\n9. Oren Glass\n10. Mira Glass\n11. Doctor Wren\n12. Captain Sera Holt"
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.quest_book.pages.3",
+            "fallback": "THIRTEENTH PLACE:\n\nLeave set.\nDo not clear.\nDo not assign without the Master's instruction."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.quest_book.pages.4",
+            "fallback": "All twelve guests arrived before dusk.\n\nThe thirteenth chair remained empty."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.quest_book.pages.5",
+            "fallback": "The Master ordered the place kept warm."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.quest_book.pages.6",
+            "fallback": "The guests departed.\n\nThe place remained set."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.quest_book.pages.7",
+            "fallback": "The family died.\n\nThe place remained set."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.quest_book.pages.8",
+            "fallback": "I have replaced the silver six times.\n\nI no longer remember when the dining room became quiet."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.1.quest_book.pages.9",
+            "fallback": "The order remains."
+          }
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "speak_to_the_last_servant",
+      "talk": "minecraft:skeleton",
+      "amount": 1,
+      "stage": 2,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.goals.2.name",
+        "fallback": "Merrin, the Last Servant"
+      }
+    },
+    {
+      "id": "end_merrins_service",
+      "kill": "minecraft:skeleton",
+      "amount": 1,
+      "stage": 2,
+      "attack_only": true,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:skeleton",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.name",
+      "fallback": "Merrin, the Last Servant"
+    },
+    "structure": "minecraft:mansion",
+    "search_radius": 24000,
+    "stage": 2,
+    "spawn_on_accept": true,
+    "spawn_min_radius": 5,
+    "spawn_max_radius": 12,
+    "spare": true,
+    "glow": false,
+    "max_health": 100.0,
+    "equipment": {
+      "mainhand": "minecraft:bow",
+      "head": "minecraft:leather_helmet",
+      "chest": "minecraft:leather_chestplate"
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.target_line",
+      "fallback": "You are late."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.0.0",
+          "fallback": "For what?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.0.1",
+          "fallback": "Dinner."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.1.0",
+          "fallback": "Everyone here is dead."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.1.1",
+          "fallback": "That has not historically stopped attendance."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.2.0",
+          "fallback": "Are you Merrin?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.2.1",
+          "fallback": "Merrin, steward of Blackthorn House. I would offer to take your coat, but experience suggests travelers object when skeletons reach for them."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.3.0",
+          "fallback": "Why is the thirteenth place still set?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.3.1",
+          "fallback": "The Master ordered it kept for the final guest."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.4.0",
+          "fallback": "Who is the final guest?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.4.1",
+          "fallback": "If I knew, I would have seated them."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.5.0",
+          "fallback": "How long have you been waiting?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.5.1",
+          "fallback": "Long enough that I have replaced the silver more often than I have spoken my own name."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.6.0",
+          "fallback": "The family is gone."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.talk.6.1",
+          "fallback": "A household is not absolved of its standards merely because its occupants have become inconsiderate."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.attack_choice_label",
+      "fallback": "This house has kept you long enough."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.spare_choice_label",
+      "fallback": "I will find out who you are waiting for."
+    },
+    "attack_return_line": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.attack_return_line",
+      "fallback": "Merrin's service ends by force. The thirteenth place remains empty."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.spared_line",
+      "fallback": "Then please be thorough. The Master disliked incomplete answers almost as much as late guests."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.post_spare_line",
+      "fallback": "His private papers were kept in the study. I have not opened them. A servant who reads his master's letters is merely a thief with good posture."
+    },
+    "mercy_outcome": {
+      "offer_quest_chance": 100,
+      "offered_quest": "mebahelrpgrquest:blackthorn_chain_3_the_final_guest",
+      "ambush_chance": 0,
+      "ambush_player": 0,
+      "ambush_quest_giver": 0,
+      "nothing_chance": 0,
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.threat.mercy_outcome.offer_line",
+        "fallback": "If you mean to investigate, begin with the Master's study. Bring me the truth, even if it is discourteous."
+      }
+    }
+  },
+  "spare_rewards": {
+    "xp": 180,
+    "items": {
+      "minecraft:bone": 8
+    }
+  },
+  "rewards": {
+    "xp": 280,
+    "items": {
+      "minecraft:emerald": 6
+    }
+  },
+  "traits": {
+    "attack": [
+      "merrin_destroyed"
+    ],
+    "spare": [
+      "merrin_heard_out"
+    ],
+    "complete": [
+      "blackthorn_house_entered"
+    ]
+  },
+  "quest_book": {
+    "title": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.quest_book.title",
+      "fallback": "Dinner at Blackthorn House"
+    },
+    "author": "M.",
+    "color": "gray",
+    "pages": [
+      {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.quest_book.pages.0",
+        "fallback": "BLACKTHORN HOUSE\n\nThe household requests the pleasure of your company at dinner."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.quest_book.pages.1",
+        "fallback": "The table will be laid at dusk."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.quest_book.pages.2",
+        "fallback": "Formal dress is appreciated but no longer enforced."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.quest_book.pages.3",
+        "fallback": "Your arrival has been anticipated."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.quest_book.pages.4",
+        "fallback": "One place remains vacant."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.quest_book.pages.5",
+        "fallback": "You need not bring anything."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.quest_book.pages.6",
+        "fallback": "The House remembers its guests."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_2_a_place_set_for_no_one.quest_book.pages.7",
+        "fallback": "Present this invitation at the door.\n\nM.\nSteward"
+      }
+    ],
+    "auto_claim_rewards": true
+  }
+}

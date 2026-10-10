@@ -1,0 +1,71 @@
+{
+  "title": "Jaws in the Dark",
+  "summary": "Villagers who drank from the wells are rising at night as Blood-Born. Hold the village until they stop.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "wait_for_night",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Something wet climbs out of the well."
+    },
+    {
+      "id": "blood_born",
+      "kill": "minecraft:zombie",
+      "amount": 8,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "They were villagers once. The blood kept them moving."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombie",
+      "name": "Blood-Born",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 22,
+      "count": 8,
+      "max_health": 40,
+      "equipment": {
+        "head": "minecraft:leather_helmet"
+      },
+      "effects": [
+        {
+          "id": "minecraft:speed",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 2200,
+    "items": {
+      "minecraft:golden_apple": 3
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_v6_what_eats_the_dead",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v5_jaws_in_the_dark_done"
+    ]
+  }
+}

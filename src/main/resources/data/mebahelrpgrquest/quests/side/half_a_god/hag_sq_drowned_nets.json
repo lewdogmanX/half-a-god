@@ -1,0 +1,45 @@
+{
+  "title": "Drowned Nets",
+  "summary": "The fishing village can't cast a net without drowned climbing up it.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_c2_the_tidecaller"
+    ]
+  },
+  "dialogue": {
+    "intro": "Grabbing them. Grabbing us.",
+    "reward": "Fish for dinner. Real fish!",
+    "offer": [
+      [
+        "Climbing the nets?",
+        "Grabbing them. Grabbing us."
+      ],
+      [
+        "Fifteen.",
+        "Fifteen less, at least."
+      ]
+    ],
+    "return": "Can we fish?"
+  },
+  "goals": [
+    {
+      "id": "drowned",
+      "kill": "minecraft:drowned",
+      "amount": 15,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 550,
+    "items": {
+      "minecraft:trident": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_drowned_nets_done"
+    ]
+  }
+}

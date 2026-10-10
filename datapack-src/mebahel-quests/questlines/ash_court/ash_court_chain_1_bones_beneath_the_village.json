@@ -1,0 +1,169 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.title",
+    "fallback": "Bones Beneath the Village"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.summary",
+    "fallback": "Clear the ash-marked skeletons prowling near the village and bring back enough bones for the elder to study."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:ash_court_chain_2_the_bone_anchor"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.intro",
+      "fallback": "The dead have been walking too close to the village, and their bones are black at the joints as if they were pulled from a cold fire."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.offer.0.0",
+          "fallback": "Skeletons near a village are not rare."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.offer.0.1",
+          "fallback": "Not like these. Their arrows hiss after they land, and they leave grey dust where clean bone should be. Something is calling them from below, or from farther than below."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.offer.1.0",
+          "fallback": "What do you need me to do?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.offer.1.1",
+          "fallback": "Thin them out before someone is taken at the well. If you can bring back bones, I can see whether this is grave-dust, cave rot, or something worse."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.offer.2.0",
+          "fallback": "Worse how?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.offer.2.1",
+          "fallback": "I found soul sand in a footprint this morning. No one here has been to the Nether in years."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.return",
+      "fallback": "These bones are not from our graves. See the dark grit inside them? That is Nether ash, packed into marrow like a command."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.return_steps.0.0",
+          "fallback": "So the Nether is involved?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.return_steps.0.1",
+          "fallback": "Involved, testing, listening - choose the word after we survive it. The skeletons were not wandering. They were being aimed."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.return_steps.1.0",
+          "fallback": "Where did the command come from?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.return_steps.1.1",
+          "fallback": "There is an old spawner under the hills. It used to be a nuisance. Now it may be an anchor."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.reward",
+      "fallback": "You bought us a quiet night, but only one. Take this and go after the anchor before whatever touched those bones learns the road properly."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.dialogue.done",
+      "fallback": "The first bones are buried, but the ash in them still worries me."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_skeletons",
+      "kill": "minecraft:skeleton",
+      "from_threats": false,
+      "amount": 2
+    }
+  ],
+  "optional_objectives": [
+    {
+      "id": "bring_bones",
+      "collect": "minecraft:bone",
+      "amount": 8,
+      "bonus_rewards": {
+        "xp": 100,
+        "items": {
+          "minecraft:emerald": 3
+        }
+      }
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.threats.0.name",
+        "fallback": "Ash-Jointed Archer"
+      },
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spawn_min_radius": 14,
+      "spawn_max_radius": 34,
+      "spare": false,
+      "glow": false,
+      "max_health": 70.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:bow",
+          "enchants": {
+            "minecraft:flame": 1
+          }
+        },
+        "head": "minecraft:chainmail_helmet"
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.threats.0.offer_line",
+        "fallback": "One of the skeletons wears soot-black chainmail and fires arrows that smoke in the dirt. Bring it down with the rest."
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_1_bones_beneath_the_village.threats.1.name",
+        "fallback": "Grave-Cinder Watchman"
+      },
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spawn_min_radius": 14,
+      "spawn_max_radius": 34,
+      "spare": false,
+      "glow": false,
+      "max_health": 70.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:bow",
+          "enchants": {
+            "minecraft:power": 2
+          }
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 180,
+    "items": {
+      "minecraft:emerald": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "nether_ash_found"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:garrison_rest",
+  "weight": 12,
+  "line": "The frozen soldiers are gone from the hideout. Somebody finally let them rest.",
+  "conditions": {
+    "required_traits": [
+      "hag_s2_the_frozen_garrison_done"
+    ]
+  }
+}

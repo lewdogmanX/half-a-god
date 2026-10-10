@@ -1,0 +1,13 @@
+{
+  "id": "half_a_god:rep_waver",
+  "weight": 12,
+  "line": "Some days you're a hero, some days you're a warning. Which is it today?",
+  "conditions": {
+    "required_traits": [
+      "hag_ch3_waver"
+    ],
+    "forbidden_traits": [
+      "hag_route_seg4"
+    ]
+  }
+}

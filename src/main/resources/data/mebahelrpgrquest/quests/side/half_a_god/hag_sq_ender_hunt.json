@@ -1,0 +1,45 @@
+{
+  "title": "Ender Hunt",
+  "summary": "The librarian wants pearls to study the End's 'silence'.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_e3_the_road_underground"
+    ]
+  },
+  "dialogue": {
+    "intro": "The journal calls the End's Nail 'Silence'. I want to know why.",
+    "reward": "Fascinating. They hum.",
+    "offer": [
+      [
+        "Silence?",
+        "The journal calls the End's Nail 'Silence'. I want to know why."
+      ],
+      [
+        "Twenty endermen?",
+        "Pearls go missing. Bring a few extra."
+      ]
+    ],
+    "return": "Pearls?"
+  },
+  "goals": [
+    {
+      "id": "endermen",
+      "kill": "minecraft:enderman",
+      "amount": 20,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:ender_pearl": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_ender_hunt_done"
+    ]
+  }
+}

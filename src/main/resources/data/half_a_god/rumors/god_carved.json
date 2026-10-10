@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:god_carved",
+  "weight": 12,
+  "line": "Someone carved 'God?' into a stone up north. Nobody admits to it.",
+  "conditions": {
+    "required_traits": [
+      "hag_z2_up_done"
+    ]
+  }
+}

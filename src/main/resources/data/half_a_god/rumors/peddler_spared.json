@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:peddler_spared",
+  "weight": 12,
+  "line": "You let the smiling man walk. Folk say he still asks after you. By name.",
+  "conditions": {
+    "required_traits": [
+      "heard_the_word"
+    ]
+  }
+}

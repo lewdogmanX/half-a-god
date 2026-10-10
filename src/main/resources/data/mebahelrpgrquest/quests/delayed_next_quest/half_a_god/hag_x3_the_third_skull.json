@@ -1,0 +1,103 @@
+{
+  "title": "The Third Skull",
+  "summary": "A piglin skull-trader, Ossian, has the third wither skull the cult needs. He'll sell it to whoever pays first. He is terrified of the cult, and more terrified of you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "judge_x3_the_third_skull",
+      "kill": "minecraft:piglin",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:piglin",
+      "name": "Ossian the Skull-Trader",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You have a wither skull.",
+          "One. Only one. The cult's buyer comes tomorrow."
+        ],
+        [
+          "Why sell to them?",
+          "They pay in gold. You pay in threats. I'd rather gold."
+        ],
+        [
+          "And if I pay?",
+          "Then it's yours and I go somewhere quiet. There are no quiet places here."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Pay him fairly and let him go",
+      "line": "Ossian bites the gold, then grins. 'Fair! Nobody is fair down here. Remember Ossian.'",
+      "traits": [
+        "hag_mercy_x3_the_third_skull"
+      ]
+    },
+    "attack": {
+      "label": "Take the skull",
+      "traits": [
+        "hag_cruelty_x3_the_third_skull"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 400
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_x3_the_third_skull_after",
+        "delay_ticks": 200,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:the_nether"
+          ]
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_w4_hold_the_black_bridge",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:the_nether"
+          ]
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x3_the_third_skull_done"
+    ]
+  }
+}

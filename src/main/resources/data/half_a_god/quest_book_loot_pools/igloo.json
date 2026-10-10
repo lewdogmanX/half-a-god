@@ -1,0 +1,10 @@
+{
+  "table": "minecraft:chests/igloo_chest",
+  "drop_chance": 0.3,
+  "books": [
+    {
+      "quest": "mebahelrpgrquest:hag_lp6_igloo",
+      "weight": 1
+    }
+  ]
+}

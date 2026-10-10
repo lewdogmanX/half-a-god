@@ -1,0 +1,38 @@
+{
+  "title": "Lost Page 4: The Price",
+  "summary": "A loose page from the Warden Journal, written by Mara's first champion. It mentions a place. Go and see it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_place",
+      "reach": "minecraft:mansion",
+      "radius": 15000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "You stand where the first champion stood. It feels colder than it should."
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:experience_bottle": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_lp4_mansion_done",
+      "hag_lost_page_4"
+    ]
+  },
+  "quest_book": {
+    "title": "Warden Journal, Page 4",
+    "author": "The First Champion",
+    "color": "gray",
+    "pages": [
+      "The cult offered me a crown. I nearly took it.",
+      "She said nothing. She just looked tired. That was worse."
+    ],
+    "auto_claim_rewards": true
+  }
+}

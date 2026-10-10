@@ -1,0 +1,44 @@
+{
+  "title": "The Nether Eye",
+  "summary": "Lost by a demon in the war between the Aether and the Nether. Where: Nether fortress chests.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "go_below",
+      "type": "enter_nether",
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "the_eye",
+      "collect": "endrem:nether_eye",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Nether Eye stares back at you. (It goes back in your pack.)",
+      "name": "Nether Eye (given back)"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "endrem:nether_eye": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_eb3_the_cursed_eye",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_eb2_the_nether_eye_done"
+    ]
+  }
+}

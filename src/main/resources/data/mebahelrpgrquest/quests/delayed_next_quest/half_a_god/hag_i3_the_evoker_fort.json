@@ -1,0 +1,45 @@
+{
+  "title": "The Evoker Fort",
+  "summary": "The Pyromancer's ledger says the magic came from an Evoker Fort, where an Archevoker taught the cult to cast. Find the fort and end the lessons.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_fort",
+      "reach": "irons_spellbooks:evoker_fort",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "archevoker",
+      "kill": "irons_spellbooks:archevoker",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Caged villagers cheer as the Archevoker falls. One of them is from Ashford."
+    }
+  ],
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "minecraft:totem_of_undying": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_i4_the_scroll_forge",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_i3_the_evoker_fort_done"
+    ]
+  }
+}

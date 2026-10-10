@@ -1,0 +1,63 @@
+{
+  "title": "The Sun Remembers",
+  "summary": "Since you took the sunstone, things with wings follow you at night. Phantoms circle your roof and won't leave.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "wait_for_dark",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "phantoms",
+      "kill": "minecraft:phantom",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The sky is quiet. You throw the sunstone into the sea."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:phantom",
+      "name": "Sun-Hungry Phantom",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 20,
+      "count": 4,
+      "max_health": 30
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:phantom_membrane": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x4k_the_sun_remembers_done",
+      "hag_payoff_sun_remembered"
+    ]
+  },
+  "quest_book": {
+    "title": "Scorched Feathers",
+    "author": "Unsigned",
+    "color": "gray",
+    "pages": [
+      "A bundle of scorched feathers, tied with a pilgrim's cord. Nothing else."
+    ],
+    "auto_claim_rewards": true
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun_after"
+    ]
+  }
+}

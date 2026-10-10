@@ -1,0 +1,71 @@
+{
+  "title": "The Steward's Guard",
+  "summary": "Vael's death did not go unnoticed. His wither-guard wants revenge. Kill them before they reach you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "vaels_guard",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "On the last skull: a gold tag stamped 'PROPERTY OF THE CHARIOT'."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": "Steward's Guard",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "count": 4,
+      "max_health": 70,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:stone_sword",
+          "enchants": {
+            "minecraft:sharpness": 3
+          }
+        }
+      },
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:wither_skeleton_skull": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_a13_tears_for_a_ward",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a12k_the_stewards_guard_done"
+    ]
+  }
+}

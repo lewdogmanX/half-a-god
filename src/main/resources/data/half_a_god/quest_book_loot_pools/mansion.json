@@ -1,0 +1,10 @@
+{
+  "table": "minecraft:chests/woodland_mansion",
+  "drop_chance": 0.3,
+  "books": [
+    {
+      "quest": "mebahelrpgrquest:hag_lp4_mansion",
+      "weight": 1
+    }
+  ]
+}

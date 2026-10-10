@@ -1,0 +1,62 @@
+{
+  "title": "Nets and Knives",
+  "summary": "A fishing village won't sail past the black ship anchored offshore. Help them rebuild their dock so they can fish closer to shore.",
+  "sequential_objectives": true,
+  "requires": {
+    "advancements": [
+      "block_factorys_bosses:kill_sandworm"
+    ]
+  },
+  "goals": [
+    {
+      "id": "cod",
+      "collect": "minecraft:cod",
+      "amount": 32,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "salmon",
+      "collect": "minecraft:salmon",
+      "amount": 16,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "dock",
+      "place": "minecraft:oak_fence",
+      "amount": 24,
+      "range": 64,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "'There's a ship out there that never moves. Something under it does.'"
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:fishing_rod": {
+        "count": 1,
+        "enchants": {
+          "minecraft:luck_of_the_sea": 3
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_c2_the_tidecaller",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_c1_nets_and_knives_done"
+    ]
+  }
+}

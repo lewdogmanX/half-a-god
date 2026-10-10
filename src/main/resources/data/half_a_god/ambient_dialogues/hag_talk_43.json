@@ -1,0 +1,25 @@
+{
+  "id": "hag_talk_43",
+  "type": "villager_conversation",
+  "required_story_flags": [
+    "hag_mercy_x2_the_bastille_warden"
+  ],
+  "forbidden_story_flags": [],
+  "weight": 8,
+  "cooldown": 24000,
+  "max_player_distance": 16,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": 1,
+      "text": "The Bastille warden walked free.",
+      "translation_key": "ambient.half_a_god.hag_talk_43.0"
+    },
+    {
+      "speaker": 1,
+      "look_at": 0,
+      "text": "Gorran? The Ashford men said he was the decent one.",
+      "translation_key": "ambient.half_a_god.hag_talk_43.1"
+    }
+  ]
+}

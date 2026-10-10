@@ -1,0 +1,110 @@
+{
+  "title": {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.title","fallback":"The Final Guest"},
+  "summary": {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.summary","fallback":"Merrin has waited centuries for a guest his master never named. Search Blackthorn House for the order that kept him at the table."},
+  "flow": {
+    "next": "mebahelrpgrquest:blackthorn_chain_4_a_seat_for_the_dead"
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:blackthorn_chain_2_a_place_set_for_no_one"
+    ],
+    "traits": [
+      "merrin_heard_out"
+    ]
+  },
+  "dialogue": {
+    "intro": {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.intro","fallback":"The study is upstairs. The Master kept private correspondence behind the eastern rooms. I was instructed never to read it. I have remained magnificently obedient."},
+    "offer": [
+      [
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.offer.0.0","fallback":"You have waited centuries and never checked?"},
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.offer.0.1","fallback":"I was a servant, not a critic."}
+      ],
+      [
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.offer.1.0","fallback":"What if the answer is in there?"},
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.offer.1.1","fallback":"Then I have spent centuries demonstrating the danger of professional standards."}
+      ],
+      [
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.offer.2.0","fallback":"What exactly did your master say?"},
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.offer.2.1","fallback":"Keep a place for the final guest. Do not clear it until they arrive. Those were his words."}
+      ],
+      [
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.offer.3.0","fallback":"And if nobody was coming?"},
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.offer.3.1","fallback":"That possibility was not included in the instruction."}
+      ]
+    ],
+    "return": {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return","fallback":"You found something. I can tell because you are holding the letter as though it has personally offended you."},
+    "return_steps": [
+      [
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.0.0","fallback":"There was no final guest."},
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.0.1","fallback":"There is always a final guest."}
+      ],
+      [
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.1.0","fallback":"Your master invented one."},
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.1.1","fallback":"That would be extremely inconvenient."}
+      ],
+      [
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.2.0","fallback":"He wrote that he might be wrong."},
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.2.1","fallback":"...He did?"}
+      ],
+      [
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.3.0","fallback":"He knew you could wait forever."},
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.3.1","fallback":"Read that line again."}
+      ],
+      [
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.4.0","fallback":"'If I am wrong, Merrin will wait forever.'"},
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.4.1","fallback":"...He knew."}
+      ],
+      [
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.5.0","fallback":"What did he mean by the house keeping what serves it well?"},
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.5.1","fallback":"An old staff superstition. There were stewards before me. They said no servant truly left Blackthorn House. I believed they meant reputation."}
+      ],
+      [
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.6.0","fallback":"And now?"},
+        {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.return_steps.6.1","fallback":"Now I would prefer that the house remain metaphorical."}
+      ]
+    ],
+    "reward": {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.reward","fallback":"Leave the letter with me. No. Better that you keep it. I have spent long enough preserving his words."},
+    "done": {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.dialogue.done","fallback":"The order is broken in meaning, if not yet in habit."}
+  },
+  "goals": [
+    {
+      "id": "read_the_masters_last_letter",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:mansion",
+      "radius": 24000,
+      "in_chest": true,
+      "container": "minecraft:chest",
+      "name": {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.name","fallback":"The Master's Last Letter"},
+      "tag": "blackthorn_master_last_letter",
+      "quest_book": {
+        "title": {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.quest_book.title","fallback":"The Master's Last Letter"},
+        "author": "Alistair Blackthorn",
+        "pages": [
+          {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.quest_book.pages.0","fallback":"Merrin continues to ask who the final guest is. I continue to tell him that a proper servant does not question the seating plan."},
+          {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.quest_book.pages.1","fallback":"There may be no final guest."},
+          {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.quest_book.pages.2","fallback":"I dislike writing that sentence."},
+          {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.quest_book.pages.3","fallback":"The others think my suspicions have become absurd. Perhaps they are right. Perhaps there is no hidden claimant, no betrayer, no stranger waiting for the house to lower its guard."},
+          {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.quest_book.pages.4","fallback":"But if I clear the place and I am wrong, I invite ruin."},
+          {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.quest_book.pages.5","fallback":"If I keep it set and I am wrong, only Merrin suffers the inconvenience."},
+          {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.quest_book.pages.6","fallback":"He is patient."},
+          {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.quest_book.pages.7","fallback":"The servants have an old saying: Blackthorn House keeps what serves it well. Merrin calls that superstition. I have never corrected him."},
+          {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.quest_book.pages.8","fallback":"If I am wrong, Merrin will wait forever."},
+          {"translate":"quest.mebahelrpgrquest.blackthorn_chain_3_the_final_guest.goals.0.quest_book.pages.9","fallback":"I find that preferable to being surprised."}
+        ]
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 320,
+    "items": {
+      "minecraft:emerald": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "merrin_knows_the_truth"
+    ]
+  }
+}

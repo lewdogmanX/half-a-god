@@ -1,0 +1,256 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.title",
+    "fallback": "The Man Who Came Back Warm"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.summary",
+    "fallback": "Follow Edric Hale's account of a journey through a ruined portal and discover what finally came back wearing his name."
+  },
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_edrics_portal",
+      "reach": "minecraft:ruined_portal",
+      "radius": 4000,
+      "range": 64,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "follow_edric_into_the_nether",
+      "type": "enter_nether",
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "find_the_black_stairs",
+      "reach": "minecraft:fortress",
+      "radius": 6000,
+      "range": 72,
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "read_edrics_nether_journal",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:fortress",
+      "radius": 6000,
+      "stage": 3,
+      "in_chest": true,
+      "container": "minecraft:chest",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.goals.3.name",
+        "fallback": "Edric's Nether Journal"
+      },
+      "tag": "edric_hale_nether_journal",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.goals.3.quest_book.title",
+          "fallback": "What Answered Me"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.goals.3.quest_book.author",
+          "fallback": "Edric Hale"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.goals.3.quest_book.pages.0",
+            "fallback": "I found the second portal beneath the black stairs. It is unlit, but every night I hear Lysa calling from the other side."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.goals.3.quest_book.pages.1",
+            "fallback": "Lysa has been dead for six years.\n\nI know that sentence. I have written it twelve times.\n\nStill, when she says my name, I answer."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.goals.3.quest_book.pages.2",
+            "fallback": "The thing knows her voice now. Yesterday it used mine too.\n\nIt asked me to light the portal so that 'we can all go home.'"
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.goals.3.quest_book.pages.3",
+            "fallback": "I killed the three skeletons watching this chamber. They were not guards. They were listeners. Every one of them turned its skull toward the portal whenever she spoke."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.goals.3.quest_book.pages.4",
+            "fallback": "I am going back through my own portal instead.\n\nIf I return and I am warm, do not trust me.\n\nNothing living stays warm this long down here."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.goals.3.quest_book.pages.5",
+            "fallback": "If something reaches the Overworld wearing my face, kill it before it learns another voice."
+          }
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "silence_the_listeners",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 3,
+      "stage": 4,
+      "from_threats": true,
+      "auto_advance": true
+    },
+    {
+      "id": "return_to_the_overworld",
+      "type": "leave_nether",
+      "stage": 5,
+      "auto_advance": true
+    },
+    {
+      "id": "kill_what_came_back",
+      "kill": "minecraft:zombie",
+      "amount": 1,
+      "stage": 6,
+      "from_threats": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.threats.0.name",
+        "fallback": "Listener at the Black Stairs"
+      },
+      "structure": "minecraft:fortress",
+      "search_radius": 6000,
+      "stage": 4,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 75,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword"
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.threats.1.name",
+        "fallback": "Listener at the Black Stairs"
+      },
+      "structure": "minecraft:fortress",
+      "search_radius": 6000,
+      "stage": 4,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 11,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 75,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword"
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.threats.2.name",
+        "fallback": "Listener at the Black Stairs"
+      },
+      "structure": "minecraft:fortress",
+      "search_radius": 6000,
+      "stage": 4,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 85,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword"
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.threats.3.name",
+        "fallback": "Edric Hale"
+      },
+      "stage": 6,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 130,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword",
+        "offhand": "minecraft:compass",
+        "head": "minecraft:iron_helmet",
+        "chest": "minecraft:leather_chestplate"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 650,
+    "items": {
+      "minecraft:emerald": 10,
+      "minecraft:gold_ingot": 6,
+      "minecraft:ender_pearl": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "edric_hale_returned_warm",
+      "hag_base_came_back_warm_done"
+    ]
+  },
+  "quest_book": {
+    "title": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.quest_book.title",
+      "fallback": "The Man Who Came Back Warm"
+    },
+    "author": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.quest_book.author",
+      "fallback": "Edric Hale"
+    },
+    "color": "red",
+    "pages": [
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.quest_book.pages.0",
+        "fallback": "If this journal is in someone else's hands, I either found the road home or failed badly enough that my belongings became public property."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.quest_book.pages.1",
+        "fallback": "A ruined portal swallowed me when the floor beneath it collapsed. I woke in the Nether with half a frame behind me and no fire to wake it."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.quest_book.pages.2",
+        "fallback": "I followed a fortress until I found another broken portal beneath black stone stairs. That is where I first heard my wife call my name."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.quest_book.pages.3",
+        "fallback": "Her name was Lysa.\n\nShe died six years ago.\n\nI buried her myself."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.quest_book.pages.4",
+        "fallback": "The first time she called, I ran toward the sound.\n\nThe second time, I answered.\n\nThe third time, something laughed with my voice."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.quest_book.pages.5",
+        "fallback": "Three black skeletons watch the chamber. They never attack the portal. They only listen."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.quest_book.pages.6",
+        "fallback": "I have decided to leave the second portal dark. I will return the way I came, even if it takes weeks."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.quest_book.pages.7",
+        "fallback": "If you find my ruined portal, follow my route and read what I left in the fortress.\n\nI need someone else to know what learned our voices down there."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_came_back_warm.quest_book.pages.8",
+        "fallback": "One last thing.\n\nThe Nether has baked the water from my skin and the sleep from my head.\n\nIf I ever come home warm, that is not me."
+      }
+    ],
+    "auto_claim_rewards": true
+  }
+}

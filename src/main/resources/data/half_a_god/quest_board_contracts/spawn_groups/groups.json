@@ -1,0 +1,119 @@
+{
+  "groups": [
+    {
+      "entities": [
+        {
+          "id": "minecraft:vindicator",
+          "weight": 6,
+          "equipment_table": "half_a_god:hag_faithful"
+        },
+        {
+          "id": "minecraft:evoker",
+          "weight": 1,
+          "equipment_table": "half_a_god:hag_faithful"
+        }
+      ],
+      "min": 4,
+      "max": 6,
+      "structures": [
+        "minecraft:villages"
+      ],
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_dangerous",
+        "deadly": "half_a_god:hag_dangerous",
+        "nightmare": "half_a_god:hag_dangerous",
+        "legendary": "half_a_god:hag_dangerous"
+      },
+      "search_radius": 6000,
+      "ignore_current_structure": true,
+      "min_structure_distance": 128,
+      "spawn_min_radius": 0,
+      "spawn_max_radius": 28
+    },
+    {
+      "entities": [
+        {
+          "id": "minecraft:pillager",
+          "weight": 6,
+          "equipment_table": "half_a_god:hag_gold_sworn"
+        },
+        {
+          "id": "minecraft:vindicator",
+          "weight": 2,
+          "equipment_table": "half_a_god:hag_gold_sworn"
+        }
+      ],
+      "min": 4,
+      "max": 6,
+      "structures": [
+        "takesapillage:pillager_camp"
+      ],
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_dangerous",
+        "deadly": "half_a_god:hag_dangerous",
+        "nightmare": "half_a_god:hag_dangerous",
+        "legendary": "half_a_god:hag_dangerous"
+      },
+      "search_radius": 6000,
+      "ignore_current_structure": true,
+      "min_structure_distance": 128,
+      "spawn_min_radius": 0,
+      "spawn_max_radius": 28
+    },
+    {
+      "entities": [
+        {
+          "id": "minecraft:drowned",
+          "weight": 1,
+          "equipment_table": "half_a_god:hag_tide"
+        }
+      ],
+      "min": 5,
+      "max": 7,
+      "structures": [
+        "block_factorys_bosses:kraken_ship"
+      ],
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_nightmare",
+        "deadly": "half_a_god:hag_nightmare",
+        "nightmare": "half_a_god:hag_nightmare",
+        "legendary": "half_a_god:hag_nightmare"
+      },
+      "search_radius": 6000,
+      "ignore_current_structure": true,
+      "min_structure_distance": 128,
+      "spawn_min_radius": 0,
+      "spawn_max_radius": 28
+    },
+    {
+      "entities": [
+        {
+          "id": "minecraft:witch",
+          "weight": 3,
+          "equipment_table": "half_a_god:hag_faithful"
+        },
+        {
+          "id": "minecraft:vindicator",
+          "weight": 2,
+          "equipment_table": "half_a_god:hag_faithful"
+        }
+      ],
+      "min": 4,
+      "max": 6,
+      "structures": [
+        "sons_of_sins:sinful_church"
+      ],
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_legendary",
+        "deadly": "half_a_god:hag_legendary",
+        "nightmare": "half_a_god:hag_legendary",
+        "legendary": "half_a_god:hag_legendary"
+      },
+      "search_radius": 6000,
+      "ignore_current_structure": true,
+      "min_structure_distance": 128,
+      "spawn_min_radius": 0,
+      "spawn_max_radius": 28
+    }
+  ]
+}

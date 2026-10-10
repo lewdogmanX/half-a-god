@@ -1,0 +1,20 @@
+{
+  "id": "hag_passby_17",
+  "type": "player_passby",
+  "required_story_flags": [
+    "hag_tier_fallen"
+  ],
+  "forbidden_story_flags": [],
+  "trigger_radius": 4.5,
+  "weight": 6,
+  "cooldown": 12000,
+  "max_player_distance": 12,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": "player",
+      "text": "Please, just... take what you need and go.",
+      "translation_key": "ambient.half_a_god.hag_passby_17.0"
+    }
+  ]
+}

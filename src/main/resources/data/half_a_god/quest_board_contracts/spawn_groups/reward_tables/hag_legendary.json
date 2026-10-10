@@ -1,0 +1,70 @@
+{
+  "rolls": {
+    "min": 4,
+    "max": 5
+  },
+  "rewards": [
+    {
+      "type": "xp",
+      "weight": 7,
+      "base_min": 500,
+      "base_max": 800,
+      "per_kill_min": 80,
+      "per_kill_max": 120
+    },
+    {
+      "type": "item",
+      "weight": 5,
+      "base_min": 5,
+      "base_max": 8,
+      "per_kill_min": 0.6,
+      "per_kill_max": 1.0,
+      "id": "minecraft:diamond"
+    },
+    {
+      "type": "item",
+      "weight": 3,
+      "base_min": 8,
+      "base_max": 16,
+      "per_kill_min": 0.5,
+      "per_kill_max": 1.0,
+      "id": "sons_of_sins:ether_ashes"
+    },
+    {
+      "type": "item",
+      "weight": 3,
+      "base_min": 8,
+      "base_max": 16,
+      "per_kill_min": 0.4,
+      "per_kill_max": 0.8,
+      "id": "netherman:crimson_arrow"
+    },
+    {
+      "type": "item",
+      "weight": 1,
+      "base_min": 1,
+      "base_max": 2,
+      "per_kill_min": 0,
+      "per_kill_max": 0.1,
+      "id": "netherman:faith_part"
+    },
+    {
+      "type": "item",
+      "weight": 1,
+      "base_min": 1,
+      "base_max": 1,
+      "per_kill_min": 0,
+      "per_kill_max": 0.05,
+      "id": "netherman:chance_totem"
+    },
+    {
+      "type": "item",
+      "weight": 1,
+      "base_min": 1,
+      "base_max": 1,
+      "per_kill_min": 0,
+      "per_kill_max": 0.03,
+      "id": "minecraft:enchanted_golden_apple"
+    }
+  ]
+}

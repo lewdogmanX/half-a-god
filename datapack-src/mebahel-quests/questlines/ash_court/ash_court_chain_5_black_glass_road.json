@@ -1,0 +1,229 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.title",
+    "fallback": "The Black Glass Road"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.summary",
+    "fallback": "Follow the skull's vision into the Nether, search a bastion, and recover the black-glass waystone once used to open a passage to the village."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:ash_court_chain_6_the_court_answers"
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:ash_court_chain_4_the_warm_skull"
+    ],
+    "traits": [
+      "ash_court_road_seen"
+    ]
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.intro",
+      "fallback": "The skull's vision has settled into one image: a broken road of black glass, gold behind walls, and a handprint burned into the stone."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.offer.0.0",
+          "fallback": "What exactly am I looking for?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.offer.0.1",
+          "fallback": "A waystone made of crying obsidian. The Court used stones like it to open short-lived passages for soldiers, prisoners, and supplies."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.offer.1.0",
+          "fallback": "Why involve piglins at all?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.offer.1.1",
+          "fallback": "Piglins know how to hide dangerous roads and how to keep a portal key dormant. Someone paid them to bury this one inside the bastion."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.offer.2.0",
+          "fallback": "And if the bastion is guarded?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.offer.2.1",
+          "fallback": "It will be. Do not make a war of it if you can avoid one, but the brutes guarding the waystone are being paid to keep that passage hidden."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.return",
+      "fallback": "This is not a map. It is an invitation with teeth. See the lines inside the glass? They point to the village bell."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.return_steps.0.0",
+          "fallback": "The Ash Court has a passage to the village?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.return_steps.0.1",
+          "fallback": "It did. The waystone contains the destination of the village bell. Someone used that route before and then paid to conceal it."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.return_steps.1.0",
+          "fallback": "Can we destroy the waystone?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.return_steps.1.1",
+          "fallback": "Not safely. Break an active portal key and the passage may tear open around every shard. We must discharge it through the bell first."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.return_steps.2.0",
+          "fallback": "Then what is the answer?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.return_steps.2.1",
+          "fallback": "We make the village the mouth of the trap. Let the Court send its voice through, then cut the voice where everyone can hear it die."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.reward",
+      "fallback": "You brought back the road. Now we choose where it ends."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.dialogue.done",
+      "fallback": "The waystone sleeps under salt and iron. Its carved route still ends beneath the village bell."
+    }
+  },
+  "goals": [
+    {
+      "id": "enter_nether",
+      "type": "enter_nether",
+      "auto_advance": true,
+      "stage": 0
+    },
+    {
+      "id": "reach_bastion",
+      "reach": "minecraft:bastion_remnant",
+      "radius": 6000,
+      "range": 96,
+      "auto_advance": true,
+      "stage": 1,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.goals.1.say",
+        "fallback": "The stone here feels watched. Somewhere inside, a debt has been carved into black glass."
+      }
+    },
+    {
+      "id": "recover_black_glass_marker",
+      "collect": "minecraft:crying_obsidian",
+      "amount": 1,
+      "structure": "minecraft:bastion_remnant",
+      "radius": 6000,
+      "in_chest": true,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.goals.2.name",
+        "fallback": "Black-Glass Waystone"
+      },
+      "tag": "ash_court_marker",
+      "stage": 2,
+      "auto_advance": true,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.goals.2.say",
+        "fallback": "The waystone pulses once in your pack. For an instant, it opens a view of the village bell before going dark. The piglin keepers are coming."
+      }
+    },
+    {
+      "id": "kill_marker_keepers",
+      "kill": "minecraft:piglin_brute",
+      "amount": 2,
+      "stage": 3,
+      "from_threats": true,
+      "auto_advance": true,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.goals.3.say",
+        "fallback": "The keepers fall. Leave the Nether before the waystone reopens and brings something through."
+      }
+    },
+    {
+      "id": "leave_nether",
+      "type": "leave_nether",
+      "stage": 4
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:piglin_brute",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.threats.0.name",
+        "fallback": "Korrun Debt-Keeper"
+      },
+      "structure": "minecraft:bastion_remnant",
+      "search_radius": 6000,
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 16,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 95.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:golden_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.threats.0.offer_line",
+        "fallback": "Two paid keepers guard the waystone. They will not let you carry the hidden passage key home."
+      }
+    },
+    {
+      "entity": "minecraft:piglin_brute",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_5_black_glass_road.threats.1.name",
+        "fallback": "Varrak Glass-Oath"
+      },
+      "structure": "minecraft:bastion_remnant",
+      "search_radius": 6000,
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 16,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 105.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:golden_axe",
+          "enchants": {
+            "minecraft:knockback": 1,
+            "minecraft:unbreaking": 2
+          }
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 560,
+    "items": {
+      "minecraft:diamond": 5,
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "ash_court_marker_recovered"
+    ]
+  }
+}

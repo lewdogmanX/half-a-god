@@ -1,0 +1,45 @@
+{
+  "title": "Pay the Freed",
+  "summary": "The men freed from the Quarries mined gold for a god. They should be paid for it.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_m2_the_cursed_quarries"
+    ]
+  },
+  "dialogue": {
+    "intro": "They mined a fortune. They came home with nothing.",
+    "reward": "For the first time, the gold is theirs.",
+    "offer": [
+      [
+        "Pay them?",
+        "They mined a fortune. They came home with nothing."
+      ],
+      [
+        "Thirty-two gold.",
+        "A start."
+      ]
+    ],
+    "return": "The gold?"
+  },
+  "goals": [
+    {
+      "id": "gold",
+      "collect": "minecraft:gold_ingot",
+      "amount": 32,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:emerald_block": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_pay_the_freed_done"
+    ]
+  }
+}

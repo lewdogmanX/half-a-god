@@ -1,0 +1,234 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.title",
+    "fallback": "A Skull for Proof"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.summary",
+    "fallback": "Enter the Nether, track the fortress command line, and take a Wither captain's skull as proof."
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.intro",
+      "fallback": "Breaking the anchor stopped the skeletons for now, but it also told the other side that the village can bite back."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.offer.0.0",
+          "fallback": "You want a Wither skull?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.offer.0.1",
+          "fallback": "I want proof strong enough that no elder, guard, or coward can call this a cave problem. A skull from a Wither skeleton captain will do."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.offer.1.0",
+          "fallback": "Taking one may provoke them."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.offer.1.1",
+          "fallback": "Yes. But they already reached for us. Better to know whose hand it is before the whole arm comes through."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.offer.2.0",
+          "fallback": "Where do I start?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.offer.2.1",
+          "fallback": "Go through a Nether portal first. Once you are there, follow the fortress lines. The captain will be inside, not wandering outside like a stray."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.return",
+      "fallback": "That skull is still warm. Not with fire - with notice. Whatever commanded the anchor knows it has lost a head."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.return_steps.0.0",
+          "fallback": "So this proves it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.return_steps.0.1",
+          "fallback": "It proves the village was marked by the Nether, and that a Wither captain stood behind the marked bones."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.return_steps.1.0",
+          "fallback": "Will they come for it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.return_steps.1.1",
+          "fallback": "Yes. Maybe tonight, maybe after they gather enough hate to make a road. But they will come."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.return_steps.2.0",
+          "fallback": "Then this is not over."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.return_steps.2.1",
+          "fallback": "No. This was the warning. The next sound will be the answer."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.reward",
+      "fallback": "Keep your weapons close. You ended the cleanup, but you also gave the Nether a reason to remember your name."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.dialogue.done",
+      "fallback": "The skull is proof, and proof has consequences."
+    }
+  },
+  "goals": [
+    {
+      "id": "enter_nether",
+      "type": "enter_nether",
+      "auto_advance": true,
+      "amount": 1
+    },
+    {
+      "id": "locate_fortress",
+      "reach": "minecraft:fortress",
+      "radius": 5000,
+      "range": 80,
+      "auto_advance": true
+    },
+    {
+      "id": "kill_wither_captain",
+      "kill": "minecraft:wither_skeleton",
+      "stage": 2,
+      "from_threats": true,
+      "amount": 1
+    },
+    {
+      "id": "kill_captain_guards",
+      "kill": "minecraft:skeleton",
+      "stage": 2,
+      "from_threats": true,
+      "amount": 2
+    },
+    {
+      "id": "bring_wither_skull",
+      "collect": "minecraft:wither_skeleton_skull",
+      "stage": 2,
+      "auto_advance": true,
+      "amount": 1
+    },
+    {
+      "id": "leave_nether",
+      "type": "leave_nether",
+      "stage": 3,
+      "amount": 1
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.threats.0.name",
+        "fallback": "Varkhul, Skull-Bound Captain"
+      },
+      "structure": "minecraft:fortress",
+      "search_radius": 5000,
+      "stage": 2,
+      "spawn_min_radius": 0,
+      "spawn_max_radius": 18,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 180.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:stone_sword",
+          "enchants": {
+            "minecraft:sharpness": 3,
+            "minecraft:fire_aspect": 1
+          }
+        },
+        "head": "minecraft:wither_skeleton_skull"
+      },
+      "drop_on_death": {
+        "items": {
+          "minecraft:wither_skeleton_skull": 1
+        }
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.threats.0.offer_line",
+        "fallback": "A Wither captain has been traced to a Nether fortress. Take the skull and bring the warning home."
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.threats.1.name",
+        "fallback": "Fortress Ash Guard"
+      },
+      "structure": "minecraft:fortress",
+      "search_radius": 5000,
+      "stage": 2,
+      "spawn_min_radius": 3,
+      "spawn_max_radius": 18,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 85.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:fire_aspect": 2
+          }
+        },
+        "head": "minecraft:chainmail_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_3_a_skull_for_proof.threats.2.name",
+        "fallback": "Fortress Ember Guard"
+      },
+      "structure": "minecraft:fortress",
+      "search_radius": 5000,
+      "stage": 2,
+      "spawn_min_radius": 3,
+      "spawn_max_radius": 18,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 85.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:fire_aspect": 2
+          }
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 400,
+    "items": {
+      "minecraft:diamond": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "wither_skull_taken",
+      "nether_retaliation_hook"
+    ]
+  }
+}

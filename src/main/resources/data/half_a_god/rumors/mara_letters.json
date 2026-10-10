@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:mara_letters",
+  "weight": 12,
+  "line": "Old Mara writes more letters than anyone alive. Who's she writing to?",
+  "conditions": {
+    "required_traits": [
+      "hag_w8_six_remain_done"
+    ]
+  }
+}

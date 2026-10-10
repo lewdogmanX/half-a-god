@@ -1,0 +1,80 @@
+{
+  "title": "What the Last Page Said",
+  "summary": "The librarian has finished studying the Warden Journal you trusted her with. She found something on the last page the cult missed: where the Chariot's armour was forged.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "librarian",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "The Librarian"
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:enchanted_book": 2,
+      "minecraft:fire_charge": 8,
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_y1_what_the_last_page_said_done",
+      "hag_payoff_last_page"
+    ]
+  },
+  "quest_book": {
+    "title": "The Last Page",
+    "author": "The Librarian",
+    "color": "purple",
+    "pages": [
+      "You let me keep the journal. I've barely slept.\n\nThe last page isn't a prayer. It's a smith's note.",
+      "Come and see me. I've made you something from it."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "The Librarian",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "What did you find?",
+          "A recipe. Not for a weapon. For a ward. The god's fire can't cross it."
+        ],
+        [
+          "Can you make it?",
+          "I already did. Take these. And thank you for trusting me with it."
+        ]
+      ]
+    }
+  ]
+}

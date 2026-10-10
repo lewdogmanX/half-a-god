@@ -1,0 +1,27 @@
+{
+  "title": "The Undead Eye",
+  "summary": "Craft it from an Undead Soul. Where: skeleton horses drop souls, then craft the eye.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_eye",
+      "collect": "endrem:undead_eye",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The Undead Eye stares back at you. (It goes back in your pack.)",
+      "name": "Undead Eye (given back)"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "endrem:undead_eye": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_eb6_the_undead_eye_done"
+    ]
+  }
+}

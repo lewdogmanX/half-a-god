@@ -1,0 +1,160 @@
+{
+  "title": "Warm Hands",
+  "summary": "[Reputation: Good] The snowy village is still short of fires. Campfires don't go out in the wind. Bring six. Then the harbour asks you to decide what happens to a captured wrecker.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "campfires",
+      "collect": "minecraft:campfire",
+      "amount": 6,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "hand_them_out",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "name": "Village Elder"
+    },
+    {
+      "id": "judge_5",
+      "kill": "minecraft:pillager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Mott lit false lights on the rocks to wreck ships for cult gold. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": "Saltjaw Mott",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 50,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You lit the false lights.",
+          "I did. Thirty ships. The cult paid by the hull."
+        ],
+        [
+          "Why stop now?",
+          "Because the harbour caught me. I won't pretend I'd have stopped on my own."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "Campfires.",
+          "No one will freeze this winter. That's never been true before."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Turn him over to the harbour",
+      "line": "The harbourmaster takes him in chains. 'He'll work the nets till the dead come home.'",
+      "traits": [
+        "hag_mercy_5"
+      ]
+    },
+    "attack": {
+      "label": "Drown him",
+      "traits": [
+        "hag_cruelty_5"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1100,
+    "items": {
+      "minecraft:diamond": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc5_good_done",
+      "hag_route_seg5",
+      "hag_ch5_good"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_s1_cold_hearths"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc6_saint",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc6_waver",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  }
+}

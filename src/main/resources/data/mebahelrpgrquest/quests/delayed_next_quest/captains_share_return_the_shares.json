@@ -1,0 +1,77 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.captains_share_return_the_shares.title",
+    "fallback": "The Dead's Share"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.captains_share_return_the_shares.summary",
+    "fallback": "Captain Vale spared you one final piece of arithmetic: return twelve stolen shares to First Mate Orren."
+  },
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "return_twelve_shares",
+      "collect": "minecraft:gold_ingot",
+      "amount": 12,
+      "mandatory": true,
+      "stage": 0
+    },
+    {
+      "id": "give_orrens_count_back",
+      "talk": "minecraft:drowned",
+      "amount": 1,
+      "mandatory": true,
+      "stage": 0,
+      "auto_advance": true,
+      "quest_item_name": {
+        "translate": "quest.mebahelrpgrquest.captains_share_return_the_shares.goals.1.quest_item_name",
+        "fallback": "First Mate Orren"
+      }
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:drowned",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.captains_share_return_the_shares.threat.name",
+      "fallback": "First Mate Orren"
+    },
+    "structure": "minecraft:shipwreck",
+    "search_radius": 1600,
+    "spawn_radius": 8,
+    "spawn_on_accept": true,
+    "allow_water_spawn": true,
+    "spare": false,
+    "glow": false,
+    "max_health": 60,
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.captains_share_return_the_shares.threat.target_line",
+      "fallback": "Twelve."
+    },
+    "delivery_objectives": [
+      "return_twelve_shares"
+    ],
+    "delivery_choice_label": {
+      "translate": "quest.mebahelrpgrquest.captains_share_return_the_shares.threat.delivery_choice_label",
+      "fallback": "Return the twelve shares"
+    },
+    "delivered_line": {
+      "translate": "quest.mebahelrpgrquest.captains_share_return_the_shares.threat.delivered_line",
+      "fallback": "Twelve returned. No captain's share. Good. Let the ship keep the last debt."
+    },
+    "depart_after_delivery": true
+  },
+  "rewards": {
+    "xp": 520,
+    "items": {
+      "minecraft:heart_of_the_sea": 1,
+      "minecraft:emerald": 6
+    }
+  },
+  "traits": {
+    "complete": [
+      "the_dead_received_their_share",
+      "saint_marrow_accounts_closed",
+      "hag_base_captains_share_done"
+    ]
+  }
+}

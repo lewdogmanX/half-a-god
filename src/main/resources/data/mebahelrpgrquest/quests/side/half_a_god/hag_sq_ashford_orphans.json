@@ -1,0 +1,52 @@
+{
+  "title": "Ashford's Orphans",
+  "summary": "Children who lost their parents in the raid need food and warm clothes.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_a2_what_was_left"
+    ]
+  },
+  "dialogue": {
+    "intro": "Seven. The oldest is nine.",
+    "reward": "You can't fix what happened. But this helps.",
+    "offer": [
+      [
+        "How many?",
+        "Seven. The oldest is nine."
+      ],
+      [
+        "What do they need?",
+        "Bread. Something warm. Someone to say it will be all right."
+      ]
+    ],
+    "return": "Have you brought anything?"
+  },
+  "goals": [
+    {
+      "id": "bread",
+      "collect": "minecraft:bread",
+      "amount": 24,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "wool",
+      "collect": "minecraft:white_wool",
+      "amount": 12,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 300,
+    "items": {
+      "minecraft:golden_apple": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_ashford_orphans_done"
+    ]
+  }
+}

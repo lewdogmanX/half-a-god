@@ -1,0 +1,94 @@
+{
+  "title": "The Pretender",
+  "summary": "Return to the Nether Mansion. Silas sits on the throne surrounded by gold-wardens. End his reign.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_mansion",
+      "reach": "netherman:mansion_nether",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "wardens",
+      "kill": "minecraft:piglin_brute",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "silas",
+      "kill": "minecraft:evoker",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Silas slides off the throne. 'It was only ever about the gold,' he says. It's his last joke."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:piglin_brute",
+      "name": "Gilded Warden",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 14,
+      "count": 4,
+      "structure": "netherman:mansion_nether",
+      "search_radius": 30000,
+      "max_health": 90,
+      "equipment": {
+        "mainhand": "minecraft:golden_axe"
+      }
+    },
+    {
+      "entity": "minecraft:evoker",
+      "name": "Silas the Pretender",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 12,
+      "structure": "netherman:mansion_nether",
+      "search_radius": 30000,
+      "max_health": 220,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "minecraft:gold_block": 16
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_et3_the_last_faithful",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_et2_the_pretender_done"
+    ]
+  }
+}

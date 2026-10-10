@@ -1,0 +1,45 @@
+{
+  "title": "Frost Patrol",
+  "summary": "The snowy village wants the strays that drift down from the hideout cleared.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_s2_the_frozen_garrison"
+    ]
+  },
+  "dialogue": {
+    "intro": "Arrows from nowhere. Every night.",
+    "reward": "We heard nothing last night. It was wonderful.",
+    "offer": [
+      [
+        "Strays?",
+        "Arrows from nowhere. Every night."
+      ],
+      [
+        "Twelve of them?",
+        "Twelve at least. They don't stop counting."
+      ]
+    ],
+    "return": "Quiet out there?"
+  },
+  "goals": [
+    {
+      "id": "strays",
+      "kill": "minecraft:stray",
+      "amount": 12,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:emerald": 14
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_frost_patrol_done"
+    ]
+  }
+}

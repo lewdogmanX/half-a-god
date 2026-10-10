@@ -1,0 +1,295 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.title",
+    "fallback": "The Ash Merchant"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.summary",
+    "fallback": "Follow the account book of Silas Dorn into the Nether and learn what the prices beside those human names really meant."
+  },
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_silas_portal",
+      "reach": "minecraft:ruined_portal",
+      "radius": 4200,
+      "range": 64,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "enter_the_trade_road",
+      "type": "enter_nether",
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "find_the_bastion_market",
+      "reach": "minecraft:bastion_remnant",
+      "radius": 7000,
+      "range": 96,
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "read_silas_account_book",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:bastion_remnant",
+      "radius": 7000,
+      "stage": 3,
+      "in_chest": true,
+      "container": "minecraft:chest",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.3.name",
+        "fallback": "Silas Dorn's Account Book"
+      },
+      "tag": "silas_dorn_account_book",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.3.quest_book.title",
+          "fallback": "Accounts in Ash"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.3.quest_book.author",
+          "fallback": "Silas Dorn"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.3.quest_book.pages.0",
+            "fallback": "Mira Vale - 12 gold.\nTomas Reed - 19 gold.\nJeren Holt - 9 gold.\nUnnamed child - 6 gold.\n\nAll marked RECEIVED."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.3.quest_book.pages.1",
+            "fallback": "The handwriting changes here.\n\n'Not sold. Bought back.'"
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.3.quest_book.pages.2",
+            "fallback": "I kept the prices because forgetting them felt worse. Every name is someone taken through the portal. Every payment is what I gathered to bring one home."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.3.quest_book.pages.3",
+            "fallback": "The bastion clerks call me merchant because I count well. Let them. A prisoner who can count is still a prisoner."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.3.quest_book.pages.4",
+            "fallback": "My own price is forty-eight gold.\n\nI have forty-seven."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.3.quest_book.pages.5",
+            "fallback": "If someone from the Overworld finds this, do not waste your life carrying forty-eight gold into this place.\n\nJust make sure the book leaves with you."
+          }
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "kill_the_collection_officer",
+      "kill": "minecraft:piglin_brute",
+      "amount": 1,
+      "stage": 4,
+      "from_threats": true
+    },
+    {
+      "id": "kill_the_bastion_collectors",
+      "kill": "minecraft:piglin",
+      "amount": 3,
+      "stage": 4,
+      "from_threats": true,
+      "auto_advance": true
+    },
+    {
+      "id": "read_silas_final_entry",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:bastion_remnant",
+      "radius": 7000,
+      "stage": 5,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.6.name",
+        "fallback": "Silas's Final Entry"
+      },
+      "tag": "silas_dorn_final_entry",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.6.quest_book.title",
+          "fallback": "The Forty-Eighth Ingot"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.6.quest_book.author",
+          "fallback": "Silas Dorn"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.6.quest_book.pages.0",
+            "fallback": "I found the last ingot."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.6.quest_book.pages.1",
+            "fallback": "One of the guards dropped it beside the furnace and never noticed."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.6.quest_book.pages.2",
+            "fallback": "I held forty-eight gold in my hands for perhaps ten breaths."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.6.quest_book.pages.3",
+            "fallback": "Then they brought in a girl from the Overworld. Her price was one."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.6.quest_book.pages.4",
+            "fallback": "I bought her instead."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.goals.6.quest_book.pages.5",
+            "fallback": "My balance is forty-seven again.\n\nI think I can live with that.\n\nI hope she can too."
+          }
+        ]
+      }
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:piglin_brute",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.threats.0.name",
+        "fallback": "Bastion Collection Officer"
+      },
+      "structure": "minecraft:bastion_remnant",
+      "search_radius": 7000,
+      "stage": 4,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 150,
+      "equipment": {
+        "mainhand": "minecraft:golden_axe",
+        "chest": "minecraft:golden_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:piglin",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.threats.1.name",
+        "fallback": "Ash Ledger Collector"
+      },
+      "structure": "minecraft:bastion_remnant",
+      "search_radius": 7000,
+      "stage": 4,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 55,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:piglin",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.threats.2.name",
+        "fallback": "Ash Ledger Collector"
+      },
+      "structure": "minecraft:bastion_remnant",
+      "search_radius": 7000,
+      "stage": 4,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 7,
+      "spawn_max_radius": 13,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 55,
+      "equipment": {
+        "mainhand": "minecraft:golden_sword"
+      }
+    },
+    {
+      "entity": "minecraft:piglin",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.threats.3.name",
+        "fallback": "Ash Ledger Collector"
+      },
+      "structure": "minecraft:bastion_remnant",
+      "search_radius": 7000,
+      "stage": 4,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 14,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 55,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:emerald": 10,
+      "minecraft:gold_ingot": 1,
+      "minecraft:crying_obsidian": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "silas_dorn_account_recovered",
+      "forty_eighth_ingot_spent_on_another",
+      "hag_base_ash_merchant_done"
+    ]
+  },
+  "quest_book": {
+    "title": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.quest_book.title",
+      "fallback": "The Ash Merchant"
+    },
+    "author": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.quest_book.author",
+      "fallback": "Silas Dorn"
+    },
+    "color": "brown",
+    "pages": [
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.quest_book.pages.0",
+        "fallback": "ACCOUNT BOOK - SILAS DORN\n\nQuartz, blaze powder, iron, leather, food. Standard exchange rates recorded on the following pages."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.quest_book.pages.1",
+        "fallback": "The first pages are ordinary enough. Then names begin appearing between the goods."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.quest_book.pages.2",
+        "fallback": "Mira Vale - 12 gold.\nTomas Reed - 19 gold.\nJeren Holt - 9 gold.\n\nI told myself they were debts."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.quest_book.pages.3",
+        "fallback": "There are more names after that. Beside each one, a price."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.quest_book.pages.4",
+        "fallback": "If this book reaches the Overworld, follow the ruined portal marked with three cuts in the obsidian. The road beyond leads toward the bastion where the accounts are kept."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.quest_book.pages.5",
+        "fallback": "Do not assume the person holding a ledger is the one making the sales."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_ash_merchant.quest_book.pages.6",
+        "fallback": "In places like this, even a prisoner may be useful enough to be given a pen."
+      }
+    ],
+    "auto_claim_rewards": true
+  }
+}

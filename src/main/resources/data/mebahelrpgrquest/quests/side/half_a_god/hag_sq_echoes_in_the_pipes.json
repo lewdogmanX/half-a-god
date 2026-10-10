@@ -1,0 +1,47 @@
+{
+  "title": "Echoes in the Pipes",
+  "summary": "A miner swears the cult's pipes are whispering names. Go and listen.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_a5_beneath_the_pipes"
+    ]
+  },
+  "dialogue": {
+    "intro": "Names. Old ones. Ours.",
+    "reward": "...Your name? Then they know you too.",
+    "offer": [
+      [
+        "Whispering?",
+        "Names. Old ones. Ours."
+      ],
+      [
+        "I'll go.",
+        "Don't answer them."
+      ]
+    ],
+    "return": "What did you hear?"
+  },
+  "goals": [
+    {
+      "id": "find_pipes",
+      "reach": "netherman:pipes",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The pipes whisper. One of the names is yours."
+    }
+  ],
+  "rewards": {
+    "xp": 400,
+    "items": {
+      "minecraft:ender_pearl": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_echoes_in_the_pipes_done"
+    ]
+  }
+}

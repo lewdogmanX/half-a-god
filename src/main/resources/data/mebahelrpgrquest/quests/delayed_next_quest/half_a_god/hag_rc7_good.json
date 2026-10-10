@@ -1,0 +1,169 @@
+{
+  "title": "The Freed Remember",
+  "summary": "The Siege: Half the Watch came. The other half is guarding the children. Hold. Then: [Reputation: Good] The men you freed from the quarries are walking home. One is too weak to make it alone. Walk him the last stretch. Then the freed men bring you the neighbour who sold them.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "siege_night",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Night falls. Horns on the road. The siege has come."
+    },
+    {
+      "id": "siege_vindicator",
+      "kill": "minecraft:vindicator",
+      "amount": 6,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "siege_pillager",
+      "kill": "minecraft:pillager",
+      "amount": 3,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Half the Watch came. The other half is guarding the children. Hold."
+    },
+    {
+      "id": "walk_him_home",
+      "escort": "minecraft:villages",
+      "radius": 3500,
+      "range": 40,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "He touches the village gate like he's not sure it's real."
+    },
+    {
+      "id": "judge_7",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 3,
+      "auto_advance": true,
+      "say": "Garret sold his neighbours to the cult, and was found among the freed. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Hand Besieger",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 26,
+      "count": 6,
+      "max_health": 60
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": "Hand Crossbow",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 26,
+      "count": 3,
+      "max_health": 60
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Garret of Ashford",
+      "stage": 3,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You're the one who gave the cult the names.",
+          "Yes. I've thought about nothing else in the quarries."
+        ],
+        [
+          "Halden's waiting.",
+          "Then take me to him. I won't run."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Let Halden judge him",
+      "line": "Halden looks at Garret for a long time. 'You'll rebuild every house you emptied.'",
+      "traits": [
+        "hag_mercy_7"
+      ]
+    },
+    "attack": {
+      "label": "Judge him yourself",
+      "traits": [
+        "hag_cruelty_7"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1800,
+    "items": {
+      "minecraft:diamond": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc7_good_done",
+      "hag_route_seg7",
+      "hag_ch7_good",
+      "hag_siege_good"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_m2_the_cursed_quarries"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rep_end_saint",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rep_end_waver",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  }
+}

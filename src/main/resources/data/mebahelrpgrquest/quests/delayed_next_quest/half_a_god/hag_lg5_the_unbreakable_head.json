@@ -1,0 +1,28 @@
+{
+  "title": "The Unbreakable Head",
+  "summary": "Aurel says the first bastion treasure chest opened after the Unbreakable's death holds his head. Find it: it will be the proudest trophy in any hall. (You keep it.)",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_head",
+      "collect": "legionary:unbreakable_head",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "A golden helm with a dead furnace behind the visor."
+    }
+  ],
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "legionary:unbreakable_head": 1,
+      "minecraft:enchanted_golden_apple": 1,
+      "minecraft:diamond": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_lg5_the_unbreakable_head_done"
+    ]
+  }
+}

@@ -1,0 +1,325 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.title",
+    "fallback": "A Seat for the Dead"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.summary",
+    "fallback": "The final guest never existed. Set the thirteenth place for Merrin himself, survive Blackthorn House's refusal to release its last servant, and end the Master's hold for good."
+  },
+  "recruit_companion": true,
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:blackthorn_chain_3_the_final_guest"
+    ],
+    "traits": [
+      "merrin_knows_the_truth"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.intro",
+      "fallback": "I have considered the matter carefully. The Master was wrong. I dislike this conclusion, but it has survived repeated inspection."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.0.0",
+          "fallback": "Then clear the table."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.0.1",
+          "fallback": "I tried. I reached for the thirteenth setting and discovered that two centuries of obedience weigh more than silver."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.1.0",
+          "fallback": "What do you need?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.1.1",
+          "fallback": "One final place set by someone who is not following his order. A table, a chair, linen, silver, and one candle."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.2.0",
+          "fallback": "For the final guest?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.2.1",
+          "fallback": "No."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.3.0",
+          "fallback": "Then for whom?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.3.1",
+          "fallback": "I was hoping you would decide that part."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.4.0",
+          "fallback": "You said the house had other stewards."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.4.1",
+          "fallback": "Before me. The staff used to say Blackthorn House remembered everyone who served it. I considered that sentimental nonsense. Tonight I would be delighted to remain correct."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.5.0",
+          "fallback": "What happens after the place is set?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.offer.5.1",
+          "fallback": "I sit, if I can. The house remains silent, if we are fortunate. Neither outcome has precedent."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return",
+      "fallback": "The house has fallen silent. I expected it to object again. It appears we have exhausted its staff."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.0.0",
+          "fallback": "Who were they?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.0.1",
+          "fallback": "Edwin was First Steward long before my service. The others I knew only from the household rolls. The house did remember them."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.1.0",
+          "fallback": "They tried to keep you here."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.1.1",
+          "fallback": "No. They tried to remind me what a servant is. I find I disagree."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.2.0",
+          "fallback": "Dinner is finished."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.2.1",
+          "fallback": "Yes. I believe it is."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.3.0",
+          "fallback": "How does that feel?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.3.1",
+          "fallback": "Improper."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.4.0",
+          "fallback": "Anything else?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.4.1",
+          "fallback": "...Quiet."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.5.0",
+          "fallback": "What will you do now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.5.1",
+          "fallback": "A servant requires a household. A steward requires a house. I appear to be dramatically underqualified for being merely Merrin."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.6.0",
+          "fallback": "Come with me."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.6.1",
+          "fallback": "As what?"
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.7.0",
+          "fallback": "As Merrin."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.7.1",
+          "fallback": "That will require practice."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.8.0",
+          "fallback": "You can start on the road."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.return_steps.8.1",
+          "fallback": "Very well. But if you eat while walking, I reserve the right to disapprove."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.reward",
+      "fallback": "Then Blackthorn House is closed. No master, no final guest, and no servant left to wait for either. If you still want me after that appalling list of deficiencies, I will walk with you."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.dialogue.done",
+      "fallback": "Blackthorn House is no longer expecting anyone. I find that deeply restful."
+    }
+  },
+  "goals": [
+    {
+      "id": "build_the_thirteenth_table",
+      "type": "place_block",
+      "block": "minecraft:dark_oak_log",
+      "amount": 1,
+      "completion_range": 24,
+      "stage": 0
+    },
+    {
+      "id": "place_merrins_chair",
+      "type": "place_block",
+      "block": "minecraft:dark_oak_stairs",
+      "amount": 1,
+      "completion_range": 24,
+      "stage": 0
+    },
+    {
+      "id": "lay_the_table_linen",
+      "type": "place_block",
+      "block": "minecraft:white_carpet",
+      "amount": 1,
+      "completion_range": 24,
+      "stage": 0
+    },
+    {
+      "id": "sit_with_merrin_at_the_thirteenth_place",
+      "type": "wait_time",
+      "amount": 12,
+      "stage": 1,
+      "auto_advance": true,
+      "completion_dialogue_line": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.goals.3.completion_dialogue_line",
+        "fallback": "For twelve quiet seconds, nobody arrives. Merrin almost relaxes. Then the house answers with the footsteps of its former servants."
+      }
+    },
+    {
+      "id": "defeat_the_first_steward",
+      "type": "kill_entity",
+      "entity": "minecraft:stray",
+      "amount": 1,
+      "stage": 2,
+      "from_threats": true
+    },
+    {
+      "id": "silence_the_household_echoes",
+      "type": "kill_entity",
+      "entity": "minecraft:vex",
+      "amount": 2,
+      "stage": 2,
+      "from_threats": true,
+      "auto_advance": true,
+      "completion_dialogue_line": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.goals.5.completion_dialogue_line",
+        "fallback": "The voices stop. Merrin looks at the place you set for him, then at the empty room around it."
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:emerald": 12,
+      "minecraft:name_tag": 1
+    }
+  },
+  "traits_on_complete": [
+    "merrin_recruited",
+    "blackthorn_house_closed"
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:stray",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.threats.0.name",
+        "fallback": "Edwin, First Steward"
+      },
+      "stage": 2,
+      "spawn_origin": "player",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 8,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 160.0,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword",
+        "head": "minecraft:chainmail_helmet",
+        "chest": "minecraft:chainmail_chestplate"
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.threats.0.target_line",
+        "fallback": "A servant does not sit at the table."
+      }
+    },
+    {
+      "entity": "minecraft:vex",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.threats.1.name",
+        "fallback": "Household Echo"
+      },
+      "stage": 2,
+      "spawn_origin": "player",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 7,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 25.0,
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.threats.1.target_line",
+        "fallback": "The order remains."
+      }
+    },
+    {
+      "entity": "minecraft:vex",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.threats.2.name",
+        "fallback": "Household Echo"
+      },
+      "stage": 2,
+      "spawn_origin": "player",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 8,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 25.0,
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_4_a_seat_for_the_dead.threats.2.target_line",
+        "fallback": "The house keeps what serves it."
+      }
+    }
+  ]
+}

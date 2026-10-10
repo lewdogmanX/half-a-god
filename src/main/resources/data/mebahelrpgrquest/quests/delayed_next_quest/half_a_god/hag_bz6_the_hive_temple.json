@@ -1,0 +1,41 @@
+{
+  "title": "The Hive Temple",
+  "summary": "In the maze, Wren's bees were flying one way: toward a Hive Temple. Find it. The bees say a queen lives beyond.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_temple",
+      "reach": "the_bumblezone:hive_temple",
+      "radius": 8000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Royal wax, old carvings of a crowned bee, and a stinger spear on the altar."
+    }
+  ],
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:experience_bottle": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_bz7_roots_that_bite",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "the_bumblezone:the_bumblezone"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_bz6_the_hive_temple_done"
+    ]
+  }
+}

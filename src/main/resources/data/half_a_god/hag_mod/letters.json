@@ -1,0 +1,193 @@
+{
+ "letters": [
+  {
+   "trigger": "hag_w0_two_roads_meet_done",
+   "bright": {
+    "title": "You Did Well",
+    "pages": [
+     "Ashford's men are home, the ones that could be brought home. You did that.",
+     "I've watched a great many people try to be good. Most of them stop when it gets expensive. You haven't.\n\n- M."
+    ]
+   },
+   "grey": {
+    "title": "A Word of Caution",
+    "pages": [
+     "Ashford's men are home. Some of them talk about you with gratitude. Some don't talk about you at all.",
+     "You're not finished deciding who you are. That's all right. Just decide on purpose.\n\n- M."
+    ]
+   },
+   "dark": {
+    "title": "I Heard",
+    "pages": [
+     "I heard what you did. I won't write it down.",
+     "You're still the best chance this world has. That frightens me more than the cult does.\n\n- M."
+    ]
+   },
+   "forbids": [
+    "maraal_rejected"
+   ]
+  },
+  {
+   "trigger": "hag_w8_six_remain_done",
+   "bright": {
+    "title": "Six Remain",
+    "pages": [
+     "The beacon is beautiful. I can see it from my window.",
+     "Six more Wardens. I'm sorry. I'll explain when I can.\n\n- M."
+    ]
+   },
+   "grey": {
+    "title": "Six Remain",
+    "pages": [
+     "The Wither is dead. Six remain.",
+     "Be careful whom you make enemies of. You'll need friends for the rest.\n\n- M."
+    ]
+   },
+   "dark": {
+    "title": "Six Remain",
+    "pages": [
+     "The Wither is dead. The villages are afraid of you.",
+     "Fear is a tool. It is a bad one. It breaks in your hand.\n\n- M."
+    ]
+   },
+   "forbids": [
+    "maraal_rejected"
+   ]
+  },
+  {
+   "trigger": "hag_h10_fireproof_done",
+   "bright": {
+    "title": "About Maraal",
+    "pages": [
+     "You came back from the clouds saying a name.",
+     "I'll tell you about her. Not yet. Soon. I promise.\n\n- M."
+    ]
+   },
+   "grey": {
+    "title": "About Maraal",
+    "pages": [
+     "You heard a name above the clouds.",
+     "Some names are better left up there. This one won't stay.\n\n- M."
+    ]
+   },
+   "dark": {
+    "title": "About Maraal",
+    "pages": [
+     "So you know the name now.",
+     "Don't use it against me. I've used it against myself enough.\n\n- M."
+    ]
+   },
+   "forbids": [
+    "maraal_rejected"
+   ]
+  },
+  {
+   "trigger": "hag_e7_the_nether_is_singing_done",
+   "bright": {
+    "title": "The Singing",
+    "pages": [
+     "You hear it too, don't you? The Nether singing.",
+     "It's singing for him. Not for long, if you have anything to do with it.\n\n- M."
+    ]
+   },
+   "grey": {
+    "title": "The Singing",
+    "pages": [
+     "The Nether is singing. Two champions died before you.",
+     "I won't let it happen a third time. Help me not let it.\n\n- M."
+    ]
+   },
+   "dark": {
+    "title": "The Singing",
+    "pages": [
+     "The Nether is singing.",
+     "Sometimes I wonder whether it's singing for him, or for you.\n\n- M."
+    ]
+   },
+   "forbids": [
+    "maraal_rejected"
+   ]
+  },
+  {
+   "trigger": "hag_f3_unbound_done",
+   "bright": {
+    "title": "Seven",
+    "pages": [
+     "All seven. I've waited a very long time to write that word.",
+     "Rest a night. Then come and find me. I owe you a truth.\n\n- M."
+    ]
+   },
+   "grey": {
+    "title": "Seven",
+    "pages": [
+     "All seven Wardens are dead.",
+     "Now he is unguarded. And so are we. Rest while you can.\n\n- M."
+    ]
+   },
+   "dark": {
+    "title": "Seven",
+    "pages": [
+     "All seven Wardens are dead.",
+     "I keep telling myself I chose the right champion. I keep telling myself.\n\n- M."
+    ]
+   },
+   "forbids": [
+    "maraal_rejected"
+   ]
+  },
+  {
+   "trigger": "hag_v8_sinbuster_done",
+   "bright": {
+    "title": "Armour for a God",
+    "pages": [
+     "You'll stand in front of him soon.",
+     "Whatever he offers you, remember the bell. Remember the grain. Remember Ashford.\n\n- M."
+    ]
+   },
+   "grey": {
+    "title": "Armour for a God",
+    "pages": [
+     "He will offer you mercy.",
+     "It is not mercy. It is a leash with a velvet handle.\n\n- M."
+    ]
+   },
+   "dark": {
+    "title": "Armour for a God",
+    "pages": [
+     "He will offer you mercy, and you will want it.",
+     "I am asking you, as someone who once said yes to him: don't.\n\n- M."
+    ]
+   },
+   "forbids": [
+    "maraal_rejected"
+   ]
+  },
+  {
+   "trigger": "hag_m6_the_instruction_done",
+   "bright": {
+    "title": "Before the Door",
+    "pages": [
+     "Whatever happens past this door, you were worth it.",
+     "Every champion was. You most of all.\n\n- Maraal"
+    ]
+   },
+   "grey": {
+    "title": "Before the Door",
+    "pages": [
+     "This is the last letter before the door.",
+     "I'm not going to tell you what to do. I've done enough of that.\n\n- Maraal"
+    ]
+   },
+   "dark": {
+    "title": "Before the Door",
+    "pages": [
+     "Last letter.",
+     "If you kneel, I'll understand. I won't forgive you. But I'll understand.\n\n- Maraal"
+    ]
+   },
+   "forbids": [
+    "maraal_rejected"
+   ]
+  }
+ ]
+}

@@ -1,0 +1,47 @@
+{
+  "title": "Seeds of the Trade",
+  "summary": "The Fixer wants a real operation, not a windowsill. Plant a field and fill an order.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "plant_the_field",
+      "place": "addictives:weed_crop",
+      "amount": 16,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "first_order",
+      "collect": "addictives:weed",
+      "amount": 32,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:emerald": 24
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_gt3_first_customers",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_gt2_seeds_of_the_trade_done"
+    ]
+  }
+}

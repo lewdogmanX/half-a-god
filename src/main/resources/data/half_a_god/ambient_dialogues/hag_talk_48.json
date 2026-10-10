@@ -1,0 +1,25 @@
+{
+  "id": "hag_talk_48",
+  "type": "villager_conversation",
+  "required_story_flags": [
+    "hag_good_ending"
+  ],
+  "forbidden_story_flags": [],
+  "weight": 8,
+  "cooldown": 24000,
+  "max_player_distance": 16,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": 1,
+      "text": "Is it true? The god is dead?",
+      "translation_key": "ambient.half_a_god.hag_talk_48.0"
+    },
+    {
+      "speaker": 1,
+      "look_at": 0,
+      "text": "The gold in my purse turned to iron last night. I think that's a yes.",
+      "translation_key": "ambient.half_a_god.hag_talk_48.1"
+    }
+  ]
+}

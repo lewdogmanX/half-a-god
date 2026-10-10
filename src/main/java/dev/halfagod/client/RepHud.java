@@ -66,8 +66,7 @@ public final class RepHud {
     public static void render(GuiGraphics g, DeltaTracker delta) {
         Minecraft mc = Minecraft.getInstance();
         Player player = mc.player;
-        if (!known || player == null || mc.options.hideGui || player.isSpectator() || !ClientConfig.SHOW_BAR.get()
-                || mc.getDebugOverlay().showDebugScreen()) {
+        if (!known || player == null || mc.options.hideGui || player.isSpectator() || !ClientConfig.SHOW_BAR.get()) {
             return;
         }
         int sw = g.guiWidth();

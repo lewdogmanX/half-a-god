@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:x4k_payoff",
+  "trigger": {
+    "type": "quest_success",
+    "quest": "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun_after"
+  },
+  "delay": {
+    "min_ticks": 36000,
+    "max_ticks": 60000
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "Unsigned",
+    "quest_book": "mebahelrpgrquest:hag_x4k_the_sun_remembers"
+  }
+}

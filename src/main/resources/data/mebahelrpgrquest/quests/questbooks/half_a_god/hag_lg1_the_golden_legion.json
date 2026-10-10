@@ -1,0 +1,108 @@
+{
+  "title": "The Golden Legion",
+  "summary": "Old Aurel, a retired soldier of the Ashford Watch, heard you are hunting in the Nether. He fought piglins in his youth and has a story about a warrior of theirs who could not die. Go and hear it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "hear_aurel",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Old Aurel"
+    }
+  ],
+  "rewards": {
+    "xp": 200,
+    "items": {
+      "minecraft:golden_carrot": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_lg2_ghosts_of_the_legion",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 400,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_lg1_the_golden_legion_done"
+    ]
+  },
+  "quest_book": {
+    "title": "The Golden Legion",
+    "author": "Old Aurel",
+    "color": "brown",
+    "pages": [
+      "They tell me you are hunting wither skulls in the Nether. So did I, once, and I found something worse.\n\nCome and see an old soldier. I have a story nobody believes.",
+      "- Aurel, late of the Ashford Watch"
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Old Aurel",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You wanted to see me?",
+          "You've been in the Nether. Then you've seen the bastions, and what piglins worship: gold."
+        ],
+        [
+          "What's the Golden Legion?",
+          "Their army, long ago. Their champion was the Unbreakable. A furnace for a heart."
+        ],
+        [
+          "Is he still alive?",
+          "He sleeps in a golden tomb in an arena in the Nether wastes. Only netherite wakes him."
+        ],
+        [
+          "Why now?",
+          "Because the cult wants his furnace-heart to forge the Wither a crown. Get to him first."
+        ],
+        [
+          "Why tell me?",
+          "Because I tried, forty years ago, and ran. Someone should finish it."
+        ]
+      ]
+    }
+  ],
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w1_the_skull_market"
+    ]
+  }
+}

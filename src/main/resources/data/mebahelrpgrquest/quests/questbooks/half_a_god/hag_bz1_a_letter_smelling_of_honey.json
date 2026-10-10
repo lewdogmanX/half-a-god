@@ -1,0 +1,100 @@
+{
+  "title": "A Letter Smelling of Honey",
+  "summary": "Wren, a beekeeper, writes that since the light rose from the Wither's pit her bees have been flying into their nests and never coming out, and she thinks you can follow them. Go and meet her.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "meet_wren",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Wren the Apiarist"
+    }
+  ],
+  "rewards": {
+    "xp": 100,
+    "items": {
+      "minecraft:honey_bottle": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_bz2_pearls_and_patience",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_bz1_a_letter_smelling_of_honey_done"
+    ]
+  },
+  "quest_book": {
+    "title": "A Letter Smelling of Honey",
+    "author": "Wren the Apiarist",
+    "color": "yellow",
+    "pages": [
+      "You don't know me. I keep bees in the village over the hill, or I did.\n\nThe night the light rose out of the Wither's pit, my bees flew into their nests and didn't come out. Not dead. Just gone.",
+      "My grandmother said there's a country inside the comb. A queen. She went once and came back with honey that glowed.\n\nCome and see me. Please.\n\n- Wren"
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Wren the Apiarist",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You wrote to me?",
+          "You were standing by the nests like you were listening. My bees are vanishing."
+        ],
+        [
+          "Vanishing where?",
+          "Inside. There's a whole world in there, made of honeycomb. My grandmother went once."
+        ],
+        [
+          "How do I get in?",
+          "Throw an ender pearl at a bee nest or a hive. Don't ask me how it works. It just does."
+        ]
+      ]
+    }
+  ],
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w8_six_remain"
+    ]
+  }
+}

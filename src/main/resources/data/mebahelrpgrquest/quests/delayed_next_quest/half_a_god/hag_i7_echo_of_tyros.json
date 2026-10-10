@@ -1,0 +1,57 @@
+{
+  "title": "Echo of Tyros",
+  "summary": "The frozen notes say the god's oldest fire still burns: the Echo of Tyros, in a Nether Citadel. Find the Citadel and kill two Ancient Knights for Cinder Essence. Craft a Cinderous Soulcaller (4 Cinder Essence, 2 Netherite Scrap, the Echo Shard from the mountain tower) and ring it at the Citadel's glowing rune to summon Tyros. Then put him out.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_citadel",
+      "reach": "irons_spellbooks:citadel",
+      "radius": 20000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "ancient_knights",
+      "kill": "irons_spellbooks:citadel_keeper",
+      "amount": 2,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Ancient Knights drop Cinder Essence. You need four, plus the Echo Shard and two Netherite Scrap, to craft a Cinderous Soulcaller."
+    },
+    {
+      "id": "tyros",
+      "kill": "irons_spellbooks:fire_boss",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "As it gutters out, Tyros whispers: 'He gave me this fire. Tell him it went out.'"
+    }
+  ],
+  "rewards": {
+    "xp": 4000,
+    "items": {
+      "irons_spellbooks:cinder_essence": 4,
+      "minecraft:netherite_scrap": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_i8_the_arcane_anvil",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_i7_echo_of_tyros_done"
+    ]
+  }
+}

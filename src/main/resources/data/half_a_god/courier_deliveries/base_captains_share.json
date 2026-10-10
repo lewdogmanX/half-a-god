@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:base_captains_share",
+  "trigger": {
+    "type": "quest_success",
+    "quest": "mebahelrpgrquest:hag_s1_cold_hearths"
+  },
+  "delay": {
+    "min_ticks": 2400,
+    "max_ticks": 6000
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "A stranger",
+    "quest_book": "mebahelrpgrquest:questbook_the_captains_share"
+  }
+}

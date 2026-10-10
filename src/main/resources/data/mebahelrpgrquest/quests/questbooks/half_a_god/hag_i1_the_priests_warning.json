@@ -1,0 +1,60 @@
+{
+  "title": "The Priest's Warning",
+  "summary": "A village priest writes that the cult's Faithful are casting real spells now. To fight magic you have to learn it. Build an Inscription Table (Iron's Spells) and gather arcane essence.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "inscription_table",
+      "place": "irons_spellbooks:inscription_table",
+      "amount": 1,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Runes crawl across the wood as if they have been waiting."
+    },
+    {
+      "id": "arcane_essence",
+      "collect": "irons_spellbooks:arcane_essence",
+      "amount": 6,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "irons_spellbooks:arcane_essence": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_i2_fire_in_the_tower",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_i1_the_priests_warning_done"
+    ]
+  },
+  "quest_book": {
+    "title": "A Priest's Warning",
+    "author": "The Priest",
+    "color": "purple",
+    "pages": [
+      "The Faithful who burned Ashford were not only axes and torches. Some of them cast fire with their hands.",
+      "That is evoker magic, stolen and sold. Build an inscription table. Learn to write spells. Then go and take back what they stole."
+    ],
+    "auto_claim_rewards": true
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_a6_believers_house"
+    ]
+  }
+}

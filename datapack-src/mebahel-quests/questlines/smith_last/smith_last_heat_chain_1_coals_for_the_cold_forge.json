@@ -1,0 +1,102 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.title",
+    "fallback": "Coals for the Cold Forge"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.summary",
+    "fallback": "Bring me coal, iron, and a blast furnace, stranger. If we can wake the old forge safely, I will see you paid before the first sparks fade."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:smith_last_heat_chain_2_the_hammer_remembers"
+  },
+  "requires": {
+    "traits": [
+      "quest_discovered:mebahelrpgrquest:smith_last_heat_chain_1_coals_for_the_cold_forge"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.intro",
+      "fallback": "Stranger, come closer. Do you feel that cold? A forge should never feel colder than the street outside."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.offer.0.0",
+          "fallback": "The forge has gone out?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.offer.0.1",
+          "fallback": "Out, aye, but not dead. This smithy once armed half the village watch. Now it coughs smoke, cracks iron, and leaves good tools brittle as old bone."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.offer.1.0",
+          "fallback": "What happened to it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.offer.1.1",
+          "fallback": "The last smith vanished after taking work from the mines. Folk say he found a seam of ore that burned without flame. I say folk talk too much when they are afraid."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.offer.2.0",
+          "fallback": "What do you need?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.offer.2.1",
+          "fallback": "Sixteen coal to wake the heat, eight iron ingots to test the temper, and one blast furnace to give the old fire a proper throat again."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.offer.3.0",
+          "fallback": "And if the forge still fails?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.offer.3.1",
+          "fallback": "Then we learn whether the problem is stone, smoke, or something that should have stayed buried with the last smith."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.return",
+      "fallback": "Good. Coal for breath, iron for truth, and a furnace strong enough to hold both. Stand back while I wake the forge."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.reward",
+      "fallback": "Take this for the materials. The flame caught, but listen to it... that is not a forge settling. That is a hammer striking from somewhere below."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_1_coals_for_the_cold_forge.dialogue.done",
+      "fallback": "The forge burns again, but the fire does not sound alone."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_coal",
+      "collect": "minecraft:coal",
+      "amount": 16
+    },
+    {
+      "id": "bring_iron",
+      "collect": "minecraft:iron_ingot",
+      "amount": 8
+    },
+    {
+      "id": "bring_blast_furnace",
+      "collect": "minecraft:blast_furnace",
+      "amount": 1
+    }
+  ],
+  "rewards": {
+    "xp": 180,
+    "items": {
+      "minecraft:emerald": 7,
+      "minecraft:iron_ingot": 4
+    }
+  }
+}

@@ -1,0 +1,125 @@
+{
+  "title": "The Prisoner",
+  "summary": "Reeve Halden's men caught one of the Ashford raiders alive: Orsk, the man who kept the raiders' tally. Ashford wants him dead. Halden wants you to decide, because you saved them. Hear Orsk out, then hand him over for judgment or execute him. From now on, the choices you make move you along a scale: Saint, Good, Wavering, Fallen, Wicked.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "judge_orsk",
+      "kill": "minecraft:pillager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Whatever you chose, Ashford saw you choose it."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": "Orsk the Tally-Keeper",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "talk": [
+        [
+          "Why did you do it?",
+          "Gold. Same as everyone. Forty for a village. Two for a man."
+        ],
+        [
+          "Who paid you?",
+          "The Faithful. I only kept the count. I never held a torch, I swear it."
+        ],
+        [
+          "Where did the men go?",
+          "A Bastille first. Then the Nether. Ask the believers, they keep the books."
+        ],
+        [
+          "What happens now?",
+          "Halden says you've earned the right to choose. So choose."
+        ]
+      ],
+      "spare_handoff": {
+        "item": "minecraft:written_book",
+        "name": "Orsk's Tally",
+        "count": 1,
+        "quest_book": {
+          "title": "Orsk's Tally",
+          "author": "Orsk",
+          "pages": [
+            "Ashford: 14 men taken. 2 gold each. Paid by the Faithful, through the Gilded Hand.",
+            "If you're reading this, I'm alive. Thank you. I didn't deserve it."
+          ]
+        }
+      }
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Hand him to Halden for judgment",
+      "line": "Orsk sags with relief. Halden nods at you, slowly.",
+      "traits": [
+        "orsk_spared"
+      ]
+    },
+    "attack": {
+      "label": "Execute him here",
+      "traits": [
+        "orsk_executed"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 400,
+    "items": {
+      "minecraft:emerald": 6
+    }
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_r2e_the_assayer",
+        "delay_ticks": 2400,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_r2g_the_granary_thief",
+        "delay_ticks": 2400,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_r1_the_prisoner_done"
+    ]
+  },
+  "quest_book": {
+    "title": "We Caught One",
+    "author": "Reeve Halden",
+    "color": "brown",
+    "pages": [
+      "We caught one alive. Orsk. He kept the raiders' tally, how many men, how much gold.\n\nAshford wants to hang him from what's left of the hall.",
+      "I want to know what you think. You saved us. That gives you the right to choose.\n\nCome and look him in the eye. Read this and he'll be brought to you.\n\n- Halden"
+    ],
+    "auto_claim_rewards": true
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_a1_ashford_burns"
+    ]
+  }
+}

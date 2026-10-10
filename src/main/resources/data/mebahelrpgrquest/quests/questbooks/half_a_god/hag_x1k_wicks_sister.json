@@ -1,0 +1,84 @@
+{
+  "title": "Wick's Sister",
+  "summary": "A girl from the pillager camps has walked three days to find you. Wick was her brother. She doesn't want revenge. She wants to know why.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "nell",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Nell"
+    }
+  ],
+  "rewards": {
+    "xp": 300
+  },
+  "traits": {
+    "complete": [
+      "hag_x1k_wicks_sister_done",
+      "hag_payoff_met_nell"
+    ]
+  },
+  "quest_book": {
+    "title": "A Letter in Bad Handwriting",
+    "author": "Nell",
+    "color": "gray",
+    "pages": [
+      "You hanged my brother.\n\nI'm not coming to hurt you. I couldn't if I wanted to.",
+      "I just want to look at the person who decided he wasn't worth a second chance. I'll be in a village to the west.\n\n- Nell"
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Nell",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You're Wick's sister.",
+          "Nell. He was the only one who ever came back for me."
+        ],
+        [
+          "He sold us to the raiders.",
+          "He sold you patrol times. For bread. I ate that bread."
+        ],
+        [
+          "What do you want?",
+          "Nothing you can give. I just wanted to see your face. Now I have."
+        ]
+      ]
+    }
+  ],
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_x1_the_informant_after"
+    ]
+  }
+}

@@ -1,0 +1,193 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.title",
+    "fallback": "A Debt of Breath"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.summary",
+    "fallback": "Rusk, the raider you spared, has sent for you. He says he has one truth left to drag into daylight."
+  },
+  "sequential_objectives": true,
+  "requires": {
+    "traits": [
+      "false_hero_witness_spared"
+    ]
+  },
+  "traits": {
+    "attack": [
+      "rusk_killed_after_courier"
+    ],
+    "spare": [
+      "rusk_heard_out_after_courier"
+    ],
+    "complete": [
+      "rusk_debt_of_breath_answered"
+    ]
+  },
+  "goals": [
+    {
+      "id": "find_rusks_rendezvous",
+      "reach": "minecraft:ruined_portal",
+      "radius": 4500,
+      "range": 64,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "hear_rusk_out",
+      "talk": "minecraft:pillager",
+      "amount": 1,
+      "stage": 1,
+      "quest_item_name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.goals.hear_rusk_out.name",
+        "fallback": "Rusk the Last Witness"
+      }
+    },
+    {
+      "id": "kill_rusk_after_courier",
+      "kill": "minecraft:pillager",
+      "amount": 1,
+      "stage": 1,
+      "attack_only": true,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:pillager",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.name",
+      "fallback": "Rusk the Last Witness"
+    },
+    "structure": "minecraft:ruined_portal",
+    "search_radius": 4500,
+    "stage": 1,
+    "spawn_origin": "quest_target",
+    "spawn_min_radius": 4,
+    "spawn_max_radius": 8,
+    "spawn_on_accept": true,
+    "spare": true,
+    "golem_protected": true,
+    "glow": false,
+    "max_health": 140.0,
+    "equipment": {
+      "mainhand": {
+        "item": "minecraft:crossbow",
+        "enchants": {
+          "minecraft:quick_charge": 1,
+          "minecraft:unbreaking": 2
+        }
+      },
+      "chest": "minecraft:leather_chestplate"
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.target_line",
+      "fallback": "Courier made it, then. I was not certain anyone still trusted my handwriting."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.talk.0.0",
+          "fallback": "You sent for me."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.talk.0.1",
+          "fallback": "I did. You bought my breath once. I have spent every day since deciding what it cost."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.talk.1.0",
+          "fallback": "If this is about the false hero..."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.talk.1.1",
+          "fallback": "No. He is your village's rot. This is mine."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.talk.2.0",
+          "fallback": "What do you want?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.talk.2.1",
+          "fallback": "One last walk to the outpost. My old captain keeps a black ledger: villages marked, payments taken, names of raiders who sold roads for coin. My mark is in it."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.talk.3.0",
+          "fallback": "You want the ledger destroyed?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.talk.3.1",
+          "fallback": "That is what I would have wanted before you spared me. No. I want it carried into daylight, including the pages with my name."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.attack_choice_label",
+      "fallback": "I should have finished this at the outpost."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.spare_choice_label",
+      "fallback": "Say what you need from me."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.spared_line",
+      "fallback": "Then hear the whole of it."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.post_spare_line",
+      "fallback": "Come with me once. If I run, leave me. If I do not, maybe I finally learn what staying means."
+    },
+    "mercy_outcome": {
+      "offer_quest_chance": 100,
+      "offered_quest": "mebahelrpgrquest:false_hero_rusk_no_banner_behind_me",
+      "ambush_player": 0,
+      "ambush_quest_giver": 0,
+      "ambush_chance": 0,
+      "nothing_chance": 0,
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.threat.mercy_outcome.offer_line",
+        "fallback": "I have one last road to walk. Walk it with me, and I will put every name I helped bury back into daylight."
+      }
+    }
+  },
+  "rewards": {
+    "xp": 120,
+    "items": {}
+  },
+  "quest_book": {
+    "title": "A Debt of Breath",
+    "author": "Rusk",
+    "color": "gray",
+    "pages": [
+      {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.quest_book.pages.0",
+        "fallback": "To the one who let me walk away,\n\nYou told me to speak, then leave your village roads. I did both. One was easier."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.quest_book.pages.1",
+        "fallback": "My old crew heard that I spoke to you. Raiders have several names for a witness who survives. None of them are meant kindly."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.quest_book.pages.2",
+        "fallback": "I found something I should have burned years ago: a black ledger of raids, payments, marked villages, and the men who sold the roads between them."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.quest_book.pages.3",
+        "fallback": "My name is in it.\n\nNot beside every crime. Enough of them."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.quest_book.pages.4",
+        "fallback": "Meet me by the broken portal away from the village. I will not come closer while their dead still have reason to know my face."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.false_hero_rusk_debt_of_breath.quest_book.pages.5",
+        "fallback": "If you come armed, fair.\nIf you come alone, foolish.\n\nCome anyway.\n\n- Rusk"
+      }
+    ],
+    "auto_claim_rewards": true
+  }
+}

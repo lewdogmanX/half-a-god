@@ -1,0 +1,114 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.title",
+    "fallback": "The Witch at the Hut"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.summary",
+    "fallback": "A villager says a witch is threatening the area."
+  },
+  "map": {
+    "icon": "minecraft:potion"
+  },
+  "goals": [
+    {
+      "kill": "minecraft:witch",
+      "amount": 1
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:witch",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.name",
+      "fallback": "Mirelda of the Old Hut"
+    },
+    "structure": "minecraft:swamp_hut",
+    "search_radius": 4000,
+    "spawn_on_accept": true,
+    "glow": false,
+    "max_health": 150.0,
+    "offer_line": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.offer_line",
+      "fallback": "There is a witch near an old hut. I fear she may become a threat. I can give you the coordinates."
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.target_line",
+      "fallback": "I live away from your village because they already decided what I am. I will defend myself if you force me to."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.spared_line",
+      "fallback": "You spared the witch. Return to the villager and decide what that means."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.post_spare_line",
+      "fallback": "Thank you. Take this, and tell them I wanted no bloodshed."
+    },
+    "villager_spared_line": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.villager_spared_line",
+      "fallback": "So you chose to spare her. I asked for the threat to end, and maybe it has. I have no bounty to pay for that choice."
+    },
+    "spare_rewards": {
+      "xp": 100,
+      "items": {
+        "minecraft:redstone": 10,
+        "minecraft:glowstone_dust": 4
+      }
+    },
+    "mercy_outcome": {
+      "offer_quest_chance": 70,
+      "ambush_player": 15,
+      "ambush_quest_giver": 15,
+      "nothing_chance": 0,
+      "offered_quest": "mebahelrpgrquest:witch_chain_2_healing_brews",
+      "ambush_entity": "minecraft:witch",
+      "ambush_name": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.mercy_outcome.ambush_name",
+        "fallback": "Mirelda's Coven-Sister"
+      },
+      "ambush_count": 3,
+      "ambush_max_health": 100,
+      "ambush_equipment": {
+        "head": "minecraft:iron_helmet"
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.mercy_outcome.offer_line",
+        "fallback": "You spared me. If your village truly wants peace, bring me the ingredients for healing brews. The animals nearby are wounded."
+      },
+      "nothing_line": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.mercy_outcome.nothing_line",
+        "fallback": "The witch lowers her gaze, thanks you once, and disappears into the swamp."
+      },
+      "ambush_line": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.mercy_outcome.ambush_line",
+        "fallback": "The witch smiles too late. You should not have trusted her."
+      },
+      "ambush_player_line": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.mercy_outcome.ambush_player_line",
+        "fallback": "The witch's gratitude curdles into a curse. Shadows gather around you."
+      },
+      "ambush_quest_giver_line": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.mercy_outcome.ambush_quest_giver_line",
+        "fallback": "The witch turns her anger toward the village. The one who sent you will pay for this mercy."
+      },
+      "villager_ambush_line": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_1_hut_threat.threat.mercy_outcome.villager_ambush_line",
+        "fallback": "You brought danger back to us. I asked you to end the threat, not give it a path to the village."
+      }
+    }
+  },
+  "rewards": {
+    "xp": 220,
+    "items": {
+      "minecraft:emerald": 8,
+      "minecraft:milk_bucket": 1
+    }
+  },
+  "traits": {
+    "spare": [
+      "witch_friend"
+    ],
+    "attack": [
+      "witch_hunter"
+    ]
+  }
+}

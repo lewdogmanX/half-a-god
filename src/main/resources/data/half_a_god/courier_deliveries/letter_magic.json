@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:letter_magic",
+  "trigger": {
+    "type": "quest_success",
+    "quest": "mebahelrpgrquest:hag_a6_believers_house"
+  },
+  "delay": {
+    "min_ticks": 1200,
+    "max_ticks": 2400
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "The Priest",
+    "quest_book": "mebahelrpgrquest:hag_i1_the_priests_warning"
+  }
+}

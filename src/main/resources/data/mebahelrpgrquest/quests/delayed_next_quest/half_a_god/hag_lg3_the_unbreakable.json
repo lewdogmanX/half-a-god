@@ -1,0 +1,49 @@
+{
+  "title": "The Unbreakable",
+  "summary": "Find the Bastion Arena in the Nether wastes (Legionary). The Unbreakable sleeps in its golden tomb. Strike him with a netherite pickaxe to wake him, then break him.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_arena",
+      "reach": "legionary:bastion_arena",
+      "radius": 20000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Golden chains, golden lanterns, and a tomb that breathes."
+    },
+    {
+      "id": "the_unbreakable",
+      "kill": "legionary:unbreakable",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The furnace in his chest goes out. He was breakable after all."
+    }
+  ],
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "minecraft:netherite_scrap": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_lg4_the_thermal_heart",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 400,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_lg3_the_unbreakable_done"
+    ]
+  }
+}

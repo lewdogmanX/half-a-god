@@ -1,0 +1,48 @@
+{
+  "title": "The Midwife's Debt",
+  "summary": "The Midwife you spared sends word: she wants to undo what she poured. She needs ash.",
+  "sequential_objectives": true,
+  "requires": {
+    "traits": [
+      "midwife_spared"
+    ],
+    "quests": [
+      "mebahelrpgrquest:hag_v3_the_midwife"
+    ]
+  },
+  "dialogue": {
+    "intro": "She says none of them ever spoke. She says she's sorry.",
+    "reward": "She cried when I gave her your answer.",
+    "offer": [
+      [
+        "She wants to help?",
+        "She says none of them ever spoke. She says she's sorry."
+      ],
+      [
+        "Ashes?",
+        "Six. To sweeten the wells she soured. Kill something standing in blood with a bone blade and it leaves ash."
+      ]
+    ],
+    "return": "The ashes?"
+  },
+  "goals": [
+    {
+      "id": "ashes",
+      "collect": "sons_of_sins:ether_ashes",
+      "amount": 6,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:totem_of_undying": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_midwifes_debt_done"
+    ]
+  }
+}

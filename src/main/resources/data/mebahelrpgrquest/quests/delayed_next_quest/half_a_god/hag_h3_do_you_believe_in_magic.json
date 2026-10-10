@@ -1,0 +1,47 @@
+{
+  "title": "Do You Believe in Magic?",
+  "summary": "The Aether's tools are made at an Altar. Build one and find Zanite for better gear.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "altar",
+      "place": "aether:altar",
+      "amount": 1,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "zanite",
+      "collect": "aether:zanite_gemstone",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "aether:zanite_gemstone": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_h4_cockatrice_nights",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "aether:the_aether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_h3_do_you_believe_in_magic_done"
+    ]
+  }
+}

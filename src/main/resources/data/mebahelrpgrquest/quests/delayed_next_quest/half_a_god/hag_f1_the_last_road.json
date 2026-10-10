@@ -1,0 +1,76 @@
+{
+  "title": "The Last Road",
+  "summary": "Mara writes: 'The last one was his once. His mount.' Find the Dragon Tower, fight its skeleton guards, and kill Ashlord, the Infernal Dragon.",
+  "sequential_objectives": true,
+  "requires": {
+    "advancements": [
+      "block_factorys_bosses:kill_yeti",
+      "block_factorys_bosses:kill_sandworm",
+      "block_factorys_bosses:kill_kraken",
+      "block_factorys_bosses:kill_underworld_knight"
+    ],
+    "traits": [
+      "hag_route_seg5",
+      "hag_base_false_hero_done",
+      "hag_base_captains_share_done",
+      "hag_base_return_the_ship_done",
+      "hag_base_undertaker_done",
+      "hag_act5_arc_done"
+    ]
+  },
+  "goals": [
+    {
+      "id": "find_the_tower",
+      "reach": "block_factorys_bosses:dragon_tower",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "ash_guards",
+      "kill": "block_factorys_bosses:dragon_guard_sword",
+      "amount": 3,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "ash_shooters",
+      "kill": "block_factorys_bosses:flaming_skeleton_guard_fireball",
+      "amount": 3,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Their bones carry Ancient Trial Keys."
+    },
+    {
+      "id": "ashlord",
+      "kill": "block_factorys_bosses:infernal_dragon",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The seventh Warden falls. All seven Nails are broken."
+    }
+  ],
+  "rewards": {
+    "xp": 1800,
+    "items": {
+      "minecraft:golden_apple": 3
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_f2_dragon_slayer",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_f1_the_last_road_done"
+    ]
+  }
+}

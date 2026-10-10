@@ -1,0 +1,172 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.title",
+    "fallback": "The Grand Demonstration"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.summary",
+    "fallback": "Doctor Vale proceeds with his public experiment despite Sera's warning. She promised to dilute the serum before he begins. You are about to learn whether she succeeded."
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:mad_scientist_chain_4_patient_thirteen"
+    ],
+    "traits": [
+      "sera_spared"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.intro",
+      "fallback": "Welcome. Before you object, yes, I know Sera spoke to you, and no, I have not cancelled the demonstration."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.offer.0.0",
+          "fallback": "You are still doing this after what Sera told me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.offer.0.1",
+          "fallback": "Especially after what Sera told you. Fear is not peer review."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.offer.1.0",
+          "fallback": "What did you put in Patient Fourteen?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.offer.1.1",
+          "fallback": "The complete restorative. Enough regenerative force to correct every dead cell at once. In theory."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.offer.2.0",
+          "fallback": "And if Sera was right?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.offer.2.1",
+          "fallback": "Then you may say \"I told you so\" while standing somewhere structurally sound."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.offer.3.0",
+          "fallback": "Stop the experiment."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.offer.3.1",
+          "fallback": "No. I have spent too much time asking death for permission. Today it answers me."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.return",
+      "fallback": "The reaction collapsed too quickly. The musculature weakened almost immediately. Someone diluted my reservoir."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.return_steps.0.0",
+          "fallback": "Sera did."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.return_steps.0.1",
+          "fallback": "Of course she did. Even half dead, she remains offensively competent."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.return_steps.1.0",
+          "fallback": "Her sabotage saved the village."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.return_steps.1.1",
+          "fallback": "Her sabotage ruined the century's most important experiment. The fact that those statements may both be true is extremely irritating."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.return_steps.2.0",
+          "fallback": "Are you finally done?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.return_steps.2.1",
+          "fallback": "With this formula? Certainly. With science? Do not be childish."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.reward",
+      "fallback": "Take this and go. The village calls you a hero, Sera will call you something kinder, and I need several hours to be furious at mathematics."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.dialogue.done",
+      "fallback": "Sera was right about the dilution. I dislike admitting that almost as much as I dislike how pleased she will be to hear it."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_diluted_patient_fourteen",
+      "kill": "minecraft:giant",
+      "amount": 1,
+      "quest_giver_resistance_seconds": 60,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:giant",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.threat.name",
+      "fallback": "Patient Fourteen, The Grand Recovery"
+    },
+    "spawn_min_radius": 14,
+    "spawn_max_radius": 22,
+    "spawn_origin": "quest_giver",
+    "spawn_on_accept": true,
+    "spare": false,
+    "glow": true,
+    "max_health": 320.0,
+    "effects": [
+      {
+        "id": "minecraft:weakness",
+        "duration_seconds": 3600,
+        "amplifier": 1,
+        "ambient": false,
+        "show_particles": true,
+        "show_icon": true
+      },
+      {
+        "id": "minecraft:slowness",
+        "duration_seconds": 3600,
+        "amplifier": 0,
+        "ambient": false,
+        "show_particles": false,
+        "show_icon": true
+      }
+    ],
+    "offer_line": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.threat.offer_line",
+      "fallback": "Observe carefully. If this works, every grave becomes a medical inconvenience."
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_spare_5_the_grand_demonstration.threat.target_line",
+      "fallback": "That is not the dosage I prepared."
+    }
+  },
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:emerald": 18,
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "vale_grand_experiment_sabotaged",
+      "sera_saved_village"
+    ]
+  }
+}

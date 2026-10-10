@@ -1,0 +1,79 @@
+{
+  "title": "Brann Comes Home",
+  "summary": "Brann's wife writes. The village didn't hang him. It put him to work rebuilding the walls he helped break.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "brann_wife",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Ilse"
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:cooked_beef": 16,
+      "minecraft:diamond": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x5s_brann_comes_home_done",
+      "hag_payoff_brann_home"
+    ]
+  },
+  "quest_book": {
+    "title": "From the Snowy Village",
+    "author": "Ilse",
+    "color": "blue",
+    "pages": [
+      "My husband came home after ten years.\n\nYou walked him to our door when you had every reason not to.",
+      "Come and eat with us when you pass.\n\n- Ilse, wife of Brann"
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Ilse",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "How is he?",
+          "Warm, finally. Working. Ashamed. Alive. In that order."
+        ],
+        [
+          "And the village?",
+          "They forgave him slower than I did. But they did."
+        ]
+      ]
+    }
+  ]
+}

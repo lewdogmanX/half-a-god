@@ -1,0 +1,83 @@
+{
+  "title": "The Lantern Road",
+  "summary": "Word of what you are has spread. The villages along the old road want to light it end to end, the way it was before the cult, and they want you to carry the first flame. Place twenty lanterns along the road out of your village.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "lanterns",
+      "place": "minecraft:lantern",
+      "amount": 20,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The road glows all the way to the hills. Travellers walk it at night again."
+    },
+    {
+      "id": "elder",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "name": "Village Elder"
+    }
+  ],
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "minecraft:beacon": 1,
+      "minecraft:golden_apple": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ru1_the_lantern_road_done",
+      "hag_lantern_road_lit"
+    ]
+  },
+  "quest_book": {
+    "title": "Light the Road",
+    "author": "The Villages of the Old Road",
+    "color": "yellow",
+    "pages": [
+      "We've talked it over, all of us, from the river to the hills.\n\nWe want the old road lit again.",
+      "We want you to light the first lantern. You know why."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "talk": [
+        [
+          "The road's lit.",
+          "Then nobody walks it alone any more. That's your doing."
+        ]
+      ]
+    }
+  ]
+}

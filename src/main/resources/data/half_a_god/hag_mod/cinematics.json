@@ -1,0 +1,202 @@
+{
+ "moments": [
+  {
+   "trait": "hag_the_first_letter_done",
+   "title": "Half a God",
+   "subtitle": "Old Mara has found you",
+   "color": "#F2C14E",
+   "sound": "minecraft:ui.toast.challenge_complete",
+   "shake": 0,
+   "strength": 0
+  },
+  {
+   "trait": "hag_a1_ashford_burns_done",
+   "title": "Ashford Burns",
+   "subtitle": "The men were counted, not killed",
+   "color": "#D2483A",
+   "sound": "minecraft:block.bell.use",
+   "shake": 20,
+   "strength": 0.6
+  },
+  {
+   "trait": "hag_a9_open_the_cells_done",
+   "title": "Open the Cells",
+   "subtitle": "Some of them are coming home",
+   "color": "#6DCB5B",
+   "sound": "minecraft:ui.toast.challenge_complete",
+   "shake": 0,
+   "strength": 0
+  },
+  {
+   "trait": "hag_w6_the_withered_crown_done",
+   "title": "The Withered Crown",
+   "subtitle": "One Warden falls. Six remain.",
+   "color": "#8E1B1B",
+   "sound": "minecraft:entity.wither.death",
+   "shake": 40,
+   "strength": 1.2
+  },
+  {
+   "trait": "hag_h9_extinguished_done",
+   "title": "Extinguished",
+   "subtitle": "The sun is a little dimmer",
+   "color": "#F2C14E",
+   "sound": "minecraft:block.beacon.deactivate",
+   "shake": 30,
+   "strength": 0.8
+  },
+  {
+   "trait": "hag_e5_free_the_end_done",
+   "title": "Free the End",
+   "subtitle": "The second Warden is dead",
+   "color": "#B070E0",
+   "sound": "minecraft:entity.ender_dragon.death",
+   "shake": 40,
+   "strength": 1.2
+  },
+  {
+   "trait": "hag_f3_unbound_done",
+   "title": "Unbound",
+   "subtitle": "Seven Wardens. Seven dead.",
+   "color": "#D2483A",
+   "sound": "minecraft:entity.lightning_bolt.thunder",
+   "shake": 60,
+   "strength": 1.5
+  },
+  {
+   "trait": "hag_v10_maraal_done",
+   "title": "Maraal",
+   "subtitle": "Mara was never Mara",
+   "color": "#B8B2A6",
+   "sound": "minecraft:ambient.cave",
+   "shake": 0,
+   "strength": 0
+  },
+  {
+   "trait": "hag_m7_hand_over_your_weapon_done",
+   "title": "The Divine Chariot",
+   "subtitle": "Half a god. For now.",
+   "color": "#F2C14E",
+   "sound": "minecraft:entity.wither.spawn",
+   "shake": 60,
+   "strength": 1.4
+  },
+  {
+   "trait": "hag_good_ending",
+   "title": "A God Is Dead",
+   "subtitle": "The gold turns back to iron",
+   "color": "#6DCB5B",
+   "sound": "minecraft:ui.toast.challenge_complete",
+   "shake": 30,
+   "strength": 0.8
+  },
+  {
+   "trait": "hag_sworn",
+   "title": "The Hand of Azazel",
+   "subtitle": "You knelt",
+   "color": "#8E1B1B",
+   "sound": "minecraft:entity.elder_guardian.curse",
+   "shake": 40,
+   "strength": 1.0
+  },
+  {
+   "trait": "gt_kingpin",
+   "title": "King of the Valley",
+   "subtitle": "Every week, someone pays for it",
+   "color": "#3E8E3E",
+   "sound": "minecraft:entity.villager.celebrate",
+   "shake": 0,
+   "strength": 0
+  },
+  {
+   "trait": "gt_got_out",
+   "title": "Getting Out",
+   "subtitle": "Your name is on page nine. You're free.",
+   "color": "#6DCB5B",
+   "sound": "minecraft:ui.toast.challenge_complete",
+   "shake": 0,
+   "strength": 0
+  },
+  {
+   "trait": "gt_cartel_broken",
+   "title": "The Valley Breathes",
+   "subtitle": "Blackwater is finished",
+   "color": "#6DCB5B",
+   "sound": "minecraft:ui.toast.challenge_complete",
+   "shake": 0,
+   "strength": 0
+  },
+  {
+   "trait": "hag_first_champion_found",
+   "title": "The First Champion",
+   "subtitle": "Someone left fresh flowers",
+   "color": "#B8B2A6",
+   "sound": "minecraft:music_disc.11",
+   "shake": 0,
+   "strength": 0
+  },
+  {
+   "trait": "hag_empty_throne_done",
+   "title": "Morning",
+   "subtitle": "The bell rings for something good",
+   "color": "#F2C14E",
+   "sound": "minecraft:block.bell.use",
+   "shake": 0,
+   "strength": 0
+  },
+  {
+   "trait": "hag_hand_of_azazel_done",
+   "title": "At His Right Hand",
+   "subtitle": "The roads are yours",
+   "color": "#8E1B1B",
+   "sound": "minecraft:entity.wither.ambient",
+   "shake": 30,
+   "strength": 0.8
+  },
+  {
+   "trait": "hag_siege_saint",
+   "title": "The Siege",
+   "subtitle": "The Watch held the wall with you",
+   "color": "#D2483A",
+   "sound": "minecraft:event.raid.horn",
+   "shake": 30,
+   "strength": 0.9
+  },
+  {
+   "trait": "hag_siege_good",
+   "title": "The Siege",
+   "subtitle": "The wall held",
+   "color": "#D2483A",
+   "sound": "minecraft:event.raid.horn",
+   "shake": 30,
+   "strength": 0.9
+  },
+  {
+   "trait": "hag_siege_waver",
+   "title": "The Siege",
+   "subtitle": "Halden stood beside you",
+   "color": "#D2483A",
+   "sound": "minecraft:event.raid.horn",
+   "shake": 30,
+   "strength": 0.9
+  },
+  {
+   "trait": "hag_siege_fallen",
+   "title": "The Siege",
+   "subtitle": "You held alone",
+   "color": "#D2483A",
+   "sound": "minecraft:event.raid.horn",
+   "shake": 30,
+   "strength": 0.9
+  },
+  {
+   "trait": "hag_siege_wicked",
+   "title": "The Siege",
+   "subtitle": "Ashford's golems lie broken",
+   "color": "#D2483A",
+   "sound": "minecraft:event.raid.horn",
+   "shake": 30,
+   "strength": 0.9
+  }
+ ]
+}

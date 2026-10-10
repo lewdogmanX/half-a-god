@@ -1,0 +1,52 @@
+{
+  "title": "Swet Trouble",
+  "summary": "Swets are sticking to the Aether's wildlife. Clear them.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_h4_cockatrice_nights"
+    ]
+  },
+  "dialogue": {
+    "intro": "Jelly that eats. You'll know them.",
+    "reward": "I don't want to know what you're covered in.",
+    "offer": [
+      [
+        "Swets?",
+        "Jelly that eats. You'll know them."
+      ],
+      [
+        "Clear them how?",
+        "Repeatedly."
+      ]
+    ],
+    "return": "Clean sky?"
+  },
+  "goals": [
+    {
+      "id": "blue_swets",
+      "kill": "aether:blue_swet",
+      "amount": 6,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "golden_swets",
+      "kill": "aether:golden_swet",
+      "amount": 6,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 450,
+    "items": {
+      "aether:ambrosium_shard": 16
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_swet_trouble_done"
+    ]
+  }
+}

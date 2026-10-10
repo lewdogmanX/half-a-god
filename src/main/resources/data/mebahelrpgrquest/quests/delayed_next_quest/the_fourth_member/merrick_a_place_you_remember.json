@@ -1,0 +1,277 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.title",
+    "fallback": "A Place You Remember"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.summary",
+    "fallback": "A ruined place has appeared in your quest journal with the uncomfortable certainty that you have been there before."
+  },
+  "map": {
+    "icon": "minecraft:compass"
+  },
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_place_you_remember",
+      "reach": "minecraft:ruined_portal",
+      "radius": 4500,
+      "range": 64,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "read_your_own_page",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:ruined_portal",
+      "radius": 4500,
+      "stage": 1,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.goals.1.name",
+        "fallback": "A Page in Your Handwriting"
+      },
+      "tag": "merrick_page_in_your_handwriting",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.goals.1.quest_book.title",
+          "fallback": "A Page in Your Handwriting"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.goals.1.quest_book.author",
+          "fallback": "Unknown"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.goals.1.quest_book.pages.0",
+            "fallback": "Merrick remembers things before I do."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.goals.1.quest_book.pages.1",
+            "fallback": "That does not mean he is lying."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.goals.1.quest_book.pages.2",
+            "fallback": "I counted four chairs tonight."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.goals.1.quest_book.pages.3",
+            "fallback": "There were five shadows."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.goals.1.quest_book.pages.4",
+            "fallback": "Do not tell Merrick."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.goals.1.quest_book.pages.5",
+            "fallback": "He thinks he is the fourth."
+          }
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "confront_merrick_about_the_fifth",
+      "kill": "minecraft:vindicator",
+      "amount": 1,
+      "stage": 2,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:vindicator",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.name",
+      "fallback": "Merrick"
+    },
+    "structure": "minecraft:ruined_portal",
+    "search_radius": 4500,
+    "stage": 2,
+    "spawn_origin": "quest_target",
+    "spawn_min_radius": 5,
+    "spawn_max_radius": 10,
+    "spawn_on_accept": true,
+    "spare": true,
+    "glow": false,
+    "max_health": 110,
+    "equipment": {
+      "mainhand": "minecraft:air",
+      "head": "minecraft:leather_helmet",
+      "chest": "minecraft:leather_chestplate",
+      "feet": "minecraft:leather_boots"
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.target_line",
+      "fallback": "You found it."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.0.0",
+          "fallback": "You knew this was here?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.0.1",
+          "fallback": "I knew we left something. I did not know it would be in your hand."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.1.0",
+          "fallback": "This says you think you're the fourth."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.1.1",
+          "fallback": "...What?"
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.2.0",
+          "fallback": "Jorn. Vessa. Haldrin. And you."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.2.1",
+          "fallback": "Yes. Four."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.3.0",
+          "fallback": "Then whose shadow was fifth?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.3.1",
+          "fallback": "Don't."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.4.0",
+          "fallback": "You know something."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.4.1",
+          "fallback": "No. That is the problem. I remember being the fourth. I remember always being the fourth. Now I cannot tell whether that memory belongs to me."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.5.0",
+          "fallback": "What do we do now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.talk.5.1",
+          "fallback": "Do not count them again. Not aloud. Not in your head. And if someone else remembers our camp, walk away before they finish the number."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.attack_choice_label",
+      "fallback": "I should have killed you the first time."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.spare_choice_label",
+      "fallback": "Go. I need time to think."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.spared_line",
+      "fallback": "So do I."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.post_spare_line",
+      "fallback": "If I come back and you do not remember me, do not answer me twice."
+    },
+    "spare_handoff": {
+      "item": "minecraft:written_book",
+      "count": 1,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.spare_handoff.name",
+        "fallback": "Do Not Count Again"
+      },
+      "depart_after_spare": true,
+      "consume_on_claim": false,
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.spare_handoff.quest_book.title",
+          "fallback": "Do Not Count Again"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.spare_handoff.quest_book.author",
+          "fallback": "Merrick"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.spare_handoff.quest_book.pages.0",
+            "fallback": "Jorn. Vessa. Haldrin. Merrick."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.spare_handoff.quest_book.pages.1",
+            "fallback": "Four names are enough."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.spare_handoff.quest_book.pages.2",
+            "fallback": "If you remember a fifth voice, do not give it a name."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_a_place_you_remember.threat.spare_handoff.quest_book.pages.3",
+            "fallback": "If I return and you do not remember me, do not answer me twice."
+          }
+        ]
+      }
+    },
+    "spare_rewards": {
+      "xp": 260,
+      "items": {
+        "minecraft:emerald": 3
+      }
+    }
+  },
+  "rewards": {
+    "xp": 420,
+    "items": {
+      "minecraft:ender_pearl": 2
+    }
+  },
+  "traits": {
+    "spare": [
+      "merrick_saw_the_fifth"
+    ],
+    "attack": [
+      "merrick_silenced_after_fifth"
+    ]
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:merrick_the_end_remembers",
+        "delay_ticks": 0,
+        "silent_start": true,
+        "conditions": {
+          "dimensions": [
+            "minecraft:the_end"
+          ],
+          "player_not_in_combat": true
+        },
+        "retry_delay_ticks": 600
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:the_sixth_voice",
+        "delay_ticks": 36000,
+        "silent_start": true,
+        "conditions": {
+          "dimensions": [
+            "minecraft:overworld"
+          ],
+          "player_not_in_combat": true
+        },
+        "retry_delay_ticks": 600
+      }
+    }
+  }
+}

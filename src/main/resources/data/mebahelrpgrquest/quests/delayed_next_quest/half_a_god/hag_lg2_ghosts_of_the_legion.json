@@ -1,0 +1,49 @@
+{
+  "title": "Ghosts of the Legion",
+  "summary": "Aurel says the Legion's last soldiers still guard the bastions: the piglin brutes. Prove you can stand against them before you face their champion.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_a_bastion",
+      "reach": "minecraft:bastion_remnant",
+      "radius": 12000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Gold and blackstone, and the snort of something big."
+    },
+    {
+      "id": "brutes",
+      "kill": "minecraft:piglin_brute",
+      "amount": 3,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The last brute falls clutching a gold medallion: a golden fist."
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:gold_block": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_lg3_the_unbreakable",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_lg2_ghosts_of_the_legion_done"
+    ]
+  }
+}

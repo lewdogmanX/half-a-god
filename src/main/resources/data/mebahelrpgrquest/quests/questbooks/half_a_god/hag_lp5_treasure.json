@@ -1,0 +1,38 @@
+{
+  "title": "Lost Page 5: The Sea",
+  "summary": "A loose page from the Warden Journal, written by Mara's first champion. It mentions a place. Go and see it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_place",
+      "reach": "minecraft:buried_treasure",
+      "radius": 15000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "You stand where the first champion stood. It feels colder than it should."
+    }
+  ],
+  "rewards": {
+    "xp": 650,
+    "items": {
+      "minecraft:experience_bottle": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_lp5_treasure_done",
+      "hag_lost_page_5"
+    ]
+  },
+  "quest_book": {
+    "title": "Warden Journal, Page 5",
+    "author": "The First Champion",
+    "color": "gray",
+    "pages": [
+      "Three Wardens dead. My hands shake now even when I sleep.",
+      "I buried my sword's twin here. In case the next one needs it."
+    ],
+    "auto_claim_rewards": true
+  }
+}

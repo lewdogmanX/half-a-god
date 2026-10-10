@@ -1,0 +1,56 @@
+{
+  "title": "A Light Above the Pit",
+  "summary": "Villagers saw a beam of light rise from the Wither's pit into the clouds. Mara says to ignore it. The cleric's grandmother said glowstone and water open a door to heaven. Build an Aether portal.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "glowstone_frame",
+      "place": "minecraft:glowstone",
+      "amount": 10,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Glowstone and water. The cleric's grandmother called it the door to heaven."
+    }
+  ],
+  "rewards": {
+    "xp": 400,
+    "items": {
+      "minecraft:glowstone": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_h2_hostile_paradise",
+      "delay_ticks": 20,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "aether:the_aether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_h1_a_light_above_the_pit_done"
+    ]
+  },
+  "quest_book": {
+    "title": "Leave the Sky Alone",
+    "author": "Old Mara",
+    "color": "gray",
+    "pages": [
+      "I hear the villagers saw a light go up from your pit.\n\nIgnore it. There is nothing above the clouds but old, proud things that will not help you.",
+      "Go to the End instead. Find a stronghold. The next Warden waits there.\n\nPlease. - M."
+    ],
+    "auto_claim_rewards": true
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w8_six_remain"
+    ]
+  }
+}

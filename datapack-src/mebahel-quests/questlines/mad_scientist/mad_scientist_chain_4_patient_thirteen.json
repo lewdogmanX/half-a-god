@@ -1,0 +1,193 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.title",
+    "fallback": "Patient Thirteen"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.summary",
+    "fallback": "Sera Marr is still alive in the loosest possible sense. Find her, hear what happened, and decide whether she is a patient, a witness, or a threat."
+  },
+  "flow": {
+    "on_kill": "mebahelrpgrquest:mad_scientist_chain_kill_5_the_grand_demonstration",
+    "on_spare": "mebahelrpgrquest:mad_scientist_chain_spare_5_the_grand_demonstration"
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:mad_scientist_chain_3_the_assistants_last_notes"
+    ]
+  },
+  "traits": {
+    "attack": [
+      "sera_killed"
+    ],
+    "spare": [
+      "sera_spared"
+    ]
+  },
+  "goals": [
+    {
+      "id": "talk_to_sera",
+      "talk": "minecraft:zombie_villager",
+      "amount": 1,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.goals.0.name",
+        "fallback": "Sera Marr"
+      }
+    },
+    {
+      "id": "kill_sera",
+      "kill": "minecraft:zombie_villager",
+      "amount": 1,
+      "attack_only": true,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:zombie_villager",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.name",
+      "fallback": "Sera Marr, Patient Thirteen"
+    },
+    "structure": "minecraft:mineshaft",
+    "search_radius": 3400,
+    "spawn_on_accept": true,
+    "spawn_min_radius": 8,
+    "spawn_max_radius": 22,
+    "spare": true,
+    "glow": false,
+    "max_health": 130.0,
+    "offer_line": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.offer_line",
+      "fallback": "I found Sera's trail in the old shaft. If the restorative failed, she may no longer know you from prey. Speak first if you can. End it if you cannot."
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.target_line",
+      "fallback": "Do not... call me patient. That is his word."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.talk.0.0",
+          "fallback": "Sera?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.talk.0.1",
+          "fallback": "Still Sera. I repeat it when the hunger gets loud. Sera Marr. Assistant. Twenty-seven years old. Hated beetroot."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.talk.1.0",
+          "fallback": "Vale said you volunteered for the treatment."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.talk.1.1",
+          "fallback": "For the first dose. I was bitten. I chose a chance. I did not choose the second dose after I begged him to stop. Or the third while I was tied down."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.talk.2.0",
+          "fallback": "Why did he keep increasing it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.talk.2.1",
+          "fallback": "Because the wounds healed, but he stopped caring whether I healed. He cared how much flesh the serum could make before it failed."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.talk.3.0",
+          "fallback": "What is he planning now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.talk.3.1",
+          "fallback": "A public demonstration. One larger body, one full reservoir, the village bell for witnesses. He thinks the cure fails because ordinary bodies are too small for his success."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.attack_choice_label",
+      "fallback": "You are infected. I cannot risk you reaching the village."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.spare_choice_label",
+      "fallback": "You are still Sera. Tell me how to stop him."
+    },
+    "attack_return_line": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.attack_return_line",
+      "fallback": "Sera is dead? Then at least the hunger cannot take the rest of her. Bring me nothing from the body. I already have the measurements I need."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.spared_line",
+      "fallback": "You let me live. I know exactly how I'm going to repay you for that."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.post_spare_line",
+      "fallback": "Take my dilution notes. Vale will perform his demonstration no matter what we say, so I'll make sure his miracle is weaker than he expects. Less redstone, no ghast catalyst, twice the water. Let him discover humility the loud way."
+    },
+    "villager_spared_line": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.villager_spared_line",
+      "fallback": "You let Sera walk. I see. Sentiment has entered the experiment. No matter. The demonstration proceeds tomorrow, and facts are excellent at embarrassing sentiment."
+    },
+    "spare_handoff": {
+      "item": "minecraft:written_book",
+      "count": 1,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.spare_handoff.name",
+        "fallback": "Sera's Dilution Notes"
+      },
+      "depart_after_spare": true,
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.spare_handoff.quest_book.title",
+          "fallback": "Sera's Dilution Notes"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.spare_handoff.quest_book.author",
+          "fallback": "Sera Marr"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.spare_handoff.quest_book.pages.0",
+            "fallback": "The restorative does heal necrotic tissue. The runaway growth begins only after the catalyst reaches full saturation."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.spare_handoff.quest_book.pages.1",
+            "fallback": "Dilution: halve the redstone suspension. Remove the ghast catalyst. Double the water. It will still react, but it should lose strength quickly."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.threat.spare_handoff.quest_book.pages.2",
+            "fallback": "If I cannot stop Vale, I can at least make his miracle small enough to kill before it kills the village."
+          }
+        ]
+      }
+    },
+    "spare_rewards": {
+      "xp": 220,
+      "items": {
+        "minecraft:golden_carrot": 3
+      }
+    }
+  },
+  "dialogue": {
+    "return": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.dialogue.return",
+      "fallback": "Then Sera is gone. I had hoped the restorative would preserve more of her. We proceed with the demonstration."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.dialogue.reward",
+      "fallback": "Take this. I know what you did was unpleasant. Necessary work often develops that reputation."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_4_patient_thirteen.dialogue.done",
+      "fallback": "The demonstration is tomorrow. Sera's objections will not change the result. Facts are considerably less sentimental than assistants."
+    }
+  },
+  "rewards": {
+    "xp": 260,
+    "items": {
+      "minecraft:emerald": 10
+    }
+  }
+}

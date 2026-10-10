@@ -1,0 +1,113 @@
+{
+  "title": "The Librarian's Request",
+  "summary": "A librarian who has studied the cult's Old Tongue for thirty years wants to help you find the End. She needs books and ink to copy what she finds.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "books",
+      "collect": "minecraft:book",
+      "amount": 24,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "ink",
+      "collect": "minecraft:ink_sac",
+      "amount": 8,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "meet_the_librarian",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "'Strongholds keep old books. Take me to one.'",
+      "name": "The Librarian"
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:enchanted_book": {
+        "count": 1,
+        "enchants": {
+          "minecraft:feather_falling": 4
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_ea1_the_old_eye",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_e1_the_librarians_request_done"
+    ]
+  },
+  "quest_book": {
+    "title": "What Did They Tell You?",
+    "author": "Old Mara",
+    "color": "gray",
+    "pages": [
+      "I told you to leave the sky alone. What did they tell you up there?",
+      "Never mind. It does not matter. Old proud things tell old proud lies.\n\nGo to the End. A librarian will help you. - M."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "The Librarian",
+      "stage": 2,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "'Strongholds keep old books. Take me to one.'",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You can read the Old Tongue?",
+          "Thirty years. Enough to be frightened properly."
+        ],
+        [
+          "How do I reach the End?",
+          "Twelve eyes of the old kind. Find them, and a stronghold. I'll come."
+        ]
+      ]
+    }
+  ],
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_e0_the_road_to_the_end"
+    ]
+  }
+}

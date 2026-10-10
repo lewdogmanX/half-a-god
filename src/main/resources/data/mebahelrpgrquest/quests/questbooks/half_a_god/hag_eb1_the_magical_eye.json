@@ -1,0 +1,53 @@
+{
+  "title": "The Magical Eye",
+  "summary": "Without it, the Evoker has no power. Where: evokers and woodland mansions.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_eye",
+      "collect": "endrem:magical_eye",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The Magical Eye stares back at you. (It goes back in your pack.)",
+      "name": "Magical Eye (given back)"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "endrem:magical_eye": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_eb2_the_nether_eye",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_eb1_the_magical_eye_done"
+    ]
+  },
+  "quest_book": {
+    "title": "Twelve Eyes",
+    "author": "The Librarian",
+    "color": "blue",
+    "pages": [
+      "Ordinary eyes of ender will not open this gate any more. The frames want older eyes, sixteen kinds, scattered across the world.",
+      "You take the overworld. I've marked the rest on this page: the Nether, the dead, and the crafted ones. Twelve should open it."
+    ],
+    "auto_claim_rewards": true
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_e1_the_librarians_request"
+    ]
+  }
+}

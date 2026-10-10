@@ -1,0 +1,226 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.title",
+    "fallback": "The Cow Has Spoken"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.summary",
+    "fallback": "Buttercup becomes agitated whenever the night road is quiet. Wait for dark, follow the route she fears, and investigate the old mineshaft beneath it."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:most_important_cow_chain_3_the_woman_who_knew_the_bell"
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.intro",
+      "fallback": "About what I mentioned before you left: Buttercup rang her neck bell three times last night and stared at the north road until sunrise."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.offer.0.0",
+          "fallback": "And that means what, exactly?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.offer.0.1",
+          "fallback": "Three rings means danger. Two means rain. One means she has put her head through the fence again."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.offer.1.0",
+          "fallback": "How does a cow predict danger?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.offer.1.1",
+          "fallback": "With greater consistency than our guards, apparently. Humor me. Stay until night, then take the north road. She keeps pulling away from the ground above the old mine."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.offer.2.0",
+          "fallback": "You really believe she's warning us?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.offer.2.1",
+          "fallback": "I believe Buttercup has survived more raids than half the men who mock her. Call it prophecy after you come back alive."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.return",
+      "fallback": "Pillagers beneath the road? Then she smelled them before we did. I should have told you sooner that she has done this before."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.return_steps.0.0",
+          "fallback": "You knew she could detect pillagers?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.return_steps.0.1",
+          "fallback": "I knew she hated their tar, their leather, and the sound of their horns. I did not know they were tunneling beneath us."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.return_steps.1.0",
+          "fallback": "The ledger mentions a woman named Mara."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.return_steps.1.1",
+          "fallback": "Then we need someone older than this village road. Take the name to the next village. Ask for Roadwarden Nessa. If she still lives, she will remember."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.reward",
+      "fallback": "Here. Take these. I sent you after a nervous cow and you came back with an invasion route. Even I admit that sounds ridiculous."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.dialogue.done",
+      "fallback": "We know Buttercup was warning us. Now I want to know why the pillagers wrote Mara's name beside hers."
+    }
+  },
+  "goals": [
+    {
+      "id": "wait_for_buttercups_warning",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true,
+      "type": "wait_time"
+    },
+    {
+      "id": "reach_the_tunnel_mine",
+      "reach": "minecraft:mineshaft",
+      "structure": "minecraft:mineshaft",
+      "radius": 3200,
+      "range": 16,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "read_tunnel_ledger",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:mineshaft",
+      "container": "minecraft:barrel",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.goals.2.quest_book.title",
+          "fallback": "Tunnel Route Ledger"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.goals.2.quest_book.author",
+          "fallback": "North Road Detail"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.goals.2.quest_book.pages.0",
+            "fallback": "Tunnel Four remains dry. Keep digging beneath the north road. No banners above ground."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.goals.2.quest_book.pages.1",
+            "fallback": "The bell-cow still reacts to tar and horn leather. Keep scouts downwind until the village road is cut."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.goals.2.quest_book.pages.2",
+            "fallback": "Old report attached: Mara Porridge trained the animal during the border years. If the cow remains alive, assume the road is being watched."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.goals.2.quest_book.pages.3",
+            "fallback": "Three scouts remain below until the tunnel reaches the well line. Do not surface unless the bell-cow is gone."
+          }
+        ]
+      },
+      "stage": 2,
+      "radius": 3200,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.goals.2.name",
+        "fallback": "Tunnel Route Ledger"
+      },
+      "tag": "buttercup_tunnel_ledger",
+      "in_chest": true,
+      "auto_advance": true
+    },
+    {
+      "id": "clear_tunnel_scouts",
+      "kill": "minecraft:pillager",
+      "amount": 3,
+      "stage": 3,
+      "from_threats": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.threats.0.name",
+        "fallback": "Tunnel Scout"
+      },
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 9,
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spare": false,
+      "glow": false,
+      "max_health": 40.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.threats.1.name",
+        "fallback": "Tunnel Scout"
+      },
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 11,
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spare": false,
+      "glow": false,
+      "max_health": 40.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_2_the_cow_has_spoken.threats.2.name",
+        "fallback": "Tunnel Foreman"
+      },
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 13,
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spare": false,
+      "glow": false,
+      "max_health": 65.0,
+      "equipment": {
+        "mainhand": "minecraft:iron_axe"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 280,
+    "items": {
+      "minecraft:emerald": 9,
+      "minecraft:iron_ingot": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "buttercup_warning_proven"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:most_important_cow_chain_1_an_audience_with_her_majesty"
+    ]
+  }
+}

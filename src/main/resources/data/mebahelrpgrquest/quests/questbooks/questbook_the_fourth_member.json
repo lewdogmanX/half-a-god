@@ -1,0 +1,312 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.title",
+    "fallback": "The Fourth Member"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.summary",
+    "fallback": "Follow the journal of three adventurers whose expedition slowly begins to remember a man who was never with them."
+  },
+  "map": {
+    "icon": "minecraft:written_book"
+  },
+  "sequential_objectives": true,
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:merrick_remembers_you",
+      "delay_ticks": 24000,
+      "silent_start": true,
+      "conditions": {
+        "dimensions": [
+          "minecraft:overworld"
+        ],
+        "player_not_in_combat": true
+      },
+      "retry_delay_ticks": 600
+    }
+  },
+  "goals": [
+    {
+      "id": "find_the_three_adventurers",
+      "reach": "minecraft:stronghold",
+      "radius": 30000000,
+      "range": 80,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "read_the_expedition_ledger",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:stronghold",
+      "radius": 30000000,
+      "stage": 1,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.1.name",
+        "fallback": "Expedition Ledger"
+      },
+      "tag": "fourth_member_expedition_ledger",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.1.quest_book.title",
+          "fallback": "Expedition Ledger"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.1.quest_book.author",
+          "fallback": "Vessa Marr"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.1.quest_book.pages.0",
+            "fallback": "SUPPLIES AT ENTRY\n\nJorn Vale\nVessa Marr\nHaldrin Pike\n\nThree bedrolls. Three torches each. Three shares of food. Three shares of whatever we find."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.1.quest_book.pages.1",
+            "fallback": "Someone changed the food tally to four.\n\nJorn says I did it because I always forget Merrick's share.\n\nI asked him who Merrick was."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.1.quest_book.pages.2",
+            "fallback": "Jorn stared at me for a long time.\n\nThen he laughed and asked whether I had struck my head.\n\nHaldrin laughed too."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.1.quest_book.pages.3",
+            "fallback": "I remember Merrick telling that joke by the river.\n\nI remember being angry with him.\n\nThere was no Merrick at the river."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.1.quest_book.pages.4",
+            "fallback": "I checked the first page again.\n\nThree names.\n\nThe ink is mine.\n\nWhy did I pack four cups?"
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.1.quest_book.pages.5",
+            "fallback": "Merrick says the lower hall is safe.\n\nI do not remember seeing him enter this place.\n\nI do remember him walking in front of me."
+          }
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "put_the_expedition_to_rest",
+      "kill": "minecraft:zombie",
+      "amount": 3,
+      "stage": 2,
+      "from_threats": true,
+      "auto_advance": true
+    },
+    {
+      "id": "read_the_last_count",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:stronghold",
+      "radius": 30000000,
+      "stage": 3,
+      "in_chest": true,
+      "container": "minecraft:chest",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.3.name",
+        "fallback": "The Last Count"
+      },
+      "tag": "fourth_member_last_count",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.3.quest_book.title",
+          "fallback": "The Last Count"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.3.quest_book.author",
+          "fallback": "Vessa Marr"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.3.quest_book.pages.0",
+            "fallback": "Jorn. Vessa. Haldrin.\n\nThree names.\n\nI have counted them twenty times."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.3.quest_book.pages.1",
+            "fallback": "Jorn is dead. Haldrin is dead. I will be soon.\n\nMerrick is sitting across from me and asking why I keep writing only three names."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.3.quest_book.pages.2",
+            "fallback": "He remembers my mother.\n\nHe remembers the red scarf Jorn lost last winter.\n\nHe remembers things I remember too.\n\nThat is what frightens me."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.3.quest_book.pages.3",
+            "fallback": "I asked Merrick where we first met.\n\nHe said, 'You know where.'\n\nFor one heartbeat I did."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.3.quest_book.pages.4",
+            "fallback": "There were three of us when we entered.\n\nI know this because I wrote it before the memories changed."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.3.quest_book.pages.5",
+            "fallback": "Now I remember four voices around every fire we ever made."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.3.quest_book.pages.6",
+            "fallback": "If you find this book alone, do not count us again."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.goals.3.quest_book.pages.7",
+            "fallback": "And if a man named Merrick ever asks whether you remember him, do not answer."
+          }
+        ]
+      }
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.threats.0.name",
+        "fallback": "Jorn Vale"
+      },
+      "structure": "minecraft:stronghold",
+      "search_radius": 30000000,
+      "stage": 2,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 9,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 70,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword",
+        "head": "minecraft:iron_helmet",
+        "chest": "minecraft:leather_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.threats.1.name",
+        "fallback": "Vessa Marr"
+      },
+      "structure": "minecraft:stronghold",
+      "search_radius": 30000000,
+      "stage": 2,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 65,
+      "equipment": {
+        "mainhand": "minecraft:bow",
+        "head": "minecraft:leather_helmet",
+        "chest": "minecraft:leather_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.threats.2.name",
+        "fallback": "Haldrin Pike"
+      },
+      "structure": "minecraft:stronghold",
+      "search_radius": 30000000,
+      "stage": 2,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 11,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 80,
+      "equipment": {
+        "mainhand": "minecraft:iron_axe",
+        "head": "minecraft:chainmail_helmet",
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 520,
+    "items": {
+      "minecraft:emerald": 8,
+      "minecraft:ender_pearl": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "merrick_counted_you",
+      "hag_base_fourth_member_done"
+    ]
+  },
+  "quest_book": {
+    "title": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.title",
+      "fallback": "The Fourth Member"
+    },
+    "author": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.author",
+      "fallback": "Vessa Marr"
+    },
+    "color": "purple",
+    "pages": [
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.pages.0",
+        "fallback": "EXPEDITION JOURNAL\n\nMembers:\nJorn Vale\nVessa Marr\nHaldrin Pike\n\nThree of us. Three shares. No hired hands."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.pages.1",
+        "fallback": "Jorn found a stronghold map in a ruined library. Haldrin says the place will already be picked clean.\n\nI say an empty ruin is still worth seeing once."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.pages.2",
+        "fallback": "We crossed the river before dusk. Jorn fell in and blamed the current. Haldrin blamed Jorn. I laughed until my ribs hurt."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.pages.3",
+        "fallback": "Merrick made breakfast this morning.\n\nHe burned it again."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.pages.4",
+        "fallback": "I read that sentence back three times.\n\nI do not remember writing Merrick's name before today."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.pages.5",
+        "fallback": "Jorn says Merrick has travelled with us since the birch road.\n\nHaldrin says longer.\n\nBoth looked genuinely worried when I asked what they meant."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.pages.6",
+        "fallback": "The worst part is that I remember him now.\n\nMerrick at the river. Merrick carrying my pack when I hurt my ankle. Merrick singing badly in the rain."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.pages.7",
+        "fallback": "Those memories feel older than this journal.\n\nThis journal says they are lies."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.pages.8",
+        "fallback": "We reached the stronghold.\n\nI am leaving this journal where another traveller may find it. Inside, I will keep a second ledger from this point onward."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_fourth_member.quest_book.pages.9",
+        "fallback": "There were three of us when we entered.\n\nI am writing that sentence while I still know it is true."
+      }
+    ],
+    "loot": [
+      {
+        "table": "minecraft:chests/simple_dungeon",
+        "chance": 0.06
+      },
+      {
+        "table": "minecraft:chests/abandoned_mineshaft",
+        "chance": 0.045
+      },
+      {
+        "table": "minecraft:chests/stronghold_corridor",
+        "chance": 0.055
+      },
+      {
+        "table": "minecraft:chests/desert_pyramid",
+        "chance": 0.03
+      }
+    ],
+    "auto_claim_rewards": true
+  }
+}

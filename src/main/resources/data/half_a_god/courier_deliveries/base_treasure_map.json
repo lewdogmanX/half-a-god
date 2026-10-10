@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:base_treasure_map",
+  "trigger": {
+    "type": "quest_success",
+    "quest": "mebahelrpgrquest:hag_h1_a_light_above_the_pit"
+  },
+  "delay": {
+    "min_ticks": 2400,
+    "max_ticks": 6000
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "A stranger",
+    "quest_book": "mebahelrpgrquest:questbook_a_very_reasonable_treasure_map"
+  }
+}

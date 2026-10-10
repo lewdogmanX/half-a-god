@@ -1,0 +1,174 @@
+{
+  "title": "The Lantern Oath",
+  "summary": "[Reputation: Saint] Halden heard what you did for Corwin. He wants you to take the old Watch-oath: keep the roads lit so no traveller walks in the dark. Hang twelve lanterns along the road, then walk a returning Ashford family home along it. Then a deserter from the raiders comes looking for you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "take_the_oath",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Reeve Halden"
+    },
+    {
+      "id": "road_lanterns",
+      "place": "minecraft:lantern",
+      "amount": 12,
+      "range": 30000000,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Travellers on the road start nodding to you by name."
+    },
+    {
+      "id": "walk_them_home",
+      "escort": "minecraft:villages",
+      "radius": 3500,
+      "range": 40,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "The family's youngest runs ahead the last hundred paces, laughing."
+    },
+    {
+      "id": "judge_1",
+      "kill": "minecraft:pillager",
+      "amount": 1,
+      "stage": 3,
+      "auto_advance": true,
+      "say": "Dunn threw down his crossbow at Ashford. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": "Dunn the Deserter",
+      "stage": 3,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You're the deserter?",
+          "I threw my crossbow down at Ashford. They'll kill me if they find me."
+        ],
+        [
+          "Why come to me?",
+          "They say you light the roads for strangers. I hoped that meant me too."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Reeve Halden",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You wanted me?",
+          "Corwin told me. You paid for his grain."
+        ],
+        [
+          "What's the Lantern Oath?",
+          "The old Watch kept a light every hundred paces between villages. Raiders hate a lit road."
+        ],
+        [
+          "What do I do?",
+          "Hang twelve lanterns along the road. Then bring a family home along it."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Shelter him",
+      "line": "Dunn drops to his knees. 'I won't forget this. Ever.'",
+      "traits": [
+        "hag_mercy_1"
+      ]
+    },
+    "attack": {
+      "label": "Execute him",
+      "traits": [
+        "hag_cruelty_1"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:lantern": 4,
+      "minecraft:bread": 16,
+      "minecraft:golden_apple": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc1_saint_done",
+      "hag_route_seg1",
+      "hag_ch1_saint"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc2_saint",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc2_good",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  },
+  "recruit_companion": true
+}

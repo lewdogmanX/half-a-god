@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:bastille_cells",
+  "weight": 12,
+  "line": "The Bastille's cells were built for a hundred. Who builds a prison that big for villagers?",
+  "conditions": {
+    "required_traits": [
+      "hag_a7_the_bastille_done"
+    ]
+  }
+}

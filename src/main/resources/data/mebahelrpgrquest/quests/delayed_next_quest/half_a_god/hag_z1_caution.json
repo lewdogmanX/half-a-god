@@ -1,0 +1,41 @@
+{
+  "title": "Caution",
+  "summary": "The guidebook's trail: 'Pipes. Compass. Pillar. Head. Puzzle. Maze. Caution. Up. God?' Find the maze.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_maze",
+      "reach": "netherman:maze",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Shh... Be careful."
+    }
+  ],
+  "rewards": {
+    "xp": 2500,
+    "items": {
+      "minecraft:golden_apple": 3
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_z2_up",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_z1_caution_done"
+    ]
+  }
+}

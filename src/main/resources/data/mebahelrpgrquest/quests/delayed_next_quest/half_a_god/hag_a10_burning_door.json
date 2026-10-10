@@ -1,0 +1,48 @@
+{
+  "title": "The Burning Door",
+  "summary": "The rest of Ashford's men were taken through a portal into the Nether. Build your own portal and follow them.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "portal_frame",
+      "place": "minecraft:obsidian",
+      "amount": 10,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "enter_the_nether",
+      "type": "enter_nether",
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Heat, ash, and far away, something like singing."
+    }
+  ],
+  "rewards": {
+    "xp": 300,
+    "items": {
+      "minecraft:gold_ingot": 8,
+      "minecraft:golden_carrot": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_a11_chains_at_the_fortress",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a10_burning_door_done"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:base_fourth_member",
+  "trigger": {
+    "type": "quest_success",
+    "quest": "mebahelrpgrquest:hag_e1_the_librarians_request"
+  },
+  "delay": {
+    "min_ticks": 2400,
+    "max_ticks": 6000
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "A stranger",
+    "quest_book": "mebahelrpgrquest:questbook_the_fourth_member"
+  }
+}

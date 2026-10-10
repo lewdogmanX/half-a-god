@@ -1,0 +1,28 @@
+{
+  "slots": {
+    "right_hand": [
+      {
+        "id": "minecraft:bow",
+        "weight": 10,
+        "enchantments": [
+          {
+            "id": "minecraft:power",
+            "min_level": 2,
+            "max_level": 3
+          },
+          {
+            "id": "minecraft:punch",
+            "min_level": 1,
+            "max_level": 1
+          }
+        ]
+      }
+    ],
+    "chestplate": [
+      {
+        "id": "minecraft:leather_chestplate",
+        "weight": 10
+      }
+    ]
+  }
+}

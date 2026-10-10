@@ -1,0 +1,108 @@
+{
+  "title": "Open the Cells",
+  "summary": "You freed the prisoners who were left, but the Bastille's jailers are hunting them on the road home. Kill the jailers, then make sure the freed men reach a village safely.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "jailers",
+      "kill": "minecraft:vindicator",
+      "amount": 5,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "bring_them_home",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Back in Ashford, a freed man whispers: 'The rest were marched into a purple portal. North. Always north.'",
+      "name": "Village Elder"
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Bastille Jailer",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 20,
+      "count": 5,
+      "max_health": 50,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "Back in Ashford, a freed man whispers: 'The rest were marched into a purple portal. North. Always north.'",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You're free.",
+          "Not all of us. The rest were marched into a purple portal. North. Always north."
+        ],
+        [
+          "Who gave the orders?",
+          "Not the jailers. A man in a mansion in the dark forest. They called him the Invoker."
+        ]
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 400,
+    "items": {
+      "minecraft:emerald": 10
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_a9i_the_invokers_fort",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a9_open_the_cells_done"
+    ]
+  }
+}

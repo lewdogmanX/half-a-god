@@ -1,0 +1,43 @@
+{
+  "title": "Hand Over Your Weapon",
+  "summary": "Fight the Divine Chariot Azazel in his Lair. If you hand him a sword or axe he lets you live and you'll have to come back. Kill him and take his Staff of Manipulation.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_chariots_staff",
+      "collect": "netherman:manipulator_stick",
+      "amount": 1,
+      "name": "Staff of Manipulation (from his barrel)",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "'I'm sorry I failed to meet your expectations, my lord...' He was not talking to you. 'God.' You killed him. Or half of him."
+    }
+  ],
+  "rewards": {
+    "xp": 8000,
+    "items": {
+      "netherman:manipulator_stick": 1,
+      "minecraft:diamond": 10,
+      "minecraft:netherite_upgrade_smithing_template": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_m9_half_a_soul",
+      "delay_ticks": 1200,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_m7_hand_over_your_weapon_done"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "hag_talk_34",
+  "type": "villager_conversation",
+  "required_story_flags": [
+    "hag_h10_fireproof_done"
+  ],
+  "forbidden_story_flags": [],
+  "weight": 8,
+  "cooldown": 24000,
+  "max_player_distance": 16,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": 1,
+      "text": "The hero went above the clouds.",
+      "translation_key": "ambient.half_a_god.hag_talk_34.0"
+    },
+    {
+      "speaker": 1,
+      "look_at": 0,
+      "text": "And came back talking about someone called Maraal. Who's Maraal?",
+      "translation_key": "ambient.half_a_god.hag_talk_34.1"
+    }
+  ]
+}

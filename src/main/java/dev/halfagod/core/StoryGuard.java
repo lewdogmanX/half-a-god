@@ -97,7 +97,11 @@ public final class StoryGuard {
                     wanted.addAll(g.next());
                 }
             }
-            wanted.addAll(data.couriers.getOrDefault(e.getKey(), List.of()));
+            for (StoryData.Courier c : data.couriers.getOrDefault(e.getKey(), List.of())) {
+                if (!c.sparedOnly() || e.getValue().spared()) {
+                    wanted.add(c.book());
+                }
+            }
         }
         if (claimed.isEmpty()) {
             wanted.addAll(data.advancementCouriers);

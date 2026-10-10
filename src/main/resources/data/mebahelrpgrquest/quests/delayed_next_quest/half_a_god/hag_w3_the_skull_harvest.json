@@ -1,0 +1,48 @@
+{
+  "title": "The Skull Harvest",
+  "summary": "Every wither skeleton you kill is a skull the cult can't harvest. Thin their numbers in the fortress, and kill the blazes that guard it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "wither_skeletons",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 25,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "blazes",
+      "kill": "minecraft:blaze",
+      "amount": 10,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The fortress goes quiet. Then it starts screaming."
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:netherite_scrap": 1,
+      "minecraft:diamond": 3
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_x3_the_third_skull",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_w3_the_skull_harvest_done"
+    ]
+  }
+}

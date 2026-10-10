@@ -1,0 +1,161 @@
+{
+  "title": "The Refugee Road",
+  "summary": "Two Ashford families are too afraid to stay. They want to move to your village, but the Faithful, the cult's warriors, are watching the road. Meet the families, protect them on the road, and see them settled.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "meet_the_families",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "'We'll follow you. Just don't let them take us like they took the others.'",
+      "name": "Ashford Survivor"
+    },
+    {
+      "id": "the_faithful",
+      "kill": "minecraft:vindicator",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Faithful die smiling, whispering in a language made of angles."
+    },
+    {
+      "id": "arrive_home",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "name": "Village Elder"
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "The Faithful",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 22,
+      "count": 4,
+      "max_health": 46,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 1
+          }
+        },
+        "head": "minecraft:golden_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Ashford Survivor",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "'We'll follow you. Just don't let them take us like they took the others.'",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You want to leave Ashford?",
+          "Every night we hear them in the trees. We can't stay."
+        ],
+        [
+          "I'll take you.",
+          "Just don't let them take us like they took the others."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 2,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You're safe now.",
+          "Safe. I'd forgotten what that felt like."
+        ],
+        [
+          "Did you see anything on the road?",
+          "The ones who attacked us whispered about 'pipes'. Pipes under the ground."
+        ]
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 340,
+    "items": {
+      "minecraft:iron_chestplate": {
+        "count": 1,
+        "enchants": {
+          "minecraft:protection": 2
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_a5_beneath_the_pipes",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a4_refugee_road_done"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:ashford_quiet",
+  "weight": 12,
+  "line": "Ashford's quiet tonight. Too quiet. Nobody's answered the bell in two days.",
+  "conditions": {
+    "required_traits": [
+      "hag_p9_who_pays_in_gold_done"
+    ]
+  }
+}

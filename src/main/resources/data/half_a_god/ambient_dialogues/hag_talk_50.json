@@ -1,0 +1,25 @@
+{
+  "id": "hag_talk_50",
+  "type": "villager_conversation",
+  "required_story_flags": [
+    "hag_lantern_road_lit"
+  ],
+  "forbidden_story_flags": [],
+  "weight": 8,
+  "cooldown": 24000,
+  "max_player_distance": 16,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": 1,
+      "text": "The old road's lit end to end.",
+      "translation_key": "ambient.half_a_god.hag_talk_50.0"
+    },
+    {
+      "speaker": 1,
+      "look_at": 0,
+      "text": "My grandmother walked it at night when she was a girl. I never thought I would.",
+      "translation_key": "ambient.half_a_god.hag_talk_50.1"
+    }
+  ]
+}

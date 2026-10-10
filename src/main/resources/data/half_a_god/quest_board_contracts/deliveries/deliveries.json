@@ -1,0 +1,64 @@
+{
+  "deliveries": [
+    {
+      "item": "addictives:weed",
+      "min": 16,
+      "max": 48,
+      "structures": [
+        "minecraft:villages"
+      ],
+      "search_radius": 3000,
+      "ignore_current_structure": true,
+      "min_structure_distance": 128,
+      "spawn_min_radius": 0,
+      "spawn_max_radius": 24,
+      "recipient_name": "Discreet Buyer",
+      "reward_table": "half_a_god:hag_street"
+    },
+    {
+      "item": "addictives:joint",
+      "min": 8,
+      "max": 24,
+      "structures": [
+        "minecraft:villages"
+      ],
+      "search_radius": 3000,
+      "ignore_current_structure": true,
+      "min_structure_distance": 128,
+      "spawn_min_radius": 0,
+      "spawn_max_radius": 24,
+      "recipient_name": "Late-Night Customer",
+      "reward_table": "half_a_god:hag_street"
+    },
+    {
+      "item": "addictives:hash",
+      "min": 8,
+      "max": 24,
+      "structures": [
+        "minecraft:villages"
+      ],
+      "search_radius": 3000,
+      "ignore_current_structure": true,
+      "min_structure_distance": 128,
+      "spawn_min_radius": 0,
+      "spawn_max_radius": 24,
+      "recipient_name": "The Fixer's Runner",
+      "reward_table": "half_a_god:hag_street"
+    },
+    {
+      "item": "addictives:cocaine",
+      "min": 4,
+      "max": 16,
+      "structures": [
+        "minecraft:villages"
+      ],
+      "search_radius": 4000,
+      "ignore_current_structure": true,
+      "min_structure_distance": 256,
+      "spawn_min_radius": 0,
+      "spawn_max_radius": 24,
+      "recipient_name": "Blackwater Middleman",
+      "reward_table": "half_a_god:hag_street"
+    }
+  ]
+}

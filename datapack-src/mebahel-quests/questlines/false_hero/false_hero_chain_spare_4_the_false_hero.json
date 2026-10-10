@@ -1,0 +1,213 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.title",
+    "fallback": "The False Hero"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.summary",
+    "fallback": "Confront the village champion with the proof of his cowardice and defeat him on the outpost road."
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:false_hero_chain_spare_3_name_beneath_medal"
+    ],
+    "traits": [
+      "false_hero_exposed"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.intro",
+      "fallback": "He knows. The moment he saw the blue cloth in your hand, the champion stopped smiling."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.offer.0.0",
+          "fallback": "Will he confess?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.offer.0.1",
+          "fallback": "He laughed at first. Then he saw the dead guard's name on the paper. Now he has run for the old road with hired raiders at his back."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.offer.1.0",
+          "fallback": "So he chooses steel?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.offer.1.1",
+          "fallback": "Cowards often do, once words stop serving them. He has worn another man's courage long enough. End this before he sells the village to save himself twice."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.offer.2.0",
+          "fallback": "What happens to the medal?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.offer.2.1",
+          "fallback": "It returns to the bell house, under the guard's true name. Let children look at it and learn that glory without truth is just polished theft."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.return",
+      "fallback": "It is done, then. The stolen medal has been taken from his hand, and the dead guard's name has been spoken at the bell."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.return_steps.0.0",
+          "fallback": "The village should know the truth."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.return_steps.0.1",
+          "fallback": "They will. Not every truth heals cleanly, but lies rot beneath the floorboards. Better pain in daylight than comfort built on cowardice."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.return_steps.1.0",
+          "fallback": "What about the guard?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.return_steps.1.1",
+          "fallback": "His name will be carved beneath the bell. When it rings, it will no longer ring over an unnamed grave."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.return_steps.2.0",
+          "fallback": "And the reward?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.return_steps.2.1",
+          "fallback": "Aye. The village owes you more than coin. We owe you the courage to honor courage properly."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.reward",
+      "fallback": "This shield belonged to the guard whose medal was stolen. It was found cracked beside the road, but the smith has made it whole again. You carried his truth farther than he could. By right of witness, by right of battle, and by the gratitude of this village, it is yours."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.dialogue.done",
+      "fallback": "The false hero is gone. The village speaks more softly of heroes now, but with far more care."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_false_hero",
+      "kill": "minecraft:vindicator",
+      "amount": 1,
+      "from_threats": true
+    },
+    {
+      "id": "kill_hired_raiders",
+      "kill": "minecraft:pillager",
+      "amount": 2,
+      "from_threats": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.threats.0.name",
+        "fallback": "Ser Garrick Vale"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 180.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:diamond_axe",
+          "enchants": {
+            "minecraft:sharpness": 3,
+            "minecraft:unbreaking": 2
+          }
+        },
+        "chest": {
+          "item": "minecraft:iron_chestplate",
+          "enchants": {
+            "minecraft:protection": 3
+          }
+        }
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.threats.0.offer_line",
+        "fallback": "The false hero waits near the outpost road, no longer wearing a smile. Two hired raiders stand with him."
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.threats.1.name",
+        "fallback": "Kell the Paid Bolt"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 90.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchants": {
+            "minecraft:piercing": 1
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_spare_4_the_false_hero.threats.2.name",
+        "fallback": "Marn the Blackroad"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 90.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchants": {
+            "minecraft:quick_charge": 1
+          }
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 720,
+    "items": {
+      "minecraft:emerald": 22,
+      "minecraft:shield": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:unbreaking",
+            "level": 3
+          },
+          {
+            "id": "minecraft:mending",
+            "level": 1
+          }
+        ]
+      },
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "false_hero_exposed"
+    ]
+  }
+}

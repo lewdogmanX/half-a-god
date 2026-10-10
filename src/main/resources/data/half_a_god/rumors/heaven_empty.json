@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:heaven_empty",
+  "weight": 12,
+  "line": "You've been up there? Above the clouds? My gran said heaven was empty now. Was she right?",
+  "conditions": {
+    "required_traits": [
+      "hag_h2_hostile_paradise_done"
+    ]
+  }
+}

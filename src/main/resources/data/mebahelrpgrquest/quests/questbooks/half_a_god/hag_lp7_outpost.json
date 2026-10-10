@@ -1,0 +1,38 @@
+{
+  "title": "Lost Page 7: The Fall",
+  "summary": "A loose page from the Warden Journal, written by Mara's first champion. It mentions a place. Go and see it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_place",
+      "reach": "minecraft:pillager_outpost",
+      "radius": 15000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "You stand where the first champion stood. It feels colder than it should."
+    }
+  ],
+  "rewards": {
+    "xp": 750,
+    "items": {
+      "minecraft:experience_bottle": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_lp7_outpost_done",
+      "hag_lost_page_7"
+    ]
+  },
+  "quest_book": {
+    "title": "Warden Journal, Page 7",
+    "author": "The First Champion",
+    "color": "gray",
+    "pages": [
+      "Five Wardens dead. The sixth killed me. Or it will. I'm writing this the night before.",
+      "If you are reading this, she found someone else. Be kinder to her than I was."
+    ],
+    "auto_claim_rewards": true
+  }
+}

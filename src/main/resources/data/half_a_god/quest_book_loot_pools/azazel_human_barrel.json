@@ -1,0 +1,11 @@
+{
+  "table": "netherman:chests/azazel_human_barrel",
+  "drop_chance": 1.0,
+  "books": [
+    {
+      "quest": "mebahelrpgrquest:hag_g1_maraals_last_letter",
+      "weight": 1,
+      "guaranteed": true
+    }
+  ]
+}

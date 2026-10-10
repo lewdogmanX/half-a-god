@@ -1,0 +1,48 @@
+{
+  "title": "Bastille Survivors",
+  "summary": "A freed prisoner wants to go home to her own village.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_a9_open_the_cells"
+    ]
+  },
+  "dialogue": {
+    "intro": "The next village over. If it's still there.",
+    "reward": "I'm home. I'm actually home.",
+    "offer": [
+      [
+        "Where is home?",
+        "The next village over. If it's still there."
+      ],
+      [
+        "I'll take you.",
+        "I won't slow you down. I promise."
+      ]
+    ],
+    "return": "Is it much further?"
+  },
+  "goals": [
+    {
+      "id": "take_her_home",
+      "escort": "minecraft:villages",
+      "radius": 3500,
+      "range": 40,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "She runs the last stretch. Someone in the village screams her name."
+    }
+  ],
+  "rewards": {
+    "xp": 400,
+    "items": {
+      "minecraft:golden_carrot": 12,
+      "minecraft:emerald": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_bastille_survivors_done"
+    ]
+  }
+}

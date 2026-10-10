@@ -1,0 +1,66 @@
+{
+ "prefixes": {
+  "hag_mercy_": 5,
+  "hag_cruelty_": -6
+ },
+ "traits": {
+  "heard_the_word": 2,
+  "peddler_slain": -1,
+  "corwin_spared": 6,
+  "vael_spared": 4,
+  "vael_slain": -2,
+  "midwife_spared": 3,
+  "midwife_slain": -1,
+  "maraal_forgiven": 5,
+  "maraal_rejected": -2,
+  "maraal_killed_by_hand": -12,
+  "maraal_left": -4,
+  "hag_sworn": -25,
+  "hag_good_ending": 12,
+  "gt_took_the_offer": -8,
+  "gt_refused_the_offer": 4,
+  "gt_getting_out": 10,
+  "gt_silenced_the_witness": -15,
+  "gt_saved_a_buyer": 3,
+  "gt_kingpin": -10,
+  "gt_partners": -4,
+  "gt_war_won": -2,
+  "gt_fields_burned": 4,
+  "gt_got_out": 8,
+  "gt_brought_medicine": 6,
+  "gt_vasco_arrested": 5,
+  "gt_vasco_killed": -2,
+  "gt_cartel_broken": 6,
+  "hag_faithful_sent_home": 6,
+  "hag_faithful_ended": -6,
+  "hag_halden_spared_by_the_hand": 3,
+  "hag_halden_killed_by_the_hand": -20,
+  "hag_lantern_road_lit": 6,
+  "hag_silas_partner": -8,
+  "hag_payoff_wick_kept_his_word": 2,
+  "hag_payoff_gorran_at_the_gate": 2,
+  "hag_payoff_brann_home": 3,
+  "hag_payoff_pilgrim_blessing": 2,
+  "hag_payoff_midwife_healed": 3,
+  "hag_payoff_tomas_safe": 2,
+  "hag_first_champion_found": 3,
+  "hag_a9_open_the_cells_done": 4,
+  "hag_a3_roof_and_hearth_done": 3,
+  "hag_a2_what_was_left_done": 3,
+  "hag_w7_a_light_they_cannot_dim_done": 3,
+  "hag_g2_ashford_rebuilt_done": 5
+ },
+ "unlocks": [
+  {
+   "at": 60,
+   "trait": "hag_unlock_saint",
+   "courier": "half_a_god:unlock_saint"
+  },
+  {
+   "at": -60,
+   "below": true,
+   "trait": "hag_unlock_wicked",
+   "courier": "half_a_god:unlock_wicked"
+  }
+ ]
+}

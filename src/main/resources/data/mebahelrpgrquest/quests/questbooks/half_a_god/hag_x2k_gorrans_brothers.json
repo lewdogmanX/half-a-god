@@ -1,0 +1,72 @@
+{
+  "title": "Gorran's Brothers",
+  "summary": "The cult released Gorran's brothers to hunt you. They know what you did in the Bastille and they've come at night.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "wait_for_dark",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "brothers",
+      "kill": "minecraft:vindicator",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The last brother dies with Gorran's name on his lips."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Gorran's Brother",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 24,
+      "count": 4,
+      "max_health": 70,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:iron_axe": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x2k_gorrans_brothers_done",
+      "hag_payoff_gorrans_brothers"
+    ]
+  },
+  "quest_book": {
+    "title": "Four Names",
+    "author": "Unsigned",
+    "color": "red",
+    "pages": [
+      "Gorran Ost.\n\nYou took his keys off his body.\n\nWe were the reason he held them.",
+      "We're coming for you. Tonight, or the night after.\n\nFour of us. One for each year he kept that job to keep us alive."
+    ],
+    "auto_claim_rewards": true
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_x2_the_bastille_warden_after"
+    ]
+  }
+}

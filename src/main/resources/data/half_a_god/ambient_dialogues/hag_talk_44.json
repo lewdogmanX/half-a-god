@@ -1,0 +1,25 @@
+{
+  "id": "hag_talk_44",
+  "type": "villager_conversation",
+  "required_story_flags": [
+    "hag_mercy_x5_the_last_garrison_man"
+  ],
+  "forbidden_story_flags": [],
+  "weight": 8,
+  "cooldown": 24000,
+  "max_player_distance": 16,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": 1,
+      "text": "A man came home after ten years in the ice!",
+      "translation_key": "ambient.half_a_god.hag_talk_44.0"
+    },
+    {
+      "speaker": 1,
+      "look_at": 0,
+      "text": "Brann? Ilse's Brann? I'll believe it when I see him.",
+      "translation_key": "ambient.half_a_god.hag_talk_44.1"
+    }
+  ]
+}

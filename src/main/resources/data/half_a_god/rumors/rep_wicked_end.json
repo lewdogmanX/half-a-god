@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:rep_wicked_end",
+  "weight": 12,
+  "line": "Lock your doors. The Gilded Hand has a new partner.",
+  "conditions": {
+    "required_traits": [
+      "hag_rep_wicked"
+    ]
+  }
+}

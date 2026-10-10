@@ -1,0 +1,167 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.title",
+    "fallback": "The Hammer Remembers"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.summary",
+    "fallback": "Go to the old mine and silence whatever answered the forge. Return with raw iron so we know the mine still gives metal, not curses."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:smith_last_heat_chain_3_the_burnt_smith"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.dialogue.intro",
+      "fallback": "Did you hear it too? Three strikes from beneath the village, then the forge spat sparks blue as drowned moonlight."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.dialogue.offer.0.0",
+          "fallback": "Something answered the forge?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.dialogue.offer.0.1",
+          "fallback": "Aye. Not echo. Not settling stone. A hammer answered from the mine road, and no living smith has worked down there in years."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.dialogue.offer.1.0",
+          "fallback": "You want me to investigate the mine?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.dialogue.offer.1.1",
+          "fallback": "Investigate, defend yourself, and come back breathing. If dead miners are walking, end them before they follow the sound of the forge home."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.dialogue.offer.2.0",
+          "fallback": "What should I bring back?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.dialogue.offer.2.1",
+          "fallback": "Twelve raw iron, if the mine will still yield it. I need to know whether we woke a forge, or opened the throat of something hungry."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.dialogue.return",
+      "fallback": "Dead miners with tools in their hands... then the forge did not wake the mine. It called to what the mine refused to bury."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.dialogue.reward",
+      "fallback": "Take this. It was made from the first clean iron the forge accepted tonight. Keep it close; I fear the hand that once ruled that fire has heard us."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.dialogue.done",
+      "fallback": "The dead miners are quiet, but the forge still flares whenever the mine wind turns."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_dead_miners",
+      "kill": "minecraft:zombie",
+      "amount": 3
+    },
+    {
+      "id": "bring_raw_iron",
+      "collect": "minecraft:raw_iron",
+      "amount": 12
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.threats.0.name",
+        "fallback": "Old Torren Pickhand"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 2200,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 65.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_pickaxe",
+          "enchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "level": 2
+            }
+          ]
+        },
+        "head": "minecraft:leather_helmet"
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.threats.0.offer_line",
+        "fallback": "Dead miners are moving in the old mineshaft. Their tools still remember the work."
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.threats.1.name",
+        "fallback": "Maddoc Coalhand"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 2200,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 65.0,
+      "equipment": {
+        "mainhand": "minecraft:stone_pickaxe",
+        "head": "minecraft:leather_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_2_the_hammer_remembers.threats.2.name",
+        "fallback": "Brigg Deepvein"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 2200,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 80.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_pickaxe",
+          "enchantments": [
+            {
+              "id": "minecraft:unbreaking",
+              "level": 2
+            }
+          ]
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 320,
+    "items": {
+      "minecraft:emerald": 10,
+      "minecraft:iron_pickaxe": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:efficiency",
+            "level": 2
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 2
+          }
+        ]
+      }
+    }
+  }
+}

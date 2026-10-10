@@ -1,0 +1,229 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.title",
+    "fallback": "Instructions for My Own Funeral"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.summary",
+    "fallback": "Carry out Garrick Bell's extremely specific funeral instructions and discover why he was so insistent about the time of burial."
+  },
+  "sequential_objectives": true,
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:garrick_second_funeral",
+      "delay_ticks": 12000,
+      "conditions": {
+        "dimensions": [
+          "minecraft:overworld"
+        ],
+        "player_not_in_combat": true
+      },
+      "retry_delay_ticks": 600
+    }
+  },
+  "goals": [
+    {
+      "id": "prepare_funeral_candles",
+      "collect": "minecraft:candle",
+      "amount": 3,
+      "stage": 0
+    },
+    {
+      "id": "prepare_family_egg",
+      "collect": "minecraft:egg",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "find_garricks_grave",
+      "reach": "minecraft:ruined_portal",
+      "radius": 3500,
+      "range": 64,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "place_funeral_candles",
+      "place": "minecraft:candle",
+      "structure": "minecraft:ruined_portal",
+      "amount": 3,
+      "range": 10,
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "wait_until_garrick_is_ready",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 3,
+      "auto_advance": true
+    },
+    {
+      "id": "kill_garrick_again",
+      "kill": "minecraft:zombie",
+      "amount": 1,
+      "stage": 4,
+      "from_threats": true,
+      "auto_advance": true
+    },
+    {
+      "id": "read_second_funeral_instructions",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "stage": 5,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.goals.6.name",
+        "fallback": "Instructions for My Second Funeral"
+      },
+      "tag": "garrick_bell_second_funeral"
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.threats.0.name",
+        "fallback": "Garrick Bell, Recently Deceased Again"
+      },
+      "stage": 4,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 3,
+      "spawn_max_radius": 7,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 160,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword",
+        "head": "minecraft:golden_helmet",
+        "chest": "minecraft:chainmail_chestplate"
+      },
+      "drop_on_death": [
+        {
+          "type": "item",
+          "item": "minecraft:written_book",
+          "count": 1,
+          "name": {
+            "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.threats.0.drop_on_death.0.name",
+            "fallback": "Instructions for My Second Funeral"
+          },
+          "tag": "garrick_bell_second_funeral",
+          "quest_book": {
+            "title": {
+              "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.threats.0.drop_on_death.0.quest_book.title",
+              "fallback": "My Second Funeral Instructions"
+            },
+            "author": {
+              "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.threats.0.drop_on_death.0.quest_book.author",
+              "fallback": "Garrick Bell"
+            },
+            "pages": [
+              {
+                "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.threats.0.drop_on_death.0.quest_book.pages.0",
+                "fallback": "If you are reading this, then you killed me again. I would like to begin by saying that this was specifically covered in the instructions."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.threats.0.drop_on_death.0.quest_book.pages.1",
+                "fallback": "Paragraph Seventeen read: 'If I stand up, do not kill me. Strike the bell twice and wait.'"
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.threats.0.drop_on_death.0.quest_book.pages.2",
+                "fallback": "The copy you found skipped directly from Sixteen to Eighteen because my nephew Corwin copied it. This is exactly why Corwin was not supposed to copy anything."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.threats.0.drop_on_death.0.quest_book.pages.3",
+                "fallback": "SECOND FUNERAL: Bring one bell and one candle back to the old ruined stone. The egg is no longer required. Please stop bringing eggs to my grave."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.threats.0.drop_on_death.0.quest_book.pages.4",
+                "fallback": "Place the bell and candle near the grave. Wait until night. If I stand again, speak to me before doing anything involving a sword."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.threats.0.drop_on_death.0.quest_book.pages.5",
+                "fallback": "If I am coherent, I am not hostile. If I ask for brains, you may revise this assessment."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.threats.0.drop_on_death.0.quest_book.pages.6",
+                "fallback": "I have prepared a third volume as a precaution. This should not be interpreted as confidence in your ability to follow the second."
+              }
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 420,
+    "items": {
+      "minecraft:emerald": 11,
+      "minecraft:golden_apple": 1,
+      "minecraft:bell": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "garrick_killed_again",
+      "hag_base_funeral_done"
+    ]
+  },
+  "quest_book": {
+    "title": {
+      "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.title",
+      "fallback": "Instructions for My Own Funeral"
+    },
+    "author": {
+      "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.author",
+      "fallback": "Garrick Bell"
+    },
+    "color": "purple",
+    "pages": [
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.pages.0",
+        "fallback": "INSTRUCTIONS FOR MY FUNERAL\n\nTo be followed exactly.\n\nI have attended four funerals in my life and all were organized by amateurs."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.pages.1",
+        "fallback": "One: three candles. Not two. Not four. Three.\n\nTwo: no red flowers. They make me look cheap."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.pages.2",
+        "fallback": "Three: one egg must be present.\n\nThis is a family matter and none of your concern."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.pages.3",
+        "fallback": "Four: my sword goes on the right side.\n\nI am right-handed. I refuse to spend eternity reaching across myself."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.pages.4",
+        "fallback": "Five through nine concern acceptable bread, seating, weather, and my nephew Corwin. Corwin is not to improvise anything."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.pages.5",
+        "fallback": "Ten: bury me near old ruined stone. I always liked ruins. They make one's own failures seem modest."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.pages.6",
+        "fallback": "Eleven: place the three candles close to the grave.\n\nTwelve: wait until after sunset before finishing the ceremony."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.pages.7",
+        "fallback": "Thirteen: if I make a noise, do not panic.\n\nFourteen: if I sit up, remain calm.\n\nFifteen: if I ask for water, do not give me any. It only encourages things."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.pages.8",
+        "fallback": "Sixteen: if I stand, consult Paragraph Seventeen.\n\nEighteen: under no circumstances let Corwin claim I wanted a closed casket."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.pages.9",
+        "fallback": "Nineteen: if all instructions are followed, my estate will compensate whoever endured this nonsense."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_instructions_for_my_own_funeral.quest_book.pages.10",
+        "fallback": "Twenty: if something goes wrong, I accept no responsibility.\n\nI will be dead."
+      }
+    ],
+    "auto_claim_rewards": true
+  }
+}

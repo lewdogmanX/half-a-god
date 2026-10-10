@@ -1,0 +1,46 @@
+{
+  "title": "Follow the Crimson Bee",
+  "summary": "Your Ghastly hums north. Follow it to the Nether Mansion, the Cult of Azazel's Sacred City.",
+  "sequential_objectives": true,
+  "requires": {
+    "advancements": [
+      "netherman:tame_ghastly"
+    ]
+  },
+  "goals": [
+    {
+      "id": "find_the_mansion",
+      "reach": "netherman:mansion_nether",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Gold everywhere. A Welcomer bows at the gate as if you were expected."
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_m2_the_cursed_quarries",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_m1_follow_the_crimson_bee_done"
+    ]
+  }
+}

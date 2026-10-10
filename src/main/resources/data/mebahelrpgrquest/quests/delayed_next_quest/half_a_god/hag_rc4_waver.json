@@ -1,0 +1,164 @@
+{
+  "title": "A Letter Unanswered",
+  "summary": "[Reputation: Wavering] Mara's letters to you have gone short and careful. The librarian has one she was asked to read aloud. Then a cult scholar surrenders to you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "hear_the_letter",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "The Librarian"
+    },
+    {
+      "id": "judge_4",
+      "kill": "minecraft:evoker",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Brother Hale stole the librarian's copy of the journal, then surrendered. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:evoker",
+      "name": "Brother Hale",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 60,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "Why surrender to me?",
+          "Because you might still listen. The others wouldn't."
+        ],
+        [
+          "Might?",
+          "You're not sure what you are yet. Neither am I."
+        ]
+      ],
+      "spare_handoff": {
+        "item": "minecraft:written_book",
+        "name": "Hale's Primer",
+        "count": 1,
+        "quest_book": {
+          "title": "Hale's Primer",
+          "author": "Brother Hale",
+          "pages": [
+            "The Old Tongue has no word for 'god'. The nearest is 'the one who is whole'.",
+            "So when they pray for him to be whole again, they are praying for a god.\n\nDo not let them."
+          ]
+        }
+      }
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "The Librarian",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "A letter from Mara?",
+          "'I chose you because you were good. Be good again.'"
+        ],
+        [
+          "That's all?",
+          "That's all. She underlined 'again'."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Let him teach you",
+      "line": "Hale hands you a primer of the Old Tongue. 'Read it before the end. You'll need to understand what he says.'",
+      "traits": [
+        "hag_mercy_4"
+      ]
+    },
+    "attack": {
+      "label": "End him",
+      "traits": [
+        "hag_cruelty_4"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1000
+  },
+  "traits": {
+    "complete": [
+      "hag_rc4_waver_done",
+      "hag_route_seg4",
+      "hag_ch4_waver"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_e4_the_warden_journal"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc5_good",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc5_fallen",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  }
+}

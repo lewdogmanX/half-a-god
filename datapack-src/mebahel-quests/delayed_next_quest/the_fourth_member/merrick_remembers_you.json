@@ -1,0 +1,211 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.merrick_remembers_you.title",
+    "fallback": "Someone You Should Remember"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.merrick_remembers_you.summary",
+    "fallback": "A man called Merrick has appeared nearby. He speaks as though the two of you have travelled together before."
+  },
+  "map": {
+    "icon": "minecraft:name_tag"
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:merrick_the_end_remembers",
+        "delay_ticks": 0,
+        "silent_start": true,
+        "conditions": {
+          "dimensions": [
+            "minecraft:the_end"
+          ],
+          "player_not_in_combat": true
+        },
+        "retry_delay_ticks": 600
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:merrick_a_place_you_remember",
+        "delay_ticks": 12000,
+        "conditions": {
+          "dimensions": [
+            "minecraft:overworld"
+          ],
+          "player_not_in_combat": true
+        },
+        "retry_delay_ticks": 600
+      }
+    }
+  },
+  "goals": [
+    {
+      "id": "confront_merrick",
+      "kill": "minecraft:vindicator",
+      "amount": 1,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:vindicator",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.name",
+      "fallback": "Merrick"
+    },
+    "spawn_origin": "player",
+    "spawn_min_radius": 16,
+    "spawn_max_radius": 26,
+    "spawn_on_accept": true,
+    "spare": true,
+    "glow": false,
+    "max_health": 110,
+    "equipment": {
+      "mainhand": "minecraft:air",
+      "head": "minecraft:leather_helmet",
+      "chest": "minecraft:leather_chestplate",
+      "feet": "minecraft:leather_boots"
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.target_line",
+      "fallback": "There you are. I was beginning to think you'd forgotten me again."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.talk.0.0",
+          "fallback": "Who are you?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.talk.0.1",
+          "fallback": "Merrick. Don't do this again. You frightened Vessa enough the first time."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.talk.1.0",
+          "fallback": "I never knew Vessa."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.talk.1.1",
+          "fallback": "You pulled her out of the river when she slipped from the stone bridge. Your hands shook so badly afterward that Haldrin had to tie your pack for you."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.talk.2.0",
+          "fallback": "That never happened."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.talk.2.1",
+          "fallback": "You always say that before the memory settles. Then you remember the rain, the broken buckle, Jorn laughing because you lost one boot."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.talk.3.0",
+          "fallback": "How do you know Jorn and Haldrin?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.talk.3.1",
+          "fallback": "Because we buried Jorn together. Haldrin wanted his sword. You said the dead should keep one thing that was theirs."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.talk.4.0",
+          "fallback": "There were only three of them."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.talk.4.1",
+          "fallback": "At first."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.attack_choice_label",
+      "fallback": "Stay out of my head."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.spare_choice_label",
+      "fallback": "Tell me what else I forgot."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.spared_line",
+      "fallback": "Good. I knew you'd remember how to listen."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.post_spare_line",
+      "fallback": "Keep this. You wrote part of it. Or you will. I can never remember which comes first with you."
+    },
+    "spare_handoff": {
+      "item": "minecraft:written_book",
+      "count": 1,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.spare_handoff.name",
+        "fallback": "Things You Forgot"
+      },
+      "depart_after_spare": true,
+      "consume_on_claim": false,
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.spare_handoff.quest_book.title",
+          "fallback": "Things You Forgot"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.spare_handoff.quest_book.author",
+          "fallback": "Merrick"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.spare_handoff.quest_book.pages.0",
+            "fallback": "You hate sleeping near rivers because Vessa nearly drowned at the stone bridge."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.spare_handoff.quest_book.pages.1",
+            "fallback": "Jorn cheated at cards. Haldrin knew. You knew too. Nobody told Jorn."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.spare_handoff.quest_book.pages.2",
+            "fallback": "You once carried Merrick for half a mile after an arrow went through his leg."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.spare_handoff.quest_book.pages.3",
+            "fallback": "There was a fifth chair at the winter camp.\n\nNone of us remember who sat in it."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.spare_handoff.quest_book.pages.4",
+            "fallback": "You asked me once whether memories can lie.\n\nI told you memories do not need to lie if they can simply make room."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.merrick_remembers_you.threat.spare_handoff.quest_book.pages.5",
+            "fallback": "If this book feels familiar, do not worry.\n\nIt did the first time too."
+          }
+        ]
+      }
+    },
+    "spare_rewards": {
+      "xp": 180,
+      "items": {
+        "minecraft:ender_pearl": 1
+      }
+    }
+  },
+  "rewards": {
+    "xp": 300,
+    "items": {
+      "minecraft:emerald": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "merrick_returned"
+    ],
+    "spare": [
+      "merrick_heard_out"
+    ],
+    "attack": [
+      "merrick_silenced"
+    ]
+  }
+}

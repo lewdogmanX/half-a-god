@@ -1,0 +1,108 @@
+{
+  "title": "A Generous Offer",
+  "summary": "A letter with a green wax seal: someone wants to meet you on the road. Blackwater has heard you're the kind of hero who can be talked to. Hear the offer. Take it, or refuse it in a way they'll remember.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_recruiter",
+      "kill": "minecraft:vindicator",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The recruiter waits for your answer, smiling."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Blackwater Recruiter",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 80,
+      "talk": [
+        [
+          "What's the offer?",
+          "Grow for us. Sell for us. Get rich. We already pay the cult; you'd just be paying yourself."
+        ],
+        [
+          "Why me?",
+          "Because you're not a saint. Saints don't get letters from us. You did."
+        ],
+        [
+          "And if I say no?",
+          "Then we're enemies, and you'd better be very good at it."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Take the job",
+      "line": "'Wise. The Fixer will find you. Bring a sample.'",
+      "traits": [
+        "gt_took_the_offer"
+      ]
+    },
+    "attack": {
+      "label": "Refuse. Hard.",
+      "traits": [
+        "gt_refused_the_offer"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 400
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_br2_the_supply_line",
+        "delay_ticks": 2400,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_gt1b_the_recruiters_terms",
+        "delay_ticks": 1200,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_tm1_a_generous_offer_done"
+    ]
+  },
+  "quest_book": {
+    "title": "A Generous Offer",
+    "author": "A friend in the valley",
+    "color": "green",
+    "pages": [
+      "We've been watching you.\n\nYou are not like the other heroes. You understand that the world is not clean.",
+      "Meet our man on the road and hear what we have to offer. You'll find him near wherever you read this.\n\n- B."
+    ],
+    "auto_claim_rewards": true
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_rc5_waver"
+    ]
+  }
+}

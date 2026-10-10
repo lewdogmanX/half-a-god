@@ -1,0 +1,154 @@
+{
+  "title": "Gold from Heaven",
+  "summary": "[Reputation: Wicked] Silas has heard there is gold in the sky: golden amber from the Aether's golden oaks. Bring him sixteen. Then he wants the old cleric silenced: she knows who paid for the first golden eye.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "golden_amber",
+      "collect": "aether:golden_amber",
+      "amount": 16,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "sell_to_silas",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "name": "Silas of the Gilded Hand"
+    },
+    {
+      "id": "judge_3",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Sister Ysolde was the village cleric before this one. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Sister Ysolde",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 30,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "Silas says you know too much.",
+          "I know who painted the eyes. I know who paid. Your master."
+        ],
+        [
+          "And?",
+          "And you can kill me for it, or you can stop working for him."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Silas of the Gilded Hand",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "Golden amber.",
+          "It's warm. Is it supposed to be warm? Never mind. Paid. Now, about Sister Ysolde..."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Forgive her",
+      "line": "'Then I'll spend whatever I have left making it right.'",
+      "traits": [
+        "hag_mercy_3"
+      ]
+    },
+    "attack": {
+      "label": "Punish her",
+      "traits": [
+        "hag_cruelty_3"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1000,
+    "items": {
+      "minecraft:gold_block": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc3_wicked_done",
+      "hag_route_seg3",
+      "hag_ch3_wicked"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_h2_hostile_paradise"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc4_fallen",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc4_wicked",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  }
+}

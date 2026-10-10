@@ -1,0 +1,208 @@
+{
+  "title": "The Lantern's End",
+  "summary": "The Siege: The whole Watch stands on the wall with you. Hold until the Hand breaks. Then: [Reputation: Saint] Halden has something for you before the end: the Lantern of Ashford, carried by the Watch for a hundred years. Then the freed men bring you the neighbour who sold them.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "siege_night",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Night falls. Horns on the road. The siege has come."
+    },
+    {
+      "id": "siege_vindicator",
+      "kill": "minecraft:vindicator",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "siege_pillager",
+      "kill": "minecraft:pillager",
+      "amount": 2,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The whole Watch stands on the wall with you. Hold until the Hand breaks."
+    },
+    {
+      "id": "receive_the_lantern",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "name": "Reeve Halden"
+    },
+    {
+      "id": "judge_7",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 3,
+      "auto_advance": true,
+      "say": "Garret sold his neighbours to the cult, and was found among the freed. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Hand Besieger",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 26,
+      "count": 4,
+      "max_health": 60
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": "Hand Crossbow",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 26,
+      "count": 2,
+      "max_health": 60
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Garret of Ashford",
+      "stage": 3,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You sold your neighbours.",
+          "Fourteen names. For gold. Then they took me too."
+        ],
+        [
+          "What should happen to you?",
+          "Halden should decide. Not you. You've carried enough."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Reeve Halden",
+      "stage": 2,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You called for me.",
+          "Take this. The Watch always carried it into the dark."
+        ],
+        [
+          "Halden...",
+          "Whatever you find down there, remember who you did this for."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Let Halden judge him",
+      "line": "Halden looks at Garret for a long time. 'You'll rebuild every house you emptied.'",
+      "traits": [
+        "hag_mercy_7"
+      ]
+    },
+    "attack": {
+      "label": "Judge him yourself",
+      "traits": [
+        "hag_cruelty_7"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "minecraft:lantern": 1,
+      "minecraft:totem_of_undying": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc7_saint_done",
+      "hag_route_seg7",
+      "hag_ch7_saint",
+      "hag_siege_saint"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_m2_the_cursed_quarries"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rep_end_saint",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rep_end_good",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  }
+}

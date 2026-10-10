@@ -1,0 +1,86 @@
+{
+  "title": "The Watch Needs Eyes",
+  "summary": "Halden writes that the Blackwater Cartel is poisoning the valley and paying a third of every emerald to the cult. The Watch can't get close. You can. Meet the Captain of the Watch.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_captain",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Captain of the Watch"
+    }
+  ],
+  "rewards": {
+    "xp": 400
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_br2_the_supply_line",
+      "delay_ticks": 1200,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_br1_the_watch_needs_eyes_done"
+    ]
+  },
+  "quest_book": {
+    "title": "The Watch Needs Eyes",
+    "author": "Reeve Halden",
+    "color": "blue",
+    "pages": [
+      "There's a cartel in the valley called Blackwater. They sell weed, hash, worse. People are dying of it.",
+      "And a third of every emerald they make goes to the Chariot. Every sale keeps the cult's beasts fed.",
+      "The Watch has a captain who wants them gone and can't get close. You can. Go and see her.\n\n- Halden"
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Captain of the Watch",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "What does the Watch need?",
+          "Their supply line runs through a pillager outpost. Break it and their runners starve."
+        ],
+        [
+          "Why not send the Watch?",
+          "Because the Watch is twelve farmers with spears. You're you."
+        ]
+      ]
+    }
+  ]
+}

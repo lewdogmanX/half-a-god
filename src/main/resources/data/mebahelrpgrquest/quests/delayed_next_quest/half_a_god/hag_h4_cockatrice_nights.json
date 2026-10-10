@@ -1,0 +1,46 @@
+{
+  "title": "Cockatrice Nights",
+  "summary": "Without whoever used to rule the Aether, its beasts have gone wild. Thin the cockatrices and zephyrs so you can explore the dungeons.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "cockatrices",
+      "kill": "aether:cockatrice",
+      "amount": 8,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "zephyrs",
+      "kill": "aether:zephyr",
+      "amount": 6,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "aether:golden_amber": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_h5_the_bronze_halls",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "aether:the_aether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_h4_cockatrice_nights_done"
+    ]
+  }
+}

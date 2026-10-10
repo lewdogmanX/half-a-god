@@ -1,0 +1,38 @@
+{
+  "title": "Lost Page 8: The Grave",
+  "summary": "A loose page from the Warden Journal, written by Mara's first champion. It mentions a place. Go and see it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_place",
+      "reach": "minecraft:ocean_ruin_cold",
+      "radius": 15000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "You stand where the first champion stood. It feels colder than it should."
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:experience_bottle": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_lp8_ruin_done",
+      "hag_lost_page_8"
+    ]
+  },
+  "quest_book": {
+    "title": "Warden Journal, Page 8",
+    "author": "The First Champion",
+    "color": "gray",
+    "pages": [
+      "Bury me where the old stones are, where the road used to be.",
+      "Don't put my name on it. She'll come and read it, and she's cried enough."
+    ],
+    "auto_claim_rewards": true
+  }
+}

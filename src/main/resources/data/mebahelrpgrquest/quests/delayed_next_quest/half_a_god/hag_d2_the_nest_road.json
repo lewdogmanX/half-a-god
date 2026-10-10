@@ -1,0 +1,94 @@
+{
+  "title": "The Nest Road",
+  "summary": "The husks are being herded toward the Sandworm Nest. Kill the Dune Faithful, find the nest and kill Sirok, the Sandworm.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "dune_faithful",
+      "kill": "minecraft:husk",
+      "amount": 5,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "find_the_nest",
+      "reach": "block_factorys_bosses:sandworm_nest",
+      "radius": 30000,
+      "range": 48,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The ground opened like a mouth that had waited."
+    },
+    {
+      "id": "sirok",
+      "kill": "block_factorys_bosses:sandworm",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "The fourth Warden falls.",
+      "from_threats": false
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:husk",
+      "name": "Dune Faithful",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "count": 5,
+      "max_health": 50,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_sword",
+          "enchants": {
+            "minecraft:fire_aspect": 1
+          }
+        }
+      },
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:speed",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 1100,
+    "items": {
+      "minecraft:ender_pearl": 6
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_d3_the_beast_below",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_d2_the_nest_road_done"
+    ]
+  }
+}

@@ -1,0 +1,102 @@
+{
+  "title": "The Bastille Warden",
+  "summary": "The Bastille's warden, Gorran, threw down his axe the moment the gate fell. He has the keys to the deep cells, and he says he only took the job because the cult holds his brothers. Decide what the keys are worth.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "judge_x2_the_bastille_warden",
+      "kill": "minecraft:vindicator",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Gorran the Warden",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "structure": "takesapillage:bastille",
+      "search_radius": 20000,
+      "max_health": 90,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You ran this prison.",
+          "I locked the doors. The cult decided who went behind them."
+        ],
+        [
+          "Your prisoners were from Ashford.",
+          "Fourteen men. Twelve left. I kept the two weakest out of the quarry carts. Ask them."
+        ],
+        [
+          "What do you want?",
+          "To walk out of here and never hold a key again."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Take the keys and let him walk",
+      "line": "Gorran presses the ring of keys into your hand. 'Second door on the left. They're alive.'",
+      "traits": [
+        "hag_mercy_x2_the_bastille_warden"
+      ]
+    },
+    "attack": {
+      "label": "Take the keys from his body",
+      "traits": [
+        "hag_cruelty_x2_the_bastille_warden"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 400
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_x2_the_bastille_warden_after",
+        "delay_ticks": 200,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_a8_ravagers_horn",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x2_the_bastille_warden_done"
+    ]
+  }
+}

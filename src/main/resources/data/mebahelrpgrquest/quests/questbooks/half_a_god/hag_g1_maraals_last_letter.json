@@ -1,0 +1,100 @@
+{
+  "title": "Maraal's Last Letter",
+  "summary": "He died whole. His last words, in the Old Tongue: 'Maraal, it's my fault...' Go home. Tell them.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "tell_the_village",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Every bell in every village rings at once, and nobody rang them.",
+      "name": "Village Elder"
+    }
+  ],
+  "rewards": {
+    "xp": 6000,
+    "items": {
+      "minecraft:enchanted_golden_apple": 2,
+      "minecraft:nether_star": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_g2_ashford_rebuilt",
+      "delay_ticks": 1200,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_g1_maraals_last_letter_done",
+      "hag_good_ending",
+      "hag_ending_reached"
+    ],
+    "accept": [
+      "hag_heretic"
+    ]
+  },
+  "quest_book": {
+    "title": "Maraal's Last Letter",
+    "author": "Maraal",
+    "color": "yellow",
+    "pages": [
+      "If you are reading this, he is dead, all of him, and so am I. My half-life ended with his.",
+      "Whether you forgave me or not, you finished what I could not. I am sorry for Ashford. I am sorry for all of it.",
+      "It was never your fault. It was mine.\n\nThank you.\n\n- Maraal, once of the Silver Court"
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "Every bell in every village rings at once, and nobody rang them.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "Who are you?",
+          "The one people come to when something is wrong. Lately, that is often."
+        ]
+      ]
+    }
+  ],
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_z3_choir_of_the_whole_god"
+    ]
+  }
+}

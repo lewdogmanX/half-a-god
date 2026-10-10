@@ -1,0 +1,47 @@
+{
+  "title": "The Instruction",
+  "summary": "Reach Azazel's Lair at the end of the Mansion. A barrel there holds the instructions to summon him.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "read_instruction",
+      "collect": "netherman:note",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Hand over your weapon, he will say. Don't."
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "netherman:note": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_m7_hand_over_your_weapon",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_m6_the_instruction_done"
+    ]
+  },
+  "requires": {
+    "traits": [
+      "hag_route_seg7",
+      "hag_base_zombie_disguise_done",
+      "hag_base_ash_merchant_done"
+    ]
+  }
+}

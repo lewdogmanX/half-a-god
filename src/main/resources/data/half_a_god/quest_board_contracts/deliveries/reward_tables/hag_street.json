@@ -1,0 +1,34 @@
+{
+  "rolls": {
+    "min": 2,
+    "max": 3
+  },
+  "rewards": [
+    {
+      "type": "item",
+      "id": "minecraft:emerald",
+      "weight": 10,
+      "base_min": 16,
+      "base_max": 32,
+      "per_kill_min": 1.0,
+      "per_kill_max": 2.0
+    },
+    {
+      "type": "item",
+      "id": "minecraft:emerald_block",
+      "weight": 3,
+      "base_min": 1,
+      "base_max": 2,
+      "per_kill_min": 0.05,
+      "per_kill_max": 0.1
+    },
+    {
+      "type": "xp",
+      "weight": 4,
+      "base_min": 60,
+      "base_max": 120,
+      "per_kill_min": 2,
+      "per_kill_max": 4
+    }
+  ]
+}

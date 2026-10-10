@@ -1,0 +1,155 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.title",
+    "fallback": "Oath of Ash"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.summary",
+    "fallback": "The dead warrior remembers the thing that came through the portal and bound his oath to ash."
+  },
+  "recruit_companion": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.dialogue.intro",
+      "fallback": "The zombie rises slowly. The broken patience in its face is gone, replaced by a soldier's fear."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.dialogue.offer.0.0",
+          "fallback": "What did you remember?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.dialogue.offer.0.1",
+          "fallback": "I remember the villagers barring the gate. I remember being left at the portal with a sword, and something laughing from the fire."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.dialogue.offer.1.0",
+          "fallback": "What came through?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.dialogue.offer.1.1",
+          "fallback": "An ashbound thing wearing gold like a mockery of a crown. It took my oath, broke my name, and left me guarding the wound."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.dialogue.offer.2.0",
+          "fallback": "Then we end it."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.dialogue.offer.2.1",
+          "fallback": "Yes. Not me. Not yet. The thing at the portal. If it falls, perhaps this blade finally belongs to my hand again."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.dialogue.return",
+      "fallback": "The thing is gone. I still hear the portal, but it no longer speaks with my voice."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.dialogue.reward",
+      "fallback": "Take this. I carried a sword because I forgot what else hands were for. You used yours to end the right enemy."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.dialogue.done",
+      "fallback": "The oath is ash now. The portal is quiet, and the dead warrior no longer mistakes you for his executioner."
+    }
+  },
+  "goals": [
+    "kill 3 minecraft:zombified_piglin"
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombified_piglin",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.threats.0.name",
+        "fallback": "Varkhul the Oath-Breaker"
+      },
+      "structure": "minecraft:ruined_portal",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 180,
+      "line": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.threats.0.line",
+        "fallback": "The ashbound oath-breaker waits at the ruined portal with a ruined hog at its side. The dead warrior will follow, but these enemies are yours to bring down."
+      },
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:golden_sword",
+          "enchants": {
+            "minecraft:sharpness": 4,
+            "minecraft:fire_aspect": 1,
+            "minecraft:unbreaking": 3
+          }
+        },
+        "head": {
+          "item": "minecraft:golden_helmet",
+          "enchants": {
+            "minecraft:protection": 3,
+            "minecraft:unbreaking": 3
+          }
+        },
+        "chest": {
+          "item": "minecraft:golden_chestplate",
+          "enchants": {
+            "minecraft:protection": 3,
+            "minecraft:unbreaking": 2
+          }
+        },
+        "legs": {
+          "item": "minecraft:golden_leggings",
+          "enchants": {
+            "minecraft:protection": 2
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:zombified_piglin",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.threats.1.name",
+        "fallback": "Ashsworn Brute"
+      },
+      "structure": "minecraft:ruined_portal",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 120
+    },
+    {
+      "entity": "minecraft:zombified_piglin",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_4_oath_of_ash.threats.2.name",
+        "fallback": "Cinder-Hook Guard"
+      },
+      "structure": "minecraft:ruined_portal",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 120
+    }
+  ],
+  "rewards": {
+    "xp": 520,
+    "items": [
+      {
+        "item": "minecraft:diamond_sword",
+        "enchants": {
+          "minecraft:sharpness": 3,
+          "minecraft:unbreaking": 2
+        }
+      },
+      "12 minecraft:emerald"
+    ]
+  },
+  "traits": {
+    "complete": [
+      "oath_of_ash",
+      "hag_base_armed_zombie_done"
+    ]
+  }
+}

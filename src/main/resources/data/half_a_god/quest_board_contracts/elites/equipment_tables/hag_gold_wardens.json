@@ -1,0 +1,29 @@
+{
+  "slots": {
+    "right_hand": [
+      {
+        "id": "minecraft:golden_axe",
+        "weight": 10,
+        "enchantments": [
+          {
+            "id": "minecraft:sharpness",
+            "min_level": 4,
+            "max_level": 5
+          }
+        ]
+      }
+    ],
+    "helmet": [
+      {
+        "id": "minecraft:golden_helmet",
+        "weight": 10
+      }
+    ],
+    "chestplate": [
+      {
+        "id": "minecraft:golden_chestplate",
+        "weight": 10
+      }
+    ]
+  }
+}

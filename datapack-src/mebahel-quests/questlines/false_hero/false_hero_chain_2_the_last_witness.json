@@ -1,0 +1,158 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.title",
+    "fallback": "The Last Witness"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.summary",
+    "fallback": "Find the outpost witness, hear what happened, then decide whether truth is worth sparing a raider."
+  },
+  "flow": {
+    "on_kill": "mebahelrpgrquest:false_hero_chain_kill_3_convenient_silence",
+    "on_spare": "mebahelrpgrquest:false_hero_chain_spare_3_name_beneath_medal"
+  },
+  "traits": {
+    "attack": [
+      "false_hero_witness_killed"
+    ],
+    "spare": [
+      "false_hero_witness_spared"
+    ]
+  },
+  "goals": [
+    {
+      "id": "talk_to_witness",
+      "talk": "minecraft:pillager",
+      "amount": 1,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.goals.0.name",
+        "fallback": "Rusk the Last Witness"
+      }
+    },
+    {
+      "id": "kill_witness",
+      "kill": "minecraft:pillager",
+      "amount": 1,
+      "attack_only": true,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:pillager",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.name",
+      "fallback": "Rusk the Last Witness"
+    },
+    "structure": "minecraft:pillager_outpost",
+    "search_radius": 4000,
+    "spawn_on_accept": true,
+    "spare": true,
+    "golem_protected": true,
+    "glow": false,
+    "max_health": 140.0,
+    "equipment": {
+      "mainhand": {
+        "item": "minecraft:crossbow",
+        "enchants": {
+          "minecraft:quick_charge": 1,
+          "minecraft:unbreaking": 2
+        }
+      },
+      "chest": "minecraft:leather_chestplate"
+    },
+    "offer_line": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.offer_line",
+      "fallback": "The trail points back toward the outpost. One raider remained behind after the night our hero keeps describing. Find him before someone else silences him."
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.target_line",
+      "fallback": "Easy now... I know that look. You did not come all this way just to hear me beg, did you?"
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.talk.0.0",
+          "fallback": "Were you there when the villagers were attacked?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.talk.0.1",
+          "fallback": "Aye. I saw your village champion too. Not fighting. Kneeling. Paying us to leave him alive."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.talk.1.0",
+          "fallback": "He said he saved prisoners."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.talk.1.1",
+          "fallback": "He bought his own life with theirs. One guard stayed behind so the others could run. Your hero took the guard's medal from the mud after we were done laughing."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.talk.2.0",
+          "fallback": "Why should I believe you?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.talk.2.1",
+          "fallback": "Because liars ask for gold. I am asking to walk away with my breath. Spare me, and I will tell you where he hid the dead guard's things."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.attack_choice_label",
+      "fallback": "You are a raider. Your word dies with you."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.spare_choice_label",
+      "fallback": "Speak, then leave this village's roads."
+    },
+    "attack_return_line": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.attack_return_line",
+      "fallback": "The witness is dead? Then the only man left with a story is the one wearing the medal. That is convenient. Too convenient."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.spared_line",
+      "fallback": "You are letting me live? Then listen close, because I will only buy my breath once."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.post_spare_line",
+      "fallback": "The old guard's proof is buried under loose stone near the outpost road. His sword, a few pages, and a strip of blue village cloth. Your hero hid them there because the dead frightened him more than we ever did."
+    },
+    "villager_spared_line": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.threat.villager_spared_line",
+      "fallback": "You spared a raider for the truth? Then bring me what he named. If the proof exists, I will hear it before I judge you."
+    },
+    "rewards_from_giver": true,
+    "spare_handoff": {
+      "depart_after_spare": true
+    },
+    "spare_rewards": {
+      "xp": 120,
+      "items": {
+        "minecraft:emerald": 4
+      }
+    }
+  },
+  "dialogue": {
+    "return": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.dialogue.return",
+      "fallback": "So the witness is gone, and truth with him. I will not pretend this sits well."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.dialogue.reward",
+      "fallback": "Take this, though it feels less like payment and more like hush-money. If the champion lied, we may have just buried the last voice that could prove it."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_2_the_last_witness.dialogue.done",
+      "fallback": "The witness is dead. The village still cheers the champion, but the sound has soured."
+    }
+  },
+  "rewards": {
+    "xp": 180,
+    "items": {
+      "minecraft:emerald": 6
+    }
+  }
+}

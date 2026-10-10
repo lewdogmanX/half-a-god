@@ -1,0 +1,25 @@
+{
+  "id": "hag_talk_33",
+  "type": "villager_conversation",
+  "required_story_flags": [
+    "hag_w7_a_light_they_cannot_dim_done"
+  ],
+  "forbidden_story_flags": [],
+  "weight": 8,
+  "cooldown": 24000,
+  "max_player_distance": 16,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": 1,
+      "text": "Have you seen the beacon? You can see it from three villages.",
+      "translation_key": "ambient.half_a_god.hag_talk_33.0"
+    },
+    {
+      "speaker": 1,
+      "look_at": 0,
+      "text": "My mother cried when she saw it.",
+      "translation_key": "ambient.half_a_god.hag_talk_33.1"
+    }
+  ]
+}

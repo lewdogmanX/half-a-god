@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:headless_king",
+  "weight": 12,
+  "line": "Everyone dreamt of a king with no head last night. Everyone. Even the children.",
+  "conditions": {
+    "required_traits": [
+      "hag_e5_free_the_end_done"
+    ]
+  }
+}

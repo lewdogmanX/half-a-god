@@ -1,0 +1,23 @@
+{
+  "slots": {
+    "right_hand": [
+      {
+        "id": "minecraft:iron_axe",
+        "weight": 10,
+        "enchantments": [
+          {
+            "id": "minecraft:sharpness",
+            "min_level": 1,
+            "max_level": 2
+          }
+        ]
+      }
+    ],
+    "chestplate": [
+      {
+        "id": "minecraft:iron_chestplate",
+        "weight": 10
+      }
+    ]
+  }
+}

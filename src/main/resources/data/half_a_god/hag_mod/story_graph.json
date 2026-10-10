@@ -1,0 +1,2301 @@
+{
+ "quests": {
+  "mebahelrpgrquest:hag_the_first_letter": {
+   "next": [
+    "mebahelrpgrquest:hag_p1_the_bell"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_p1_the_bell": {
+   "next": [
+    "mebahelrpgrquest:hag_p2_winter_stores"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_p2_winter_stores": {
+   "next": [
+    "mebahelrpgrquest:hag_p3_the_shepherd"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_p3_the_shepherd": {
+   "next": [
+    "mebahelrpgrquest:hag_p4_eye_on_chapel"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_p4_eye_on_chapel": {
+   "next": [
+    "mebahelrpgrquest:hag_p5_raise_the_watch"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_p5_raise_the_watch": {
+   "next": [
+    "mebahelrpgrquest:hag_p6_market_road"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_p6_market_road": {
+   "next": [
+    "mebahelrpgrquest:hag_p7_gold_at_double_weight"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_p7_gold_at_double_weight": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_p7s_the_peddlers_gift"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_p7b_peddlers_debt"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_p7b_peddlers_debt": {
+   "next": [
+    "mebahelrpgrquest:hag_p8_pillager_moon"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_p8_pillager_moon": {
+   "next": [
+    "mebahelrpgrquest:hag_x1_the_informant"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_p9_who_pays_in_gold": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a1_ashford_burns": {
+   "next": [
+    "mebahelrpgrquest:hag_a2_what_was_left"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_a2_what_was_left": {
+   "next": [
+    "mebahelrpgrquest:hag_a3_roof_and_hearth"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a3_roof_and_hearth": {
+   "next": [
+    "mebahelrpgrquest:hag_a4_refugee_road"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a4_refugee_road": {
+   "next": [
+    "mebahelrpgrquest:hag_a5_beneath_the_pipes"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a5_beneath_the_pipes": {
+   "next": [
+    "mebahelrpgrquest:hag_a6_believers_house"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a6_believers_house": {
+   "next": [
+    "mebahelrpgrquest:hag_a7_the_bastille"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a7_the_bastille": {
+   "next": [
+    "mebahelrpgrquest:hag_x2_the_bastille_warden"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a8_ravagers_horn": {
+   "next": [
+    "mebahelrpgrquest:hag_a9_open_the_cells"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a9_open_the_cells": {
+   "next": [
+    "mebahelrpgrquest:hag_a9i_the_invokers_fort"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a10_burning_door": {
+   "next": [
+    "mebahelrpgrquest:hag_a11_chains_at_the_fortress"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a11_chains_at_the_fortress": {
+   "next": [
+    "mebahelrpgrquest:hag_a12_brother_vael"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a12_brother_vael": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_a12s_vaels_map"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_a12k_the_stewards_guard"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a13_tears_for_a_ward": {
+   "next": [
+    "mebahelrpgrquest:hag_a14_night_of_the_faithful"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a14_night_of_the_faithful": {
+   "next": [
+    "mebahelrpgrquest:hag_a15_one_of_seven"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a15_one_of_seven": {
+   "next": [
+    "mebahelrpgrquest:hag_w0_two_roads_meet"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_p7s_the_peddlers_gift": {
+   "next": [
+    "mebahelrpgrquest:hag_p8_pillager_moon"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a12s_vaels_map": {
+   "next": [
+    "mebahelrpgrquest:hag_a13_tears_for_a_ward"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a12k_the_stewards_guard": {
+   "next": [
+    "mebahelrpgrquest:hag_a13_tears_for_a_ward"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_a9i_the_invokers_fort": {
+   "next": [
+    "mebahelrpgrquest:hag_a10_burning_door"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_w1_the_skull_market": {
+   "next": [
+    "mebahelrpgrquest:hag_w2_smite_the_dead"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_w2_smite_the_dead": {
+   "next": [
+    "mebahelrpgrquest:hag_w3_the_skull_harvest"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_w3_the_skull_harvest": {
+   "next": [
+    "mebahelrpgrquest:hag_x3_the_third_skull"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_w4_hold_the_black_bridge": {
+   "next": [
+    "mebahelrpgrquest:hag_w5_a_grave_for_a_nail"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_w5_a_grave_for_a_nail": {
+   "next": [
+    "mebahelrpgrquest:hag_w6_the_withered_crown"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_w6_the_withered_crown": {
+   "next": [
+    "mebahelrpgrquest:hag_w7_a_light_they_cannot_dim"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_w7_a_light_they_cannot_dim": {
+   "next": [
+    "mebahelrpgrquest:hag_w8_six_remain"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_w8_six_remain": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_h1_a_light_above_the_pit": {
+   "next": [
+    "mebahelrpgrquest:hag_h2_hostile_paradise"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_h2_hostile_paradise": {
+   "next": [
+    "mebahelrpgrquest:hag_h3_do_you_believe_in_magic"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_h3_do_you_believe_in_magic": {
+   "next": [
+    "mebahelrpgrquest:hag_h4_cockatrice_nights"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_h4_cockatrice_nights": {
+   "next": [
+    "mebahelrpgrquest:hag_h5_the_bronze_halls"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_h5_the_bronze_halls": {
+   "next": [
+    "mebahelrpgrquest:hag_h6_like_a_bossaru"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_h6_like_a_bossaru": {
+   "next": [
+    "mebahelrpgrquest:hag_h7_medals_of_the_silver_court"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_h7_medals_of_the_silver_court": {
+   "next": [
+    "mebahelrpgrquest:hag_h8_dethroned"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_h8_dethroned": {
+   "next": [
+    "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_h9_extinguished": {
+   "next": [
+    "mebahelrpgrquest:hag_h10_fireproof"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_h10_fireproof": {
+   "next": [
+    "mebahelrpgrquest:hag_e0_the_road_to_the_end"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_e1_the_librarians_request": {
+   "next": [
+    "mebahelrpgrquest:hag_ea1_the_old_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_e3_the_road_underground": {
+   "next": [
+    "mebahelrpgrquest:hag_e4_the_warden_journal"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_e4_the_warden_journal": {
+   "next": [
+    "mebahelrpgrquest:hag_e5_free_the_end"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_e5_free_the_end": {
+   "next": [
+    "mebahelrpgrquest:hag_e6_edge_of_the_world"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_e6_edge_of_the_world": {
+   "next": [
+    "mebahelrpgrquest:hag_e7_the_nether_is_singing"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_e7_the_nether_is_singing": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_s1_cold_hearths": {
+   "next": [
+    "mebahelrpgrquest:hag_s2_the_frozen_garrison"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_s2_the_frozen_garrison": {
+   "next": [
+    "mebahelrpgrquest:hag_x5_the_last_garrison_man"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_s3_lost_in_the_snow": {
+   "next": [
+    "mebahelrpgrquest:hag_d1_the_buried_well"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_d1_the_buried_well": {
+   "next": [
+    "mebahelrpgrquest:hag_d2_the_nest_road"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_d2_the_nest_road": {
+   "next": [
+    "mebahelrpgrquest:hag_d3_the_beast_below"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_d3_the_beast_below": {
+   "next": [
+    "mebahelrpgrquest:hag_c1_nets_and_knives"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_c1_nets_and_knives": {
+   "next": [
+    "mebahelrpgrquest:hag_c2_the_tidecaller"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_c2_the_tidecaller": {
+   "next": [
+    "mebahelrpgrquest:hag_c3_the_black_ship"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_c3_the_black_ship": {
+   "next": [
+    "mebahelrpgrquest:hag_c4_terror_of_the_depths"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_c4_terror_of_the_depths": {
+   "next": [
+    "mebahelrpgrquest:hag_u1_the_soul_guard"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_u1_the_soul_guard": {
+   "next": [
+    "mebahelrpgrquest:hag_u2_helvars_oath"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_u2_helvars_oath": {
+   "next": [
+    "mebahelrpgrquest:hag_u3_back_into_hell"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_u3_back_into_hell": {
+   "next": [
+    "mebahelrpgrquest:hag_f1_the_last_road"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_f1_the_last_road": {
+   "next": [
+    "mebahelrpgrquest:hag_f2_dragon_slayer"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_f2_dragon_slayer": {
+   "next": [
+    "mebahelrpgrquest:hag_f3_unbound"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_f3_unbound": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v1_blood_in_the_wells": {
+   "next": [
+    "mebahelrpgrquest:hag_v2_the_sinful_church"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_v2_the_sinful_church": {
+   "next": [
+    "mebahelrpgrquest:hag_v3_the_midwife"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v3_the_midwife": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_v3s_cleansing_the_pits"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_v3k_the_coven"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v4_original_sin": {
+   "next": [
+    "mebahelrpgrquest:hag_v5_jaws_in_the_dark"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v5_jaws_in_the_dark": {
+   "next": [
+    "mebahelrpgrquest:hag_v6_what_eats_the_dead"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v6_what_eats_the_dead": {
+   "next": [
+    "mebahelrpgrquest:hag_v7_soul_steel"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v7_soul_steel": {
+   "next": [
+    "mebahelrpgrquest:hag_v8_sinbuster"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v8_sinbuster": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v9_the_wrong_parcel": {
+   "next": [
+    "mebahelrpgrquest:hag_v10_maraal"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_v10_maraal": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_v10f_walking_with_maraal"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_v10r_alone"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v11_the_crimson_guide": {
+   "next": [
+    "mebahelrpgrquest:hag_m1_follow_the_crimson_bee"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v3s_cleansing_the_pits": {
+   "next": [
+    "mebahelrpgrquest:hag_v4_original_sin"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v3k_the_coven": {
+   "next": [
+    "mebahelrpgrquest:hag_v4_original_sin"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v10f_walking_with_maraal": {
+   "next": [
+    "mebahelrpgrquest:hag_v11_the_crimson_guide"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_v10r_alone": {
+   "next": [
+    "mebahelrpgrquest:hag_v11_the_crimson_guide"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_m1_follow_the_crimson_bee": {
+   "next": [
+    "mebahelrpgrquest:hag_m2_the_cursed_quarries"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_m2_the_cursed_quarries": {
+   "next": [
+    "mebahelrpgrquest:hag_m3_hold_the_quarry_gate"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_m3_hold_the_quarry_gate": {
+   "next": [
+    "mebahelrpgrquest:hag_m4_gilded_hunger"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_m4_gilded_hunger": {
+   "next": [
+    "mebahelrpgrquest:hag_m5_do_not_provoke_gehinnom"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_m5_do_not_provoke_gehinnom": {
+   "next": [
+    "mebahelrpgrquest:hag_m6_the_instruction"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_m6_the_instruction": {
+   "next": [
+    "mebahelrpgrquest:hag_m7_hand_over_your_weapon"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_m7_hand_over_your_weapon": {
+   "next": [
+    "mebahelrpgrquest:hag_m9_half_a_soul"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_m9_half_a_soul": {
+   "next": [
+    "mebahelrpgrquest:hag_z1_caution"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_z1_caution": {
+   "next": [
+    "mebahelrpgrquest:hag_z2_up"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_z2_up": {
+   "next": [
+    "mebahelrpgrquest:hag_z3_choir_of_the_whole_god"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_z3_choir_of_the_whole_god": {
+   "next": [
+    "mebahelrpgrquest:hag_b1_bow_at_my_feet"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_b1_bow_at_my_feet": {
+   "next": [
+    "mebahelrpgrquest:hag_b2_tithe_of_gold"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_b2_tithe_of_gold": {
+   "next": [
+    "mebahelrpgrquest:hag_b3_the_last_preacher"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_b3_the_last_preacher": {
+   "next": [
+    "mebahelrpgrquest:hag_ha1_the_first_command"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_g1_maraals_last_letter": {
+   "next": [
+    "mebahelrpgrquest:hag_g2_ashford_rebuilt"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_g2_ashford_rebuilt": {
+   "next": [
+    "mebahelrpgrquest:hag_et1_whispers_of_a_new_god"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_lost_lambs": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_bells_tongue": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_night_watch": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_market_road": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_gold_collectors": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_ashford_orphans": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_halden_records": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_echoes_in_the_pipes": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_ravager_hunt": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_bastille_survivors": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_quartz_for_the_cleric": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_blaze_bounty": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_beacon_keeper": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_sky_amber": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_swet_trouble": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_ambrosium_lamps": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_ender_hunt": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_copy_the_journal": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_shulker_shells": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_frost_patrol": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_husk_plague": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_drowned_nets": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_pirate_hoard": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_soul_lanterns": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_ash_cleanup": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_blood_tithe": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_grub_hunt": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_midwifes_debt": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_pay_the_freed": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_crimson_honey": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sq_the_last_raid": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_i1_the_priests_warning": {
+   "next": [
+    "mebahelrpgrquest:hag_i2_fire_in_the_tower"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_i2_fire_in_the_tower": {
+   "next": [
+    "mebahelrpgrquest:hag_i3_the_evoker_fort"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_i3_the_evoker_fort": {
+   "next": [
+    "mebahelrpgrquest:hag_i4_the_scroll_forge"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_i4_the_scroll_forge": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_w0_two_roads_meet": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_i5_the_dead_king": {
+   "next": [
+    "mebahelrpgrquest:hag_i6_the_mountain_tower"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_i6_the_mountain_tower": {
+   "next": [
+    "mebahelrpgrquest:hag_i7_echo_of_tyros"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_i7_echo_of_tyros": {
+   "next": [
+    "mebahelrpgrquest:hag_i8_the_arcane_anvil"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_i8_the_arcane_anvil": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_e0_the_road_to_the_end": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ea1_the_old_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_ea2_the_rogue_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ea2_the_rogue_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_ea3_the_cold_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ea3_the_cold_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_ea4_the_black_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ea4_the_black_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_ea5_the_lost_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ea5_the_lost_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_ea6_the_corrupted_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ea6_the_corrupted_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_ea7_the_guardian_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ea7_the_guardian_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_e3_the_road_underground"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_eb1_the_magical_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_eb2_the_nether_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_eb2_the_nether_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_eb3_the_cursed_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_eb3_the_cursed_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_eb4_the_wither_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_eb4_the_wither_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_eb5_the_witch_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_eb5_the_witch_eye": {
+   "next": [
+    "mebahelrpgrquest:hag_eb6_the_undead_eye"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_eb6_the_undead_eye": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt1_a_note_in_the_stash": {
+   "next": [
+    "mebahelrpgrquest:hag_gt2_seeds_of_the_trade"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_gt2_seeds_of_the_trade": {
+   "next": [
+    "mebahelrpgrquest:hag_gt3_first_customers"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt3_first_customers": {
+   "next": [
+    "mebahelrpgrquest:hag_gt4_the_hash_market"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt4_the_hash_market": {
+   "next": [
+    "mebahelrpgrquest:hag_gt5_blackwater_wants_a_word"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt5_blackwater_wants_a_word": {
+   "next": [
+    "mebahelrpgrquest:hag_gt6_the_coca_fields"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt6_the_coca_fields": {
+   "next": [
+    "mebahelrpgrquest:hag_gt7_white_powder_money"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt7_white_powder_money": {
+   "next": [
+    "mebahelrpgrquest:hag_gt8_a_customer_goes_under"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt8_a_customer_goes_under": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_go1_burn_it_down"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_gt9_turf_war"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt9_turf_war": {
+   "next": [
+    "mebahelrpgrquest:hag_gt10_the_sorcerers_books"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt10_the_sorcerers_books": {
+   "next": [
+    "mebahelrpgrquest:hag_gt11_crystal"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt11_crystal": {
+   "next": [
+    "mebahelrpgrquest:hag_gt12_don_vasco"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt12_don_vasco": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_gt13p_the_big_shipment"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_gt13w_remnants"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt13w_remnants": {
+   "next": [
+    "mebahelrpgrquest:hag_gt14_king_of_the_valley"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt13p_the_big_shipment": {
+   "next": [
+    "mebahelrpgrquest:hag_gt14_king_of_the_valley"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt14_king_of_the_valley": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_go0_a_way_out": {
+   "next": [
+    "mebahelrpgrquest:hag_go1_burn_it_down"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_go1_burn_it_down": {
+   "next": [
+    "mebahelrpgrquest:hag_go2_blackwater_sends_regards"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_go2_blackwater_sends_regards": {
+   "next": [
+    "mebahelrpgrquest:hag_go3_testimony"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_go3_testimony": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_tm1_a_generous_offer": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_gt1b_the_recruiters_terms"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_br2_the_supply_line"
+   ],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_gt1b_the_recruiters_terms": {
+   "next": [
+    "mebahelrpgrquest:hag_gt2_seeds_of_the_trade"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_br1_the_watch_needs_eyes": {
+   "next": [
+    "mebahelrpgrquest:hag_br2_the_supply_line"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_br2_the_supply_line": {
+   "next": [
+    "mebahelrpgrquest:hag_br3_the_bookkeeper"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_br3_the_bookkeeper": {
+   "next": [
+    "mebahelrpgrquest:hag_br4_medicine_for_the_valley"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_br4_medicine_for_the_valley": {
+   "next": [
+    "mebahelrpgrquest:hag_br5_don_vasco_answers"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_br5_don_vasco_answers": {
+   "next": [
+    "mebahelrpgrquest:hag_br6_the_valley_breathes"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_br6_the_valley_breathes": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_r1_the_prisoner": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_r2g_the_granary_thief"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_r2e_the_assayer"
+   ],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_r2g_the_granary_thief": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc1_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc1_waver"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_r2e_the_assayer": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc1_wicked"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc1_waver"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc1_saint": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc2_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc2_good"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc1_waver": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc2_good"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc2_fallen"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc1_wicked": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc2_fallen"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc2_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc2_saint": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc3_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc3_good"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc2_good": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc3_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc3_waver"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc2_fallen": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc3_waver"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc3_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc2_wicked": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc3_fallen"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc3_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc3_saint": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc4_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc4_good"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc3_good": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc4_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc4_waver"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc3_waver": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc4_good"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc4_fallen"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc3_fallen": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc4_waver"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc4_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc3_wicked": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc4_fallen"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc4_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc4_saint": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc5_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc5_good"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc4_good": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc5_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc5_waver"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc4_waver": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc5_good"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc5_fallen"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc4_fallen": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc5_waver"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc5_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc4_wicked": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc5_fallen"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc5_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc5_saint": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc6_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc6_good"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc5_good": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc6_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc6_waver"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc5_waver": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc6_good"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc6_fallen"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc5_fallen": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc6_waver"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc6_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc5_wicked": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc6_fallen"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc6_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc6_saint": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc7_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc7_good"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc6_good": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc7_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc7_waver"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc6_waver": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc7_good"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc7_fallen"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc6_fallen": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc7_waver"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc7_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc6_wicked": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rc7_fallen"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rc7_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc7_saint": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rep_end_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rep_end_good"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc7_good": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rep_end_saint"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rep_end_waver"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc7_waver": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rep_end_good"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rep_end_fallen"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc7_fallen": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rep_end_waver"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rep_end_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rc7_wicked": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rep_end_fallen"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rep_end_wicked"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rep_end_saint": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rep_end_good": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rep_end_waver": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rep_end_fallen": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rep_end_wicked": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_bz1_a_letter_smelling_of_honey": {
+   "next": [
+    "mebahelrpgrquest:hag_bz2_pearls_and_patience"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_bz2_pearls_and_patience": {
+   "next": [
+    "mebahelrpgrquest:hag_bz3_into_the_comb"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_bz3_into_the_comb": {
+   "next": [
+    "mebahelrpgrquest:hag_bz4_clogged_channels"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_bz4_clogged_channels": {
+   "next": [
+    "mebahelrpgrquest:hag_bz5_the_cell_maze"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_bz5_the_cell_maze": {
+   "next": [
+    "mebahelrpgrquest:hag_bz6_the_hive_temple"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_bz6_the_hive_temple": {
+   "next": [
+    "mebahelrpgrquest:hag_bz7_roots_that_bite"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_bz7_roots_that_bite": {
+   "next": [
+    "mebahelrpgrquest:hag_bz8_audience_with_the_queen"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_bz8_audience_with_the_queen": {
+   "next": [
+    "mebahelrpgrquest:hag_bz9_the_queens_desire"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_bz9_the_queens_desire": {
+   "next": [
+    "mebahelrpgrquest:hag_bz10_the_honey_crown"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_bz10_the_honey_crown": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_lg1_the_golden_legion": {
+   "next": [
+    "mebahelrpgrquest:hag_lg2_ghosts_of_the_legion"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_lg2_ghosts_of_the_legion": {
+   "next": [
+    "mebahelrpgrquest:hag_lg3_the_unbreakable"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_lg3_the_unbreakable": {
+   "next": [
+    "mebahelrpgrquest:hag_lg4_the_thermal_heart"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_lg4_the_thermal_heart": {
+   "next": [
+    "mebahelrpgrquest:hag_lg5_the_unbreakable_head"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_lg5_the_unbreakable_head": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_x1_the_informant": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_p9_who_pays_in_gold"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_x1_the_informant_after"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_x1_the_informant_after": {
+   "next": [
+    "mebahelrpgrquest:hag_p9_who_pays_in_gold"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_x1s_wicks_back_door": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_x1k_wicks_sister": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_x2_the_bastille_warden": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_a8_ravagers_horn"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_x2_the_bastille_warden_after"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_x2_the_bastille_warden_after": {
+   "next": [
+    "mebahelrpgrquest:hag_a8_ravagers_horn"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_x2s_the_wardens_debt": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_x2k_gorrans_brothers": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_x3_the_third_skull": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_w4_hold_the_black_bridge"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_x3_the_third_skull_after"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_x3_the_third_skull_after": {
+   "next": [
+    "mebahelrpgrquest:hag_w4_hold_the_black_bridge"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_x3s_ossians_gift": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_x3k_the_choir_wants_it_back": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_h9_extinguished"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun_after"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun_after": {
+   "next": [
+    "mebahelrpgrquest:hag_h9_extinguished"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_x4s_sunlight_in_a_bottle": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_x4k_the_sun_remembers": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_x5_the_last_garrison_man": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_s3_lost_in_the_snow"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_x5_the_last_garrison_man_after"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_x5_the_last_garrison_man_after": {
+   "next": [
+    "mebahelrpgrquest:hag_s3_lost_in_the_snow"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_x5s_brann_comes_home": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_x5k_a_widows_letter": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_y1_what_the_last_page_said": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_y2_the_hand_reads_too": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_y3_tomas_at_the_gate": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_y4_vaels_last_letter": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_y5_the_midwifes_daughter": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_lp1_ancient_city": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_lp2_end_city": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_lp3_jungle_temple": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_lp4_mansion": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_lp5_treasure": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_lp6_igloo": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_lp7_outpost": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_lp8_ruin": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_lp9_the_first_champion": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_et1_whispers_of_a_new_god": {
+   "next": [
+    "mebahelrpgrquest:hag_et2_the_pretender"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_et2_the_pretender": {
+   "next": [
+    "mebahelrpgrquest:hag_et3_the_last_faithful"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_et3_the_last_faithful": {
+   "next": [
+    "mebahelrpgrquest:hag_et4_morning"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_et4_morning": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ha1_the_first_command": {
+   "next": [
+    "mebahelrpgrquest:hag_ha2_ashford_must_kneel"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ha2_ashford_must_kneel": {
+   "next": [
+    "mebahelrpgrquest:hag_ha3_haldens_last_stand"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ha3_haldens_last_stand": {
+   "next": [
+    "mebahelrpgrquest:hag_ha4_the_hand_of_azazel"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ha4_the_hand_of_azazel": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_ru1_the_lantern_road": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_ru2_silas_makes_an_offer": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  }
+ },
+ "couriers": [
+  {
+   "book": "mebahelrpgrquest:hag_the_first_letter"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_p9_who_pays_in_gold",
+   "book": "mebahelrpgrquest:hag_a1_ashford_burns"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_w0_two_roads_meet",
+   "book": "mebahelrpgrquest:hag_w1_the_skull_market"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_w8_six_remain",
+   "book": "mebahelrpgrquest:hag_h1_a_light_above_the_pit"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_e0_the_road_to_the_end",
+   "book": "mebahelrpgrquest:hag_e1_the_librarians_request"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_e7_the_nether_is_singing",
+   "book": "mebahelrpgrquest:hag_s1_cold_hearths"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_f3_unbound",
+   "book": "mebahelrpgrquest:hag_v1_blood_in_the_wells"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_v8_sinbuster",
+   "book": "mebahelrpgrquest:hag_v9_the_wrong_parcel"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_a6_believers_house",
+   "book": "mebahelrpgrquest:hag_i1_the_priests_warning"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_w6_the_withered_crown",
+   "book": "mebahelrpgrquest:hag_i5_the_dead_king"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_e1_the_librarians_request",
+   "book": "mebahelrpgrquest:hag_eb1_the_magical_eye"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_rc5_saint",
+   "book": "mebahelrpgrquest:hag_br1_the_watch_needs_eyes"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_rc5_good",
+   "book": "mebahelrpgrquest:hag_br1_the_watch_needs_eyes"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_rc5_waver",
+   "book": "mebahelrpgrquest:hag_tm1_a_generous_offer"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_rc5_fallen",
+   "book": "mebahelrpgrquest:hag_gt1_a_note_in_the_stash"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_rc5_wicked",
+   "book": "mebahelrpgrquest:hag_gt1_a_note_in_the_stash"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_a1_ashford_burns",
+   "book": "mebahelrpgrquest:hag_r1_the_prisoner"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_w8_six_remain",
+   "book": "mebahelrpgrquest:hag_bz1_a_letter_smelling_of_honey"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_w1_the_skull_market",
+   "book": "mebahelrpgrquest:hag_lg1_the_golden_legion"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_h1_a_light_above_the_pit",
+   "book": "mebahelrpgrquest:questbook_a_very_reasonable_treasure_map"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_e1_the_librarians_request",
+   "book": "mebahelrpgrquest:questbook_the_fourth_member"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_e1_the_librarians_request",
+   "book": "mebahelrpgrquest:questbook_the_house_that_owes_me_money"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_s1_cold_hearths",
+   "book": "mebahelrpgrquest:questbook_the_captains_share"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_s1_cold_hearths",
+   "book": "mebahelrpgrquest:questbook_please_return_the_ship"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_v1_blood_in_the_wells",
+   "book": "mebahelrpgrquest:questbook_instructions_for_my_own_funeral"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_v1_blood_in_the_wells",
+   "book": "mebahelrpgrquest:questbook_the_man_who_came_back_warm"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_v1_blood_in_the_wells",
+   "book": "mebahelrpgrquest:questbook_the_man_who_buried_himself"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_m1_follow_the_crimson_bee",
+   "book": "mebahelrpgrquest:questbook_the_ash_merchant"
+  }
+ ]
+}

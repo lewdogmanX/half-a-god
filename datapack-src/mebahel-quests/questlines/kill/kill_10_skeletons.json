@@ -1,0 +1,34 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.kill_10_skeletons.title",
+    "fallback": "Skeleton Patrol"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.kill_10_skeletons.summary",
+    "fallback": "Kill 10 skeletons around the village."
+  },
+  "return_dialogue_line": {
+    "translate": "quest.mebahelrpgrquest.kill_10_skeletons.return_dialogue",
+    "fallback": "The night sounds quieter already. Those bones will not trouble the village again."
+  },
+  "reward_dialogue_line": {
+    "translate": "quest.mebahelrpgrquest.kill_10_skeletons.reward_dialogue",
+    "fallback": "Here. A few arrows for the road, since you used your own to keep ours clear."
+  },
+  "already_completed_line": {
+    "translate": "quest.mebahelrpgrquest.kill_10_skeletons.already_completed",
+    "fallback": "The patrol has not returned. Let us hope it stays that way."
+  },
+  "goals": [
+    {
+      "kill": "minecraft:skeleton",
+      "amount": 10
+    }
+  ],
+  "rewards": {
+    "xp": 120,
+    "items": {
+      "minecraft:arrow": 16
+    }
+  }
+}

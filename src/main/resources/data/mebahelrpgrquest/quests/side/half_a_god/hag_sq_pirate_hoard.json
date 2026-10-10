@@ -1,0 +1,76 @@
+{
+  "title": "The Pirate Hoard",
+  "summary": "The harbourmaster says the black ship's surviving crew are picking over shipwrecks for its lost cargo. Find a shipwreck and stop them.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_c3_the_black_ship"
+    ]
+  },
+  "dialogue": {
+    "intro": "What's left of the crew. They're looting every wreck on the coast for the Kraken's cargo.",
+    "reward": "Fewer looters on the water. Good.",
+    "offer": [
+      [
+        "Still more pirates?",
+        "What's left of the crew. They're looting every wreck on the coast for the Kraken's cargo."
+      ],
+      [
+        "Where?",
+        "Any wreck along the shore. Follow the gulls."
+      ]
+    ],
+    "return": "The wrecks?"
+  },
+  "goals": [
+    {
+      "id": "find_a_wreck",
+      "reach": "minecraft:shipwreck",
+      "radius": 8000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Fresh footprints in the sand, and a crate already pried open."
+    },
+    {
+      "id": "wreck_looters",
+      "kill": "minecraft:drowned",
+      "amount": 6,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The last looter's pockets hold a gold coin stamped with an eye."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:drowned",
+      "name": "Wreck Looter",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "count": 6,
+      "structure": "minecraft:shipwreck",
+      "search_radius": 8000,
+      "max_health": 36,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword",
+        "head": "minecraft:leather_helmet"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:diamond": 3
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_pirate_hoard_done"
+    ]
+  }
+}

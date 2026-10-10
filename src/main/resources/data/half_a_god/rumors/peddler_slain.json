@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:peddler_slain",
+  "weight": 12,
+  "line": "They say the gold-man bled gold. I don't believe it. My cousin does.",
+  "conditions": {
+    "required_traits": [
+      "peddler_slain"
+    ]
+  }
+}

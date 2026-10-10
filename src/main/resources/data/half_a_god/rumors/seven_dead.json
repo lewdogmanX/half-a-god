@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:seven_dead",
+  "weight": 12,
+  "line": "Seven beasts dead. You'd think we'd feel safer. Why don't we feel safer?",
+  "conditions": {
+    "required_traits": [
+      "hag_f3_unbound_done"
+    ]
+  }
+}

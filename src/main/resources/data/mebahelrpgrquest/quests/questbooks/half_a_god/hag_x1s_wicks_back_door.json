@@ -1,0 +1,64 @@
+{
+  "title": "Wick's Back Door",
+  "summary": "Wick kept his word. He writes that a Gold-Sworn wagon train is resting at a pillager outpost with stolen grain and two captives. He's left a gap in the palisade for you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_outpost",
+      "reach": "minecraft:pillager_outpost",
+      "radius": 10000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "teamsters",
+      "kill": "minecraft:pillager",
+      "amount": 5,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The captives run for the trees. One of them shouts Wick's name as a thank-you."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": "Gold-Sworn Teamster",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 14,
+      "count": 5,
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 10000,
+      "max_health": 36
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:bread": 32,
+      "minecraft:emerald": 16,
+      "minecraft:crossbow": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x1s_wicks_back_door_done",
+      "hag_payoff_wick_kept_his_word"
+    ]
+  },
+  "quest_book": {
+    "title": "Wick's Back Door",
+    "author": "Wick",
+    "color": "brown",
+    "pages": [
+      "You let me go. Most wouldn't have.\n\nThere's a wagon train at the outpost east of you. Grain they took, and two of yours in the cart.",
+      "I loosened a stake on the north side. Go at night.\n\nWe're square now. Mostly.\n\n- W."
+    ],
+    "auto_claim_rewards": true
+  }
+}

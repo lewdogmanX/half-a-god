@@ -1,0 +1,45 @@
+{
+  "title": "Fire in the Tower",
+  "summary": "The priest traced the cult's fire spells to a Pyromancer who sells them. Find his tower in the hills or forest and kill him.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_tower",
+      "reach": "irons_spellbooks:pyromancer_tower",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "pyromancer",
+      "kill": "irons_spellbooks:pyromancer",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "His ledger is half burned. The half that survived lists the Faithful by name."
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:diamond": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_i3_the_evoker_fort",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_i2_fire_in_the_tower_done"
+    ]
+  }
+}

@@ -1,0 +1,27 @@
+{
+  "title": "The Arcane Anvil",
+  "summary": "Two champions failed before you, and both died without magic in their steel. Build an Arcane Anvil so you can bind spells into your weapons before the End.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "arcane_anvil",
+      "place": "irons_spellbooks:arcane_anvil",
+      "amount": 1,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "You are a sword and a spell now. The priest says that is what a champion is."
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "irons_spellbooks:arcane_essence": 12
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_i8_the_arcane_anvil_done"
+    ]
+  }
+}

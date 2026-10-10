@@ -1,0 +1,51 @@
+{
+  "title": "Night Watch",
+  "summary": "The new watchtower saw torches on the ridge. A raid is coming. Hold the village.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_p5_raise_the_watch"
+    ]
+  },
+  "dialogue": {
+    "intro": "On the ridge. Too many for traders.",
+    "reward": "The tower saw them first. That's all a tower is for.",
+    "offer": [
+      [
+        "Torches?",
+        "On the ridge. Too many for traders."
+      ],
+      [
+        "I'll stand watch.",
+        "Then the tower was worth building."
+      ]
+    ],
+    "return": "They're still coming!"
+  },
+  "goals": [
+    {
+      "id": "hold_the_village",
+      "type": "defend_raid",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The torches go out one by one."
+    }
+  ],
+  "rewards": {
+    "xp": 400,
+    "items": {
+      "minecraft:iron_sword": {
+        "count": 1,
+        "enchants": {
+          "minecraft:sharpness": 2
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_night_watch_done"
+    ]
+  }
+}

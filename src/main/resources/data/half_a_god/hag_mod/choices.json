@@ -1,0 +1,357 @@
+{
+ "choices": [
+  {
+   "id": "librarians_bargain",
+   "trigger": "hag_e4_the_warden_journal_done",
+   "speaker": "The Librarian",
+   "title": "The Librarian's Bargain",
+   "text": "The librarian's hands are shaking. 'The Warden Journal. You have it. Thirty years I've studied the Old Tongue for a book like this. Let me keep it. Or burn it, if you think nobody should read it. Just don't let the cult have it.'",
+   "options": [
+    {
+     "label": "Give it to her to study",
+     "trait": "hag_lib_study",
+     "rep": 2,
+     "line": "'Thank you. I'll find what they missed. I promise.'",
+     "chronicle": "You trusted the librarian with the Warden Journal.",
+     "courier": "half_a_god:y1_lib_study",
+     "hint": "She'll write when she finds something."
+    },
+    {
+     "label": "Burn it. Nobody should read it.",
+     "trait": "hag_lib_burn",
+     "rep": 0,
+     "line": "She watches it burn and says nothing for a long time.",
+     "chronicle": "You burned the Warden Journal."
+    },
+    {
+     "label": "Sell it to the Gilded Hand",
+     "trait": "hag_lib_sold",
+     "rep": -8,
+     "line": "'You... sold it?' She doesn't look at you again.",
+     "chronicle": "You sold the Warden Journal to the Gilded Hand.",
+     "courier": "half_a_god:y2_lib_sold",
+     "hint": "Silas pays well. Silas also talks."
+    },
+    {
+     "label": "Keep it yourself",
+     "trait": "hag_lib_kept",
+     "rep": -1,
+     "line": "'Then may it do you more good than it did them.'",
+     "chronicle": "You kept the Warden Journal for yourself."
+    }
+   ]
+  },
+  {
+   "id": "one_who_speaks",
+   "trigger": "hag_v2_the_sinful_church_done",
+   "speaker": "A voice in the blood",
+   "title": "The One Who Speaks",
+   "text": "As the last Devourer dies, the blood pit bubbles and speaks with the voice of an Ashford man you never saved. 'It's warm down here. They said you'd come. Did you come for me?'",
+   "options": [
+    {
+     "label": "'I came for all of you. Rest now.'",
+     "trait": "hag_speaks_kind",
+     "rep": 3,
+     "line": "The bubbling stops. It sounds, almost, like a sigh.",
+     "chronicle": "You spoke kindly to the voice in the blood."
+    },
+    {
+     "label": "Say nothing",
+     "trait": "hag_speaks_silent",
+     "rep": 0,
+     "chronicle": "You said nothing to the voice in the blood."
+    },
+    {
+     "label": "Ask it for the names of the dead",
+     "trait": "hag_speaks_names",
+     "rep": 1,
+     "line": "It gives you eleven names. You write them all down.",
+     "chronicle": "You wrote down the names of eleven Ashford men the pits took."
+    },
+    {
+     "label": "Promise it more blood",
+     "trait": "hag_speaks_cruel",
+     "rep": -8,
+     "line": "The pit laughs with a dead man's voice.",
+     "chronicle": "You promised the blood pit more blood."
+    }
+   ]
+  },
+  {
+   "id": "haldens_son",
+   "trigger": "hag_m3_hold_the_quarry_gate_done",
+   "speaker": "Tomas, Halden's son",
+   "title": "Halden's Son",
+   "text": "Tomas, Halden's son, followed the freed men to the quarry gate. 'I'm coming into the Mansion with you. My father lost Ashford. I won't lose this.'",
+   "options": [
+    {
+     "label": "Send him home to his father",
+     "trait": "hag_tomas_home",
+     "rep": 3,
+     "line": "'You sound like him.' He goes. Slowly. Furious.",
+     "chronicle": "You sent Tomas home to his father.",
+     "courier": "half_a_god:y3_tomas_home",
+     "hint": "Halden will hear about it."
+    },
+    {
+     "label": "Let him guard the portal",
+     "trait": "hag_tomas_guard",
+     "rep": 1,
+     "line": "'The portal. Fine. Nothing gets through.'",
+     "chronicle": "You let Tomas guard the portal behind you."
+    },
+    {
+     "label": "Laugh him off",
+     "trait": "hag_tomas_mocked",
+     "rep": -3,
+     "line": "He walks away without a word. You've made an enemy, maybe.",
+     "chronicle": "You laughed at Halden's son."
+    }
+   ]
+  },
+  {
+   "id": "maraals_offer",
+   "trigger": "hag_m6_the_instruction_done",
+   "requires": [
+    "maraal_forgiven"
+   ],
+   "speaker": "Maraal",
+   "title": "Maraal's Offer",
+   "text": "At the door of the Lair, Maraal stops you. 'I can go in with you. I can give you what years I have left, so you won't fall. Or I can wait here, and pray, which I have not done in a very long time.'",
+   "options": [
+    {
+     "label": "'Walk in beside me.'",
+     "trait": "hag_maraal_beside",
+     "rep": 3,
+     "line": "'Together, then. Like I should have done the first time.'",
+     "chronicle": "Maraal walked into the Lair beside you."
+    },
+    {
+     "label": "'Keep your years. You've paid enough.'",
+     "trait": "hag_maraal_kept_years",
+     "rep": 4,
+     "line": "She cries, very quietly.",
+     "chronicle": "You refused Maraal's years. She'd paid enough."
+    },
+    {
+     "label": "'Give me your years.'",
+     "trait": "hag_maraal_gave_years",
+     "rep": -3,
+     "line": "She does. She looks a hundred years older.",
+     "chronicle": "You took Maraal's remaining years to make yourself stronger."
+    },
+    {
+     "label": "'Wait here and pray.'",
+     "trait": "hag_maraal_prayed",
+     "rep": 1,
+     "line": "'For you. Not for him. Never for him.'",
+     "chronicle": "Maraal waited outside the Lair and prayed for you."
+    }
+   ]
+  },
+  {
+   "id": "vael_fate",
+   "trigger": "vael_spared",
+   "speaker": "Brother Vael",
+   "title": "What Becomes of Vael",
+   "text": "You spared Brother Vael. He's on his knees in the ash, waiting to hear what that means.",
+   "options": [
+    {
+     "label": "Send him to Halden for trial",
+     "trait": "hag_vael_trial",
+     "rep": 3,
+     "line": "'A trial. Yes. I deserve that much.'",
+     "chronicle": "You sent Brother Vael to stand trial."
+    },
+    {
+     "label": "Let him go free",
+     "trait": "hag_vael_free",
+     "rep": 0,
+     "line": "'I will not forget.'",
+     "chronicle": "You let Brother Vael go free."
+    },
+    {
+     "label": "Make him your spy in the cult",
+     "trait": "hag_vael_spy",
+     "rep": -1,
+     "line": "'They'll kill me if they find out.' 'Then don't let them.'",
+     "chronicle": "You sent Brother Vael back into the cult as your spy.",
+     "courier": "half_a_god:y4_vael_spy",
+     "hint": "He'll write if he learns something."
+    },
+    {
+     "label": "Brand him so the cult knows what he did",
+     "trait": "hag_vael_branded",
+     "rep": -5,
+     "line": "He screams, and then he's very quiet.",
+     "chronicle": "You branded Brother Vael and sent him back to his cult."
+    }
+   ]
+  },
+  {
+   "id": "midwife_fate",
+   "trigger": "midwife_spared",
+   "speaker": "The Midwife",
+   "title": "What Becomes of the Midwife",
+   "text": "You let the Midwife live. She wipes the blood off her hands, slowly, as if she's never done it before.",
+   "options": [
+    {
+     "label": "Send her to the cleric to heal",
+     "trait": "hag_midwife_cleric",
+     "rep": 3,
+     "line": "'Heal? Me?' She almost laughs.",
+     "chronicle": "You sent the Midwife to the cleric to heal.",
+     "courier": "half_a_god:y5_midwife_cleric",
+     "hint": "She has a daughter."
+    },
+    {
+     "label": "Exile her from the valley",
+     "trait": "hag_midwife_exiled",
+     "rep": 0,
+     "line": "She goes without looking back.",
+     "chronicle": "You exiled the Midwife."
+    },
+    {
+     "label": "Hand her to the Watch",
+     "trait": "hag_midwife_watch",
+     "rep": 1,
+     "line": "'Chains, then. Fine. I've worn worse.'",
+     "chronicle": "You handed the Midwife to the Watch."
+    },
+    {
+     "label": "Let her keep one pit, for research",
+     "trait": "hag_midwife_kept_pit",
+     "rep": -6,
+     "line": "She smiles for the first time.",
+     "chronicle": "You let the Midwife keep one blood pit."
+    }
+   ]
+  },
+  {
+   "id": "maraal_forgiven_words",
+   "trigger": "maraal_forgiven",
+   "speaker": "Maraal",
+   "title": "Forgiveness",
+   "text": "'You forgave me. I don't know what to do with that. What do I owe you now?'",
+   "options": [
+    {
+     "label": "'Nothing. We start again.'",
+     "trait": "hag_maraal_start_again",
+     "rep": 3,
+     "line": "'Again. I've never had an again.'",
+     "chronicle": "You told Maraal you'd start again."
+    },
+    {
+     "label": "'I forgive you. I don't trust you.'",
+     "trait": "hag_maraal_no_trust",
+     "rep": 0,
+     "line": "'Fair. More than fair.'",
+     "chronicle": "You forgave Maraal, but you didn't trust her."
+    },
+    {
+     "label": "'Tell me everything. Every champion.'",
+     "trait": "hag_maraal_everything",
+     "rep": 1,
+     "line": "She talks until the fire goes out.",
+     "chronicle": "Maraal told you about every champion before you."
+    }
+   ]
+  },
+  {
+   "id": "maraal_rejected_words",
+   "trigger": "maraal_rejected",
+   "speaker": "Maraal",
+   "title": "Rejection",
+   "text": "'Then I'll go. Is there anything you want to say to me, before I do?'",
+   "options": [
+    {
+     "label": "'Never write to me again.'",
+     "trait": "hag_maraal_never",
+     "rep": -2,
+     "line": "She nods. She doesn't argue.",
+     "chronicle": "You told Maraal never to write again."
+    },
+    {
+     "label": "'Maybe one day.'",
+     "trait": "hag_maraal_one_day",
+     "rep": 1,
+     "line": "'One day. I can live on that.'",
+     "chronicle": "You told Maraal: maybe one day."
+    },
+    {
+     "label": "Walk away without a word",
+     "trait": "hag_maraal_silence",
+     "rep": -1,
+     "chronicle": "You walked away from Maraal without a word."
+    }
+   ]
+  },
+  {
+   "id": "vasco_partners",
+   "trigger": "gt_partners",
+   "speaker": "Don Vasco",
+   "title": "Splitting the Valley",
+   "text": "'Partners, then. Now: how do we split the valley?'",
+   "options": [
+    {
+     "label": "'Down the middle.'",
+     "trait": "hag_vasco_even",
+     "rep": 0,
+     "line": "'Fair. I hate fair, but fine.'",
+     "chronicle": "You split the valley evenly with Don Vasco."
+    },
+    {
+     "label": "'I take the bigger half.'",
+     "trait": "hag_vasco_greedy",
+     "rep": -3,
+     "line": "'Greedy. I like that.'",
+     "chronicle": "You took the bigger half of Blackwater's valley."
+    },
+    {
+     "label": "'Your half pays for Ashford's rebuilding.'",
+     "trait": "hag_vasco_ashford",
+     "rep": 2,
+     "line": "'Charity? From a grower?' He laughs. He agrees.",
+     "chronicle": "You made Blackwater pay for rebuilding Ashford."
+    },
+    {
+     "label": "Shake on it, and plan to betray him",
+     "trait": "hag_vasco_betrayal",
+     "rep": -2,
+     "line": "You shake his hand. You count his guards.",
+     "chronicle": "You shook Don Vasco's hand and planned his betrayal."
+    }
+   ]
+  },
+  {
+   "id": "vasco_trial",
+   "trigger": "gt_vasco_arrested",
+   "speaker": "Captain of the Watch",
+   "title": "Don Vasco's Trial",
+   "text": "'We have him. Now what? A public trial will be messy. Blackwater still has friends.'",
+   "options": [
+    {
+     "label": "A public trial. Everyone should see.",
+     "trait": "hag_vasco_public",
+     "rep": 3,
+     "line": "'Messy, then. Good.'",
+     "chronicle": "You made Don Vasco's trial public."
+    },
+    {
+     "label": "Let the Watch decide quietly",
+     "trait": "hag_vasco_quiet",
+     "rep": 0,
+     "line": "'Quietly. All right.'",
+     "chronicle": "You let the Watch try Don Vasco quietly."
+    },
+    {
+     "label": "Testify against him yourself",
+     "trait": "hag_vasco_testify",
+     "rep": 4,
+     "line": "'You'd stand up there? With your name on it?'",
+     "chronicle": "You testified against Don Vasco yourself."
+    }
+   ]
+  }
+ ]
+}

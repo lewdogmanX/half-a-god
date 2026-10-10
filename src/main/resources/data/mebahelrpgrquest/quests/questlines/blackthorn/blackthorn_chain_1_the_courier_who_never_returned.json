@@ -1,0 +1,221 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.title",
+    "fallback": "The Courier Who Never Returned"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.summary",
+    "fallback": "A village courier vanished on an old marsh route. Recover his satchel and find out why one impossible address appears in his ledger."
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.intro",
+      "fallback": "A courier used to take the marsh road every sixth morning. Miserable man. Miserable horse. Never missed a delivery."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.offer.0.0",
+          "fallback": "How long has he been gone?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.offer.0.1",
+          "fallback": "Long enough that I have stopped blaming the mud."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.offer.1.0",
+          "fallback": "What was he carrying?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.offer.1.1",
+          "fallback": "Bills. Receipts. Letters for people who complain when letters arrive and complain louder when they do not."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.offer.2.0",
+          "fallback": "Anything unusual?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.offer.2.1",
+          "fallback": "One parcel. He had been delivering the same order for twenty-three years, though he never explained who kept ordering it."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.offer.3.0",
+          "fallback": "Who was it for?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.offer.3.1",
+          "fallback": "Blackthorn House. That is all the register says. I cannot find anyone who remembers the place."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.return",
+      "fallback": "Blackthorn House... I know the name now. That is worse."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.return_steps.0.0",
+          "fallback": "You know it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.return_steps.0.1",
+          "fallback": "I found it in the oldest village register. The Blackthorns were wealthy, unpleasant, and very thoroughly dead."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.return_steps.1.0",
+          "fallback": "How long ago?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.return_steps.1.1",
+          "fallback": "Nearly two hundred years. Their manor was abandoned before that courier's grandfather was born."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.return_steps.2.0",
+          "fallback": "Then who was he delivering to?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.return_steps.2.1",
+          "fallback": "I was hoping you would not ask me that."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.return_steps.3.0",
+          "fallback": "What do we do with the seal?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.return_steps.3.1",
+          "fallback": "Keep it. If someone still expects those deliveries, I would rather they know where to complain."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.reward",
+      "fallback": "Take this for bringing back the ledger. As for Blackthorn House, let dead addresses stay dead."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.dialogue.done",
+      "fallback": "I have removed Blackthorn House from the route book. I still find the name written back in the margin some mornings."
+    }
+  },
+  "goals": [
+    {
+      "id": "find_the_marsh_route",
+      "reach": "minecraft:swamp_hut",
+      "radius": 4500,
+      "range": 56,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "read_the_route_ledger",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:swamp_hut",
+      "radius": 4500,
+      "stage": 1,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.name",
+        "fallback": "Courier's Route Ledger"
+      },
+      "tag": "blackthorn_courier_route_ledger",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.quest_book.title",
+          "fallback": "Courier's Route Ledger"
+        },
+        "author": "Tomas Wren",
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.quest_book.pages.0",
+            "fallback": "ROUTE LEDGER\n\nEastmere: grain invoice. Delivered.\nOakfield: two letters. Delivered.\nMiller's Crossing: tax notice. Refused. Left with wife."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.quest_book.pages.1",
+            "fallback": "Blackthorn House: dining order. Delivered.\n\nThirteen settings. One left unused."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.quest_book.pages.2",
+            "fallback": "Blackthorn House: dining order. Delivered.\n\nThirteen settings. One left unused."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.quest_book.pages.3",
+            "fallback": "Blackthorn House: dining order. Delivered.\n\nI have copied that entry every month for twenty-three years."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.quest_book.pages.4",
+            "fallback": "Asked the steward why a house with no guests requires thirteen settings.\n\nHe asked why a courier with no invitation required an answer."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.quest_book.pages.5",
+            "fallback": "Checked the county maps. Blackthorn House is not marked.\n\nAsked at three villages. One old woman knew the name. She said the house was abandoned before her grandmother was born."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.quest_book.pages.6",
+            "fallback": "Delivered there again today."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.quest_book.pages.7",
+            "fallback": "The steward asked whether I knew anyone who still travelled after dark.\n\nI said yes."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.quest_book.pages.8",
+            "fallback": "He asked for the traveler's name.\n\nI gave him the name from the village notice board."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.1.quest_book.pages.9",
+            "fallback": "I should not have said yes."
+          }
+        ]
+      }
+    },
+    {
+      "id": "recover_blackthorn_seal",
+      "collect": "minecraft:paper",
+      "amount": 1,
+      "structure": "minecraft:swamp_hut",
+      "radius": 4500,
+      "stage": 1,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.blackthorn_chain_1_the_courier_who_never_returned.goals.2.name",
+        "fallback": "Blackthorn House Seal"
+      },
+      "tag": "blackthorn_house_seal"
+    }
+  ],
+  "rewards": {
+    "xp": 220,
+    "items": {
+      "minecraft:emerald": 6,
+      "minecraft:paper": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "blackthorn_name_found",
+      "hag_base_blackthorn_done"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_h1_a_light_above_the_pit"
+    ]
+  }
+}

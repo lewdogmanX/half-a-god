@@ -1,0 +1,41 @@
+{
+  "title": "Audience with the Queen",
+  "summary": "The Bee Queen lives on top of a Throne Pillar. Find her. She doesn't speak, but she trades: hold out an item she wants and right-click her. Her first trade begins the next chapter.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_throne",
+      "reach": "the_bumblezone:throne_pillar",
+      "radius": 12000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "She is enormous, and golden, and she is looking right at you."
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:honey_block": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_bz9_the_queens_desire",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 400,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "the_bumblezone:the_bumblezone"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_bz8_audience_with_the_queen_done"
+    ]
+  }
+}

@@ -1,0 +1,223 @@
+{
+  "title": "The Freed Don't Thank You",
+  "summary": "The Siege: Nobody's sure whose side you're on. Only Halden stands with you. Hold anyway. Then: [Reputation: Wavering] The men freed from the quarries have heard stories about you. Halden's son wants to look you in the eye before he decides what you are. Then the freed men bring you the neighbour who sold them.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "siege_night",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Night falls. Horns on the road. The siege has come."
+    },
+    {
+      "id": "siege_vindicator",
+      "kill": "minecraft:vindicator",
+      "amount": 8,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "siege_pillager",
+      "kill": "minecraft:pillager",
+      "amount": 3,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "siege_evoker",
+      "kill": "minecraft:evoker",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Nobody's sure whose side you're on. Only Halden stands with you. Hold anyway."
+    },
+    {
+      "id": "meet_haldens_son",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "name": "Halden's Son"
+    },
+    {
+      "id": "judge_7",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 3,
+      "auto_advance": true,
+      "say": "Garret sold his neighbours to the cult, and was found among the freed. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Hand Besieger",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 26,
+      "count": 8,
+      "max_health": 60
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": "Hand Crossbow",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 26,
+      "count": 3,
+      "max_health": 60
+    },
+    {
+      "entity": "minecraft:evoker",
+      "name": "Hand Conjurer",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 26,
+      "max_health": 60
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Garret of Ashford",
+      "stage": 3,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You betrayed Ashford.",
+          "And you've betrayed yourself, they tell me. More than once."
+        ],
+        [
+          "That's not your business.",
+          "No. But it's why I think you'll understand."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Halden's Son",
+      "stage": 2,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You're Halden's boy.",
+          "I'm Halden's son. And you're the one they tell stories about."
+        ],
+        [
+          "I've tried to make up for it.",
+          "My father says so. I'll make up my own mind."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Let Halden judge him",
+      "line": "Halden looks at Garret for a long time. 'You'll rebuild every house you emptied.'",
+      "traits": [
+        "hag_mercy_7"
+      ]
+    },
+    "attack": {
+      "label": "Judge him yourself",
+      "traits": [
+        "hag_cruelty_7"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1700
+  },
+  "traits": {
+    "complete": [
+      "hag_rc7_waver_done",
+      "hag_route_seg7",
+      "hag_ch7_waver",
+      "hag_siege_waver"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_m2_the_cursed_quarries"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rep_end_good",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rep_end_fallen",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,410 @@
+{
+  "contracts": [
+    {
+      "structures": [
+        "minecraft:pillager_outpost"
+      ],
+      "search_radius": 8000,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 24,
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_dangerous",
+        "deadly": "half_a_god:hag_dangerous",
+        "nightmare": "half_a_god:hag_dangerous",
+        "legendary": "half_a_god:hag_dangerous"
+      },
+      "elites": [
+        {
+          "entity": "minecraft:vindicator",
+          "min": 1,
+          "max": 1,
+          "name": "Gold-Sworn Captain",
+          "max_health": 90,
+          "equipment_table": "half_a_god:hag_gold_sworn",
+          "effects": [
+            {
+              "id": "minecraft:strength",
+              "duration_seconds": 3600,
+              "amplifier": 0,
+              "show_particles": false
+            }
+          ]
+        },
+        {
+          "entity": "minecraft:pillager",
+          "min": 2,
+          "max": 2,
+          "name": "Gold-Sworn Crossbow",
+          "max_health": 40,
+          "equipment_table": "half_a_god:hag_gold_sworn"
+        }
+      ]
+    },
+    {
+      "structures": [
+        "takesapillage:bastille"
+      ],
+      "search_radius": 8000,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 24,
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_dangerous",
+        "deadly": "half_a_god:hag_dangerous",
+        "nightmare": "half_a_god:hag_dangerous",
+        "legendary": "half_a_god:hag_dangerous"
+      },
+      "elites": [
+        {
+          "entity": "minecraft:vindicator",
+          "min": 1,
+          "max": 1,
+          "name": "Bastille Warden",
+          "max_health": 120,
+          "equipment_table": "half_a_god:hag_gold_sworn",
+          "effects": [
+            {
+              "id": "minecraft:strength",
+              "duration_seconds": 3600,
+              "amplifier": 0,
+              "show_particles": false
+            }
+          ]
+        },
+        {
+          "entity": "minecraft:pillager",
+          "min": 2,
+          "max": 3,
+          "name": "Bastille Guard",
+          "max_health": 40,
+          "equipment_table": "half_a_god:hag_gold_sworn"
+        }
+      ]
+    },
+    {
+      "structures": [
+        "netherman:pipes",
+        "netherman:believer_house"
+      ],
+      "search_radius": 8000,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 24,
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_deadly",
+        "deadly": "half_a_god:hag_deadly",
+        "nightmare": "half_a_god:hag_deadly",
+        "legendary": "half_a_god:hag_deadly"
+      },
+      "elites": [
+        {
+          "entity": "minecraft:evoker",
+          "min": 1,
+          "max": 1,
+          "name": "Cult Cell Leader",
+          "max_health": 90,
+          "equipment_table": "half_a_god:hag_faithful",
+          "effects": []
+        },
+        {
+          "entity": "minecraft:vindicator",
+          "min": 2,
+          "max": 3,
+          "name": "The Faithful",
+          "max_health": 50,
+          "equipment_table": "half_a_god:hag_faithful"
+        }
+      ]
+    },
+    {
+      "structures": [
+        "minecraft:fortress"
+      ],
+      "search_radius": 8000,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 24,
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_deadly",
+        "deadly": "half_a_god:hag_deadly",
+        "nightmare": "half_a_god:hag_deadly",
+        "legendary": "half_a_god:hag_deadly"
+      },
+      "elites": [
+        {
+          "entity": "minecraft:wither_skeleton",
+          "min": 1,
+          "max": 1,
+          "name": "Choir Leader",
+          "max_health": 100,
+          "equipment_table": "half_a_god:hag_bone_choir",
+          "effects": []
+        },
+        {
+          "entity": "minecraft:wither_skeleton",
+          "min": 2,
+          "max": 2,
+          "name": "Bone Chorister",
+          "max_health": 60,
+          "equipment_table": "half_a_god:hag_bone_choir"
+        }
+      ]
+    },
+    {
+      "structures": [
+        "block_factorys_bosses:yeti_hideout"
+      ],
+      "search_radius": 8000,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 24,
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_nightmare",
+        "deadly": "half_a_god:hag_nightmare",
+        "nightmare": "half_a_god:hag_nightmare",
+        "legendary": "half_a_god:hag_nightmare"
+      },
+      "elites": [
+        {
+          "entity": "minecraft:stray",
+          "min": 1,
+          "max": 1,
+          "name": "Frostbitten Sergeant",
+          "max_health": 80,
+          "equipment_table": "half_a_god:hag_frost",
+          "effects": []
+        },
+        {
+          "entity": "minecraft:stray",
+          "min": 3,
+          "max": 3,
+          "name": "Frostbitten",
+          "max_health": 40,
+          "equipment_table": "half_a_god:hag_frost"
+        }
+      ]
+    },
+    {
+      "structures": [
+        "block_factorys_bosses:sandworm_nest"
+      ],
+      "search_radius": 8000,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 24,
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_nightmare",
+        "deadly": "half_a_god:hag_nightmare",
+        "nightmare": "half_a_god:hag_nightmare",
+        "legendary": "half_a_god:hag_nightmare"
+      },
+      "elites": [
+        {
+          "entity": "minecraft:husk",
+          "min": 1,
+          "max": 1,
+          "name": "Dune Prophet",
+          "max_health": 90,
+          "equipment_table": "half_a_god:hag_dune",
+          "effects": [
+            {
+              "id": "minecraft:strength",
+              "duration_seconds": 3600,
+              "amplifier": 0,
+              "show_particles": false
+            }
+          ]
+        },
+        {
+          "entity": "minecraft:husk",
+          "min": 4,
+          "max": 4,
+          "name": "Dune Faithful",
+          "max_health": 45,
+          "equipment_table": "half_a_god:hag_dune"
+        }
+      ]
+    },
+    {
+      "structures": [
+        "block_factorys_bosses:underworld_arena"
+      ],
+      "search_radius": 8000,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 24,
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_nightmare",
+        "deadly": "half_a_god:hag_nightmare",
+        "nightmare": "half_a_god:hag_nightmare",
+        "legendary": "half_a_god:hag_nightmare"
+      },
+      "elites": [
+        {
+          "entity": "minecraft:piglin_brute",
+          "min": 1,
+          "max": 1,
+          "name": "Gatebreaker",
+          "max_health": 120,
+          "equipment_table": "half_a_god:hag_underworld",
+          "effects": []
+        },
+        {
+          "entity": "minecraft:wither_skeleton",
+          "min": 2,
+          "max": 2,
+          "name": "Gate Watcher",
+          "max_health": 60,
+          "equipment_table": "half_a_god:hag_underworld"
+        }
+      ]
+    },
+    {
+      "structures": [
+        "block_factorys_bosses:dragon_tower"
+      ],
+      "search_radius": 8000,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 24,
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_nightmare",
+        "deadly": "half_a_god:hag_nightmare",
+        "nightmare": "half_a_god:hag_nightmare",
+        "legendary": "half_a_god:hag_nightmare"
+      },
+      "elites": [
+        {
+          "entity": "minecraft:skeleton",
+          "min": 1,
+          "max": 1,
+          "name": "Ash Archer",
+          "max_health": 80,
+          "equipment_table": "half_a_god:hag_ash",
+          "effects": [
+            {
+              "id": "minecraft:fire_resistance",
+              "duration_seconds": 3600,
+              "amplifier": 0,
+              "show_particles": false
+            }
+          ]
+        },
+        {
+          "entity": "minecraft:skeleton",
+          "min": 3,
+          "max": 3,
+          "name": "Ash Bowman",
+          "max_health": 40,
+          "equipment_table": "half_a_god:hag_ash"
+        }
+      ]
+    },
+    {
+      "structures": [
+        "illagerinvasion:illager_fort"
+      ],
+      "search_radius": 8000,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 24,
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_nightmare",
+        "deadly": "half_a_god:hag_nightmare",
+        "nightmare": "half_a_god:hag_nightmare",
+        "legendary": "half_a_god:hag_nightmare"
+      },
+      "elites": [
+        {
+          "entity": "minecraft:vindicator",
+          "min": 1,
+          "max": 1,
+          "name": "Fort Warlord",
+          "max_health": 140,
+          "equipment_table": "half_a_god:hag_gold_sworn",
+          "effects": [
+            {
+              "id": "minecraft:strength",
+              "duration_seconds": 3600,
+              "amplifier": 1,
+              "show_particles": false
+            }
+          ]
+        },
+        {
+          "entity": "minecraft:pillager",
+          "min": 3,
+          "max": 3,
+          "name": "Fort Guard",
+          "max_health": 45,
+          "equipment_table": "half_a_god:hag_gold_sworn"
+        }
+      ]
+    },
+    {
+      "structures": [
+        "irons_spellbooks:evoker_fort"
+      ],
+      "search_radius": 8000,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 24,
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_nightmare",
+        "deadly": "half_a_god:hag_nightmare",
+        "nightmare": "half_a_god:hag_nightmare",
+        "legendary": "half_a_god:hag_nightmare"
+      },
+      "elites": [
+        {
+          "entity": "minecraft:evoker",
+          "min": 1,
+          "max": 1,
+          "name": "Rogue Archmage",
+          "max_health": 110,
+          "equipment_table": "half_a_god:hag_faithful",
+          "effects": []
+        },
+        {
+          "entity": "minecraft:vindicator",
+          "min": 2,
+          "max": 3,
+          "name": "Magehunter Recruit",
+          "max_health": 50,
+          "equipment_table": "half_a_god:hag_faithful"
+        }
+      ]
+    },
+    {
+      "structures": [
+        "netherman:mansion_nether"
+      ],
+      "search_radius": 8000,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 24,
+      "reward_tables": {
+        "dangerous": "half_a_god:hag_legendary",
+        "deadly": "half_a_god:hag_legendary",
+        "nightmare": "half_a_god:hag_legendary",
+        "legendary": "half_a_god:hag_legendary"
+      },
+      "elites": [
+        {
+          "entity": "minecraft:piglin_brute",
+          "min": 1,
+          "max": 1,
+          "name": "Gold-Warden",
+          "max_health": 150,
+          "equipment_table": "half_a_god:hag_gold_wardens",
+          "effects": [
+            {
+              "id": "minecraft:resistance",
+              "duration_seconds": 3600,
+              "amplifier": 0,
+              "show_particles": false
+            }
+          ]
+        },
+        {
+          "entity": "minecraft:piglin_brute",
+          "min": 2,
+          "max": 2,
+          "name": "Gold-Warden Guard",
+          "max_health": 80,
+          "equipment_table": "half_a_god:hag_gold_wardens"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.merrick_the_end_remembers.title",
+    "fallback": "You Remember This Part"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.merrick_the_end_remembers.summary",
+    "fallback": "Merrick is dead. Something in the End disagrees."
+  },
+  "map": {
+    "icon": "minecraft:ender_eye"
+  },
+  "goals": [
+    {
+      "id": "kill_merrick_again",
+      "kill": "minecraft:enderman",
+      "amount": 1,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:enderman",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.merrick_the_end_remembers.threat.name",
+      "fallback": "Merrick"
+    },
+    "spawn_origin": "player",
+    "spawn_min_radius": 4,
+    "spawn_max_radius": 7,
+    "spawn_on_accept": true,
+    "aggressive_on_spawn": true,
+    "spare": false,
+    "glow": false,
+    "max_health": 120
+  },
+  "rewards": {
+    "xp": 450,
+    "items": {
+      "minecraft:ender_pearl": 4,
+      "minecraft:echo_shard": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "merrick_killed_twice"
+    ]
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:the_sixth_voice",
+      "delay_ticks": 36000,
+      "silent_start": true,
+      "conditions": {
+        "dimensions": [
+          "minecraft:overworld"
+        ],
+        "player_not_in_combat": true
+      },
+      "retry_delay_ticks": 600
+    }
+  }
+}

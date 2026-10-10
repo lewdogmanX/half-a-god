@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:ravager_horn",
+  "weight": 12,
+  "line": "Heard a ravager horn last night. Then nothing. Then cheering.",
+  "conditions": {
+    "required_traits": [
+      "hag_a8_ravagers_horn_done"
+    ]
+  }
+}

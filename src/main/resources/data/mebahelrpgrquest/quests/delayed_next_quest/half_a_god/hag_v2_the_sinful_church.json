@@ -1,0 +1,68 @@
+{
+  "title": "The Sinful Church",
+  "summary": "The blood comes from a Sinful Church (Sons of Sins). Find it, kill the Devourers born in its blood, and read the recipe the cult is following in a barrel there.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_church",
+      "reach": "sons_of_sins:sinful_church",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "devourers",
+      "kill": "sons_of_sins:devourer",
+      "amount": 2,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Things with too many teeth, born in the church's blood. They never spoke."
+    },
+    {
+      "id": "recipe",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "sons_of_sins:sinful_church",
+      "radius": 30000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "The Midwife's Recipe",
+      "tag": "hag_midwife_recipe",
+      "quest_book": {
+        "title": "The Midwife's Recipe",
+        "author": "The Midwife",
+        "pages": [
+          "Carcass into blood. Pray.",
+          "If it lives, it is a son.\nIf it speaks, it is Him.\n\nNone have spoken yet. Pour more."
+        ]
+      },
+      "stage": 2,
+      "auto_advance": true,
+      "say": "None have spoken yet."
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:experience_bottle": 12
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_v3_the_midwife",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v2_the_sinful_church_done"
+    ]
+  }
+}

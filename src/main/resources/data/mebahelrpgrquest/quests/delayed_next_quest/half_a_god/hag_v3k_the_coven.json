@@ -1,0 +1,60 @@
+{
+  "title": "The Coven",
+  "summary": "The Midwife's sisters come for you a day later. They want blood for blood.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "coven",
+      "kill": "minecraft:witch",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Among the coven's things: a recipe. 'If it speaks, it is Him.' None ever spoke."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:witch",
+      "name": "Coven Sister",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "count": 4,
+      "max_health": 60,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 1400,
+    "items": {
+      "minecraft:golden_apple": 3
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_v4_original_sin",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v3k_the_coven_done"
+    ]
+  }
+}

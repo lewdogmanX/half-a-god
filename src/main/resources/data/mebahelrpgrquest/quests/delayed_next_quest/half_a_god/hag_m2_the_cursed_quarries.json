@@ -1,0 +1,50 @@
+{
+  "title": "The Cursed Quarries",
+  "summary": "Ashford's men are mining gold for a god in the Mansion's quarries. Kill the Manipulators who drive them.",
+  "sequential_objectives": true,
+  "requires": {
+    "advancements": [
+      "netherman:enter_mansion"
+    ]
+  },
+  "goals": [
+    {
+      "id": "manipulators",
+      "kill": "netherman:manipulator",
+      "amount": 6,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Chains fall. Among the freed prisoners: Reeve Halden's son."
+    }
+  ],
+  "rewards": {
+    "xp": 2500,
+    "items": {
+      "minecraft:enchanted_book": {
+        "count": 1,
+        "enchants": {
+          "minecraft:fire_protection": 4
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_m3_hold_the_quarry_gate",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_m2_the_cursed_quarries_done"
+    ]
+  }
+}

@@ -1,0 +1,66 @@
+{
+  "title": "The Choir Wants It Back",
+  "summary": "The Bone Choir knows you killed Ossian for the third skull. They've crossed into the Overworld to take it back.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "wait_for_dark",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "choristers",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The last chorister crumbles. The skull is still yours."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": "Bone Chorister",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 22,
+      "count": 4,
+      "max_health": 60,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:bone_block": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x3k_the_choir_wants_it_back_done",
+      "hag_payoff_choir_came"
+    ]
+  },
+  "quest_book": {
+    "title": "A Hymn Sheet",
+    "author": "The Bone Choir",
+    "color": "gray",
+    "pages": [
+      "Thief of the third.\n\nWe sing for what is ours.\n\nWe are coming to collect it."
+    ],
+    "auto_claim_rewards": true
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_x3_the_third_skull_after"
+    ]
+  }
+}

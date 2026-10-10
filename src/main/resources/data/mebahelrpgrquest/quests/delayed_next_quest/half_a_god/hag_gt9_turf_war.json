@@ -1,0 +1,129 @@
+{
+  "title": "Turf War",
+  "summary": "Blackwater is done being polite. Their crew is hitting your fields tonight.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "wait_for_dark",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "crew",
+      "kill": "minecraft:vindicator",
+      "amount": 6,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "shooters",
+      "kill": "minecraft:pillager",
+      "amount": 3,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "lieutenant",
+      "kill": "minecraft:evoker",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Lieutenant's ring has an address: a sorcerer's hut in the dark forest."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Blackwater Crew",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 26,
+      "count": 6,
+      "max_health": 56,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": "Blackwater Shooter",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 14,
+      "spawn_max_radius": 28,
+      "count": 3,
+      "max_health": 40,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchants": {
+            "minecraft:piercing": 2
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:evoker",
+      "name": "Blackwater Lieutenant",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 14,
+      "spawn_max_radius": 24,
+      "max_health": 140,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:strength",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 1800,
+    "items": {
+      "minecraft:emerald": 48,
+      "minecraft:totem_of_undying": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_gt10_the_sorcerers_books",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_gt9_turf_war_done"
+    ]
+  }
+}

@@ -1,0 +1,261 @@
+{
+  "title": "Graves Without Names",
+  "summary": "Someone has been burying raiders, strays, and husks outside a desert village. Follow the fresh graves to an old pyramid and find the undertaker responsible.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "Someone has been burying the dead outside the village. Raiders. Strays. Even husks. We did not ask for a cemetery.",
+    "offer": [
+      [
+        "Why does that worry you?",
+        "Because the graves are fresh, the bodies are not ours, and whoever digs them comes after sunset."
+      ],
+      [
+        "Has anyone seen the gravedigger?",
+        "Only at a distance. A dead man carrying a shovel bright enough to catch the sun."
+      ],
+      [
+        "Where do the tracks lead?",
+        "Toward the old pyramid. Nobody here is volunteering to follow them."
+      ],
+      [
+        "What do you want me to do?",
+        "Find out whether he is burying corpses... or collecting them."
+      ]
+    ],
+    "return": "So there really is an undertaker in the pyramid.",
+    "reward": "Take this. I still do not like him, but a creature that buries raiders instead of joining them is a problem I can postpone.",
+    "done": "The graves are still appearing. They are straighter than ours, which is irritating."
+  },
+  "goals": [
+    {
+      "id": "follow_the_fresh_graves",
+      "type": "reach_structure",
+      "structure": "minecraft:desert_pyramid",
+      "search_radius": 7000,
+      "completion_range": 72,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "read_the_burial_ledger",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:desert_pyramid",
+      "search_radius": 7000,
+      "stage": 1,
+      "spawn_in_chest": true,
+      "container": "minecraft:barrel",
+      "quest_item_name": "Burial Ledger of Qasra",
+      "quest_item_tag": "amar_burial_ledger",
+      "quest_book": {
+        "title": "Burial Ledger of Qasra",
+        "author": "Amar",
+        "pages": [
+          "BURIAL LEDGER\n\nUnnamed traveler. Found west of the village. No possessions worth recording.",
+          "Two raiders. One red sash, one broken crossbow. Buried separately. They argued enough while alive.",
+          "Stray. No name. Arrow removed before burial. Professional courtesy.",
+          "Husk. No marks. Sand in the lungs, though that seems redundant.",
+          "Child of Qasra. Name damaged on the old token. Reburied beneath clean stone.",
+          "Three pillagers. No one claimed them. This is not the same as no one having loved them.",
+          "Amar.\nUndertaker.\nGrave prepared.\nOccupant absent.",
+          "I have delayed the final entry again.\n\nThis is becoming unprofessional."
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "stop_the_grave_robber",
+      "type": "kill_entity",
+      "entity": "minecraft:vindicator",
+      "amount": 1,
+      "stage": 2,
+      "from_threats": true,
+      "auto_advance": true,
+      "completion_dialogue_line": "The grave-robber collapses beside the burial chamber. A shovel scrapes across stone somewhere behind you."
+    },
+    {
+      "id": "speak_to_the_undertaker",
+      "talk": "minecraft:husk",
+      "amount": 1,
+      "stage": 3,
+      "name": "Amar the Undertaker"
+    },
+    {
+      "id": "kill_the_undertaker",
+      "kill": "minecraft:husk",
+      "amount": 1,
+      "stage": 3,
+      "attack_only": true,
+      "from_threats": true
+    }
+  ],
+  "spare_rewards": {
+    "xp": 180,
+    "items": {
+      "minecraft:bone": 6
+    }
+  },
+  "rewards": {
+    "xp": 300,
+    "items": {
+      "minecraft:emerald": 7
+    }
+  },
+  "traits": {
+    "spare": [
+      "amar_heard_out"
+    ],
+    "attack": [
+      "amar_killed",
+      "hag_base_undertaker_done"
+    ],
+    "complete": [
+      "undertaker_found"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Varek the Grave-Robber",
+      "structure": "minecraft:desert_pyramid",
+      "search_radius": 7000,
+      "stage": 2,
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 11,
+      "spare": false,
+      "glow": false,
+      "max_health": 140.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "count": 1,
+          "enchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "level": 2
+            },
+            {
+              "id": "minecraft:unbreaking",
+              "level": 2
+            }
+          ]
+        },
+        "chest": {
+          "item": "minecraft:iron_chestplate",
+          "count": 1,
+          "enchantments": [
+            {
+              "id": "minecraft:protection",
+              "level": 2
+            }
+          ]
+        },
+        "feet": "minecraft:leather_boots"
+      },
+      "target_line": "Dead men don't need valuables. Walk away."
+    },
+    {
+      "entity": "minecraft:husk",
+      "name": "Amar the Undertaker",
+      "structure": "minecraft:desert_pyramid",
+      "search_radius": 7000,
+      "stage": 3,
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 9,
+      "spare": true,
+      "glow": false,
+      "max_health": 120.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:diamond_shovel",
+          "count": 1,
+          "enchantments": [
+            {
+              "id": "minecraft:smite",
+              "level": 7
+            },
+            {
+              "id": "minecraft:unbreaking",
+              "level": 2
+            }
+          ]
+        },
+        "chest": {
+          "item": "minecraft:chainmail_chestplate",
+          "count": 1,
+          "enchantments": [
+            {
+              "id": "minecraft:protection",
+              "level": 2
+            },
+            {
+              "id": "minecraft:unbreaking",
+              "level": 2
+            }
+          ]
+        },
+        "legs": {
+          "item": "minecraft:leather_leggings",
+          "count": 1
+        },
+        "feet": {
+          "item": "minecraft:leather_boots",
+          "count": 1
+        }
+      },
+      "target_line": "Leave that body.",
+      "talk": [
+        [
+          "Why?",
+          "Because you have already killed him. There is no need to be rude afterward."
+        ],
+        [
+          "He was robbing the graves.",
+          "Then his professional judgment was poor. His burial does not need to be."
+        ],
+        [
+          "You are burying monsters.",
+          "I am burying bodies. Monsters are a matter for people with more philosophical free time."
+        ],
+        [
+          "Who are you?",
+          "Amar. Undertaker. The first name was mine. The profession appears to have survived me."
+        ],
+        [
+          "You are dead.",
+          "Yes. I have filed the complaint."
+        ],
+        [
+          "Why use the pyramid?",
+          "Dry stone. Deep rooms. Few relatives object to the location, and the dead have shown no preference."
+        ],
+        [
+          "Your ledger has an empty grave.",
+          "Mine."
+        ],
+        [
+          "Why have you not used it?",
+          "Because I cannot locate the body with sufficient confidence. This is embarrassing in my profession."
+        ]
+      ],
+      "attack_choice_label": "You're adding one more grave today.",
+      "spare_choice_label": "I'm not here to stop you. Tell me about your grave.",
+      "attack_return_line": "Amar falls beside the graves he kept for others. His own remains empty.",
+      "spared_line": "Good. Digging alone encourages introspection.",
+      "post_spare_line": "There is one burial I have postponed longer than is professionally defensible.",
+      "mercy_outcome": {
+        "offer_quest_chance": 100,
+        "offered_quest": "mebahelrpgrquest:undertaker_chain_2_the_grave_he_cannot_fill",
+        "ambush_player": 0,
+        "nothing_chance": 0,
+        "offer_line": "Help me find where they took my body. After that, I may finally complete the ledger."
+      }
+    }
+  ],
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_s1_cold_hearths"
+    ]
+  }
+}

@@ -1,0 +1,153 @@
+{
+  "title": "Wanted",
+  "summary": "[Reputation: Fallen] There is a notice nailed to the well with your face on it, and a price. Bounty hunters come at night. Survive them. Then a scavenger with a wither skull finds you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "wait_for_night",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Torches on the ridge. Four of them."
+    },
+    {
+      "id": "bounty_hunters",
+      "kill": "minecraft:vindicator",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The last hunter laughs. 'There'll be more. There's always more for someone like you.'"
+    },
+    {
+      "id": "judge_2",
+      "kill": "minecraft:wandering_trader",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Tobin is carrying a wither skull wrapped in a blanket. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Bounty Hunter",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 24,
+      "count": 4,
+      "max_health": 52,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        },
+        "head": "minecraft:iron_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:wandering_trader",
+      "name": "Tobin the Scavenger",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "Hand it over.",
+          "Please. It's all I've got. You've taken enough from people."
+        ],
+        [
+          "Have I?",
+          "Ask Ashford. They tell your story at night to scare children."
+        ]
+      ],
+      "spare_handoff": {
+        "item": "minecraft:wither_skeleton_skull",
+        "name": "Tobin's Skull",
+        "count": 1
+      }
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Buy the skull and let him go",
+      "line": "Tobin presses the skull into your hands. 'That's a month of bread for my girls.'",
+      "traits": [
+        "hag_mercy_2"
+      ]
+    },
+    "attack": {
+      "label": "Take it from him",
+      "traits": [
+        "hag_cruelty_2"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:shield": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc2_fallen_done",
+      "hag_route_seg2",
+      "hag_ch2_fallen"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w1_the_skull_market"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc3_waver",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc3_wicked",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  }
+}

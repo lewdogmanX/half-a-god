@@ -1,0 +1,13 @@
+{
+  "id": "half_a_god:rep_fallen",
+  "weight": 12,
+  "line": "There's a price on a head round here. You'd know whose.",
+  "conditions": {
+    "required_traits": [
+      "hag_ch4_fallen"
+    ],
+    "forbidden_traits": [
+      "hag_route_seg5"
+    ]
+  }
+}

@@ -1,0 +1,178 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.title",
+    "fallback": "The Thorns Brothers"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.summary",
+    "fallback": "Three undead brothers haunt a nearby mineshaft. Bound in thorned armor, they have begun moving toward the village."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:witch_chain_4_evoker_conspiracy"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.dialogue.intro",
+      "fallback": "The brews bought us time, but not peace. Something is moving under the old paths."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.dialogue.offer.0.0",
+          "fallback": "What is stirring below?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.dialogue.offer.0.1",
+          "fallback": "Three brothers, or what is left of them. The mine carries names strangely, but it carried theirs with the scrape of iron and bone."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.dialogue.offer.1.0",
+          "fallback": "Why are they dangerous?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.dialogue.offer.1.1",
+          "fallback": "Their armor bites back. Strike them carelessly and you will bleed for every blow. Whoever armed them knew exactly what fear they would spread."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.dialogue.offer.2.0",
+          "fallback": "What do you need me to do?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.dialogue.offer.2.1",
+          "fallback": "Go into the mineshaft and end all three before they reach the village paths. Do not give them open ground."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.dialogue.return",
+      "fallback": "You came back wounded, but alive. Then it is done. The mine is quieter now, and the village may breathe for another night."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.dialogue.reward",
+      "fallback": "Take these. If thorns were used against us, then thorns may yet serve us in return."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.dialogue.done",
+      "fallback": "The Thorns Brothers are gone. Still, something about this feels arranged... as if they were only one piece of a larger hand."
+    }
+  },
+  "goals": [
+    {
+      "kill": "minecraft:zombie",
+      "amount": 3
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.threats.0.name",
+        "fallback": "Edrin Thornhide"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 1600,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 40,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword",
+        "head": "minecraft:iron_helmet",
+        "chest": {
+          "item": "minecraft:leather_chestplate",
+          "enchantments": [
+            {
+              "id": "minecraft:thorns",
+              "level": 4
+            }
+          ]
+        }
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.threats.0.offer_line",
+        "fallback": "The Thorns Brothers are gathered somewhere in the mineshaft. Find them before they leave the tunnels."
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.threats.1.name",
+        "fallback": "Malrec Thornhide"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 1600,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 40,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword",
+        "head": "minecraft:iron_helmet",
+        "chest": {
+          "item": "minecraft:leather_chestplate",
+          "enchantments": [
+            {
+              "id": "minecraft:thorns",
+              "level": 10
+            }
+          ]
+        }
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_3_thorns_brothers.threats.2.name",
+        "fallback": "Corvin Thornhide"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 1600,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 40,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword",
+        "head": "minecraft:iron_helmet",
+        "chest": {
+          "item": "minecraft:leather_chestplate",
+          "enchantments": [
+            {
+              "id": "minecraft:thorns",
+              "level": 4
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 340,
+    "items": {
+      "minecraft:emerald": 8,
+      "minecraft:enchanted_book": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:thorns",
+            "level": 3
+          }
+        ]
+      },
+      "minecraft:iron_chestplate": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:protection",
+            "level": 1
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 2
+          }
+        ]
+      }
+    }
+  }
+}

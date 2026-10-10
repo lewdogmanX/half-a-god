@@ -1,0 +1,290 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.village_pig_enclosure.title",
+    "fallback": "A Pen for the First Herd"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.village_pig_enclosure.summary",
+    "fallback": "Help me raise that first pen and bring two pigs safely inside it. If you do, I will see that you are rewarded not as a hired hand, but as a friend of this village."
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.intro",
+      "fallback": "Stranger, have you a moment? I have been staring at this empty patch of earth all morning, wondering whether it might become the start of something better."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.offer.0.0",
+          "fallback": "You look worried. What happened?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.offer.0.1",
+          "fallback": "Worried? No. Hungry, perhaps. The village lives from one harvest to the next, and a bad storm could empty every bowl we own."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.offer.1.0",
+          "fallback": "You want to start an animal pen?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.offer.1.1",
+          "fallback": "Aye. Not a grand farm, not yet. Just enough fence, a gate, light for the night, and two pigs to make the place feel alive."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.offer.2.0",
+          "fallback": "Why ask me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.offer.2.1",
+          "fallback": "Because people here know how to survive, but few know how to begin. Help me build the first enclosure, and the village will remember who gave it roots."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.offer.3.0",
+          "fallback": "Tell me exactly what you need."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.offer.3.1",
+          "fallback": "Place thirteen oak fences, one oak fence gate, and two torches within fifty blocks of me. Then bring two new pigs into the pen."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.return",
+      "fallback": "The raiders are gone? Then the pen still stands because of you. First we built walls for animals; tonight, you were the wall for all of us."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.return_steps.0.0",
+          "fallback": "They came straight for the pen."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.return_steps.0.1",
+          "fallback": "Of course they did. Raiders can smell a village trying to become stronger. They wanted to break the idea before it became food."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.return_steps.1.0",
+          "fallback": "The pigs are safe."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.return_steps.1.1",
+          "fallback": "Then the village is safer than it was this morning. Not rich. Not fearless. But safer, and that matters."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.return_steps.2.0",
+          "fallback": "What happens now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.return_steps.2.1",
+          "fallback": "Now we breed the herd, mend the fence, and teach everyone here that building something is worth defending."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.return_steps.3.0",
+          "fallback": "That blade by your side. Whose was it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.return_steps.3.1",
+          "fallback": "An old herdsman's. He used it to drive wolves from the pens. It has guarded empty fields for too long."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.return_steps.4.0",
+          "fallback": "Then why give it to me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.return_steps.4.1",
+          "fallback": "Because you stood before the raiders when they came with axes. A fence is only as strong as the soul willing to stand before it."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.reward",
+      "fallback": "Take it. Tonight, it belongs in your hands."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.village_pig_enclosure.dialogue.done",
+      "fallback": "The pigs are settling in. Every grunt from that pen sounds like tomorrow arriving."
+    }
+  },
+  "goals": [
+    {
+      "id": "place_oak_fence",
+      "place": "minecraft:oak_fence",
+      "amount": 13,
+      "stage": 0,
+      "range": 70,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.village_pig_enclosure.goals.0.say",
+        "fallback": "That pen stands like a promise. I can already hear the village children arguing over what to name the pigs. Stay close, though. Fresh food draws hungry eyes, and I do not like the dust rising beyond the fields."
+      }
+    },
+    {
+      "id": "place_oak_fence_gate",
+      "place": "minecraft:oak_fence_gate",
+      "amount": 1,
+      "stage": 0,
+      "range": 50
+    },
+    {
+      "id": "place_torches",
+      "place": "minecraft:torch",
+      "amount": 2,
+      "stage": 0,
+      "range": 50
+    },
+    {
+      "id": "bring_pigs",
+      "bring": "minecraft:pig",
+      "threat_target_only": false,
+      "amount": 2,
+      "stage": 0,
+      "range": 50
+    },
+    {
+      "id": "kill_pillagers",
+      "kill": "minecraft:pillager",
+      "amount": 3,
+      "stage": 1
+    },
+    {
+      "id": "kill_vindicator",
+      "kill": "minecraft:vindicator",
+      "amount": 2,
+      "stage": 1
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_pig_enclosure.threats.0.name",
+        "fallback": "Ravik Pen-Breaker"
+      },
+      "spawn_min_radius": 18,
+      "spawn_max_radius": 36,
+      "stage": 1,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.village_pig_enclosure.threats.0.offer_line",
+        "fallback": "Raiders are closing on the new pen."
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_pig_enclosure.threats.1.name",
+        "fallback": "Odran Fence-Cutter"
+      },
+      "spawn_min_radius": 18,
+      "spawn_max_radius": 36,
+      "stage": 1,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_pig_enclosure.threats.2.name",
+        "fallback": "Kelv Moss-Raider"
+      },
+      "spawn_min_radius": 18,
+      "spawn_max_radius": 36,
+      "stage": 1,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_pig_enclosure.threats.3.name",
+        "fallback": "Harkon the Rootsplitter"
+      },
+      "spawn_min_radius": 22,
+      "spawn_max_radius": 40,
+      "stage": 1,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 68.0,
+      "equipment": {
+        "mainhand": "minecraft:diamond_axe"
+      }
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_pig_enclosure.threats.4.name",
+        "fallback": "Brenn Axebiter"
+      },
+      "spawn_min_radius": 22,
+      "spawn_max_radius": 40,
+      "stage": 1,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 34.0,
+      "equipment": {
+        "mainhand": "minecraft:iron_axe"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 480,
+    "items": {
+      "minecraft:emerald": 14,
+      "minecraft:golden_carrot": 8,
+      "minecraft:saddle": 1,
+      "minecraft:iron_axe": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:sharpness",
+            "level": 2
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 2
+          },
+          {
+            "id": "minecraft:knockback",
+            "level": 1
+          }
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "farmhand",
+      "hag_base_village_pig_enclosure_done"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_the_first_letter"
+    ]
+  }
+}

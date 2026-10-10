@@ -1,0 +1,119 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.title",
+    "fallback": "Bread at the Shrine"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.summary",
+    "fallback": "Find the lonely shrine beyond the village road and learn why a raider has been leaving food there. If this is a trap, end it before it reaches our doors."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:no_banner_vindicator_chain_2_the_no_banner_axe"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.dialogue.intro",
+      "fallback": "Stranger, I need a quiet word. Not every danger comes shouting with a horn."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.dialogue.offer.0.0",
+          "fallback": "What happened?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.dialogue.offer.0.1",
+          "fallback": "One of the children saw a vindicator near the old roadside shrine. He was not raiding, not hunting. He left bread on the stones and walked away."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.dialogue.offer.1.0",
+          "fallback": "A vindicator leaving offerings?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.dialogue.offer.1.1",
+          "fallback": "Aye, and that frightens me more than a charging axe. Raiders do not kneel unless they are broken, pretending, or praying to something worse."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.dialogue.offer.2.0",
+          "fallback": "What do you want me to do?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.dialogue.offer.2.1",
+          "fallback": "Go to the shrine road. Look for proof of what he is doing there. If he means harm, stop him. If there is more to this, bring me enough truth that fear does not choose for us."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.dialogue.return",
+      "fallback": "Bread, ash, and gray cloth. That is not a raider's warning. That is mourning."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.dialogue.reward",
+      "fallback": "Take this for finding the signs without drawing blood. But the next step will be harder: we need to speak to the axe that left them."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.dialogue.done",
+      "fallback": "The shrine still has crumbs on the stone. Someone keeps returning."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_shrine_bread",
+      "collect": "minecraft:bread",
+      "amount": 2,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 3000,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.goals.0.name",
+        "fallback": "Bread Left at the Shrine"
+      },
+      "tag": "no_banner_shrine_proof",
+      "in_chest": true
+    },
+    {
+      "id": "bring_charcoal_mark",
+      "collect": "minecraft:charcoal",
+      "amount": 1,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 3000,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.goals.1.name",
+        "fallback": "Charcoal Mourning Mark"
+      },
+      "tag": "no_banner_shrine_proof",
+      "in_chest": true
+    },
+    {
+      "id": "bring_gray_cloth",
+      "collect": "minecraft:gray_wool",
+      "amount": 1,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 3000,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_1_bread_at_the_shrine.goals.2.name",
+        "fallback": "Torn Gray War-Cloth"
+      },
+      "tag": "no_banner_shrine_proof",
+      "in_chest": true
+    }
+  ],
+  "rewards": {
+    "xp": 160,
+    "items": {
+      "minecraft:emerald": 6,
+      "minecraft:bread": 8
+    }
+  },
+  "traits": {
+    "spare": [
+      "no_banner_witness"
+    ],
+    "attack": [
+      "no_banner_slayer"
+    ]
+  }
+}

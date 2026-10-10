@@ -1,0 +1,57 @@
+{
+  "title": "Copy the Journal",
+  "summary": "The librarian wants to make copies of the Warden Journal before something happens to it.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_e4_the_warden_journal"
+    ]
+  },
+  "dialogue": {
+    "intro": "One original is one fire away from none.",
+    "reward": "Three copies by morning. One for you.",
+    "offer": [
+      [
+        "Copies?",
+        "One original is one fire away from none."
+      ],
+      [
+        "What do you need?",
+        "Books and quills. Lots."
+      ]
+    ],
+    "return": "Supplies?"
+  },
+  "goals": [
+    {
+      "id": "books",
+      "collect": "minecraft:book",
+      "amount": 16,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "feathers",
+      "collect": "minecraft:feather",
+      "amount": 16,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 400,
+    "items": {
+      "minecraft:enchanted_book": {
+        "count": 1,
+        "enchants": {
+          "minecraft:mending": 1
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_copy_the_journal_done"
+    ]
+  }
+}

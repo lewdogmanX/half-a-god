@@ -1,0 +1,28 @@
+{
+  "slots": {
+    "right_hand": [
+      {
+        "id": "minecraft:bow",
+        "weight": 10,
+        "enchantments": [
+          {
+            "id": "minecraft:flame",
+            "min_level": 1,
+            "max_level": 1
+          },
+          {
+            "id": "minecraft:power",
+            "min_level": 3,
+            "max_level": 4
+          }
+        ]
+      }
+    ],
+    "chestplate": [
+      {
+        "id": "minecraft:chainmail_chestplate",
+        "weight": 10
+      }
+    ]
+  }
+}

@@ -1,0 +1,628 @@
+{
+  "lines": [
+    {
+      "chain": "village_arrival",
+      "gate": "mebahelrpgrquest:hag_the_first_letter",
+      "join": "mebahelrpgrquest:hag_w0_two_roads_meet",
+      "act": "Prologue and Act I",
+      "title": "Settling In",
+      "starters": [
+        "mebahelrpgrquest:village_arrival_1_clock"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:village_arrival_1_clock",
+        "mebahelrpgrquest:village_arrival_2_armour_stand",
+        "mebahelrpgrquest:village_arrival_3_fireplace_supplies"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:village_arrival_1_clock",
+        "mebahelrpgrquest:village_arrival_2_armour_stand",
+        "mebahelrpgrquest:village_arrival_3_fireplace_supplies"
+      ],
+      "done_trait": "hag_base_village_arrival_done"
+    },
+    {
+      "chain": "village_new_home",
+      "gate": "mebahelrpgrquest:hag_the_first_letter",
+      "join": "mebahelrpgrquest:hag_w0_two_roads_meet",
+      "act": "Prologue and Act I",
+      "title": "A New Home",
+      "starters": [
+        "mebahelrpgrquest:village_new_home"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:village_new_home"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:village_new_home"
+      ],
+      "done_trait": "hag_base_village_new_home_done"
+    },
+    {
+      "chain": "village_pig_enclosure",
+      "gate": "mebahelrpgrquest:hag_the_first_letter",
+      "join": "mebahelrpgrquest:hag_w0_two_roads_meet",
+      "act": "Prologue and Act I",
+      "title": "The Pig Pen",
+      "starters": [
+        "mebahelrpgrquest:village_pig_enclosure"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:village_pig_enclosure"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:village_pig_enclosure"
+      ],
+      "done_trait": "hag_base_village_pig_enclosure_done"
+    },
+    {
+      "chain": "kill_10_skeletons",
+      "gate": "mebahelrpgrquest:hag_the_first_letter",
+      "join": "mebahelrpgrquest:hag_w0_two_roads_meet",
+      "act": "Prologue and Act I",
+      "title": "Bones at Night",
+      "starters": [
+        "mebahelrpgrquest:kill_10_skeletons"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:kill_10_skeletons"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:kill_10_skeletons"
+      ],
+      "done_trait": "hag_base_kill_10_skeletons_done"
+    },
+    {
+      "chain": "kill_10_zombies",
+      "gate": "mebahelrpgrquest:hag_the_first_letter",
+      "join": "mebahelrpgrquest:hag_w0_two_roads_meet",
+      "act": "Prologue and Act I",
+      "title": "The Restless Dead",
+      "starters": [
+        "mebahelrpgrquest:kill_10_zombies"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:kill_10_zombies"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:kill_10_zombies"
+      ],
+      "done_trait": "hag_base_kill_10_zombies_done"
+    },
+    {
+      "chain": "kill_5_creepers",
+      "gate": "mebahelrpgrquest:hag_the_first_letter",
+      "join": "mebahelrpgrquest:hag_w0_two_roads_meet",
+      "act": "Prologue and Act I",
+      "title": "Quiet Fields",
+      "starters": [
+        "mebahelrpgrquest:kill_5_creepers"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:kill_5_creepers"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:kill_5_creepers"
+      ],
+      "done_trait": "hag_base_kill_5_creepers_done"
+    },
+    {
+      "chain": "delivery",
+      "gate": "mebahelrpgrquest:hag_the_first_letter",
+      "join": "mebahelrpgrquest:hag_w0_two_roads_meet",
+      "act": "Prologue and Act I",
+      "title": "The Neighbour's Order",
+      "starters": [
+        "mebahelrpgrquest:delivery_cobblestone_oak_log_other_village"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:delivery_cobblestone_oak_log_other_village"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:delivery_cobblestone_oak_log_other_village"
+      ],
+      "done_trait": "hag_base_delivery_done"
+    },
+    {
+      "chain": "most_important_cow",
+      "gate": "mebahelrpgrquest:hag_the_first_letter",
+      "join": "mebahelrpgrquest:hag_w0_two_roads_meet",
+      "act": "Prologue and Act I",
+      "title": "The Most Important Cow",
+      "starters": [
+        "mebahelrpgrquest:most_important_cow_chain_1_an_audience_with_her_majesty"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:most_important_cow_chain_1_an_audience_with_her_majesty",
+        "mebahelrpgrquest:most_important_cow_chain_2_the_cow_has_spoken",
+        "mebahelrpgrquest:most_important_cow_chain_3_the_woman_who_knew_the_bell",
+        "mebahelrpgrquest:most_important_cow_chain_4_the_price_of_a_queen",
+        "mebahelrpgrquest:most_important_cow_chain_bargain_5_a_quiet_road",
+        "mebahelrpgrquest:most_important_cow_chain_refuse_5_long_live_the_queen"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:most_important_cow_chain_1_an_audience_with_her_majesty",
+        "mebahelrpgrquest:most_important_cow_chain_2_the_cow_has_spoken",
+        "mebahelrpgrquest:most_important_cow_chain_3_the_woman_who_knew_the_bell",
+        "mebahelrpgrquest:most_important_cow_chain_4_the_price_of_a_queen",
+        "mebahelrpgrquest:most_important_cow_chain_bargain_5_a_quiet_road",
+        "mebahelrpgrquest:most_important_cow_chain_refuse_5_long_live_the_queen"
+      ],
+      "done_trait": "hag_base_most_important_cow_done"
+    },
+    {
+      "chain": "village_defense",
+      "gate": "mebahelrpgrquest:hag_a1_ashford_burns",
+      "join": "mebahelrpgrquest:hag_w0_two_roads_meet",
+      "act": "Prologue and Act I",
+      "title": "The Village Watch",
+      "starters": [
+        "mebahelrpgrquest:village_defense_chain_1_iron_for_the_watch",
+        "mebahelrpgrquest:village_defense_chain_4_the_road_remembers"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:village_defense_chain_1_iron_for_the_watch",
+        "mebahelrpgrquest:village_defense_chain_2_raise_the_iron_golems",
+        "mebahelrpgrquest:village_defense_chain_3_the_bell_and_the_raid",
+        "mebahelrpgrquest:village_defense_chain_4_the_road_remembers",
+        "mebahelrpgrquest:village_defense_chain_5_smoke_on_the_milestones",
+        "mebahelrpgrquest:village_defense_chain_6_the_second_bell"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:village_defense_chain_1_iron_for_the_watch",
+        "mebahelrpgrquest:village_defense_chain_2_raise_the_iron_golems",
+        "mebahelrpgrquest:village_defense_chain_3_the_bell_and_the_raid",
+        "mebahelrpgrquest:village_defense_chain_4_the_road_remembers",
+        "mebahelrpgrquest:village_defense_chain_5_smoke_on_the_milestones",
+        "mebahelrpgrquest:village_defense_chain_6_the_second_bell"
+      ],
+      "done_trait": "hag_base_village_defense_done"
+    },
+    {
+      "chain": "no_banner",
+      "gate": "mebahelrpgrquest:hag_a1_ashford_burns",
+      "join": "mebahelrpgrquest:hag_w0_two_roads_meet",
+      "act": "Prologue and Act I",
+      "title": "The Man With No Banner",
+      "starters": [
+        "mebahelrpgrquest:no_banner_vindicator_chain_1_bread_at_the_shrine"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:no_banner_vindicator_chain_1_bread_at_the_shrine",
+        "mebahelrpgrquest:no_banner_vindicator_chain_2_the_no_banner_axe",
+        "mebahelrpgrquest:no_banner_vindicator_chain_kill_3_ashes_without_witness",
+        "mebahelrpgrquest:no_banner_vindicator_chain_spare_3_names_in_ash",
+        "mebahelrpgrquest:no_banner_vindicator_chain_spare_4_trial_by_bell",
+        "mebahelrpgrquest:no_banner_vindicator_chain_spare_5_oath_without_banner"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:no_banner_vindicator_chain_1_bread_at_the_shrine",
+        "mebahelrpgrquest:no_banner_vindicator_chain_2_the_no_banner_axe",
+        "mebahelrpgrquest:no_banner_vindicator_chain_kill_3_ashes_without_witness",
+        "mebahelrpgrquest:no_banner_vindicator_chain_spare_3_names_in_ash",
+        "mebahelrpgrquest:no_banner_vindicator_chain_spare_4_trial_by_bell",
+        "mebahelrpgrquest:no_banner_vindicator_chain_spare_5_oath_without_banner"
+      ],
+      "done_trait": "hag_base_no_banner_done"
+    },
+    {
+      "chain": "witch",
+      "gate": "mebahelrpgrquest:hag_a1_ashford_burns",
+      "join": "mebahelrpgrquest:hag_w0_two_roads_meet",
+      "act": "Prologue and Act I",
+      "title": "The Witch of the Old Hut",
+      "starters": [
+        "mebahelrpgrquest:witch_chain_1_hut_threat"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:witch_chain_1_hut_threat",
+        "mebahelrpgrquest:witch_chain_2_healing_brews",
+        "mebahelrpgrquest:witch_chain_3_thorns_brothers",
+        "mebahelrpgrquest:witch_chain_4_evoker_conspiracy"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:witch_chain_1_hut_threat",
+        "mebahelrpgrquest:witch_chain_2_healing_brews",
+        "mebahelrpgrquest:witch_chain_3_thorns_brothers",
+        "mebahelrpgrquest:witch_chain_4_evoker_conspiracy"
+      ],
+      "done_trait": "hag_base_witch_done"
+    },
+    {
+      "chain": "ash_court",
+      "gate": "mebahelrpgrquest:hag_w1_the_skull_market",
+      "join": "mebahelrpgrquest:hag_w8_six_remain",
+      "act": "Act II",
+      "title": "The Ash Court",
+      "starters": [
+        "mebahelrpgrquest:ash_court_chain_1_bones_beneath_the_village"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:ash_court_chain_1_bones_beneath_the_village",
+        "mebahelrpgrquest:ash_court_chain_2_the_bone_anchor",
+        "mebahelrpgrquest:ash_court_chain_3_a_skull_for_proof",
+        "mebahelrpgrquest:ash_court_chain_4_the_warm_skull",
+        "mebahelrpgrquest:ash_court_chain_5_black_glass_road",
+        "mebahelrpgrquest:ash_court_chain_6_the_court_answers",
+        "mebahelrpgrquest:ash_court_chain_7_names_under_stone",
+        "mebahelrpgrquest:ash_court_chain_8_the_last_debt",
+        "mebahelrpgrquest:ash_court_orr_veyl_ledger_without_chains"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:ash_court_chain_1_bones_beneath_the_village",
+        "mebahelrpgrquest:ash_court_chain_2_the_bone_anchor",
+        "mebahelrpgrquest:ash_court_chain_3_a_skull_for_proof",
+        "mebahelrpgrquest:ash_court_chain_4_the_warm_skull",
+        "mebahelrpgrquest:ash_court_chain_5_black_glass_road",
+        "mebahelrpgrquest:ash_court_chain_6_the_court_answers",
+        "mebahelrpgrquest:ash_court_chain_7_names_under_stone",
+        "mebahelrpgrquest:ash_court_chain_8_the_last_debt",
+        "mebahelrpgrquest:ash_court_orr_veyl_ledger_without_chains"
+      ],
+      "done_trait": "hag_base_ash_court_done"
+    },
+    {
+      "chain": "armed_zombie",
+      "gate": "mebahelrpgrquest:hag_w1_the_skull_market",
+      "join": "mebahelrpgrquest:hag_w8_six_remain",
+      "act": "Act II",
+      "title": "The Knight at the Portal",
+      "starters": [
+        "mebahelrpgrquest:armed_zombie_chain_1_ruined_portal"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:armed_zombie_chain_1_ruined_portal",
+        "mebahelrpgrquest:armed_zombie_chain_kill_2_seal_the_gate",
+        "mebahelrpgrquest:armed_zombie_chain_kill_3_ashes_at_the_frame",
+        "mebahelrpgrquest:armed_zombie_chain_spare_2_forgotten_road",
+        "mebahelrpgrquest:armed_zombie_chain_spare_3_name_in_iron",
+        "mebahelrpgrquest:armed_zombie_chain_spare_4_oath_of_ash"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:armed_zombie_chain_1_ruined_portal",
+        "mebahelrpgrquest:armed_zombie_chain_kill_2_seal_the_gate",
+        "mebahelrpgrquest:armed_zombie_chain_kill_3_ashes_at_the_frame",
+        "mebahelrpgrquest:armed_zombie_chain_spare_2_forgotten_road",
+        "mebahelrpgrquest:armed_zombie_chain_spare_3_name_in_iron",
+        "mebahelrpgrquest:armed_zombie_chain_spare_4_oath_of_ash"
+      ],
+      "done_trait": "hag_base_armed_zombie_done"
+    },
+    {
+      "chain": "blaze_mineshaft",
+      "gate": "mebahelrpgrquest:hag_w1_the_skull_market",
+      "join": "mebahelrpgrquest:hag_w8_six_remain",
+      "act": "Act II",
+      "title": "Fire in the Mine",
+      "starters": [
+        "mebahelrpgrquest:blaze_mineshaft_threat"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:blaze_mineshaft_threat"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:blaze_mineshaft_threat"
+      ],
+      "done_trait": "hag_base_blaze_mineshaft_done"
+    },
+    {
+      "chain": "smith_last_heat",
+      "gate": "mebahelrpgrquest:hag_w1_the_skull_market",
+      "join": "mebahelrpgrquest:hag_w8_six_remain",
+      "act": "Act II",
+      "title": "The Smith's Last Heat",
+      "starters": [
+        "mebahelrpgrquest:smith_last_heat_chain_1_coals_for_the_cold_forge"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:smith_last_heat_chain_1_coals_for_the_cold_forge",
+        "mebahelrpgrquest:smith_last_heat_chain_2_the_hammer_remembers",
+        "mebahelrpgrquest:smith_last_heat_chain_3_the_burnt_smith"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:smith_last_heat_chain_1_coals_for_the_cold_forge",
+        "mebahelrpgrquest:smith_last_heat_chain_2_the_hammer_remembers",
+        "mebahelrpgrquest:smith_last_heat_chain_3_the_burnt_smith"
+      ],
+      "done_trait": "hag_base_smith_last_heat_done"
+    },
+    {
+      "chain": "blackthorn",
+      "gate": "mebahelrpgrquest:hag_h1_a_light_above_the_pit",
+      "join": "mebahelrpgrquest:hag_h10_fireproof",
+      "act": "Act III",
+      "title": "The Blackthorn House",
+      "starters": [
+        "mebahelrpgrquest:blackthorn_chain_1_the_courier_who_never_returned"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:blackthorn_chain_1_the_courier_who_never_returned"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:blackthorn_chain_1_the_courier_who_never_returned"
+      ],
+      "done_trait": "hag_base_blackthorn_done"
+    },
+    {
+      "chain": "sculk",
+      "gate": "mebahelrpgrquest:hag_h1_a_light_above_the_pit",
+      "join": "mebahelrpgrquest:hag_h10_fireproof",
+      "act": "Act III",
+      "title": "The Listening Mine",
+      "starters": [
+        "mebahelrpgrquest:sculk_mineshaft_investigation"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:sculk_mineshaft_investigation"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:sculk_mineshaft_investigation"
+      ],
+      "done_trait": "hag_base_sculk_done"
+    },
+    {
+      "chain": "treasure_map",
+      "gate": "mebahelrpgrquest:hag_h1_a_light_above_the_pit",
+      "join": "mebahelrpgrquest:hag_h10_fireproof",
+      "act": "Act III",
+      "title": "A Very Reasonable Treasure Map",
+      "starters": [],
+      "books": [
+        "mebahelrpgrquest:questbook_a_very_reasonable_treasure_map"
+      ],
+      "members": [
+        "mebahelrpgrquest:questbook_a_very_reasonable_treasure_map"
+      ],
+      "placeable": [],
+      "done_trait": "hag_base_treasure_map_done"
+    },
+    {
+      "chain": "fourth_member",
+      "gate": "mebahelrpgrquest:hag_e1_the_librarians_request",
+      "join": "mebahelrpgrquest:hag_e7_the_nether_is_singing",
+      "act": "Act IV",
+      "title": "The Fourth Member",
+      "starters": [],
+      "books": [
+        "mebahelrpgrquest:questbook_the_fourth_member"
+      ],
+      "members": [
+        "mebahelrpgrquest:merrick_a_place_you_remember",
+        "mebahelrpgrquest:merrick_remembers_you",
+        "mebahelrpgrquest:merrick_the_end_remembers",
+        "mebahelrpgrquest:questbook_the_fourth_member",
+        "mebahelrpgrquest:the_sixth_voice"
+      ],
+      "placeable": [],
+      "done_trait": "hag_base_fourth_member_done"
+    },
+    {
+      "chain": "house_owes_money",
+      "gate": "mebahelrpgrquest:hag_e1_the_librarians_request",
+      "join": "mebahelrpgrquest:hag_e7_the_nether_is_singing",
+      "act": "Act IV",
+      "title": "The House That Owes Me Money",
+      "starters": [],
+      "books": [
+        "mebahelrpgrquest:questbook_the_house_that_owes_me_money"
+      ],
+      "members": [
+        "mebahelrpgrquest:questbook_the_house_that_owes_me_money"
+      ],
+      "placeable": [],
+      "done_trait": "hag_base_house_owes_money_done"
+    },
+    {
+      "chain": "false_hero",
+      "gate": "mebahelrpgrquest:hag_s1_cold_hearths",
+      "join": "mebahelrpgrquest:hag_f1_the_last_road",
+      "act": "Act V",
+      "title": "The False Hero",
+      "starters": [
+        "mebahelrpgrquest:false_hero_chain_1_a_hero_trophy"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:false_hero_chain_1_a_hero_trophy",
+        "mebahelrpgrquest:false_hero_chain_2_the_last_witness",
+        "mebahelrpgrquest:false_hero_chain_kill_3_convenient_silence",
+        "mebahelrpgrquest:false_hero_chain_spare_3_name_beneath_medal",
+        "mebahelrpgrquest:false_hero_chain_spare_4_the_false_hero"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:false_hero_chain_1_a_hero_trophy",
+        "mebahelrpgrquest:false_hero_chain_2_the_last_witness",
+        "mebahelrpgrquest:false_hero_chain_kill_3_convenient_silence",
+        "mebahelrpgrquest:false_hero_chain_spare_3_name_beneath_medal",
+        "mebahelrpgrquest:false_hero_chain_spare_4_the_false_hero"
+      ],
+      "done_trait": "hag_base_false_hero_done"
+    },
+    {
+      "chain": "captains_share",
+      "gate": "mebahelrpgrquest:hag_s1_cold_hearths",
+      "join": "mebahelrpgrquest:hag_f1_the_last_road",
+      "act": "Act V",
+      "title": "The Captain's Share",
+      "starters": [],
+      "books": [
+        "mebahelrpgrquest:questbook_the_captains_share"
+      ],
+      "members": [
+        "mebahelrpgrquest:captains_share_return_the_shares",
+        "mebahelrpgrquest:questbook_the_captains_share"
+      ],
+      "placeable": [],
+      "done_trait": "hag_base_captains_share_done"
+    },
+    {
+      "chain": "return_the_ship",
+      "gate": "mebahelrpgrquest:hag_s1_cold_hearths",
+      "join": "mebahelrpgrquest:hag_f1_the_last_road",
+      "act": "Act V",
+      "title": "Please Return the Ship",
+      "starters": [],
+      "books": [
+        "mebahelrpgrquest:questbook_please_return_the_ship"
+      ],
+      "members": [
+        "mebahelrpgrquest:questbook_please_return_the_ship"
+      ],
+      "placeable": [],
+      "done_trait": "hag_base_return_the_ship_done"
+    },
+    {
+      "chain": "undertaker",
+      "gate": "mebahelrpgrquest:hag_s1_cold_hearths",
+      "join": "mebahelrpgrquest:hag_f1_the_last_road",
+      "act": "Act V",
+      "title": "The Undertaker of Red Sand",
+      "starters": [
+        "mebahelrpgrquest:undertaker_chain_1_graves_without_names"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:undertaker_chain_1_graves_without_names",
+        "mebahelrpgrquest:undertaker_chain_2_the_grave_he_cannot_fill",
+        "mebahelrpgrquest:undertaker_chain_3_where_the_dead_were_sent",
+        "mebahelrpgrquest:undertaker_chain_4_not_currently_available"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:undertaker_chain_1_graves_without_names",
+        "mebahelrpgrquest:undertaker_chain_2_the_grave_he_cannot_fill",
+        "mebahelrpgrquest:undertaker_chain_3_where_the_dead_were_sent",
+        "mebahelrpgrquest:undertaker_chain_4_not_currently_available"
+      ],
+      "done_trait": "hag_base_undertaker_done"
+    },
+    {
+      "chain": "mad_scientist",
+      "gate": "mebahelrpgrquest:hag_v1_blood_in_the_wells",
+      "join": "mebahelrpgrquest:hag_v8_sinbuster",
+      "act": "Act VI",
+      "title": "A Cure for the Common Death",
+      "starters": [
+        "mebahelrpgrquest:mad_scientist_chain_1_a_cure_for_the_common_death"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:mad_scientist_chain_1_a_cure_for_the_common_death",
+        "mebahelrpgrquest:mad_scientist_chain_2_the_control_group",
+        "mebahelrpgrquest:mad_scientist_chain_3_the_assistants_last_notes",
+        "mebahelrpgrquest:mad_scientist_chain_4_patient_thirteen",
+        "mebahelrpgrquest:mad_scientist_chain_kill_5_the_grand_demonstration",
+        "mebahelrpgrquest:mad_scientist_chain_spare_5_the_grand_demonstration"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:mad_scientist_chain_1_a_cure_for_the_common_death",
+        "mebahelrpgrquest:mad_scientist_chain_2_the_control_group",
+        "mebahelrpgrquest:mad_scientist_chain_3_the_assistants_last_notes",
+        "mebahelrpgrquest:mad_scientist_chain_4_patient_thirteen",
+        "mebahelrpgrquest:mad_scientist_chain_kill_5_the_grand_demonstration",
+        "mebahelrpgrquest:mad_scientist_chain_spare_5_the_grand_demonstration"
+      ],
+      "done_trait": "hag_base_mad_scientist_done"
+    },
+    {
+      "chain": "funeral",
+      "gate": "mebahelrpgrquest:hag_v1_blood_in_the_wells",
+      "join": "mebahelrpgrquest:hag_v8_sinbuster",
+      "act": "Act VI",
+      "title": "Instructions for My Own Funeral",
+      "starters": [],
+      "books": [
+        "mebahelrpgrquest:questbook_instructions_for_my_own_funeral"
+      ],
+      "members": [
+        "mebahelrpgrquest:garrick_second_funeral",
+        "mebahelrpgrquest:garrick_third_funeral",
+        "mebahelrpgrquest:questbook_instructions_for_my_own_funeral"
+      ],
+      "placeable": [],
+      "done_trait": "hag_base_funeral_done"
+    },
+    {
+      "chain": "came_back_warm",
+      "gate": "mebahelrpgrquest:hag_v1_blood_in_the_wells",
+      "join": "mebahelrpgrquest:hag_v8_sinbuster",
+      "act": "Act VI",
+      "title": "The Man Who Came Back Warm",
+      "starters": [],
+      "books": [
+        "mebahelrpgrquest:questbook_the_man_who_came_back_warm"
+      ],
+      "members": [
+        "mebahelrpgrquest:questbook_the_man_who_came_back_warm"
+      ],
+      "placeable": [],
+      "done_trait": "hag_base_came_back_warm_done"
+    },
+    {
+      "chain": "buried_himself",
+      "gate": "mebahelrpgrquest:hag_v1_blood_in_the_wells",
+      "join": "mebahelrpgrquest:hag_v8_sinbuster",
+      "act": "Act VI",
+      "title": "The Man Who Buried Himself",
+      "starters": [],
+      "books": [
+        "mebahelrpgrquest:questbook_the_man_who_buried_himself"
+      ],
+      "members": [
+        "mebahelrpgrquest:questbook_the_man_who_buried_himself"
+      ],
+      "placeable": [],
+      "done_trait": "hag_base_buried_himself_done"
+    },
+    {
+      "chain": "zombie_disguise",
+      "gate": "mebahelrpgrquest:hag_m1_follow_the_crimson_bee",
+      "join": "mebahelrpgrquest:hag_m6_the_instruction",
+      "act": "Act VII",
+      "title": "A Friend in Disguise",
+      "starters": [
+        "mebahelrpgrquest:zombie_disguise_friend"
+      ],
+      "books": [],
+      "members": [
+        "mebahelrpgrquest:zombie_disguise_friend"
+      ],
+      "placeable": [
+        "mebahelrpgrquest:zombie_disguise_friend"
+      ],
+      "done_trait": "hag_base_zombie_disguise_done"
+    },
+    {
+      "chain": "ash_merchant",
+      "gate": "mebahelrpgrquest:hag_m1_follow_the_crimson_bee",
+      "join": "mebahelrpgrquest:hag_m6_the_instruction",
+      "act": "Act VII",
+      "title": "The Ash Merchant",
+      "starters": [],
+      "books": [
+        "mebahelrpgrquest:questbook_the_ash_merchant"
+      ],
+      "members": [
+        "mebahelrpgrquest:questbook_the_ash_merchant"
+      ],
+      "placeable": [],
+      "done_trait": "hag_base_ash_merchant_done"
+    }
+  ]
+}

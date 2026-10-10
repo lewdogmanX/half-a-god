@@ -1,0 +1,22 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.kill_10_zombies.title",
+    "fallback": "Zombie Cleanup"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.kill_10_zombies.summary",
+    "fallback": "Kill 10 zombies for the village."
+  },
+  "goals": [
+    {
+      "kill": "minecraft:zombie",
+      "amount": 10
+    }
+  ],
+  "rewards": {
+    "xp": 100,
+    "items": {
+      "minecraft:emerald": 5
+    }
+  }
+}

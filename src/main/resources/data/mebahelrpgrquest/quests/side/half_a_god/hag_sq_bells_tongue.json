@@ -1,0 +1,45 @@
+{
+  "title": "The Bell's Tongue",
+  "summary": "The new bell needs a proper clapper. The bellmaker wants copper.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_p1_the_bell"
+    ]
+  },
+  "dialogue": {
+    "intro": "Nothing, if you like the sound of a spoon on a pot.",
+    "reward": "Listen to that. Now it sounds like a warning.",
+    "offer": [
+      [
+        "What's wrong with the bell?",
+        "Nothing, if you like the sound of a spoon on a pot."
+      ],
+      [
+        "Copper?",
+        "Twelve ingots. A good tongue rings true."
+      ]
+    ],
+    "return": "Copper yet?"
+  },
+  "goals": [
+    {
+      "id": "copper",
+      "collect": "minecraft:copper_ingot",
+      "amount": 12,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 150,
+    "items": {
+      "minecraft:emerald": 6
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_bells_tongue_done"
+    ]
+  }
+}

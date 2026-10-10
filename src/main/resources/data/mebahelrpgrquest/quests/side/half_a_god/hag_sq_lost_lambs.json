@@ -1,0 +1,49 @@
+{
+  "title": "Lost Lambs",
+  "summary": "Tam's flock scattered the night he went missing. Bring three sheep back to the pen.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_p3_the_shepherd"
+    ]
+  },
+  "dialogue": {
+    "intro": "Three of Tam's best. They ran when the man with the golden smile came.",
+    "reward": "Tam will sleep tonight. Thank you.",
+    "offer": [
+      [
+        "Lost sheep?",
+        "Three of Tam's best. They ran when the man with the golden smile came."
+      ],
+      [
+        "I'll bring them.",
+        "Lead them close. Sheep only trust a full belly."
+      ]
+    ],
+    "return": "Any luck with the sheep?"
+  },
+  "goals": [
+    {
+      "id": "sheep",
+      "bring": "minecraft:sheep",
+      "amount": 3,
+      "range": 24,
+      "threat_target_only": false,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Tam counts them twice and laughs for the first time in a week."
+    }
+  ],
+  "rewards": {
+    "xp": 150,
+    "items": {
+      "minecraft:white_wool": 16,
+      "minecraft:emerald": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_lost_lambs_done"
+    ]
+  }
+}

@@ -1,0 +1,56 @@
+{
+  "title": "A Grave for a Nail",
+  "summary": "Mara writes that the Wither is one of seven 'Wardens' the cult wants to control. If the cult raises it, it will serve them. Raise it yourself, far from any village, and kill it: four soul sand, three wither skulls, then fight.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "soul_sand",
+      "place": "minecraft:soul_sand",
+      "amount": 4,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "skulls",
+      "place": "minecraft:wither_skeleton_skull",
+      "amount": 3,
+      "range": 30000000,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The ground shakes. Something old opens its eyes."
+    },
+    {
+      "id": "the_wither",
+      "kill": "minecraft:wither",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "The first Warden falls. Far below, the Nether sky turns red.",
+      "from_threats": false
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:golden_apple": 3,
+      "minecraft:diamond": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_w6_the_withered_crown",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_w5_a_grave_for_a_nail_done"
+    ]
+  }
+}

@@ -1,0 +1,63 @@
+{
+  "title": "Vael's Map",
+  "summary": "Spared, Vael scratched a map of the cult's gold route into the netherrack. Its gold-runners carry cult money to the Sacred City. Kill them and the cult's carts run empty for a while.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "supply_guards",
+      "kill": "minecraft:piglin_brute",
+      "amount": 3,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The cult's gold carts will run empty for a while."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:piglin_brute",
+      "name": "Cult Gold-Runner",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 22,
+      "count": 3,
+      "max_health": 60,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:golden_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:gold_block": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_a13_tears_for_a_ward",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a12s_vaels_map_done"
+    ]
+  }
+}

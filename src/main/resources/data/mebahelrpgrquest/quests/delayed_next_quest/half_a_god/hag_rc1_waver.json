@@ -1,0 +1,161 @@
+{
+  "title": "Ash on Your Hands",
+  "summary": "[Reputation: Wavering] Ashford knows what you did. The village elder says there is one way to start making it right: feed the families through the winter. Then a deserter from the raiders comes looking for you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "bread",
+      "collect": "minecraft:bread",
+      "amount": 32,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "iron",
+      "collect": "minecraft:iron_ingot",
+      "amount": 16,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "face_the_elder",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "name": "Ashford Elder"
+    },
+    {
+      "id": "judge_1",
+      "kill": "minecraft:pillager",
+      "amount": 1,
+      "stage": 3,
+      "auto_advance": true,
+      "say": "Dunn threw down his crossbow at Ashford. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": "Dunn the Deserter",
+      "stage": 3,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You're the deserter?",
+          "Yes. And you're the one who... I heard what you did."
+        ],
+        [
+          "And you came to me anyway?",
+          "You know what it is to want another chance. Don't you?"
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Ashford Elder",
+      "stage": 2,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "I brought what you asked.",
+          "It doesn't bring anyone back."
+        ],
+        [
+          "I know.",
+          "Good. Knowing is where it starts."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Shelter him",
+      "line": "Dunn drops to his knees. 'I won't forget this. Ever.'",
+      "traits": [
+        "hag_mercy_1"
+      ]
+    },
+    "attack": {
+      "label": "Execute him",
+      "traits": [
+        "hag_cruelty_1"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 400
+  },
+  "traits": {
+    "complete": [
+      "hag_rc1_waver_done",
+      "hag_route_seg1",
+      "hag_ch1_waver"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc2_good",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc2_fallen",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  },
+  "recruit_companion": true
+}

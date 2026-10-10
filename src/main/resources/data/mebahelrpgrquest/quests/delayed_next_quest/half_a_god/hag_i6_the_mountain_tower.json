@@ -1,0 +1,49 @@
+{
+  "title": "The Mountain Tower",
+  "summary": "The Dead King's crown named him 'Champion of M. Second of seven. Failed.' His journal points to a mountain tower where a Cryomancer guards the notes of another failed champion. Find the tower and kill the Cryomancer.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_tower",
+      "reach": "irons_spellbooks:mountain_tower",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "cryomancers",
+      "kill": "irons_spellbooks:cryomancer",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The notes are frozen into the ice: 'She sends a new one every hundred years.'"
+    }
+  ],
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "irons_spellbooks:frozen_bone": 4,
+      "minecraft:echo_shard": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_i7_echo_of_tyros",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_i6_the_mountain_tower_done"
+    ]
+  }
+}

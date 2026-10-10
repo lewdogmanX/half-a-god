@@ -1,0 +1,77 @@
+{
+  "title": "The Hand Reads Too",
+  "summary": "Silas of the Gilded Hand has read the Warden Journal you sold him. He's pleased, and paying a bonus, and he wants you to know the cult will be very interested in where he got it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "silas",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Silas of the Gilded Hand"
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:emerald_block": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_y2_the_hand_reads_too_done",
+      "hag_payoff_hand_reads"
+    ]
+  },
+  "quest_book": {
+    "title": "A Bonus",
+    "author": "Silas of the Gilded Hand",
+    "color": "yellow",
+    "pages": [
+      "The journal sold beautifully.\n\nCome and collect your bonus. Bring a bag.\n\n- S."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Silas of the Gilded Hand",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You wanted to see me.",
+          "To pay you. The journal was worth every emerald. More, actually."
+        ],
+        [
+          "What will you do with it?",
+          "Sell it again. To the people you're fighting. Business is business."
+        ]
+      ]
+    }
+  ]
+}

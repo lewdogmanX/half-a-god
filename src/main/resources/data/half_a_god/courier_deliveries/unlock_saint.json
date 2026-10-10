@@ -1,0 +1,15 @@
+{
+  "id": "half_a_god:unlock_saint",
+  "trigger": {
+    "type": "custom"
+  },
+  "delay": {
+    "min_ticks": 1200,
+    "max_ticks": 3600
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "The Villages of the Old Road",
+    "quest_book": "mebahelrpgrquest:hag_ru1_the_lantern_road"
+  }
+}

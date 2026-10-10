@@ -1,0 +1,87 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.title",
+    "fallback": "A Hero's Trophy"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.summary",
+    "fallback": "Bring back raider proof from the outpost road and test the village champion's story."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:false_hero_chain_2_the_last_witness"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.dialogue.intro",
+      "fallback": "Stranger, have you heard the tale already? Our champion has told it loudly enough for half the village to know every heroic breath he claims to have taken."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.dialogue.offer.0.0",
+          "fallback": "What champion?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.dialogue.offer.0.1",
+          "fallback": "A man who says he drove raiders from an outpost alone, saved two villagers, and returned with a medal taken from their captain. The children cheer when he passes."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.dialogue.offer.1.0",
+          "fallback": "You do not sound convinced."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.dialogue.offer.1.1",
+          "fallback": "Because heroes usually grow quieter after bloodshed, not louder. His story shines too cleanly, and no one who was supposedly saved has come forward to bless his name."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.dialogue.offer.2.0",
+          "fallback": "What do you want from me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.dialogue.offer.2.1",
+          "fallback": "Go to the outpost road and bring back a raider's crossbow and a scrap of leather armor. If his battle was real, the field will tell us. If it was bought, stolen, or invented, the field may tell us that too."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.dialogue.return",
+      "fallback": "A crossbow, worn leather, and not a single mark that matches his tale. Either the outpost forgot him, or he was never there as he claimed."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.dialogue.reward",
+      "fallback": "Take these for your road dust. I need you for one more thing: someone survived that night, and I think our hero has been praying no one finds him."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.false_hero_chain_1_a_hero_trophy.dialogue.done",
+      "fallback": "The trophy never sat right with me. Now I know why."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_raider_crossbow",
+      "collect": "minecraft:crossbow",
+      "amount": 1
+    },
+    {
+      "id": "bring_leather_scraps",
+      "collect": "minecraft:leather",
+      "amount": 3
+    }
+  ],
+  "rewards": {
+    "xp": 140,
+    "items": {
+      "minecraft:emerald": 5,
+      "minecraft:arrow": 16
+    }
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_s1_cold_hearths"
+    ]
+  }
+}

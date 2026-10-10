@@ -1,0 +1,70 @@
+{
+  "title": "Blackwater Sends Its Regards",
+  "summary": "Blackwater doesn't let growers retire. Their crew is coming tonight to remind you whose you are. Make sure they never deliver that message to anyone again.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "wait_for_dark",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "crew",
+      "kill": "minecraft:vindicator",
+      "amount": 6,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The last enforcer runs. Blackwater knows now: you're out, and you're expensive."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Blackwater Collector",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 24,
+      "count": 6,
+      "max_health": 56,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:emerald": 24
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_go3_testimony",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_go2_blackwater_sends_regards_done"
+    ]
+  }
+}

@@ -1,0 +1,25 @@
+{
+  "id": "hag_talk_37",
+  "type": "villager_conversation",
+  "required_story_flags": [
+    "midwife_spared"
+  ],
+  "forbidden_story_flags": [],
+  "weight": 8,
+  "cooldown": 24000,
+  "max_player_distance": 16,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": 1,
+      "text": "The midwife from the pits is with the cleric now.",
+      "translation_key": "ambient.half_a_god.hag_talk_37.0"
+    },
+    {
+      "speaker": 1,
+      "look_at": 0,
+      "text": "I wouldn't let her near my children. ...But I'd let her near the cleric.",
+      "translation_key": "ambient.half_a_god.hag_talk_37.1"
+    }
+  ]
+}

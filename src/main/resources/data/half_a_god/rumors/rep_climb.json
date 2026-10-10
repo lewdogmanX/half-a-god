@@ -1,0 +1,13 @@
+{
+  "id": "half_a_god:rep_climb",
+  "weight": 12,
+  "line": "I heard you paid Halden's debt. Didn't think you had it in you.",
+  "conditions": {
+    "required_traits": [
+      "hag_ch6_waver"
+    ],
+    "forbidden_traits": [
+      "hag_route_seg7"
+    ]
+  }
+}

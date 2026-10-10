@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:signed_m",
+  "weight": 12,
+  "line": "The librarian found a book signed with one letter. M. She won't stop staring at it.",
+  "conditions": {
+    "required_traits": [
+      "hag_e4_the_warden_journal_done"
+    ]
+  }
+}

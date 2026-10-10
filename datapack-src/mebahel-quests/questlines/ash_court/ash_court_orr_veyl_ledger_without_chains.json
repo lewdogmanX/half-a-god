@@ -1,0 +1,491 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.title",
+    "fallback": "Ledger Without Chains"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.summary",
+    "fallback": "Follow Orr's mark, bring back the names he hid from Avar Khel, and we will decide what a former keeper of chains can still become."
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:ash_court_chain_8_the_last_debt"
+    ],
+    "traits": [
+      "orr_veyl_spared"
+    ]
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.intro",
+      "fallback": "A villager found a strip of black iron folded beneath the bell rope. It carries Orr Veyl's mark and five scratched names: Selka, Mara, Tomas, Finch, Pell."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.offer.0.0",
+          "fallback": "Orr came back?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.offer.0.1",
+          "fallback": "Not to the village. He left the strip where only the bell-keeper would find it. The mark points toward the Nether road where the old delivery ledgers were chained."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.offer.1.0",
+          "fallback": "Why would he help now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.offer.1.1",
+          "fallback": "Maybe guilt. Maybe fear. Maybe he has carried orders for so long that choosing one true thing feels like rebellion."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.offer.2.0",
+          "fallback": "What does the village want?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.offer.2.1",
+          "fallback": "The surviving prisoners deserve every name the Court erased. Find Orr, recover what he hid, and learn whether he is witness, coward, or something still worth saving."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.return",
+      "fallback": "Orr's hidden book gives the prisoners names the Court tried to file away as property."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.return_steps.0.0",
+          "fallback": "He wants to help."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.return_steps.0.1",
+          "fallback": "Then let his help stay difficult. Easy forgiveness is another kind of forgetting."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.return_steps.1.0",
+          "fallback": "The names are safe."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.return_steps.1.1",
+          "fallback": "Good. We will read them at the bell, not as debts, not as warnings, but as people the road failed and must remember."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.reward",
+      "fallback": "Keep Orr close if you choose. A former keeper of chains may know where the next locked door waits."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.dialogue.done",
+      "fallback": "The five names have been spoken at the bell. Orr stands quieter since then, but not empty."
+    }
+  },
+  "goals": [
+    {
+      "id": "enter_nether_after_orr",
+      "type": "enter_nether",
+      "amount": 1,
+      "auto_advance": true,
+      "stage": 0,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.0.say",
+        "fallback": "The iron strip warms in the Nether air. Orr's mark pulls toward a fortress archive where the Court kept duplicate delivery seals."
+      }
+    },
+    {
+      "id": "find_orr_hidden_names",
+      "collect": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:fortress",
+      "radius": 7000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.1.name",
+        "fallback": "Names Orr Would Not Burn"
+      },
+      "tag": "orr_veyl_hidden_names",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.1.quest_book.title",
+          "fallback": "Names Orr Would Not Burn"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.1.quest_book.author",
+          "fallback": "Orr Veyl"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.1.quest_book.pages.0",
+            "fallback": "I kept copies because Avar Khel trusted chains more than memory. I told myself records were not judgment. I was wrong."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.1.quest_book.pages.1",
+            "fallback": "Selka stole bread because the child with her had not eaten. The council wrote thief. I wrote witness."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.1.quest_book.pages.2",
+            "fallback": "Mara Voss raided a road, then warned the mill before her own band returned. The council wrote raider. I wrote debt repaid."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.1.quest_book.pages.3",
+            "fallback": "Tomas Reed objected to the ninth delivery and vanished before winter ended. The council wrote transfer. I wrote silenced."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.1.quest_book.pages.4",
+            "fallback": "Finch had no known name. Pell Arden was exiled for refusing the vote. If these pages reach the bell, let their names outlive my service."
+          }
+        ]
+      },
+      "auto_advance": true,
+      "stage": 1,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.1.say",
+        "fallback": "The hidden book names the prisoners as people, not payments. Two Court auditors break from the corridor to destroy it."
+      }
+    },
+    {
+      "id": "kill_last_record_auditors",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 2,
+      "from_threats": true,
+      "auto_advance": true,
+      "stage": 2,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.2.say",
+        "fallback": "The auditors fall. One carries a snapped black-iron link stamped with Orr's seal. He did not run from the Court empty-handed; he broke something that still matters."
+      }
+    },
+    {
+      "id": "recover_orr_broken_chain",
+      "collect": "minecraft:chain",
+      "amount": 1,
+      "structure": "minecraft:bastion_remnant",
+      "radius": 7000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.3.name",
+        "fallback": "Orr Veyl's Broken Ledger Chain"
+      },
+      "tag": "orr_veyl_broken_chain",
+      "stage": 3,
+      "auto_advance": true,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.3.say",
+        "fallback": "The chain is heavier than iron should be. Each link bears an old delivery number, hammered flat one by one. Four oath-brutes hear the broken seal wake in your pack."
+      }
+    },
+    {
+      "id": "kill_chain_claim_brutes",
+      "kill": "minecraft:piglin_brute",
+      "amount": 4,
+      "from_threats": true,
+      "auto_advance": true,
+      "stage": 4,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.4.say",
+        "fallback": "The brutes fall around the broken chain. The last Court claim on Orr's ledger snaps, and a wither-skeleton voice speaks from the ash beyond the bastion."
+      }
+    },
+    {
+      "id": "speak_with_orr_unbound",
+      "talk": "minecraft:wither_skeleton",
+      "amount": 1,
+      "from_threats": true,
+      "stage": 5,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.goals.5.say",
+        "fallback": "Orr asks for judgment, but not from the village. He asks whether he can spend what remains of him protecting names instead of numbering prisoners."
+      }
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.0.name",
+        "fallback": "Court Record Auditor"
+      },
+      "stage": 2,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 95.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_sword",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.0.offer_line",
+        "fallback": "The first auditor comes to burn Orr's hidden names before they leave the fortress."
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.1.name",
+        "fallback": "Court Seal Auditor"
+      },
+      "stage": 2,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 105.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        },
+        "head": "minecraft:chainmail_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:piglin_brute",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.2.name",
+        "fallback": "Ledger-Claim Brute"
+      },
+      "stage": 4,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 115.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:golden_axe",
+          "enchants": {
+            "minecraft:sharpness": 3
+          }
+        },
+        "chest": {
+          "item": "minecraft:golden_chestplate",
+          "enchants": {
+            "minecraft:protection": 2
+          }
+        }
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.2.offer_line",
+        "fallback": "The broken ledger chain calls four piglin brutes still sworn to collect what Orr tried to erase."
+      }
+    },
+    {
+      "entity": "minecraft:piglin_brute",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.3.name",
+        "fallback": "Court Chain-Brute"
+      },
+      "stage": 4,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 120.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:golden_axe",
+          "enchants": {
+            "minecraft:sharpness": 3
+          }
+        },
+        "head": "minecraft:golden_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:piglin_brute",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.4.name",
+        "fallback": "Number-Seal Brute"
+      },
+      "stage": 4,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 120.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:golden_axe",
+          "enchants": {
+            "minecraft:unbreaking": 2
+          }
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:piglin_brute",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.5.name",
+        "fallback": "Final Claim Brute"
+      },
+      "stage": 4,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 130.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:golden_axe",
+          "enchants": {
+            "minecraft:sharpness": 3,
+            "minecraft:unbreaking": 2
+          }
+        },
+        "head": "minecraft:golden_helmet",
+        "chest": "minecraft:golden_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.name",
+        "fallback": "Orr Veyl, Unbound Archivist"
+      },
+      "stage": 5,
+      "spawn_origin": "player",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": true,
+      "recruit_companion": true,
+      "glow": false,
+      "max_health": 240.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_sword",
+          "enchants": {
+            "minecraft:sharpness": 3,
+            "minecraft:unbreaking": 2
+          }
+        },
+        "head": "minecraft:wither_skeleton_skull",
+        "chest": {
+          "item": "minecraft:iron_chestplate",
+          "enchants": {
+            "minecraft:protection": 3
+          }
+        }
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.offer_line",
+        "fallback": "Orr Veyl waits among broken record chains. He has no guards left and no master to return to."
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.target_line",
+        "fallback": "I numbered the delivered and called it duty. You let me leave. I used that mercy to keep these names from burning."
+      },
+      "talk": [
+        [
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.talk.0.0",
+            "fallback": "Why not bring the book yourself?"
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.talk.0.1",
+            "fallback": "Because the village should not have to watch me cross its road before it chooses what I am worth. I left proof first. Judgment can follow."
+          }
+        ],
+        [
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.talk.1.0",
+            "fallback": "What do you want now?"
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.talk.1.1",
+            "fallback": "A road with no ledger at the end of it. A blade pointed at collectors, not prisoners. Orders I can refuse when they stink of chains."
+          }
+        ],
+        [
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.talk.2.0",
+            "fallback": "Can the village trust you?"
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.talk.2.1",
+            "fallback": "No. Trust is too clean a word. Let me earn usefulness before anyone spends forgiveness on me."
+          }
+        ]
+      ],
+      "attack_choice_label": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.attack_choice_label",
+        "fallback": "Some records end in blood."
+      },
+      "spare_choice_label": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.spare_choice_label",
+        "fallback": "Then walk with me and guard the living names."
+      },
+      "attack_return_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.attack_return_line",
+        "fallback": "Orr accepts the sentence without surprise and raises his sword one final time."
+      },
+      "spared_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.spared_line",
+        "fallback": "Orr breaks the last chain from his ledger and kneels beside the rescued names."
+      },
+      "post_spare_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.post_spare_line",
+        "fallback": "No more deliveries. No more numbered dead. If you call, I will answer as Orr Veyl, not as the Court's keeper."
+      },
+      "villager_spared_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_orr_veyl_ledger_without_chains.threats.6.villager_spared_line",
+        "fallback": "You returned with the names and Orr's oath. The village will not forgive quickly, but perhaps that is exactly why he should keep walking beside someone who remembers."
+      },
+      "rewards_from_giver": true,
+      "spare_rewards": {
+        "xp": 900,
+        "items": {
+          "minecraft:emerald": 18,
+          "minecraft:iron_ingot": 32
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:emerald": 18,
+      "minecraft:iron_ingot": 32
+    }
+  },
+  "traits": {
+    "complete": [
+      "orr_veyl_hidden_names_returned"
+    ],
+    "spare": [
+      "orr_veyl_recruited"
+    ]
+  }
+}

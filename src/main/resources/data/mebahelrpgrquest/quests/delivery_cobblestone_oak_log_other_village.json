@@ -1,0 +1,139 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.title",
+    "fallback": "Stone and Timber for the Next Village"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.summary",
+    "fallback": "Carry cobblestone and oak logs to a messenger waiting in another village."
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.dialogue.intro",
+      "fallback": "A runner from the next village came through before dawn. Their well wall has split, and they need stone and timber before nightfall."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.dialogue.offer.0.0",
+          "fallback": "What do they need?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.dialogue.offer.0.1",
+          "fallback": "Plain materials, but quickly: cobblestone for the well ring and oak logs for the brace frame."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.dialogue.offer.1.0",
+          "fallback": "Where do I take them?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.dialogue.offer.1.1",
+          "fallback": "A village messenger is waiting away from here. Find the other village and give the supplies to them, not to me."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.dialogue.return",
+      "fallback": "The messenger received the stone and timber? Then their well still stands, and so does the road between us."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.dialogue.reward",
+      "fallback": "You carried help farther than our own feet could manage today. Take this with our thanks."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.dialogue.done",
+      "fallback": "The other village sent word: their well is braced, and the road is open."
+    }
+  },
+  "goals": [
+    {
+      "id": "delivery_cobblestone",
+      "collect": "minecraft:cobblestone",
+      "amount": 32,
+      "mandatory": true,
+      "stage": 0
+    },
+    {
+      "id": "delivery_oak_logs",
+      "collect": "minecraft:oak_log",
+      "amount": 16,
+      "mandatory": true,
+      "stage": 0
+    },
+    {
+      "id": "deliver_to_messenger",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "mandatory": true,
+      "stage": 0,
+      "auto_advance": true,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.goals.2.say",
+        "fallback": "The messenger takes the stone and timber. Return to the villager who sent you and tell them the other village received the supplies."
+      },
+      "name": {
+        "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.goals.2.name",
+        "fallback": "Village Messenger"
+      }
+    },
+    {
+      "id": "return_to_original_villager",
+      "return": true,
+      "amount": 1,
+      "mandatory": true,
+      "stage": 1
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:villager",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.threat.name",
+      "fallback": "Village Messenger"
+    },
+    "structure": "minecraft:villages",
+    "search_radius": 4200,
+    "spawn_radius": 10,
+    "spawn_on_accept": true,
+    "spare": false,
+    "glow": false,
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.threat.target_line",
+      "fallback": "You are from the first village? Good. If you have the stone and oak, hand them over before the well gives way."
+    },
+    "delivery_objectives": [
+      "delivery_cobblestone",
+      "delivery_oak_logs"
+    ],
+    "delivery_choice_label": {
+      "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.threat.delivery_choice_label",
+      "fallback": "Hand over supplies"
+    },
+    "delivered_line": {
+      "translate": "quest.mebahelrpgrquest.delivery_cobblestone_oak_log_other_village.threat.delivered_line",
+      "fallback": "That will hold the well until our mason returns. Tell them the road between our villages is still worth keeping open."
+    },
+    "depart_after_delivery": false,
+    "min_structure_distance": 700
+  },
+  "rewards": {
+    "xp": 180,
+    "items": {
+      "minecraft:emerald": 7,
+      "minecraft:bread": 6
+    }
+  },
+  "traits": {
+    "complete": [
+      "village_courier",
+      "hag_base_delivery_done"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_the_first_letter"
+    ]
+  }
+}

@@ -1,0 +1,177 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.title",
+    "fallback": "The Armed Dead"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.summary",
+    "fallback": "A villager heard of an armed zombie guarding a ruined portal with the habits of a soldier, not a beast."
+  },
+  "goals": [
+    "kill minecraft:zombie"
+  ],
+  "threat": {
+    "entity": "minecraft:zombie",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.threat.name",
+      "fallback": "Sir Alaric Ashward"
+    },
+    "structure": "minecraft:ruined_portal",
+    "search_radius": 4000,
+    "spawn_on_accept": true,
+    "spawn_min_radius": 4,
+    "spawn_max_radius": 8,
+    "spare": true,
+    "glow": false,
+    "max_health": 150,
+    "equipment": {
+      "mainhand": "minecraft:diamond_sword",
+      "helmet": {
+        "item": "minecraft:iron_helmet",
+        "enchants": {
+          "minecraft:unbreaking": 3,
+          "minecraft:protection": 4
+        }
+      }
+    },
+    "line": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.threat.line",
+      "fallback": "A dead warrior stands near a ruined portal. It carries a diamond blade, watches the road, and has not attacked yet. Find out whether it is a threat before someone frightened makes the choice for us."
+    },
+    "target": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.threat.target",
+      "fallback": "The zombie grips its sword, but does not raise it. Its ruined mouth works around words it nearly remembers."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.threat.talk.0.0",
+          "fallback": "Can you understand me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.threat.talk.0.1",
+          "fallback": "Understand... enough. Road. Fire. Gate. I kept watch. I think I kept watch."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.threat.talk.1.0",
+          "fallback": "Why are you guarding this portal?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.threat.talk.1.1",
+          "fallback": "Because something came through. Or because I came through. The memory breaks there, every time."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.threat.talk.2.0",
+          "fallback": "Do you remember the village?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.threat.talk.2.1",
+          "fallback": "A bell. Wheat fields. Someone shouting my name. I cannot hold the name, but I know I had one."
+        }
+      ]
+    ]
+  },
+  "choice": {
+    "attack": {
+      "label": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.choice.attack.label",
+        "fallback": "You're too dangerous to leave here."
+      },
+      "next": "mebahelrpgrquest:armed_zombie_chain_kill_2_seal_the_gate",
+      "traits": [
+        "portal_executioner"
+      ],
+      "return": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.choice.attack.return",
+        "fallback": "So it is dead for good. I should be relieved, but an armed corpse guarding a portal does not happen by accident."
+      }
+    },
+    "spare": {
+      "label": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.choice.spare.label",
+        "fallback": "I won't cut down a memory."
+      },
+      "line": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.choice.spare.line",
+        "fallback": "You lower your weapon. The dead warrior stares at the village road as if seeing it for the first time."
+      },
+      "post": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.choice.spare.post",
+        "fallback": "The road. I remember the road now. Not all of it, but enough to walk."
+      },
+      "villager": {
+        "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.choice.spare.villager",
+        "fallback": "You spared it? Then either you found mercy, or you brought us a worse problem. I hope you know which."
+      },
+      "traits": [
+        "iron_name_listener"
+      ],
+      "rewards_from_giver": true,
+      "rewards": {
+        "xp": 160,
+        "items": {
+          "minecraft:gold_nugget": 16,
+          "minecraft:iron_ingot": 4
+        }
+      },
+      "after": {
+        "offer_chance": 100,
+        "ambush_chance": 0,
+        "nothing_chance": 0,
+        "offered_quest": "mebahelrpgrquest:armed_zombie_chain_spare_2_forgotten_road",
+        "ambush": "minecraft:zombie",
+        "ambush_name": {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.choice.spare.after.ambush_name",
+          "fallback": "Ash-Called Dead"
+        },
+        "count": 5,
+        "ambush_max_health": 50,
+        "ambush_equipment": {
+          "helmet": "minecraft:leather_helmet"
+        },
+        "line": {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.choice.spare.after.line",
+          "fallback": "You spared me. There is a road in my head, and a bell at the end of it. Walk with me. If I remember what I was, I may remember why the gate is broken."
+        },
+        "ambush_line": {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.choice.spare.after.ambush_line",
+          "fallback": "The portal coughs black ash. Dead hands claw through the ruined frame, drawn by the mercy you showed."
+        },
+        "nothing": {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.choice.spare.after.nothing",
+          "fallback": "The zombie watches the portal in silence. Whatever memory stirred in it fades before it can become words."
+        }
+      }
+    }
+  },
+  "dialogue": {
+    "return": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.dialogue.return",
+      "fallback": "You killed it. Good. But if it was guarding the portal, then something taught it to stand there."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.dialogue.reward",
+      "fallback": "Take this bounty. Then listen: I need someone to look at that gate before more dead things learn the road."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_1_ruined_portal.dialogue.done",
+      "fallback": "The armed dead is gone, but I still do not like that portal."
+    }
+  },
+  "rewards": {
+    "xp": 260,
+    "items": {
+      "minecraft:emerald": 10,
+      "minecraft:gold_ingot": 2
+    }
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w1_the_skull_market"
+    ]
+  }
+}

@@ -1,0 +1,75 @@
+{
+  "title": "The Last Faithful",
+  "summary": "The last of the Faithful kneel in front of the empty throne. Their leader asks you what they're supposed to do now.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_last_faithful",
+      "kill": "minecraft:vindicator",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "The Last Faithful",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 8,
+      "max_health": 60,
+      "talk": [
+        [
+          "Your god is dead.",
+          "We know. We felt it. Like a bell that stopped."
+        ],
+        [
+          "What will you do?",
+          "Whatever you tell us. We've never not been told."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Tell them to go home and learn to farm",
+      "line": "'Home.' He says it like a word in a foreign language.",
+      "traits": [
+        "hag_faithful_sent_home"
+      ]
+    },
+    "attack": {
+      "label": "Finish the cult for good",
+      "traits": [
+        "hag_faithful_ended"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 2000
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_et4_morning",
+      "delay_ticks": 2400,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_et3_the_last_faithful_done"
+    ]
+  }
+}

@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:base_funeral",
+  "trigger": {
+    "type": "quest_success",
+    "quest": "mebahelrpgrquest:hag_v1_blood_in_the_wells"
+  },
+  "delay": {
+    "min_ticks": 2400,
+    "max_ticks": 6000
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "A stranger",
+    "quest_book": "mebahelrpgrquest:questbook_instructions_for_my_own_funeral"
+  }
+}

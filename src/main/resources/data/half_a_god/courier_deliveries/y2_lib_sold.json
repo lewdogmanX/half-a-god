@@ -1,0 +1,15 @@
+{
+  "id": "half_a_god:y2_lib_sold",
+  "trigger": {
+    "type": "custom"
+  },
+  "delay": {
+    "min_ticks": 36000,
+    "max_ticks": 60000
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "Silas of the Gilded Hand",
+    "quest_book": "mebahelrpgrquest:hag_y2_the_hand_reads_too"
+  }
+}

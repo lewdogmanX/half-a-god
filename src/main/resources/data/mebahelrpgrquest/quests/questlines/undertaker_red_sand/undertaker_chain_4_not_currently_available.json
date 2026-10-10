@@ -1,0 +1,119 @@
+{
+  "title": "Not Currently Available",
+  "summary": "Amar has one final burial to arrange: his own. Help him mark the death of the man he was, then let him decide whether the grave needs an occupant.",
+  "recruit_companion": true,
+  "required_completed_quests": [
+    "mebahelrpgrquest:undertaker_chain_3_where_the_dead_were_sent"
+  ],
+  "required_traits": [
+    "amar_accepts_his_death"
+  ],
+  "sequential_objectives": true,
+  "offer_intro_line": "Amar has already measured the ground. Of course he has.",
+  "offer_dialogue_steps": [
+    {
+      "choice": "I thought you said the grave was not meant to hold you.",
+      "line": "Correct. A grave can mark a death without becoming storage."
+    },
+    {
+      "choice": "What are we burying?",
+      "line": "The account. The expectation. The part of me that has spent a century waiting for someone to notice the undertaker also died."
+    },
+    {
+      "choice": "What do you need?",
+      "line": "Stone around the cut, a proper marker, one light, and enough sand to close what we do not intend to fill."
+    },
+    {
+      "choice": "You have planned this carefully.",
+      "line": "I am an undertaker. Improvised burial is how this entire problem began."
+    }
+  ],
+  "objectives": [
+    {
+      "id": "set_the_grave_border",
+      "type": "place_block",
+      "block": "minecraft:cut_sandstone",
+      "amount": 2,
+      "completion_range": 30,
+      "stage": 0
+    },
+    {
+      "id": "raise_amars_marker",
+      "type": "place_block",
+      "block": "minecraft:chiseled_sandstone",
+      "amount": 1,
+      "completion_range": 30,
+      "stage": 0
+    },
+    {
+      "id": "light_the_grave",
+      "type": "place_block",
+      "block": "minecraft:lantern",
+      "amount": 1,
+      "completion_range": 30,
+      "stage": 0
+    },
+    {
+      "id": "close_the_empty_grave",
+      "type": "place_block",
+      "block": "minecraft:sand",
+      "amount": 1,
+      "completion_range": 30,
+      "stage": 0,
+      "auto_advance": true,
+      "completion_dialogue_line": "Good. Straight edges, stable marker, no exposed void. I would have accepted this work from an apprentice."
+    },
+    {
+      "id": "stand_with_amar",
+      "type": "wait_time",
+      "amount": 10,
+      "stage": 1,
+      "completion_dialogue_line": "Ten seconds pass. Amar remains standing beside the grave."
+    }
+  ],
+  "return_dialogue_line": "There. It is a respectable grave. Irritatingly empty.",
+  "return_dialogue_steps": [
+    {
+      "choice": "Are you going to lie down?",
+      "line": "That was the intention."
+    },
+    {
+      "choice": "And now?",
+      "line": "I find that I do not want to."
+    },
+    {
+      "choice": "Then don't.",
+      "line": "That seems disrespectful."
+    },
+    {
+      "choice": "It's your grave.",
+      "line": "...An excellent point."
+    },
+    {
+      "choice": "What will you put on the marker?",
+      "line": "Amar. Undertaker. Not currently available."
+    },
+    {
+      "choice": "Where will you go?",
+      "line": "I have spent a very long time making certain the dead do not travel alone. It may be time I extend the courtesy to the living."
+    },
+    {
+      "choice": "Come with me.",
+      "line": "Very well. But if you die somewhere inaccessible, I reserve the right to be annoyed."
+    }
+  ],
+  "reward_dialogue_line": "The ledger is closed. The grave is marked. I am, against expectation, still employed.",
+  "already_completed_line": "The grave remains empty. I check occasionally. Professional habit.",
+  "rewards": {
+    "xp": 650,
+    "items": {
+      "minecraft:emerald": 10,
+      "minecraft:bone": 16
+    }
+  },
+  "traits_on_complete": [
+    "amar_recruited",
+    "amar_grave_marked",
+    "hag_base_undertaker_done"
+  ]
+}

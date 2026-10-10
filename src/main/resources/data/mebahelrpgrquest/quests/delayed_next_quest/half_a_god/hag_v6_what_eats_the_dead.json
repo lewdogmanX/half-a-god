@@ -1,0 +1,38 @@
+{
+  "title": "What Eats the Dead",
+  "summary": "To forge armour that can stand in front of a god you'll need Ether Ashes. Creatures killed while standing in blood, by a bone weapon (an Osseous sword or axe), leave ash. The church's blood pools work. Collect eight. (They're given back.)",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "ashes",
+      "collect": "sons_of_sins:ether_ashes",
+      "amount": 8,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "None of them spoke. None of them were Him. (The ashes go back in your pack.)"
+    }
+  ],
+  "rewards": {
+    "xp": 2200,
+    "items": {
+      "minecraft:totem_of_undying": 1,
+      "sons_of_sins:ether_ashes": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_v7_soul_steel",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v6_what_eats_the_dead_done"
+    ]
+  }
+}

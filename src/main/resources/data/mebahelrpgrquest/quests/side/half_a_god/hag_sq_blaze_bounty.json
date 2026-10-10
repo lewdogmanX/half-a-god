@@ -1,0 +1,57 @@
+{
+  "title": "Blaze Bounty",
+  "summary": "The smith needs blaze rods to forge Smite-steel for the whole village guard.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w3_the_skull_harvest"
+    ]
+  },
+  "dialogue": {
+    "intro": "If the dead come, I want every spear to hate them.",
+    "reward": "The forge has never been so hot.",
+    "offer": [
+      [
+        "For the guard?",
+        "If the dead come, I want every spear to hate them."
+      ],
+      [
+        "Rods it is.",
+        "Eight. Bring more if you like burning."
+      ]
+    ],
+    "return": "Rods?"
+  },
+  "goals": [
+    {
+      "id": "blazes",
+      "kill": "minecraft:blaze",
+      "amount": 12,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "rods",
+      "collect": "minecraft:blaze_rod",
+      "amount": 8,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:enchanted_book": {
+        "count": 1,
+        "enchants": {
+          "minecraft:smite": 4
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_blaze_bounty_done"
+    ]
+  }
+}

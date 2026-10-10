@@ -1,0 +1,248 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.title",
+    "fallback": "The Assistant's Last Notes"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.summary",
+    "fallback": "Sera Marr, Doctor Vale's assistant, vanished while collecting samples in an old mineshaft. Find her field notes and learn what happened."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:mad_scientist_chain_4_patient_thirteen"
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:mad_scientist_chain_2_the_control_group"
+    ]
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.intro",
+      "fallback": "Sera is missing. I would normally call three days of silence peaceful, but she has never granted me that luxury voluntarily."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.offer.0.0",
+          "fallback": "Where is Sera?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.offer.0.1",
+          "fallback": "Late. Three days late, which for Sera means either disaster or a lecture so long she has not finished writing it."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.offer.1.0",
+          "fallback": "Why was she in a mineshaft?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.offer.1.1",
+          "fallback": "Redstone exposed to old undead activity behaves differently. She went to collect samples and took my earlier restorative notes with her."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.offer.2.0",
+          "fallback": "You care more about the notes than about her."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.offer.2.1",
+          "fallback": "That is unfair. I care about both. Sera is irreplaceable. The notes merely represent six months of work, forty-three failed preparations, and most of my remaining money."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.return",
+      "fallback": "You found her notebook. Good. And you say the dead in the shaft were... enlarged? That is unfortunate. Also extremely informative."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.return_steps.0.0",
+          "fallback": "She wrote that your serum kept growing tissue after wounds closed."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.return_steps.0.1",
+          "fallback": "Regeneration without a stopping point is still regeneration. A cart without brakes remains a cart."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.return_steps.1.0",
+          "fallback": "She was bitten."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.return_steps.1.1",
+          "fallback": "Yes. She asked me to treat her. Sera knew the risks better than anyone."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.return_steps.2.0",
+          "fallback": "The last page says she was leaving you."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.return_steps.2.1",
+          "fallback": "Fear writes dramatic sentences. Infection writes worse ones. If she still walks, we need to find her before either finishes the story."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.reward",
+      "fallback": "Take this. You recovered her work and survived what it produced. I wish those two facts were less closely related."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.dialogue.done",
+      "fallback": "Leave the notebook here. I need to read the last page again. I may have misunderstood how frightened she was."
+    }
+  },
+  "goals": [
+    {
+      "id": "reach_old_research_shaft",
+      "reach": "minecraft:mineshaft",
+      "structure": "minecraft:mineshaft",
+      "auto_advance": true,
+      "stage": 0,
+      "radius": 3400,
+      "range": 72
+    },
+    {
+      "id": "read_sera_field_notes",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:mineshaft",
+      "container": "minecraft:barrel",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.goals.1.quest_book.title",
+          "fallback": "Sera's Field Notes"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.goals.1.quest_book.author",
+          "fallback": "Sera Marr"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.goals.1.quest_book.pages.0",
+            "fallback": "Trial 18: Vale's restorative closes necrotic wounds. The tissue does not stop afterward. He calls the extra growth acceptable variance."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.goals.1.quest_book.pages.1",
+            "fallback": "Trial 21: he increased the redstone concentration again. The cadaver gained nearly a handspan in height before the restraints broke."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.goals.1.quest_book.pages.2",
+            "fallback": "I was bitten moving the last subject. Vale says the restorative can save me. I want to believe him. I know too much not to be afraid."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.goals.1.quest_book.pages.3",
+            "fallback": "Third dose. Hunger worse. Hands larger. He wants a fourth. I said no. If I still know my name tomorrow, I am leaving. My name is Sera Marr. My name is Sera Marr."
+          }
+        ]
+      },
+      "auto_advance": true,
+      "stage": 1,
+      "radius": 3400,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.goals.1.name",
+        "fallback": "Sera's Field Notes"
+      },
+      "tag": "sera_field_notes",
+      "in_chest": true
+    },
+    {
+      "id": "kill_failed_recoveries",
+      "kill": "minecraft:zombie",
+      "amount": 3,
+      "stage": 2,
+      "from_threats": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.threats.0.name",
+        "fallback": "Failed Recovery"
+      },
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 9,
+      "stage": 2,
+      "spawn_origin": "player",
+      "spare": false,
+      "glow": true,
+      "max_health": 45.0,
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "duration_seconds": 3600,
+          "amplifier": 0,
+          "show_particles": false
+        }
+      ],
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.threats.0.target_line",
+        "fallback": "No... no, don't come closer. It still hurts. It keeps growing."
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.threats.1.name",
+        "fallback": "Failed Recovery"
+      },
+      "spawn_min_radius": 7,
+      "spawn_max_radius": 11,
+      "stage": 2,
+      "spawn_origin": "player",
+      "spare": false,
+      "glow": true,
+      "max_health": 45.0,
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "duration_seconds": 3600,
+          "amplifier": 0,
+          "show_particles": false
+        }
+      ]
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.mad_scientist_chain_3_the_assistants_last_notes.threats.2.name",
+        "fallback": "Failed Recovery"
+      },
+      "spawn_min_radius": 9,
+      "spawn_max_radius": 13,
+      "stage": 2,
+      "spawn_origin": "player",
+      "spare": false,
+      "glow": true,
+      "max_health": 55.0,
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "duration_seconds": 3600,
+          "amplifier": 0,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 380,
+    "items": {
+      "minecraft:emerald": 12,
+      "minecraft:redstone": 12
+    }
+  },
+  "traits": {
+    "complete": [
+      "sera_notes_recovered"
+    ]
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "title": "The Coca Fields",
+  "summary": "The Fixer wants to move into white. Plant coca and bring in a harvest.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "plant_coca",
+      "place": "addictives:coca_crop",
+      "amount": 16,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "leaves",
+      "collect": "addictives:coca_leaf",
+      "amount": 32,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:emerald": 40
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_gt7_white_powder_money",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_gt6_the_coca_fields_done"
+    ]
+  }
+}

@@ -1,0 +1,53 @@
+{
+  "title": "The Edge of the World",
+  "summary": "Before you leave the End, find an End City and find out how far the cult reached.",
+  "sequential_objectives": true,
+  "requires": {
+    "advancements": [
+      "minecraft:end/kill_dragon"
+    ]
+  },
+  "goals": [
+    {
+      "id": "find_end_city",
+      "reach": "minecraft:end_city",
+      "radius": 8000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "A prayer is scratched into the purpur: 'AZAZEL IS MY LIGHT.' They reached the End before you."
+    },
+    {
+      "id": "shulkers",
+      "kill": "minecraft:shulker",
+      "amount": 8,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:netherite_upgrade_smithing_template": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_e7_the_nether_is_singing",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_e6_edge_of_the_world_done"
+    ]
+  }
+}

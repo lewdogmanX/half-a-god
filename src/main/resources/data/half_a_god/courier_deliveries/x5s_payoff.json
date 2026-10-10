@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:x5s_payoff",
+  "trigger": {
+    "type": "quest_spared",
+    "quest": "mebahelrpgrquest:hag_x5_the_last_garrison_man"
+  },
+  "delay": {
+    "min_ticks": 36000,
+    "max_ticks": 60000
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "Ilse",
+    "quest_book": "mebahelrpgrquest:hag_x5s_brann_comes_home"
+  }
+}

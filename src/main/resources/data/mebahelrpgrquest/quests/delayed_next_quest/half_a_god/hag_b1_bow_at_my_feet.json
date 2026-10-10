@@ -1,0 +1,41 @@
+{
+  "title": "Bow at My Feet",
+  "summary": "'Approach, beast, and bow at my feet.' This quest only completes if you accept his mercy and take his Cult Scroll. If you kill him instead, ignore it: his barrel holds a letter for you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_scroll",
+      "collect": "netherman:quota",
+      "amount": 1,
+      "name": "Cult Scroll",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "'You made the right decision.'"
+    }
+  ],
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "netherman:quota": 1,
+      "netherman:faith_part": 3
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_b2_tithe_of_gold",
+      "delay_ticks": 2400,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_b1_bow_at_my_feet_done",
+      "hag_sworn",
+      "hag_ending_reached"
+    ]
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "table": "minecraft:chests/buried_treasure",
+  "drop_chance": 0.3,
+  "books": [
+    {
+      "quest": "mebahelrpgrquest:hag_lp5_treasure",
+      "weight": 1
+    }
+  ]
+}

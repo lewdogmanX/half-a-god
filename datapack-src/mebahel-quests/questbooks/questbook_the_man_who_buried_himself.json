@@ -1,0 +1,229 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.title",
+    "fallback": "The Man Who Buried Himself"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.summary",
+    "fallback": "Follow Calder Venn's final journal to the mineshaft where he sealed himself away from something that knew his footsteps, his tools, and perhaps his face."
+  },
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_calders_mine",
+      "reach": "minecraft:mineshaft",
+      "radius": 3200,
+      "range": 72,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "read_calders_last_page",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:mineshaft",
+      "radius": 3200,
+      "stage": 1,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.goals.1.name",
+        "fallback": "Calder's Last Page"
+      },
+      "tag": "calder_venn_last_page",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.goals.1.quest_book.title",
+          "fallback": "The Last Page"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.goals.1.quest_book.author",
+          "fallback": "Calder Venn"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.goals.1.quest_book.pages.0",
+            "fallback": "I stopped digging for an hour.\n\nThe other pick stopped too.\n\nI coughed. Something beyond the wall coughed a moment later."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.goals.1.quest_book.pages.1",
+            "fallback": "There are two shadows when I hold one torch.\n\nI checked three times.\n\nOne belongs to me.\n\nThe other begins at my boots."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.goals.1.quest_book.pages.2",
+            "fallback": "I have built the wall from the inside. Four stones thick where the old support split.\n\nIf the thing wants my face, it can have it in here where no one else has to see."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.goals.1.quest_book.pages.3",
+            "fallback": "If someone finds this, leave the wall closed.\n\nIf curiosity wins, look carefully at what comes out."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.goals.1.quest_book.pages.4",
+            "fallback": "If there are two of me, I was right.\n\nIf there is only one, I was worse."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.goals.1.quest_book.pages.5",
+            "fallback": "Do not ask which one is Calder.\n\nI no longer know what answer would prove it."
+          }
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "break_calders_seal",
+      "break": "minecraft:cobblestone",
+      "amount": 4,
+      "structure": "minecraft:mineshaft",
+      "radius": 3200,
+      "range": 12,
+      "force_place_block": true,
+      "block_patch": {
+        "radius": 4,
+        "replace_solid_only": true,
+        "falloff_start": 0.65,
+        "palette": [
+          {
+            "block": "minecraft:cobblestone",
+            "weight": 8
+          },
+          {
+            "block": "minecraft:mossy_cobblestone",
+            "weight": 3
+          },
+          {
+            "block": "minecraft:stone",
+            "weight": 4
+          },
+          {
+            "block": "minecraft:gravel",
+            "weight": 2
+          }
+        ]
+      },
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "survive_the_two_calders",
+      "kill": "minecraft:zombie",
+      "amount": 2,
+      "stage": 3,
+      "from_threats": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.threats.0.name",
+        "fallback": "Calder Venn"
+      },
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 2,
+      "spawn_max_radius": 6,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 80,
+      "equipment": {
+        "mainhand": "minecraft:iron_pickaxe",
+        "offhand": "minecraft:torch",
+        "head": "minecraft:leather_helmet",
+        "chest": "minecraft:leather_chestplate",
+        "feet": "minecraft:leather_boots"
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.threats.1.name",
+        "fallback": "Calder Venn"
+      },
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 2,
+      "spawn_max_radius": 6,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 80,
+      "equipment": {
+        "mainhand": "minecraft:iron_pickaxe",
+        "offhand": "minecraft:torch",
+        "head": "minecraft:leather_helmet",
+        "chest": "minecraft:leather_chestplate",
+        "feet": "minecraft:leather_boots"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:emerald": 8,
+      "minecraft:iron_ingot": 6,
+      "minecraft:compass": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "calder_venn_seal_broken",
+      "two_calders_seen"
+    ]
+  },
+  "quest_book": {
+    "title": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.title",
+      "fallback": "The Man Who Buried Himself"
+    },
+    "author": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.author",
+      "fallback": "Calder Venn"
+    },
+    "color": "gray",
+    "pages": [
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.pages.0",
+        "fallback": "I have begun keeping count of my own footsteps.\n\nThis is not something a sane man does.\n\nI am writing that down because I would like at least one honest sentence left if this journal is found."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.pages.1",
+        "fallback": "Three nights ago I heard a pickaxe deeper in the mine.\n\nOne strike after mine.\n\nAlways one.\n\nI stopped. It stopped.\nI struck twice. It answered twice."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.pages.2",
+        "fallback": "I thought another miner had found my tunnel.\n\nI called out.\n\nMy own voice answered from beyond the timber supports.\n\nNot an echo. It coughed before repeating my words."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.pages.3",
+        "fallback": "This morning I found footprints in the dust.\n\nSame boots as mine. Same split heel. Same missing nail on the left sole.\n\nThey began where my tracks ended."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.pages.4",
+        "fallback": "I sent the others back to the surface. Told them the supports were failing.\n\nCowardly lie.\n\nUseful lie.\n\nWhatever is following me has shown no interest in anyone else."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.pages.5",
+        "fallback": "I started walling passages behind me.\n\nEvery morning one wall has a fresh mark on the other side.\n\nNot scratches.\n\nPickaxe blows."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.pages.6",
+        "fallback": "Tonight I saw a hand beneath the last support.\n\nIt wore my wedding ring.\n\nMine is still on my finger."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.pages.7",
+        "fallback": "There is an abandoned chamber deeper in the mineshaft. I am taking stone, food, and this journal there.\n\nI will build the wall with myself inside it."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.pages.8",
+        "fallback": "If the thing is me, then burying myself buries it too.\n\nIf it is not me, perhaps it will stay outside trying to become a man no one can reach."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_man_who_buried_himself.quest_book.pages.9",
+        "fallback": "I am leaving the final pages in the chamber.\n\nDo not open the wall because you want an answer.\n\nSome answers become worse when they can walk."
+      }
+    ],
+    "auto_claim_rewards": true
+  }
+}

@@ -1,0 +1,48 @@
+{
+  "title": "Into the Comb",
+  "summary": "You are inside the Bumblezone, a world of honeycomb, and the air smells of sugar. Wren will want proof. Mine honey crystal for its shards, and collect pollen puffs from the bees and pollen piles.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "crystal_shards",
+      "collect": "the_bumblezone:honey_crystal_shards",
+      "amount": 8,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The shards glow in your hand like Wren's grandmother said."
+    },
+    {
+      "id": "pollen",
+      "collect": "the_bumblezone:pollen_puff",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 400,
+    "items": {
+      "minecraft:honey_bottle": 4,
+      "the_bumblezone:honey_crystal_shards": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_bz4_clogged_channels",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "the_bumblezone:the_bumblezone"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_bz3_into_the_comb_done"
+    ]
+  }
+}

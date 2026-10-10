@@ -1,0 +1,337 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.title",
+    "fallback": "The Mine That Listens"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.summary",
+    "fallback": "Investigate a silent mineshaft where sculk is growing around an altered skeleton spawner, then destroy the source with TNT."
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.intro",
+      "fallback": "A miner came back from an old shaft without his tools. He says the rails were covered in blue growth and skeletons watched him without bows in their hands."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.offer.0.0",
+          "fallback": "Skeletons without bows?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.offer.0.1",
+          "fallback": "That is what frightened him most. They did not hunt. They stood around the spawner with sculk on their skulls, listening to the stone."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.offer.1.0",
+          "fallback": "What is spreading down there?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.offer.1.1",
+          "fallback": "Sculk, if the miner saw clearly. But sculk should not grow from a spawner. Find his foreman's notes before you touch the cage."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.offer.2.0",
+          "fallback": "Why bring TNT?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.offer.2.1",
+          "fallback": "The miner struck the spawner with a pick. The sculk pulsed and the dead woke together. Do not give it another warning."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.return",
+      "fallback": "The miner heard the blast from the surface. Afterward, the scratching beneath the rails stopped."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.return_steps.0.0",
+          "fallback": "The sculk had changed the skeletons."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.return_steps.0.1",
+          "fallback": "Or the spawner changed the sculk. Either answer is bad enough. At least the mine is no longer teaching the dead to listen."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.return_steps.1.0",
+          "fallback": "The growth is still in the chamber."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.return_steps.1.1",
+          "fallback": "Then we seal that branch and mark every map. Dead sculk is safer than a living cage, but nobody should build over it."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.reward",
+      "fallback": "You found the truth before swinging a pick, and you brought the chamber down the right way. Take this for the risk."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.dialogue.done",
+      "fallback": "The old shaft is sealed. Sometimes the miners still hear a click below, but it never answers twice."
+    }
+  },
+  "goals": [
+    {
+      "id": "reach_listening_mine",
+      "reach": "minecraft:mineshaft",
+      "structure": "minecraft:mineshaft",
+      "auto_advance": true,
+      "stage": 0,
+      "radius": 3200,
+      "range": 80,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.goals.0.say",
+        "fallback": "The rails vanish beneath sculk veins. Farther in, something clicks in the rhythm of a mob spawner."
+      }
+    },
+    {
+      "id": "recover_foreman_notes",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:mineshaft",
+      "container": "minecraft:barrel",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.goals.1.quest_book.title",
+          "fallback": "Foreman's Last Survey"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.goals.1.quest_book.author",
+          "fallback": "Foreman Darek"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.goals.1.quest_book.pages.0",
+            "fallback": "Third shift. Blue veins have crossed the western rail and reached the old skeleton cage. They pulse whenever a cart moves."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.goals.1.quest_book.pages.1",
+            "fallback": "The skeletons no longer carry bows. Each one grows a dark blue crown over the skull. They face every sound at once."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.goals.1.quest_book.pages.2",
+            "fallback": "Breaking the growth only makes the cage spin faster. The supports around it are already hollow."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.goals.1.quest_book.pages.3",
+            "fallback": "If anyone returns, place the powder beside the cage and bring the whole chamber down. Do not strike the spawner by hand."
+          }
+        ]
+      },
+      "block_patch": {
+        "radius": 3,
+        "replace_solid_only": true,
+        "falloff_start": 0.6,
+        "palette": [
+          {
+            "block": "minecraft:sculk",
+            "weight": 12
+          },
+          {
+            "block": "minecraft:coarse_dirt",
+            "weight": 3
+          },
+          {
+            "block": "minecraft:stone",
+            "weight": 2
+          }
+        ]
+      },
+      "auto_advance": true,
+      "stage": 1,
+      "radius": 3200,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.goals.1.say",
+        "fallback": "The final page confirms the spawner is the center of the growth. The villager's TNT is now the safest way to silence it."
+      },
+      "name": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.goals.1.name",
+        "fallback": "Foreman's Last Survey"
+      },
+      "tag": "listening_mine_survey",
+      "in_chest": true
+    },
+    {
+      "id": "demolition_charges_from_chest",
+      "collect": "minecraft:tnt",
+      "amount": 3,
+      "mandatory": false,
+      "sequential": true,
+      "stage": 1,
+      "in_chest": true
+    },
+    {
+      "id": "flint_and_steel_from_chest",
+      "collect": "minecraft:flint_and_steel",
+      "amount": 1,
+      "mandatory": false,
+      "sequential": true,
+      "stage": 1,
+      "in_chest": true
+    },
+    {
+      "id": "place_demolition_charge",
+      "place": "minecraft:tnt",
+      "amount": 3,
+      "structure": "minecraft:mineshaft",
+      "stage": 2,
+      "range": 12
+    },
+    {
+      "id": "detonate_demolition_charges",
+      "type": "detonate_tnt",
+      "block": "minecraft:spawner",
+      "required_mob": "minecraft:skeleton",
+      "structure": "minecraft:mineshaft",
+      "force_place_block": true,
+      "spawn_equipment": {
+        "mainhand": "minecraft:air",
+        "head": "minecraft:sculk"
+      },
+      "block_patch": {
+        "radius": 6,
+        "replace_solid_only": true,
+        "falloff_start": 0.6,
+        "palette": [
+          {
+            "block": "minecraft:sculk",
+            "weight": 12
+          },
+          {
+            "block": "minecraft:coarse_dirt",
+            "weight": 3
+          },
+          {
+            "block": "minecraft:stone",
+            "weight": 2
+          }
+        ]
+      },
+      "stage": 2,
+      "amount": 3,
+      "auto_advance": true,
+      "radius": 3200,
+      "range": 14,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.goals.5.say",
+        "fallback": "Three blasts roll through the chamber. The sculk flashes across the supports, then four shapes lurch out of the dust."
+      }
+    },
+    {
+      "id": "kill_sculk_crowned_zombies",
+      "kill": "minecraft:zombie",
+      "amount": 4,
+      "stage": 3,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.goals.6.say",
+        "fallback": "The last sculk-crowned corpse falls. The chamber is finally silent."
+      },
+      "from_threats": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.threats.0.name",
+        "fallback": "Sculk-Crowned Miner"
+      },
+      "spawn_min_radius": 3,
+      "spawn_max_radius": 6,
+      "stage": 3,
+      "spawn_origin": "player",
+      "spare": false,
+      "glow": true,
+      "equipment": {
+        "head": "minecraft:sculk"
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.threats.0.target_line",
+        "fallback": "A sculk-crowned corpse claws its way through the blast dust."
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.threats.1.name",
+        "fallback": "Sculk-Crowned Miner"
+      },
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 10,
+      "stage": 3,
+      "spawn_origin": "player",
+      "spare": false,
+      "glow": true,
+      "equipment": {
+        "head": "minecraft:sculk"
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.threats.1.target_line",
+        "fallback": "A sculk-crowned corpse claws its way through the blast dust."
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.threats.2.name",
+        "fallback": "Sculk-Crowned Miner"
+      },
+      "spawn_min_radius": 7,
+      "spawn_max_radius": 11,
+      "stage": 3,
+      "spawn_origin": "player",
+      "spare": false,
+      "glow": true,
+      "equipment": {
+        "head": "minecraft:sculk"
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.threats.2.target_line",
+        "fallback": "A sculk-crowned corpse claws its way through the blast dust."
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.threats.3.name",
+        "fallback": "Sculk-Crowned Foreman"
+      },
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 12,
+      "stage": 3,
+      "spawn_origin": "player",
+      "spare": false,
+      "glow": true,
+      "equipment": {
+        "head": "minecraft:sculk"
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.sculk_mineshaft_investigation.threats.3.target_line",
+        "fallback": "A larger sculk-crowned corpse charges through the settling debris."
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 420,
+    "items": {
+      "minecraft:emerald": 14,
+      "minecraft:echo_shard": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "listening_mine_silenced"
+    ]
+  }
+}

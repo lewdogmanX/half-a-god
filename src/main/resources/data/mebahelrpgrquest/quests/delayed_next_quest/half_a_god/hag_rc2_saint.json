@@ -1,0 +1,146 @@
+{
+  "title": "No One Left Behind",
+  "summary": "[Reputation: Saint] The Bone Choir is hunting the last Ashford men who escaped into the Nether. Find the hunters at the fortress before they find them. On the way out you meet a scavenger with a wither skull.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "choir_hunters",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 5,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Behind the last hunter, two thin men in Ashford wool stand up from hiding."
+    },
+    {
+      "id": "judge_2",
+      "kill": "minecraft:wandering_trader",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Tobin is carrying a wither skull wrapped in a blanket. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": "Choir Hunter",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "count": 5,
+      "structure": "minecraft:fortress",
+      "search_radius": 12000,
+      "max_health": 60,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:stone_sword",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:wandering_trader",
+      "name": "Tobin the Scavenger",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You're selling that to the cult?",
+          "They pay in gold. My girls eat gold now, apparently."
+        ],
+        [
+          "There are other ways.",
+          "Name one. ...You'd buy it? Just to keep it from them?"
+        ]
+      ],
+      "spare_handoff": {
+        "item": "minecraft:wither_skeleton_skull",
+        "name": "Tobin's Skull",
+        "count": 1
+      }
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Buy the skull and let him go",
+      "line": "Tobin presses the skull into your hands. 'That's a month of bread for my girls.'",
+      "traits": [
+        "hag_mercy_2"
+      ]
+    },
+    "attack": {
+      "label": "Take it from him",
+      "traits": [
+        "hag_cruelty_2"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc2_saint_done",
+      "hag_route_seg2",
+      "hag_ch2_saint"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w1_the_skull_market"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc3_saint",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc3_good",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  }
+}

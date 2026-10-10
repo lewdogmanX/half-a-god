@@ -1,0 +1,158 @@
+{
+  "title": "Hands That Heal",
+  "summary": "[Reputation: Saint] The blood pits turned villagers into the shambling dead. The cleric can cure them with golden apples if someone brings four. Then a man who drank from the blood wells begs for help.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "golden_apples",
+      "collect": "minecraft:golden_apple",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "give_to_the_cleric",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "name": "The Cleric"
+    },
+    {
+      "id": "judge_6",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Ansel drank from the blood wells and can't stop. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Ansel the Blood-Drinker",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You drank the blood?",
+          "Once. Then every night. It tastes like being strong."
+        ],
+        [
+          "Do you want to stop?",
+          "More than anything. I can't do it alone."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "The Cleric",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "Four golden apples.",
+          "Four people back. I'll start tonight."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Help him through it",
+      "line": "Ansel shakes through the night. By morning he asks for water. Just water.",
+      "traits": [
+        "hag_mercy_6"
+      ]
+    },
+    "attack": {
+      "label": "Put him down",
+      "traits": [
+        "hag_cruelty_6"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:enchanted_golden_apple": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc6_saint_done",
+      "hag_route_seg6",
+      "hag_ch6_saint"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_v2_the_sinful_church"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc7_saint",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc7_good",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  },
+  "recruit_companion": true
+}

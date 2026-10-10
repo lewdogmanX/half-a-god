@@ -1,0 +1,37 @@
+{
+  "title": "The Skull Remembers",
+  "summary": "You took the skull from a dead trader. Wither skeletons in the fortress smell it on you now.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "wither_skeletons",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 3,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The bones settle. The skull in your pack stays cold."
+    }
+  ],
+  "rewards": {
+    "xp": 150
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_w4_hold_the_black_bridge",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x3_the_third_skull_after_done"
+    ]
+  }
+}

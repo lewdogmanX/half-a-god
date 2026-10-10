@@ -1,0 +1,47 @@
+{
+  "title": "The Ravager's Horn",
+  "summary": "The Bastille's ravagers will run down anyone who escapes. Kill two ravagers and bring back a Ravager Horn (every ravager drops one), so Halden can hang it over Ashford's gate as proof.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "ravagers",
+      "kill": "minecraft:ravager",
+      "amount": 2,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "horn",
+      "collect": "takesapillage:ravager_horn",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Halden hangs the horn over Ashford's gate."
+    }
+  ],
+  "rewards": {
+    "xp": 450,
+    "items": {
+      "minecraft:emerald": 16
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_a9_open_the_cells",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a8_ravagers_horn_done"
+    ]
+  }
+}

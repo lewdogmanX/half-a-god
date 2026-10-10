@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:unbreakable",
+  "weight": 12,
+  "line": "Old Aurel's been sleeping through the night. First time since the war, he says.",
+  "conditions": {
+    "required_traits": [
+      "hag_lg3_the_unbreakable_done"
+    ]
+  }
+}

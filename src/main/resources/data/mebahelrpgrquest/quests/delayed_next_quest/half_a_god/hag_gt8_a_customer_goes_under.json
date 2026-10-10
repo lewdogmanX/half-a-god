@@ -1,0 +1,142 @@
+{
+  "title": "A Customer Goes Under",
+  "summary": "The nervous buyer's friend comes running: he took too much of what you sold and isn't waking up. Bring Narcan, fast. Afterwards his friend has something to say to you, and what you do about it decides whether you're still in this trade.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "narcan",
+      "collect": "addictives:narcan",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "save_him",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "He gasps awake. His friend won't look at you. 'He'll live. Will the next one?'",
+      "name": "Buyer's Friend"
+    },
+    {
+      "id": "the_witness",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "'I'm going to the Watch. I'll tell them everything, your name first. Unless you stop me.'"
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Pell, the Buyer's Friend",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 3,
+      "spawn_max_radius": 6,
+      "max_health": 30,
+      "talk": [
+        [
+          "You're going to the Watch?",
+          "Tonight. Halden will listen. He listens to everybody."
+        ],
+        [
+          "And if I go with you?",
+          "Then you'd be the first grower who ever did. They'd go easy on you. Maybe."
+        ],
+        [
+          "And if I don't?",
+          "Then you'd better be quicker than me. I'm not much of a runner."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Buyer's Friend",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "He gasps awake. His friend won't look at you. 'He'll live. Will the next one?'",
+      "min_structure_distance": 300
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Go with him to the Watch (get out)",
+      "line": "Pell lets out a breath. 'Come on, then. Before you change your mind.'",
+      "traits": [
+        "gt_getting_out"
+      ]
+    },
+    "attack": {
+      "label": "Silence him (stay in)",
+      "traits": [
+        "gt_silenced_the_witness"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1000,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_gt9_turf_war",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_go1_burn_it_down",
+        "delay_ticks": 1200,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_gt8_a_customer_goes_under_done",
+      "gt_saved_a_buyer"
+    ]
+  }
+}

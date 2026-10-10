@@ -1,0 +1,97 @@
+{
+  "title": "A Letter from Old Mara",
+  "summary": "A courier brought you a letter from someone called Old Mara. She has been watching you, and she thinks the village nearby is in danger. Go there and introduce yourself to the village elder.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "listen_to_the_village",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The villagers greet you like someone they were told to expect.",
+      "name": "Village Elder"
+    }
+  ],
+  "rewards": {
+    "xp": 50,
+    "items": {
+      "minecraft:bread": 8,
+      "minecraft:torch": 16
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_p1_the_bell",
+      "delay_ticks": 40,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_the_first_letter_done"
+    ]
+  },
+  "quest_book": {
+    "title": "A Letter from Old Mara",
+    "author": "Old Mara",
+    "color": "red",
+    "pages": [
+      "To the one in the new iron armour,\n\nYou do not know me. I know you. I have watched a great many people start with nothing, and you are the first in a long time who started well.",
+      "There is a village near you. It is quiet. It will not stay quiet.\n\nGo there. Help them with the small things. The small things are how you learn where the big things are hiding.",
+      "Someone is buying gold at twice its worth. Someone is painting eyes on chapel doors.\n\nNotice it. Say nothing yet.\n\nI will write again.\n\n- M."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "The villagers greet you like someone they were told to expect.",
+      "talk": [
+        [
+          "Old Mara sent me.",
+          "Mara? Then you're the one she wrote about. She said someone would come."
+        ],
+        [
+          "What's wrong here?",
+          "Small things. A stranger buying gold. Paint on the chapel. Our bell is gone."
+        ],
+        [
+          "How can I help?",
+          "Start with the bell. A village without a bell can't warn itself."
+        ]
+      ]
+    }
+  ]
+}

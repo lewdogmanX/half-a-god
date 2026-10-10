@@ -1,0 +1,22 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.kill_5_creepers.title",
+    "fallback": "Creeper Problem"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.kill_5_creepers.summary",
+    "fallback": "Kill 5 creepers before they destroy the village."
+  },
+  "goals": [
+    {
+      "kill": "minecraft:creeper",
+      "amount": 5
+    }
+  ],
+  "rewards": {
+    "xp": 150,
+    "items": {
+      "minecraft:gunpowder": 8
+    }
+  }
+}

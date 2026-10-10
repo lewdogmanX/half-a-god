@@ -1,0 +1,37 @@
+{
+  "title": "Original Sin",
+  "summary": "The pits' failures crawl out at night as Betrayed Guzzlers, bloated things that drink livestock dry. Kill three.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "guzzlers",
+      "kill": "sons_of_sins:betrayed_guzzler",
+      "amount": 3,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "A failed vessel. It wears a cult wreath."
+    }
+  ],
+  "rewards": {
+    "xp": 2200,
+    "items": {
+      "minecraft:diamond": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_v5_jaws_in_the_dark",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v4_original_sin_done"
+    ]
+  }
+}

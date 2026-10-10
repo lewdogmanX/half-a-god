@@ -1,0 +1,47 @@
+{
+  "title": "Safe to Market",
+  "summary": "A trader wants an escort to the next village. The road is no safer than it was.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_p6_market_road"
+    ]
+  },
+  "dialogue": {
+    "intro": "I need a sword between me and that road.",
+    "reward": "Here. Take your share of the profit.",
+    "offer": [
+      [
+        "You need an escort?",
+        "I need a sword between me and that road."
+      ],
+      [
+        "Lead on.",
+        "Stay close. If I scream, run toward it."
+      ]
+    ],
+    "return": "Are we there yet?"
+  },
+  "goals": [
+    {
+      "id": "walk_with_the_trader",
+      "escort": "minecraft:villages",
+      "radius": 3500,
+      "range": 40,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The trader exhales for the first time since leaving."
+    }
+  ],
+  "rewards": {
+    "xp": 300,
+    "items": {
+      "minecraft:emerald": 12
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_market_road_done"
+    ]
+  }
+}

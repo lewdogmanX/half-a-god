@@ -44,7 +44,7 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     /** quest id -> successors by branch */
     public final Map<String, Graph> graph = new HashMap<>();
     /** courier: after quest -> book quest */
-    public final Map<String, List<String>> couriers = new HashMap<>();
+    public final Map<String, List<Courier>> couriers = new HashMap<>();
     public final List<String> advancementCouriers = new ArrayList<>();
     /** Mebahel's own questlines, woven into the acts */
     public final List<BaseLines.Line> baseLines = new ArrayList<>();
@@ -52,6 +52,9 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     public final List<JsonObject> letters = new ArrayList<>();
 
     public record Unlock(double at, boolean below, String trait, String courier) {
+    }
+
+    public record Courier(String book, boolean sparedOnly) {
     }
 
     public record Graph(List<String> next, List<String> spare, List<String> kill, boolean book) {
@@ -139,7 +142,8 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
         for (JsonElement c : o.getAsJsonArray("couriers")) {
             JsonObject j = c.getAsJsonObject();
             if (j.has("after")) {
-                couriers.computeIfAbsent(j.get("after").getAsString(), k -> new ArrayList<>()).add(j.get("book").getAsString());
+                couriers.computeIfAbsent(j.get("after").getAsString(), k -> new ArrayList<>())
+                        .add(new Courier(j.get("book").getAsString(), j.has("spared") && j.get("spared").getAsBoolean()));
             } else {
                 advancementCouriers.add(j.get("book").getAsString());
             }

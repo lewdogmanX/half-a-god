@@ -1,0 +1,39 @@
+{
+  "title": "Do Not Provoke Gehinnom",
+  "summary": "The cult's guidebook says 'best not to provoke' the Gehinnom guardians. You have to, to reach the Lair.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "gehinnom",
+      "kill": "netherman:guardian",
+      "amount": 2,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "minecraft:netherite_scrap": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_m6_the_instruction",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_m5_do_not_provoke_gehinnom_done"
+    ]
+  }
+}

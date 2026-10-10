@@ -1,0 +1,79 @@
+{
+  "title": "The Midwife's Daughter",
+  "summary": "The Midwife has been healing with the cleric since you sent her there. Her daughter, born in the blood pits, wants to meet the person who gave her mother a second life.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "daughter",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Wren of the Pits"
+    }
+  ],
+  "rewards": {
+    "xp": 1000,
+    "items": {
+      "minecraft:golden_apple": 2,
+      "minecraft:honey_bottle": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_y5_the_midwifes_daughter_done",
+      "hag_payoff_midwife_healed"
+    ]
+  },
+  "quest_book": {
+    "title": "My Mother Talks About You",
+    "author": "Wren",
+    "color": "green",
+    "pages": [
+      "My mother says you could have killed her and didn't.\n\nShe says you sent her somewhere she could get better.",
+      "I'd like to meet you. I'm at the cleric's village."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Wren of the Pits",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You're her daughter?",
+          "Born in the pits. I've never seen a sky that wasn't red until this month."
+        ],
+        [
+          "How is she?",
+          "Better. She cries when she sees blood now. The cleric says that's good."
+        ]
+      ]
+    }
+  ]
+}

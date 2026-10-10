@@ -1,0 +1,231 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.garrick_third_funeral.title",
+    "fallback": "Instructions for My Third Funeral"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.garrick_third_funeral.summary",
+    "fallback": "Garrick's third volume contains an unexpected correction: the next funeral belongs to Corwin, whose attempt to improve the family ritual has gone badly."
+  },
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_corwins_improved_funeral",
+      "reach": "minecraft:village_plains",
+      "radius": 5000,
+      "range": 80,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "read_corwins_procedure",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:village_plains",
+      "radius": 5000,
+      "stage": 1,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.garrick_third_funeral.goals.1.name",
+        "fallback": "Corwin Bell's Improved Funeral Procedure"
+      },
+      "tag": "corwin_bell_improved_funeral",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.garrick_third_funeral.goals.1.quest_book.title",
+          "fallback": "Improved Funeral Procedure"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.garrick_third_funeral.goals.1.quest_book.author",
+          "fallback": "Corwin Bell"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_third_funeral.goals.1.quest_book.pages.0",
+            "fallback": "Uncle Garrick's problem is obvious: everyone keeps following his instructions instead of improving them."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_third_funeral.goals.1.quest_book.pages.1",
+            "fallback": "He says never ring the family bell three times. I have therefore rung it four times. This is called careful interpretation."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_third_funeral.goals.1.quest_book.pages.2",
+            "fallback": "He says the dead should remain lying down. I have placed the coffin upright so gravity can assist."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_third_funeral.goals.1.quest_book.pages.3",
+            "fallback": "The villagers have asked me to stop. This is the sort of resistance every innovator faces."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_third_funeral.goals.1.quest_book.pages.4",
+            "fallback": "If this works, Garrick will finally remain dead. If it does not, I will revise the procedure personally."
+          }
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "wait_for_corwins_demonstration",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "put_corwin_to_rest",
+      "kill": "minecraft:zombie",
+      "amount": 1,
+      "stage": 3,
+      "from_threats": true
+    },
+    {
+      "id": "dismiss_the_pallbearers",
+      "kill": "minecraft:skeleton",
+      "amount": 2,
+      "stage": 3,
+      "from_threats": true,
+      "auto_advance": true
+    },
+    {
+      "id": "read_garricks_final_account",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "stage": 4,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.garrick_third_funeral.goals.5.name",
+        "fallback": "Final Funeral Accounting"
+      },
+      "tag": "garrick_bell_final_account"
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.name",
+        "fallback": "Corwin Bell, First-Time Deceased"
+      },
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 8,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 130,
+      "equipment": {
+        "mainhand": "minecraft:bell",
+        "head": "minecraft:leather_helmet"
+      },
+      "drop_on_death": [
+        {
+          "type": "item",
+          "item": "minecraft:written_book",
+          "count": 1,
+          "name": {
+            "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.drop_on_death.0.name",
+            "fallback": "Final Funeral Accounting"
+          },
+          "tag": "garrick_bell_final_account",
+          "quest_book": {
+            "title": {
+              "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.drop_on_death.0.quest_book.title",
+              "fallback": "Final Funeral Accounting"
+            },
+            "author": {
+              "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.drop_on_death.0.quest_book.author",
+              "fallback": "Garrick Bell"
+            },
+            "pages": [
+              {
+                "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.drop_on_death.0.quest_book.pages.0",
+                "fallback": "FINAL FUNERAL ACCOUNTING\n\nCorwin Bell: deceased.\n\nCause of death: excessive confidence in his own interpretation of written instructions."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.drop_on_death.0.quest_book.pages.1",
+                "fallback": "For the record, I warned him about the bell.\n\nI warned him about the coffin.\n\nI warned him about improvisation.\n\nHe considered all three warnings suggestions."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.drop_on_death.0.quest_book.pages.2",
+                "fallback": "You, meanwhile, have now conducted more successful Bell family funerals than any actual member of the Bell family.\n\nThis is not praise. It is an indictment."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.drop_on_death.0.quest_book.pages.3",
+                "fallback": "I have therefore amended the family rules.\n\nRule One: no bells.\nRule Two: no experimental burials.\nRule Three: nobody named Corwin is permitted to organize anything."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.drop_on_death.0.quest_book.pages.4",
+                "fallback": "One final confession: the egg from my first funeral was never part of the ritual.\n\nI simply owed a farmer an egg and did not want to die with an outstanding debt."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.drop_on_death.0.quest_book.pages.5",
+                "fallback": "My estate has been instructed to compensate you for candles, travel, undead relatives, and emotional inconvenience."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.drop_on_death.0.quest_book.pages.6",
+                "fallback": "As for me, I intend to remain dead.\n\nShould this arrangement fail again, I will be filing a formal complaint with Death."
+              },
+              {
+                "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.0.drop_on_death.0.quest_book.pages.7",
+                "fallback": "There will be no fourth funeral.\n\nThere may, regrettably, be correspondence."
+              }
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.1.name",
+        "fallback": "Uninvited Pallbearer"
+      },
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 55,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword"
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.garrick_third_funeral.threats.2.name",
+        "fallback": "Uninvited Pallbearer"
+      },
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 55,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 520,
+    "items": {
+      "minecraft:emerald": 12,
+      "minecraft:bell": 1,
+      "minecraft:gold_ingot": 3
+    }
+  },
+  "traits": {
+    "complete": [
+      "garrick_funeral_arc_complete",
+      "corwin_removed_from_funeral_duties"
+    ]
+  }
+}

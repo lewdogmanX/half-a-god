@@ -1,0 +1,61 @@
+{
+  "rolls": {
+    "min": 3,
+    "max": 5
+  },
+  "rewards": [
+    {
+      "type": "xp",
+      "weight": 7,
+      "base_min": 320,
+      "base_max": 500,
+      "per_kill_min": 50,
+      "per_kill_max": 80
+    },
+    {
+      "type": "item",
+      "weight": 5,
+      "base_min": 3,
+      "base_max": 6,
+      "per_kill_min": 0.4,
+      "per_kill_max": 0.8,
+      "id": "minecraft:diamond"
+    },
+    {
+      "type": "item",
+      "weight": 3,
+      "base_min": 2,
+      "base_max": 3,
+      "per_kill_min": 0.1,
+      "per_kill_max": 0.3,
+      "id": "minecraft:golden_apple"
+    },
+    {
+      "type": "item",
+      "weight": 1,
+      "base_min": 1,
+      "base_max": 1,
+      "per_kill_min": 0,
+      "per_kill_max": 0.1,
+      "id": "block_factorys_bosses:kraken_tooth"
+    },
+    {
+      "type": "item",
+      "weight": 1,
+      "base_min": 1,
+      "base_max": 2,
+      "per_kill_min": 0,
+      "per_kill_max": 0.1,
+      "id": "block_factorys_bosses:dragon_bone"
+    },
+    {
+      "type": "item",
+      "weight": 2,
+      "base_min": 1,
+      "base_max": 1,
+      "per_kill_min": 0,
+      "per_kill_max": 0.12,
+      "id": "minecraft:netherite_scrap"
+    }
+  ]
+}

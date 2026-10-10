@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:no_snow",
+  "weight": 12,
+  "line": "No snow fell anywhere today. Not one flake.",
+  "conditions": {
+    "required_traits": [
+      "hag_s3_lost_in_the_snow_done"
+    ]
+  }
+}

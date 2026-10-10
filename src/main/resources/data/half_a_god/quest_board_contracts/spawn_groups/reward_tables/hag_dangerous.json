@@ -1,0 +1,52 @@
+{
+  "rolls": {
+    "min": 2,
+    "max": 3
+  },
+  "rewards": [
+    {
+      "type": "xp",
+      "weight": 6,
+      "base_min": 80,
+      "base_max": 140,
+      "per_kill_min": 10,
+      "per_kill_max": 18
+    },
+    {
+      "type": "item",
+      "weight": 7,
+      "base_min": 8,
+      "base_max": 16,
+      "per_kill_min": 0.8,
+      "per_kill_max": 1.4,
+      "id": "minecraft:emerald"
+    },
+    {
+      "type": "item",
+      "weight": 4,
+      "base_min": 4,
+      "base_max": 8,
+      "per_kill_min": 0.3,
+      "per_kill_max": 0.6,
+      "id": "minecraft:iron_ingot"
+    },
+    {
+      "type": "item",
+      "weight": 3,
+      "base_min": 4,
+      "base_max": 10,
+      "per_kill_min": 0.2,
+      "per_kill_max": 0.4,
+      "id": "minecraft:golden_carrot"
+    },
+    {
+      "type": "item",
+      "weight": 1,
+      "base_min": 1,
+      "base_max": 1,
+      "per_kill_min": 0,
+      "per_kill_max": 0.05,
+      "id": "minecraft:golden_apple"
+    }
+  ]
+}

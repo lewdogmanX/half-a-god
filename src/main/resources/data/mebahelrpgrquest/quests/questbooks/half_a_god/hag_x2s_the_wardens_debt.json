@@ -1,0 +1,79 @@
+{
+  "title": "The Warden's Debt",
+  "summary": "Gorran writes from a village far from any prison. He guards their gate now, with a spear and no keys, and he has something to give you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "gorran",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Gorran the Gatekeeper"
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:totem_of_undying": 1,
+      "minecraft:gold_block": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x2s_the_wardens_debt_done",
+      "hag_payoff_gorran_at_the_gate"
+    ]
+  },
+  "quest_book": {
+    "title": "A Gate Without a Lock",
+    "author": "Gorran",
+    "color": "brown",
+    "pages": [
+      "You let me walk out of the Bastille.\n\nI found a village that needed a gate guard and didn't ask questions.",
+      "Come and see me. I've kept something for you all this time.\n\n- Gorran"
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Gorran the Gatekeeper",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "Gorran.",
+          "No keys any more. Just a gate and a spear. I sleep at night now."
+        ],
+        [
+          "You said you had something for me.",
+          "The cult paid me in this. I never spent it. It's yours."
+        ]
+      ]
+    }
+  ]
+}

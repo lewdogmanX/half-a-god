@@ -1,0 +1,249 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.title",
+    "fallback": "A Very Warm Fireplace"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.summary",
+    "fallback": "The villager claims to be building a fireplace, but each completed request reveals a worse idea."
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.intro",
+      "fallback": "Just the person I was looking for! Thank you for helping me so far, but I am working on building something special - something to keep me warm, I guess you could say."
+    },
+    "offer": [
+      {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.offer.0",
+        "fallback": "Why are you being so cryptic?"
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.offer.1",
+        "fallback": "Oh, do not worry. I merely mean a fireplace. I will build it all, do not fret. I just need a flint and steel to get it going. Could you bring me one of those?"
+      }
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.return",
+      "fallback": "You got them, thank goodness. I was starting to think the village would never be quiet again."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.return_steps.0.0",
+          "fallback": "What happened here?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.return_steps.0.1",
+          "fallback": "Right. I suppose I owe you the truth. It was not exactly a fireplace."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.return_steps.1.0",
+          "fallback": "Not exactly?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.return_steps.1.1",
+          "fallback": "It was a nether portal. A small one. A very sensible, very warm, entirely foolish nether portal."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.return_steps.2.0",
+          "fallback": "You opened a portal for heat?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.return_steps.2.1",
+          "fallback": "Only a little! Then those things came through, I panicked, broke the frame, and ran before the rest of the village noticed."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.return_steps.3.0",
+          "fallback": "They noticed."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.return_steps.3.1",
+          "fallback": "Yes, well. Thanks to you, I am alive to be shouted at properly."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.return_steps.4.0",
+          "fallback": "And my payment?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.return_steps.4.1",
+          "fallback": "Of course. Take this before they kick me out of the village. You have earned every emerald."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.reward",
+      "fallback": "Take all this. You have more than earned it."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.dialogue.done",
+      "fallback": "No portals. No fires. No nether creatures. Probably for the best."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_flint_and_steel",
+      "collect": "minecraft:flint_and_steel",
+      "amount": 1,
+      "stage": 0,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.goals.0.say",
+        "fallback": "Perfect! My fireplace is almost complete. Say... you could not get me an ender pearl, could you? You know... just in case my house burns down from the fireplace, I would need a quick escape route, do you not think?"
+      }
+    },
+    {
+      "id": "bring_ender_pearl",
+      "collect": "minecraft:ender_pearl",
+      "amount": 1,
+      "stage": 1,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.goals.1.say",
+        "fallback": "Oh! There you are, thanks for this. Give me just a few minutes to make sure the fireplace is stable."
+      }
+    },
+    {
+      "id": "wait_after_ender_pearl",
+      "type": "wait_time",
+      "wait_until": "next_day",
+      "stage": 2,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.goals.2.say",
+        "fallback": "Oh! There you are, thanks for these - wait. That sound is not normal. This is panic. Complete panic. Take care of those wither skeletons, please!"
+      }
+    },
+    {
+      "id": "kill_wither_skeletons",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 5,
+      "stage": 3
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.threats.0.name",
+        "fallback": "Soot-Born Marrow"
+      },
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 8,
+      "stage": 3,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 48.0,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword",
+        "head": "minecraft:leather_helmet"
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.threats.0.target_line",
+        "fallback": "A wither skeleton stalks through the village smoke."
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.threats.1.name",
+        "fallback": "Ashjaw Sentinel"
+      },
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 12,
+      "stage": 3,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 48.0,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword",
+        "head": "minecraft:leather_helmet"
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.threats.1.target_line",
+        "fallback": "A wither skeleton stalks through the village smoke."
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.threats.2.name",
+        "fallback": "Cinder Rib"
+      },
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 15,
+      "stage": 3,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 48.0,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword",
+        "head": "minecraft:leather_helmet"
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.threats.2.target_line",
+        "fallback": "A wither skeleton stalks through the village smoke."
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.threats.3.name",
+        "fallback": "Blackflue Warden"
+      },
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 15,
+      "stage": 3,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 74.0,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword",
+        "head": "minecraft:iron_helmet"
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.threats.3.target_line",
+        "fallback": "A wither skeleton stalks through the village smoke."
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.threats.4.name",
+        "fallback": "Coal-Eyed Stalker"
+      },
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 15,
+      "stage": 3,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 48.0,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword",
+        "head": "minecraft:leather_helmet"
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.village_arrival_3_fireplace_supplies.threats.4.target_line",
+        "fallback": "A wither skeleton stalks through the village smoke."
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 650,
+    "items": {
+      "minecraft:emerald": 18,
+      "minecraft:golden_apple": 3,
+      "minecraft:ender_eye": 1
+    }
+  }
+}

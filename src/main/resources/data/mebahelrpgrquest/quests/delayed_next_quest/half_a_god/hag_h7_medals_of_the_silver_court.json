@@ -1,0 +1,80 @@
+{
+  "title": "Medals of the Silver Court",
+  "summary": "The Silver Dungeon is the Valkyrie Queen's court. She only duels those with ten Victory Medals, and Valkyries drop one each. Find the dungeon, fight the Valkyries and the Queen, and read the hymn in its barrel.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_silver",
+      "reach": "aether:silver_dungeon",
+      "radius": 12000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "valkyries",
+      "kill": "aether:valkyrie",
+      "amount": 6,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Ten Victory Medals open the Queen's door. Valkyries drop one each."
+    },
+    {
+      "id": "valkyrie_queen",
+      "kill": "aether:valkyrie_queen",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "'You carry his stink,' she says as she falls. 'The Charioteer's.'"
+    },
+    {
+      "id": "hymn_of_azriel",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "aether:silver_dungeon",
+      "radius": 12000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "The Hymn of Azriel",
+      "tag": "hag_hymn_of_azriel",
+      "quest_book": {
+        "title": "The Hymn of Azriel",
+        "author": "The Silver Court",
+        "pages": [
+          "Azriel, Charioteer of the Sun, drove the Sun across our sky for a thousand years.",
+          "He wanted it for himself. He tried to take it.",
+          "Maraal of the Silver Court rode beside him. She did not stop him.\n\nThey fell together, and the Sun Spirit threw them into the burning deep."
+        ]
+      },
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Maraal. You have never heard that name before. Have you?"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "aether:zanite_gemstone": 6
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_h8_dethroned",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "aether:the_aether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_h7_medals_of_the_silver_court_done"
+    ]
+  }
+}

@@ -1,0 +1,89 @@
+{
+  "title": "A Way Out",
+  "summary": "Reeve Halden knows what you've been growing. He also knows you've been doing good lately. He's offering one way out.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "halden",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "'I won't pretend I'm not disappointed. But you came back. Let's finish this properly.'",
+      "name": "Reeve Halden"
+    }
+  ],
+  "rewards": {
+    "xp": 500
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_go1_burn_it_down",
+      "delay_ticks": 600,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_go0_a_way_out_done"
+    ]
+  },
+  "quest_book": {
+    "title": "A Way Out",
+    "author": "Reeve Halden",
+    "color": "green",
+    "pages": [
+      "I know about the fields.\n\nI also know about the things you've done since. People talk about both.",
+      "Come and see me. There's a way out of the Blackwater trade that doesn't end in a ditch. It will cost you your fields and your profit, and it will be worth it.\n\n- Halden"
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Reeve Halden",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "'I won't pretend I'm not disappointed. But you came back. Let's finish this properly.'",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You're Halden?",
+          "Reeve of Ashford. What's left of it. You're the one Mara writes about."
+        ],
+        [
+          "You know Mara?",
+          "Everyone knows Old Mara. Nobody knows where she lives."
+        ]
+      ]
+    }
+  ]
+}

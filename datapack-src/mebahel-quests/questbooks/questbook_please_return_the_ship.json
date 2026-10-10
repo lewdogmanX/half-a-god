@@ -1,0 +1,324 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.title",
+    "fallback": "Please Return the Ship"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.summary",
+    "fallback": "Locate the nineteen-years-overdue Patient Gull and settle a maritime debt that has outlived both the vessel and good sense."
+  },
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "locate_the_patient_gull",
+      "reach": "minecraft:shipwreck",
+      "radius": 4800,
+      "range": 72,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "read_edrics_log",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:shipwreck",
+      "radius": 4800,
+      "stage": 1,
+      "in_chest": true,
+      "allow_water_placement": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.goals.1.name",
+        "fallback": "Edric Moor's Log"
+      },
+      "tag": "patient_gull_edric_log",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.goals.1.quest_book.title",
+          "fallback": "Edric Moor's Log"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.goals.1.quest_book.author",
+          "fallback": "Edric Moor"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.goals.1.quest_book.pages.0",
+            "fallback": "DAY 1\n\nBorrowed the Patient Gull for three days. Paid the deposit. Signed every page they put in front of me. I remember this because my hand cramped."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.goals.1.quest_book.pages.1",
+            "fallback": "DAY 3\n\nStorm took the mast. The rocks took the hull. The sea has, in practical terms, taken possession of the ship."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.goals.1.quest_book.pages.2",
+            "fallback": "DAY 4\n\nMarrow & Finch's contract says loss of vessel does not constitute return of vessel. I checked twice. Lawyers are a form of weather."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.goals.1.quest_book.pages.3",
+            "fallback": "YEAR 2\n\nThey sent another notice. Two emeralds per day. I no longer know whether I owe them a ship or a small kingdom."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.goals.1.quest_book.pages.4",
+            "fallback": "YEAR 11\n\nNo notices this year. That worries me more than the notices did."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.goals.1.quest_book.pages.5",
+            "fallback": "YEAR 19\n\nI came back to the wreck. If I am going to be found, I would rather be found beside the thing I supposedly still possess."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.goals.1.quest_book.pages.6",
+            "fallback": "I had nineteen years to pay. Then the sea collected first. If someone finds me afterward, please ask the company whether drowning counts as a late fee."
+          }
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "speak_with_edric_moor",
+      "talk": "minecraft:drowned",
+      "amount": 1,
+      "stage": 2,
+      "quest_item_name": {
+        "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.goals.2.quest_item_name",
+        "fallback": "Edric Moor"
+      }
+    },
+    {
+      "id": "enforce_clause_nine",
+      "kill": "minecraft:drowned",
+      "amount": 1,
+      "stage": 2,
+      "attack_only": true,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:drowned",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.name",
+      "fallback": "Edric Moor"
+    },
+    "structure": "minecraft:shipwreck",
+    "search_radius": 4800,
+    "stage": 2,
+    "spawn_origin": "quest_target",
+    "spawn_min_radius": 3,
+    "spawn_max_radius": 7,
+    "spawn_on_accept": true,
+    "allow_water_spawn": true,
+    "spare": true,
+    "glow": false,
+    "max_health": 95,
+    "equipment": {
+      "mainhand": "minecraft:compass",
+      "head": "minecraft:leather_helmet"
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.target_line",
+      "fallback": "How much?"
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.0.0",
+          "fallback": "What?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.0.1",
+          "fallback": "The ship. How much do I owe now?"
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.1.0",
+          "fallback": "I found the Patient Gull."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.1.1",
+          "fallback": "And?"
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.2.0",
+          "fallback": "There is barely a ship left."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.2.1",
+          "fallback": "The contract anticipated that. It was a very thorough contract."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.3.0",
+          "fallback": "Marrow & Finch closed years ago."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.3.1",
+          "fallback": "No. They sent notices."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.4.0",
+          "fallback": "The last one was years ago."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.4.1",
+          "fallback": "...Nineteen years."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.5.0",
+          "fallback": "You spent nineteen years hiding from nobody."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.talk.5.1",
+          "fallback": "I hid from a ledger. Ledgers are worse. People occasionally forgive you."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.attack_choice_label",
+      "fallback": "Clause Nine still says you owe."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.spare_choice_label",
+      "fallback": "The ship has been returned."
+    },
+    "attack_return_line": {
+      "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.attack_return_line",
+      "fallback": "Then take what is left. The company always did like a clean account."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.spared_line",
+      "fallback": "Returned?"
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.post_spare_line",
+      "fallback": "To the sea? ...I suppose they can invoice it."
+    },
+    "spare_handoff": {
+      "item": "minecraft:written_book",
+      "count": 1,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.spare_handoff.name",
+        "fallback": "Cancelled Vessel Account"
+      },
+      "depart_after_spare": true,
+      "consume_on_claim": false,
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.spare_handoff.quest_book.title",
+          "fallback": "Cancelled Vessel Account"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.spare_handoff.quest_book.author",
+          "fallback": "Edric Moor"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.spare_handoff.quest_book.pages.0",
+            "fallback": "VESSEL: Patient Gull\nBORROWER: Edric Moor\nSTATUS: Returned."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.spare_handoff.quest_book.pages.1",
+            "fallback": "Receiving party: the sea.\n\nCondition on return: substantially more distributed than at departure."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.spare_handoff.quest_book.pages.2",
+            "fallback": "Outstanding late fees: disputed.\n\nCreditor status: dissolved."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.spare_handoff.quest_book.pages.3",
+            "fallback": "If Marrow & Finch wish to contest this accounting, they may retrieve the vessel themselves."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.threat.spare_handoff.quest_book.pages.4",
+            "fallback": "I am done hiding from paperwork."
+          }
+        ]
+      }
+    },
+    "drop_on_death": [
+      {
+        "type": "item",
+        "item": "minecraft:emerald",
+        "count": 8
+      },
+      {
+        "type": "item",
+        "item": "minecraft:gold_nugget",
+        "count": 12
+      }
+    ]
+  },
+  "rewards": {
+    "xp": 460,
+    "items": {
+      "minecraft:compass": 1
+    }
+  },
+  "traits": {
+    "attack": [
+      "patient_gull_debt_collected"
+    ],
+    "spare": [
+      "patient_gull_debt_closed"
+    ],
+    "complete": [
+      "patient_gull_found"
+    ]
+  },
+  "quest_book": {
+    "title": {
+      "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.quest_book.title",
+      "fallback": "Please Return the Ship"
+    },
+    "author": {
+      "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.quest_book.author",
+      "fallback": "Marrow & Finch Recovery"
+    },
+    "color": "blue",
+    "pages": [
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.quest_book.pages.0",
+        "fallback": "NOTICE OF UNRETURNED PROPERTY\n\nVessel: Patient Gull\nBorrower: Edric Moor\nReturn date: nineteen years overdue."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.quest_book.pages.1",
+        "fallback": "Penalty: two emeralds per day, plus administrative costs, harbor costs, recovery costs, weather costs, and costs associated with calculating costs."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.quest_book.pages.2",
+        "fallback": "The vessel remains company property regardless of weather, piracy, sinking, structural disassembly, acts of gods, acts of fish, or borrower inconvenience."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.quest_book.pages.3",
+        "fallback": "Salvage agents are authorized to locate the Patient Gull and recover company property from the borrower."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.quest_book.pages.4",
+        "fallback": "Clause Nine: death of the borrower does not void outstanding maritime obligations."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_please_return_the_ship.quest_book.pages.5",
+        "fallback": "Last reported wreckage lies somewhere along the coast. Return the ship in serviceable condition where possible. Where impossible, return it anyway."
+      }
+    ],
+    "loot": [
+      {
+        "table": "minecraft:chests/village/village_cartographer",
+        "chance": 0.07
+      },
+      {
+        "table": "minecraft:chests/shipwreck_map",
+        "chance": 0.05
+      }
+    ],
+    "auto_claim_rewards": true
+  }
+}

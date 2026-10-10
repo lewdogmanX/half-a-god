@@ -1,0 +1,98 @@
+{
+  "title": "The Wrong Parcel",
+  "summary": "Mara's courier delivered the wrong bundle. Inside is the page torn from the Warden journal. Ask around about Old Mara.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "ask_about_mara",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "'Old Mara? She's been old as long as anyone remembers. My grandmother said the same.'",
+      "name": "Village Elder"
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:experience_bottle": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_v10_maraal",
+      "delay_ticks": 600,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v9_the_wrong_parcel_done"
+    ]
+  },
+  "quest_book": {
+    "title": "The Torn Page",
+    "author": "Maraal",
+    "color": "purple",
+    "pages": [
+      "Seven Nails I drove, and seven keepers I bound.\n\nAsh: the Wither. Silence: the Dragon. Frost: Skor. Sand: Sirok. Tide: Nerakyss. The Gate: Helvar. The Flame: Ashlord, who was his.",
+      "Kill the keepers and the Nails break, and the halves may find each other.\n\nNever let anyone kill them all.",
+      "- Maraal, first Preacher of Azriel, who took his head."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "'Old Mara? She's been old as long as anyone remembers. My grandmother said the same.'",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "How long has Old Mara lived here?",
+          "She's been old as long as anyone remembers. My grandmother said the same."
+        ],
+        [
+          "Where does she live?",
+          "Nobody knows. Her letters just... arrive."
+        ]
+      ]
+    }
+  ],
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_v8_sinbuster"
+    ]
+  }
+}

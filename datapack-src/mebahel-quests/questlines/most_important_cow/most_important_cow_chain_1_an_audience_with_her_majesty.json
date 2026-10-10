@@ -1,0 +1,132 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.title",
+    "fallback": "An Audience with Her Majesty"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.summary",
+    "fallback": "Tobyn's beloved cow Buttercup has wandered beyond the village. Find her, lure her home with wheat, and survive your first audience with 'Her Majesty.'"
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:most_important_cow_chain_2_the_cow_has_spoken"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.intro",
+      "fallback": "There you are. I need someone patient, armed, and preferably not offended by cattle."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.offer.0.0",
+          "fallback": "What happened?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.offer.0.1",
+          "fallback": "Buttercup wandered out past the fields again. She does this when the grass disappoints her, which is apparently often."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.offer.1.0",
+          "fallback": "Buttercup is the queen you mentioned?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.offer.1.1",
+          "fallback": "Her Majesty Buttercup, sovereign of the south pasture, destroyer of fences, and the only creature in this village who has never lied to me."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.offer.2.0",
+          "fallback": "She's a cow."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.offer.2.1",
+          "fallback": "Excellent. You have identified the patient. We are already making progress."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.offer.3.0",
+          "fallback": "How do I bring her back?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.offer.3.1",
+          "fallback": "Take some wheat. Let her see it, walk slowly, and do not insult her. I called her fat once. We lost three fences and a wheelbarrow."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.return",
+      "fallback": "Buttercup! There you are, you enormous traitor. And you brought my hired help back alive too. Very considerate."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.return_steps.0.0",
+          "fallback": "She followed the wheat easily enough."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.return_steps.0.1",
+          "fallback": "Of course she did. Royal principles are strongest immediately after breakfast."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.reward",
+      "fallback": "Here, take these emeralds. You earned them. And before you go, Buttercup did something last night that I cannot explain."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.dialogue.done",
+      "fallback": "If you see Buttercup outside the fence again, please pretend you did not. I cannot afford another royal expedition today."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_wheat_for_buttercup",
+      "collect": "minecraft:wheat",
+      "amount": 4,
+      "mandatory": true
+    },
+    {
+      "id": "bring_buttercup_home",
+      "bring": "minecraft:cow",
+      "amount": 1,
+      "range": 7,
+      "threat_target_only": true,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.goals.1.name",
+        "fallback": "Her Majesty Buttercup"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 140,
+    "items": {
+      "minecraft:emerald": 6,
+      "minecraft:wheat": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "buttercup_met",
+      "buttercup_brought_home"
+    ]
+  },
+  "threat": {
+    "entity": "minecraft:cow",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_1_an_audience_with_her_majesty.threat.name",
+      "fallback": "Her Majesty Buttercup"
+    },
+    "spawn_min_radius": 45,
+    "spawn_max_radius": 80,
+    "spawn_origin": "quest_giver",
+    "spawn_on_accept": true,
+    "respawn_on_death": true,
+    "spare": false,
+    "glow": false,
+    "max_health": 50.0
+  }
+}

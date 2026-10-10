@@ -1,0 +1,45 @@
+{
+  "title": "Soul Lanterns",
+  "summary": "Villagers want soul lanterns hung for the dead the Underworld Knight guarded.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_u1_the_soul_guard"
+    ]
+  },
+  "dialogue": {
+    "intro": "Someone should light the way for them.",
+    "reward": "They burn blue. Like they're listening.",
+    "offer": [
+      [
+        "For his dead?",
+        "Someone should light the way for them."
+      ],
+      [
+        "Twelve lanterns.",
+        "One for every soul he kept."
+      ]
+    ],
+    "return": "The lanterns?"
+  },
+  "goals": [
+    {
+      "id": "lanterns",
+      "collect": "minecraft:soul_lantern",
+      "amount": 12,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:experience_bottle": 12
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_soul_lanterns_done"
+    ]
+  }
+}

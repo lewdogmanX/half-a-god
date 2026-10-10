@@ -1,0 +1,75 @@
+{
+  "title": "Ashford's Friend",
+  "summary": "[Reputation: Good] The god is dead or crowned, and you are the one who decided. This is who the valley thinks you are. Go and hear it.",
+  "sequential_objectives": true,
+  "requires": {
+    "traits": [
+      "hag_ending_reached"
+    ]
+  },
+  "goals": [
+    {
+      "id": "hear_it",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Reeve Halden"
+    }
+  ],
+  "rewards": {
+    "xp": 4000,
+    "items": {
+      "minecraft:enchanted_golden_apple": 1,
+      "minecraft:totem_of_undying": 1,
+      "minecraft:emerald_block": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rep_end_good_done",
+      "hag_rep_good"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Reeve Halden",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "It's over.",
+          "Then come home. Ashford's built you a house. Don't argue."
+        ],
+        [
+          "I made mistakes.",
+          "Everybody does. You kept coming back. That's the bit we remember."
+        ]
+      ]
+    }
+  ]
+}

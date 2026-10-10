@@ -1,0 +1,72 @@
+{
+  "title": "Halden's Last Stand",
+  "summary": "Reeve Halden has come to stop you, alone, with his father's spear. He doesn't expect to win.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "halden",
+      "kill": "minecraft:vindicator",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Reeve Halden",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 8,
+      "max_health": 80,
+      "talk": [
+        [
+          "Go home, Halden.",
+          "I am home. You're the one who left."
+        ],
+        [
+          "You can't win.",
+          "I know. I came anyway. That's the difference between us now."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Let him live with it",
+      "line": "Halden lowers the spear. 'That's crueller. You know that.'",
+      "traits": [
+        "hag_halden_spared_by_the_hand"
+      ]
+    },
+    "attack": {
+      "label": "Obey your god",
+      "traits": [
+        "hag_halden_killed_by_the_hand"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 2500
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_ha4_the_hand_of_azazel",
+      "delay_ticks": 2400,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ha3_haldens_last_stand_done"
+    ]
+  }
+}

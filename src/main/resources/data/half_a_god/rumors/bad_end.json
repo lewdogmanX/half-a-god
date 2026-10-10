@@ -1,0 +1,13 @@
+{
+  "id": "half_a_god:bad_end",
+  "weight": 12,
+  "line": "Lock your doors. The Hand of Azazel walks the roads.",
+  "conditions": {
+    "required_traits": [
+      "hag_sworn"
+    ],
+    "forbidden_traits": [
+      "hag_good_ending"
+    ]
+  }
+}

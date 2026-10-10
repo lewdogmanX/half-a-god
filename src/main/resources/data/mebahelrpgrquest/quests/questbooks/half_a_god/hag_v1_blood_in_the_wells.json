@@ -1,0 +1,94 @@
+{
+  "title": "Blood in the Wells",
+  "summary": "Mara says the cult will try to grow its god a new body in blood pits. Before you go, the librarian wants to show you what's been found in the well water. (Reward: a Sickle of Struggle. Hit creatures with it while carrying empty glass bottles and you catch their blood.)",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "deliver_to_the_librarian",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "'This blood was poured, not spilled. Someone is feeding the ground.'",
+      "name": "The Librarian"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "sons_of_sins:sickle_of_struggle": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_v2_the_sinful_church",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v1_blood_in_the_wells_done"
+    ]
+  },
+  "quest_book": {
+    "title": "Where the Blood Pits Are",
+    "author": "Old Mara",
+    "color": "red",
+    "pages": [
+      "It is done. All seven.\n\nNow the cult will try the only road left to it: if it cannot free his body, it will grow him a new one.",
+      "They pour blood into pits and throw dead flesh into it. What crawls out, they call sons.\n\nCome. I will explain everything. - M."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "The Librarian",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "'This blood was poured, not spilled. Someone is feeding the ground.'",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "Blood in the wells?",
+          "Poured, not spilled. Someone is feeding the ground."
+        ],
+        [
+          "Where from?",
+          "A Sinful Church to the south. Take this sickle. You'll want samples."
+        ]
+      ]
+    }
+  ],
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_f3_unbound"
+    ]
+  }
+}

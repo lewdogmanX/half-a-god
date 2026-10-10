@@ -1,0 +1,38 @@
+{
+  "title": "Cleansing the Pits",
+  "summary": "Spared, the Midwife shows you how to sour her blood pits: bury them under soul soil.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "soul_soil",
+      "place": "minecraft:soul_soil",
+      "amount": 16,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The pit hisses, bubbles, and goes still."
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "sons_of_sins:ether_ashes": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_v4_original_sin",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v3s_cleansing_the_pits_done"
+    ]
+  }
+}

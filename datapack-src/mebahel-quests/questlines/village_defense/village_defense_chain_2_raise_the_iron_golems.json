@@ -1,0 +1,76 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_2_raise_the_iron_golems.title",
+    "fallback": "Raise the Iron Golems"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_2_raise_the_iron_golems.summary",
+    "fallback": "The repaired village still needs new protectors. Bring two iron golems into the village before the warning bells ring."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:village_defense_chain_3_the_bell_and_the_raid"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_2_raise_the_iron_golems.dialogue.intro",
+      "fallback": "The villager watches repaired iron plates dry beside the smithy."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_2_raise_the_iron_golems.dialogue.offer.0.0",
+          "fallback": "The repairs are not enough?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_2_raise_the_iron_golems.dialogue.offer.0.1",
+          "fallback": "Repairs buy time. New wardens buy courage. If two fresh golems stand near the bell, the village will believe it can survive."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_2_raise_the_iron_golems.dialogue.offer.1.0",
+          "fallback": "So I need to build them here?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_2_raise_the_iron_golems.dialogue.offer.1.1",
+          "fallback": "Build them, lead them, drag them if you must. I only care that two new iron golems are guarding the village when the horn sounds."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_2_raise_the_iron_golems.dialogue.return",
+      "fallback": "Two new iron wardens by the village road. That sight will steady more hearts than any speech I could give."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_2_raise_the_iron_golems.dialogue.reward",
+      "fallback": "You have earned this. Keep your weapon close. The village finally looks defended."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_2_raise_the_iron_golems.dialogue.done",
+      "fallback": "The golems are watching. Now we wait for the horn."
+    }
+  },
+  "goals": [
+    {
+      "id": "raise_village_golems",
+      "bring": "minecraft:iron_golem",
+      "amount": 2,
+      "range": 72
+    }
+  ],
+  "rewards": {
+    "xp": 260,
+    "items": {
+      "minecraft:emerald": 12,
+      "minecraft:shield": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:unbreaking",
+            "level": 2
+          }
+        ]
+      }
+    }
+  }
+}

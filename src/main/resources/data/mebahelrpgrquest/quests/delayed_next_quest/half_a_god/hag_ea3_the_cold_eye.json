@@ -1,0 +1,38 @@
+{
+  "title": "The Cold Eye",
+  "summary": "Left behind by the Iceologers before they vanished. Where: igloo basements.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_eye",
+      "collect": "endrem:cold_eye",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The Cold Eye stares back at you. (It goes back in your pack.)",
+      "name": "Cold Eye (given back)"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "endrem:cold_eye": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_ea4_the_black_eye",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ea3_the_cold_eye_done"
+    ]
+  }
+}

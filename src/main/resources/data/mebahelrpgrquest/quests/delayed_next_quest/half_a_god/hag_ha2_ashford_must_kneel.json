@@ -1,0 +1,52 @@
+{
+  "title": "Ashford Must Kneel",
+  "summary": "Ashford refuses to tithe. Azazel wants their golems broken so they understand there is nothing left to protect them.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "golems",
+      "kill": "minecraft:iron_golem",
+      "amount": 2,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Ashford pays the next morning, every coin, in silence."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:iron_golem",
+      "name": "Ashford's Golem",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 20,
+      "count": 2,
+      "max_health": 100
+    }
+  ],
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "minecraft:gold_block": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_ha3_haldens_last_stand",
+      "delay_ticks": 2400,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ha2_ashford_must_kneel_done"
+    ]
+  }
+}

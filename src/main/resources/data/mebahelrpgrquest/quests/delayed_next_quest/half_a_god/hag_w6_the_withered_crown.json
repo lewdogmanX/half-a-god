@@ -1,0 +1,37 @@
+{
+  "title": "The Withered Crown",
+  "summary": "The Wither is dead. Bring its Nether Star out of the pit. You'll need it for the beacon.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "nether_star",
+      "collect": "minecraft:nether_star",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The star is still warm. (It goes back in your pack. You will need it.)"
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:nether_star": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_w7_a_light_they_cannot_dim",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_w6_the_withered_crown_done"
+    ]
+  }
+}

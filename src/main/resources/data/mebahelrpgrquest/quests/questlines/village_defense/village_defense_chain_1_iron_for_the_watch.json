@@ -1,0 +1,81 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.title",
+    "fallback": "Iron for the Watch"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.summary",
+    "fallback": "The village watch needs iron to repair battered golems before the next attack reaches the roads."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:village_defense_chain_2_raise_the_iron_golems"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.dialogue.intro",
+      "fallback": "A villager counts dents in an old golem's plating, then looks at you with tired urgency."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.dialogue.offer.0.0",
+          "fallback": "Are the golems damaged?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.dialogue.offer.0.1",
+          "fallback": "More than damaged. Cracked joints, split plates, rust in places rust should never reach. They still stand, but standing is not the same as guarding."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.dialogue.offer.1.0",
+          "fallback": "What do you need?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.dialogue.offer.1.1",
+          "fallback": "Iron. Enough to patch the old wardens and make the village look protected again before anything tests us."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.dialogue.offer.2.0",
+          "fallback": "The watch already trusts me."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.dialogue.offer.2.1",
+          "fallback": "It does. That is why I can say the quiet part: if we look weak tonight, raiders will stop scouting and start marching."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.dialogue.return",
+      "fallback": "Good. With this, the old golems can stand a little straighter."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.dialogue.reward",
+      "fallback": "Take these emeralds. If the village survives the next night, they will be worth spending."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_1_iron_for_the_watch.dialogue.done",
+      "fallback": "The repair iron is already in the smith's hands."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_repair_iron",
+      "collect": "minecraft:iron_ingot",
+      "amount": 20
+    }
+  ],
+  "rewards": {
+    "xp": 180,
+    "items": {
+      "minecraft:emerald": 8
+    }
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_a1_ashford_burns"
+    ]
+  }
+}

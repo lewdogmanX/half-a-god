@@ -1,0 +1,13 @@
+{
+  "id": "half_a_god:rep_good",
+  "weight": 12,
+  "line": "The Watch says you can be trusted. The Watch doesn't say that about anybody.",
+  "conditions": {
+    "required_traits": [
+      "hag_ch2_good"
+    ],
+    "forbidden_traits": [
+      "hag_route_seg3"
+    ]
+  }
+}

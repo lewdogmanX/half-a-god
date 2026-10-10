@@ -1,0 +1,103 @@
+{
+  "title": "The Last Garrison Man",
+  "summary": "One soldier of the frozen garrison is still alive: Brann, half-mad from cold, who led the Yeti's hunters to the village for food. He wants to go home. The snowy village wants him dead.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "judge_x5_the_last_garrison_man",
+      "kill": "minecraft:stray",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:stray",
+      "name": "Brann of the Garrison",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You led the Yeti to the village.",
+          "I led it away from the hideout. I didn't think. I was so cold."
+        ],
+        [
+          "The village wants you dead.",
+          "They should. My wife lives there. She thinks I died ten years ago."
+        ],
+        [
+          "What do you want?",
+          "To walk home. Even if they hang me at the door."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Walk him home to face them",
+      "line": "Brann takes your arm. His hand is ice. 'Thank you. Whatever happens.'",
+      "traits": [
+        "hag_mercy_x5_the_last_garrison_man"
+      ]
+    },
+    "attack": {
+      "label": "End him in the snow",
+      "traits": [
+        "hag_cruelty_x5_the_last_garrison_man"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 400
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_x5_the_last_garrison_man_after",
+        "delay_ticks": 200,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_s3_lost_in_the_snow",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_x5_the_last_garrison_man_done"
+    ]
+  }
+}

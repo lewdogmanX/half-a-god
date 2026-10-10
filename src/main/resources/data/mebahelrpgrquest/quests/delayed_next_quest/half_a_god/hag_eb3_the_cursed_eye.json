@@ -1,0 +1,38 @@
+{
+  "title": "The Cursed Eye",
+  "summary": "The piglins swore to protect it with their lives. Where: bastion treasure rooms.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_eye",
+      "collect": "endrem:cursed_eye",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The Cursed Eye stares back at you. (It goes back in your pack.)",
+      "name": "Cursed Eye (given back)"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "endrem:cursed_eye": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_eb4_the_wither_eye",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_eb3_the_cursed_eye_done"
+    ]
+  }
+}

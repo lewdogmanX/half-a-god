@@ -1,0 +1,88 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.title",
+    "fallback": "Healing Brews"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.summary",
+    "fallback": "The witch wants to brew medicine for the wounded animals caught between her hut and the village."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:witch_chain_3_thorns_brothers"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.dialogue.intro",
+      "fallback": "Good. That means your village may still have room for reason. I need help creating some brews, would you be able to assist me?"
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.dialogue.offer.0.0",
+          "fallback": "What do you need for the brews?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.dialogue.offer.0.1",
+          "fallback": "Sugar to keep the draught from turning bitter, and red mushrooms for the body of it. Simple things, if someone is willing to gather them."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.dialogue.offer.1.0",
+          "fallback": "Who are the brews for?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.dialogue.offer.1.1",
+          "fallback": "The animals near the swamp. They panic when your hunters come close, and my wards are not gentle when panic crosses them."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.dialogue.offer.2.0",
+          "fallback": "Why ask me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.dialogue.offer.2.1",
+          "fallback": "Because if I walk toward the village, they will reach for blades. If you carry the ingredients, I can repair some of the harm without starting another quarrel."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.dialogue.return",
+      "fallback": "You brought them. Good. Hold still while I sort what is useful from what is merely damp."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.dialogue.reward",
+      "fallback": "Take these. The carrots will keep you standing, and the bottles will do more good in your hands than on my shelf."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_2_healing_brews.dialogue.done",
+      "fallback": "The animals are resting easier. Do not mistake that for peace, but it is a start."
+    }
+  },
+  "goals": [
+    {
+      "id": "collect_sugar",
+      "collect": "minecraft:sugar",
+      "amount": 6
+    },
+    {
+      "id": "collect_red_mushroom",
+      "collect": "minecraft:red_mushroom",
+      "amount": 4
+    }
+  ],
+  "rewards": {
+    "xp": 90,
+    "items": {
+      "minecraft:emerald": 3,
+      "minecraft:golden_carrot": 4,
+      "minecraft:honey_bottle": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "swamp_mediator"
+    ]
+  }
+}

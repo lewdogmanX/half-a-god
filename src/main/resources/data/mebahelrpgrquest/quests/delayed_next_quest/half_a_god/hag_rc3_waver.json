@@ -1,0 +1,154 @@
+{
+  "title": "Penance in the Sky",
+  "summary": "[Reputation: Wavering] The cleric says you can't pray your mistakes away, but you can work them off. She wants ambrosium from the Aether for the chapel lamps. Then the old cleric asks to confess something to you, of all people.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "ambrosium",
+      "collect": "aether:ambrosium_shard",
+      "amount": 16,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "give_to_the_cleric",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "name": "The Cleric"
+    },
+    {
+      "id": "judge_3",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Sister Ysolde was the village cleric before this one. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Sister Ysolde",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 30,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You worked for them?",
+          "Once. Like you've done things once. Twice."
+        ],
+        [
+          "That's different.",
+          "Is it? Then judge me, and we'll both find out."
+        ]
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "The Cleric",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "The ambrosium.",
+          "Then the lamps will burn tonight for the ones in the dark. Sit with me a while."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Forgive her",
+      "line": "'Then I'll spend whatever I have left making it right.'",
+      "traits": [
+        "hag_mercy_3"
+      ]
+    },
+    "attack": {
+      "label": "Punish her",
+      "traits": [
+        "hag_cruelty_3"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 900
+  },
+  "traits": {
+    "complete": [
+      "hag_rc3_waver_done",
+      "hag_route_seg3",
+      "hag_ch3_waver"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_h2_hostile_paradise"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc4_good",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc4_fallen",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  }
+}

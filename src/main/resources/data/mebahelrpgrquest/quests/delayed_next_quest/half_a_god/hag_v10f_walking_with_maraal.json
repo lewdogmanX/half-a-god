@@ -1,0 +1,37 @@
+{
+  "title": "Walking with Maraal",
+  "summary": "You forgave her. She walks beside you and finally talks about the old days. Rest a night and listen.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "a_night_of_stories",
+      "type": "wait_time",
+      "wait_until": "next_day",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "'He was kind, once. That is the worst part.'"
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_v11_the_crimson_guide",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v10f_walking_with_maraal_done"
+    ]
+  }
+}

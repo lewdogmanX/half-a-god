@@ -1,0 +1,41 @@
+{
+  "title": "A Road of Cloud",
+  "summary": "The Aether's islands are far apart. Build a road of cold aercloud from your portal toward the dungeons so you never have to jump blind again.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "cloud_road",
+      "place": "aether:cold_aercloud",
+      "amount": 16,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "A road of cloud, from your portal to the dungeons. You won't have to jump blind again."
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_h7_medals_of_the_silver_court",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "aether:the_aether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_h6_like_a_bossaru_done"
+    ]
+  }
+}

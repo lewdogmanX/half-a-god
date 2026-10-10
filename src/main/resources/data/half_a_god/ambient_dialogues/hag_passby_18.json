@@ -1,0 +1,20 @@
+{
+  "id": "hag_passby_18",
+  "type": "player_passby",
+  "required_story_flags": [
+    "hag_tier_fallen"
+  ],
+  "forbidden_story_flags": [],
+  "trigger_radius": 4.5,
+  "weight": 6,
+  "cooldown": 12000,
+  "max_player_distance": 12,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": "player",
+      "text": "The children are inside. They'll stay inside.",
+      "translation_key": "ambient.half_a_god.hag_passby_18.0"
+    }
+  ]
+}

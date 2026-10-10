@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:city_with_eye",
+  "weight": 12,
+  "line": "There's a city in the Nether with an eye over its gate. Prisoners go in. Gold comes out.",
+  "conditions": {
+    "required_traits": [
+      "hag_a6_believers_house_done"
+    ]
+  }
+}

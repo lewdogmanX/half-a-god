@@ -1,0 +1,72 @@
+{
+  "title": "The Soul Guard",
+  "summary": "In the Nether's wastes or soul sand valleys stands the Underworld Arena. Clear its soul guard and kill Helvar, the Underworld Knight who holds its gate.",
+  "sequential_objectives": true,
+  "requires": {
+    "advancements": [
+      "block_factorys_bosses:kill_kraken"
+    ]
+  },
+  "goals": [
+    {
+      "id": "find_the_arena",
+      "reach": "block_factorys_bosses:underworld_arena",
+      "radius": 20000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "soul_skeletons",
+      "kill": "block_factorys_bosses:soul_skeleton",
+      "amount": 10,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "wither_knights",
+      "kill": "block_factorys_bosses:soul_knight_wither_skeleton",
+      "amount": 3,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "helvar",
+      "kill": "block_factorys_bosses:underworld_knight",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The sixth Warden falls. Somewhere far below, a door unlocks."
+    }
+  ],
+  "rewards": {
+    "xp": 1600,
+    "items": {
+      "minecraft:enchanted_book": {
+        "count": 1,
+        "enchants": {
+          "minecraft:protection": 4
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_u2_helvars_oath",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_u1_the_soul_guard_done"
+    ]
+  }
+}

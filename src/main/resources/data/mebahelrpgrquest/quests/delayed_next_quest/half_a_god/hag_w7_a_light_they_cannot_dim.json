@@ -1,0 +1,41 @@
+{
+  "title": "A Light They Cannot Dim",
+  "summary": "Turn the Wither's star into a beacon over your village, so everyone can see the cult did not win.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "beacon",
+      "place": "minecraft:beacon",
+      "amount": 1,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Villagers say it is the first good night's sleep in weeks."
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:emerald": 20
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_w8_six_remain",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_w7_a_light_they_cannot_dim_done"
+    ]
+  }
+}

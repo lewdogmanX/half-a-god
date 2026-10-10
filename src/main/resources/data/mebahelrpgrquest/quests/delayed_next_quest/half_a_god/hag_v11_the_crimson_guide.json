@@ -1,0 +1,39 @@
+{
+  "title": "The Crimson Guide",
+  "summary": "Ghastlies, the crimson bees of the Nether, know the way to the Nether Mansion. Go below and tame one. The next chapter starts once one follows you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "go_below",
+      "type": "enter_nether",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Tame a Ghastly. The next chapter begins when one follows you."
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "netherman:crimson_honey_bottle": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v11_the_crimson_guide_done"
+    ]
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_m1_follow_the_crimson_bee",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 400,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  }
+}

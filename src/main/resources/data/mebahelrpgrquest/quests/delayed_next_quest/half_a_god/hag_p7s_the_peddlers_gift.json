@@ -1,0 +1,82 @@
+{
+  "title": "The Peddler's Gift",
+  "summary": "You let the Peddler walk, and he left you a book of cult scripture. The village elder needs to know what the village is up against. Show it to her.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "show_the_elder",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The elder reads one page and goes pale. 'Burn it. No. Keep it. Know your enemy.'",
+      "name": "Village Elder"
+    }
+  ],
+  "rewards": {
+    "xp": 250,
+    "items": {
+      "minecraft:emerald": 6,
+      "minecraft:experience_bottle": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_p8_pillager_moon",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_p7s_the_peddlers_gift_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "The elder reads one page and goes pale. 'Burn it. No. Keep it. Know your enemy.'",
+      "talk": [
+        [
+          "He gave me this.",
+          "The Book of Belial... Burn it. No. Keep it. Know your enemy."
+        ],
+        [
+          "What does it mean?",
+          "That they think gold buys a god's favour. People who believe that will do anything for gold."
+        ]
+      ]
+    }
+  ]
+}

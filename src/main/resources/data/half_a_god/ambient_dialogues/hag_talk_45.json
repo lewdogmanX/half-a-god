@@ -1,0 +1,25 @@
+{
+  "id": "hag_talk_45",
+  "type": "villager_conversation",
+  "required_story_flags": [
+    "gt_kingpin"
+  ],
+  "forbidden_story_flags": [],
+  "weight": 8,
+  "cooldown": 24000,
+  "max_player_distance": 16,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": 1,
+      "text": "There's green on the market road again.",
+      "translation_key": "ambient.half_a_god.hag_talk_45.0"
+    },
+    {
+      "speaker": 1,
+      "look_at": 0,
+      "text": "Don't buy it. Don't even look at it. You know whose it is.",
+      "translation_key": "ambient.half_a_god.hag_talk_45.1"
+    }
+  ]
+}

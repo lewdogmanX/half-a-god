@@ -1,0 +1,123 @@
+{
+  "title": "The Road Underground",
+  "summary": "With all the eyes found, find a stronghold. The cult wants its library too and has sent Faithful and a hollow pilgrim to get there first.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_stronghold",
+      "reach": "minecraft:stronghold",
+      "radius": 30000000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "faithful",
+      "kill": "minecraft:vindicator",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "witches",
+      "kill": "minecraft:witch",
+      "amount": 2,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "hollow_pilgrim",
+      "kill": "minecraft:enderman",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Hollow Pilgrim's last word is a name: 'M...'"
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Faithful Seeker",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "count": 4,
+      "structure": "minecraft:stronghold",
+      "search_radius": 30000000,
+      "max_health": 48,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:witch",
+      "name": "Faithful Witch",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "count": 2,
+      "structure": "minecraft:stronghold",
+      "search_radius": 30000000,
+      "max_health": 40
+    },
+    {
+      "entity": "minecraft:enderman",
+      "name": "The Hollow Pilgrim",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "structure": "minecraft:stronghold",
+      "search_radius": 30000000,
+      "max_health": 120,
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_e4_the_warden_journal",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_e3_the_road_underground_done"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_eb6_the_undead_eye"
+    ]
+  }
+}

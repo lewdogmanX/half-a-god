@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:tidecaller",
+  "weight": 12,
+  "line": "The Tidecaller's dead, and the tide still comes in red.",
+  "conditions": {
+    "required_traits": [
+      "hag_c2_the_tidecaller_done"
+    ]
+  }
+}

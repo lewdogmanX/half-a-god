@@ -1,0 +1,101 @@
+{
+  "title": "The Tidecaller",
+  "summary": "Drowned are coming up the beach at night, led by something that calls the tide. Hold the beach.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "wait_for_night",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "drowned",
+      "kill": "minecraft:drowned",
+      "amount": 8,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "tidecaller",
+      "kill": "minecraft:drowned",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Her pockets are full of cult gold."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:drowned",
+      "name": "Drowned Raider",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 20,
+      "count": 8,
+      "max_health": 40,
+      "allow_water_spawn": true
+    },
+    {
+      "entity": "minecraft:drowned",
+      "name": "The Tidecaller",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "max_health": 120,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:trident",
+          "enchants": {
+            "minecraft:impaling": 3
+          }
+        }
+      },
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "allow_water_spawn": true
+    }
+  ],
+  "rewards": {
+    "xp": 1100,
+    "items": {
+      "minecraft:crossbow": {
+        "count": 1,
+        "enchants": {
+          "minecraft:multishot": 1
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_c3_the_black_ship",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_c2_the_tidecaller_done"
+    ]
+  }
+}

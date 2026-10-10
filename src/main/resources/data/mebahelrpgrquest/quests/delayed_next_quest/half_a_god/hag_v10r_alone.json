@@ -1,0 +1,37 @@
+{
+  "title": "Alone",
+  "summary": "You rejected her. Her letters have stopped. You'll have to learn the Nether the hard way.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "ghasts",
+      "kill": "minecraft:ghast",
+      "amount": 3,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Without her letters, you learn the Nether the hard way."
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:fire_charge": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_v11_the_crimson_guide",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v10r_alone_done"
+    ]
+  }
+}

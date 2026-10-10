@@ -1,0 +1,38 @@
+{
+  "title": "Lost Page 6: The Cold",
+  "summary": "A loose page from the Warden Journal, written by Mara's first champion. It mentions a place. Go and see it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_place",
+      "reach": "minecraft:igloo",
+      "radius": 15000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "You stand where the first champion stood. It feels colder than it should."
+    }
+  ],
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:experience_bottle": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_lp6_igloo_done",
+      "hag_lost_page_6"
+    ]
+  },
+  "quest_book": {
+    "title": "Warden Journal, Page 6",
+    "author": "The First Champion",
+    "color": "gray",
+    "pages": [
+      "I sheltered here with the second champion. He was younger than I was.",
+      "He asked me if it was worth it. I lied."
+    ],
+    "auto_claim_rewards": true
+  }
+}

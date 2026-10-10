@@ -1,0 +1,77 @@
+{
+  "title": "The Peddler's Debt",
+  "summary": "You killed the Peddler. His friends found a note on your door: 'He paid for you in advance.' Gold-Sworn enforcers have come to collect. Kill them before they hurt the village.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "gold_sworn",
+      "kill": "minecraft:vindicator",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "On the last body: a ledger page with your name on it."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Gold-Sworn",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "count": 4,
+      "max_health": 48,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        },
+        "head": "minecraft:golden_helmet"
+      },
+      "effects": [
+        {
+          "id": "minecraft:speed",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 260,
+    "items": {
+      "minecraft:iron_axe": {
+        "count": 1,
+        "enchants": {
+          "minecraft:sharpness": 2
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_p8_pillager_moon",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_p7b_peddlers_debt_done"
+    ]
+  }
+}

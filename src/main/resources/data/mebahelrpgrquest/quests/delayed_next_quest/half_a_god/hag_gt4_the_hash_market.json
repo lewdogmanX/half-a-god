@@ -1,0 +1,75 @@
+{
+  "title": "The Hash Market",
+  "summary": "Hash moves faster and pays better. Set up your Create machines and fill the Fixer's order.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "hash",
+      "collect": "addictives:hash",
+      "amount": 16,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "deliver_to_the_fixer",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "'Now we're talking. You've got a knack for this, which should worry you.'",
+      "name": "The Fixer"
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:emerald": 48
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_gt5_blackwater_wants_a_word",
+      "delay_ticks": 12000,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_gt4_the_hash_market_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "The Fixer",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "'Now we're talking. You've got a knack for this, which should worry you.'"
+    }
+  ]
+}

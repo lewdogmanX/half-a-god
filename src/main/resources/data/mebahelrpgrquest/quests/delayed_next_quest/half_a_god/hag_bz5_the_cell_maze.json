@@ -1,0 +1,41 @@
+{
+  "title": "The Cell Maze",
+  "summary": "The swarm you freed is flying into a Cell Maze, a labyrinth of wax. Wren's bees might be inside. Find it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_maze",
+      "reach": "the_bumblezone:cell_maze",
+      "radius": 8000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Wax corridors in every direction, and a sound like a thousand wings."
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:emerald": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_bz6_the_hive_temple",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "the_bumblezone:the_bumblezone"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_bz5_the_cell_maze_done"
+    ]
+  }
+}

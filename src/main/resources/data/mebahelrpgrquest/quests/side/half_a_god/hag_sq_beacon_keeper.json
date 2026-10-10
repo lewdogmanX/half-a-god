@@ -1,0 +1,45 @@
+{
+  "title": "The Beacon Keeper",
+  "summary": "The village wants to raise the beacon's power. Iron, and lots of it.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w7_a_light_they_cannot_dim"
+    ]
+  },
+  "dialogue": {
+    "intro": "The light reaches further. They say the cult hates the light.",
+    "reward": "Look how far it shines now.",
+    "offer": [
+      [
+        "More power?",
+        "The light reaches further. They say the cult hates the light."
+      ],
+      [
+        "Iron blocks?",
+        "Nine. The base must be wide."
+      ]
+    ],
+    "return": "The iron?"
+  },
+  "goals": [
+    {
+      "id": "iron_blocks",
+      "collect": "minecraft:iron_block",
+      "amount": 9,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 450,
+    "items": {
+      "minecraft:emerald": 16
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_beacon_keeper_done"
+    ]
+  }
+}

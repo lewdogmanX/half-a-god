@@ -1,0 +1,71 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.village_arrival_2_armour_stand.title",
+    "fallback": "A Stand Worth Showing Off"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.village_arrival_2_armour_stand.summary",
+    "fallback": "The villager wants an armour stand to display armour and weapons inside their new home."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:village_arrival_3_fireplace_supplies"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_2_armour_stand.dialogue.intro",
+      "fallback": "Ah! Stranger, pleasure to see you again."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_2_armour_stand.dialogue.offer.0.0",
+          "fallback": "That makes one of us."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_2_armour_stand.dialogue.offer.0.1",
+          "fallback": "Nice to see we're well on our way to best friend status already, but enough of this banter - I need a new item for my home again."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_2_armour_stand.dialogue.offer.1.0",
+          "fallback": "What is it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_2_armour_stand.dialogue.offer.1.1",
+          "fallback": "I need an armour stand to really show off my armour and weapons for visitors to gawk at. Think you can bring me one of those?"
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_2_armour_stand.dialogue.return",
+      "fallback": "You made one? Fantastic - here, take this as a reward."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_2_armour_stand.dialogue.reward",
+      "fallback": "You are proving rather useful, stranger."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_2_armour_stand.dialogue.done",
+      "fallback": "My armour stand looks excellent. Visitors will be very impressed, once I have visitors."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_smooth_stone_slab",
+      "collect": "minecraft:smooth_stone_slab",
+      "amount": 1
+    },
+    {
+      "id": "bring_sticks",
+      "collect": "minecraft:stick",
+      "amount": 6
+    }
+  ],
+  "rewards": {
+    "xp": 160,
+    "items": {
+      "minecraft:emerald": 5
+    }
+  }
+}

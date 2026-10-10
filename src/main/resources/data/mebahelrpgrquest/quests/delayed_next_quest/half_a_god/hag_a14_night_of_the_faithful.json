@@ -1,0 +1,137 @@
+{
+  "title": "Night of the Faithful",
+  "summary": "You have broken the cult's prison, killed its jailers and robbed its trade. Now it has noticed you. Tonight the Faithful come for the village you protect. Hold it until dawn.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "wait_for_night",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "faithful",
+      "kill": "minecraft:vindicator",
+      "amount": 6,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "conjurers",
+      "kill": "minecraft:evoker",
+      "amount": 2,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "ashfords_torch",
+      "kill": "minecraft:pillager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Ashford's Torch falls. In his pack: a map with the Nether marked in gold."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "The Faithful",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 12,
+      "spawn_max_radius": 26,
+      "count": 6,
+      "max_health": 46,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:evoker",
+      "name": "Faithful Conjurer",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 16,
+      "spawn_max_radius": 28,
+      "count": 2,
+      "max_health": 50
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": "Ashford's Torch",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 14,
+      "spawn_max_radius": 24,
+      "max_health": 100,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchants": {
+            "minecraft:piercing": 3,
+            "minecraft:quick_charge": 2
+          }
+        }
+      },
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:diamond_sword": {
+        "count": 1,
+        "enchants": {
+          "minecraft:sharpness": 3
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_a15_one_of_seven",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a14_night_of_the_faithful_done"
+    ]
+  }
+}

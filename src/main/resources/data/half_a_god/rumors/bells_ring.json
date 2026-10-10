@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:bells_ring",
+  "weight": 12,
+  "line": "They say the god's head is dead. Then why do the bells still ring by themselves?",
+  "conditions": {
+    "required_traits": [
+      "hag_m7_hand_over_your_weapon_done"
+    ]
+  }
+}

@@ -1,0 +1,38 @@
+{
+  "title": "The Black Eye",
+  "summary": "Pirates say it gave sight to a legendary ship. Where: buried treasure and shipwreck treasure.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_eye",
+      "collect": "endrem:black_eye",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The Black Eye stares back at you. (It goes back in your pack.)",
+      "name": "Black Eye (given back)"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "endrem:black_eye": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_ea5_the_lost_eye",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ea4_the_black_eye_done"
+    ]
+  }
+}

@@ -1,0 +1,88 @@
+{
+  "title": "A Note in the Stash",
+  "summary": "Mara writes that the Blackwater Cartel's drug money pays the cult's keepers in the snow, the sand and the sea. The only way to their Don is from inside. Grow a sample of weed (Create: Addictives) and find the Fixer, who is hiring growers.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "sample",
+      "collect": "addictives:weed",
+      "amount": 16,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "meet_the_fixer",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Fixer weighs the sample in one hand and you in the other. 'You'll do.'",
+      "name": "The Fixer"
+    }
+  ],
+  "rewards": {
+    "xp": 300,
+    "items": {
+      "minecraft:emerald": 16
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_gt2_seeds_of_the_trade",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_gt1_a_note_in_the_stash_done"
+    ]
+  },
+  "quest_book": {
+    "title": "A Note in the Stash",
+    "author": "Old Mara",
+    "color": "green",
+    "pages": [
+      "Forgive me for this one.\n\nThe Blackwater Cartel pays the cult a third of everything. That money keeps the beasts' keepers fed. To reach their Don you must become one of them.\n\nThis note was in one of their stashes. - M.",
+      "If you found this, you know what the seeds are for.",
+      "The valley pays well for green. Grow some. Bring me a sample. Ask for the Fixer in any village two hills over.",
+      "Don't bring the guards. Don't bring the priest. Don't bring your conscience."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "The Fixer",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "The Fixer weighs the sample in one hand and you in the other. 'You'll do.'",
+      "min_structure_distance": 300
+    }
+  ]
+}

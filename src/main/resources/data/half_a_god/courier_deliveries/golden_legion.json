@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:golden_legion",
+  "trigger": {
+    "type": "quest_success",
+    "quest": "mebahelrpgrquest:hag_w1_the_skull_market"
+  },
+  "delay": {
+    "min_ticks": 1200,
+    "max_ticks": 2400
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "Old Aurel",
+    "quest_book": "mebahelrpgrquest:hag_lg1_the_golden_legion"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_2_forgotten_road.title",
+    "fallback": "The Forgotten Road"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_2_forgotten_road.summary",
+    "fallback": "The spared zombie remembers a village road and asks you to escort it toward the place it once called home."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:armed_zombie_chain_spare_3_name_in_iron"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_2_forgotten_road.dialogue.intro",
+      "fallback": "The zombie keeps its sword low. Its gaze is fixed beyond the portal, toward country it should not remember."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_2_forgotten_road.dialogue.offer.0.0",
+          "fallback": "You think you came from a village?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_2_forgotten_road.dialogue.offer.0.1",
+          "fallback": "Bell. Smoke. A well with cracked stone. I stood beside it with iron in my hand."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_2_forgotten_road.dialogue.offer.1.0",
+          "fallback": "What happens if we find it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_2_forgotten_road.dialogue.offer.1.1",
+          "fallback": "Maybe I remember my name. Maybe I remember why the portal was opened. Maybe I learn I should have stayed dead."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_2_forgotten_road.dialogue.return",
+      "fallback": "The bell. I know that sound. It hurts worse than hunger."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_2_forgotten_road.dialogue.reward",
+      "fallback": "I found this under the well stones. I do not know why I hid it, but it was mine once."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.armed_zombie_chain_spare_2_forgotten_road.dialogue.done",
+      "fallback": "The village road remembers me, even if the villagers do not."
+    }
+  },
+  "goals": [
+    {
+      "id": "escort_to_village",
+      "escort": "minecraft:villages",
+      "radius": 3500,
+      "range": 40
+    }
+  ],
+  "rewards": {
+    "xp": 220,
+    "items": {
+      "minecraft:iron_ingot": 6,
+      "minecraft:emerald": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "oath_of_ash"
+    ]
+  }
+}

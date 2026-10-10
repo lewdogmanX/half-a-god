@@ -1,0 +1,75 @@
+{
+  "title": "The Black Ship",
+  "summary": "Board the Kraken Ship in the deep ocean. Kill its crossbowman, rook and captain, and the Kraken, Nerakyss, will rise. Kill it too.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_ship",
+      "reach": "block_factorys_bosses:kraken_ship",
+      "radius": 30000,
+      "range": 64,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "crossbow_pirates",
+      "kill": "block_factorys_bosses:crossbow_pirate",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "pirate_rooks",
+      "kill": "block_factorys_bosses:pirate_rook",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "pirate_captain",
+      "kill": "block_factorys_bosses:pirate_captain",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The captain's log: 'Cargo for the Eye. One Nail's worth.' Then the sky goes black and the sea starts to rise."
+    },
+    {
+      "id": "nerakyss",
+      "kill": "block_factorys_bosses:kraken",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "The fifth Warden falls. The sea goes flat as glass for a whole day."
+    }
+  ],
+  "rewards": {
+    "xp": 1600,
+    "items": {
+      "minecraft:enchanted_book": {
+        "count": 1,
+        "enchants": {
+          "minecraft:respiration": 3
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_c4_terror_of_the_depths",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_c3_the_black_ship_done"
+    ]
+  }
+}

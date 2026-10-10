@@ -1,0 +1,41 @@
+{
+  "title": "A Cairn for the Valkyries",
+  "summary": "The Queen knew the truth about the Charioteer and kept it. Build a cairn of holystone bricks for the Valkyries who died for her.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "cairn",
+      "place": "aether:holystone_bricks",
+      "amount": 16,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "A cairn for the Valkyries who died for a Queen who knew the truth and kept it."
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:diamond": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "aether:the_aether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_h8_dethroned_done"
+    ]
+  }
+}

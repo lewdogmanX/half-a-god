@@ -1,0 +1,10 @@
+{
+  "table": "minecraft:chests/pillager_outpost",
+  "drop_chance": 0.3,
+  "books": [
+    {
+      "quest": "mebahelrpgrquest:hag_lp7_outpost",
+      "weight": 1
+    }
+  ]
+}

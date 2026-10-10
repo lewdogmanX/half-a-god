@@ -1,0 +1,126 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.title",
+    "fallback": "The Bell and the Raid"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.summary",
+    "fallback": "The village is repaired, guarded, and ready to stand. Ring the alarm by accepting the defense and survive the raid."
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.intro",
+      "fallback": "The villager stands beside the bell, one hand resting on the rope."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.offer.0.0",
+          "fallback": "You think they are coming now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.offer.0.1",
+          "fallback": "If they are not, they soon will be. A village that repairs its golems is a village that refuses to stay weak."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.offer.1.0",
+          "fallback": "What happens when I accept?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.offer.1.1",
+          "fallback": "The bell rings, the village gathers behind doors, and whatever strength fate chooses for the raid will come for us."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.offer.2.0",
+          "fallback": "I speak as a friend of the watch."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.offer.2.1",
+          "fallback": "Then hear what strangers do not: if we survive, your name becomes a warding charm here. If we fall, it becomes a curse."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.offer.3.0",
+          "fallback": "Then ring it."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.offer.3.1",
+          "fallback": "Stay near the village. If the raid breaks us, every repair before this was only decoration."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.return",
+      "fallback": "The horn is silent. The village still stands."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.return_steps.0.0",
+          "fallback": "Are you sure you don't want to keep it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.return_steps.0.1",
+          "fallback": "This crossbow was taken from the raid leader when the fighting ended."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.return_steps.1.0",
+          "fallback": "This is an honour."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.return_steps.1.1",
+          "fallback": "By right of battle and by the gratitude of this village, it is yours."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.reward",
+      "fallback": "You answered the bell, stood against the raid, and earned every piece of what you now carry."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.village_defense_chain_3_the_bell_and_the_raid.dialogue.done",
+      "fallback": "The raid is broken, and the bell rings for warning again, not fear."
+    }
+  },
+  "goals": [
+    {
+      "id": "defend_the_village",
+      "type": "defend_raid",
+      "amount": 1
+    }
+  ],
+  "rewards": {
+    "xp": 650,
+    "items": {
+      "minecraft:emerald": 20,
+      "minecraft:crossbow": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:power",
+            "level": 3
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 2
+          },
+          {
+            "id": "minecraft:infinity",
+            "level": 1
+          },
+          {
+            "id": "minecraft:piercing",
+            "level": 1
+          }
+        ]
+      }
+    }
+  }
+}

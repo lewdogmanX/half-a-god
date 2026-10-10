@@ -1,0 +1,39 @@
+{
+  "title": "Out of the Underworld",
+  "summary": "Leave the Nether. What Helvar wrote is going to follow you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "climb_out",
+      "type": "leave_nether",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Daylight. You did not realise how much you had missed it."
+    }
+  ],
+  "rewards": {
+    "xp": 3500,
+    "items": {
+      "minecraft:netherite_scrap": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_f1_the_last_road",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_u3_back_into_hell_done"
+    ]
+  }
+}

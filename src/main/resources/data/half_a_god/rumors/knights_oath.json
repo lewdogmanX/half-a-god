@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:knights_oath",
+  "weight": 12,
+  "line": "A knight's oath was found in the deep places. 'If I fall, the door will open.' Which door?",
+  "conditions": {
+    "required_traits": [
+      "hag_u2_helvars_oath_done"
+    ]
+  }
+}

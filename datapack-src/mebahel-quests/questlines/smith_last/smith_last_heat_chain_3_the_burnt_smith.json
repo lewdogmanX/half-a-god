@@ -1,0 +1,306 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.title",
+    "fallback": "The Burnt Smith"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.summary",
+    "fallback": "Face the smith who vanished into the mine and end the curse bound to his last work. Bring back his hammer, if anything of him remains."
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.intro",
+      "fallback": "The anvil rang by itself at dawn. One strike. Then another. Then a third, hard enough to crack the water trough."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.offer.0.0",
+          "fallback": "The last smith is still down there?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.offer.0.1",
+          "fallback": "Not living. Not after all these years. But something wearing his hands is working the old seam, and every strike pulls heat from our forge."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.offer.1.0",
+          "fallback": "What was he trying to make?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.offer.1.1",
+          "fallback": "A masterwork, they said. A tool that would never dull, fed by ore that burned in darkness. Pride makes fools of good craftsmen and monsters of bad ones."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.offer.2.0",
+          "fallback": "How do I stop him?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.offer.2.1",
+          "fallback": "Find him in the mine, break the dead hands from the hammer, and bring the village back its fire. But he is not alone. The dead miners still answer his strikes, and cinder-boned guards keep watch over the old seam."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.return",
+      "fallback": "The forge is quiet. Proper quiet. The kind a smith trusts before setting metal to flame."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.return_steps.0.0",
+          "fallback": "The smith is gone."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.return_steps.0.1",
+          "fallback": "Then may whatever was left of him finally rest from the hammer. No craft is worth binding your soul to an anvil."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.return_steps.1.0",
+          "fallback": "He was not alone down there."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.return_steps.1.1",
+          "fallback": "No. The mine kept his whole crew working after death. Miners to feed the seam, guards to keep the living away, and the smith himself still chasing a masterwork that had already ruined him."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.return_steps.2.0",
+          "fallback": "He was still working."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.return_steps.2.1",
+          "fallback": "Of course he was. Some people mistake unfinished work for purpose. The dead are worse. They never learn when to put the tool down."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.return_steps.3.0",
+          "fallback": "What happens to the forge now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.return_steps.3.1",
+          "fallback": "Now it serves the living again. Nails, hinges, ploughs, blades when we must. Honest work, not hungry work."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.reward",
+      "fallback": "This axe was the last thing the old smith tried to finish before the mine took him. The edge was warped by cursed heat, but the forge rang clean when I tempered it anew. It is no longer his burden. You broke the curse, brought our fire back to the living, and earned the right to carry his final work."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.dialogue.done",
+      "fallback": "The forge burns warm now, not angry. That is the difference between craft and curse."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_burnt_smith",
+      "kill": "minecraft:zombie_villager",
+      "amount": 1
+    },
+    {
+      "id": "kill_bound_miners",
+      "kill": "minecraft:zombie",
+      "amount": 2
+    },
+    {
+      "id": "kill_cinder_guards",
+      "kill": "minecraft:skeleton",
+      "amount": 2
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombie_villager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.threats.0.name",
+        "fallback": "Master Edric Coalvein"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 2200,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 240.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "level": 3
+            },
+            {
+              "id": "minecraft:fire_aspect",
+              "level": 1
+            },
+            {
+              "id": "minecraft:unbreaking",
+              "level": 2
+            }
+          ]
+        },
+        "head": {
+          "item": "minecraft:iron_helmet",
+          "enchantments": [
+            {
+              "id": "minecraft:protection",
+              "level": 2
+            }
+          ]
+        },
+        "chest": {
+          "item": "minecraft:chainmail_chestplate",
+          "enchantments": [
+            {
+              "id": "minecraft:fire_protection",
+              "level": 3
+            }
+          ]
+        }
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.threats.0.offer_line",
+        "fallback": "The burnt smith waits in the old mine, still hammering at the cursed seam. Two dead miners work beside him, and two cinder-boned guards keep watch. The forge will not be free while that crew keeps striking."
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.threats.1.name",
+        "fallback": "Orren Pickhand"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 2200,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 95.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_pickaxe",
+          "enchantments": [
+            {
+              "id": "minecraft:efficiency",
+              "level": 2
+            }
+          ]
+        },
+        "head": "minecraft:leather_helmet",
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.threats.2.name",
+        "fallback": "Halden Greyslate"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 2200,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 95.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:stone_pickaxe",
+          "enchantments": [
+            {
+              "id": "minecraft:unbreaking",
+              "level": 2
+            }
+          ]
+        },
+        "head": "minecraft:leather_helmet",
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.threats.3.name",
+        "fallback": "Cinderbone Veyr"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 2200,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 80.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:bow",
+          "enchantments": [
+            {
+              "id": "minecraft:flame",
+              "level": 1
+            }
+          ]
+        },
+        "head": "minecraft:iron_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.smith_last_heat_chain_3_the_burnt_smith.threats.4.name",
+        "fallback": "Cinderbone Krail"
+      },
+      "structure": "minecraft:mineshaft",
+      "search_radius": 2200,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 80.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:bow",
+          "enchantments": [
+            {
+              "id": "minecraft:power",
+              "level": 2
+            }
+          ]
+        },
+        "head": "minecraft:iron_helmet"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 640,
+    "items": {
+      "minecraft:emerald": 18,
+      "minecraft:diamond_axe": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:sharpness",
+            "level": 3
+          },
+          {
+            "id": "minecraft:efficiency",
+            "level": 4
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 3
+          }
+        ]
+      },
+      "minecraft:anvil": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "last_heat_keeper"
+    ]
+  }
+}

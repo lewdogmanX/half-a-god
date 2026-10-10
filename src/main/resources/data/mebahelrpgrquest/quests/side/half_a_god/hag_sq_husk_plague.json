@@ -1,0 +1,45 @@
+{
+  "title": "Husk Plague",
+  "summary": "The desert village is still overrun with husks from the nest.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_d1_the_buried_well"
+    ]
+  },
+  "dialogue": {
+    "intro": "They keep coming out of the sand.",
+    "reward": "The well is safe again.",
+    "offer": [
+      [
+        "Still?",
+        "They keep coming out of the sand."
+      ],
+      [
+        "Twenty?",
+        "Start with twenty."
+      ]
+    ],
+    "return": "Done?"
+  },
+  "goals": [
+    {
+      "id": "husks",
+      "kill": "minecraft:husk",
+      "amount": 20,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 550,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_husk_plague_done"
+    ]
+  }
+}

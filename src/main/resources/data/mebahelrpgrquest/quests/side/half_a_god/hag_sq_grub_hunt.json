@@ -1,0 +1,45 @@
+{
+  "title": "Guzzler Hunt",
+  "summary": "Betrayed Guzzlers, bloated things the Sins left behind, crawl out at night and drink the livestock dry. Hunt them down.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_v4_original_sin"
+    ]
+  },
+  "dialogue": {
+    "intro": "Fat, pale, always thirsty. They come out of the dark anywhere in the Overworld.",
+    "reward": "The wheat will grow now.",
+    "offer": [
+      [
+        "Guzzlers?",
+        "Fat, pale, always thirsty. They come out of the dark anywhere in the Overworld."
+      ],
+      [
+        "Four?",
+        "Four we've seen. Kill them and the cows stop dying."
+      ]
+    ],
+    "return": "Gone?"
+  },
+  "goals": [
+    {
+      "id": "guzzlers",
+      "kill": "sons_of_sins:betrayed_guzzler",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 650,
+    "items": {
+      "minecraft:emerald": 16
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_grub_hunt_done"
+    ]
+  }
+}

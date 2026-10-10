@@ -1,0 +1,531 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.title",
+    "fallback": "The Court Answers"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.summary",
+    "fallback": "Salvage the lost resonator core from a shipwreck, survive its drowned crew, build the tuned bell ward, and break the Ash Court's answer."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:ash_court_chain_7_names_under_stone"
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:ash_court_chain_5_black_glass_road"
+    ],
+    "traits": [
+      "ash_court_marker_recovered"
+    ]
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.intro",
+      "fallback": "The black-glass waystone has started opening for a heartbeat at sunset. Each time, ash falls beside the village bell."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.offer.0.0",
+          "fallback": "The waystone is reopening."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.offer.0.1",
+          "fallback": "The Court is testing the old passage. We will force it to open only inside a ward, then kill whatever they send through."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.offer.1.0",
+          "fallback": "You want to use the village as bait?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.offer.1.1",
+          "fallback": "No. Bait waits and hopes. A tuned bell chooses what can cross. First we need its resonator core. I sent it by sea to keep it from greedy hands. The ship never reached port."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.offer.2.0",
+          "fallback": "What do I have to do?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.offer.2.1",
+          "fallback": "Find the wreck and recover its sealed core. But be ready: the last salvage crew heard bells beneath the water, then vanished. Bring the core back to me, and I will bind it inside crying obsidian for the ward."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.return",
+      "fallback": "You came back without a trophy, which is exactly how I know the ward worked. The Court's answer broke before it could become a relic."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.return_steps.0.0",
+          "fallback": "Did we close the road?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.return_steps.0.1",
+          "fallback": "This road, yes. The crying obsidian held the tuned core steady, the bell chose a single answer, and that answer died where everyone could see it."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.return_steps.1.0",
+          "fallback": "Will they send more?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.return_steps.1.1",
+          "fallback": "Courts do not forgive insult. But they count cost better than pride. Tonight, this village became expensive."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.return_steps.2.0",
+          "fallback": "What happens now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.return_steps.2.1",
+          "fallback": "We leave no court-token for ambitious hands to polish. We keep the lesson instead: answer the road, break the voice, keep the village standing."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.reward",
+      "fallback": "You did more than kill monsters. You made the village answer intelligently: first with preparation, then with steel only when steel mattered."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.dialogue.done",
+      "fallback": "The bell rings clean again. I still hear the old note underneath it, but now it belongs to us."
+    }
+  },
+  "goals": [
+    {
+      "id": "recover_bell_resonator",
+      "collect": "minecraft:amethyst_shard",
+      "amount": 1,
+      "in_chest": true,
+      "structure": "minecraft:shipwreck",
+      "radius": 4800,
+      "allow_water_placement": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.goals.0.name",
+        "fallback": "Untuned Bell Resonator Core"
+      },
+      "tag": "ash_court_bell_resonator",
+      "stage": 0,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.goals.0.say",
+        "fallback": "The drowned rose when you broke the core's seal? Then the Court already knew where it lay. Give it here. I have bound it inside crying obsidian; this finished resonator will force the passage to answer only at the ward. Take it with three obsidian braces and three soul lanterns."
+      }
+    },
+    {
+      "id": "kill_the_drowned_salvagers",
+      "kill": "minecraft:drowned",
+      "amount": 4,
+      "stage": 0,
+      "from_threats": true
+    },
+    {
+      "id": "place_tuned_bell_resonator",
+      "place": "minecraft:crying_obsidian",
+      "amount": 1,
+      "range": 70,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.goals.1.name",
+        "fallback": "Tuned Bell Resonator"
+      },
+      "stage": 1
+    },
+    {
+      "id": "place_soul_lanterns",
+      "place": "minecraft:soul_lantern",
+      "amount": 3,
+      "range": 70,
+      "stage": 1
+    },
+    {
+      "id": "place_obsidian_anchors",
+      "place": "minecraft:obsidian",
+      "amount": 3,
+      "range": 70,
+      "auto_advance": true,
+      "stage": 1,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.goals.3.say",
+        "fallback": "The tuned resonator wakes between the three obsidian braces and three soul lanterns. The bell rings once by itself, every flame in the village burns blue, and the first dead step through the note."
+      }
+    },
+    {
+      "id": "kill_ash_court_envoy",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 1,
+      "stage": 2,
+      "from_threats": true
+    },
+    {
+      "id": "kill_court_retinue",
+      "kill": "minecraft:skeleton",
+      "amount": 4,
+      "stage": 2,
+      "from_threats": true,
+      "auto_advance": true,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.goals.5.say",
+        "fallback": "The first answer collapses into ash. The bell does not quiet. Something above the note has heard you."
+      }
+    },
+    {
+      "id": "kill_ghast_herald",
+      "kill": "minecraft:ghast",
+      "amount": 1,
+      "stage": 3,
+      "from_threats": true
+    },
+    {
+      "id": "kill_riding_bone_herald",
+      "kill": "minecraft:skeleton",
+      "amount": 1,
+      "stage": 3,
+      "from_threats": true
+    },
+    {
+      "id": "kill_wither_oathguards",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 2,
+      "stage": 3,
+      "from_threats": true,
+      "auto_advance": true,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.goals.8.say",
+        "fallback": "The second wave burns out. The bell steadies, the black-glass note breaks, and the village is quiet enough to hear your own breath. Return to the villager."
+      }
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:drowned",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.drowned_deckhand.name",
+        "fallback": "Bell-Drowned Deckhand"
+      },
+      "stage": 0,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 3,
+      "spawn_max_radius": 8,
+      "spawn_on_accept": false,
+      "allow_water_spawn": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 45.0,
+      "equipment": {
+        "mainhand": "minecraft:stone_sword"
+      }
+    },
+    {
+      "entity": "minecraft:drowned",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.drowned_boatswain.name",
+        "fallback": "Bell-Drowned Boatswain"
+      },
+      "stage": 0,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 9,
+      "spawn_on_accept": false,
+      "allow_water_spawn": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60.0,
+      "equipment": {
+        "mainhand": "minecraft:iron_axe"
+      }
+    },
+    {
+      "entity": "minecraft:drowned",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.drowned_holdkeeper.name",
+        "fallback": "Bell-Drowned Holdkeeper"
+      },
+      "stage": 0,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": false,
+      "allow_water_spawn": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 55.0,
+      "equipment": {
+        "mainhand": "minecraft:iron_shovel"
+      }
+    },
+    {
+      "entity": "minecraft:drowned",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.drowned_navigator.name",
+        "fallback": "Bell-Drowned Navigator"
+      },
+      "stage": 0,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 11,
+      "spawn_on_accept": false,
+      "allow_water_spawn": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 65.0,
+      "equipment": {
+        "mainhand": "minecraft:trident"
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.0.name",
+        "fallback": "Morthane, Envoy of the Ash Court"
+      },
+      "stage": 2,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 24,
+      "spawn_max_radius": 44,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 240.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:stone_sword",
+          "enchants": {
+            "minecraft:sharpness": 4,
+            "minecraft:fire_aspect": 2
+          }
+        },
+        "head": "minecraft:wither_skeleton_skull",
+        "chest": "minecraft:chainmail_chestplate"
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.0.offer_line",
+        "fallback": "The Ash Court has sent an envoy through the marked road. Hold the ward and cut down the first answer."
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.1.name",
+        "fallback": "Court Retainer Voss"
+      },
+      "stage": 2,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 20,
+      "spawn_max_radius": 42,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 90.0,
+      "equipment": {
+        "mainhand": "minecraft:bow",
+        "head": "minecraft:chainmail_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.2.name",
+        "fallback": "Court Retainer Mal"
+      },
+      "stage": 2,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 20,
+      "spawn_max_radius": 42,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 90.0,
+      "equipment": {
+        "mainhand": "minecraft:bow",
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.3.name",
+        "fallback": "Court Retainer Sen"
+      },
+      "stage": 2,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 20,
+      "spawn_max_radius": 42,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 95.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_sword",
+          "enchants": {
+            "minecraft:fire_aspect": 1
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.4.name",
+        "fallback": "Court Retainer Yrr"
+      },
+      "stage": 2,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 20,
+      "spawn_max_radius": 42,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 95.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_sword",
+          "enchants": {
+            "minecraft:knockback": 1
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.5.name",
+        "fallback": "Veyr, Bell-Breaker of the Ash Court"
+      },
+      "stage": 3,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 30,
+      "spawn_max_radius": 52,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 120.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:bow",
+          "enchants": {
+            "minecraft:flame": 1,
+            "minecraft:power": 3,
+            "minecraft:punch": 7
+          }
+        },
+        "head": "minecraft:diamond_helmet",
+        "chest": "minecraft:chainmail_chestplate"
+      },
+      "mount": {
+        "entity": "minecraft:ghast",
+        "name": {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.5.mount.name",
+          "fallback": "Court-Scream"
+        },
+        "max_health": 80.0
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.5.offer_line",
+        "fallback": "The first wave was only the knock. Now the Court sends a voice above the rooftops. Bring down the rider, the ghast, and the oathguards before the bell cracks."
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.6.name",
+        "fallback": "Ash Court Oathguard Ruun"
+      },
+      "stage": 3,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 22,
+      "spawn_max_radius": 48,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 130.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:fire_aspect": 1
+          }
+        },
+        "head": "minecraft:diamond_helmet",
+        "chest": "minecraft:iron_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_6_the_court_answers.threats.7.name",
+        "fallback": "Ash Court Oathguard Sael"
+      },
+      "stage": 3,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 22,
+      "spawn_max_radius": 48,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 130.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:fire_aspect": 1
+          }
+        },
+        "head": "minecraft:diamond_helmet",
+        "chest": "minecraft:iron_chestplate"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:diamond": 10,
+      "minecraft:netherite_scrap": 2,
+      "minecraft:shield": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:unbreaking",
+            "level": 3
+          },
+          {
+            "id": "minecraft:mending",
+            "level": 1
+          }
+        ]
+      },
+      "minecraft:bow": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:flame",
+            "level": 1
+          },
+          {
+            "id": "minecraft:power",
+            "level": 3
+          },
+          {
+            "id": "minecraft:punch",
+            "level": 7
+          }
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "ash_court_answered"
+    ]
+  }
+}

@@ -1,0 +1,109 @@
+{
+  "title": "The Midwife",
+  "summary": "The woman who runs the blood pits is at the church. Hear her out, then spare her or end her.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_midwife",
+      "kill": "minecraft:witch",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:witch",
+      "name": "The Midwife",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "structure": "sons_of_sins:sinful_church",
+      "search_radius": 30000,
+      "max_health": 150,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "What are you making?",
+          "A body. He needs a body. The old one is sealed, so we grow him a new one."
+        ],
+        [
+          "Has it worked?",
+          "Not once. They live. They never speak. They just... eat."
+        ],
+        [
+          "Then stop.",
+          "And do what? Pray to an empty throne?"
+        ]
+      ],
+      "attack_ambushes": [
+        {
+          "entity": "minecraft:witch",
+          "name": "Coven Sister",
+          "count": 3,
+          "max_health": 40
+        }
+      ]
+    }
+  ],
+  "choice": {
+    "attack": {
+      "label": "End the blood pits",
+      "traits": [
+        "midwife_slain"
+      ]
+    },
+    "spare": {
+      "label": "Let her go",
+      "line": "'None of them ever spoke. Remember that.'",
+      "traits": [
+        "midwife_spared"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1600,
+    "items": {
+      "sons_of_sins:ether_ashes": 8
+    }
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_v3k_the_coven",
+        "delay_ticks": 12000,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_v3s_cleansing_the_pits",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v3_the_midwife_done"
+    ]
+  }
+}

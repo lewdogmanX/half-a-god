@@ -1,0 +1,183 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.title",
+    "fallback": "The No-Banner Axe"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.summary",
+    "fallback": "Find the vindicator who mourns at the shrine. Do not mistake silence for innocence, but do not let fear be your only judge."
+  },
+  "flow": {
+    "on_kill": "mebahelrpgrquest:no_banner_vindicator_chain_kill_3_ashes_without_witness"
+  },
+  "dialogue": {
+    "return": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.dialogue.return",
+      "fallback": "Rurik is dead, then. I will not mourn a raider. But I will wonder what died with him."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.dialogue.reward",
+      "fallback": "Take this. The village pays for dangers ended, even when the ending leaves questions behind."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.dialogue.done",
+      "fallback": "The shrine road is quiet, and the bread has gone stale."
+    }
+  },
+  "goals": [
+    {
+      "id": "confront_no_banner",
+      "kill": "minecraft:vindicator",
+      "amount": 1
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:vindicator",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.name",
+      "fallback": "Rurik No-Banner"
+    },
+    "structure": "minecraft:pillager_outpost",
+    "search_radius": 4000,
+    "spawn_on_accept": true,
+    "spare": true,
+    "golem_protected": true,
+    "glow": false,
+    "max_health": 140.0,
+    "equipment": {
+      "mainhand": {
+        "item": "minecraft:iron_axe",
+        "enchantments": [
+          {
+            "id": "minecraft:sharpness",
+            "level": 2
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 2
+          }
+        ]
+      },
+      "head": "minecraft:leather_helmet",
+      "chest": {
+        "item": "minecraft:chainmail_chestplate",
+        "enchantments": [
+          {
+            "id": "minecraft:protection",
+            "level": 1
+          }
+        ]
+      }
+    },
+    "offer_line": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.offer_line",
+      "fallback": "Rurik No-Banner has been seen near the old shrine road. He carries an axe, but no patrol banner follows him."
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.target_line",
+      "fallback": "Keep your distance, village-blade. I left bread, not threats. If they sent you to collect my head, say it plainly."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.talk.0.0",
+          "fallback": "Why leave bread at a shrine?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.talk.0.1",
+          "fallback": "Because four villagers starved in a cellar while my patrol drank beside their burning home. I heard them. I did nothing. Bread is a poor apology to the dead, but it is all my hands know how to leave."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.talk.1.0",
+          "fallback": "You were part of the raid?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.talk.1.1",
+          "fallback": "I wore the banner. I swung the axe. Then I saw a child hiding under a cart, and for the first time the shouting sounded like murder instead of victory."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.talk.2.0",
+          "fallback": "Why should the village spare you?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.talk.2.1",
+          "fallback": "It should not. But there are captives still held at the outpost because I opened one wrong door and then ran. Let me speak, and I can name where the keys are kept."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.attack_choice_label",
+      "fallback": "Your regrets do not undo the dead."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.spare_choice_label",
+      "fallback": "Speak. One useful truth may buy one breath."
+    },
+    "attack_return_line": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.attack_return_line",
+      "fallback": "You killed him? Then perhaps justice was done. Or perhaps the last man who knew where the captives are has been buried with his shame."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.spared_line",
+      "fallback": "You would let a raider speak? Then listen before courage leaves either of us."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.post_spare_line",
+      "fallback": "The outpost keeps its prison keys beneath the captain's sleeping floor. There is a ledger too, with names taken from the road. Bring them to the village, and I will stand before the bell myself."
+    },
+    "villager_spared_line": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.villager_spared_line",
+      "fallback": "You spared him? Then bring back the keys and the ledger he named. If captives truly remain, this village will judge him after they breathe free."
+    },
+    "spare_rewards": {
+      "xp": 120,
+      "items": {
+        "minecraft:emerald": 4
+      }
+    },
+    "mercy_outcome": {
+      "offer_quest_chance": 100,
+      "ambush_player": 0,
+      "nothing_chance": 0,
+      "offered_quest": "mebahelrpgrquest:no_banner_vindicator_chain_spare_3_names_in_ash",
+      "ambush_entity": "minecraft:pillager",
+      "ambush_count": 3,
+      "ambush_max_health": 50,
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.mercy_outcome.offer_line",
+        "fallback": "You spared me when the village would have cheered my death. If you still want the truth, there are names buried under outpost stone. Walk with me, and I will show you who I failed."
+      },
+      "ambush_player_line": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.mercy_outcome.ambush_player_line",
+        "fallback": "Raiders rush from the road, drawn by the broken oath."
+      },
+      "nothing_line": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_2_the_no_banner_axe.threat.mercy_outcome.nothing_line",
+        "fallback": "I lower my axe, but the words die in my throat before they become a confession."
+      }
+    }
+  },
+  "rewards": {
+    "xp": 260,
+    "items": {
+      "minecraft:emerald": 9,
+      "minecraft:iron_axe": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:sharpness",
+            "level": 2
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 1
+          }
+        ]
+      }
+    }
+  }
+}

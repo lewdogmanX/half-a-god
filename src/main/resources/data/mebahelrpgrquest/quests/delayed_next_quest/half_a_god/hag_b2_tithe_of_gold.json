@@ -1,0 +1,40 @@
+{
+  "title": "Tithe of Gold",
+  "summary": "Gold is faith made solid. Bring the first tithe.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "tithe",
+      "collect": "minecraft:gold_ingot",
+      "amount": 64,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Somewhere far below, a throne that is no longer empty hums."
+    }
+  ],
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "netherman:faith_essence": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_b3_the_last_preacher",
+      "delay_ticks": 6000,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_b2_tithe_of_gold_done"
+    ]
+  }
+}

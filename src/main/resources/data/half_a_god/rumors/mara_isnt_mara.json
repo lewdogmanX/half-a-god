@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:mara_isnt_mara",
+  "weight": 12,
+  "line": "Mara isn't Mara. That's all anyone will say, and they say it quiet.",
+  "conditions": {
+    "required_traits": [
+      "hag_v9_the_wrong_parcel_done"
+    ]
+  }
+}

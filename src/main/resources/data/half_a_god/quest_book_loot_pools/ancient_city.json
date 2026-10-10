@@ -1,0 +1,10 @@
+{
+  "table": "minecraft:chests/ancient_city",
+  "drop_chance": 0.3,
+  "books": [
+    {
+      "quest": "mebahelrpgrquest:hag_lp1_ancient_city",
+      "weight": 1
+    }
+  ]
+}

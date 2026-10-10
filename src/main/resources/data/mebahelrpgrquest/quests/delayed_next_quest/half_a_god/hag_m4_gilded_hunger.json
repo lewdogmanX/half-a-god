@@ -1,0 +1,40 @@
+{
+  "title": "Gilded Hunger",
+  "summary": "In the Sacred City, Gilded Golems drink gold and blood. Kill three. The Doctor and the Blacksmith will trade with you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "gilded_golems",
+      "kill": "netherman:gilded_golem",
+      "amount": 3,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The Doctor sells potions and the Blacksmith repairs without stripping enchantments. Use them."
+    }
+  ],
+  "rewards": {
+    "xp": 2500,
+    "items": {
+      "minecraft:gold_block": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_m5_do_not_provoke_gehinnom",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_m4_gilded_hunger_done"
+    ]
+  }
+}

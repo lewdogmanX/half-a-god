@@ -1,0 +1,51 @@
+{
+  "title": "Quartz for the Cleric",
+  "summary": "The cleric wants Nether quartz to make wards against the Wither's curse.",
+  "sequential_objectives": true,
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w1_the_skull_market"
+    ]
+  },
+  "dialogue": {
+    "intro": "Quartz holds a prayer better than glass.",
+    "reward": "Now the chapel will hold.",
+    "offer": [
+      [
+        "Wards?",
+        "Quartz holds a prayer better than glass."
+      ],
+      [
+        "How much?",
+        "Thirty-two pieces. Prayers are heavy."
+      ]
+    ],
+    "return": "The quartz?"
+  },
+  "goals": [
+    {
+      "id": "go_below",
+      "type": "enter_nether",
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "quartz",
+      "collect": "minecraft:quartz",
+      "amount": 32,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 400,
+    "items": {
+      "minecraft:experience_bottle": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sq_quartz_for_the_cleric_done"
+    ]
+  }
+}

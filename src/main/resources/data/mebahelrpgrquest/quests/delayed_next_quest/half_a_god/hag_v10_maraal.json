@@ -1,0 +1,113 @@
+{
+  "title": "Maraal",
+  "summary": "She was waiting for you to find the page. Mara is Maraal. Hear her out, then forgive her or reject her.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "maraal",
+      "kill": "minecraft:wandering_trader",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wandering_trader",
+      "name": "Maraal",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 300,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "recruit_companion": true,
+      "talk": [
+        [
+          "You tore the page.",
+          "Yes. I knew you would stop if you read it."
+        ],
+        [
+          "You took his head.",
+          "On his own throne. My hand, my blade, my god."
+        ],
+        [
+          "Why use me?",
+          "A half-soul cannot die, and I cannot lift a blade to him again. I needed someone who could."
+        ],
+        [
+          "The Wardens?",
+          "Seven Nails I drove myself. I sent you to pull them out, one by one. Seven Nails for one champion."
+        ],
+        [
+          "Ashford burned.",
+          "Because I needed you angry. I am sorry. I would do it again."
+        ],
+        [
+          "And now?",
+          "Now there is only the head, and then the body. Will you finish it with me, or without me?"
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "attack": {
+      "label": "Reject her",
+      "traits": [
+        "maraal_rejected"
+      ]
+    },
+    "spare": {
+      "label": "Forgive her",
+      "line": "'Then let us go and kill a god.'",
+      "traits": [
+        "maraal_forgiven"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 2500,
+    "items": {
+      "netherman:chance_totem": 1
+    }
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_v10r_alone",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_v10f_walking_with_maraal",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_v10_maraal_done"
+    ]
+  }
+}

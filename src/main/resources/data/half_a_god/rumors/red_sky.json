@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:red_sky",
+  "weight": 12,
+  "line": "The Nether sky went red the night the Wither died. Red like something waking.",
+  "conditions": {
+    "required_traits": [
+      "hag_w6_the_withered_crown_done"
+    ]
+  }
+}

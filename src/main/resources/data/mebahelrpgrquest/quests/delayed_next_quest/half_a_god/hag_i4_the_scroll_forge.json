@@ -1,0 +1,27 @@
+{
+  "title": "The Scroll Forge",
+  "summary": "With the cult's teachers dead, the priest wants you ready for whatever comes next. Build a Scroll Forge so you can make spells of your own.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "scroll_forge",
+      "place": "irons_spellbooks:scroll_forge",
+      "amount": 1,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The priest nods. 'Now you can answer fire with fire.'"
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "irons_spellbooks:arcane_essence": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_i4_the_scroll_forge_done"
+    ]
+  }
+}

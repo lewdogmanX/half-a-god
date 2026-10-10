@@ -1,0 +1,94 @@
+{
+  "title": "The Believer's House",
+  "summary": "The pipe-keeper's log says the prisoners were moved to a believer house. Find it, kill the zealots guarding it, and read the ledger in its barrel to learn where Ashford's men are now.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_house",
+      "reach": "netherman:believer_house",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "believers",
+      "kill": "minecraft:vindicator",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The last zealot drops a key on a gold chain."
+    },
+    {
+      "id": "ledger_of_ashford",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "netherman:believer_house",
+      "radius": 30000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "Ledger of Ashford",
+      "tag": "hag_ledger_ashford",
+      "quest_book": {
+        "title": "Ledger of Ashford",
+        "author": "A Believer",
+        "pages": [
+          "Ashford men: 14. Held at the BASTILLE until the portal is ready.",
+          "Then through the Nether to the Quarries. Stock for the Quarries. The Chariot wants gold, and gold wants hands."
+        ]
+      },
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Fourteen men, held in a Bastille."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Cult Zealot",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "count": 4,
+      "structure": "netherman:believer_house",
+      "search_radius": 30000,
+      "max_health": 48,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 1
+          }
+        },
+        "head": "minecraft:golden_helmet"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 420,
+    "items": {
+      "minecraft:golden_carrot": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_a7_the_bastille",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a6_believers_house_done"
+    ]
+  }
+}

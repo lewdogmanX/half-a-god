@@ -1,0 +1,150 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.village_new_home.title",
+    "fallback": "Room for New Neighbors"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.village_new_home.summary",
+    "fallback": "Help me raise this house, stranger, and I will see you paid from our common stores. Not merely for placing stone and timber, but for giving this village room enough to welcome another soul."
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.intro",
+      "fallback": "Stranger, come here a moment. I have a plan in my hands and an empty patch of earth before me, but I need someone steady enough to help turn one into the other."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.offer.0.0",
+          "fallback": "What are you planning?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.offer.0.1",
+          "fallback": "A house. Nothing proud enough for a lord, but strong enough for a family to sleep without counting every sound outside."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.offer.1.0",
+          "fallback": "The village needs more homes?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.offer.1.1",
+          "fallback": "Aye, more than homes. We need proof that this place can grow instead of merely endure. A door that closes, a bed that waits, a furnace with warmth in it, and walls that tell a traveler they may stay."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.offer.2.0",
+          "fallback": "What materials should I place?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.offer.2.1",
+          "fallback": "Build it close by, within seventy blocks of me, so I can mark the plot properly. Lay forty-two cobblestone for the base and frame, thirty-four oak planks for the walls and floor, eighteen oak stairs for the roof, one oak door, three glass panes, one white bed, and one furnace."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.offer.3.0",
+          "fallback": "And if the house is finished?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.offer.3.1",
+          "fallback": "Then we stop speaking only of surviving the next night, and start speaking of who might arrive after it. A village with room to spare is a village with a future."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.return",
+      "fallback": "I walked through the doorway and heard my own footsteps answer me. That is how a village grows: one empty room made ready for someone brave enough to arrive."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.reward",
+      "fallback": "You gave us more than walls and a roof. You gave us a place where a new neighbor may set down their pack and call this village home. This helm belonged to an old watchman who once saved half the village when the river flooded the lower fields. It has waited long enough in our stores. After what you have built for us, it is yours by right."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.village_new_home.dialogue.done",
+      "fallback": "The new house is waiting. Soon, I think, it will have smoke from the chimney and voices by the bed."
+    }
+  },
+  "goals": [
+    {
+      "id": "place_cobblestone",
+      "place": "minecraft:cobblestone",
+      "amount": 42,
+      "range": 70
+    },
+    {
+      "id": "place_oak_planks",
+      "place": "minecraft:oak_planks",
+      "amount": 34,
+      "range": 70
+    },
+    {
+      "id": "place_oak_stairs",
+      "place": "minecraft:oak_stairs",
+      "amount": 18,
+      "range": 70
+    },
+    {
+      "id": "place_oak_door",
+      "place": "minecraft:oak_door",
+      "amount": 1,
+      "range": 70
+    },
+    {
+      "id": "place_glass_panes",
+      "place": "minecraft:glass_pane",
+      "amount": 3,
+      "range": 70
+    },
+    {
+      "id": "place_white_bed",
+      "place": "minecraft:white_bed",
+      "amount": 1,
+      "range": 70
+    },
+    {
+      "id": "place_furnace",
+      "place": "minecraft:furnace",
+      "amount": 1,
+      "range": 70
+    }
+  ],
+  "rewards": {
+    "xp": 360,
+    "items": {
+      "minecraft:emerald": 10,
+      "minecraft:iron_helmet": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:protection",
+            "level": 2
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 1
+          },
+          {
+            "id": "minecraft:respiration",
+            "level": 3
+          }
+        ]
+      },
+      "minecraft:lantern": 4,
+      "minecraft:bread": 12
+    }
+  },
+  "traits": {
+    "complete": [
+      "village_builder",
+      "hag_base_village_new_home_done"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_the_first_letter"
+    ]
+  }
+}

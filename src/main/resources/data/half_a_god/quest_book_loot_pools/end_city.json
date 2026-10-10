@@ -1,0 +1,10 @@
+{
+  "table": "minecraft:chests/end_city_treasure",
+  "drop_chance": 0.3,
+  "books": [
+    {
+      "quest": "mebahelrpgrquest:hag_lp2_end_city",
+      "weight": 1
+    }
+  ]
+}

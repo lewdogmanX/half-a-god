@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:vael_spared",
+  "weight": 12,
+  "line": "A man in a cult robe was seen praying alone on the road. Praying for forgiveness, they say.",
+  "conditions": {
+    "required_traits": [
+      "vael_spared"
+    ]
+  }
+}

@@ -1,0 +1,201 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.the_sixth_voice.title",
+    "fallback": "The Sixth Voice"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.the_sixth_voice.summary",
+    "fallback": "A stranger has appeared nearby. He knows Merrick by name, and speaks as though you have forgotten him too."
+  },
+  "map": {
+    "icon": "minecraft:echo_shard"
+  },
+  "goals": [
+    {
+      "id": "confront_the_sixth",
+      "kill": "minecraft:wandering_trader",
+      "amount": 1,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:wandering_trader",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.name",
+      "fallback": "Elias Rook"
+    },
+    "spawn_origin": "player",
+    "spawn_min_radius": 12,
+    "spawn_max_radius": 22,
+    "spawn_on_accept": true,
+    "spare": true,
+    "glow": false,
+    "max_health": 40,
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.target_line",
+      "fallback": "There you are. Where's Merrick?"
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.0.0",
+          "fallback": "Who are you?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.0.1",
+          "fallback": "Don't start that again. Not after what happened with Merrick."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.1.0",
+          "fallback": "I've never seen you before."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.1.1",
+          "fallback": "You said that at the winter camp. Merrick laughed until he spilled the stew. Vessa did not find it funny."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.2.0",
+          "fallback": "What winter camp?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.2.1",
+          "fallback": "The one with six places around the fire."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.3.0",
+          "fallback": "Six?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.3.1",
+          "fallback": "Jorn. Vessa. Haldrin. Merrick. You. Me."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.4.0",
+          "fallback": "There were only three of them at the beginning."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.4.1",
+          "fallback": "At the beginning of what?"
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.5.0",
+          "fallback": "Where did you come from?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.5.1",
+          "fallback": "I came looking for the five of you. I was late. I am always late."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.6.0",
+          "fallback": "Merrick never mentioned you."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.talk.6.1",
+          "fallback": "He did. You just don't remember the part where he begged us not to say my name."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.attack_choice_label",
+      "fallback": "You're not getting into my head."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spare_choice_label",
+      "fallback": "Leave. Do not come back."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spared_line",
+      "fallback": "You said that last time too."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.post_spare_line",
+      "fallback": "Keep this. You gave it to me before you forgot."
+    },
+    "spare_handoff": {
+      "item": "minecraft:written_book",
+      "count": 1,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spare_handoff.name",
+        "fallback": "Six Places at the Fire"
+      },
+      "depart_after_spare": true,
+      "consume_on_claim": false,
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spare_handoff.quest_book.title",
+          "fallback": "Six Places at the Fire"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spare_handoff.quest_book.author",
+          "fallback": "Elias Rook"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spare_handoff.quest_book.pages.0",
+            "fallback": "Jorn. Vessa. Haldrin. Merrick. You. Elias."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spare_handoff.quest_book.pages.1",
+            "fallback": "Six places at the fire. Six bowls. Six bedrolls. Six voices when the rain came down."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spare_handoff.quest_book.pages.2",
+            "fallback": "The old page said there were five shadows. Mine remembers six."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spare_handoff.quest_book.pages.3",
+            "fallback": "One of us is always the newest."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spare_handoff.quest_book.pages.4",
+            "fallback": "The newest is always certain the others were there first."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spare_handoff.quest_book.pages.5",
+            "fallback": "Merrick thought he was the fourth. You thought you were the fifth."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.the_sixth_voice.threat.spare_handoff.quest_book.pages.6",
+            "fallback": "Do not ask who comes seventh."
+          }
+        ]
+      }
+    },
+    "spare_rewards": {
+      "xp": 300,
+      "items": {
+        "minecraft:chorus_fruit": 4
+      }
+    }
+  },
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:emerald": 5,
+      "minecraft:ender_pearl": 1
+    }
+  },
+  "traits": {
+    "spare": [
+      "the_sixth_was_counted"
+    ],
+    "attack": [
+      "sixth_voice_silenced"
+    ],
+    "complete": [
+      "hag_base_fourth_member_done"
+    ]
+  }
+}

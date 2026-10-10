@@ -1,0 +1,38 @@
+{
+  "title": "The Old Eye",
+  "summary": "The first eye, said to have belonged to one of the great Sandworms. Where: desert pyramids and dungeons.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_eye",
+      "collect": "endrem:old_eye",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The Old Eye stares back at you. (It goes back in your pack.)",
+      "name": "Old Eye (given back)"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "endrem:old_eye": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_ea2_the_rogue_eye",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_ea1_the_old_eye_done"
+    ]
+  }
+}

@@ -1,0 +1,96 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.title",
+    "fallback": "A Clock for a New Home"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.summary",
+    "fallback": "A newly arrived villager needs a clock for their home and asks you to gather the materials required to craft one."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:village_arrival_2_armour_stand"
+  },
+  "requires": {
+    "traits": [
+      "quest_discovered:mebahelrpgrquest:village_arrival_1_clock"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.intro",
+      "fallback": "Hey there, are you new to this village too?"
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.offer.0.0",
+          "fallback": "No, just exploring around."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.offer.0.1",
+          "fallback": "Huh, an explorer you say? You must come across a lot of different resources right?"
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.offer.1.0",
+          "fallback": "Where is this going?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.offer.1.1",
+          "fallback": "This? Nowhere. But you? You're going somewhere."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.offer.2.0",
+          "fallback": "Get to the point."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.offer.2.1",
+          "fallback": "Very well, I have just recently moved into this village, thus I need some extra additions to my house. I have the usual crafting table, furnace, bed and chest sure, but I need more. That is where you come in."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.offer.3.0",
+          "fallback": "Go outside and look?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.offer.3.1",
+          "fallback": "Oh shush, I mean from within my own home - and don't say look out the windows. I need a clock, useful for more things than just seeing when night falls. Do you think you could make me one? I'll reward you if so."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.return",
+      "fallback": "Marvelous! Many thanks, stranger - this shall look wonderful on my wall. Here you go."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.reward",
+      "fallback": "A fine reward for a fine explorer."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.village_arrival_1_clock.dialogue.done",
+      "fallback": "The clock is working perfectly. I have not missed a single sunset since."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_redstone_dust",
+      "collect": "minecraft:redstone",
+      "amount": 1
+    },
+    {
+      "id": "bring_gold_ingots",
+      "collect": "minecraft:gold_ingot",
+      "amount": 4
+    }
+  ],
+  "rewards": {
+    "xp": 120,
+    "items": {
+      "minecraft:emerald": 4
+    }
+  }
+}

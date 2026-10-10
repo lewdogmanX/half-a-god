@@ -1,0 +1,71 @@
+{
+  "title": "The Supply Line",
+  "summary": "Blackwater moves product through a pillager outpost. Break the runners there and take their manifest.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_outpost",
+      "reach": "minecraft:pillager_outpost",
+      "radius": 12000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "runners",
+      "kill": "minecraft:vindicator",
+      "amount": 6,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The runners are down. Their manifest names a sorcerer in a dark forest."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Blackwater Runner",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 14,
+      "count": 6,
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 12000,
+      "max_health": 56,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:emerald": 24,
+      "minecraft:crossbow": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_br3_the_bookkeeper",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_br2_the_supply_line_done"
+    ]
+  }
+}

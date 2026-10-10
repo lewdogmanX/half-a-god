@@ -1,0 +1,40 @@
+{
+  "title": "Roots That Bite",
+  "summary": "Rootmin, flower-headed things that spit at anything that walks past, are attacking the Queen's workers in the floral meadows. Clear a few out of the way.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "rootmin",
+      "kill": "the_bumblezone:rootmin",
+      "amount": 3,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The workers come back to the flowers."
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:golden_carrot": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_bz8_audience_with_the_queen",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "the_bumblezone:the_bumblezone"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_bz7_roots_that_bite_done"
+    ]
+  }
+}

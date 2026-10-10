@@ -1,0 +1,148 @@
+{
+  "title": "Brother Vael",
+  "summary": "The freed men named the man who runs the cult's Nether trade: Brother Vael, a steward who buys gold, skulls and people. He is at the fortress. Hear what he has to say, then spare him or kill him.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "face_vael",
+      "kill": "minecraft:evoker",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Whatever happens next, the cult will hear of it."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:evoker",
+      "name": "Brother Vael",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "structure": "minecraft:fortress",
+      "search_radius": 12000,
+      "max_health": 140,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "You run the trade.",
+          "I count. I am good at counting. Gold. Skulls. People."
+        ],
+        [
+          "Skulls?",
+          "Wither skulls. Three of them make a crown. The Chariot wants a crown."
+        ],
+        [
+          "Why tell me?",
+          "Because you will kill me or you won't, and either way someone should know."
+        ]
+      ],
+      "attack_ambushes": [
+        {
+          "entity": "minecraft:wither_skeleton",
+          "name": "Vael's Guard",
+          "count": 3,
+          "max_health": 60,
+          "equipment": {
+            "mainhand": "minecraft:stone_sword"
+          }
+        }
+      ],
+      "spare_handoff": {
+        "item": "minecraft:written_book",
+        "name": "Vael's Confession",
+        "count": 1,
+        "quest_book": {
+          "title": "Vael's Confession",
+          "author": "Brother Vael",
+          "pages": [
+            "I was a cartographer once. Then I was hungry. Then I was faithful.",
+            "They are buying wither skulls. If the Chariot raises the Wither, it will have a crown and an army.\n\nStop them. I cannot."
+          ]
+        }
+      },
+      "drop_on_death": [
+        {
+          "type": "item",
+          "item": "minecraft:written_book",
+          "count": 1,
+          "name": "The Steward's Orders",
+          "quest_book": {
+            "title": "The Steward's Orders",
+            "author": "The Chariot",
+            "pages": [
+              "Steward. Buy every wither skull in the Nether. Three for the crown.",
+              "The Wither will wake for us, and the old Nail of Ash will break."
+            ]
+          }
+        }
+      ]
+    }
+  ],
+  "choice": {
+    "attack": {
+      "label": "End him",
+      "traits": [
+        "vael_slain"
+      ]
+    },
+    "spare": {
+      "label": "Let him go",
+      "line": "Vael bows. 'I will not forget.'",
+      "traits": [
+        "vael_spared"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:diamond": 3
+    }
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_a12k_the_stewards_guard",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:the_nether"
+          ]
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_a12s_vaels_map",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:the_nether"
+          ]
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_a12_brother_vael_done"
+    ]
+  }
+}

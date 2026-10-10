@@ -1,0 +1,182 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.title",
+    "fallback": "The Woman Who Knew the Bell"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.summary",
+    "fallback": "Find Roadwarden Nessa in another village and ask why a pillager ledger remembers Mara Porridge and Buttercup's bell."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:most_important_cow_chain_4_the_price_of_a_queen"
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.intro",
+      "fallback": "Take Mara's name to Roadwarden Nessa. I would rather hear the old story from someone who did not spend years learning how not to tell it."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.offer.0.0",
+          "fallback": "Who was Mara?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.offer.0.1",
+          "fallback": "Ask Nessa first. If I tell you now, I will make myself sound kinder than I was."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.offer.1.0",
+          "fallback": "Why another village?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.offer.1.1",
+          "fallback": "Nessa guarded the old road before these houses had roofs. If the pillagers wrote Mara's name, Nessa will know why."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.return",
+      "fallback": "So Nessa told you. Good. I have hidden behind a cow long enough."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.return_steps.0.0",
+          "fallback": "Mara was your daughter."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.return_steps.0.1",
+          "fallback": "Yes. My girl. Faster than any horse when she wanted to be, louder than a bell when she was angry, and far too brave for a father who wanted her boring and alive."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.return_steps.1.0",
+          "fallback": "She trained Buttercup."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.return_steps.1.1",
+          "fallback": "Mara carried messages between villages. She taught Buttercup to pull away from pillager tar, horn leather, and banner dye. The cow was supposed to warn her before an ambush."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.return_steps.2.0",
+          "fallback": "Why call Buttercup a queen?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.return_steps.2.1",
+          "fallback": "Because saying 'the queen predicts danger' made people laugh. Saying 'my dead daughter taught her that' made them look at me with pity. I found laughter easier."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.reward",
+      "fallback": "Here. Nessa sent these coins back with you. Mara used to spend them on bread and swear she had earned every one."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.dialogue.done",
+      "fallback": "Buttercup is not an oracle. She is the last thing Mara trained well enough to outlive her."
+    }
+  },
+  "goals": [
+    {
+      "id": "speak_with_roadwarden_nessa",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.goals.0.name",
+        "fallback": "Roadwarden Nessa"
+      }
+    },
+    {
+      "id": "return_to_tobyn",
+      "return": true,
+      "amount": 1,
+      "stage": 1
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:villager",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.threat.name",
+      "fallback": "Roadwarden Nessa"
+    },
+    "structure": "minecraft:villages",
+    "search_radius": 4200,
+    "min_structure_distance": 700,
+    "spawn_radius": 10,
+    "spawn_on_accept": true,
+    "spare": false,
+    "glow": false,
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.threat.target_line",
+      "fallback": "That name has been dead a long time. Tell me you did not come here because of the cow."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.threat.talk.0.0",
+          "fallback": "You knew Mara Porridge?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.threat.talk.0.1",
+          "fallback": "I trained her on the road. She could read hoofprints, smoke, and bad intentions before most guards finished breakfast."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.threat.talk.1.0",
+          "fallback": "What did Buttercup have to do with it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.threat.talk.1.1",
+          "fallback": "Mara raised that cow from a calf. She trained her to shy from pillager tar and horn leather. If Buttercup balked, Mara stopped the cart and searched the road."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.threat.talk.2.0",
+          "fallback": "How did Mara die?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.threat.talk.2.1",
+          "fallback": "A raiding party found the east road. Mara sent Buttercup home, rang the warning bell, then led the riders away from the village. The cow came back. Mara did not."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.threat.talk.3.0",
+          "fallback": "Tobyn never told me any of this."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_3_the_woman_who_knew_the_bell.threat.talk.3.1",
+          "fallback": "Tobyn stopped saying Mara's name for years. If he turned her cow into royalty, perhaps that was the only way he could keep speaking about either of them."
+        }
+      ]
+    ]
+  },
+  "rewards": {
+    "xp": 220,
+    "items": {
+      "minecraft:emerald": 8,
+      "minecraft:bread": 5
+    }
+  },
+  "traits": {
+    "complete": [
+      "mara_porridge_truth_known"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:most_important_cow_chain_2_the_cow_has_spoken"
+    ]
+  }
+}

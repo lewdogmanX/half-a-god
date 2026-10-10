@@ -1,0 +1,55 @@
+{
+  "title": "Helvar's Oath",
+  "summary": "Helvar couldn't speak. He left his oath written down in a barrel in the arena. Read it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "oath",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "block_factorys_bosses:underworld_arena",
+      "radius": 20000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "Helvar's Oath",
+      "tag": "hag_helvars_oath",
+      "quest_book": {
+        "title": "Helvar's Oath",
+        "author": "Helvar",
+        "pages": [
+          "I hold the Gate. I was set here by the one who took his head.",
+          "If I fall, the door I kept shut will open.\n\nIf you are reading this, you have killed five of us already.\n\nStop."
+        ]
+      },
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Five of us already. What does he mean, 'us'?"
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:golden_apple": 3
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_u3_back_into_hell",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:the_nether"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_u2_helvars_oath_done"
+    ]
+  }
+}

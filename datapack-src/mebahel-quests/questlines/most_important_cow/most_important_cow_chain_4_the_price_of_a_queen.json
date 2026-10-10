@@ -1,0 +1,192 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.title",
+    "fallback": "The Price of a Queen"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.summary",
+    "fallback": "A pillager envoy comes to bargain for Buttercup. Hear his terms, then decide whether a cow is worth risking two villages."
+  },
+  "flow": {
+    "on_kill": "mebahelrpgrquest:most_important_cow_chain_refuse_5_long_live_the_queen",
+    "on_spare": "mebahelrpgrquest:most_important_cow_chain_bargain_5_a_quiet_road"
+  },
+  "traits": {
+    "attack": [
+      "buttercup_bargain_refused"
+    ],
+    "spare": [
+      "buttercup_bargain_accepted"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.dialogue.intro",
+      "fallback": "Someone tied black cloth to Buttercup's fence before dawn. Then a pillager walked into the road alone and asked for an audience with the crown."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.dialogue.offer.0.0",
+          "fallback": "They actually called her the crown?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.dialogue.offer.0.1",
+          "fallback": "No. That part was mine. I refuse to let armed extortion ruin a perfectly good title."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.dialogue.offer.1.0",
+          "fallback": "What does the envoy want?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.dialogue.offer.1.1",
+          "fallback": "Buttercup. Nothing else. He says the tunnels stop, the roads stay quiet, and both villages are left alone if we hand her over."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.dialogue.offer.2.0",
+          "fallback": "What do you want me to do?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.dialogue.offer.2.1",
+          "fallback": "Hear him. Then choose. I love that cow for reasons I should have admitted years ago, but I will not ask you to trade a village for my grief."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.dialogue.return",
+      "fallback": "You killed the envoy. Then the bargain is dead with him, and the people who sent him will come to collect an answer in iron."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.dialogue.reward",
+      "fallback": "Take these emeralds now. If those banners are really coming, I would rather you spend them before the doors are barred."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.dialogue.done",
+      "fallback": "There is no bargain left. Buttercup stays. Now we find out what that promise costs."
+    }
+  },
+  "goals": [
+    {
+      "id": "hear_rath_out",
+      "talk": "minecraft:pillager",
+      "amount": 1,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.goals.0.name",
+        "fallback": "Rath the Tallyman"
+      }
+    },
+    {
+      "id": "kill_rath",
+      "kill": "minecraft:pillager",
+      "amount": 1,
+      "attack_only": true,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:pillager",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.name",
+      "fallback": "Rath the Tallyman"
+    },
+    "spawn_min_radius": 18,
+    "spawn_max_radius": 28,
+    "spawn_origin": "quest_giver",
+    "spawn_on_accept": true,
+    "spare": true,
+    "glow": false,
+    "max_health": 110.0,
+    "equipment": {
+      "mainhand": "minecraft:crossbow"
+    },
+    "offer_line": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.offer_line",
+      "fallback": "The envoy is waiting beyond the houses. He came alone because he thinks the offer is too useful for us to kill him before hearing it."
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.target_line",
+      "fallback": "Good. Someone here can listen without mooing."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.talk.0.0",
+          "fallback": "Why do you care about one cow?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.talk.0.1",
+          "fallback": "Because that cow has ruined six hidden approaches, three tunnel mouths, and one very expensive ambush. Men have died because she smelled us before your guards saw us."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.talk.1.0",
+          "fallback": "You expect me to believe you'll leave the villages alone?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.talk.1.1",
+          "fallback": "I expect you to believe arithmetic. One cow costs less than two villages. Give us Buttercup at the old outpost and the north road closes."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.talk.2.0",
+          "fallback": "What happens to her?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.talk.2.1",
+          "fallback": "She stops ringing warnings. You do not need the rest of the answer to understand the bargain."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.attack_choice_label",
+      "fallback": "No bargain. You leave in pieces."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.spare_choice_label",
+      "fallback": "If one cow buys two villages, I'll hear the exchange."
+    },
+    "attack_return_line": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.attack_return_line",
+      "fallback": "Then tell your captain the answer was no."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.spared_line",
+      "fallback": "Practical. I almost respect you."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.post_spare_line",
+      "fallback": "Bring the bell-cow to the old outpost. Come with the old man if he insists. At sunset, the road becomes quiet."
+    },
+    "villager_spared_line": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_4_the_price_of_a_queen.threat.villager_spared_line",
+      "fallback": "You agreed to give them Buttercup. I said the choice was yours, so I will not call you a liar for making it. I only wish it hurt less."
+    },
+    "rewards_from_giver": true,
+    "spare_handoff": {
+      "depart_after_spare": true
+    },
+    "spare_rewards": {
+      "xp": 100,
+      "items": {
+        "minecraft:emerald": 3
+      }
+    }
+  },
+  "rewards": {
+    "xp": 180,
+    "items": {
+      "minecraft:emerald": 6
+    }
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:most_important_cow_chain_3_the_woman_who_knew_the_bell"
+    ]
+  }
+}

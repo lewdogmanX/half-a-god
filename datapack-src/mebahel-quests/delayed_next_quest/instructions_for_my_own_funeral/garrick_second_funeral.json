@@ -1,0 +1,306 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.garrick_second_funeral.title",
+    "fallback": "Instructions for My Second Funeral"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.garrick_second_funeral.summary",
+    "fallback": "Garrick's correction is very clear: return to the grave, use the bell, and this time speak to him before killing him."
+  },
+  "sequential_objectives": true,
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:garrick_third_funeral",
+        "delay_ticks": 6000,
+        "conditions": {
+          "dimensions": [
+            "minecraft:overworld"
+          ],
+          "player_not_in_combat": true
+        },
+        "retry_delay_ticks": 600
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:garrick_third_funeral",
+        "delay_ticks": 12000,
+        "conditions": {
+          "dimensions": [
+            "minecraft:overworld"
+          ],
+          "player_not_in_combat": true
+        },
+        "retry_delay_ticks": 600
+      }
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_the_bell",
+      "collect": "minecraft:bell",
+      "amount": 1,
+      "stage": 0
+    },
+    {
+      "id": "bring_one_candle",
+      "collect": "minecraft:candle",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "return_to_garricks_grave",
+      "reach": "minecraft:ruined_portal",
+      "radius": 3500,
+      "range": 64,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "place_the_bell",
+      "place": "minecraft:bell",
+      "structure": "minecraft:ruined_portal",
+      "amount": 1,
+      "range": 10,
+      "stage": 2
+    },
+    {
+      "id": "place_the_last_candle",
+      "place": "minecraft:candle",
+      "structure": "minecraft:ruined_portal",
+      "amount": 1,
+      "range": 10,
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "wait_for_garrick_again",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 3,
+      "auto_advance": true
+    },
+    {
+      "id": "hear_garrick_out",
+      "talk": "minecraft:zombie",
+      "amount": 1,
+      "stage": 4,
+      "quest_item_name": {
+        "translate": "quest.mebahelrpgrquest.garrick_second_funeral.goals.6.quest_item_name",
+        "fallback": "Garrick Bell"
+      }
+    },
+    {
+      "id": "kill_garrick_a_third_time",
+      "kill": "minecraft:zombie",
+      "amount": 1,
+      "stage": 4,
+      "attack_only": true,
+      "from_threats": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:zombie",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.name",
+      "fallback": "Garrick Bell, Still Filing an Appeal"
+    },
+    "stage": 4,
+    "spawn_origin": "quest_target",
+    "spawn_min_radius": 3,
+    "spawn_max_radius": 7,
+    "spawn_on_accept": true,
+    "spare": true,
+    "glow": false,
+    "max_health": 175,
+    "equipment": {
+      "mainhand": "minecraft:air",
+      "head": "minecraft:golden_helmet",
+      "chest": "minecraft:chainmail_chestplate"
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.target_line",
+      "fallback": "Before you swing that sword: Paragraph Seventeen. Please."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.talk.0.0",
+          "fallback": "You stood up again."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.talk.0.1",
+          "fallback": "Yes. You will be pleased to learn that standing is still not an act of aggression."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.talk.1.0",
+          "fallback": "Why do you keep coming back?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.talk.1.1",
+          "fallback": "If I knew, it would already be Paragraph One. The Bell family has had difficulty staying buried for three generations."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.talk.2.0",
+          "fallback": "And the missing paragraph?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.talk.2.1",
+          "fallback": "Corwin copied sixteen, became distracted, and continued at eighteen. I have considered haunting him on principle."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.talk.3.0",
+          "fallback": "So what happens now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.talk.3.1",
+          "fallback": "You let me finish a sentence. Then I give you the third volume, because Corwin has managed to make this situation worse."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.attack_choice_label",
+      "fallback": "I am not risking a fourth resurrection."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spare_choice_label",
+      "fallback": "Fine. Finish the sentence."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spared_line",
+      "fallback": "Thank you. This is already the most successful funeral I have attended."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.post_spare_line",
+      "fallback": "Take the third volume. The good news is that the next funeral is not mine."
+    },
+    "spare_handoff": {
+      "item": "minecraft:written_book",
+      "count": 1,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spare_handoff.name",
+        "fallback": "Instructions for My Third Funeral"
+      },
+      "depart_after_spare": true,
+      "consume_on_claim": false,
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spare_handoff.quest_book.title",
+          "fallback": "My Third Funeral Instructions"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spare_handoff.quest_book.author",
+          "fallback": "Garrick Bell"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spare_handoff.quest_book.pages.0",
+            "fallback": "THIRD FUNERAL. IMPORTANT CORRECTION: the title is now misleading. This funeral is not mine."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spare_handoff.quest_book.pages.1",
+            "fallback": "Corwin has taken the family bell. He says he intends to prove that my repeated deaths are caused by poor burial technique rather than anything supernatural."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spare_handoff.quest_book.pages.2",
+            "fallback": "His experimental procedure includes ringing the bell four times because I explicitly wrote never to ring it three times."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spare_handoff.quest_book.pages.3",
+            "fallback": "He has gone to a village to perform what he calls a Final Improved Funeral. He is not qualified to improve funerals."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spare_handoff.quest_book.pages.4",
+            "fallback": "Find Corwin. If he is alive, stop him. If he is dead, I regret to say that you already know the procedure better than he did."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spare_handoff.quest_book.pages.5",
+            "fallback": "Do not let him improvise. I have written this sentence in capital letters in the original manuscript."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.spare_handoff.quest_book.pages.6",
+            "fallback": "There will NOT be a fourth funeral. If a fourth volume bearing my name appears, burn it unopened."
+          }
+        ]
+      }
+    },
+    "drop_on_death": [
+      {
+        "type": "item",
+        "item": "minecraft:written_book",
+        "count": 1,
+        "name": {
+          "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.drop_on_death.0.name",
+          "fallback": "Instructions for My Third Funeral"
+        },
+        "tag": "garrick_bell_third_funeral",
+        "quest_book": {
+          "title": {
+            "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.drop_on_death.0.quest_book.title",
+            "fallback": "My Third Funeral Instructions"
+          },
+          "author": {
+            "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.drop_on_death.0.quest_book.author",
+            "fallback": "Garrick Bell"
+          },
+          "pages": [
+            {
+              "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.drop_on_death.0.quest_book.pages.0",
+              "fallback": "THIRD FUNERAL. IMPORTANT CORRECTION: the title is now misleading. This funeral is not mine."
+            },
+            {
+              "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.drop_on_death.0.quest_book.pages.1",
+              "fallback": "Corwin has taken the family bell. He says he intends to prove that my repeated deaths are caused by poor burial technique rather than anything supernatural."
+            },
+            {
+              "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.drop_on_death.0.quest_book.pages.2",
+              "fallback": "His experimental procedure includes ringing the bell four times because I explicitly wrote never to ring it three times."
+            },
+            {
+              "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.drop_on_death.0.quest_book.pages.3",
+              "fallback": "He has gone to a village to perform what he calls a Final Improved Funeral. He is not qualified to improve funerals."
+            },
+            {
+              "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.drop_on_death.0.quest_book.pages.4",
+              "fallback": "Find Corwin. If he is alive, stop him. If he is dead, I regret to say that you already know the procedure better than he did."
+            },
+            {
+              "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.drop_on_death.0.quest_book.pages.5",
+              "fallback": "Do not let him improvise. I have written this sentence in capital letters in the original manuscript."
+            },
+            {
+              "translate": "quest.mebahelrpgrquest.garrick_second_funeral.threat.drop_on_death.0.quest_book.pages.6",
+              "fallback": "There will NOT be a fourth funeral. If a fourth volume bearing my name appears, burn it unopened."
+            }
+          ]
+        }
+      }
+    ]
+  },
+  "rewards": {
+    "xp": 300,
+    "items": {
+      "minecraft:emerald": 7,
+      "minecraft:candle": 2
+    }
+  },
+  "traits": {
+    "spare": [
+      "garrick_heard_out"
+    ],
+    "attack": [
+      "garrick_killed_third_time"
+    ],
+    "complete": [
+      "garrick_second_funeral_completed"
+    ]
+  }
+}

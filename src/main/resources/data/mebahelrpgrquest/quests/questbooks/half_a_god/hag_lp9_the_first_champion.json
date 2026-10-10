@@ -1,0 +1,39 @@
+{
+  "title": "The First Champion",
+  "summary": "All eight pages found. The first champion asked to be buried 'where the old stones are, where the road used to be'. Find the trail ruins and pay your respects to the one who walked this road before you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_grave",
+      "reach": "minecraft:trail_ruins",
+      "radius": 20000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "A grave with no name. Someone has left fresh flowers. Recently. Only one person would know it's here."
+    }
+  ],
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "minecraft:enchanted_golden_apple": 1,
+      "minecraft:diamond": 6
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_lp9_the_first_champion_done",
+      "hag_first_champion_found"
+    ]
+  },
+  "quest_book": {
+    "title": "The Last Page",
+    "author": "Old Mara",
+    "color": "gray",
+    "pages": [
+      "You found all of them. I didn't think anyone ever would.\n\nShe was the first. I loved her like a daughter and sent her to die.",
+      "Go to her grave if you want. Don't tell me what it looks like."
+    ],
+    "auto_claim_rewards": true
+  }
+}

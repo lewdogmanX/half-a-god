@@ -1,0 +1,48 @@
+{
+  "title": "Extinguished",
+  "summary": "The hymn says the Sun Spirit threw Azriel the Charioteer and Maraal out of heaven. Find the Gold Dungeon and kill the Sun Spirit before it does the same to you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_gold",
+      "reach": "aether:gold_dungeon",
+      "radius": 15000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "sun_spirit",
+      "kill": "aether:sun_spirit",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Sun Spirit cast Azriel down. With it gone, nothing in heaven remembers him."
+    }
+  ],
+  "rewards": {
+    "xp": 2500,
+    "items": {
+      "minecraft:golden_apple": 4
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_h10_fireproof",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_h9_extinguished_done"
+    ]
+  }
+}

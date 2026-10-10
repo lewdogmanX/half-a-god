@@ -1,0 +1,223 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.title",
+    "fallback": "A Very Reasonable Treasure Map"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.summary",
+    "fallback": "Follow Bastian Quill's perfectly safe, entirely uncursed instructions to recover the treasure he was regrettably unable to collect himself."
+  },
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "bring_the_diplomatic_cod",
+      "collect": "minecraft:cod",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "find_bastians_landmark",
+      "reach": "minecraft:ruined_portal",
+      "radius": 3500,
+      "range": 64,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "place_the_protective_pumpkin",
+      "place": "minecraft:carved_pumpkin",
+      "structure": "minecraft:ruined_portal",
+      "amount": 1,
+      "range": 12,
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "wait_for_a_reasonable_hour",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 3,
+      "auto_advance": true
+    },
+    {
+      "id": "settle_bastians_old_accounts",
+      "kill": "minecraft:zombie",
+      "amount": 3,
+      "stage": 4,
+      "from_threats": true,
+      "auto_advance": true
+    },
+    {
+      "id": "read_bastians_receipt",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:ruined_portal",
+      "radius": 3500,
+      "stage": 5,
+      "in_chest": true,
+      "container": "minecraft:chest",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.goals.5.name",
+        "fallback": "Bastian's Receipt"
+      },
+      "tag": "bastian_quill_curse_receipt",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.goals.5.quest_book.title",
+          "fallback": "Receipt of Transfer"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.goals.5.quest_book.author",
+          "fallback": "Bastian Quill"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.goals.5.quest_book.pages.0",
+            "fallback": "TRANSFER RECEIPT\n\nOne (1) persistent funerary curse, origin disputed, transferred in full to the bearer who completed the prescribed rite."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.goals.5.quest_book.pages.1",
+            "fallback": "Prescribed rite:\n\nOne fish surrendered.\nOne smiling guardian raised.\nOne moon witnessed.\nThree creditors returned to rest.\n\nAll conditions satisfied."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.goals.5.quest_book.pages.2",
+            "fallback": "If you are reading this, congratulations. The treasure is now legally yours.\n\nSo is everything that was attached to it."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.goals.5.quest_book.pages.3",
+            "fallback": "Before you become upset, please note that I did write 'entirely uncursed' in the map.\n\nI did not write 'the treasure'."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.goals.5.quest_book.pages.4",
+            "fallback": "I recommend avoiding mirrors for several days.\n\nWarmest regards,\nBastian Quill\nFormerly Cursed"
+          }
+        ]
+      }
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.threats.0.name",
+        "fallback": "Bastian's Former Partner"
+      },
+      "stage": 4,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 55,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword",
+        "head": "minecraft:leather_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.threats.1.name",
+        "fallback": "Bastian's Former Partner"
+      },
+      "stage": 4,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 11,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 55,
+      "equipment": {
+        "mainhand": "minecraft:stone_axe",
+        "head": "minecraft:leather_helmet"
+      }
+    },
+    {
+      "entity": "minecraft:zombie",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.threats.2.name",
+        "fallback": "Bastian's Former Partner"
+      },
+      "stage": 4,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 7,
+      "spawn_max_radius": 12,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 65,
+      "equipment": {
+        "mainhand": "minecraft:iron_shovel",
+        "head": "minecraft:golden_helmet"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 450,
+    "items": {
+      "minecraft:emerald": 12,
+      "minecraft:gold_ingot": 4,
+      "minecraft:ender_pearl": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "bastian_quill_curse_transferred",
+      "hag_base_treasure_map_done"
+    ]
+  },
+  "quest_book": {
+    "title": {
+      "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.quest_book.title",
+      "fallback": "A Very Reasonable Treasure Map"
+    },
+    "author": {
+      "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.quest_book.author",
+      "fallback": "Bastian Quill, Licensed Treasure Hunter"
+    },
+    "color": "yellow",
+    "pages": [
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.quest_book.pages.0",
+        "fallback": "A VERY REASONABLE TREASURE MAP\n\nProperty of Bastian Quill, licensed treasure hunter, amateur cartographer, and man suffering from absolutely no curse whatsoever."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.quest_book.pages.1",
+        "fallback": "First, a legal clarification.\n\nI am not cursed.\n\nI have never been cursed.\n\nAny screaming heard while I owned this map was unrelated to the map and, in several cases, exaggerated."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.quest_book.pages.2",
+        "fallback": "The treasure lies beside an old ruined Nether portal.\n\nYou will recognize the correct sort of place immediately: broken stone, unpleasant air, and the strong feeling that someone made a poor decision there."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.quest_book.pages.3",
+        "fallback": "Before going, acquire one fresh cod.\n\nThis is for diplomacy.\n\nIf the cod vanishes from your possession during the journey, diplomacy has succeeded. Do not investigate further."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.quest_book.pages.4",
+        "fallback": "At the ruined portal, place a carved pumpkin close to the old frame.\n\nThe pumpkin is for protection.\n\nDo not put the cod on your head and attempt to negotiate with the pumpkin. I tried that."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.quest_book.pages.5",
+        "fallback": "Then wait until night.\n\nThis is important. Treasure of this quality dislikes daylight.\n\nSo did my three business partners, toward the end."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.quest_book.pages.6",
+        "fallback": "If three dead men appear, remain calm.\n\nThey may claim I betrayed them, stole the map, abandoned them underground, or used them to test a curse-transfer ritual.\n\nThese accusations are technically historical."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.quest_book.pages.7",
+        "fallback": "Once they are dealt with, search the portal ruins carefully. I left a receipt with the treasure.\n\nPlease read it before spending anything.\n\nFor bookkeeping reasons."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_a_very_reasonable_treasure_map.quest_book.pages.8",
+        "fallback": "One final assurance:\n\nThe route is safe.\nThe instructions are reasonable.\nThe treasure is valuable.\n\nTwo of those statements are entirely true."
+      }
+    ],
+    "auto_claim_rewards": true
+  }
+}

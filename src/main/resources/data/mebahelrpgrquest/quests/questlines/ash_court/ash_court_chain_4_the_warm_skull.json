@@ -1,0 +1,229 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.title",
+    "fallback": "The Warm Skull"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.summary",
+    "fallback": "A different villager recognizes the Wither captain's skull and asks you to prove whether it is a warning, a key, or bait."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:ash_court_chain_5_black_glass_road"
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:ash_court_chain_3_a_skull_for_proof"
+    ],
+    "traits": [
+      "wither_skull_taken"
+    ]
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.intro",
+      "fallback": "This villager does not ask about bones, anchors, or bounties. They stare at the skull as if it has just whispered their name."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.offer.0.0",
+          "fallback": "You know what this skull means?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.offer.0.1",
+          "fallback": "I know what it is not. It is not a trophy. A skull taken from a Wither captain keeps the last command it was given, like a coal keeping heat under ash."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.offer.1.0",
+          "fallback": "The elder said it was proof."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.offer.1.1",
+          "fallback": "Proof for villagers, yes. For the dead, it may be a door-knocker. If we listen carefully, we can learn who is waiting behind the door."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.offer.2.0",
+          "fallback": "What do you need?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.offer.2.1",
+          "fallback": "Soul sand to wake the command, blaze powder to make it speak, and amethyst to keep the voice from entering your dreams. Then we wait until night, when old orders are loudest."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.return",
+      "fallback": "They came for the sound, not the skull. Good. That means the skull showed us something true before they heard it."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.return_steps.0.0",
+          "fallback": "What did you see in it?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.return_steps.0.1",
+          "fallback": "Black glass under a red sky. Not fortress brick. Older, heavier, with gold sealed behind walls. A bastion road."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.return_steps.1.0",
+          "fallback": "Why would Wither dead use a bastion?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.return_steps.1.1",
+          "fallback": "Because piglins know how to keep things buried. Someone bought silence there, and paid in souls instead of gold."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.return_steps.2.0",
+          "fallback": "Then I go to the bastion."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.return_steps.2.1",
+          "fallback": "Yes. Not to raid it blind. To find the glass marker that points from their road to ours."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.reward",
+      "fallback": "Take these before you cross over. The village will think I paid you for reagents. Let them. Fear spreads faster when it has details."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.dialogue.done",
+      "fallback": "The skull is cold now, but sometimes I still hear glass cracking when no one moves."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_soul_sand",
+      "collect": "minecraft:soul_sand",
+      "amount": 6,
+      "stage": 0
+    },
+    {
+      "id": "bring_blaze_powder",
+      "collect": "minecraft:blaze_powder",
+      "amount": 3,
+      "stage": 0
+    },
+    {
+      "id": "bring_amethyst",
+      "collect": "minecraft:amethyst_shard",
+      "amount": 4,
+      "stage": 0,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.goals.2.say",
+        "fallback": "The skull clicks once when the amethyst touches the table. That was not bone settling. That was an answer."
+      }
+    },
+    {
+      "id": "wait_for_the_skull",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 1,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.goals.3.say",
+        "fallback": "At nightfall the skull warms without flame, and a line of black glass appears in its eye socket: a road, not a face."
+      }
+    },
+    {
+      "id": "kill_listening_dead",
+      "kill": "minecraft:skeleton",
+      "amount": 3,
+      "stage": 2
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.threats.0.name",
+        "fallback": "Skull-Listener Neth"
+      },
+      "stage": 2,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 18,
+      "spawn_max_radius": 36,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 80.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:bow",
+          "enchants": {
+            "minecraft:flame": 1
+          }
+        },
+        "head": "minecraft:chainmail_helmet"
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.threats.0.offer_line",
+        "fallback": "The ritual has drawn listeners from the ash. Kill them before they carry our questions back."
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.threats.1.name",
+        "fallback": "Skull-Listener Orv"
+      },
+      "stage": 2,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 18,
+      "spawn_max_radius": 36,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 80.0,
+      "equipment": {
+        "mainhand": "minecraft:iron_sword",
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:skeleton",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_4_the_warm_skull.threats.2.name",
+        "fallback": "Skull-Listener Rell"
+      },
+      "stage": 2,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 18,
+      "spawn_max_radius": 36,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 90.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:stone_sword",
+          "enchants": {
+            "minecraft:fire_aspect": 1
+          }
+        },
+        "head": "minecraft:golden_helmet"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 420,
+    "items": {
+      "minecraft:emerald": 14,
+      "minecraft:magma_cream": 3
+    }
+  },
+  "traits": {
+    "complete": [
+      "ash_court_road_seen"
+    ]
+  }
+}

@@ -1,0 +1,113 @@
+{
+  "title": "Cold Hearths",
+  "summary": "Mara writes that five more beasts stir, and asks you to start in the snow. A snowy village is freezing because its men won't leave the old garrison post. Bring coal and logs and talk to them.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "coal",
+      "collect": "minecraft:coal",
+      "amount": 64,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "logs",
+      "collect": "minecraft:spruce_log",
+      "amount": 48,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "warm_the_village",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "'Our grandfathers guarded something out there. They never told us what.'",
+      "name": "Village Elder"
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:leather_chestplate": {
+        "count": 1,
+        "enchants": {
+          "minecraft:protection": 3
+        }
+      }
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_s2_the_frozen_garrison",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_s1_cold_hearths_done"
+    ]
+  },
+  "quest_book": {
+    "title": "Five More Beasts",
+    "author": "Old Mara",
+    "color": "blue",
+    "pages": [
+      "Five more stir: one in the snow, one under the sand, one in the deep sea, one in the burning deep, and one in a tower of fire.",
+      "Start with the snow. Help the people there first. They have earned it.\n\n- M."
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 2,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "'Our grandfathers guarded something out there. They never told us what.'",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "Coal and logs.",
+          "We'll survive the week. Thank you."
+        ],
+        [
+          "Why won't anyone go out?",
+          "Our grandfathers guarded something out there. They never came back. Their ghosts still patrol."
+        ]
+      ]
+    }
+  ],
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_e7_the_nether_is_singing"
+    ]
+  }
+}

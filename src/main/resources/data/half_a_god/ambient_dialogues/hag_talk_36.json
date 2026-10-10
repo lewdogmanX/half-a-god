@@ -1,0 +1,25 @@
+{
+  "id": "hag_talk_36",
+  "type": "villager_conversation",
+  "required_story_flags": [
+    "hag_f3_unbound_done"
+  ],
+  "forbidden_story_flags": [],
+  "weight": 8,
+  "cooldown": 24000,
+  "max_player_distance": 16,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": 1,
+      "text": "Seven beasts dead.",
+      "translation_key": "ambient.half_a_god.hag_talk_36.0"
+    },
+    {
+      "speaker": 1,
+      "look_at": 0,
+      "text": "Then why does it feel like something just woke up?",
+      "translation_key": "ambient.half_a_god.hag_talk_36.1"
+    }
+  ]
+}

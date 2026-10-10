@@ -1,0 +1,158 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.title",
+    "fallback": "The Evoker's Plot"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.summary",
+    "fallback": "The Thorns Brothers were only the visible part of a larger plot. An evoker has been pushing threats toward the village from an outpost."
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.dialogue.intro",
+      "fallback": "Those brothers were not the root of this. They were sent, armed, and pointed like a knife."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.dialogue.offer.0.0",
+          "fallback": "Who was controlling the brothers?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.dialogue.offer.0.1",
+          "fallback": "An evoker. He hides behind raiders and lets curses do the first work. The brothers were meant to test how frightened the village could become."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.dialogue.offer.1.0",
+          "fallback": "Where do I find him?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.dialogue.offer.1.1",
+          "fallback": "At an outpost, with two vindicators close enough to hear him breathe. If he finishes what he started, your village will not just be frightened. It will be broken."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.dialogue.offer.2.0",
+          "fallback": "Why tell me this now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.dialogue.offer.2.1",
+          "fallback": "Because you survived the mine, and because I know the smell of a ritual being prepared. Wait too long and you will be fighting the result, not the cause."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.dialogue.return",
+      "fallback": "The air changed when you struck him down. I felt the pressure lift from the swamp before I saw your face."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.dialogue.reward",
+      "fallback": "Take your payment, and keep the charm close. You ended more than a raid; you cut the hand that kept pushing blades toward your village."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.dialogue.done",
+      "fallback": "The evoker is dead. The village may never know how close the noose came, but perhaps that is mercy."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_evoker",
+      "kill": "minecraft:evoker",
+      "amount": 1
+    },
+    {
+      "id": "kill_vindicators",
+      "kill": "minecraft:vindicator",
+      "amount": 2
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:evoker",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.threats.0.name",
+        "fallback": "Veylan the Thornbinder"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "max_health": 200,
+      "equipment": {
+        "mainhand": "minecraft:totem_of_undying"
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.threats.0.offer_line",
+        "fallback": "End this now, or the village will never be safe."
+      }
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.threats.1.name",
+        "fallback": "Draven Red-Axe"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "max_health": 150,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:diamond_axe",
+          "enchantments": [
+            {
+              "id": "minecraft:fire_aspect",
+              "level": 1
+            }
+          ]
+        }
+      }
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.witch_chain_4_evoker_conspiracy.threats.2.name",
+        "fallback": "Mordren Black-Axe"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "max_health": 150,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:diamond_axe",
+          "enchantments": [
+            {
+              "id": "minecraft:knockback",
+              "level": 1
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:emerald": 24,
+      "minecraft:enchanted_book": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:protection",
+            "level": 4
+          }
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "coven_breaker",
+      "hag_base_witch_done"
+    ]
+  }
+}

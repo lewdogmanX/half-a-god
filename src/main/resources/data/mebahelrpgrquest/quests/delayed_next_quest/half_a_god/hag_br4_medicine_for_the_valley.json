@@ -1,0 +1,77 @@
+{
+  "title": "Medicine for the Valley",
+  "summary": "The ledger lists the villages Blackwater sells to, and the cleric says three people there are already sick from it. Make Narcan (Create: Addictives) and bring it to the cleric before the raid.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "narcan",
+      "collect": "addictives:narcan",
+      "amount": 3,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "the_cleric",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "'Three doses. Three people who wake up tomorrow. Thank you.'",
+      "name": "The Cleric"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_br5_don_vasco_answers",
+      "delay_ticks": 1200,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_br4_medicine_for_the_valley_done",
+      "gt_brought_medicine"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "The Cleric",
+      "stage": 1,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "'Three doses. Three people who wake up tomorrow. Thank you.'",
+      "min_structure_distance": 300
+    }
+  ]
+}

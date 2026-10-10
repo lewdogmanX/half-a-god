@@ -1,0 +1,15 @@
+{
+  "id": "half_a_god:unlock_wicked",
+  "trigger": {
+    "type": "custom"
+  },
+  "delay": {
+    "min_ticks": 1200,
+    "max_ticks": 3600
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "Silas of the Gilded Hand",
+    "quest_book": "mebahelrpgrquest:hag_ru2_silas_makes_an_offer"
+  }
+}

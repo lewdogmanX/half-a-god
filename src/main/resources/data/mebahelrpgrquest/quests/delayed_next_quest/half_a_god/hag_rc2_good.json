@@ -1,0 +1,172 @@
+{
+  "title": "Wardens of the Wall",
+  "summary": "[Reputation: Good] Things crawl out of Nether portals near the villages now. A guard captain asks you to help raise a wall facing the old portal. Then a scavenger with a wither skull asks for you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "meet_the_captain",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "name": "Guard Captain"
+    },
+    {
+      "id": "the_wall",
+      "place": "minecraft:cobblestone_wall",
+      "amount": 32,
+      "range": 64,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The guards stand a little straighter behind it."
+    },
+    {
+      "id": "judge_2",
+      "kill": "minecraft:wandering_trader",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "Tobin is carrying a wither skull wrapped in a blanket. What you do next moves you on the scale."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wandering_trader",
+      "name": "Tobin the Scavenger",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 12,
+      "max_health": 40,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "Where did you get that skull?",
+          "Fortress. Nearly lost an arm. The cult pays twenty gold for it."
+        ],
+        [
+          "They'll use it to raise the Wither.",
+          "And I'll use the gold to feed my girls. Which matters more to you?"
+        ]
+      ],
+      "spare_handoff": {
+        "item": "minecraft:wither_skeleton_skull",
+        "name": "Tobin's Skull",
+        "count": 1
+      }
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Guard Captain",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came. Good. Listen.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "Things coming through the portal?",
+          "Black bones. They walk out at night and stand there. Watching."
+        ],
+        [
+          "How much wall?",
+          "Thirty-two wall blocks. Cobblestone will do."
+        ]
+      ]
+    }
+  ],
+  "choice": {
+    "spare": {
+      "label": "Buy the skull and let him go",
+      "line": "Tobin presses the skull into your hands. 'That's a month of bread for my girls.'",
+      "traits": [
+        "hag_mercy_2"
+      ]
+    },
+    "attack": {
+      "label": "Take it from him",
+      "traits": [
+        "hag_cruelty_2"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:shield": 1,
+      "minecraft:iron_ingot": 12
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rc2_good_done",
+      "hag_route_seg2",
+      "hag_ch2_good"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w1_the_skull_market"
+    ]
+  },
+  "flow": {
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc3_saint",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rc3_waver",
+        "delay_ticks": 60,
+        "silent_start": false,
+        "retry_delay_ticks": 400,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  }
+}

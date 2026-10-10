@@ -1,0 +1,251 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.title",
+    "fallback": "Oath Without Banner"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.summary",
+    "fallback": "Stand with me one last time, and I will prove whether I am still a raider with better words, or a man worth trusting beside your road."
+  },
+  "recruit_companion": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.intro",
+      "fallback": "I thought a banner made a man belong somewhere. I was wrong. It only made it easier to stop asking who I was hurting."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.offer.0.0",
+          "fallback": "Are you ready for this?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.offer.0.1",
+          "fallback": "No. But I am done waiting to become ready. The ones who still wear my old banner are gathering near the outpost road. If they reach the village, every word I have spoken will turn to ash."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.offer.1.0",
+          "fallback": "Why are they coming?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.offer.1.1",
+          "fallback": "Because I left. Because I know their paths, their caches, their cowardice. Because a raider who lays down his banner is a wound to every raider still hiding behind one."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.offer.2.0",
+          "fallback": "What do you need from me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.offer.2.1",
+          "fallback": "Walk with me. Let me face them without running, and if my axe turns the wrong way, end me before I become useful to them again."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.offer.3.0",
+          "fallback": "And after?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.offer.3.1",
+          "fallback": "After, if I still stand, I will not ask the village to forgive me. I will ask only where the next road needs guarding."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.return",
+      "fallback": "Hadrik is dead. The banner is down. I thought that would make me feel lighter, but it only leaves me with everything I did while it flew above me."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.return_steps.0.0",
+          "fallback": "You stood your ground."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.return_steps.0.1",
+          "fallback": "For once. Do not dress it as heroism. I stood because running had finally become heavier than fear."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.return_steps.1.0",
+          "fallback": "The village may still hate you."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.return_steps.1.1",
+          "fallback": "Good. Hate remembers what pity tries to smooth over. Let them hate me if they must. I will still keep watch when the road darkens."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.return_steps.2.0",
+          "fallback": "What will you do now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.return_steps.2.1",
+          "fallback": "If you will have me, I will follow. Not as a raider. Not as a forgiven man. As a blade trying to learn where it should have been pointed all along."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.reward",
+      "fallback": "Take this from Hadrik's pack. I want none of his trophies. If I am to carry anything from this road, let it be the weight of choosing better next time."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.dialogue.done",
+      "fallback": "No banner. No excuses. Point me at the next monster, and I will stand between it and the road."
+    }
+  },
+  "goals": [
+    {
+      "id": "kill_banner_captain",
+      "kill": "minecraft:pillager",
+      "amount": 1
+    },
+    {
+      "id": "kill_oath_silencer_ravager",
+      "kill": "minecraft:ravager",
+      "amount": 1
+    },
+    {
+      "id": "kill_old_warband",
+      "kill": "minecraft:vindicator",
+      "amount": 2
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.threats.0.name",
+        "fallback": "Captain Hadrik Oath-Silencer"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 160.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchantments": [
+            {
+              "id": "minecraft:piercing",
+              "level": 3
+            },
+            {
+              "id": "minecraft:quick_charge",
+              "level": 2
+            },
+            {
+              "id": "minecraft:unbreaking",
+              "level": 2
+            }
+          ]
+        },
+        "head": {
+          "item": "minecraft:iron_helmet",
+          "enchantments": [
+            {
+              "id": "minecraft:protection",
+              "level": 2
+            }
+          ]
+        }
+      },
+      "mount": {
+        "entity": "minecraft:ravager",
+        "name": {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.threats.0.mount.name",
+          "fallback": "Oath-Silencer War Ravager"
+        },
+        "max_health": 220.0
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.threats.0.offer_line",
+        "fallback": "Captain Hadrik Oath-Silencer waits near the outpost road, high on a war ravager with two oath-silencers from Rurik's old warband. Rurik will follow, but this is your fight to finish."
+      }
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.threats.1.name",
+        "fallback": "Red-Banner Oath-Silencer"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 120.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "level": 2
+            }
+          ]
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_5_oath_without_banner.threats.2.name",
+        "fallback": "Red-Banner Bell-Silencer"
+      },
+      "structure": "minecraft:pillager_outpost",
+      "search_radius": 4000,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 120.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchantments": [
+            {
+              "id": "minecraft:unbreaking",
+              "level": 2
+            }
+          ]
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 760,
+    "items": {
+      "minecraft:emerald": 20,
+      "minecraft:diamond_axe": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:sharpness",
+            "level": 3
+          },
+          {
+            "id": "minecraft:unbreaking",
+            "level": 3
+          }
+        ]
+      },
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "oath_without_banner",
+      "hag_base_no_banner_done"
+    ]
+  }
+}

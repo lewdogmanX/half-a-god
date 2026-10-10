@@ -1,0 +1,226 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.title",
+    "fallback": "The House That Owes Me Money"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.summary",
+    "fallback": "Enforce a fourteen-emerald debt against a building that has so far refused every attempt at negotiation."
+  },
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_delinquent_property",
+      "reach": "minecraft:village_plains",
+      "radius": 5000,
+      "range": 80,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "read_the_final_demand",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:village_plains",
+      "radius": 5000,
+      "stage": 1,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.goals.1.name",
+        "fallback": "Final Demand to Premises"
+      },
+      "tag": "house_debt_final_demand",
+      "quest_book": {
+        "title": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.goals.1.quest_book.title",
+          "fallback": "Final Demand to Premises"
+        },
+        "author": {
+          "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.goals.1.quest_book.author",
+          "fallback": "Hadrin Pell, Collector"
+        },
+        "pages": [
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.goals.1.quest_book.pages.0",
+            "fallback": "TO THE HOUSE CURRENTLY OCCUPYING LOT SEVEN:\n\nYou owe me fourteen emeralds."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.goals.1.quest_book.pages.1",
+            "fallback": "I have knocked politely on six occasions. You have declined to answer on all six."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.goals.1.quest_book.pages.2",
+            "fallback": "On my seventh visit, a shutter fell from the upper window and struck my hat.\n\nI consider this intimidation."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.goals.1.quest_book.pages.3",
+            "fallback": "I have therefore authorized inspection of the foundations. The money was last seen entering the property in my possession."
+          },
+          {
+            "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.goals.1.quest_book.pages.4",
+            "fallback": "If fourteen emeralds are discovered beneath the floor, seize them immediately.\n\nThis is not theft. This is accounting."
+          }
+        ]
+      },
+      "auto_advance": true
+    },
+    {
+      "id": "recover_fourteen_emeralds",
+      "collect": "minecraft:emerald",
+      "amount": 14,
+      "structure": "minecraft:village_plains",
+      "radius": 5000,
+      "stage": 2,
+      "in_chest": true,
+      "container": "minecraft:chest",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.goals.2.name",
+        "fallback": "The House's Outstanding Balance"
+      },
+      "tag": "house_outstanding_balance",
+      "auto_advance": true
+    },
+    {
+      "id": "dismiss_authorized_representative",
+      "kill": "minecraft:vindicator",
+      "amount": 1,
+      "stage": 3,
+      "from_threats": true
+    },
+    {
+      "id": "dismiss_collection_bailiffs",
+      "kill": "minecraft:pillager",
+      "amount": 2,
+      "stage": 3,
+      "from_threats": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.threats.0.name",
+        "fallback": "Authorized Property Representative"
+      },
+      "structure": "minecraft:village_plains",
+      "search_radius": 5000,
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 14,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 120,
+      "equipment": {
+        "mainhand": "minecraft:iron_axe",
+        "chest": "minecraft:leather_chestplate"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.threats.1.name",
+        "fallback": "Junior Collections Associate"
+      },
+      "structure": "minecraft:village_plains",
+      "search_radius": 5000,
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 9,
+      "spawn_max_radius": 15,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 50,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.threats.2.name",
+        "fallback": "Junior Collections Associate"
+      },
+      "structure": "minecraft:village_plains",
+      "search_radius": 5000,
+      "stage": 3,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 16,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 50,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 360,
+    "items": {
+      "minecraft:emerald": 14,
+      "minecraft:paper": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "successfully_collected_from_house",
+      "hag_base_house_owes_money_done"
+    ]
+  },
+  "quest_book": {
+    "title": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.quest_book.title",
+      "fallback": "The House That Owes Me Money"
+    },
+    "author": {
+      "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.quest_book.author",
+      "fallback": "Hadrin Pell, Licensed Collector"
+    },
+    "color": "green",
+    "pages": [
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.quest_book.pages.0",
+        "fallback": "NOTICE OF DELINQUENT PROPERTY\n\nThe residence presently standing on Lot Seven owes me fourteen emeralds."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.quest_book.pages.1",
+        "fallback": "To be clear, I do not mean the owner.\n\nThe owner moved away three months ago and was, in all financial matters, exemplary."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.quest_book.pages.2",
+        "fallback": "The house itself owes me money."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.quest_book.pages.3",
+        "fallback": "I concealed fourteen emeralds somewhere inside the property during a period of temporary concern regarding taxation."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.quest_book.pages.4",
+        "fallback": "Upon returning, I was unable to locate them.\n\nThe house has therefore retained money belonging to me without consent."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.quest_book.pages.5",
+        "fallback": "I attempted peaceful recovery.\n\nI knocked.\nI threatened legal action.\nI read the relevant statute aloud through the window."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.quest_book.pages.6",
+        "fallback": "During the third reading, the front door closed by itself.\n\nHostile negotiation."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.quest_book.pages.7",
+        "fallback": "If you find this notice, locate the property, search its records, and recover the fourteen emeralds."
+      },
+      {
+        "translate": "quest.mebahelrpgrquest.questbook_the_house_that_owes_me_money.quest_book.pages.8",
+        "fallback": "You may keep a reasonable collection fee.\n\nDo not allow the house to intimidate you.\n\nIt is property."
+      }
+    ],
+    "auto_claim_rewards": true
+  }
+}

@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:vael_slain",
+  "weight": 12,
+  "line": "The cult has a new steward. They say he keeps your name on a list.",
+  "conditions": {
+    "required_traits": [
+      "vael_slain"
+    ]
+  }
+}

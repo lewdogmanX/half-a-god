@@ -1,0 +1,85 @@
+{
+  "title": "The Skull Market",
+  "summary": "Mara writes that the cult is buying wither skulls: three of them summon the Wither. Go to the Nether, find a fortress and the cult's price list in a barrel there, and find out who is buying.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "go_below",
+      "type": "enter_nether",
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "find_a_fortress",
+      "reach": "minecraft:fortress",
+      "radius": 12000,
+      "range": 48,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "price_list",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "minecraft:fortress",
+      "radius": 12000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "Price List",
+      "tag": "hag_price_list",
+      "quest_book": {
+        "title": "Price List",
+        "author": "The Skull Market",
+        "pages": [
+          "One wither skull: three villagers, or forty gold.",
+          "Buyer: THE CHARIOT. Deliver to the Lair, past the Sacred City.",
+          "Three skulls make a crown. The crown wakes the Nail of Ash."
+        ]
+      },
+      "stage": 2,
+      "auto_advance": true,
+      "say": "The buyer signs himself 'the Chariot'."
+    }
+  ],
+  "rewards": {
+    "xp": 600,
+    "items": {
+      "minecraft:gold_ingot": 12
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_w2_smite_the_dead",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_w1_the_skull_market_done"
+    ]
+  },
+  "quest_book": {
+    "title": "They Are Buying Skulls",
+    "author": "Old Mara",
+    "color": "gray",
+    "pages": [
+      "Three skulls and four blocks of soul sand. That is all it takes to wake the Wither.",
+      "If the cult wakes it, they will try to bind it. They will fail, and the world will burn while they fail.\n\nGo into the Nether. Find out who is selling. - M."
+    ],
+    "auto_claim_rewards": true
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_w0_two_roads_meet"
+    ]
+  }
+}

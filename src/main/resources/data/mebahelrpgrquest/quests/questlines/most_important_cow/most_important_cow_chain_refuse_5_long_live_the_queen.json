@@ -1,0 +1,112 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.title",
+    "fallback": "Long Live the Queen"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.summary",
+    "fallback": "The bargain is broken. Keep Buttercup in the village and survive the raid that comes to silence the roads for good."
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:most_important_cow_chain_4_the_price_of_a_queen"
+    ],
+    "traits": [
+      "buttercup_bargain_refused"
+    ]
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.intro",
+      "fallback": "You chose Buttercup. I hope the village forgives us both for being sentimental fools."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.offer.0.0",
+          "fallback": "They're coming?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.offer.0.1",
+          "fallback": "Scouts saw banners on the north ridge. No tunnels this time. No tricks. They mean to erase the road in daylight."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.offer.1.0",
+          "fallback": "Keep Buttercup inside."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.offer.1.1",
+          "fallback": "Already tried. She kicked through the pen when the first horn sounded. Mara trained her better than I ever trained myself."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.offer.2.0",
+          "fallback": "Then ring the bell."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.offer.2.1",
+          "fallback": "Gladly. If they came for a cow, let them discover the village attached to her."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.return",
+      "fallback": "The banners are down. Buttercup is alive. The village is alive. I have run out of jokes large enough to hide behind that."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.return_steps.0.0",
+          "fallback": "Maybe she really is the most important cow in the world."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.return_steps.0.1",
+          "fallback": "No. She is one cow who remembered what Mara taught her. That was enough."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.return_steps.1.0",
+          "fallback": "And the queen?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.return_steps.1.1",
+          "fallback": "Retired. Effective immediately. Buttercup may return to being a cow, provided she accepts the demotion."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.reward",
+      "fallback": "Here. Take this. Mara earned her living keeping these roads open. Today you did the same."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_refuse_5_long_live_the_queen.dialogue.done",
+      "fallback": "Buttercup is not a queen anymore. She is Mara's cow. Somehow that feels like a higher title."
+    }
+  },
+  "goals": [
+    {
+      "id": "defend_buttercups_village",
+      "type": "defend_raid",
+      "amount": 1
+    }
+  ],
+  "rewards": {
+    "xp": 700,
+    "items": {
+      "minecraft:emerald": 22,
+      "minecraft:golden_apple": 2,
+      "minecraft:bell": 1
+    }
+  },
+  "traits": {
+    "complete": [
+      "buttercup_defended_at_any_cost",
+      "mara_road_kept_open",
+      "hag_base_most_important_cow_done"
+    ]
+  }
+}

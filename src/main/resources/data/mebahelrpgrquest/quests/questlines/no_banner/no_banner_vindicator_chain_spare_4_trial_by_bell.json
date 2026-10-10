@@ -1,0 +1,237 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.title",
+    "fallback": "Trial by Bell"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.summary",
+    "fallback": "Stand with me beneath the bell while the village judges what I have done. If my old banner comes to silence me, let the village see who still serves it."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:no_banner_vindicator_chain_spare_5_oath_without_banner"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.intro",
+      "fallback": "I asked them to ring the bell for judgment, not mercy. Half the village wants chains. Some want a grave. I will stand either way."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.offer.0.0",
+          "fallback": "Are you ready to face them?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.offer.0.1",
+          "fallback": "No. Ready is a word for clean men. I am only done running."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.offer.1.0",
+          "fallback": "The freed captives named you too."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.offer.1.1",
+          "fallback": "They should. Not as a hero. Not as a friend. As the man who opened the door after leaving too many shut. Let every word cut where it must."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.offer.2.0",
+          "fallback": "Why do I hear horns?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.offer.2.1",
+          "fallback": "Because my old banner knows I spoke. They are coming to make sure my testimony dies before it wounds their captain."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.offer.3.0",
+          "fallback": "What do you need from me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.offer.3.1",
+          "fallback": "Stand near the bell. Not for my sake. For theirs. If I am condemned or spared, it should be by village judgment, not raider arrows."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.return",
+      "fallback": "I still breathe, and the bell still stands. That means they heard all of it. I do not know whether that is mercy or punishment."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.return_steps.0.0",
+          "fallback": "What did you tell them?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.return_steps.0.1",
+          "fallback": "The farms burned under my banner. The cellar I ignored. The captives I helped free too late. I named every sin I could still remember and asked no one to call it enough."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.return_steps.1.0",
+          "fallback": "What did the village decide?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.return_steps.1.1",
+          "fallback": "Exile was spoken first. Execution second. Then one of the freed captives said a debt cannot be repaid from a grave."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.return_steps.2.0",
+          "fallback": "So you live?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.return_steps.2.1",
+          "fallback": "I live under oath. No banner, no raider kin, no village bed. I serve the roads until the dead I failed no longer weigh heavier than the living I protect."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.reward",
+      "fallback": "Take this. The freed captives gave it for the one who guarded the trial when anger and arrows both tried to end it. I cannot repay what I owe, but I can make sure their gift reaches your hands."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.dialogue.done",
+      "fallback": "The bell has judged me. I walk under debt now, not freedom."
+    }
+  },
+  "goals": [
+    {
+      "id": "defend_trial_from_pillagers",
+      "kill": "minecraft:pillager",
+      "amount": 4
+    },
+    {
+      "id": "defend_trial_from_vindicator",
+      "kill": "minecraft:vindicator",
+      "amount": 1
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.threats.0.name",
+        "fallback": "Trial-Silencer"
+      },
+      "spawn_min_radius": 20,
+      "spawn_max_radius": 38,
+      "stage": 0,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 70.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchantments": [
+            {
+              "id": "minecraft:quick_charge",
+              "level": 1
+            }
+          ]
+        }
+      },
+      "offer_line": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.threats.0.offer_line",
+        "fallback": "My old banner is closing on the bell. They mean to silence me before the village can judge what I have confessed."
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "spawn_min_radius": 20,
+      "spawn_max_radius": 38,
+      "stage": 0,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "spawn_min_radius": 20,
+      "spawn_max_radius": 38,
+      "stage": 0,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "spawn_min_radius": 20,
+      "spawn_max_radius": 38,
+      "stage": 0,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_4_trial_by_bell.threats.4.name",
+        "fallback": "Banner-Reclaimer"
+      },
+      "spawn_min_radius": 24,
+      "spawn_max_radius": 42,
+      "stage": 0,
+      "spawn_origin": "quest_giver",
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 130.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "level": 3
+            }
+          ]
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 520,
+    "items": {
+      "minecraft:emerald": 16,
+      "minecraft:shield": {
+        "count": 1,
+        "enchantments": [
+          {
+            "id": "minecraft:unbreaking",
+            "level": 2
+          },
+          {
+            "id": "minecraft:protection",
+            "level": 2
+          }
+        ]
+      }
+    }
+  }
+}

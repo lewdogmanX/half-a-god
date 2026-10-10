@@ -1,0 +1,181 @@
+{
+  "title": "The Pillager Moon",
+  "summary": "Whatever you did with the Peddler, the people who paid him are angry. The watchtower guards have seen a war party gathering. Warn the village, wait for nightfall, and hold the line until the last raider falls.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "warn_the_village",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "'They're coming from the north road. Lots of them.'",
+      "name": "Village Elder"
+    },
+    {
+      "id": "wait_for_the_moon",
+      "type": "wait_time",
+      "wait_until": "next_night",
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "raiders",
+      "kill": "minecraft:pillager",
+      "amount": 8,
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "axemen",
+      "kill": "minecraft:vindicator",
+      "amount": 4,
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "witch_doctor",
+      "kill": "minecraft:witch",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "the_beast",
+      "kill": "minecraft:ravager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "The raiders carried gold they never looted. Someone paid them to come."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": "Moon Raider",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 14,
+      "spawn_max_radius": 28,
+      "count": 8,
+      "max_health": 32
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Moon Axeman",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 14,
+      "spawn_max_radius": 28,
+      "count": 4,
+      "max_health": 48,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 1
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:witch",
+      "name": "War-Witch",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 16,
+      "spawn_max_radius": 28,
+      "max_health": 40
+    },
+    {
+      "entity": "minecraft:ravager",
+      "name": "The Moon Beast",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 18,
+      "spawn_max_radius": 30,
+      "max_health": 160,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "'They're coming from the north road. Lots of them.'",
+      "talk": [
+        [
+          "A war party is coming.",
+          "We saw the torches from the tower. North road. Lots of them."
+        ],
+        [
+          "Get everyone inside.",
+          "Doors barred, bell ready. We're with you."
+        ]
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 450,
+    "items": {
+      "minecraft:golden_apple": 2,
+      "minecraft:diamond": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_x1_the_informant",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_p8_pillager_moon_done"
+    ]
+  }
+}

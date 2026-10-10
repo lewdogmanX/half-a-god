@@ -1,0 +1,268 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.title",
+    "fallback": "A Quiet Road"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.summary",
+    "fallback": "You accepted the pillagers' bargain. Escort Tobyn and bring a cow to the old outpost, then discover what their promise of peace is really worth."
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:most_important_cow_chain_4_the_price_of_a_queen"
+    ],
+    "traits": [
+      "buttercup_bargain_accepted"
+    ]
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.intro",
+      "fallback": "I am coming with you. If Buttercup is being traded for our lives, she will not walk that road with only a stranger beside her."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.offer.0.0",
+          "fallback": "You don't have to come."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.offer.0.1",
+          "fallback": "Mara walked toward danger alone once. I have spent years hating myself for letting that be the last thing she did. I will not repeat it with her cow."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.offer.1.0",
+          "fallback": "The bargain could save both villages."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.offer.1.1",
+          "fallback": "I know. That is what makes it a real bargain. If it were obviously evil, neither of us would feel sick."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.offer.2.0",
+          "fallback": "Then we go together."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.offer.2.1",
+          "fallback": "Together. And if Rath lied, I reserve the right to say I told you so while we are being shot at."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.return",
+      "fallback": "They never meant to keep the road quiet. They meant to kill Buttercup, kill us, and call the silence a fulfilled contract."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.return_steps.0.0",
+          "fallback": "I thought the bargain might save the villages."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.return_steps.0.1",
+          "fallback": "So did Mara, once. She traded herself for a village and I spent years calling it brave because the other word hurt too much."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.return_steps.1.0",
+          "fallback": "I came back for Buttercup."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.return_steps.1.1",
+          "fallback": "You did. That is why I am angry instead of finished with you."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.return_steps.2.0",
+          "fallback": "What happens now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.return_steps.2.1",
+          "fallback": "Now Buttercup goes home, eats my flowers, breaks another fence, and receives no further diplomatic appointments."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.reward",
+      "fallback": "Take Mara's old bell. I kept it because I could not let go. I want you to carry it because I finally can."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.dialogue.done",
+      "fallback": "Buttercup is not a queen. She is a cow. Mara's cow. Tonight, that is enough."
+    }
+  },
+  "goals": [
+    {
+      "id": "escort_tobyn_to_exchange",
+      "escort": "minecraft:pillager_outpost",
+      "radius": 4000,
+      "range": 42,
+      "stage": 0
+    },
+    {
+      "id": "bring_buttercup_to_exchange",
+      "bring": "minecraft:cow",
+      "amount": 1,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 4000,
+      "range": 42,
+      "stage": 0,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.goals.1.name",
+        "fallback": "Her Majesty Buttercup"
+      },
+      "threat_target_only": true
+    },
+    {
+      "id": "survive_the_betrayal",
+      "kill": "minecraft:pillager",
+      "amount": 4,
+      "stage": 1,
+      "quest_giver_resistance_seconds": 60,
+      "from_threats": true
+    },
+    {
+      "id": "kill_contract_keeper",
+      "kill": "minecraft:vindicator",
+      "amount": 1,
+      "stage": 1,
+      "from_threats": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:cow",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.threats.buttercup.name",
+        "fallback": "Her Majesty Buttercup"
+      },
+      "stage": 0,
+      "spawn_origin": "quest_giver",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 30.0
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.threats.0.name",
+        "fallback": "Rath the Tallyman"
+      },
+      "stage": 1,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 5,
+      "spawn_max_radius": 10,
+      "spare": false,
+      "glow": true,
+      "max_health": 95.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      },
+      "target_line": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.threats.0.target_line",
+        "fallback": "The road will be quiet when everyone who knows about it is dead."
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.threats.1.name",
+        "fallback": "Exchange Guard"
+      },
+      "stage": 1,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 7,
+      "spawn_max_radius": 12,
+      "spare": false,
+      "glow": false,
+      "max_health": 55.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.threats.2.name",
+        "fallback": "Exchange Guard"
+      },
+      "stage": 1,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 13,
+      "spare": false,
+      "glow": false,
+      "max_health": 55.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:pillager",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.threats.3.name",
+        "fallback": "Exchange Guard"
+      },
+      "stage": 1,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 9,
+      "spawn_max_radius": 14,
+      "spare": false,
+      "glow": false,
+      "max_health": 55.0,
+      "equipment": {
+        "mainhand": "minecraft:crossbow"
+      }
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": {
+        "translate": "quest.mebahelrpgrquest.most_important_cow_chain_bargain_5_a_quiet_road.threats.4.name",
+        "fallback": "Contract Keeper"
+      },
+      "stage": 1,
+      "spawn_origin": "quest_target",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 15,
+      "spare": false,
+      "glow": true,
+      "max_health": 130.0,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "level": 2
+            }
+          ]
+        },
+        "chest": "minecraft:chainmail_chestplate"
+      }
+    }
+  ],
+  "rewards": {
+    "xp": 520,
+    "items": {
+      "minecraft:emerald": 10,
+      "minecraft:bell": 1,
+      "minecraft:wheat": 12
+    }
+  },
+  "traits": {
+    "complete": [
+      "buttercup_bargained_for_peace",
+      "pillager_bargain_betrayed"
+    ]
+  }
+}

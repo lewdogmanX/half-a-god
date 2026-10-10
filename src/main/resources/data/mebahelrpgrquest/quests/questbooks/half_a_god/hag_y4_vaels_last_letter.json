@@ -1,0 +1,41 @@
+{
+  "title": "Vael's Last Letter",
+  "summary": "Brother Vael has been your spy inside the cult since you spared him. This is his last letter. The handwriting shakes.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_dead_drop",
+      "reach": "minecraft:ruined_portal",
+      "radius": 8000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "A loose stone. Behind it: Vael's maps of the Mansion."
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:map": 1,
+      "minecraft:ender_pearl": 8,
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_y4_vaels_last_letter_done",
+      "hag_payoff_vael_spy"
+    ]
+  },
+  "quest_book": {
+    "title": "They Know",
+    "author": "Brother Vael",
+    "color": "red",
+    "pages": [
+      "They know about me. I have hours, not days.\n\nI left everything I learned at a ruined portal near you.",
+      "The maps of the Sacred City. The guard rotations. The name of the door that is never locked.",
+      "You could have killed me in the fortress. You made me useful instead. I hope I was.\n\n- V."
+    ],
+    "auto_claim_rewards": true
+  }
+}

@@ -1,0 +1,110 @@
+{
+  "title": "Testimony",
+  "summary": "Halden can't touch Blackwater without proof. Their books are kept by an illager Sorcerer in a dark-forest hut. Take the ledger and put it in Halden's hands. Your name is in it too. That's the price of getting out.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_hut",
+      "reach": "illagerinvasion:sorcerer_hut",
+      "radius": 30000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "sorcerer",
+      "kill": "illagerinvasion:sorcerer",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "from_threats": false
+    },
+    {
+      "id": "ledger",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "illagerinvasion:sorcerer_hut",
+      "radius": 30000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "Blackwater Ledger",
+      "tag": "hag_blackwater_ledger_out",
+      "quest_book": {
+        "title": "Blackwater Ledger",
+        "author": "The Sorcerer",
+        "pages": [
+          "Weekly takings: 3,000 emeralds. Tithe to the Chariot: one third.",
+          "New grower (see page 9). Promising. Watch him."
+        ]
+      },
+      "stage": 2,
+      "auto_advance": true,
+      "say": "There's your name on page nine. You take the book anyway."
+    },
+    {
+      "id": "give_halden_the_ledger",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 3,
+      "auto_advance": true,
+      "say": "Halden reads page nine, then closes the book. 'You'll testify. And then you'll be free.'",
+      "name": "Reeve Halden"
+    }
+  ],
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "minecraft:emerald": 32,
+      "minecraft:golden_apple": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_go3_testimony_done",
+      "gt_got_out",
+      "hag_act5_arc_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Reeve Halden",
+      "stage": 3,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "Halden reads page nine, then closes the book. 'You'll testify. And then you'll be free.'",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You're Halden?",
+          "Reeve of Ashford. What's left of it. You're the one Mara writes about."
+        ],
+        [
+          "You know Mara?",
+          "Everyone knows Old Mara. Nobody knows where she lives."
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:blood_wells",
+  "weight": 12,
+  "line": "There's blood in the well water. Not much. Enough.",
+  "conditions": {
+    "required_traits": [
+      "hag_v1_blood_in_the_wells_done"
+    ]
+  }
+}

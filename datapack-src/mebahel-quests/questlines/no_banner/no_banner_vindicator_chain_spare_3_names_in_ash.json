@@ -1,0 +1,111 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.title",
+    "fallback": "Names in Ash"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.summary",
+    "fallback": "Help me recover the keys and ledger from the outpost. If the names I remember are still written there, the captives may yet breathe free."
+  },
+  "flow": {
+    "next": "mebahelrpgrquest:no_banner_vindicator_chain_spare_4_trial_by_bell"
+  },
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.dialogue.intro",
+      "fallback": "I buried their names because I was too much a coward to carry them. If I am to stand before your bell, then first I will dig them back into the light."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.dialogue.offer.0.0",
+          "fallback": "You still remember where the keys are?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.dialogue.offer.0.1",
+          "fallback": "I remember the floorboard. Third plank from the captain's bed, split near the nail. I stared at it every time I chose silence."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.dialogue.offer.1.0",
+          "fallback": "What else is hidden there?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.dialogue.offer.1.1",
+          "fallback": "A ledger. Names, villages, prices, cages. Raiders like numbers because numbers do not look back. Bring it out, and the names will."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.dialogue.offer.2.0",
+          "fallback": "Why not get them yourself?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.dialogue.offer.2.1",
+          "fallback": "Because the outpost would kill me before I reached the door, and because the village will not trust proof carried by my hands alone. It has to be you."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.dialogue.return",
+      "fallback": "Those are the names. I told myself forgetting them was survival. It was not. It was another kind of murder."
+    },
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.dialogue.reward",
+      "fallback": "Take this. I have no right to call it thanks, but I can call it the first honest payment I have ever made. The bell will hear me now, and I will not run from it."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.dialogue.done",
+      "fallback": "The names have been read aloud. I hear them better than any horn now."
+    }
+  },
+  "goals": [
+    {
+      "id": "bring_prison_key",
+      "collect": "minecraft:tripwire_hook",
+      "amount": 1,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 4000,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.goals.0.name",
+        "fallback": "Outpost Prison Key"
+      },
+      "tag": "no_banner_prison_proof",
+      "in_chest": true
+    },
+    {
+      "id": "bring_prison_ledger",
+      "collect": "minecraft:book",
+      "amount": 1,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 4000,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.goals.1.name",
+        "fallback": "Outpost Prison Ledger"
+      },
+      "tag": "no_banner_prison_proof",
+      "in_chest": true
+    },
+    {
+      "id": "bring_captive_names",
+      "collect": "minecraft:paper",
+      "amount": 3,
+      "structure": "minecraft:pillager_outpost",
+      "radius": 4000,
+      "name": {
+        "translate": "quest.mebahelrpgrquest.no_banner_vindicator_chain_spare_3_names_in_ash.goals.2.name",
+        "fallback": "Captive Name Scrap"
+      },
+      "tag": "no_banner_prison_proof",
+      "in_chest": true
+    }
+  ],
+  "rewards": {
+    "xp": 260,
+    "items": {
+      "minecraft:emerald": 9,
+      "minecraft:golden_carrot": 4
+    }
+  }
+}

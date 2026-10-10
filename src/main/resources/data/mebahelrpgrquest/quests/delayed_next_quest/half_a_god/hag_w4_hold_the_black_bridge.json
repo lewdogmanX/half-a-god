@@ -1,0 +1,113 @@
+{
+  "title": "Hold the Black Bridge",
+  "summary": "The cult sends its Bone Choir to take the fortress back. Hold the bridge and kill the Choir-Master.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "bone_choir",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "choir_master",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The Choir-Master's skull is cracked down the middle. Useless to them."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": "Bone Chorister",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
+      "count": 4,
+      "max_health": 80,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:stone_sword",
+          "enchants": {
+            "minecraft:sharpness": 3
+          }
+        }
+      },
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    },
+    {
+      "entity": "minecraft:wither_skeleton",
+      "name": "The Choir-Master",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 18,
+      "max_health": 160,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:netherite_sword",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        },
+        "head": "minecraft:golden_helmet"
+      },
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    }
+  ],
+  "rewards": {
+    "xp": 1000,
+    "items": {
+      "minecraft:totem_of_undying": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_w5_a_grave_for_a_nail",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_w4_hold_the_black_bridge_done"
+    ]
+  }
+}

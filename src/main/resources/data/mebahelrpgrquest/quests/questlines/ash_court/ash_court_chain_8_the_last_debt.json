@@ -1,0 +1,496 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.title",
+    "fallback": "The Last Debt"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.summary",
+    "fallback": "Escort the ledger-bearer to the Hall Beneath the Eye, open the old passage, confront Avar Khel, and decide whether to destroy or renegotiate the village's protection."
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:ash_court_chain_7_names_under_stone"
+    ],
+    "traits": [
+      "ash_court_first_debt_known"
+    ]
+  },
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.intro",
+      "fallback": "The villager carries the founders' ledger and Selka's wooden horse. Twelve people were delivered through the waystone. Orr Veyl's record says at least five remain imprisoned in the Hall Beneath the Eye."
+    },
+    "offer": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.offer.0.0",
+          "fallback": "You are coming with me?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.offer.0.1",
+          "fallback": "The agreement requires a village representative. I will renounce it before Avar Khel and testify that the deliveries were crimes, not lawful payment."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.offer.1.0",
+          "fallback": "What waits in the hall?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.offer.1.1",
+          "fallback": "Avar Khel, the Crownless Cinder. He supplied the plague medicine, commanded the undead sentries, and received every prisoner delivered through the waystone."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.offer.2.0",
+          "fallback": "What if it offers another bargain?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.offer.2.1",
+          "fallback": "Then hear the exact terms. Destroy him and the ward dies with him. Spare him only if he releases every surviving prisoner and accepts goods instead of people."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.offer.3.0",
+          "fallback": "How do we survive the meeting?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.offer.3.1",
+          "fallback": "Guide me through the Nether road to the fortress and anchor the old passage with crying obsidian and soul fire. When Avar Khel arrives, keep your weapon lowered until we hear his terms."
+        }
+      ]
+    ],
+    "return": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.return",
+      "fallback": "The collection route is closed and the surviving prisoners are free. Whatever agreement remains, people are no longer its currency."
+    },
+    "return_steps": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.return_steps.0.0",
+          "fallback": "The protection is gone."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.return_steps.0.1",
+          "fallback": "Then we will protect one another without feeding strangers to the dark. Safety bought that way was only danger wearing our walls."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.return_steps.1.0",
+          "fallback": "What happens to the survivors?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.return_steps.1.1",
+          "fallback": "Those with homes may return to them. Those without one will be offered beds here, if they can bear the sight of our bell."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.return_steps.2.0",
+          "fallback": "Was killing it the right choice?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.return_steps.2.1",
+          "fallback": "It was a final choice. Do not confuse finality with purity. We will learn its cost together."
+        }
+      ]
+    ],
+    "return_steps_on_spare": [
+      [
+        {
+          "translate": "dialogue.mebahelrpgrquest.ash_court_last_debt_spare.protection.choice",
+          "fallback": "The protection remains?"
+        },
+        {
+          "translate": "dialogue.mebahelrpgrquest.ash_court_last_debt_spare.protection.line",
+          "fallback": "Yes. Avar Khel accepted gold, iron, and open trade instead of prisoners. The ward remains, but no living person will ever be payment again."
+        }
+      ],
+      [
+        {
+          "translate": "dialogue.mebahelrpgrquest.ash_court_last_debt_spare.prisoners.choice",
+          "fallback": "What happens to the prisoners?"
+        },
+        {
+          "translate": "dialogue.mebahelrpgrquest.ash_court_last_debt_spare.prisoners.line",
+          "fallback": "Every surviving prisoner was released before the amended ledger was sealed. Those with homes may return; the others will be offered shelter here."
+        }
+      ],
+      [
+        {
+          "translate": "dialogue.mebahelrpgrquest.ash_court_last_debt_spare.examiners.choice",
+          "fallback": "Why did he send the examiners?"
+        },
+        {
+          "translate": "dialogue.mebahelrpgrquest.ash_court_last_debt_spare.examiners.line",
+          "fallback": "He called it a final audit: proof that our new agreement was accepted by strength, not fear. You survived it, and now even the Court must honor the written terms."
+        }
+      ]
+    ],
+    "reward": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.reward",
+      "fallback": "The founders left us shelter built from cowardice. You leave us an uncertain future that is finally ours."
+    },
+    "done": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.dialogue.done",
+      "fallback": "The bell has lost its hidden note. It sounds smaller now—and honest."
+    }
+  },
+  "goals": [
+    {
+      "id": "enter_nether_with_ledger_bearer",
+      "type": "enter_nether",
+      "amount": 1,
+      "auto_advance": true,
+      "stage": 0,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.goals.0.say",
+        "fallback": "The ledger's bell-mark warms as the Nether road opens. The village representative follows you through."
+      }
+    },
+    {
+      "id": "escort_ledger_bearer",
+      "escort": "minecraft:fortress",
+      "radius": 7000,
+      "range": 48,
+      "amount": 1,
+      "stage": 1,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.goals.1.say",
+        "fallback": "The fortress stones answer the bell-mark on the ledger. We are in the right place. Take these four crying obsidian anchors and three soul lantern witnesses. Place them within the fortress: they will secure the passage and call Avar Khel before us."
+      }
+    },
+    {
+      "id": "place_crying_obsidian_anchors",
+      "place": "minecraft:crying_obsidian",
+      "structure": "minecraft:fortress",
+      "amount": 4,
+      "range": 64,
+      "stage": 2
+    },
+    {
+      "id": "place_soul_lantern_witnesses",
+      "place": "minecraft:soul_lantern",
+      "structure": "minecraft:fortress",
+      "amount": 3,
+      "range": 64,
+      "auto_advance": true,
+      "stage": 2,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.goals.3.say",
+        "fallback": "The anchors lock the old passage open. Chains scrape behind the sealed walls; the prisoners are close."
+      }
+    },
+    {
+      "id": "wait_for_last_court",
+      "type": "wait_time",
+      "amount": 15,
+      "auto_advance": true,
+      "stage": 3,
+      "say": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.goals.4.say",
+        "fallback": "Fifteen seconds pass. The anchors flare, the old collection gate opens, and Avar Khel walks through with the keys to the prison cells at his belt."
+      }
+    },
+    {
+      "id": "confront_crownless_cinder",
+      "talk": "minecraft:wither_skeleton",
+      "amount": 1,
+      "from_threats": true,
+      "stage": 4
+    },
+    {
+      "id": "survive_the_last_trial",
+      "kill": "minecraft:wither_skeleton",
+      "amount": 1,
+      "from_threats": false,
+      "stage": 5
+    },
+    {
+      "id": "bring_down_the_burning_throne",
+      "kill": "minecraft:ghast",
+      "amount": 1,
+      "attack_only": true,
+      "from_threats": false,
+      "stage": 5
+    },
+    {
+      "id": "break_the_ash_wing",
+      "kill": "minecraft:phantom",
+      "amount": 1,
+      "attack_only": true,
+      "from_threats": false,
+      "stage": 5
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:wither_skeleton",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.name",
+      "fallback": "Avar Khel, the Crownless Cinder"
+    },
+    "stage": 4,
+    "spawn_origin": "player",
+    "spawn_min_radius": 4,
+    "spawn_max_radius": 8,
+    "spawn_on_accept": true,
+    "spare": true,
+    "glow": false,
+    "max_health": 360.0,
+    "equipment": {
+      "mainhand": {
+        "item": "minecraft:netherite_sword",
+        "enchants": {
+          "minecraft:sharpness": 4,
+          "minecraft:fire_aspect": 2
+        }
+      },
+      "head": "minecraft:wither_skeleton_skull",
+      "chest": {
+        "item": "minecraft:netherite_chestplate",
+        "enchants": {
+          "minecraft:protection": 3
+        }
+      }
+    },
+    "offer_line": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.offer_line",
+      "fallback": "Avar Khel enters through the old collection gate carrying the keys to the cells where the surviving prisoners are held."
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.target_line",
+      "fallback": "Your founders brought me criminals, raiders, and strangers. In return, I stopped a plague and guarded their children for six generations. Do not pretend the bargain had only one beneficiary."
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.talk.0.0",
+          "fallback": "Release every surviving prisoner."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.talk.0.1",
+          "fallback": "I will, if the village either surrenders my ward or pays for it honestly. Protection has a cost even when heroes dislike the invoice."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.talk.1.0",
+          "fallback": "You murdered travelers for a bargain."
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.talk.1.1",
+          "fallback": "Your founders chose them, chained them, and rang the bell. I received what your village delivered. Judge me—but do not clean their hands to dirty mine."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.talk.2.0",
+          "fallback": "What bargain are you offering now?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.talk.2.1",
+          "fallback": "One chest of gold each winter, iron for my guards, and open trade through the Nether road. No prisoners. Refuse, and my ward ends tonight."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.attack_choice_label",
+      "fallback": "Release the prisoners. The village will survive without your ward."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.spare_choice_label",
+      "fallback": "Accept gold and iron—and triumph over your final trial."
+    },
+    "attack_ambushes": [
+      {
+        "entity": "minecraft:wither_skeleton",
+        "name": {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.attack_ambushes.0.name",
+          "fallback": "Ash Court Blackguard"
+        },
+        "count": 3,
+        "max_health": 90.0,
+        "equipment": {
+          "mainhand": {
+            "item": "minecraft:netherite_axe",
+            "enchantments": [
+              {
+                "id": "minecraft:sharpness",
+                "level": 3
+              }
+            ]
+          },
+          "chest": {
+            "item": "minecraft:diamond_chestplate",
+            "enchantments": [
+              {
+                "id": "minecraft:protection",
+                "level": 3
+              }
+            ]
+          }
+        }
+      },
+      {
+        "entity": "minecraft:wither_skeleton",
+        "name": {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.attack_ambushes.1.name",
+          "fallback": "Eye of the Crownless"
+        },
+        "count": 1,
+        "max_health": 70.0,
+        "equipment": {
+          "mainhand": {
+            "item": "minecraft:bow",
+            "enchantments": [
+              {
+                "id": "minecraft:power",
+                "level": 5
+              },
+              {
+                "id": "minecraft:punch",
+                "level": 2
+              },
+              {
+                "id": "minecraft:flame",
+                "level": 1
+              }
+            ]
+          }
+        },
+        "mount": {
+          "entity": "minecraft:ghast",
+          "name": {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.attack_ambushes.1.mount.name",
+            "fallback": "The Burning Throne"
+          },
+          "max_health": 80.0
+        }
+      },
+      {
+        "entity": "minecraft:wither_skeleton",
+        "name": {
+          "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.attack_ambushes.2.name",
+          "fallback": "Wing of the Last Court"
+        },
+        "count": 1,
+        "max_health": 65.0,
+        "equipment": {
+          "mainhand": {
+            "item": "minecraft:bow",
+            "enchantments": [
+              {
+                "id": "minecraft:power",
+                "level": 4
+              },
+              {
+                "id": "minecraft:infinity",
+                "level": 1
+              }
+            ]
+          }
+        },
+        "mount": {
+          "entity": "minecraft:phantom",
+          "name": {
+            "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.attack_ambushes.2.mount.name",
+            "fallback": "Ash-Wing"
+          },
+          "max_health": 60.0
+        }
+      }
+    ],
+    "attack_return_line": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.attack_return_line",
+      "fallback": "Avar Khel falls and the prison keys strike the floor. The ward around the distant village goes dark, but the surviving captives are free."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.spared_line",
+      "fallback": "You permit the Crownless Cinder to approach the chained ledger."
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.post_spare_line",
+      "fallback": "Avar Khel signs the amended ledger, opens the cells, and surrenders the waystone keys. The village keeps the ward and assumes a costly annual tribute."
+    },
+    "villager_spared_line": {
+      "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.villager_spared_line",
+      "fallback": "The prisoners are free. We kept the ward, but every winter the village will see exactly what its protection costs—and pay it from its own stores."
+    },
+    "rewards_from_giver": true,
+    "spare_handoff": {
+      "depart_after_spare": true
+    },
+    "spare_rewards": {
+      "xp": 1400,
+      "items": {
+        "minecraft:nether_star": 1,
+        "minecraft:enchanted_golden_apple": 1
+      }
+    },
+    "mercy": {
+      "offer_chance": 0,
+      "ambush_player": 100,
+      "nothing_chance": 0,
+      "ambush": "minecraft:wither_skeleton",
+      "ambush_name": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.mercy.ambush_name",
+        "fallback": "Crownless Cinder's Final Examiner"
+      },
+      "count": 4,
+      "ambush_max_health": 85.0,
+      "ambush_equipment": {
+        "mainhand": {
+          "item": "minecraft:netherite_sword",
+          "enchantments": [
+            {
+              "id": "minecraft:sharpness",
+              "level": 3
+            },
+            {
+              "id": "minecraft:fire_aspect",
+              "level": 1
+            }
+          ]
+        },
+        "head": "minecraft:netherite_helmet",
+        "chest": {
+          "item": "minecraft:diamond_chestplate",
+          "enchantments": [
+            {
+              "id": "minecraft:protection",
+              "level": 3
+            }
+          ]
+        }
+      },
+      "ambush_line": {
+        "translate": "quest.mebahelrpgrquest.ash_court_chain_8_the_last_debt.threat.mercy.ambush_line",
+        "fallback": "Avar Khel signs the amended ledger and withdraws through the sealed gate. 'No bargain is binding until its champion survives the final audit.' His four examiners step from the soul fire."
+      }
+    }
+  },
+  "rewards": {
+    "xp": 1600,
+    "items": {
+      "minecraft:nether_star": 1,
+      "minecraft:netherite_upgrade_smithing_template": 1,
+      "minecraft:diamond": 12
+    }
+  },
+  "traits": {
+    "complete": [
+      "ash_court_last_debt_ended",
+      "hag_base_ash_court_done"
+    ],
+    "spare": [
+      "ash_court_bound_to_bell"
+    ],
+    "attack": [
+      "ash_court_destroyed"
+    ]
+  }
+}

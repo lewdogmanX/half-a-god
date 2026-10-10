@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:x4s_payoff",
+  "trigger": {
+    "type": "quest_spared",
+    "quest": "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun"
+  },
+  "delay": {
+    "min_ticks": 36000,
+    "max_ticks": 60000
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "The Pilgrim",
+    "quest_book": "mebahelrpgrquest:hag_x4s_sunlight_in_a_bottle"
+  }
+}

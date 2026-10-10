@@ -1,0 +1,25 @@
+{
+  "id": "hag_talk_47",
+  "type": "villager_conversation",
+  "required_story_flags": [
+    "gt_got_out"
+  ],
+  "forbidden_story_flags": [],
+  "weight": 8,
+  "cooldown": 24000,
+  "max_player_distance": 16,
+  "lines": [
+    {
+      "speaker": 0,
+      "look_at": 1,
+      "text": "I heard the hero testified against Blackwater.",
+      "translation_key": "ambient.half_a_god.hag_talk_47.0"
+    },
+    {
+      "speaker": 1,
+      "look_at": 0,
+      "text": "Against themselves, too. That takes something.",
+      "translation_key": "ambient.half_a_god.hag_talk_47.1"
+    }
+  ]
+}

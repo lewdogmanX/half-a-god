@@ -1,0 +1,117 @@
+{
+  "title": {
+    "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.title",
+    "fallback": "Among the Dead"
+  },
+  "summary": {
+    "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.summary",
+    "fallback": "A worried villager asks you to check on a friend who went deep underground to study zombies by pretending to be one of them."
+  },
+  "goals": [
+    {
+      "id": "kill_friend",
+      "kill": "minecraft:zombie_villager",
+      "amount": 1,
+      "attack_only": true
+    },
+    {
+      "id": "kill_called_zombies",
+      "kill": "minecraft:zombie",
+      "amount": 8,
+      "attack_only": true
+    }
+  ],
+  "threat": {
+    "entity": "minecraft:zombie_villager",
+    "name": {
+      "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.name",
+      "fallback": "Oswin the Dead Scholar"
+    },
+    "structure": "minecraft:mineshaft",
+    "search_radius": 2200,
+    "spawn_on_accept": true,
+    "spare": true,
+    "glow": false,
+    "offer_line": {
+      "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.offer_line",
+      "fallback": "Excuse me, I need your help. A buddy of mine and I went deep underground a few weeks ago. Zombies were everywhere, so we disguised ourselves as zombies to slip through. Now he spends all his time among them, claiming he is studying them. I worry he may never come back. Please check on him. I can mark the coordinates."
+    },
+    "target_line": {
+      "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.target_line",
+      "fallback": "Muhhhh. Eughhh. Bwaaaa. Raa-ah, screw it. What do you want?"
+    },
+    "talk": [
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.talk.0.0",
+          "fallback": "Are you the villager's missing friend?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.talk.0.1",
+          "fallback": "Depends who is asking. If he sent you, then yes, I am probably the fool you came looking for. And no, I am not trapped."
+        }
+      ],
+      [
+        {
+          "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.talk.1.0",
+          "fallback": "What are you doing down here?"
+        },
+        {
+          "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.talk.1.1",
+          "fallback": "Studying them. Their hunger, their reactions, the way the sickness holds onto a mind. If I can understand it, maybe one day someone can undo it."
+        }
+      ]
+    ],
+    "attack_choice_label": {
+      "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.attack_choice_label",
+      "fallback": "You're coming back with me."
+    },
+    "spare_choice_label": {
+      "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.spare_choice_label",
+      "fallback": "I'll leave you to your thing."
+    },
+    "attack_return_line": {
+      "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.attack_return_line",
+      "fallback": "You... killed him? I need a moment. I have no interest in rewarding you for that. Get out of my sight."
+    },
+    "spared_line": {
+      "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.spared_line",
+      "fallback": "Thank you. I believe I am really onto something here. We might be able to develop a cure for these people one day. Let my friend know I think of him. Please?"
+    },
+    "post_spare_line": {
+      "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.post_spare_line",
+      "fallback": "I am fine. Tell him not to worry."
+    },
+    "villager_spared_line": {
+      "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.villager_spared_line",
+      "fallback": "Well, stranger? I see you have not come back with him. Tell me he is at least doing okay. He is safe? Then that is enough. Thank you for checking on him."
+    },
+    "rewards_from_giver": true,
+    "spare_rewards": {
+      "xp": 160,
+      "items": {
+        "minecraft:emerald": 6,
+        "minecraft:golden_apple": 2
+      }
+    },
+    "attack_ambush_entity": "minecraft:zombie",
+    "attack_ambush_name": {
+      "translate": "quest.mebahelrpgrquest.zombie_disguise_friend.threat.attack_ambush_name",
+      "fallback": "Oswin's Called Dead"
+    },
+    "attack_ambush_count": 8,
+    "attack_ambush_max_health": 25
+  },
+  "rewards": {},
+  "traits": {
+    "complete": [
+      "friend_of_outcasts",
+      "hag_base_zombie_disguise_done"
+    ]
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_m1_follow_the_crimson_bee"
+    ]
+  }
+}
