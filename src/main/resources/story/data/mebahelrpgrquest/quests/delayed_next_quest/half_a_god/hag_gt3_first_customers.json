@@ -84,7 +84,12 @@
           "Here.",
           "Thank you. Don't tell anyone you saw me. Please."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "joints"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "He pays in emeralds and won't meet your eyes. 'Same time next week?'"
     }
   ]
 }

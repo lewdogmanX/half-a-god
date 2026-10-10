@@ -81,7 +81,12 @@
           "I brought a sample.",
           "Then let's see if you're the first one worth his letter."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "sample"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "The Fixer weighs the sample in one hand and you in the other. 'You'll do.'"
     }
   ]
 }

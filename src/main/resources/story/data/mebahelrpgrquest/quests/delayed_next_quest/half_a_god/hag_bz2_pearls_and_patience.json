@@ -88,7 +88,12 @@
           "What am I looking for?",
           "My bees. And whatever is calling them."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "honeycomb"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ]
 }

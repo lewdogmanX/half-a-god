@@ -93,7 +93,12 @@
           "Skyroot, for the barn.",
           "...That's more than I asked for. Huh."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "skyroot"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

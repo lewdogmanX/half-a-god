@@ -97,7 +97,12 @@
           "I know.",
           "Then maybe you're not who I thought you were. Not all the way."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "gold"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

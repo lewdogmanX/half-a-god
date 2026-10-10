@@ -110,7 +110,12 @@
           "You've changed, Halden.",
           "So have you. For the better, both of us."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "pearls"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

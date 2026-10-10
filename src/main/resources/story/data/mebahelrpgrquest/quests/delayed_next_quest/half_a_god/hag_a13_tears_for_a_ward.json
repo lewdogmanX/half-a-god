@@ -30,7 +30,7 @@
   "flow": {
     "delayed_next_quest": {
       "quest": "mebahelrpgrquest:hag_a14_night_of_the_faithful",
-      "delay_ticks": 12000,
+      "delay_ticks": 2400,
       "silent_start": false,
       "retry_delay_ticks": 200,
       "conditions": {
@@ -85,7 +85,12 @@
           "What will you make?",
           "Regeneration. Enough to keep you standing when you shouldn't be."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "tears"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "The cleric brews through the night and hands you a satchel of red bottles."
     }
   ]
 }

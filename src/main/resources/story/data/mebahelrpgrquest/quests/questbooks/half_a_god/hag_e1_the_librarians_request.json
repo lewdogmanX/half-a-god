@@ -103,7 +103,13 @@
           "How do I reach the End?",
           "Twelve eyes of the old kind. Find them, and a stronghold. I'll come."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "books",
+        "ink"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "'Strongholds keep old books. Take me to one.'"
     }
   ],
   "requires": {

@@ -102,7 +102,12 @@
           "The Wither will wake if they get three.",
           "Then don't sell them a third. Yet."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "skulls"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

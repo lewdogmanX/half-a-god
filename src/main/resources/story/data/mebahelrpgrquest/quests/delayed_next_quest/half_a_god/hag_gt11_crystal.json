@@ -80,7 +80,12 @@
           "Tell me.",
           "It means we don't need them any more. It means they need to be gone."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "crystal"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "The Fixer goes quiet, then very rich. 'With this, we don't need Blackwater. We need Blackwater gone.'"
     }
   ]
 }

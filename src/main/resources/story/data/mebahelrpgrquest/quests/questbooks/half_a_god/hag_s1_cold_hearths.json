@@ -103,7 +103,13 @@
           "Why won't anyone go out?",
           "Our grandfathers guarded something out there. They never came back. Their ghosts still patrol."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "coal",
+        "logs"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "'Our grandfathers guarded something out there. They never told us what.'"
     }
   ],
   "requires": {

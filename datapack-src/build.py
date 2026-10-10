@@ -32,6 +32,7 @@ def npc_name(goal_id):
 talk_quests = set()
 CAST = []          # for the mod: which villager is which character, and where they live
 MISSING_GREET = []
+DELIVERIES = []
 # Where each character lives. Everyone not listed lives in a village of their own (fixed the first time you meet them).
 ASHFORD_FOLK = {"Reeve Halden", "Ashford Survivor", "Ashford Elder", "Halden's Son", "Captain of the Watch", "Guard Captain",
                 "Freed Ashford Man", "Old Aurel"}
@@ -95,6 +96,15 @@ for qkey, (_, q) in QUESTS.items():
             npc["talk"] = own
         elif name in NPC_TALK:
             npc["talk"] = NPC_TALK[name]
+        # Anything you were asked to bring is handed over to this person (Mebahel's delivery): the items are taken,
+        # unless the quest gives them straight back as its reward (then you're only showing them).
+        reward_items = set(q.get("rewards", {}).get("items", {}))
+        bring = [x for x in q["goals"] if "collect" in x and x["stage"] < gl["stage"] and x["collect"] not in reward_items]
+        if bring:
+            npc["delivery_objectives"] = [x["id"] for x in bring]
+            npc["delivery_choice_label"] = "Hand over what you brought"
+            npc["delivered_line"] = gl.get("say") or "Thank you."
+            DELIVERIES.append(qkey)
         place = place_of(qkey, name)
         if place == "snowy_village":
             npc["structure"] = "minecraft:village_snowy"
@@ -406,4 +416,5 @@ if os.path.isdir(MOD_ROOT):
 print("quests:", len(QUESTS), "extra files:", len(EXTRA))
 if MISSING_GREET:
     print("NPCs without a greeting:", MISSING_GREET)
+print("quests where villagers now take the items:", len(DELIVERIES))
 print("staged threats moved off structures:", sorted(set(STRUCTURE_FIXED)))

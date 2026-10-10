@@ -82,7 +82,7 @@
     "on_kill": {
       "delayed_next_quest": {
         "quest": "mebahelrpgrquest:hag_v3k_the_coven",
-        "delay_ticks": 12000,
+        "delay_ticks": 2400,
         "silent_start": false,
         "retry_delay_ticks": 200,
         "conditions": {

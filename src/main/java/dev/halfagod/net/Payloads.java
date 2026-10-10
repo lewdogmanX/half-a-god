@@ -114,6 +114,28 @@ public final class Payloads {
         }
     }
 
+    /** Server -> client: the travel screen (JSON list of destinations). */
+    public record OpenTravel(String json) implements CustomPacketPayload {
+        public static final Type<OpenTravel> TYPE = typeOf("open_travel");
+        public static final StreamCodec<ByteBuf, OpenTravel> CODEC = StreamCodec.composite(ByteBufCodecs.stringUtf8(1 << 16), OpenTravel::json, OpenTravel::new);
+
+        @Override
+        public Type<OpenTravel> type() {
+            return TYPE;
+        }
+    }
+
+    /** Client -> server: travel to destination n of the last list. */
+    public record PickTravel(int index) implements CustomPacketPayload {
+        public static final Type<PickTravel> TYPE = typeOf("pick_travel");
+        public static final StreamCodec<ByteBuf, PickTravel> CODEC = StreamCodec.composite(ByteBufCodecs.VAR_INT, PickTravel::index, PickTravel::new);
+
+        @Override
+        public Type<PickTravel> type() {
+            return TYPE;
+        }
+    }
+
     public static void register(RegisterPayloadHandlersEvent event) {
         PayloadRegistrar r = event.registrar("1");
         r.playToClient(RepSync.TYPE, RepSync.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onRep(p)));
@@ -125,6 +147,12 @@ public final class Payloads {
         r.playToServer(RequestMap.TYPE, RequestMap.CODEC, (p, ctx) -> ctx.enqueueWork(() -> {
             if (ctx.player() instanceof ServerPlayer sp) {
                 dev.halfagod.core.MapStates.send(sp);
+            }
+        }));
+        r.playToClient(OpenTravel.TYPE, OpenTravel.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onOpenTravel(p)));
+        r.playToServer(PickTravel.TYPE, PickTravel.CODEC, (p, ctx) -> ctx.enqueueWork(() -> {
+            if (ctx.player() instanceof ServerPlayer sp) {
+                dev.halfagod.core.Travel.pick(sp, p.index());
             }
         }));
         r.playToServer(PickChoice.TYPE, PickChoice.CODEC, (p, ctx) -> ctx.enqueueWork(() -> {

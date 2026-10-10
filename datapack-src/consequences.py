@@ -498,9 +498,9 @@ quest("ha4_the_hand_of_azazel", "The Hand of Azazel",
 
 def link_after_endings():
     """Called by build.py once the main story exists."""
-    QUESTS["g2_ashford_rebuilt"][1].setdefault("flow", {})["delayed_next_quest"] = flow("et1_whispers_of_a_new_god", delay=12000, dims=OVER)
+    QUESTS["g2_ashford_rebuilt"][1].setdefault("flow", {})["delayed_next_quest"] = flow("et1_whispers_of_a_new_god", delay=2400, dims=OVER)
     fl = QUESTS["b3_the_last_preacher"][1].setdefault("flow", {})
-    fl["delayed_next_quest"] = flow("ha1_the_first_command", delay=6000, dims=OVER)
+    fl["delayed_next_quest"] = flow("ha1_the_first_command", delay=2400, dims=OVER)
 
 # =====================================================================================================
 # REPUTATION UNLOCKS (the mod sends these letters when your reputation crosses a line)

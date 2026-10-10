@@ -94,7 +94,12 @@
           "He's breathing.",
           "He's breathing. Thank you. ...You sold it to him. Don't think I've forgotten that."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "narcan"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "He gasps awake. His friend won't look at you. 'He'll live. Will the next one?'"
     }
   ],
   "choice": {

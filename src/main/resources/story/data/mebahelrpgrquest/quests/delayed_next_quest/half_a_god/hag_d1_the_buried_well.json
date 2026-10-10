@@ -94,7 +94,12 @@
           "Then from what?",
           "Something under the sand. The husks herd towards it."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "milk"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "The sick have poison wounds no husk could give."
     }
   ]
 }

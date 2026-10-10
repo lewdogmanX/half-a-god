@@ -29,7 +29,7 @@
   "flow": {
     "delayed_next_quest": {
       "quest": "mebahelrpgrquest:hag_gt5_blackwater_wants_a_word",
-      "delay_ticks": 12000,
+      "delay_ticks": 2400,
       "silent_start": false,
       "retry_delay_ticks": 200,
       "conditions": {
@@ -80,7 +80,12 @@
           "Is that a problem?",
           "It's an opportunity. Mostly. We'll see."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "hash"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "'Now we're talking. You've got a knack for this, which should worry you.'"
     }
   ]
 }

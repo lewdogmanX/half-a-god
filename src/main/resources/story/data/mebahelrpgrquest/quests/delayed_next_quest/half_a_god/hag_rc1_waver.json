@@ -104,7 +104,13 @@
           "I know.",
           "Good. Knowing is where it starts."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "bread",
+        "iron"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

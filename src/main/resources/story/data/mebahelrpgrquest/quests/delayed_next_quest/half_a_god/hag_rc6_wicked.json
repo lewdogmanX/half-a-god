@@ -97,7 +97,12 @@
           "I've been killing his Wardens.",
           "He wanted them dead. The Nails held him down. You've been setting him free, and he paid you for it."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "blood"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

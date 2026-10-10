@@ -90,7 +90,13 @@
           "And then?",
           "And then we're partners with the most dangerous man in the valley. Smile."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "cocaine",
+        "hash"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Don Vasco's men load the wagons. 'Pleasure doing business.'"
     }
   ]
 }

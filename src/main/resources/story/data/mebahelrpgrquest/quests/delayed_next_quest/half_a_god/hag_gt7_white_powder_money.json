@@ -84,7 +84,12 @@
           "Where does it go?",
           "Up the river, to people who don't ask. Don't you start asking either."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "product"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "The Fixer counts emeralds into your hands until they spill. 'This is what the valley pays.'"
     }
   ]
 }

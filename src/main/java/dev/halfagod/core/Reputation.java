@@ -139,7 +139,9 @@ public final class Reputation {
     @SubscribeEvent
     public static void onEffect(MobEffectEvent.Added event) {
         if (event.getEntity() instanceof ServerPlayer player
-                && event.getEffectInstance().getEffect().value() == MobEffects.HERO_OF_THE_VILLAGE.value()) {
+                && event.getEffectInstance().getEffect().value() == MobEffects.HERO_OF_THE_VILLAGE.value()
+                && !event.getEffectInstance().isAmbient() && event.getOldEffectInstance() == null) {
+            // (the mod's own "hero among villagers" perk is ambient and doesn't count)
             change(player, 12, "you saved a village from a raid");
         }
     }

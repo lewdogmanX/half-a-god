@@ -93,7 +93,12 @@
           "The ambrosium.",
           "Then the lamps will burn tonight for the ones in the dark. Sit with me a while."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "ambrosium"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

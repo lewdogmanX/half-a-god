@@ -97,7 +97,12 @@
           "What's next?",
           "A raider who ran from Ashford. Deserters are bad for business. Deal with him."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "emeralds"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

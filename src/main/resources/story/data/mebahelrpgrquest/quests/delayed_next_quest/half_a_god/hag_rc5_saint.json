@@ -93,7 +93,12 @@
           "Four boats.",
           "We'll name the first one after you."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "boats"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

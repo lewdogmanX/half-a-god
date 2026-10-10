@@ -29,7 +29,7 @@ public final class Atlas {
     private static final Map<UUID, Map<ResourceLocation, String>> PLACED = new HashMap<>();
     private static final Set<UUID> CLEANED = new HashSet<>();
     private static Boolean available;
-    private static Method worldLandmarksOf, put, remove, create, builderAdd, asMap;
+    private static Method worldLandmarksOf, put, remove, create, builderAdd, asMap, surveyorUuid;
     private static Object POS, NAME, COLOR;
 
     private Atlas() {
@@ -41,6 +41,11 @@ public final class Atlas {
         }
         try {
             ClassLoader cl = HalfAGod.class.getClassLoader();
+            try {
+                Class.forName("folk.sisby.surveyor.landmark.WorldLandmarks", false, cl);
+            } catch (ClassNotFoundException e) {
+                cl = Thread.currentThread().getContextClassLoader();
+            }
             Class<?> wl = Class.forName("folk.sisby.surveyor.landmark.WorldLandmarks", true, cl);
             Class<?> lm = Class.forName("folk.sisby.surveyor.landmark.Landmark", true, cl);
             Class<?> types = Class.forName("folk.sisby.surveyor.landmark.component.LandmarkComponentTypes", true, cl);
@@ -50,6 +55,10 @@ public final class Atlas {
                 if (m.getName().equals("put") && m.getParameterCount() == 1) put = m;
                 if (m.getName().equals("remove") && m.getParameterCount() == 2) remove = m;
                 if (m.getName().equals("asMap") && m.getParameterCount() == 2) asMap = m;
+            }
+            Class<?> sv = Class.forName("folk.sisby.surveyor.Surveyor", true, cl);
+            for (Method m : sv.getMethods()) {
+                if (m.getName().equals("getUuid") && m.getParameterCount() == 1) surveyorUuid = m;
             }
             for (Method m : lm.getMethods()) {
                 if (m.getName().equals("create") && m.getParameterCount() == 3) create = m;
@@ -66,7 +75,7 @@ public final class Atlas {
             COLOR = f.get(null);
             available = worldLandmarksOf != null && put != null && remove != null && create != null && builderAdd != null;
         } catch (Throwable t) {
-            available = false;
+            HalfAGod.LOG.warn("Half a God: Antique Atlas marker update failed", t);
         }
         if (available) {
             HalfAGod.LOG.info("Half a God: quest markers will show on Antique Atlas (Surveyor found).");
@@ -74,11 +83,26 @@ public final class Atlas {
         return available;
     }
 
+    /** Surveyor files the singleplayer host's own landmarks under a special "host" id, not the player's UUID. */
+    private static UUID owner(ServerPlayer player) {
+        try {
+            if (surveyorUuid != null) {
+                Object o = surveyorUuid.invoke(null, player);
+                if (o instanceof UUID u) {
+                    return u;
+                }
+            }
+        } catch (Throwable ignored) {
+        }
+        return player.getUUID();
+    }
+
     public static void tick(ServerPlayer player) {
         if (!ready() || player.getServer() == null) {
             return;
         }
         try {
+            UUID owner = owner(player);
             Map<ResourceLocation, String> placed = PLACED.computeIfAbsent(player.getUUID(), k -> new HashMap<>());
             Map<ResourceLocation, Object[]> want = new HashMap<>();
             for (Object progress : Meb.rawQuests(player)) {
@@ -114,7 +138,7 @@ public final class Atlas {
             }
             if (CLEANED.add(player.getUUID())) {
                 for (ServerLevel l : player.getServer().getAllLevels()) {
-                    cleanStale(l, player.getUUID(), want.keySet());
+                    cleanStale(l, owner, want.keySet());
                 }
                 placed.clear();
             }
@@ -125,7 +149,7 @@ public final class Atlas {
                 if (w == null || !where.equals(key(w))) {
                     Level l = player.getServer().getLevel(ResourceKey.create(Registries.DIMENSION, ResourceLocation.parse(where.split("@")[0])));
                     if (l != null) {
-                        remove.invoke(worldLandmarksOf.invoke(null, l), player.getUUID(), id);
+                        remove.invoke(worldLandmarksOf.invoke(null, l), owner, id);
                     }
                     placed.remove(id);
                 }
@@ -149,12 +173,12 @@ public final class Atlas {
                     }
                     return b;
                 };
-                Object landmark = create.invoke(null, player.getUUID(), e.getKey(), components);
+                Object landmark = create.invoke(null, owner, e.getKey(), components);
                 put.invoke(worldLandmarksOf.invoke(null, level), landmark);
                 placed.put(e.getKey(), k);
             }
         } catch (Throwable t) {
-            available = false;
+            HalfAGod.LOG.warn("Half a God: Antique Atlas marker update failed", t);
             HalfAGod.LOG.warn("Half a God: Antique Atlas markers turned off ({})", t.toString());
         }
     }

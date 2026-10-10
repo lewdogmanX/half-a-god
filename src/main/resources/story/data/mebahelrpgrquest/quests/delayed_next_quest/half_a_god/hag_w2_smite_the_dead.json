@@ -96,7 +96,13 @@
           "Why do the dead matter?",
           "The Wither is made from dead things. So is its army."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "blaze_rods",
+        "bones"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "'Steel hates the dead if you teach it to.'"
     }
   ]
 }

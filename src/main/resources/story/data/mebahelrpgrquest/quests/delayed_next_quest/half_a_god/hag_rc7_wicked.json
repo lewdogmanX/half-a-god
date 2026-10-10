@@ -146,7 +146,12 @@
           "Anything else?",
           "When he offers you mercy, take it. He pays better than I do."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "gold_blocks"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

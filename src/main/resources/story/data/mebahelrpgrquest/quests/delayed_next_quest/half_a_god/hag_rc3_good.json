@@ -101,7 +101,12 @@
           "Aechor petals.",
           "They smell like rain. Thank you. Sister Ysolde wants to see you."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "aechor_petals"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

@@ -102,7 +102,14 @@
           "I'll look for him.",
           "Go at dusk. Whatever's up there only comes out at night."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "wheat",
+        "potatoes",
+        "beef"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "'Tam? He went up the hill three days ago. His sheep came back without him.'"
     }
   ]
 }

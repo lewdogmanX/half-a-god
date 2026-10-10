@@ -91,7 +91,7 @@
     "on_kill": {
       "delayed_next_quest": {
         "quest": "mebahelrpgrquest:hag_p7b_peddlers_debt",
-        "delay_ticks": 24000,
+        "delay_ticks": 2400,
         "silent_start": false,
         "retry_delay_ticks": 200,
         "conditions": {

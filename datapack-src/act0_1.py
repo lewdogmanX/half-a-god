@@ -71,6 +71,9 @@ quest("p6_market_road", "The Market Road",
       rewards={"xp": 280, "items": {"minecraft:emerald": 10, "minecraft:saddle": 1}},
       nxt=flow("p7_gold_at_double_weight"))
 
+# the market is in another village, not the one you set off from
+QUESTS["p6_market_road"][1]["goals"][3]["_far"] = True
+
 quest("p7_gold_at_double_weight", "Gold at Double Weight",
       "The smiling stranger is back, buying gold and asking questions. Deal with him: you may spare him, or not.",
       [kill("face_the_peddler", "minecraft:wandering_trader", 1, 0,
@@ -90,7 +93,7 @@ quest("p7_gold_at_double_weight", "Gold at Double Weight",
       choice={"attack": {"label": "Drive him out with steel", "traits": ["peddler_slain"]},
               "spare": {"label": "Let him walk", "line": "He bows far too low. 'He will remember your kindness.'", "traits": ["heard_the_word"]}},
       rewards={"xp": 300, "items": {"minecraft:emerald": 8}},
-      on_kill=flow("p7b_peddlers_debt", delay=24000), on_spare=flow("p7s_the_peddlers_gift", delay=600))
+      on_kill=flow("p7b_peddlers_debt", delay=2400), on_spare=flow("p7s_the_peddlers_gift", delay=600))
 
 quest("p7b_peddlers_debt", "The Peddler's Debt",
       "'He paid for you in advance,' the note on your door says. They have come to collect.",
@@ -277,7 +280,7 @@ quest("a13_tears_for_a_ward", "Tears for a Ward",
       [collect("tears", "minecraft:ghast_tear", 4, 0),
        talk("deliver_to_the_cleric", 1, "The cleric brews through the night and hands you a satchel of red bottles.")],
       rewards={"xp": 450, "items": {"minecraft:golden_apple": 2, "minecraft:experience_bottle": 8}},
-      nxt=flow("a14_night_of_the_faithful", delay=12000, dims=OVER))
+      nxt=flow("a14_night_of_the_faithful", delay=2400, dims=OVER))
 
 quest("a14_night_of_the_faithful", "Night of the Faithful",
       "The cult has noticed you. Tonight they come for the village you protect.",

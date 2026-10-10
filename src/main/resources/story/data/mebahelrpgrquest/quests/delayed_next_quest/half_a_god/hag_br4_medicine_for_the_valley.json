@@ -82,7 +82,12 @@
           "Will it be enough?",
           "For tonight. Blackwater has to be stopped for there to be enough."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "narcan"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "'Three doses. Three people who wake up tomorrow. Thank you.'"
     }
   ]
 }

@@ -36,6 +36,7 @@ public final class Story {
         }
         if (t % 100 == 41) {
             Atlas.tick(player);
+            Morality.tick(player);
         }
         if (t % 100 == 13) {
             Reputation.tickVillagers(player);
@@ -119,6 +120,9 @@ public final class Story {
             companionsReact(player, lines);
         }
 
+        if (trait.startsWith("hag_") && trait.endsWith("_done") && !trait.startsWith("hag_base_")) {
+            Morality.onStoryQuestDone(player);
+        }
         Choices.onTrait(player, trait);
         Letters.onTrait(player, trait);
         Arcs.onTrait(player, trait);

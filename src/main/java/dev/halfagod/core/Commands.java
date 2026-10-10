@@ -48,6 +48,15 @@ public final class Commands {
                     }
                     return 1;
                 }))
+                .then(literal("travel").executes(c -> {
+                    ServerPlayer p = c.getSource().getPlayerOrException();
+                    if (!Morality.inVillage(p.serverLevel(), p.blockPosition())) {
+                        c.getSource().sendFailure(Component.literal("You can only set off from a village."));
+                        return 0;
+                    }
+                    Travel.open(p);
+                    return 1;
+                }))
                 .then(literal("map").executes(c -> {
                     net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(c.getSource().getPlayerOrException(),
                             new dev.halfagod.net.Payloads.OpenMap(false));

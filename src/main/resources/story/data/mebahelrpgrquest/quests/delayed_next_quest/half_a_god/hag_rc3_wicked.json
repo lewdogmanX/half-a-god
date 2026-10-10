@@ -93,7 +93,12 @@
           "Golden amber.",
           "It's warm. Is it supposed to be warm? Never mind. Paid. Now, about Sister Ysolde..."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "golden_amber"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

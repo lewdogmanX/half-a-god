@@ -93,7 +93,12 @@
           "Four golden apples.",
           "Four people back. I'll start tonight."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "golden_apples"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

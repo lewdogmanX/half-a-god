@@ -93,7 +93,12 @@
           "White apples, from the sky.",
           "Then the stories were true. By morning, the coughing will stop."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "white_apples"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

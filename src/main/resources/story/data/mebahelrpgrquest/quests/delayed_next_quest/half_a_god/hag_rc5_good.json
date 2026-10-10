@@ -93,7 +93,12 @@
           "Campfires.",
           "No one will freeze this winter. That's never been true before."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "campfires"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Thank you."
     }
   ],
   "choice": {

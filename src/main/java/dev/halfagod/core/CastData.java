@@ -66,6 +66,18 @@ public final class CastData extends SavedData {
         setDirty();
     }
 
+    /** every place this player's story has fixed, by name (home, ashford, char:The Librarian...) */
+    public Map<String, Place> placesOf(UUID player) {
+        Map<String, Place> out = new HashMap<>();
+        String prefix = player + "|";
+        places.forEach((k, v) -> {
+            if (k.startsWith(prefix)) {
+                out.put(k.substring(prefix.length()), v);
+            }
+        });
+        return out;
+    }
+
     public UUID current(String castKey) {
         return current.get(castKey);
     }

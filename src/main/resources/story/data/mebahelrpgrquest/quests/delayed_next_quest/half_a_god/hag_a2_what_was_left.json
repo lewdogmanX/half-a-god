@@ -98,7 +98,14 @@
           "Did you see where they took the men?",
           "No. But look, a child found this. A gold coin with an eye on it."
         ]
-      ]
+      ],
+      "delivery_objectives": [
+        "bread",
+        "wool",
+        "coal"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "A child hands you a gold coin stamped with an eye. 'The bad men dropped it.'"
     }
   ]
 }

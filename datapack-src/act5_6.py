@@ -183,7 +183,7 @@ quest("v3_the_midwife", "The Midwife",
       choice={"attack": {"label": "End the blood pits", "traits": ["midwife_slain"]},
               "spare": {"label": "Let her go", "line": "'None of them ever spoke. Remember that.'", "traits": ["midwife_spared"]}},
       rewards={"xp": 1600, "items": {f"{SOS}:ether_ashes": 8}},
-      on_kill=flow("v3k_the_coven", delay=12000), on_spare=flow("v3s_cleansing_the_pits"))
+      on_kill=flow("v3k_the_coven", delay=2400), on_spare=flow("v3s_cleansing_the_pits"))
 
 quest("v4_original_sin", "Original Sin",
       "To kill the cult's vessels you must wake one yourself: throw a Flesh Carcass into blood. Then kill a Butcher.",

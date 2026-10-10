@@ -21,7 +21,7 @@
   "flow": {
     "delayed_next_quest": {
       "quest": "mebahelrpgrquest:hag_b3_the_last_preacher",
-      "delay_ticks": 6000,
+      "delay_ticks": 2400,
       "silent_start": false,
       "retry_delay_ticks": 200,
       "conditions": {

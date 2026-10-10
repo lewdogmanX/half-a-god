@@ -122,7 +122,7 @@ quest("b2_tithe_of_gold", "Tithe of Gold",
       "Gold is faith made solid. Bring the first tithe.",
       [collect("tithe", "minecraft:gold_ingot", 64, 0, "Somewhere far below, a throne that is no longer empty hums.")],
       rewards={"xp": 2000, "items": {f"{NM}:faith_essence": 1}},
-      nxt=flow("b3_the_last_preacher", delay=6000, dims=OVER))
+      nxt=flow("b3_the_last_preacher", delay=2400, dims=OVER))
 
 quest("b3_the_last_preacher", "The Last Preacher",
       "He is whole now, so she can finally die. His first command: find Maraal.",

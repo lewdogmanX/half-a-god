@@ -44,12 +44,15 @@ public final class Cast {
 
     public static void tick(ServerPlayer player) {
         Map<String, List<Entry>> cast = StoryData.INSTANCE.cast;
-        if (cast.isEmpty()) {
-            return;
-        }
         for (Object progress : Meb.rawQuests(player)) {
             if (!Meb.isOpen(progress)) {
                 continue;
+            }
+            // Wandering traders (the Peddler, Tobin, the Pilgrim) normally leave after a while; story ones stay put
+            for (UUID uuid : Meb.threatUuids(progress)) {
+                if (find(player, uuid) instanceof net.minecraft.world.entity.npc.WanderingTrader trader && trader.getDespawnDelay() > 0) {
+                    trader.setDespawnDelay(0);
+                }
             }
             List<Entry> entries = cast.get(Meb.questIdOf(progress));
             if (entries == null) {

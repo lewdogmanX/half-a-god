@@ -47,7 +47,7 @@ quest("gt4_the_hash_market", "The Hash Market",
       [collect("hash", f"{AD}:hash", 16, 0),
        talk("deliver_to_the_fixer", 1, "'Now we're talking. You've got a knack for this, which should worry you.'", name=FIX)],
       rewards={"xp": 800, "items": {"minecraft:emerald": 48}},
-      nxt=flow("gt5_blackwater_wants_a_word", delay=12000))
+      nxt=flow("gt5_blackwater_wants_a_word", delay=2400))
 
 quest("gt5_blackwater_wants_a_word", "Blackwater Wants a Word",
       "The Blackwater Cartel runs this valley, and Blackwater is run by illagers. They've noticed a new grower.",
@@ -138,7 +138,7 @@ quest("gt12_don_vasco", "Don Vasco",
       choice={"attack": {"label": "Make him an example", "traits": ["gt_war_won"]},
               "spare": {"label": "Shake his hand", "line": "'Partners, then. The Chariot will not like this.'", "traits": ["gt_partners"]}},
       rewards={"xp": 3000, "items": {"minecraft:emerald_block": 4}},
-      on_kill=flow("gt13w_remnants", delay=6000), on_spare=flow("gt13p_the_big_shipment"))
+      on_kill=flow("gt13w_remnants", delay=2400), on_spare=flow("gt13p_the_big_shipment"))
 
 quest("gt13w_remnants", "Remnants",
       "Blackwater's survivors want revenge for their Don. Finish the war.",
