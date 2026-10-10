@@ -48,6 +48,11 @@ public final class Commands {
                     }
                     return 1;
                 }))
+                .then(literal("map").executes(c -> {
+                    net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(c.getSource().getPlayerOrException(),
+                            new dev.halfagod.net.Payloads.OpenMap(false));
+                    return 1;
+                }))
                 .then(literal("chronicle").executes(c -> {
                     Chronicle.give(c.getSource().getPlayerOrException(), false);
                     return 1;

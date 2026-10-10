@@ -445,6 +445,8 @@ def write(out_pack, mod_root):
         os.makedirs(os.path.join(a, "story"), exist_ok=True)
         os.makedirs(os.path.join(a, "lang"), exist_ok=True)
         dump("index.json", story_index(), os.path.join(a, "story"))
+        import story_map
+        dump("map.json", story_map.build(_goal_text), os.path.join(a, "story"))
         lang = dict(dialogue.LANG)
         lang.update({"key.categories.half_a_god": "Half a God"})
         dump("en_us.json", lang, os.path.join(a, "lang"))

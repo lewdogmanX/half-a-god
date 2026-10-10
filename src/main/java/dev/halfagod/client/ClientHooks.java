@@ -29,6 +29,14 @@ public final class ClientHooks {
         mc.setScreen(new ChoiceScreen(p.json()));
     }
 
+    public static void onMapState(Payloads.MapState p) {
+        StoryMapScreen.receive(p.json());
+    }
+
+    public static void onOpenMap(Payloads.OpenMap p) {
+        Minecraft.getInstance().setScreen(new StoryMapScreen(null));
+    }
+
     public static void onCinematic(Payloads.Cinematic p) {
         Minecraft mc = Minecraft.getInstance();
         mc.gui.setTimes(12, 80, 24);

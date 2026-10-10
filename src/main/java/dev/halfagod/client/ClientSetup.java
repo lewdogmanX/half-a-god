@@ -6,6 +6,7 @@ import net.neoforged.bus.api.IEventBus;
 import net.neoforged.neoforge.client.event.ClientTickEvent;
 import net.neoforged.neoforge.client.event.CustomizeGuiOverlayEvent;
 import net.neoforged.neoforge.client.event.RegisterGuiLayersEvent;
+import net.neoforged.neoforge.client.event.ScreenEvent;
 import net.neoforged.neoforge.client.event.ViewportEvent;
 import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.common.NeoForge;
@@ -23,5 +24,12 @@ public final class ClientSetup {
             CameraShake.tick();
         });
         NeoForge.EVENT_BUS.addListener((ViewportEvent.ComputeCameraAngles e) -> CameraShake.apply(e));
+        // Mebahel's quest map opens the story map instead (it has a button back to Mebahel's)
+        NeoForge.EVENT_BUS.addListener((ScreenEvent.Opening e) -> {
+            if (e.getNewScreen() != null && !StoryMapScreen.openingClassic && ClientConfig.REPLACE_QUEST_MAP.get()
+                    && e.getNewScreen().getClass().getName().equals("net.mebahelrpgrquest.client.gui.QuestMapScreen")) {
+                e.setNewScreen(new StoryMapScreen(e.getCurrentScreen()));
+            }
+        });
     }
 }
