@@ -68,6 +68,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -82,16 +83,16 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "There you are. Tomas has been drawing plans for a week.",
       "min_structure_distance": 300,
       "talk": [
         [
-          "You're Halden?",
-          "Reeve of Ashford. What's left of it. You're the one Mara writes about."
+          "The hall?",
+          "The one I lost. Tomas wants it back, bigger. He gets that from his mother."
         ],
         [
-          "You know Mara?",
-          "Everyone knows Old Mara. Nobody knows where she lives."
+          "What do you need?",
+          "Hands, mostly. And someone the village will follow. That's you."
         ]
       ]
     }

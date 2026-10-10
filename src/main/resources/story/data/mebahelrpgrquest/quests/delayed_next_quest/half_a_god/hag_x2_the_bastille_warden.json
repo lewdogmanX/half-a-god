@@ -46,7 +46,8 @@
           "What do you want?",
           "To walk out of here and never hold a key again."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

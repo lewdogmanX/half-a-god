@@ -75,8 +75,9 @@ T = {
                      ["Did you see anything on the road?", "The ones who attacked us whispered about 'pipes'. Pipes under the ground."]]}),
 "a5_beneath_the_pipes": ("The Faithful talked about pipes, and Mara's note agrees: the cult moves its prisoners through old rusted "
     "pipes (a Cult of Azazel structure). Find the pipes and the keeper's log hidden in a barrel there.", {}),
-"a6_believers_house": ("The pipe-keeper's log says the prisoners were moved to a believer house. Find it, kill the zealots "
-    "guarding it, and read the ledger in its barrel to learn where Ashford's men are now.", {}),
+"a6_believers_house": ("The pipe-keeper's log says the prisoners were moved through a believer house (Cult of Azazel). Find it "
+    "and talk to the Preacher who lives there. Zealots will come for him once he's talked: kill them, then read the ledger in "
+    "the house's barrel to learn where Ashford's men are now.", {}),
 "a7_the_bastille": ("The ledger says Ashford's fourteen men are held in a Bastille, an illager fortress paid for with cult gold "
     "(It Takes a Pillage). Storm it: kill its legioners, archers and skirmishers.", {}),
 "a8_ravagers_horn": ("The Bastille's ravagers will run down anyone who escapes. Kill two ravagers and bring back a Ravager Horn "
@@ -240,10 +241,12 @@ T = {
 "v11_the_crimson_guide": ("Ghastlies, the crimson bees of the Nether, know the way to the Nether Mansion. Go below and tame one. "
     "The next chapter starts once one follows you.", {}),
 # ---------------------------------------------------------------- ACT VII-VIII
-"m1_follow_the_crimson_bee": ("Your Ghastly hums north. Follow it to the Nether Mansion, the Cult of Azazel's Sacred City.", {}),
+"m1_follow_the_crimson_bee": ("Your Ghastly hums north. Follow it to the Nether Mansion, the Cult of Azazel's Sacred City, and "
+    "talk to the Welcomer who greets every pilgrim at its gate.", {}),
 "m2_the_cursed_quarries": ("Ashford's men are mining gold for a god in the Mansion's quarries. Kill the Manipulators who drive them.", {}),
 "m3_hold_the_quarry_gate": ("The freed prisoners need time to reach your portal. Hold the quarry gate against the piglin wardens.", {}),
-"m4_gilded_hunger": ("In the Sacred City, Gilded Golems drink gold and blood. Kill three. The Doctor and the Blacksmith will trade with you.", {}),
+"m4_gilded_hunger": ("In the Sacred City, Gilded Golems drink gold and blood. Kill three, then talk to the Doctor who was "
+    "watching. He and the Blacksmith will trade with you.", {}),
 "m5_do_not_provoke_gehinnom": ("The cult's guidebook says 'best not to provoke' the Gehinnom guardians. You have to, to reach the Lair.", {}),
 "m6_the_instruction": ("Reach Azazel's Lair at the end of the Mansion. A barrel there holds the instructions to summon him.", {}),
 "m7_hand_over_your_weapon": ("Fight the Divine Chariot Azazel in his Lair. If you hand him a sword or axe he lets you live and you'll "

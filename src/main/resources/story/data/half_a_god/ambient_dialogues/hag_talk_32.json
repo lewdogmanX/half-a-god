@@ -4,9 +4,11 @@
   "required_story_flags": [
     "hag_w6_the_withered_crown_done"
   ],
-  "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "forbidden_story_flags": [
+    "hag_h1_a_light_above_the_pit_done"
+  ],
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {
@@ -18,7 +20,7 @@
     {
       "speaker": 1,
       "look_at": 0,
-      "text": "And the sky over the Nether went red the same night. I don't like that.",
+      "text": "And the Nether sky went red the same night. I don't like that.",
       "translation_key": "ambient.half_a_god.hag_talk_32.1"
     }
   ]

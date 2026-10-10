@@ -32,7 +32,8 @@
           "Any last words?",
           "Kneel well."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

@@ -67,7 +67,6 @@ public final class Letters {
             player.drop(book, false);
         }
         player.level().playSound(null, player.blockPosition(), SoundEvents.BOOK_PAGE_TURN, SoundSource.PLAYERS, 1f, 0.9f);
-        player.sendSystemMessage(Component.literal("[Half a God] A letter from " + author + " has found its way into your pack: \"" + title + "\".")
-                .withStyle(ChatFormatting.GOLD));
+        player.displayClientMessage(Component.literal("A letter from " + author).withStyle(ChatFormatting.GOLD), true);
     }
 }

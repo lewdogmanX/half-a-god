@@ -58,6 +58,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -72,16 +73,16 @@
           "show_particles": false
         }
       ],
-      "target_line": "'I won't pretend I'm not disappointed. But you came back. Let's finish this properly.'",
+      "target_line": "So you got my letter. Sit down. This won't be easy for either of us.",
       "min_structure_distance": 300,
       "talk": [
         [
-          "You're Halden?",
-          "Reeve of Ashford. What's left of it. You're the one Mara writes about."
+          "You know about the fields.",
+          "Everyone knows. People talk. They also talk about the good you've done since."
         ],
         [
-          "You know Mara?",
-          "Everyone knows Old Mara. Nobody knows where she lives."
+          "Is there really a way out?",
+          "Burn the fields. Stand up to Blackwater. Testify. It'll cost you. It's still a way out."
         ]
       ]
     }

@@ -32,7 +32,8 @@
           "What will you do?",
           "Whatever you tell us. We've never not been told."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

@@ -105,7 +105,8 @@
           "You're asking for mercy?",
           "I'm asking you to look where it's getting you."
         ]
-      ]
+      ],
+      "golem_protected": true
     },
     {
       "entity": "minecraft:villager",
@@ -119,6 +120,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -133,7 +135,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "The quarry gold. Lovely. And now, a little advice.",
       "min_structure_distance": 300,
       "talk": [
         [

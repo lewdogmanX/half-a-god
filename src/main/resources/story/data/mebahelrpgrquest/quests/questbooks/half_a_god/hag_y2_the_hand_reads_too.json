@@ -46,6 +46,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -60,7 +61,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "My favourite supplier! I owe you money. Isn't that nice?",
       "min_structure_distance": 300,
       "talk": [
         [

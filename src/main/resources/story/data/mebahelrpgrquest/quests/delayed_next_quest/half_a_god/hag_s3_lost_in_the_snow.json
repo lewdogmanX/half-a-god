@@ -43,7 +43,7 @@
       "entity": "minecraft:villager",
       "name": "Village Elder",
       "stage": 0,
-      "structure": "minecraft:villages",
+      "structure": "minecraft:village_snowy",
       "search_radius": 8000,
       "spawn_radius": 10,
       "spawn_on_accept": true,
@@ -51,6 +51,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -65,12 +66,16 @@
           "show_particles": false
         }
       ],
-      "target_line": "'No snow. Not one flake. Grandfather said that would happen if the beast ever died.'",
+      "target_line": "Have you looked at the sky today? Not one flake.",
       "min_structure_distance": 300,
       "talk": [
         [
-          "Who are you?",
-          "The one people come to when something is wrong. Lately, that is often."
+          "Skor is dead. The Yeti.",
+          "Then grandfather was right. He said the snow would stop if the beast ever died."
+        ],
+        [
+          "The garrison can rest now.",
+          "We'll carry them home tomorrow. Every one of them. They waited long enough."
         ]
       ]
     }

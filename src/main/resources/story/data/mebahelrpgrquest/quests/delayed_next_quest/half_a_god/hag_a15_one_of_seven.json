@@ -51,6 +51,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -65,7 +66,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "A courier is already waiting at the well with a letter in a hand you recognise.",
+      "target_line": "Is it morning? It's really morning?",
       "min_structure_distance": 300,
       "talk": [
         [

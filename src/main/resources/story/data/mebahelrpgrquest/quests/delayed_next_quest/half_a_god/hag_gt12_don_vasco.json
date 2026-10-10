@@ -30,8 +30,6 @@
       "spawn_origin": "player",
       "spawn_min_radius": 6,
       "spawn_max_radius": 16,
-      "structure": "illagerinvasion:labyrinth",
-      "search_radius": 30000,
       "max_health": 260,
       "effects": [
         {
@@ -71,7 +69,8 @@
             "mainhand": "minecraft:diamond_axe"
           }
         }
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

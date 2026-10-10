@@ -17,7 +17,7 @@
       "stage": 1,
       "auto_advance": true,
       "say": "Back in Ashford, a freed man whispers: 'The rest were marched into a purple portal. North. Always north.'",
-      "name": "Village Elder"
+      "name": "Freed Ashford Man"
     }
   ],
   "threats": [
@@ -45,7 +45,7 @@
     },
     {
       "entity": "minecraft:villager",
-      "name": "Village Elder",
+      "name": "Freed Ashford Man",
       "stage": 1,
       "structure": "minecraft:villages",
       "search_radius": 8000,
@@ -55,6 +55,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -69,7 +70,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "Back in Ashford, a freed man whispers: 'The rest were marched into a purple portal. North. Always north.'",
+      "target_line": "These men walked in an hour ago. One of them is asking for you.",
       "min_structure_distance": 300,
       "talk": [
         [

@@ -64,8 +64,6 @@
       "spawn_min_radius": 6,
       "spawn_max_radius": 16,
       "count": 8,
-      "structure": "block_factorys_bosses:yeti_hideout",
-      "search_radius": 30000,
       "max_health": 40,
       "equipment": {
         "mainhand": {

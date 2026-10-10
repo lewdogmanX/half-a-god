@@ -58,6 +58,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -72,8 +73,18 @@
           "show_particles": false
         }
       ],
-      "target_line": "He pays in emeralds and won't meet your eyes. 'Same time next week?'",
-      "min_structure_distance": 300
+      "target_line": "Not here. Not so close. Did anyone follow you?",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You ordered something?",
+          "Keep your voice down. Yes. For a friend. He gets... bad nights."
+        ],
+        [
+          "Here.",
+          "Thank you. Don't tell anyone you saw me. Please."
+        ]
+      ]
     }
   ]
 }

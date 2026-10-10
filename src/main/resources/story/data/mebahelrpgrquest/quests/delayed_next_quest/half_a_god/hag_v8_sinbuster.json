@@ -49,6 +49,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -63,7 +64,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "The smith won't touch it. 'That's not armour. That's a cage you wear.'",
+      "target_line": "What in the world are you wearing?",
       "min_structure_distance": 300,
       "talk": [
         [

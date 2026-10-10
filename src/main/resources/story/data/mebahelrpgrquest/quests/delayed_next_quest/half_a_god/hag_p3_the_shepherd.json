@@ -59,6 +59,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -73,7 +74,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "Tam: 'A man with a golden smile bought my sheep. Then he asked what a person weighs. In gold.'",
+      "target_line": "Is it gone? Please tell me it's gone.",
       "talk": [
         [
           "Tam, are you hurt?",

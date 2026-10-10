@@ -39,8 +39,6 @@
       "spawn_min_radius": 4,
       "spawn_max_radius": 14,
       "count": 4,
-      "structure": "netherman:mansion_nether",
-      "search_radius": 30000,
       "max_health": 90,
       "equipment": {
         "mainhand": "minecraft:golden_axe"
@@ -56,8 +54,6 @@
       "spawn_origin": "player",
       "spawn_min_radius": 4,
       "spawn_max_radius": 12,
-      "structure": "netherman:mansion_nether",
-      "search_radius": 30000,
       "max_health": 220,
       "effects": [
         {

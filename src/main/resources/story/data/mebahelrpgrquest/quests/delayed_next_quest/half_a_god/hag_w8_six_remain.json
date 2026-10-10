@@ -49,6 +49,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -63,7 +64,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "The villager reads: 'The first is done. Six remain... I mean, the hard part remains. Forgive an old woman's pen.' 'Six what?' they ask.",
+      "target_line": "A letter from Mara? Read it to me, my eyes aren't what they were.",
       "min_structure_distance": 300,
       "talk": [
         [

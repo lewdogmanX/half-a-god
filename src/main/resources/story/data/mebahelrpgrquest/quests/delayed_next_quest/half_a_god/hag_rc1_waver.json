@@ -63,7 +63,8 @@
           "And you came to me anyway?",
           "You know what it is to want another chance. Don't you?"
         ]
-      ]
+      ],
+      "golem_protected": true
     },
     {
       "entity": "minecraft:villager",
@@ -77,6 +78,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -91,7 +93,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "You. ...Well. You came, at least.",
       "min_structure_distance": 300,
       "talk": [
         [

@@ -117,7 +117,8 @@
           "That's not your business.",
           "No. But it's why I think you'll understand."
         ]
-      ]
+      ],
+      "golem_protected": true
     },
     {
       "entity": "minecraft:villager",
@@ -131,6 +132,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -145,7 +147,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "So you're the one. My father won't stop talking about you.",
       "min_structure_distance": 300,
       "talk": [
         [

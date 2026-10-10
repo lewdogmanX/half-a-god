@@ -2,7 +2,7 @@ import json, os, shutil, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from lib import *
 import act0_1, act2_4, act5_6, act7_8, side, forks, green_trade, routes, story_text, bumblezone, legionary  # noqa: registers quests
-import base_quests, consequences, dialogue, mod_tables
+import base_quests, consequences, dialogue, mod_tables, npc_lines
 routes.join_main_story()
 consequences.link_after_endings()
 base_quests.weave()
@@ -30,6 +30,37 @@ def npc_name(goal_id):
     return "Village Elder"
 
 talk_quests = set()
+CAST = []          # for the mod: which villager is which character, and where they live
+MISSING_GREET = []
+# Where each character lives. Everyone not listed lives in a village of their own (fixed the first time you meet them).
+ASHFORD_FOLK = {"Reeve Halden", "Ashford Survivor", "Ashford Elder", "Halden's Son", "Captain of the Watch", "Guard Captain",
+                "Freed Ashford Man", "Old Aurel"}
+HOME_FOLK = {"The Mason", "The Armourer", "The Smith", "The Cleric", "Tam the Shepherd", "Wren of the Pits"}
+SNOW_QUESTS = ("s1_", "s2_", "s3_", "x5_", "x5s_", "x5k_", "rc5_good")
+DESERT_QUESTS = ("d1_", "d2_", "d3_")
+
+
+def place_of(qkey, name):
+    if name in ASHFORD_FOLK:
+        return "ashford"
+    if name in HOME_FOLK:
+        return "home"
+    if qkey.startswith(SNOW_QUESTS) and name in ("Village Elder", "Ilse"):
+        return "snowy_village"
+    if qkey.startswith(DESERT_QUESTS) and name == "Village Elder":
+        return "desert_village"
+    if name in ("Village Elder", "The Farmer"):
+        return "home"
+    if name in ("Nervous Buyer", "Buyer's Friend"):
+        return "buyers_village"
+    return "char:" + name
+
+
+# The freed men at the end of the Bastille road are Ashford's, not a random elder
+for gl in QUESTS["a9_open_the_cells"][1]["goals"]:
+    if gl.get("talk") == "minecraft:villager":
+        gl["name"] = "Freed Ashford Man"
+
 for qkey, (_, q) in QUESTS.items():
     talks = [gl for gl in q["goals"] if gl.get("talk") == "minecraft:villager"]
     if not talks:
@@ -39,28 +70,38 @@ for qkey, (_, q) in QUESTS.items():
     for gl in talks:
         name = gl.get("name") or npc_name(gl["id"])
         gl["name"] = name
-        # Placed by Mebahel's structure locate (like its Roadwarden Nessa / Village Messenger): no spawn_origin, so
-        # the villager stands in a village instead of the "spawn next to the player" fallback.
-        # Home-village characters (Prologue, side quests) use the village you are in; everyone else lives elsewhere.
         far = gl.pop("_far", None)
         if far is None:
             far = not (qkey.startswith(("p", "the_first", "sq_", "gt")))
+        greet = npc_lines.GREET.get((qkey, name))
+        if not greet:
+            MISSING_GREET.append((qkey, name))
+            greet = "There you are."
         npc = {"entity": "minecraft:villager", "name": name, "stage": gl["stage"], "structure": "minecraft:villages",
                "search_radius": 8000, "spawn_radius": 10, "spawn_on_accept": True,
                "spare": False, "glow": True, "max_health": 60,
                # If a zombie or raid kills them, Mebahel puts them back (QuestEvents.respawnConfiguredThreatTargetAfterDeath)
                "respawn_on_death": True,
+               # iron golems and Guard Villagers leave them alone
+               "golem_protected": True,
                "effects": [{"id": "minecraft:resistance", "amplifier": 1, "duration_seconds": 100000, "show_particles": False},
                            {"id": "minecraft:fire_resistance", "amplifier": 0, "duration_seconds": 100000, "show_particles": False}],
-               "target_line": gl.get("say") or "You came. Good. Listen."}
+               "target_line": greet}
         if far:
             npc["min_structure_distance"] = 300
-        own = gl.pop("_talk", None)
+        own = npc_lines.TALK.get((qkey, name)) or gl.pop("_talk", None)
+        gl.pop("_talk", None)
         if own:
             npc["talk"] = own
         elif name in NPC_TALK:
             npc["talk"] = NPC_TALK[name]
+        place = place_of(qkey, name)
+        if place == "snowy_village":
+            npc["structure"] = "minecraft:village_snowy"
+        elif place == "desert_village":
+            npc["structure"] = "minecraft:village_desert"
         threats.append(npc)
+        CAST.append({"quest": qid(qkey), "stage": gl["stage"], "name": name, "place": place, "structure": npc["structure"]})
     threat_entities = {t["entity"] for t in threats}
     for gl in q["goals"]:
         if "kill" in gl and "from_threats" not in gl and gl["kill"] not in threat_entities:
@@ -70,6 +111,34 @@ for _, (_, q) in QUESTS.items():
     for t in q.get("threats", []):
         if t.get("structure") and t.get("spawn_origin") == "quest_target":
             del t["spawn_origin"]
+
+for qkey, (_, q) in QUESTS.items():
+    for t in q.get("threats", []):
+        if t.get("talk") and t["entity"].split(":")[0] not in ("minecraft",) and not t.get("spare"):
+            CAST.append({"quest": qid(qkey), "stage": t.get("stage", 0), "name": t["name"], "place": "local", "adopt": t["entity"]})
+
+# Anyone you might spare or talk to is protected from iron golems and Guard Villagers (Mebahel's golem_protected)
+for _, (_, q) in QUESTS.items():
+    for t in q.get("threats", []):
+        if t.get("spare") or t.get("talk"):
+            t["golem_protected"] = True
+
+# Threats in a stage after "reach <structure>" spawn around you when you arrive. Mebahel can't place them inside the
+# structure unless you're standing within its walls (it needs the exact building), so they spawn near you instead.
+STRUCTURE_FIXED = []
+for qkey, (_, q) in QUESTS.items():
+    reached = {}
+    for gl in q["goals"]:
+        if "reach" in gl:
+            reached[gl["reach"]] = gl["stage"]
+    for t in q.get("threats", []):
+        s = t.get("structure")
+        if s and s in reached and t.get("stage", 0) > reached[s]:
+            del t["structure"]
+            t.pop("search_radius", None)
+            t.pop("min_structure_distance", None)
+            t["spawn_origin"] = "player"
+            STRUCTURE_FIXED.append(qkey)
 
 # talk steps need a village, so any quest with a talk step starts in the Overworld
 for qkey, (_, q) in QUESTS.items():
@@ -295,12 +364,31 @@ os.makedirs(os.path.join(OUT, 'data/half_a_god/hag_mod'), exist_ok=True)
 json.dump({'lines': base_quests.mod_table()}, open(os.path.join(OUT, 'data/half_a_god/hag_mod/base_lines.json'), 'w'), indent=2)
 MOD_ROOT = os.environ.get('HAG_MOD_ROOT', '/home/claude/half-a-god')
 mod_tables.write(OUT, MOD_ROOT if os.path.isdir(MOD_ROOT) else None)
-# vanilla load marker: proves in chat that Minecraft enabled the pack
-os.makedirs(os.path.join(OUT, "data/half_a_god/function"), exist_ok=True)
-open(os.path.join(OUT, "data/half_a_god/function/loaded.mcfunction"), "w").write(
-    'tellraw @a [{"text":"[Half a God] ","color":"gold"},{"text":"Story datapack loaded. Opening letter: /mebahelquest givebook mebahelrpgrquest:hag_the_first_letter","color":"yellow"}]\n')
-os.makedirs(os.path.join(OUT, "data/minecraft/tags/function"), exist_ok=True)
-json.dump({"values": ["half_a_god:loaded"]}, open(os.path.join(OUT, "data/minecraft/tags/function/load.json"), "w"), indent=2)
+DIM_OF_NS = {"aether": "aether:the_aether"}
+NETHER_STRUCTS = {"minecraft:fortress", "minecraft:bastion_remnant", "netherman:mansion_nether", "netherman:pipes",
+                  "block_factorys_bosses:underworld_arena", "netherman:gast_chamber"}
+qdim = {}
+for k, (_, q) in QUESTS.items():
+    fl = q.get("flow", {})
+    for d in [fl.get("delayed_next_quest"), fl.get("on_kill", {}).get("delayed_next_quest"), fl.get("on_spare", {}).get("delayed_next_quest")]:
+        if d and d.get("conditions", {}).get("dimensions"):
+            qdim.setdefault(d["quest"], d["conditions"]["dimensions"][0])
+MARKERS = {}
+for k, (_, q) in QUESTS.items():
+    dim = qdim.get(qid(k), "minecraft:overworld")
+    for gl in q["goals"]:
+        r = gl.get("reach")
+        if r in NETHER_STRUCTS:
+            dim = "minecraft:the_nether"
+        elif r == "minecraft:end_city":
+            dim = "minecraft:the_end"
+        elif r and r.split(":")[0] in DIM_OF_NS:
+            dim = DIM_OF_NS[r.split(":")[0]]
+    MARKERS[qid(k)] = {"dim": dim, "title": q["title"]}
+for name in base_quests.BASE:
+    MARKERS["mebahelrpgrquest:" + name] = {"dim": "minecraft:overworld", "title": base_quests.title_of(name)}
+json.dump({'quests': MARKERS}, open(os.path.join(OUT, 'data/half_a_god/hag_mod/markers.json'), 'w'), indent=1)
+json.dump({'npcs': CAST}, open(os.path.join(OUT, 'data/half_a_god/hag_mod/cast.json'), 'w'), indent=1)
 shutil.copy(os.path.join(os.path.dirname(__file__), "README.md"), os.path.join(OUT, "README.md"))
 # the mod ships the same datapack inside its jar as a built-in pack at the top of the pack list
 # (minus the load message, which is for the plain datapack)
@@ -316,3 +404,6 @@ if os.path.isdir(MOD_ROOT):
     json.dump({"pack": {"pack_format": 48, "description": "Half a God story (built into the mod)"}},
               open(os.path.join(dst, "pack.mcmeta"), "w"), indent=2)
 print("quests:", len(QUESTS), "extra files:", len(EXTRA))
+if MISSING_GREET:
+    print("NPCs without a greeting:", MISSING_GREET)
+print("staged threats moved off structures:", sorted(set(STRUCTURE_FIXED)))

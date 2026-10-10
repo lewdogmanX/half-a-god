@@ -48,6 +48,10 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     public final List<String> advancementCouriers = new ArrayList<>();
     /** Mebahel's own questlines, woven into the acts */
     public final List<BaseLines.Line> baseLines = new ArrayList<>();
+    /** quest id -> the story characters its villagers play */
+    public final Map<String, List<Cast.Entry>> cast = new HashMap<>();
+    /** quest id -> where its map marker belongs (dimension) and what it's called */
+    public final Map<String, String[]> markers = new HashMap<>();
     /** Mara's letters: trigger trait -> letter per tone */
     public final List<JsonObject> letters = new ArrayList<>();
 
@@ -81,6 +85,8 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
         advancementCouriers.clear();
         baseLines.clear();
         letters.clear();
+        cast.clear();
+        markers.clear();
         for (Map.Entry<ResourceLocation, JsonElement> e : files.entrySet()) {
             if (!e.getValue().isJsonObject()) {
                 continue;
@@ -95,6 +101,17 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                     case "chronicle" -> loadChronicle(o);
                     case "story_graph" -> loadGraph(o);
                     case "base_lines" -> loadBaseLines(o);
+                    case "cast" -> {
+                        for (JsonElement c : o.getAsJsonArray("npcs")) {
+                            JsonObject j = c.getAsJsonObject();
+                            cast.computeIfAbsent(j.get("quest").getAsString(), k -> new ArrayList<>()).add(new Cast.Entry(
+                                    j.get("quest").getAsString(), j.get("stage").getAsInt(), j.get("name").getAsString(),
+                                    j.get("place").getAsString(), j.has("structure") ? j.get("structure").getAsString() : "",
+                                    j.has("adopt") ? j.get("adopt").getAsString() : ""));
+                        }
+                    }
+                    case "markers" -> o.getAsJsonObject("quests").entrySet().forEach(m -> markers.put(m.getKey(),
+                            new String[]{m.getValue().getAsJsonObject().get("dim").getAsString(), m.getValue().getAsJsonObject().get("title").getAsString()}));
                     case "letters" -> o.getAsJsonArray("letters").forEach(c -> letters.add(c.getAsJsonObject()));
                     default -> {
                     }

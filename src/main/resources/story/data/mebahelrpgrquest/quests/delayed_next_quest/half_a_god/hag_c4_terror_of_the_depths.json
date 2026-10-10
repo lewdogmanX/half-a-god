@@ -51,6 +51,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -65,8 +66,18 @@
           "show_particles": false
         }
       ],
-      "target_line": "'The black ship's sinking. Lads are rowing out to watch. First time anyone's dared in forty years.'",
-      "min_structure_distance": 300
+      "target_line": "Look at that. The black ship, going down. Tell me you did that.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "The Kraken is dead.",
+          "Forty years that ship sat out there. Forty years we fished the shallows."
+        ],
+        [
+          "What will you do now?",
+          "Sail. Far as we like. The lads are already arguing over who goes first."
+        ]
+      ]
     }
   ]
 }

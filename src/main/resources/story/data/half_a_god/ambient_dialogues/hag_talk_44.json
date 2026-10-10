@@ -4,9 +4,11 @@
   "required_story_flags": [
     "hag_mercy_x5_the_last_garrison_man"
   ],
-  "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "forbidden_story_flags": [
+    "hag_f1_the_last_road_done"
+  ],
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {

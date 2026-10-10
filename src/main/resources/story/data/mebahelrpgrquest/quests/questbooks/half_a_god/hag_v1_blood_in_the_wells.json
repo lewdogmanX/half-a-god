@@ -58,6 +58,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -72,7 +73,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "'This blood was poured, not spilled. Someone is feeding the ground.'",
+      "target_line": "Don't drink anything from the well. I mean it. Look at this.",
       "min_structure_distance": 300,
       "talk": [
         [

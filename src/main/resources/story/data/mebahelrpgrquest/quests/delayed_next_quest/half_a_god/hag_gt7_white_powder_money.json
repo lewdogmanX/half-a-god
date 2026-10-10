@@ -59,6 +59,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -73,7 +74,17 @@
           "show_particles": false
         }
       ],
-      "target_line": "The Fixer counts emeralds into your hands until they spill. 'This is what the valley pays.'"
+      "target_line": "Is that the order? All of it?",
+      "talk": [
+        [
+          "Your order.",
+          "That's more money than this village has seen in ten years. In one sack."
+        ],
+        [
+          "Where does it go?",
+          "Up the river, to people who don't ask. Don't you start asking either."
+        ]
+      ]
     }
   ]
 }

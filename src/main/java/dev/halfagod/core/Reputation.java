@@ -73,13 +73,8 @@ public final class Reputation {
         d.value = Mth.clamp(d.value + amount, -100, 100);
         int after = tierIndex(d.value);
         sync(player, amount);
-        if (Math.abs(amount) >= 4 && why != null && !why.isEmpty()) {
-            player.displayClientMessage(Component.literal((amount > 0 ? "+" : "") + Math.round(amount) + " reputation: " + why)
-                    .withStyle(amount > 0 ? ChatFormatting.GOLD : ChatFormatting.RED), true);
-        }
+        // the bar shows the change and the new tier; nothing goes to chat
         if (before != after) {
-            player.sendSystemMessage(Component.literal("Your reputation is now ").withStyle(ChatFormatting.GRAY)
-                    .append(Component.literal(TIERS[after]).withStyle(color(after), ChatFormatting.BOLD)));
             updateTierFlags(player);
         }
         for (StoryData.Unlock u : StoryData.INSTANCE.unlocks) {

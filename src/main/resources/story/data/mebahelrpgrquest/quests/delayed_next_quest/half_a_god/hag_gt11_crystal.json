@@ -55,6 +55,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -69,7 +70,17 @@
           "show_particles": false
         }
       ],
-      "target_line": "The Fixer goes quiet, then very rich. 'With this, we don't need Blackwater. We need Blackwater gone.'"
+      "target_line": "Crystal. Nobody in the valley has made it this clean. Let me look.",
+      "talk": [
+        [
+          "Crystal.",
+          "Purer than anything Blackwater ever made. You know what this means?"
+        ],
+        [
+          "Tell me.",
+          "It means we don't need them any more. It means they need to be gone."
+        ]
+      ]
     }
   ]
 }

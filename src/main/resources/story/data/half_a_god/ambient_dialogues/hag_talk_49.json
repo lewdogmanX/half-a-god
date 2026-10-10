@@ -5,8 +5,8 @@
     "hag_sworn"
   ],
   "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {

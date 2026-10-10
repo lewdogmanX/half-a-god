@@ -73,6 +73,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -87,7 +88,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "'Tam? He went up the hill three days ago. His sheep came back without him.'",
+      "target_line": "Is that... all of it? The whole granary?",
       "talk": [
         [
           "The granary's full.",

@@ -63,7 +63,8 @@
         "item": "minecraft:wither_skeleton_skull",
         "name": "Tobin's Skull",
         "count": 1
-      }
+      },
+      "golem_protected": true
     },
     {
       "entity": "minecraft:villager",
@@ -77,6 +78,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -91,7 +93,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "You're the one Halden keeps talking about. Good timing.",
       "min_structure_distance": 300,
       "talk": [
         [

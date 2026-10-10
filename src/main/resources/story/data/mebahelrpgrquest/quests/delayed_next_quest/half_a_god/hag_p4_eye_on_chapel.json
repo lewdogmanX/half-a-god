@@ -61,6 +61,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -75,7 +76,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "The note: 'AZAZEL IS MY LIGHT AND MY SALVATION.' It is signed in letters nobody can read.",
+      "target_line": "You've heard about the door, then. Come in. Quickly.",
       "talk": [
         [
           "Tam's stranger was here, wasn't he?",

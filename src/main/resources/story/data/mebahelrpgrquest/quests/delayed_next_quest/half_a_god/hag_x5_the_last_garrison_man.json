@@ -44,7 +44,8 @@
           "What do you want?",
           "To walk home. Even if they hang me at the door."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

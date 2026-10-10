@@ -268,9 +268,10 @@
      "id": "mebahelrpgrquest:hag_a6_believers_house",
      "title": "The Believer's House",
      "kind": "main",
-     "summary": "The pipe-keeper's log says the prisoners were moved to a believer house. Find it, kill the zealots guarding it, and read the ledger in its barrel to learn where Ashford's men are now.",
+     "summary": "The pipe-keeper's log says the prisoners were moved through a believer house (Cult of Azazel). Find it and talk to the Preacher who lives there. Zealots will come for him once he's talked: kill them, then read the ledger in the house's barrel to learn where Ashford's men are now.",
      "goals": [
       "Reach a believer house",
+      "Talk to The Preacher",
       "Defeat 4 x vindicator",
       "Find and read: Ledger of Ashford"
      ],
@@ -317,7 +318,7 @@
      "summary": "You freed the prisoners who were left, but the Bastille's jailers are hunting them on the road home. Kill the jailers, then make sure the freed men reach a village safely.",
      "goals": [
       "Defeat 5 x vindicator",
-      "Talk to Village Elder"
+      "Talk to Freed Ashford Man"
      ],
      "needs": [],
      "leads": [
@@ -1999,9 +2000,10 @@
      "id": "mebahelrpgrquest:hag_m1_follow_the_crimson_bee",
      "title": "Follow the Crimson Bee",
      "kind": "main",
-     "summary": "Your Ghastly hums north. Follow it to the Nether Mansion, the Cult of Azazel's Sacred City.",
+     "summary": "Your Ghastly hums north. Follow it to the Nether Mansion, the Cult of Azazel's Sacred City, and talk to the Welcomer who greets every pilgrim at its gate.",
      "goals": [
-      "Reach a mansion nether"
+      "Reach a mansion nether",
+      "Talk to The Welcomer"
      ],
      "needs": [],
      "leads": [
@@ -2040,9 +2042,10 @@
      "id": "mebahelrpgrquest:hag_m4_gilded_hunger",
      "title": "Gilded Hunger",
      "kind": "main",
-     "summary": "In the Sacred City, Gilded Golems drink gold and blood. Kill three. The Doctor and the Blacksmith will trade with you.",
+     "summary": "In the Sacred City, Gilded Golems drink gold and blood. Kill three, then talk to the Doctor who was watching. He and the Blacksmith will trade with you.",
      "goals": [
-      "Defeat 3 x gilded golem"
+      "Defeat 3 x gilded golem",
+      "Talk to The Doctor"
      ],
      "needs": [],
      "leads": [

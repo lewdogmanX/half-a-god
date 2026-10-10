@@ -63,6 +63,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -77,7 +78,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "The villagers greet you like someone they were told to expect.",
+      "target_line": "A stranger with a letter. Let me guess who it's from.",
       "talk": [
         [
           "Old Mara sent me.",

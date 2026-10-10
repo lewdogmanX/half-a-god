@@ -55,6 +55,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -69,7 +70,17 @@
           "show_particles": false
         }
       ],
-      "target_line": "'Now we're talking. You've got a knack for this, which should worry you.'"
+      "target_line": "Hash? Let me see it. Don't wave it around.",
+      "talk": [
+        [
+          "Hash, as ordered.",
+          "It moves faster than leaf and pays three times better. Blackwater will notice."
+        ],
+        [
+          "Is that a problem?",
+          "It's an opportunity. Mostly. We'll see."
+        ]
+      ]
     }
   ]
 }

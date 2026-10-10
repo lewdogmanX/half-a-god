@@ -4,9 +4,11 @@
   "required_story_flags": [
     "midwife_slain"
   ],
-  "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "forbidden_story_flags": [
+    "hag_v10_maraal_done"
+  ],
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {

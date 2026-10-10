@@ -4,15 +4,17 @@
   "required_story_flags": [
     "peddler_slain"
   ],
-  "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "forbidden_story_flags": [
+    "hag_a1_ashford_burns_done"
+  ],
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {
       "speaker": 0,
       "look_at": 1,
-      "text": "They cut down the gold-man in the square.",
+      "text": "They drove the gold-man out of the village with steel.",
       "translation_key": "ambient.half_a_god.hag_talk_27.0"
     },
     {

@@ -42,6 +42,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -56,7 +57,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "'Then the End is next. Mara's courier is already on the road.'",
+      "target_line": "You found bones, didn't you. Old ones. I can tell.",
       "min_structure_distance": 300,
       "talk": [
         [

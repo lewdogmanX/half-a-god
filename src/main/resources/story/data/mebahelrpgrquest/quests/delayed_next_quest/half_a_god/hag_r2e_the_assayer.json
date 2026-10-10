@@ -46,7 +46,8 @@
         "item": "minecraft:gold_ingot",
         "name": "The Hand's Advance",
         "count": 16
-      }
+      },
+      "golem_protected": true
     }
   ],
   "choice": {

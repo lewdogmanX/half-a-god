@@ -72,7 +72,8 @@
           "Careful.",
           "Why? Drown me and you prove them right."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

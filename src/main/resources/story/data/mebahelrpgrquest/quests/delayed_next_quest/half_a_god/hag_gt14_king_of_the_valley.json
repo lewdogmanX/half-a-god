@@ -40,6 +40,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -54,7 +55,17 @@
           "show_particles": false
         }
       ],
-      "target_line": "'Every week, the money comes. Every week, someone pays for it. Try not to count those.'"
+      "target_line": "Look at you. A year ago you grew turnips.",
+      "talk": [
+        [
+          "It's all ours now.",
+          "Every field from the river to the hills. Every buyer. Every coin."
+        ],
+        [
+          "Was it worth it?",
+          "Ask the money. It never says no."
+        ]
+      ]
     }
   ]
 }

@@ -102,8 +102,9 @@ public final class Choices {
         JsonObject o = options.get(option).getAsJsonObject();
         Meb.addTrait(player, o.get("trait").getAsString());
         if (o.has("line")) {
-            player.sendSystemMessage(Component.literal("<" + c.get("speaker").getAsString() + "> ").withStyle(ChatFormatting.GOLD)
-                    .append(Component.literal(o.get("line").getAsString()).withStyle(ChatFormatting.WHITE)));
+            // the answer, said once above the hotbar (not in chat)
+            player.displayClientMessage(Component.literal(c.get("speaker").getAsString() + ": ").withStyle(ChatFormatting.GOLD)
+                    .append(Component.literal(o.get("line").getAsString()).withStyle(ChatFormatting.WHITE)), true);
         }
         if (o.has("rep")) {
             Reputation.change(player, o.get("rep").getAsDouble(), o.get("label").getAsString());

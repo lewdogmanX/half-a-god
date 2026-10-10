@@ -37,7 +37,8 @@
           "And if I say no?",
           "Then we're enemies, and you'd better be very good at it."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

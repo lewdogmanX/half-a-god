@@ -11,7 +11,7 @@ One connected story campaign for **Mebahel's RPG: Villager Quests & Companions**
 
 ## Install
 
-- **One world:** put `Half-a-God.zip` in `saves/<world>/datapacks/`, then run `/reload` or rejoin. A gold "[Half a God] Story datapack loaded" message confirms it is on.
+- **One world:** put `Half-a-God.zip` in `saves/<world>/datapacks/`, then run `/reload` or rejoin. `/datapack list` shows it as enabled.
 - **Whole modpack:** use a global datapack loader (for example Paxi or Global Packs).
 
 ## How the story starts

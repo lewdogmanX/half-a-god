@@ -53,7 +53,8 @@
           "And if I don't?",
           "Then you'd better be quicker than me. I'm not much of a runner."
         ]
-      ]
+      ],
+      "golem_protected": true
     },
     {
       "entity": "minecraft:villager",
@@ -67,6 +68,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -81,8 +83,18 @@
           "show_particles": false
         }
       ],
-      "target_line": "He gasps awake. His friend won't look at you. 'He'll live. Will the next one?'",
-      "min_structure_distance": 300
+      "target_line": "Please, he's not waking up, please tell me you brought it!",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "I've got Narcan.",
+          "Then hurry! He stopped breathing twice!"
+        ],
+        [
+          "He's breathing.",
+          "He's breathing. Thank you. ...You sold it to him. Don't think I've forgotten that."
+        ]
+      ]
     }
   ],
   "choice": {

@@ -55,6 +55,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -69,8 +70,18 @@
           "show_particles": false
         }
       ],
-      "target_line": "The Fixer weighs the sample in one hand and you in the other. 'You'll do.'",
-      "min_structure_distance": 300
+      "target_line": "The recruiter says you said yes. Show me you meant it.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "The recruiter sent me.",
+          "He sends a lot of people. Most of them grow weeds. The other kind."
+        ],
+        [
+          "I brought a sample.",
+          "Then let's see if you're the first one worth his letter."
+        ]
+      ]
     }
   ]
 }

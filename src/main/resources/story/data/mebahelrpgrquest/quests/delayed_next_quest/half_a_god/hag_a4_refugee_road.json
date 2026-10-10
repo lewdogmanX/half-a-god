@@ -64,6 +64,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -78,7 +79,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "'We'll follow you. Just don't let them take us like they took the others.'",
+      "target_line": "Are you the one who'll walk us out? We're packed. We've been packed for days.",
       "min_structure_distance": 300,
       "talk": [
         [
@@ -103,6 +104,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -117,7 +119,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "Ashford folk? Come in, come in. There's room by the fire.",
       "min_structure_distance": 300,
       "talk": [
         [

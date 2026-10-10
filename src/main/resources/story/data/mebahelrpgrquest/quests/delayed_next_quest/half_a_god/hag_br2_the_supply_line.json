@@ -32,8 +32,6 @@
       "spawn_min_radius": 4,
       "spawn_max_radius": 14,
       "count": 6,
-      "structure": "minecraft:pillager_outpost",
-      "search_radius": 12000,
       "max_health": 56,
       "equipment": {
         "mainhand": {

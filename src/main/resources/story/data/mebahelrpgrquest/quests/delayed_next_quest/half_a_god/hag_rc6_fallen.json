@@ -69,7 +69,8 @@
           "For now.",
           "Then you know how it feels. Help me. Or don't."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

@@ -59,6 +59,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -73,7 +74,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "The cleric brews through the night and hands you a satchel of red bottles.",
+      "target_line": "Mara sent word you'd come. Did you bring the tears?",
       "min_structure_distance": 300,
       "talk": [
         [

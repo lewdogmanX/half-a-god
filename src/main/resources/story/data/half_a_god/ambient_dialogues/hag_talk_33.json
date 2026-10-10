@@ -4,9 +4,11 @@
   "required_story_flags": [
     "hag_w7_a_light_they_cannot_dim_done"
   ],
-  "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "forbidden_story_flags": [
+    "hag_e1_the_librarians_request_done"
+  ],
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {

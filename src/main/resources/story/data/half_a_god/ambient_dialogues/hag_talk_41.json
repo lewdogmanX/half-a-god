@@ -4,15 +4,17 @@
   "required_story_flags": [
     "hag_mercy_x1_the_informant"
   ],
-  "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "forbidden_story_flags": [
+    "hag_a6_believers_house_done"
+  ],
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {
       "speaker": 0,
       "look_at": 1,
-      "text": "The hero let that scout go.",
+      "text": "The hero let that pillager scout go.",
       "translation_key": "ambient.half_a_god.hag_talk_41.0"
     },
     {

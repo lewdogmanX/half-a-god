@@ -62,6 +62,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -76,7 +77,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "'Old Mara? She's been old as long as anyone remembers. My grandmother said the same.'",
+      "target_line": "You're asking about Old Mara? Strange time to ask.",
       "min_structure_distance": 300,
       "talk": [
         [

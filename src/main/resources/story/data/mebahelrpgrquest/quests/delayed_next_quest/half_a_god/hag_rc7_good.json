@@ -99,7 +99,8 @@
           "Halden's waiting.",
           "Then take me to him. I won't run."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

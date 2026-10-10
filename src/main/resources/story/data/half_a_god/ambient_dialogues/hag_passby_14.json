@@ -6,8 +6,8 @@
   ],
   "forbidden_story_flags": [],
   "trigger_radius": 4.5,
-  "weight": 6,
-  "cooldown": 12000,
+  "weight": 1,
+  "cooldown": 72000,
   "max_player_distance": 12,
   "lines": [
     {

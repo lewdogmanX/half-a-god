@@ -67,6 +67,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -81,8 +82,18 @@
           "show_particles": false
         }
       ],
-      "target_line": "The Fixer weighs the sample in one hand and you in the other. 'You'll do.'",
-      "min_structure_distance": 300
+      "target_line": "You're the one asking about work. Let's see what you grew.",
+      "min_structure_distance": 300,
+      "talk": [
+        [
+          "You're hiring growers?",
+          "Hiring is a strong word. I'm finding out who can keep a field alive and their mouth shut."
+        ],
+        [
+          "And if I can?",
+          "Then Blackwater pays you better than any farm ever will."
+        ]
+      ]
     }
   ]
 }

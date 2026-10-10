@@ -1,6 +1,6 @@
 {
   "title": "Follow the Crimson Bee",
-  "summary": "Your Ghastly hums north. Follow it to the Nether Mansion, the Cult of Azazel's Sacred City.",
+  "summary": "Your Ghastly hums north. Follow it to the Nether Mansion, the Cult of Azazel's Sacred City, and talk to the Welcomer who greets every pilgrim at its gate.",
   "sequential_objectives": true,
   "requires": {
     "advancements": [
@@ -16,6 +16,45 @@
       "stage": 0,
       "auto_advance": true,
       "say": "Gold everywhere. A Welcomer bows at the gate as if you were expected."
+    },
+    {
+      "id": "the_welcomer",
+      "talk": "netherman:welcomer",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Welcomer steps aside. 'The quarries are below. Mind the Manipulators. They don't like visitors.'",
+      "name": "The Welcomer"
+    }
+  ],
+  "threats": [
+    {
+      "entity": "netherman:welcomer",
+      "name": "The Welcomer",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 2,
+      "spawn_max_radius": 6,
+      "max_health": 40,
+      "target_line": "Welcome, pilgrim, to the Sacred City. Have you come to give, or to receive?",
+      "talk": [
+        [
+          "I'm looking for prisoners from Ashford.",
+          "Workers. We call them workers here. The quarries are below."
+        ],
+        [
+          "They're slaves.",
+          "Words. Here, everything is gold or on its way to becoming gold."
+        ],
+        [
+          "And you?",
+          "I welcome. I have welcomed for a very long time. Nobody has ever asked me that."
+        ]
+      ],
+      "golem_protected": true
     }
   ],
   "rewards": {

@@ -49,7 +49,8 @@
           "What do you want?",
           "To live. Same as anyone. Same as you."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

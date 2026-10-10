@@ -68,6 +68,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -82,12 +83,16 @@
           "show_particles": false
         }
       ],
-      "target_line": "Every bell in every village rings at once, and nobody rang them.",
+      "target_line": "The bells. Did you hear the bells? Every one of them, all at once.",
       "min_structure_distance": 300,
       "talk": [
         [
-          "Who are you?",
-          "The one people come to when something is wrong. Lately, that is often."
+          "He's dead. The god is dead.",
+          "The bells rang on their own. I thought it was the end of the world."
+        ],
+        [
+          "It's the end of his.",
+          "Then sit. Eat. Tell me everything, slowly. I want to remember it right."
         ]
       ]
     }

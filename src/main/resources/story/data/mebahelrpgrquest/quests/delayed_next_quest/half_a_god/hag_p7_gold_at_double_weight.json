@@ -62,7 +62,8 @@
           ]
         }
       },
-      "target": "The Smiling Peddler is waiting near the village."
+      "target": "The Smiling Peddler is waiting near the village.",
+      "golem_protected": true
     }
   ],
   "choice": {

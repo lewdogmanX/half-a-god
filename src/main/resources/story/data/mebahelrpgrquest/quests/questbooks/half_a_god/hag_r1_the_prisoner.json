@@ -54,7 +54,8 @@
             "If you're reading this, I'm alive. Thank you. I didn't deserve it."
           ]
         }
-      }
+      },
+      "golem_protected": true
     }
   ],
   "choice": {

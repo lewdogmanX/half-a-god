@@ -1,6 +1,6 @@
 {
   "title": "Gilded Hunger",
-  "summary": "In the Sacred City, Gilded Golems drink gold and blood. Kill three. The Doctor and the Blacksmith will trade with you.",
+  "summary": "In the Sacred City, Gilded Golems drink gold and blood. Kill three, then talk to the Doctor who was watching. He and the Blacksmith will trade with you.",
   "sequential_objectives": true,
   "goals": [
     {
@@ -9,7 +9,46 @@
       "amount": 3,
       "stage": 0,
       "auto_advance": true,
-      "say": "The Doctor sells potions and the Blacksmith repairs without stripping enchantments. Use them."
+      "say": "The golems fall. Someone in a white coat is watching you from a doorway."
+    },
+    {
+      "id": "the_doctor",
+      "talk": "netherman:doctor",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Doctor sells potions and the Blacksmith repairs without stripping enchantments. Use them.",
+      "name": "The Doctor"
+    }
+  ],
+  "threats": [
+    {
+      "entity": "netherman:doctor",
+      "name": "The Doctor",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 2,
+      "spawn_max_radius": 6,
+      "max_health": 40,
+      "target_line": "You broke three golems. Do you have any idea what they cost?",
+      "talk": [
+        [
+          "Who are you?",
+          "The Doctor. I mend the faithful. They pay well, and they hurt often."
+        ],
+        [
+          "You serve the cult?",
+          "I serve whoever is bleeding. Today, that might be you. My potions are for sale."
+        ],
+        [
+          "What's past the golems?",
+          "Gehinnom's guardians. Then the Lair. Buy something before you go. Please."
+        ]
+      ],
+      "golem_protected": true
     }
   ],
   "rewards": {

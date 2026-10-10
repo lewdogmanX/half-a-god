@@ -6,7 +6,14 @@ NM = "netherman"
 # ======================= ACT VII: THE SACRED CITY =======================
 quest("m1_follow_the_crimson_bee", "Follow the Crimson Bee",
       "Your Ghastly hums north. Follow it to the Nether Mansion.",
-      [reach("find_the_mansion", f"{NM}:mansion_nether", 0, "Gold everywhere. A Welcomer bows at the gate as if you were expected.", radius=30000)],
+      [reach("find_the_mansion", f"{NM}:mansion_nether", 0, "Gold everywhere. A Welcomer bows at the gate as if you were expected.", radius=30000),
+       talk("the_welcomer", 1, "The Welcomer steps aside. 'The quarries are below. Mind the Manipulators. They don't like visitors.'",
+            entity=f"{NM}:welcomer", name="The Welcomer")],
+      threats=[threat(f"{NM}:welcomer", "The Welcomer", stage=1, smin=2, smax=6, hp=40,
+                      target_line="Welcome, pilgrim, to the Sacred City. Have you come to give, or to receive?",
+                      talk=[["I'm looking for prisoners from Ashford.", "Workers. We call them workers here. The quarries are below."],
+                            ["They're slaves.", "Words. Here, everything is gold or on its way to becoming gold."],
+                            ["And you?", "I welcome. I have welcomed for a very long time. Nobody has ever asked me that."]])],
       requires={"advancements": [f"{NM}:tame_ghastly"]},
       rewards={"xp": 1500, "items": {"minecraft:golden_apple": 2}},
       nxt=flow("m2_the_cursed_quarries", dims=NETHER))
@@ -32,7 +39,14 @@ quest("m3_hold_the_quarry_gate", "Hold the Quarry Gate",
 
 quest("m4_gilded_hunger", "Gilded Hunger",
       "In the Sacred City, the Gilded Golems drink gold and blood. The Doctor and the Blacksmith watch and say nothing.",
-      [kill("gilded_golems", f"{NM}:gilded_golem", 3, 0, "The Doctor sells potions and the Blacksmith repairs without stripping enchantments. Use them.")],
+      [kill("gilded_golems", f"{NM}:gilded_golem", 3, 0, "The golems fall. Someone in a white coat is watching you from a doorway."),
+       talk("the_doctor", 1, "The Doctor sells potions and the Blacksmith repairs without stripping enchantments. Use them.",
+            entity=f"{NM}:doctor", name="The Doctor")],
+      threats=[threat(f"{NM}:doctor", "The Doctor", stage=1, smin=2, smax=6, hp=40,
+                      target_line="You broke three golems. Do you have any idea what they cost?",
+                      talk=[["Who are you?", "The Doctor. I mend the faithful. They pay well, and they hurt often."],
+                            ["You serve the cult?", "I serve whoever is bleeding. Today, that might be you. My potions are for sale."],
+                            ["What's past the golems?", "Gehinnom's guardians. Then the Lair. Buy something before you go. Please."]])],
       rewards={"xp": 2500, "items": {"minecraft:gold_block": 4}},
       nxt=flow("m5_do_not_provoke_gehinnom", dims=NETHER))
 

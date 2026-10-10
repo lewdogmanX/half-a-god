@@ -86,7 +86,8 @@
             ]
           }
         }
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

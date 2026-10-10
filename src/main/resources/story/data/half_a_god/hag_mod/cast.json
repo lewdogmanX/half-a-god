@@ -1,0 +1,718 @@
+{
+ "npcs": [
+  {
+   "quest": "mebahelrpgrquest:hag_the_first_letter",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_p2_winter_stores",
+   "stage": 3,
+   "name": "The Farmer",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_p3_the_shepherd",
+   "stage": 2,
+   "name": "Tam the Shepherd",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_p4_eye_on_chapel",
+   "stage": 0,
+   "name": "The Cleric",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_p5_raise_the_watch",
+   "stage": 0,
+   "name": "The Mason",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_p6_market_road",
+   "stage": 0,
+   "name": "The Farmer",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_p6_market_road",
+   "stage": 2,
+   "name": "Market Elder",
+   "place": "char:Market Elder",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_p8_pillager_moon",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_a1_ashford_burns",
+   "stage": 1,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_a2_what_was_left",
+   "stage": 3,
+   "name": "Ashford Survivor",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_a3_roof_and_hearth",
+   "stage": 0,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_a4_refugee_road",
+   "stage": 0,
+   "name": "Ashford Survivor",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_a4_refugee_road",
+   "stage": 2,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_a9_open_the_cells",
+   "stage": 1,
+   "name": "Freed Ashford Man",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_a13_tears_for_a_ward",
+   "stage": 1,
+   "name": "The Cleric",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_a15_one_of_seven",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_p7s_the_peddlers_gift",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_w2_smite_the_dead",
+   "stage": 2,
+   "name": "The Armourer",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_w8_six_remain",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_h10_fireproof",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_e1_the_librarians_request",
+   "stage": 2,
+   "name": "The Librarian",
+   "place": "char:The Librarian",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_e7_the_nether_is_singing",
+   "stage": 0,
+   "name": "The Librarian",
+   "place": "char:The Librarian",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_s1_cold_hearths",
+   "stage": 2,
+   "name": "Village Elder",
+   "place": "snowy_village",
+   "structure": "minecraft:village_snowy"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_s3_lost_in_the_snow",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "snowy_village",
+   "structure": "minecraft:village_snowy"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_d1_the_buried_well",
+   "stage": 2,
+   "name": "Village Elder",
+   "place": "desert_village",
+   "structure": "minecraft:village_desert"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_d3_the_beast_below",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "desert_village",
+   "structure": "minecraft:village_desert"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_c4_terror_of_the_depths",
+   "stage": 0,
+   "name": "Harbourmaster",
+   "place": "char:Harbourmaster",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_f3_unbound",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_v1_blood_in_the_wells",
+   "stage": 0,
+   "name": "The Librarian",
+   "place": "char:The Librarian",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_v8_sinbuster",
+   "stage": 0,
+   "name": "The Smith",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_v9_the_wrong_parcel",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_m9_half_a_soul",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_g1_maraals_last_letter",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_g2_ashford_rebuilt",
+   "stage": 0,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_w0_two_roads_meet",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_e0_the_road_to_the_end",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_gt1_a_note_in_the_stash",
+   "stage": 1,
+   "name": "The Fixer",
+   "place": "char:The Fixer",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_gt3_first_customers",
+   "stage": 1,
+   "name": "Nervous Buyer",
+   "place": "buyers_village",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_gt4_the_hash_market",
+   "stage": 1,
+   "name": "The Fixer",
+   "place": "char:The Fixer",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_gt7_white_powder_money",
+   "stage": 1,
+   "name": "The Fixer",
+   "place": "char:The Fixer",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_gt8_a_customer_goes_under",
+   "stage": 1,
+   "name": "Buyer's Friend",
+   "place": "buyers_village",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_gt11_crystal",
+   "stage": 1,
+   "name": "The Fixer",
+   "place": "char:The Fixer",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_gt13p_the_big_shipment",
+   "stage": 2,
+   "name": "The Fixer",
+   "place": "char:The Fixer",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_gt14_king_of_the_valley",
+   "stage": 0,
+   "name": "The Fixer",
+   "place": "char:The Fixer",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_go0_a_way_out",
+   "stage": 0,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_go1_burn_it_down",
+   "stage": 1,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_go3_testimony",
+   "stage": 3,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_gt1b_the_recruiters_terms",
+   "stage": 1,
+   "name": "The Fixer",
+   "place": "char:The Fixer",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_br1_the_watch_needs_eyes",
+   "stage": 0,
+   "name": "Captain of the Watch",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_br4_medicine_for_the_valley",
+   "stage": 1,
+   "name": "The Cleric",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_br6_the_valley_breathes",
+   "stage": 0,
+   "name": "Captain of the Watch",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc1_saint",
+   "stage": 0,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc1_waver",
+   "stage": 2,
+   "name": "Ashford Elder",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc1_wicked",
+   "stage": 1,
+   "name": "Silas of the Gilded Hand",
+   "place": "char:Silas of the Gilded Hand",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc2_good",
+   "stage": 0,
+   "name": "Guard Captain",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc2_wicked",
+   "stage": 1,
+   "name": "Silas of the Gilded Hand",
+   "place": "char:Silas of the Gilded Hand",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc3_saint",
+   "stage": 1,
+   "name": "The Cleric",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc3_good",
+   "stage": 2,
+   "name": "The Cleric",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc3_waver",
+   "stage": 1,
+   "name": "The Cleric",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc3_fallen",
+   "stage": 1,
+   "name": "The Farmer",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc3_wicked",
+   "stage": 1,
+   "name": "Silas of the Gilded Hand",
+   "place": "char:Silas of the Gilded Hand",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc4_good",
+   "stage": 1,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc4_waver",
+   "stage": 0,
+   "name": "The Librarian",
+   "place": "char:The Librarian",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc5_saint",
+   "stage": 1,
+   "name": "Harbourmaster",
+   "place": "char:Harbourmaster",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc5_good",
+   "stage": 1,
+   "name": "Village Elder",
+   "place": "snowy_village",
+   "structure": "minecraft:village_snowy"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc6_saint",
+   "stage": 1,
+   "name": "The Cleric",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc6_good",
+   "stage": 0,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc6_waver",
+   "stage": 1,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc6_wicked",
+   "stage": 1,
+   "name": "Silas of the Gilded Hand",
+   "place": "char:Silas of the Gilded Hand",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc7_saint",
+   "stage": 2,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc7_waver",
+   "stage": 2,
+   "name": "Halden's Son",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc7_fallen",
+   "stage": 2,
+   "name": "The Cleric",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rc7_wicked",
+   "stage": 3,
+   "name": "Silas of the Gilded Hand",
+   "place": "char:Silas of the Gilded Hand",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rep_end_saint",
+   "stage": 0,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rep_end_good",
+   "stage": 0,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rep_end_waver",
+   "stage": 0,
+   "name": "The Cleric",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rep_end_fallen",
+   "stage": 0,
+   "name": "Halden's Son",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rep_end_wicked",
+   "stage": 0,
+   "name": "Silas of the Gilded Hand",
+   "place": "char:Silas of the Gilded Hand",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_bz1_a_letter_smelling_of_honey",
+   "stage": 0,
+   "name": "Wren the Apiarist",
+   "place": "char:Wren the Apiarist",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_bz2_pearls_and_patience",
+   "stage": 1,
+   "name": "Wren the Apiarist",
+   "place": "char:Wren the Apiarist",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_bz10_the_honey_crown",
+   "stage": 0,
+   "name": "Wren the Apiarist",
+   "place": "char:Wren the Apiarist",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_lg1_the_golden_legion",
+   "stage": 0,
+   "name": "Old Aurel",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_lg4_the_thermal_heart",
+   "stage": 1,
+   "name": "Old Aurel",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_x1_the_informant_after",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_x1k_wicks_sister",
+   "stage": 0,
+   "name": "Nell",
+   "place": "char:Nell",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_x2_the_bastille_warden_after",
+   "stage": 0,
+   "name": "Ashford Survivor",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_x2s_the_wardens_debt",
+   "stage": 0,
+   "name": "Gorran the Gatekeeper",
+   "place": "char:Gorran the Gatekeeper",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_x4s_sunlight_in_a_bottle",
+   "stage": 0,
+   "name": "The Pilgrim",
+   "place": "char:The Pilgrim",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_x5_the_last_garrison_man_after",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "snowy_village",
+   "structure": "minecraft:village_snowy"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_x5s_brann_comes_home",
+   "stage": 0,
+   "name": "Ilse",
+   "place": "snowy_village",
+   "structure": "minecraft:village_snowy"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_x5k_a_widows_letter",
+   "stage": 0,
+   "name": "Ilse",
+   "place": "snowy_village",
+   "structure": "minecraft:village_snowy"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_y1_what_the_last_page_said",
+   "stage": 0,
+   "name": "The Librarian",
+   "place": "char:The Librarian",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_y2_the_hand_reads_too",
+   "stage": 0,
+   "name": "Silas of the Gilded Hand",
+   "place": "char:Silas of the Gilded Hand",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_y3_tomas_at_the_gate",
+   "stage": 0,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_y5_the_midwifes_daughter",
+   "stage": 0,
+   "name": "Wren of the Pits",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_et1_whispers_of_a_new_god",
+   "stage": 0,
+   "name": "Reeve Halden",
+   "place": "ashford",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_et4_morning",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_ru1_the_lantern_road",
+   "stage": 1,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_ru2_silas_makes_an_offer",
+   "stage": 0,
+   "name": "Silas of the Gilded Hand",
+   "place": "char:Silas of the Gilded Hand",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_a6_believers_house",
+   "stage": 1,
+   "name": "The Preacher",
+   "place": "local",
+   "adopt": "netherman:believer_villager"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_m1_follow_the_crimson_bee",
+   "stage": 1,
+   "name": "The Welcomer",
+   "place": "local",
+   "adopt": "netherman:welcomer"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_m4_gilded_hunger",
+   "stage": 1,
+   "name": "The Doctor",
+   "place": "local",
+   "adopt": "netherman:doctor"
+  }
+ ]
+}

@@ -64,7 +64,8 @@
           "Then you know what happens now.",
           "Only if you're as bad as him. Are you?"
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

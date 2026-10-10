@@ -4,9 +4,11 @@
   "required_story_flags": [
     "hag_e5_free_the_end_done"
   ],
-  "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "forbidden_story_flags": [
+    "hag_s1_cold_hearths_done"
+  ],
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {

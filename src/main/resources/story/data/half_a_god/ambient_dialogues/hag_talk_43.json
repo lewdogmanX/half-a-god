@@ -4,9 +4,11 @@
   "required_story_flags": [
     "hag_mercy_x2_the_bastille_warden"
   ],
-  "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "forbidden_story_flags": [
+    "hag_w6_the_withered_crown_done"
+  ],
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {

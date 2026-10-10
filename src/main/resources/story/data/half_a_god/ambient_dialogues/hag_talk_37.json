@@ -4,15 +4,17 @@
   "required_story_flags": [
     "midwife_spared"
   ],
-  "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "forbidden_story_flags": [
+    "hag_v10_maraal_done"
+  ],
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {
       "speaker": 0,
       "look_at": 1,
-      "text": "The midwife from the pits is with the cleric now.",
+      "text": "The midwife from the blood pits is with the cleric now.",
       "translation_key": "ambient.half_a_god.hag_talk_37.0"
     },
     {

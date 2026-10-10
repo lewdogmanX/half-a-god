@@ -69,7 +69,8 @@
             "So when they pray for him to be whole again, they are praying for a god.\n\nDo not let them."
           ]
         }
-      }
+      },
+      "golem_protected": true
     },
     {
       "entity": "minecraft:villager",
@@ -83,6 +84,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -97,7 +99,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "Pearls? You actually found twelve?",
       "min_structure_distance": 300,
       "talk": [
         [

@@ -128,6 +128,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -142,7 +143,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "'They're coming from the north road. Lots of them.'",
+      "target_line": "The tower bell's been ringing. Tell me it's not what I think.",
       "talk": [
         [
           "A war party is coming.",

@@ -37,7 +37,8 @@
           "What would you have me do?",
           "Whatever you think is right. You're the only one here they listen to."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

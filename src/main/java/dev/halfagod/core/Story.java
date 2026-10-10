@@ -31,6 +31,12 @@ public final class Story {
         if (t % 40 == 7) {
             poll(player);
         }
+        if (t % 20 == 3) {
+            Cast.tick(player);
+        }
+        if (t % 100 == 41) {
+            Atlas.tick(player);
+        }
         if (t % 100 == 13) {
             Reputation.tickVillagers(player);
             StoryGuard.restartAbandoned(player, false);
@@ -135,8 +141,8 @@ public final class Story {
             String name = e.getCustomName().getString();
             for (String companion : StoryData.INSTANCE.companionNames) {
                 if (name.contains(companion) && lines.containsKey(companion)) {
-                    player.sendSystemMessage(Component.literal("<" + companion + "> ").withStyle(ChatFormatting.GOLD)
-                            .append(Component.literal(lines.get(companion)).withStyle(ChatFormatting.WHITE)));
+                    player.displayClientMessage(Component.literal(companion + ": ").withStyle(ChatFormatting.GOLD)
+                            .append(Component.literal(lines.get(companion)).withStyle(ChatFormatting.WHITE)), true);
                     return;
                 }
             }

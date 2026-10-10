@@ -117,7 +117,8 @@
           "Enough.",
           "Then we're the same. Do what you think we deserve."
         ]
-      ]
+      ],
+      "golem_protected": true
     },
     {
       "entity": "minecraft:villager",
@@ -131,6 +132,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -145,7 +147,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "Sit down. You're about to make the biggest choice of your life, and I want a word first.",
       "min_structure_distance": 300,
       "talk": [
         [

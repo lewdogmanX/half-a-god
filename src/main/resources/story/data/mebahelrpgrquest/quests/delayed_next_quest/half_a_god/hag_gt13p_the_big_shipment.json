@@ -65,6 +65,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -79,7 +80,17 @@
           "show_particles": false
         }
       ],
-      "target_line": "Don Vasco's men load the wagons. 'Pleasure doing business.'"
+      "target_line": "Vasco's wagons are here. Is your half ready?",
+      "talk": [
+        [
+          "Our half.",
+          "Count it twice. Vasco's men will count it three times."
+        ],
+        [
+          "And then?",
+          "And then we're partners with the most dangerous man in the valley. Smile."
+        ]
+      ]
     }
   ]
 }

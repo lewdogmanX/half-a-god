@@ -57,7 +57,8 @@
           "And now?",
           "Now there is only the head, and then the body. Will you finish it with me, or without me?"
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

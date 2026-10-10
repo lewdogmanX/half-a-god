@@ -44,7 +44,8 @@
           "And if I pay?",
           "Then it's yours and I go somewhere quiet. There are no quiet places here."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

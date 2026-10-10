@@ -45,8 +45,6 @@
       "spawn_min_radius": 6,
       "spawn_max_radius": 16,
       "count": 4,
-      "structure": "minecraft:stronghold",
-      "search_radius": 30000000,
       "max_health": 48,
       "equipment": {
         "mainhand": {
@@ -55,7 +53,8 @@
             "minecraft:sharpness": 2
           }
         }
-      }
+      },
+      "spawn_origin": "player"
     },
     {
       "entity": "minecraft:witch",
@@ -67,9 +66,8 @@
       "spawn_min_radius": 6,
       "spawn_max_radius": 16,
       "count": 2,
-      "structure": "minecraft:stronghold",
-      "search_radius": 30000000,
-      "max_health": 40
+      "max_health": 40,
+      "spawn_origin": "player"
     },
     {
       "entity": "minecraft:enderman",
@@ -80,8 +78,6 @@
       "glow": true,
       "spawn_min_radius": 6,
       "spawn_max_radius": 16,
-      "structure": "minecraft:stronghold",
-      "search_radius": 30000000,
       "max_health": 120,
       "effects": [
         {
@@ -90,7 +86,8 @@
           "duration_seconds": 3600,
           "show_particles": false
         }
-      ]
+      ],
+      "spawn_origin": "player"
     }
   ],
   "rewards": {

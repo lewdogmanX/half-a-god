@@ -32,7 +32,8 @@
           "You can't win.",
           "I know. I came anyway. That's the difference between us now."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

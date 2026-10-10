@@ -60,7 +60,7 @@
       "entity": "minecraft:villager",
       "name": "Village Elder",
       "stage": 2,
-      "structure": "minecraft:villages",
+      "structure": "minecraft:village_desert",
       "search_radius": 8000,
       "spawn_radius": 10,
       "spawn_on_accept": true,
@@ -68,6 +68,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -82,7 +83,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "The sick have poison wounds no husk could give.",
+      "target_line": "You brought milk? Then you're the first stranger who listened.",
       "min_structure_distance": 300,
       "talk": [
         [

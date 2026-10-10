@@ -56,13 +56,14 @@
           "Why stop now?",
           "Because the harbour caught me. I won't pretend I'd have stopped on my own."
         ]
-      ]
+      ],
+      "golem_protected": true
     },
     {
       "entity": "minecraft:villager",
       "name": "Village Elder",
       "stage": 1,
-      "structure": "minecraft:villages",
+      "structure": "minecraft:village_snowy",
       "search_radius": 8000,
       "spawn_radius": 10,
       "spawn_on_accept": true,
@@ -70,6 +71,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -84,7 +86,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "Campfires. Six of them. You remembered us.",
       "min_structure_distance": 300,
       "talk": [
         [

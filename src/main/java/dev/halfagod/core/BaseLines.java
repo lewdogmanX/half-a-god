@@ -146,10 +146,7 @@ public final class BaseLines {
                 continue;
             }
             pick.addEffect(new MobEffectInstance(MobEffects.GLOWING, 400, 0, false, false));
-            String who = pick.hasCustomName() && pick.getCustomName() != null ? pick.getCustomName().getString() : "A villager";
-            player.sendSystemMessage(Component.literal("[Half a God] ").withStyle(ChatFormatting.GOLD)
-                    .append(Component.literal(who + " here has work for you (" + l.title() + "). They're glowing for a moment so you can find them.")
-                            .withStyle(ChatFormatting.YELLOW)));
+            player.displayClientMessage(Component.literal("Someone nearby has work for you.").withStyle(ChatFormatting.YELLOW), true);
             LAST_PLACED.put(player.getUUID(), now);
             return; // one at a time
         }

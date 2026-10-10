@@ -49,6 +49,8 @@ public final class HalfAGod {
         NeoForge.EVENT_BUS.register(Story.class);
         NeoForge.EVENT_BUS.register(StoryGuard.class);
         NeoForge.EVENT_BUS.register(Commands.class);
+        NeoForge.EVENT_BUS.register(dev.halfagod.core.Cast.class);
+        NeoForge.EVENT_BUS.register(dev.halfagod.core.Atlas.class);
         NeoForge.EVENT_BUS.addListener((AddReloadListenerEvent e) -> e.addListener(StoryData.INSTANCE));
 
         if (FMLEnvironment.dist == Dist.CLIENT) {

@@ -36,7 +36,7 @@
       "entity": "minecraft:villager",
       "name": "Ilse",
       "stage": 0,
-      "structure": "minecraft:villages",
+      "structure": "minecraft:village_snowy",
       "search_radius": 8000,
       "spawn_radius": 10,
       "spawn_on_accept": true,
@@ -44,6 +44,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -58,7 +59,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "You came. I didn't think you would.",
       "min_structure_distance": 300,
       "talk": [
         [

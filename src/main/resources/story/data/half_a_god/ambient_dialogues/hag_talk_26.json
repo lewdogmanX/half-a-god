@@ -4,9 +4,11 @@
   "required_story_flags": [
     "heard_the_word"
   ],
-  "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "forbidden_story_flags": [
+    "hag_a1_ashford_burns_done"
+  ],
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {
@@ -18,7 +20,7 @@
     {
       "speaker": 1,
       "look_at": 0,
-      "text": "The hero let him. Must have had a reason.",
+      "text": "The hero let him go. Must have had a reason.",
       "translation_key": "ambient.half_a_god.hag_talk_26.1"
     }
   ]

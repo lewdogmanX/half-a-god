@@ -74,6 +74,6 @@ public final class Chronicle {
         if (ending) {
             d.chronicleGiven = true;
         }
-        player.sendSystemMessage(Component.literal("[Half a God] Your Chronicle has been written. It's in your inventory.").withStyle(ChatFormatting.GOLD));
+        player.displayClientMessage(Component.literal("The Chronicle of your story is in your pack.").withStyle(ChatFormatting.GOLD), true);
     }
 }

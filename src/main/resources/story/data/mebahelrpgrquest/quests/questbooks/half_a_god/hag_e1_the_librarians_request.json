@@ -77,6 +77,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -91,7 +92,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "'Strongholds keep old books. Take me to one.'",
+      "target_line": "You're the one who killed the Wither. Sit. I've been waiting thirty years to say this to someone.",
       "min_structure_distance": 300,
       "talk": [
         [

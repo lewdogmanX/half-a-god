@@ -1,6 +1,6 @@
 {
   "title": "The Believer's House",
-  "summary": "The pipe-keeper's log says the prisoners were moved to a believer house. Find it, kill the zealots guarding it, and read the ledger in its barrel to learn where Ashford's men are now.",
+  "summary": "The pipe-keeper's log says the prisoners were moved through a believer house (Cult of Azazel). Find it and talk to the Preacher who lives there. Zealots will come for him once he's talked: kill them, then read the ledger in the house's barrel to learn where Ashford's men are now.",
   "sequential_objectives": true,
   "goals": [
     {
@@ -12,10 +12,19 @@
       "auto_advance": true
     },
     {
+      "id": "the_preacher",
+      "talk": "netherman:believer_villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The Preacher points at the road. 'They're coming. They know I talked.'",
+      "name": "The Preacher"
+    },
+    {
       "id": "believers",
       "kill": "minecraft:vindicator",
       "amount": 4,
-      "stage": 1,
+      "stage": 2,
       "auto_advance": true,
       "say": "The last zealot drops a key on a gold chain."
     },
@@ -38,25 +47,51 @@
           "Then through the Nether to the Quarries. Stock for the Quarries. The Chariot wants gold, and gold wants hands."
         ]
       },
-      "stage": 2,
+      "stage": 3,
       "auto_advance": true,
       "say": "Fourteen men, held in a Bastille."
     }
   ],
   "threats": [
     {
-      "entity": "minecraft:vindicator",
-      "name": "Cult Zealot",
+      "entity": "netherman:believer_villager",
+      "name": "The Preacher",
       "stage": 1,
       "spawn_on_accept": true,
       "spare": false,
       "glow": true,
       "spawn_origin": "player",
-      "spawn_min_radius": 6,
-      "spawn_max_radius": 16,
+      "spawn_min_radius": 2,
+      "spawn_max_radius": 6,
+      "max_health": 40,
+      "target_line": "You're not one of the faithful. ...You're the one from Ashford.",
+      "talk": [
+        [
+          "Where are Ashford's men?",
+          "Gone. They stayed one night, chained in my cellar. I prayed over them. That's all I did."
+        ],
+        [
+          "Where did they go?",
+          "The Bastille. The ledger is in the barrel. Take it. I won't stop you."
+        ],
+        [
+          "Why help me?",
+          "Because they cried at night, and my god never answered them. Maybe you will."
+        ]
+      ],
+      "golem_protected": true
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": "Cult Zealot",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 18,
       "count": 4,
-      "structure": "netherman:believer_house",
-      "search_radius": 30000,
       "max_health": 48,
       "equipment": {
         "mainhand": {

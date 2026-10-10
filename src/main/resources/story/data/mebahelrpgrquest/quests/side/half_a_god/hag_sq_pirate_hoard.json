@@ -53,8 +53,6 @@
       "spawn_min_radius": 6,
       "spawn_max_radius": 16,
       "count": 6,
-      "structure": "minecraft:shipwreck",
-      "search_radius": 8000,
       "max_health": 36,
       "equipment": {
         "mainhand": "minecraft:iron_sword",

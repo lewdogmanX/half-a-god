@@ -44,7 +44,8 @@
           "Why should I let you live?",
           "Because I'll owe you. And a scout who owes you is worth ten who don't."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

@@ -79,6 +79,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -93,16 +94,16 @@
           "show_particles": false
         }
       ],
-      "target_line": "Halden reads page nine, then closes the book. 'You'll testify. And then you'll be free.'",
+      "target_line": "You've got it? The ledger? Let me see.",
       "min_structure_distance": 300,
       "talk": [
         [
-          "You're Halden?",
-          "Reeve of Ashford. What's left of it. You're the one Mara writes about."
+          "The ledger.",
+          "Every name. Every bribe. Every buyer. ...Page nine is you."
         ],
         [
-          "You know Mara?",
-          "Everyone knows Old Mara. Nobody knows where she lives."
+          "I know.",
+          "Then you'll stand up in front of everyone and say so. And then you'll be free. I promise."
         ]
       ]
     }

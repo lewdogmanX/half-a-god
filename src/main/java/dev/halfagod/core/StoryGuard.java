@@ -28,6 +28,13 @@ public final class StoryGuard {
     /** Monsters and raiders can't hurt (or zombify) the story's villagers. Players still can. */
     @SubscribeEvent
     public static void onDamage(LivingIncomingDamageEvent event) {
+        // Anyone the story needs you to talk to or judge (the prisoner, a deserter, a quest villager) can only be hurt
+        // by a player: Guard Villagers, iron golems and stray mobs can't take the choice away from you.
+        if (!event.getEntity().level().isClientSide && event.getEntity().getTags().contains("mebahelrpgrquest:golem_protected")
+                && event.getSource().getEntity() != null && !(event.getSource().getEntity() instanceof net.minecraft.world.entity.player.Player)) {
+            event.setCanceled(true);
+            return;
+        }
         if (event.getEntity() instanceof AbstractVillager villager && !villager.level().isClientSide
                 && (event.getSource().getEntity() instanceof Enemy || event.getSource().getEntity() instanceof Raider)
                 && (Meb.isQuestThreat(villager) || isStoryGiver(villager))) {
@@ -65,8 +72,6 @@ public final class StoryGuard {
             ResourceLocation id = ResourceLocation.parse(e.getKey());
             if (Meb.startQuest(player, id, false)) {
                 restarted++;
-                player.sendSystemMessage(Component.literal("[Half a God] Story quests can't be dropped, so this one has started again.")
-                        .withStyle(ChatFormatting.GOLD));
             }
         }
         return restarted;

@@ -56,7 +56,8 @@
           "You know who I am.",
           "The Hand's knife. ...You don't have to be."
         ]
-      ]
+      ],
+      "golem_protected": true
     },
     {
       "entity": "minecraft:villager",
@@ -70,6 +71,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -84,7 +86,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "You came. Good. Listen.",
+      "target_line": "Ah, my new associate. Did you bring my emeralds?",
       "min_structure_distance": 300,
       "talk": [
         [

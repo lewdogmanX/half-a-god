@@ -4,21 +4,23 @@
   "required_story_flags": [
     "hag_a9_open_the_cells_done"
   ],
-  "forbidden_story_flags": [],
-  "weight": 8,
-  "cooldown": 24000,
+  "forbidden_story_flags": [
+    "hag_w1_the_skull_market_done"
+  ],
+  "weight": 4,
+  "cooldown": 36000,
   "max_player_distance": 16,
   "lines": [
     {
       "speaker": 0,
       "look_at": 1,
-      "text": "The Ashford men are coming home!",
+      "text": "Some of the Ashford men are home!",
       "translation_key": "ambient.half_a_god.hag_talk_29.0"
     },
     {
       "speaker": 1,
       "look_at": 0,
-      "text": "Not all of them. But some. Some is a lot.",
+      "text": "Not all of them. But some is a lot.",
       "translation_key": "ambient.half_a_god.hag_talk_29.1"
     }
   ]

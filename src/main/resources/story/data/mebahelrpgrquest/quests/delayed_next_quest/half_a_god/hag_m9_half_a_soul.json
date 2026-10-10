@@ -51,6 +51,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -65,7 +66,7 @@
           "show_particles": false
         }
       ],
-      "target_line": "'The head is dead, so the body wakes. A half-soul cannot die. To end him you must give him what the cult always wanted: his head, on his body, whole. Then kill him while he is whole.'",
+      "target_line": "You're home! Wait. That face. What happened down there?",
       "min_structure_distance": 300,
       "talk": [
         [

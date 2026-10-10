@@ -17,12 +17,16 @@ for f in glob.glob(f"{S}/**/data/*/worldgen/structure/*.json", recursive=True):
 for f in glob.glob(f"{S}/**/data/*/advancement/**/*.json", recursive=True):
     ns, rest = f.split("/data/")[1].split("/advancement/")
     advs.add(f"{ns}:{rest[:-5]}")
-structs |= {"minecraft:villages", "minecraft:fortress", "minecraft:stronghold", "minecraft:end_city", "minecraft:pillager_outpost", "minecraft:mansion", "minecraft:shipwreck", "minecraft:monument", "minecraft:bastion_remnant", "minecraft:ancient_city", "minecraft:end_city", "minecraft:jungle_pyramid", "minecraft:buried_treasure", "minecraft:igloo", "minecraft:ocean_ruin_cold", "minecraft:trail_ruins", "minecraft:ruined_portal"}
+structs |= {"minecraft:villages", "minecraft:fortress", "minecraft:stronghold", "minecraft:end_city", "minecraft:pillager_outpost", "minecraft:mansion", "minecraft:shipwreck", "minecraft:monument", "minecraft:bastion_remnant", "minecraft:ancient_city", "minecraft:end_city", "minecraft:jungle_pyramid", "minecraft:buried_treasure", "minecraft:igloo", "minecraft:ocean_ruin_cold", "minecraft:trail_ruins", "minecraft:ruined_portal", "minecraft:village_snowy", "minecraft:village_desert"}
 advs |= {"minecraft:story/root", "minecraft:story/smelt_iron", "minecraft:end/kill_dragon", "minecraft:nether/find_bastion"}
 for f in glob.glob(f"{ROOT}/data/*/advancement/**/*.json", recursive=True):
     ns, rest = f.split("/data/")[1].split("/advancement/")
     advs.add(f"{ns}:{rest[:-5]}")
 MOD_NS = {"aether", "netherman", "block_factorys_bosses", "sons_of_sins", "takesapillage", "irons_spellbooks", "endrem", "illagerinvasion", "addictives", "the_bumblezone", "legionary"}
+
+# Cult of Azazel residents who can be spoken to (the mod lets the quest's one replace the resident already there)
+TALKERS = {"netherman:believer_villager", "netherman:welcomer", "netherman:doctor"}
+
 
 def check_id(kind, rid, where):
     if not isinstance(rid, str) or ":" not in rid:
@@ -69,7 +73,8 @@ for qid, (f, q) in quests.items():
         errs.append(f"{w}: stage gap {stages}")
     for th in q.get("threats", []):
         check_id("entity", th["entity"], f"{w}/threat")
-        if th["entity"].split(":")[0] in MOD_NS: errs.append(f"{w}: modded entity spawned as threat {th['entity']}")
+        if th["entity"].split(":")[0] in MOD_NS and th["entity"] not in TALKERS: errs.append(f"{w}: modded entity spawned as threat {th['entity']}")
+        if th["entity"] in TALKERS and (th.get("spare") or not th.get("talk")): errs.append(f"{w}: modded talker must be talk-only")
         if th.get("structure") and th["structure"] not in structs: errs.append(f"{w}: threat structure {th['structure']}")
         if th.get("stage", 0) not in stages: errs.append(f"{w}: threat stage {th.get('stage')} has no goals")
         for a in th.get("attack_ambushes", []):

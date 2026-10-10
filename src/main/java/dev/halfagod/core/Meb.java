@@ -1,6 +1,7 @@
 package dev.halfagod.core;
 
 import dev.halfagod.HalfAGod;
+import net.minecraft.core.BlockPos;
 import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.MinecraftServer;
 import net.minecraft.server.level.ServerPlayer;
@@ -174,6 +175,46 @@ public final class Meb {
                     accepted instanceof Number n ? n.longValue() : 0L));
         }
         return out;
+    }
+
+    // ------------------------------------------------------------------ raw progress objects (for moving quest targets)
+    public static List<Object> rawQuests(ServerPlayer player) {
+        Object r = call(player, "mebahelrpgrquest$getQuests");
+        return r instanceof Collection<?> c ? new ArrayList<>(c) : new ArrayList<>();
+    }
+
+    public static String questIdOf(Object progress) {
+        Object id = call(progress, "getQuestId");
+        return id == null ? "" : id.toString();
+    }
+
+    public static boolean isOpen(Object progress) {
+        return !Boolean.TRUE.equals(call(progress, "isClaimed")) && !Boolean.TRUE.equals(call(progress, "isFailed"));
+    }
+
+    @SuppressWarnings("unchecked")
+    public static Set<UUID> threatUuids(Object progress) {
+        Object r = call(progress, "getThreatTargetUuids");
+        return r instanceof Set<?> set ? new HashSet<>((Set<UUID>) set) : new HashSet<>();
+    }
+
+    public static UUID primaryThreat(Object progress) {
+        Object r = call(progress, "getThreatTargetUuid");
+        return r instanceof UUID u ? u : null;
+    }
+
+    public static BlockPos targetPos(Object progress) {
+        Object r = call(progress, "getThreatTargetPos");
+        return r instanceof BlockPos b ? b : null;
+    }
+
+    /** Point the quest's marker at where a moved character now stands, and tell the player's client. */
+    public static void retarget(ServerPlayer player, Object progress, UUID uuid, BlockPos pos) {
+        call(progress, "setThreatTargetPosition", uuid, pos);
+        if (uuid.equals(primaryThreat(progress)) || targetPos(progress) != null) {
+            call(progress, "setThreatTargetPos", pos);
+        }
+        callStatic("net.mebahelrpgrquest.network.QuestNetworking", "syncQuestToClient", player, progress);
     }
 
     public static boolean isQuestThreat(Entity entity) {

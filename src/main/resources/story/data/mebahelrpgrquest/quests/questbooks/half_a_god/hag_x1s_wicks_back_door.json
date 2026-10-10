@@ -32,8 +32,6 @@
       "spawn_min_radius": 4,
       "spawn_max_radius": 14,
       "count": 5,
-      "structure": "minecraft:pillager_outpost",
-      "search_radius": 10000,
       "max_health": 36
     }
   ],

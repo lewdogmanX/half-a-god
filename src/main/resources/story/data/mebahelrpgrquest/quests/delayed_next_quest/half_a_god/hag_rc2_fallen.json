@@ -84,7 +84,8 @@
         "item": "minecraft:wither_skeleton_skull",
         "name": "Tobin's Skull",
         "count": 1
-      }
+      },
+      "golem_protected": true
     }
   ],
   "choice": {

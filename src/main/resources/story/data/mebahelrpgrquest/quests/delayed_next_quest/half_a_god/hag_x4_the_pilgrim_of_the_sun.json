@@ -44,7 +44,8 @@
           "What's that charm?",
           "Sunstone. Mine. It keeps the cold off old bones. Please don't."
         ]
-      ]
+      ],
+      "golem_protected": true
     }
   ],
   "choice": {

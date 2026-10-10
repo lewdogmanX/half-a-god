@@ -55,6 +55,7 @@
       "glow": true,
       "max_health": 60,
       "respawn_on_death": true,
+      "golem_protected": true,
       "effects": [
         {
           "id": "minecraft:resistance",
@@ -69,16 +70,16 @@
           "show_particles": false
         }
       ],
-      "target_line": "'Good. Now they'll come for you. Stay close to the village tonight.'",
+      "target_line": "Smoke on the east road this morning. Was that your field?",
       "min_structure_distance": 300,
       "talk": [
         [
-          "You're Halden?",
-          "Reeve of Ashford. What's left of it. You're the one Mara writes about."
+          "The fields are gone.",
+          "I saw the smoke. So did Blackwater, I'd guess."
         ],
         [
-          "You know Mara?",
-          "Everyone knows Old Mara. Nobody knows where she lives."
+          "What happens now?",
+          "Now they come to collect. Stay close to the village tonight."
         ]
       ]
     }
