@@ -302,11 +302,17 @@ open(os.path.join(OUT, "data/half_a_god/function/loaded.mcfunction"), "w").write
 os.makedirs(os.path.join(OUT, "data/minecraft/tags/function"), exist_ok=True)
 json.dump({"values": ["half_a_god:loaded"]}, open(os.path.join(OUT, "data/minecraft/tags/function/load.json"), "w"), indent=2)
 shutil.copy(os.path.join(os.path.dirname(__file__), "README.md"), os.path.join(OUT, "README.md"))
-# the mod ships the same datapack inside its jar (minus the load message, which is for the plain datapack)
+# the mod ships the same datapack inside its jar as a built-in pack at the top of the pack list
+# (minus the load message, which is for the plain datapack)
 if os.path.isdir(MOD_ROOT):
-    dst = os.path.join(MOD_ROOT, "src/main/resources/data")
+    old_data = os.path.join(MOD_ROOT, "src/main/resources/data")
+    if os.path.exists(old_data):
+        shutil.rmtree(old_data)
+    dst = os.path.join(MOD_ROOT, "src/main/resources/story")
     if os.path.exists(dst):
         shutil.rmtree(dst)
-    shutil.copytree(os.path.join(OUT, "data"), dst,
-                    ignore=lambda d, names: [n for n in names if (n == "function" and d.endswith("half_a_god")) or (n == "function" and d.endswith("tags"))])
+    shutil.copytree(os.path.join(OUT, "data"), os.path.join(dst, "data"),
+                    ignore=lambda d, names: [n for n in names if n == "function" and (d.endswith("half_a_god") or d.endswith("tags"))])
+    json.dump({"pack": {"pack_format": 48, "description": "Half a God story (built into the mod)"}},
+              open(os.path.join(dst, "pack.mcmeta"), "w"), indent=2)
 print("quests:", len(QUESTS), "extra files:", len(EXTRA))

@@ -15,6 +15,12 @@ import net.neoforged.fml.common.Mod;
 import net.neoforged.fml.config.ModConfig;
 import net.neoforged.fml.loading.FMLEnvironment;
 import net.neoforged.neoforge.common.NeoForge;
+import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
+import net.minecraft.server.packs.PackType;
+import net.minecraft.server.packs.repository.Pack;
+import net.minecraft.server.packs.repository.PackSource;
+import net.neoforged.neoforge.event.AddPackFindersEvent;
 import net.neoforged.neoforge.event.AddReloadListenerEvent;
 import org.slf4j.Logger;
 
@@ -30,6 +36,14 @@ public final class HalfAGod {
     public HalfAGod(IEventBus modBus, ModContainer container) {
         RepData.ATTACHMENTS.register(modBus);
         modBus.addListener(Payloads::register);
+        // The story datapack lives in its own always-on pack at the top of the list, so its versions of
+        // Mebahel's quests win over the originals no matter what order the mods load in.
+        modBus.addListener((AddPackFindersEvent e) -> {
+            if (e.getPackType() == PackType.SERVER_DATA) {
+                e.addPackFinders(ResourceLocation.fromNamespaceAndPath(MODID, "story"), PackType.SERVER_DATA,
+                        Component.literal("Half a God story"), PackSource.BUILT_IN, true, Pack.Position.TOP);
+            }
+        });
 
         NeoForge.EVENT_BUS.register(Reputation.class);
         NeoForge.EVENT_BUS.register(Story.class);
