@@ -213,6 +213,42 @@ public final class Meb {
         return Boolean.TRUE.equals(ok);
     }
 
+    // ------------------------------------------------------------------ villagers that offer quests
+    /** The quest a villager is offering (or null), and whether it has already been taken. */
+    public static String offeredQuest(Entity villager) {
+        if (!Boolean.TRUE.equals(call(villager, "mebahelrpgrquest$hasQuest"))) {
+            return null;
+        }
+        Object id = call(villager, "mebahelrpgrquest$getQuestId");
+        return id == null ? null : id.toString();
+    }
+
+    public static boolean offerTaken(Entity villager) {
+        return Boolean.TRUE.equals(call(villager, "mebahelrpgrquest$isQuestClaimed"));
+    }
+
+    /** Gives a village resident a quest to offer, exactly as Mebahel does when it rolls one for a villager. */
+    public static boolean offerQuest(Entity villager, ResourceLocation id) {
+        if (quest(id) == null || method(villager.getClass(), "mebahelrpgrquest$setQuestId", 1) == null) {
+            return false;
+        }
+        call(villager, "mebahelrpgrquest$setQuestId", id);
+        call(villager, "mebahelrpgrquest$setQuestClaimed", false);
+        call(villager, "mebahelrpgrquest$setQuestRollDone", true);
+        callStatic("net.mebahelrpgrquest.quest.QuestAssignmentState", "reset", villager);
+        callStatic("net.mebahelrpgrquest.quest.QuestEntityNames", "ensureQuestName", villager);
+        return id.toString().equals(offeredQuest(villager));
+    }
+
+    public static boolean isCourier(Entity villager) {
+        return villager.getTags().contains("mebahelrpgrquest:courier");
+    }
+
+    /** Sends one of the pack's courier letters whose trigger is "custom" (only this mod fires those). */
+    public static void triggerCourier(ServerPlayer player, String deliveryId, String occurrence) {
+        callStatic("net.mebahelrpgrquest.quest.CourierManager", "trigger", player, ResourceLocation.parse(deliveryId), occurrence);
+    }
+
     /** Hands the player a quest letter (book quest) through Mebahel's own command. */
     public static void giveBook(ServerPlayer player, String questId) {
         MinecraftServer server = player.getServer();

@@ -44,6 +44,8 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     /** courier: after quest -> book quest */
     public final Map<String, List<String>> couriers = new HashMap<>();
     public final List<String> advancementCouriers = new ArrayList<>();
+    /** Mebahel's own questlines, woven into the acts */
+    public final List<BaseLines.Line> baseLines = new ArrayList<>();
 
     public record Unlock(double at, boolean below, String trait) {
     }
@@ -69,6 +71,7 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
         graph.clear();
         couriers.clear();
         advancementCouriers.clear();
+        baseLines.clear();
         for (Map.Entry<ResourceLocation, JsonElement> e : files.entrySet()) {
             if (!e.getValue().isJsonObject()) {
                 continue;
@@ -82,6 +85,7 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                     case "companions" -> loadCompanions(o);
                     case "chronicle" -> loadChronicle(o);
                     case "story_graph" -> loadGraph(o);
+                    case "base_lines" -> loadBaseLines(o);
                     default -> {
                     }
                 }
@@ -89,7 +93,7 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                 HalfAGod.LOG.error("Half a God: could not read story table {}", e.getKey(), ex);
             }
         }
-        HalfAGod.LOG.info("Half a God story tables: {} choices, {} cinematic moments, {} story quests.", choices.size(), cinematics.size(), graph.size());
+        HalfAGod.LOG.info("Half a God story tables: {} choices, {} cinematic moments, {} story quests, {} of Mebahel's questlines.", choices.size(), cinematics.size(), graph.size(), baseLines.size());
     }
 
     private void loadReputation(JsonObject o) {
@@ -128,6 +132,15 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
             } else {
                 advancementCouriers.add(j.get("book").getAsString());
             }
+        }
+    }
+
+    private void loadBaseLines(JsonObject o) {
+        for (JsonElement e : o.getAsJsonArray("lines")) {
+            JsonObject j = e.getAsJsonObject();
+            baseLines.add(new BaseLines.Line(j.get("chain").getAsString(), j.get("title").getAsString(), j.get("act").getAsString(),
+                    j.get("gate").getAsString(), j.get("join").getAsString(), list(j, "starters"), list(j, "books"),
+                    list(j, "members"), list(j, "placeable"), j.get("done_trait").getAsString()));
         }
     }
 

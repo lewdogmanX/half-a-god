@@ -35,6 +35,8 @@ public final class Story {
             Reputation.tickVillagers(player);
             StoryGuard.restartAbandoned(player, false);
             Choices.offerPending(player, false);
+            BaseLines.tick(player);
+            Arcs.tick(player);
         }
     }
 

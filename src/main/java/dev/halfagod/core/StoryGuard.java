@@ -30,9 +30,14 @@ public final class StoryGuard {
     public static void onDamage(LivingIncomingDamageEvent event) {
         if (event.getEntity() instanceof AbstractVillager villager && !villager.level().isClientSide
                 && (event.getSource().getEntity() instanceof Enemy || event.getSource().getEntity() instanceof Raider)
-                && Meb.isQuestThreat(villager)) {
+                && (Meb.isQuestThreat(villager) || isStoryGiver(villager))) {
             event.setCanceled(true);
         }
+    }
+
+    private static boolean isStoryGiver(AbstractVillager villager) {
+        String q = Meb.offeredQuest(villager);
+        return q != null && (q.startsWith(STORY) || BaseLines.isMember(q));
     }
 
     /** A story quest that was abandoned starts again by itself. */
@@ -114,6 +119,7 @@ public final class StoryGuard {
             }
         }
         fixed += Choices.offerPending(player, true);
+        fixed += BaseLines.report(player);
         player.sendSystemMessage(Component.literal(fixed == 0
                 ? "[Half a God] Your story is on track. If you're waiting on something, it's probably a courier letter or the next part of the main story."
                 : "[Half a God] Back on track: " + fixed + " part(s) of your story were restarted.").withStyle(ChatFormatting.GOLD));
