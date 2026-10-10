@@ -445,8 +445,12 @@ def write(out_pack, mod_root):
         os.makedirs(os.path.join(a, "story"), exist_ok=True)
         os.makedirs(os.path.join(a, "lang"), exist_ok=True)
         dump("index.json", story_index(), os.path.join(a, "story"))
-        import story_map
+        import story_map, codex
         dump("map.json", story_map.build(_goal_text), os.path.join(a, "story"))
+        cx = codex.build()
+        for e in cx["entries"]:
+            assert e["unlock"].split(":hag_")[1] in QUESTS, e["unlock"]
+        dump("codex.json", cx, os.path.join(a, "story"))
         lang = dict(dialogue.LANG)
         lang.update({"key.categories.half_a_god": "Half a God"})
         dump("en_us.json", lang, os.path.join(a, "lang"))

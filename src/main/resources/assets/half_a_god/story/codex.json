@@ -1,0 +1,208 @@
+{
+ "entries": [
+  {
+   "category": "People",
+   "title": "Old Mara",
+   "unlock": "mebahelrpgrquest:hag_the_first_letter",
+   "text": "An old woman who writes letters to strangers and is always right about where trouble will be. Nobody knows where she lives. Her handwriting is very old-fashioned, and so, some say, is she."
+  },
+  {
+   "category": "People",
+   "title": "Maraal",
+   "unlock": "mebahelrpgrquest:hag_v10_maraal",
+   "text": "Old Mara's real name. Once she rode beside the Charioteer; together they were thrown out of heaven by the Sun Spirit. She has spent a very long time choosing champions to undo what she helped begin. You are not the first."
+  },
+  {
+   "category": "People",
+   "title": "Reeve Halden",
+   "unlock": "mebahelrpgrquest:hag_a1_ashford_burns",
+   "text": "The reeve of Ashford, what's left of it. He lost his village's men to the cult and refuses to lose anything else. He judges fairly and forgives slowly."
+  },
+  {
+   "category": "People",
+   "title": "Tomas, Halden's son",
+   "unlock": "mebahelrpgrquest:hag_m2_the_cursed_quarries",
+   "text": "Taken from Ashford with the other men and set to mine gold in the Sacred City's quarries. Brave, angry, and very much his father's son."
+  },
+  {
+   "category": "People",
+   "title": "The Smiling Peddler",
+   "unlock": "mebahelrpgrquest:hag_p7_gold_at_double_weight",
+   "text": "A merchant who paid double for gold and asked what a person weighs. He painted golden eyes on chapel doors so 'He' could see."
+  },
+  {
+   "category": "People",
+   "title": "Brother Vael",
+   "unlock": "mebahelrpgrquest:hag_a12_brother_vael",
+   "text": "The cult's steward in the Nether: he counts gold, skulls and people. Good at counting. Less good at being sure he's on the right side."
+  },
+  {
+   "category": "People",
+   "title": "The Librarian",
+   "unlock": "mebahelrpgrquest:hag_e1_the_librarians_request",
+   "text": "A scholar who has studied the cult's Old Tongue for thirty years. She can read enough of it to be properly frightened."
+  },
+  {
+   "category": "People",
+   "title": "Silas of the Gilded Hand",
+   "unlock": "mebahelrpgrquest:hag_r2e_the_assayer",
+   "text": "A merchant who buys what others won't sell: skulls, blood, silence. The Gilded Hand is the cult's purse. Silas is its smile."
+  },
+  {
+   "category": "People",
+   "title": "The Midwife",
+   "unlock": "mebahelrpgrquest:hag_v3_the_midwife",
+   "text": "She ran the blood pits under the Sinful Church, where the cult tried to grow its god a new body. 'None of them ever spoke.'"
+  },
+  {
+   "category": "People",
+   "title": "The Fixer",
+   "unlock": "mebahelrpgrquest:hag_gt1_a_note_in_the_stash",
+   "text": "The Blackwater Cartel's man in the villages: he finds growers, buyers, and people who can keep their mouths shut."
+  },
+  {
+   "category": "People",
+   "title": "Don Vasco",
+   "unlock": "mebahelrpgrquest:hag_gt12_don_vasco",
+   "text": "Head of the Blackwater Cartel. Holds court in the Labyrinth. Pays a third of everything to the Chariot, and resents every coin."
+  },
+  {
+   "category": "People",
+   "title": "Wren the Apiarist",
+   "unlock": "mebahelrpgrquest:hag_bz1_a_letter_smelling_of_honey",
+   "text": "A beekeeper whose bees began flying into their nests and never coming out after the light rose from the Wither's pit."
+  },
+  {
+   "category": "People",
+   "title": "Old Aurel",
+   "unlock": "mebahelrpgrquest:hag_lg1_the_golden_legion",
+   "text": "A retired soldier of the Ashford Watch who fought piglins in his youth, and still dreams of the warrior who could not die."
+  },
+  {
+   "category": "People",
+   "title": "Dunn the Deserter",
+   "unlock": "mebahelrpgrquest:hag_rc1_saint",
+   "text": "A raider who threw his crossbow down at Ashford and couldn't pick it up again."
+  },
+  {
+   "category": "People",
+   "title": "Corwin the Refugee",
+   "unlock": "mebahelrpgrquest:hag_r2g_the_granary_thief",
+   "text": "An Ashford refugee who stole grain for his sister's children."
+  },
+  {
+   "category": "People",
+   "title": "Wick the Informant",
+   "unlock": "mebahelrpgrquest:hag_x1_the_informant",
+   "text": "A pillager scout who sold patrol times for bread. The gold, he says, goes up, never down."
+  },
+  {
+   "category": "People",
+   "title": "Gorran the Warden",
+   "unlock": "mebahelrpgrquest:hag_x2_the_bastille_warden",
+   "text": "He locked the Bastille's doors; the cult decided who went behind them. He gave the sick his bread."
+  },
+  {
+   "category": "People",
+   "title": "Brann of the Garrison",
+   "unlock": "mebahelrpgrquest:hag_x5_the_last_garrison_man",
+   "text": "The last living soldier of the frozen garrison. His wife has thought him dead for ten years."
+  },
+  {
+   "category": "Places",
+   "title": "Ashford",
+   "unlock": "mebahelrpgrquest:hag_a1_ashford_burns",
+   "text": "The next village over from yours. The cult's raiders burned it and took its men, counted, not killed. What it becomes is up to you."
+  },
+  {
+   "category": "Places",
+   "title": "The Bastille",
+   "unlock": "mebahelrpgrquest:hag_a7_the_bastille",
+   "text": "An illager fortress paid for in cult gold, built with cells for a hundred. Ashford's men were held there."
+  },
+  {
+   "category": "Places",
+   "title": "The Believer's House",
+   "unlock": "mebahelrpgrquest:hag_a6_believers_house",
+   "text": "A small house where a Preacher prays over the cult's prisoners on their way north."
+  },
+  {
+   "category": "Places",
+   "title": "The Aether",
+   "unlock": "mebahelrpgrquest:hag_h2_hostile_paradise",
+   "text": "A realm above the clouds that should be full of light and is strangely empty. Something left. Or was thrown out."
+  },
+  {
+   "category": "Places",
+   "title": "The End",
+   "unlock": "mebahelrpgrquest:hag_e5_free_the_end",
+   "text": "Where the second Warden waited: a dragon guarding something it had forgotten."
+  },
+  {
+   "category": "Places",
+   "title": "The Blackwater Valley",
+   "unlock": "mebahelrpgrquest:hag_gt1_a_note_in_the_stash",
+   "text": "Where the cartel grows and sells. A third of every emerald made here goes to the Chariot."
+  },
+  {
+   "category": "Places",
+   "title": "The Sinful Church",
+   "unlock": "mebahelrpgrquest:hag_v2_the_sinful_church",
+   "text": "A church with blood pits beneath it. The cult tried to grow its god a body here."
+  },
+  {
+   "category": "Places",
+   "title": "The Sacred City",
+   "unlock": "mebahelrpgrquest:hag_m1_follow_the_crimson_bee",
+   "text": "The Nether Mansion: the Cult of Azazel's city of gold, its quarries worked by stolen men, its Lair at the very end."
+  },
+  {
+   "category": "The Cult",
+   "title": "The Cult of Azazel",
+   "unlock": "mebahelrpgrquest:hag_p4_eye_on_chapel",
+   "text": "They paint golden eyes on chapel doors. They believe gold is faith made solid, and that enough of it buys a god's favour."
+  },
+  {
+   "category": "The Cult",
+   "title": "The Faithful",
+   "unlock": "mebahelrpgrquest:hag_a4_refugee_road",
+   "text": "The cult's warriors. They watch the roads and take people by night."
+  },
+  {
+   "category": "The Cult",
+   "title": "The Divine Chariot",
+   "unlock": "mebahelrpgrquest:hag_w0_two_roads_meet",
+   "text": "The name every trail leads to. Once a charioteer of heaven; now half a god, waiting in the Sacred City."
+  },
+  {
+   "category": "The Cult",
+   "title": "The Seven Wardens",
+   "unlock": "mebahelrpgrquest:hag_w8_six_remain",
+   "text": "Seven great beasts that held the Chariot's pieces apart: the Wither, the Ender Dragon, and five more in the snow, the sand, the sea, the underworld and the dragon tower. Kill one, and the others grow hungry."
+  },
+  {
+   "category": "The Cult",
+   "title": "The Gilded Hand",
+   "unlock": "mebahelrpgrquest:hag_r2e_the_assayer",
+   "text": "The cult's purse: merchants who buy skulls, blood and gold, and sell anything to anyone."
+  },
+  {
+   "category": "The Cult",
+   "title": "The Old Tongue",
+   "unlock": "mebahelrpgrquest:hag_e1_the_librarians_request",
+   "text": "The cult's written language. Mostly angles and anger. The Warden Journal is written in it."
+  },
+  {
+   "category": "The Cult",
+   "title": "The Champions of M.",
+   "unlock": "mebahelrpgrquest:hag_i6_the_mountain_tower",
+   "text": "The Dead King's crown named him 'Champion of M. Second of seven. Failed.' Maraal has done this before."
+  },
+  {
+   "category": "The Cult",
+   "title": "The True Azazel",
+   "unlock": "mebahelrpgrquest:hag_m9_half_a_soul",
+   "text": "A half-soul cannot die. To end him, his head must be joined to his body, and then he must be killed while he is whole."
+  }
+ ]
+}
