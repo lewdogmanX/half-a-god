@@ -37,6 +37,20 @@ public final class Choices {
         if (!Meb.hasTrait(player, c.get("trigger").getAsString())) {
             return false;
         }
+        if (c.has("requires")) {
+            for (JsonElement t : c.getAsJsonArray("requires")) {
+                if (!Meb.hasTrait(player, t.getAsString())) {
+                    return false;
+                }
+            }
+        }
+        if (c.has("forbids")) {
+            for (JsonElement t : c.getAsJsonArray("forbids")) {
+                if (Meb.hasTrait(player, t.getAsString())) {
+                    return false;
+                }
+            }
+        }
         for (JsonElement o : c.getAsJsonArray("options")) {
             if (Meb.hasTrait(player, o.getAsJsonObject().get("trait").getAsString())) {
                 return false;
@@ -96,6 +110,10 @@ public final class Choices {
         }
         if (o.has("chronicle")) {
             Reputation.data(player).chronicle.add(o.get("chronicle").getAsString());
+        }
+        if (o.has("courier")) {
+            // the consequence arrives later, by courier (the delay lives in the courier file)
+            Meb.triggerCourier(player, o.get("courier").getAsString(), id);
         }
         if (o.has("start")) {
             for (JsonElement q : o.getAsJsonArray("start")) {

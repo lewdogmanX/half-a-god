@@ -35,6 +35,8 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     /** trait -> (companion name -> line) */
     public final Map<String, Map<String, String>> reactions = new HashMap<>();
     public final List<String> companionNames = new ArrayList<>();
+    /** companion name -> dialogue profile base (half_a_god:<base>_<tone>) */
+    public final Map<String, String> companionProfiles = new HashMap<>();
     /** trait -> chronicle sentence */
     public final Map<String, String> chronicleLines = new HashMap<>();
     /** trait -> act heading (when that trait appears a new act starts in the Chronicle) */
@@ -46,8 +48,10 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     public final List<String> advancementCouriers = new ArrayList<>();
     /** Mebahel's own questlines, woven into the acts */
     public final List<BaseLines.Line> baseLines = new ArrayList<>();
+    /** Mara's letters: trigger trait -> letter per tone */
+    public final List<JsonObject> letters = new ArrayList<>();
 
-    public record Unlock(double at, boolean below, String trait) {
+    public record Unlock(double at, boolean below, String trait, String courier) {
     }
 
     public record Graph(List<String> next, List<String> spare, List<String> kill, boolean book) {
@@ -66,12 +70,14 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
         cinematics.clear();
         reactions.clear();
         companionNames.clear();
+        companionProfiles.clear();
         chronicleLines.clear();
         chronicleActs.clear();
         graph.clear();
         couriers.clear();
         advancementCouriers.clear();
         baseLines.clear();
+        letters.clear();
         for (Map.Entry<ResourceLocation, JsonElement> e : files.entrySet()) {
             if (!e.getValue().isJsonObject()) {
                 continue;
@@ -86,6 +92,7 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                     case "chronicle" -> loadChronicle(o);
                     case "story_graph" -> loadGraph(o);
                     case "base_lines" -> loadBaseLines(o);
+                    case "letters" -> o.getAsJsonArray("letters").forEach(c -> letters.add(c.getAsJsonObject()));
                     default -> {
                     }
                 }
@@ -101,12 +108,16 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
         o.getAsJsonObject("prefixes").entrySet().forEach(t -> repPrefixes.put(t.getKey(), t.getValue().getAsDouble()));
         for (JsonElement u : o.getAsJsonArray("unlocks")) {
             JsonObject j = u.getAsJsonObject();
-            unlocks.add(new Unlock(j.get("at").getAsDouble(), j.has("below") && j.get("below").getAsBoolean(), j.get("trait").getAsString()));
+            unlocks.add(new Unlock(j.get("at").getAsDouble(), j.has("below") && j.get("below").getAsBoolean(), j.get("trait").getAsString(),
+                    j.has("courier") ? j.get("courier").getAsString() : ""));
         }
     }
 
     private void loadCompanions(JsonObject o) {
         o.getAsJsonArray("names").forEach(n -> companionNames.add(n.getAsString()));
+        if (o.has("profiles")) {
+            o.getAsJsonObject("profiles").entrySet().forEach(p -> companionProfiles.put(p.getKey(), p.getValue().getAsString()));
+        }
         for (JsonElement r : o.getAsJsonArray("reactions")) {
             JsonObject j = r.getAsJsonObject();
             Map<String, String> lines = new LinkedHashMap<>();

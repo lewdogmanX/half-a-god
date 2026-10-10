@@ -114,6 +114,8 @@ public final class Story {
         }
 
         Choices.onTrait(player, trait);
+        Letters.onTrait(player, trait);
+        Arcs.onTrait(player, trait);
 
         if (trait.startsWith("hag_rep_") && !d.chronicleGiven) {
             Chronicle.give(player, true);

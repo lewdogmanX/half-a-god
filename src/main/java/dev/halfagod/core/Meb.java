@@ -244,6 +244,28 @@ public final class Meb {
         return villager.getTags().contains("mebahelrpgrquest:courier");
     }
 
+    // ------------------------------------------------------------------ companions
+    public static UUID companionOwner(Entity e) {
+        if (!Boolean.TRUE.equals(call(e, "mebahelrpgrquest$isCompanion"))) {
+            return null;
+        }
+        Object o = call(e, "mebahelrpgrquest$getCompanionOwnerUuid");
+        return o instanceof UUID u ? u : null;
+    }
+
+    public static String dialogueProfile(Entity e) {
+        Object o = call(e, "mebahelrpgrquest$getDialogueProfileId");
+        return o == null ? "" : o.toString();
+    }
+
+    public static void setDialogueProfile(ServerPlayer player, Entity e, String profile) {
+        MinecraftServer server = player.getServer();
+        if (server != null) {
+            server.getCommands().performPrefixedCommand(server.createCommandSourceStack().withSuppressedOutput().withPermission(4),
+                    "mebahelquest companion profile " + e.getStringUUID() + " " + profile);
+        }
+    }
+
     /** Sends one of the pack's courier letters whose trigger is "custom" (only this mod fires those). */
     public static void triggerCourier(ServerPlayer player, String deliveryId, String occurrence) {
         callStatic("net.mebahelrpgrquest.quest.CourierManager", "trigger", player, ResourceLocation.parse(deliveryId), occurrence);

@@ -86,6 +86,9 @@ public final class Reputation {
             boolean reached = u.below() ? d.value <= u.at() : d.value >= u.at();
             if (reached && !Meb.hasTrait(player, u.trait())) {
                 Meb.addTrait(player, u.trait());
+                if (!u.courier().isEmpty()) {
+                    Meb.triggerCourier(player, u.courier(), u.trait());
+                }
             }
         }
     }
