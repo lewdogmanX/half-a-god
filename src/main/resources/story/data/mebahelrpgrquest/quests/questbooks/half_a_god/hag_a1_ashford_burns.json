@@ -112,7 +112,6 @@
         }
       ],
       "target_line": "Halden: 'Ashford is yours to call on now. What's left of it.'",
-      "min_structure_distance": 300,
       "talk": [
         [
           "Are you Halden?",

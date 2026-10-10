@@ -147,6 +147,9 @@ quest("a1_ashford_burns", "Ashford Burns",
       rewards={"xp": 520, "items": {"minecraft:emerald": 12, "minecraft:iron_ingot": 8}},
       nxt=flow("a2_what_was_left"))
 
+# Halden is found in Ashford itself: you are standing in it when the last raider falls
+QUESTS["a1_ashford_burns"][1]["goals"][2]["_far"] = False
+
 quest("a2_what_was_left", "What Was Left",
       "Ashford's families lost almost everything. Bring them what they need to get through the week.",
       [collect("bread", "minecraft:bread", 32, 0),
