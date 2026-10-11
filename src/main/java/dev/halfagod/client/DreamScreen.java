@@ -194,11 +194,13 @@ public final class DreamScreen extends Screen {
                 return Math.abs(v) > lid - 0.06f ? GOLD_D : PALE;
             }
             case "chains" -> {
+                // three links, the middle one turned on its side
                 for (int k = -1; k <= 1; k++) {
-                    float lx = u - k * 0.6f, ly = v * (k == 0 ? 1.8f : 1f) / (k == 0 ? 1f : 1.8f);
-                    float lr = (float) Math.sqrt(lx * lx / 0.36f + ly * ly / 0.09f);
-                    if (lr > 0.75f && lr < 1f) {
-                        return IRON;
+                    float lx = u - k * 0.52f;
+                    float ax = k == 0 ? 0.16f : 0.34f, ay = k == 0 ? 0.3f : 0.2f;
+                    float lr = (float) Math.sqrt(lx * lx / (ax * ax) + v * v / (ay * ay));
+                    if (lr > 0.68f && lr < 1f) {
+                        return k == 0 ? 0x8A827A : IRON;
                     }
                 }
                 return 0;
@@ -223,14 +225,23 @@ public final class DreamScreen extends Screen {
                 return Math.abs(u) < half * 0.45f && w > 0.4f ? 0xFFE08A : w > 0.55f ? GOLD : 0xD0581E;
             }
             case "bell" -> {
-                if (v < -0.75f || v > 0.6f) {
-                    return Math.abs(u) < 0.08f && v > 0.6f && v < 0.8f ? GOLD_D : 0;
+                if (v < -0.62f) {
+                    // the loop it hangs from
+                    float lr = (float) Math.sqrt(u * u + (v + 0.75f) * (v + 0.75f));
+                    return lr > 0.07f && lr < 0.13f ? GOLD_D : 0;
                 }
-                float half = 0.18f + (v + 0.75f) * 0.42f;
-                if (v > 0.45f) {
-                    half += 0.1f;
+                if (v > 0.55f) {
+                    return Math.abs(u) < 0.07f && v < 0.75f ? GOLD_D : 0; // the clapper
                 }
-                return Math.abs(u) < half ? (u < -half * 0.4f ? GOLD : GOLD_D) : 0;
+                float k = (v + 0.62f) / 1.17f;
+                float half = 0.2f + 0.3f * (float) Math.pow(k, 1.8);
+                if (k < 0.15f) {
+                    half = (float) Math.sqrt(Math.max(0, 0.04f - (0.15f - k) * (0.15f - k) * 1.2f)) + 0.04f;
+                }
+                if (v > 0.42f) {
+                    half += 0.08f;
+                }
+                return Math.abs(u) < half ? (u < -half * 0.35f ? GOLD : GOLD_D) : 0;
             }
             case "drop" -> {
                 float vv = v + 0.15f;

@@ -47,7 +47,7 @@ public final class HalfAGodTests {
         }
     }
 
-    @GameTest(template = "half_a_god:empty")
+    @GameTest(template = "empty")
     public static void storyTables(GameTestHelper h) {
         StoryData d = StoryData.INSTANCE;
         check(h, d.dreams.size() >= 20, "dreams loaded: " + d.dreams.size());
@@ -61,7 +61,7 @@ public final class HalfAGodTests {
         h.succeed();
     }
 
-    @GameTest(template = "half_a_god:empty")
+    @GameTest(template = "empty")
     public static void courtBuilds(GameTestHelper h) {
         ServerLevel court = Trial.court(h.getLevel().getServer());
         check(h, court != null, "the court dimension is loaded");
@@ -81,7 +81,7 @@ public final class HalfAGodTests {
         h.succeed();
     }
 
-    @GameTest(template = "half_a_god:empty", timeoutTicks = 200)
+    @GameTest(template = "empty", timeoutTicks = 200)
     public static void wholeTrial(GameTestHelper h) {
         ServerPlayer p = h.makeMockServerPlayerInLevel();
         BlockPos home = h.absolutePos(new BlockPos(1, 1, 1));
