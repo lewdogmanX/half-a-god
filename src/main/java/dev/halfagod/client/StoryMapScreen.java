@@ -62,10 +62,10 @@ public final class StoryMapScreen extends Screen {
     private static final int BLADE = 0xFF3A0A0A;
 
     // ---- world layout (map units, 1:1 with GUI pixels at zoom 1)
-    private static final int COL_W = 132;
-    private static final int ROW_H = 52;
-    private static final int LANE_GAP = 28;
-    private static final int R = 12;
+    private static final int COL_W = 116;
+    private static final int ROW_H = 46;
+    private static final int LANE_GAP = 20;
+    private static final int R = 11;
 
     // ---- screen layout
     private static final int TOP = 46;
@@ -121,7 +121,7 @@ public final class StoryMapScreen extends Screen {
 
     // camera
     private double camX, camY, tgtX, tgtY;
-    private float zoom = 1f;
+    private float zoom = 0.7f;
     private boolean dragging;
     private double dragDist;
 
@@ -458,6 +458,18 @@ public final class StoryMapScreen extends Screen {
                 segs.add(new double[]{a.x(), a.y(), b.x(), b.y()});
             }
         }
+        // tea and candle-wax stains, scattered over the whole sheet
+        for (int gx = (int) Math.floor((minX - 300) / 170); gx <= (int) Math.ceil((maxX + 500) / 170); gx++) {
+            for (int gy = (int) Math.floor((minY - 260) / 170); gy <= (int) Math.ceil((maxY + 260) / 170); gy++) {
+                int h = gx * 92837111 ^ gy * 689287499 ^ chapter * 283923481;
+                h = (h ^ (h >>> 15)) * 0x2C1B3C6D;
+                h ^= h >>> 12;
+                float r = ((h >>> 8) & 0xFFFF) / 65535f;
+                if (r < 0.32f) {
+                    decos.add(new Deco(3, gx * 170 + ((h & 0x3F) - 32), gy * 170 + (((h >>> 6) & 0x3F) - 32)));
+                }
+            }
+        }
         int step = 46;
         for (int gx = (int) Math.floor((minX - 200) / step); gx <= (int) Math.ceil((maxX + 420) / step); gx++) {
             for (int gy = (int) Math.floor((minY - 180) / step); gy <= (int) Math.ceil((maxY + 180) / step); gy++) {
@@ -549,7 +561,8 @@ public final class StoryMapScreen extends Screen {
             }
         }
         double viewW = (canvasRight() - 20) / zoom, viewH = (height - TOP - FOOT - 20) / zoom;
-        tgtX = focus == null || maxX - minX < viewW * 0.85 ? (minX + maxX) / 2 : focus.x();
+        // where you are sits right of centre, so most of the screen shows the road behind you
+        tgtX = focus == null || maxX - minX < viewW * 0.85 ? (minX + maxX) / 2 : Math.max(minX + viewW / 2 - 40, focus.x() - viewW * 0.18);
         tgtY = focus == null || maxY - minY < viewH * 0.85 ? (minY + maxY) / 2 : focus.y();
         if (snap) {
             camX = tgtX;
@@ -816,11 +829,11 @@ public final class StoryMapScreen extends Screen {
         double wy0 = camY + (y0 - ccy()) / zoom, wy1 = camY + (y1 - ccy()) / zoom;
         for (double gx = Math.floor(wx0 / step) * step; gx <= wx1; gx += step) {
             int x = sx(gx);
-            g.fill(x, y0, x + 1, y1, 0x146B5638);
+            g.fill(x, y0, x + 1, y1, 0x0E6B5638);
         }
         for (double gy = Math.floor(wy0 / step) * step; gy <= wy1; gy += step) {
             int y = sy(gy);
-            g.fill(x0, y, x1, y + 1, 0x146B5638);
+            g.fill(x0, y, x1, y + 1, 0x0E6B5638);
         }
     }
 
@@ -854,6 +867,11 @@ public final class StoryMapScreen extends Screen {
                     wfill(g, x - 6 + Math.cos(a) * -6, y - Math.sin(a) * 6, x - 6 + Math.cos(a) * -6 + 1, y - Math.sin(a) * 6 + 1, ink);
                     wfill(g, x + 5 + Math.cos(a) * -4.5, y + 1 - Math.sin(a) * 4.5, x + 5 + Math.cos(a) * -4.5 + 1, y + 1 - Math.sin(a) * 4.5 + 1, ink);
                 }
+            }
+            case 3 -> { // a stain
+                int rr = Math.max(4, Math.round((14 + (int) Math.floorMod((long) (x * 7 + y), 20L)) * zoom));
+                disc(g, sx(x), sy(y), rr, 0x0A6B4A20);
+                ring(g, sx(x), sy(y), rr, Math.max(1, Math.round(1.5f * zoom)), 0x1C6B4A20);
             }
             default -> { // a tuft of grass
                 wfill(g, x, y, x + 1, y + 3, ink);
@@ -993,7 +1011,7 @@ public final class StoryMapScreen extends Screen {
                 line = Component.literal(lines.size() > 1 && count == 2 ? font.plainSubstrByWidth(remainder(lines, i), Math.max(30, maxW - 12)) + "..." : cut + "...").getVisualOrderText();
                 w = font.width(line);
             }
-            g.fill(x - w / 2 - 2, ty - 1, x + w / 2 + 2, ty + 9, 0x9CEADBB8);
+            g.fill(x - w / 2 - 2, ty - 1, x + w / 2 + 2, ty + 9, 0xD0EADBB8);
             g.drawString(font, line, x - w / 2, ty, color, false);
             ty += 10;
         }
@@ -1068,15 +1086,24 @@ public final class StoryMapScreen extends Screen {
                 g.fill(px, py, px + sz, py + sz, (alpha << 24) | 0x5A4128);
             }
         }
-        // fog
-        int fx = sx(maxX + 70);
-        int span = Math.max(60, Math.round(240 * zoom));
+        // fog over what you haven't reached, with a cloudy edge (seals of side stories further on still show through)
+        int fx = sx(last.x() + 90);
+        int span = Math.max(60, Math.round(220 * zoom));
         int top = TOP, bottom = height - FOOT;
         for (int i = 0; i < span; i += 3) {
-            int a = (int) (0xF0 * Math.min(1, i / (double) span * 1.15));
-            g.fill(fx + i, top, fx + i + 3, bottom, (a << 24) | 0xE9D8B4);
+            int a = (int) (0xE8 * Math.min(1, i / (double) span * 1.15));
+            g.fill(fx + i, top, fx + i + 3, bottom, (a << 24) | 0xEDDDBA);
         }
-        g.fill(fx + span, top, canvasRight(), bottom, 0xF0E9D8B4);
+        g.fill(fx + span, top, canvasRight(), bottom, 0xE8EDDDBA);
+        double wy0 = camY + (top - ccy()) / zoom, wy1 = camY + (bottom - ccy()) / zoom;
+        for (double wy = Math.floor(wy0 / 26) * 26; wy <= wy1 + 26; wy += 26) {
+            int hh = (int) wy * 31 + chapter * 7;
+            double off = Math.sin(hh * 0.7) * 22 + Math.sin(hh * 0.23) * 14;
+            int rr = Math.max(5, Math.round((16 + (float) Math.abs(Math.sin(hh * 0.41)) * 12) * zoom));
+            int px = sx(last.x() + 120 + off), py = sy(wy);
+            disc(g, px, py, rr, 0x50F6ECD4);
+            disc(g, px + rr / 2, py - rr / 3, Math.max(3, rr * 2 / 3), 0x40FBF4E2);
+        }
         int lx = sx(last.x() + 150), ly = sy(last.y());
         g.drawString(font, Component.literal("Uncharted").withStyle(ChatFormatting.ITALIC), lx - 20, ly - 4, 0x906B5638, false);
     }
@@ -1747,7 +1774,7 @@ public final class StoryMapScreen extends Screen {
             return true;
         }
         double wx = camX + (mx - ccx()) / zoom, wy = camY + (my - ccy()) / zoom;
-        float nz = (float) Math.max(0.5, Math.min(2.0, zoom * (scrollY > 0 ? 1.15 : 1 / 1.15)));
+        float nz = (float) Math.max(0.4, Math.min(2.0, zoom * (scrollY > 0 ? 1.15 : 1 / 1.15)));
         if (nz != zoom) {
             zoom = nz;
             camX = wx - (mx - ccx()) / zoom;
@@ -1799,7 +1826,7 @@ public final class StoryMapScreen extends Screen {
             return true;
         }
         if (key == GLFW.GLFW_KEY_MINUS || key == GLFW.GLFW_KEY_KP_SUBTRACT) {
-            zoom = Math.max(0.5f, zoom / 1.15f);
+            zoom = Math.max(0.4f, zoom / 1.15f);
             return true;
         }
         return super.keyPressed(key, scan, mods);

@@ -63,15 +63,24 @@ Settings are in `config/half_a_god-client.toml`:
 
 ## The story map
 
-Mebahel's quest-map key opens the Half a God story map (or use `/halfagod map`). It's a parchment map of your journey,
-one page per act. The main story is a winding road; side stories branch off above and below it. Every quest you've
-reached is a wax seal: red when done (with a green or black dot for mercy or the blade), gold where you are now, plain
-when it's ready to start. Anything you haven't reached isn't drawn at all; the road just fades out ahead of you.
-Click a seal for its story and goals. Drag to move, Ctrl+scroll to zoom, the arrow keys turn the page.
-"Quest list" opens Mebahel's own map.
+Mebahel's quest-map key opens the Half a God story map (or use `/halfagod map`). Each act is a page of an old map:
 
-**The Codex** (button at the bottom) collects what you've learned about the people, places and the cult. Entries
-appear as the story reaches them.
+- **The road.** The main story is a broad worn road through the middle, and the side stories run alongside it above
+  and below, each with a signpost. Every quest you've reached is a wax seal: red when done (with a green or black mark
+  for mercy or the blade), gold with a flag where you are now, a paper token when it's ready to start. Letters that
+  sent you somewhere show as little envelopes on the road.
+- **Nothing ahead is drawn.** Quests you haven't reached aren't on the map at all, and past the last place you've been
+  the paper clouds over.
+- **The journal page.** Click a seal and its page opens on the right: the story so far, your objectives (ticked off as
+  you do them, with the current one marked), what led there and where it goes next. Click any of those to jump to it.
+- **Now.** A note in the corner always shows the quest you're on and what to do next; click it to go there. If it's
+  off screen, an arrow at the edge points to it.
+- **Acts.** The arrows and the row of diamonds at the top turn the page; acts you haven't reached stay dark.
+- **Controls.** Drag to move, scroll to zoom (or + and -), the arrow keys or A and D turn the page, Space jumps to
+  where you are, C opens the Codex, Esc closes the journal page. "Quest list" opens Mebahel's own map.
+
+**The Codex** is a book of what you've learned about the people, places and the cult. Entries appear as the story
+reaches them, with a red dot until you've read them.
 
 ## Antique Atlas
 

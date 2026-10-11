@@ -90,7 +90,6 @@ final class MapArt {
     private static NativeImage paper() {
         int s = PAPER_SIZE;
         NativeImage img = new NativeImage(s, s, false);
-        int[][] rings = {{62, 178, 30}, {196, 64, 19}, {150, 214, 9}};
         for (int y = 0; y < s; y++) {
             for (int x = 0; x < s; x++) {
                 float u = x / (float) s, v = y / (float) s;
@@ -100,15 +99,6 @@ final class MapArt {
                 double shade = 1 + (n - 0.5) * 0.17 + (fibre - 0.5) * 0.05 - Math.max(0, blot - 0.62) * 0.35;
                 if (hash(x, y, 5) < 0.004f) {
                     shade *= 0.86; // flecks
-                }
-                for (int[] r : rings) {
-                    double d = Math.hypot(x - r[0], y - r[1]);
-                    double ring = Math.abs(d - r[2]);
-                    if (ring < 1.6) {
-                        shade *= 0.93 + ring * 0.03;
-                    } else if (d < r[2]) {
-                        shade *= 0.985;
-                    }
                 }
                 img.setPixelRGBA(x, y, pixel(255, 233 * shade, 216 * shade, 180 * shade));
             }
