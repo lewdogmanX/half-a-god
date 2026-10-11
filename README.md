@@ -32,12 +32,27 @@ What moves it:
 What it changes:
 
 - **Prices:** villagers' trades get cheaper or dearer.
-- **Golems:** iron golems attack you at Wicked.
-- **Traders:** wandering traders won't deal with the Wicked.
 - **Villagers:** they greet you differently and gossip about what you did.
 - **Mara's letters:** she writes to you differently.
 - **Companions:** they talk to you differently.
 - **Unlocks:** reaching Saint brings *The Lantern Road*; sinking to Wicked brings *Silas Makes an Offer*.
+
+### Good and evil
+
+Both sides have their rewards, but evil makes the world much harder on you.
+
+| | Good / Saint | Fallen / Wicked |
+| --- | --- | --- |
+| In villages | Hero of the Village while you're there (stronger as a Saint) | a village you walk into may get a raid because of you (15% / 35% a day) |
+| Fights | golems, guards and the Watch join in when something attacks you; a Saint gets a Watchman at their side at night near a village | bounty hunters come for you at night (35% / 70%); illagers near you are stronger (and tougher at Wicked) |
+| Trading | cheaper trades | clerics won't serve the Fallen; nobody trades with the Wicked; golems attack the Wicked; wandering traders won't deal with them |
+| Money | | Silas pays you a cut of every story quest (4 / 8 emeralds); sneak + right-click a villager to scare something out of them (once a day each) |
+| Work | Watch duties | Gilded Hand contracts (they pay better) |
+| Travel | the lantern road: free | the smugglers: 8 emeralds a trip |
+| Ashford | rebuilt as the story goes on | stays burned, and the Gilded Hand moves in |
+| Notice boards | thanks with your name on it | a wanted poster with your name on it |
+
+Wavering gets none of the perks and none of the penalties, and no work: nobody's sure what you are yet.
 
 Settings are in `config/half_a_god-client.toml`:
 
@@ -49,11 +64,15 @@ Settings are in `config/half_a_god-client.toml`:
 
 ## The story map
 
-Mebahel's quest-map key opens the Half a God story map (or use `/halfagod map`). One page per act; inside an act the quests
-run left to right in story order, in lanes: the main story, each side arc, the reputation road, choices that come back,
-Mebahel's questlines and side quests. Done quests are green, the one you're on glows gold, ones ready to start are white,
-and anything you haven't reached yet stays hidden. Click a quest for its story, goals and what it leads to. Drag to move,
-Ctrl+scroll to zoom. The "Mebahel's map" button opens the original.
+Mebahel's quest-map key opens the Half a God story map (or use `/halfagod map`). It's a parchment map of your journey,
+one page per act. The main story is a winding road; side stories branch off above and below it. Every quest you've
+reached is a wax seal: red when done (with a green or black dot for mercy or the blade), gold where you are now, plain
+when it's ready to start. Anything you haven't reached isn't drawn at all; the road just fades out ahead of you.
+Click a seal for its story and goals. Drag to move, Ctrl+scroll to zoom, the arrow keys turn the page.
+"Quest list" opens Mebahel's own map.
+
+**The Codex** (button at the bottom) collects what you've learned about the people, places and the cult. Entries
+appear as the story reaches them.
 
 ## Antique Atlas
 
@@ -66,6 +85,26 @@ Every story character lives somewhere: Reeve Halden and Ashford's people in Ashf
 home village, the snowy village's people in a snowy village, and so on. When a quest needs someone, they're in their
 village, standing where you last saw them, and there's only ever one of them. Characters you meet for the first time
 settle in the village they're placed in. Guard Villagers and iron golems won't touch anyone you need to talk to or judge.
+
+## The world answers back
+
+- **Ashford rebuilds.** On an empty lot near Ashford's middle you'll see what's left after the raid, then the families'
+  tents and supplies, then a house going up, then finished houses, the Watch's hall and lanterns down the walk. If you're
+  Fallen or Wicked when the rebuilding starts, the ruins stay ruins and the Gilded Hand puts up a counting house with a
+  debtors' cage instead (it changes back if you climb back up). Nothing is ever built over something you placed.
+- **The people you saved move in.** Wick, Gorran, Tomas, the Pilgrim, Brann, the Midwife, Tobin, Sister Ysolde,
+  Garret, Pell and the freed Ashford men settle in your village, Ashford or the snowy village once their story is
+  done well. Right-click them and they'll talk. In time a Good Ashford gets a Captain of the Watch, and a Fallen or Wicked one a Tallyman of
+  the Gilded Hand.
+- **Notice boards.** Each village you know puts up a sign by its bell: thanks, a call for Watch recruits, or a wanted
+  poster, depending on who you are. When your reputation changes, the notice changes (even if you tore the old one down).
+- **Duties and contracts.** Walk into a village and a resident may glow: that's work. Watch duties (night watch,
+  clearing the road, spiders in the hedges, raiders on the hill, creepers, bread for families, mending fences) raise
+  your reputation a little. Gilded Hand contracts (the tithe, stealing a bell, rival pillagers, the farmers' share,
+  gunpowder, bones for the Choir) pay more and drag it down. One at a time, at most every half a day.
+- **Travel.** Right-click a village bell (or `/halfagod travel`) to go to another village the story has taken you to,
+  if it's more than 96 blocks away: free on the lantern road if you're Good, 8 emeralds to the smugglers if you're
+  Fallen or Wicked.
 
 ## What the mod adds to the story
 
@@ -105,6 +144,8 @@ settle in the village they're placed in. Guard Villagers and iron golems won't t
 | `/halfagod lostmyway` | everyone | put your story back on track |
 | `/halfagod choose` | everyone | reopen a choice you closed |
 | `/halfagod chronicle` | everyone | the Chronicle so far |
+| `/halfagod map` | everyone | open the story map |
+| `/halfagod travel` | everyone | travel to another village you know |
 | `/halfagod story` or `/halfagod unlockall` | operators | opens the whole story: every act and quest, what it needs and where it leads, with a button to start any quest |
 | `/halfagod jump <quest> [player]` | operators | start any story quest |
 | `/halfagod setrep <value> [player]` | operators | set reputation |
