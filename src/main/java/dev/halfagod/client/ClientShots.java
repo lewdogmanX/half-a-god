@@ -38,7 +38,7 @@ import java.util.function.Consumer;
  * a whole trial (court, verdict, cell) and the story map's new pages, taking a screenshot of each, then quits.
  */
 public final class ClientShots {
-    private record Step(int pause, Runnable run) {
+    private record Step(int pause, Runnable run, java.util.function.BooleanSupplier until) {
     }
 
     private static final List<Step> STEPS = new ArrayList<>();
@@ -49,8 +49,16 @@ public final class ClientShots {
     }
 
     private static void step(int waitAfter, Runnable r) {
-        STEPS.add(new Step(waitAfter, r));
+        STEPS.add(new Step(waitAfter, r, null));
     }
+
+    /** waits (up to a minute) until something is so, then goes on */
+    private static void until(java.util.function.BooleanSupplier c) {
+        STEPS.add(new Step(0, () -> {
+        }, c));
+    }
+
+    private static int waited;
 
     private static void server(Consumer<ServerPlayer> c) {
         Minecraft mc = Minecraft.getInstance();
@@ -149,7 +157,10 @@ public final class ClientShots {
         step(170, () -> server(sp -> Dreams.send(sp, Dreams.byId("past_2"))));
         step(10, () -> shot("02_dream"));
         step(30, () -> Minecraft.getInstance().setScreen(null));
-        step(100, () -> server(sp -> Trial.kidnap(sp, Trial.SAMPLE_RECORD)));
+        step(20, () -> server(sp -> Trial.kidnap(sp, Trial.SAMPLE_RECORD)));
+        until(() -> TrialScreen.active() != null);
+        step(200, () -> {
+        });
         step(10, () -> shot("03_trial_taken"));
         step(20, () -> trialClick(3));
         step(15, () -> shot("04_trial_court"));
@@ -459,7 +470,12 @@ public final class ClientShots {
             wait--;
             return;
         }
-        Step s = STEPS.get(index++);
+        Step s = STEPS.get(index);
+        if (s.until() != null && !s.until().getAsBoolean() && waited++ < 1200) {
+            return;
+        }
+        waited = 0;
+        index++;
         try {
             s.run().run();
         } catch (Exception ex) {
