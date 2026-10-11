@@ -110,7 +110,7 @@ public final class ClientShots {
         step(30, () -> Minecraft.getInstance().setScreen(null));
         step(10, () -> shot("06_courtroom"));
         // the court from other angles: the jury on the right, the witness stand on the left, and from the gallery
-        step(10, () -> look(-70f, 5f));
+        step(10, () -> look(-128f, 5f));
         step(10, () -> shot("06b_court_jury"));
         step(10, () -> look(140f, 0f));
         step(10, () -> shot("06c_court_witness"));
@@ -129,6 +129,9 @@ public final class ClientShots {
         step(10, () -> shot("08b_cell_time_left"));
         step(20, () -> look(0f, 25f));
         step(10, () -> shot("09_cell_window"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 0.5, 0, CourtBuilder.CELL.getZ() + 5.5, 0f, 40f)));
+        step(30, () -> shot("09b_cell_lava"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL_SPOT.getX() + 0.5, 0, CourtBuilder.CELL_SPOT.getZ() + 0.5, 180f, 0f)));
         step(20, () -> look(60f, 15f));
         step(10, () -> shot("10_cell_cot"));
         step(20, () -> look(-110f, 10f));

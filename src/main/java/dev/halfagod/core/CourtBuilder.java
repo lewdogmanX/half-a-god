@@ -89,8 +89,9 @@ public final class CourtBuilder {
             boolean back = i >= 3;
             out.add(villager("juror" + i, "Juror", false, jp[i], back ? 7.5 : 6.5, back ? 2 : 1, (back ? -5.5 : -6.5) + (i % 3) * 2, 0.5, -3));
         }
-        out.add(new Npc("guard0", "", false, Kind.GOLEM, null, -2.5, 0, -0.5, 180f));
-        out.add(new Npc("guard1", "", false, Kind.GOLEM, null, 3.5, 0, -0.5, 180f));
+        // the guards stand either side of the dock, at your shoulders
+        out.add(new Npc("guard0", "", false, Kind.GOLEM, null, -2.5, 0, DOCK.getZ() + 0.5, 180f));
+        out.add(new Npc("guard1", "", false, Kind.GOLEM, null, 3.5, 0, DOCK.getZ() + 0.5, 180f));
         double[][] gallery = {{-6.5, 7.5}, {-4.5, 9.5}, {-7.5, 11.5}, {4.5, 7.5}, {7.5, 9.5}, {3.5, 11.5}};
         VillagerProfession[] gp = {VillagerProfession.BUTCHER, VillagerProfession.NONE, VillagerProfession.FISHERMAN,
                 VillagerProfession.LEATHERWORKER, VillagerProfession.NONE, VillagerProfession.ARMORER};
@@ -267,13 +268,12 @@ public final class CourtBuilder {
         // ---- the bench: a dais for the judge, under the Watch's eye
         b.fill(-6, 0, -16, 6, 0, -12, Blocks.POLISHED_BLACKSTONE_BRICKS);
         b.fill(-6, 1, -16, 6, 1, -12, Blocks.DARK_OAK_PLANKS);
-        b.fill(-5, 0, -11, 5, 2, -11, Blocks.DARK_OAK_PLANKS);
+        b.fill(-5, 0, -11, 5, 1, -11, Blocks.DARK_OAK_PLANKS);
+        b.fill(-5, 2, -11, 5, 2, -11, Blocks.DARK_OAK_SLAB);
         b.fill(-6, 0, -11, -6, 3, -11, log(Blocks.STRIPPED_DARK_OAK_LOG, Direction.Axis.Y));
         b.fill(6, 0, -11, 6, 3, -11, log(Blocks.STRIPPED_DARK_OAK_LOG, Direction.Axis.Y));
         b.set(-6, 4, -11, candles(3));
         b.set(6, 4, -11, candles(3));
-        b.set(-3, 3, -11, candles(2));
-        b.set(3, 3, -11, candles(1));
         // the judge's high-backed chair
         b.fill(-1, 2, -13, 1, 4, -13, Blocks.DARK_OAK_PLANKS);
         b.set(0, 5, -13, Blocks.DARK_OAK_PLANKS);
@@ -291,12 +291,14 @@ public final class CourtBuilder {
         b.fill(7, 0, -16, 9, 4, -16, Blocks.BOOKSHELF);
         // the Watch's mark on the wall: an iron eye that never closes
         b.fill(-4, 5, -17, 4, 9, -17, Blocks.POLISHED_BLACKSTONE_BRICKS);
-        b.fill(-2, 8, -17, 2, 8, -17, Blocks.IRON_BLOCK);
-        b.fill(-2, 6, -17, 2, 6, -17, Blocks.IRON_BLOCK);
-        b.set(-3, 7, -17, Blocks.IRON_BLOCK);
-        b.set(3, 7, -17, Blocks.IRON_BLOCK);
-        b.fill(-2, 7, -17, 2, 7, -17, Blocks.QUARTZ_BLOCK);
-        b.set(0, 7, -17, Blocks.GOLD_BLOCK);
+        b.fill(-2, 8, -17, 2, 8, -17, Blocks.QUARTZ_BLOCK);
+        b.fill(-2, 6, -17, 2, 6, -17, Blocks.QUARTZ_BLOCK);
+        b.fill(-3, 7, -17, 3, 7, -17, Blocks.QUARTZ_BLOCK);
+        b.set(-1, 7, -17, Blocks.GOLD_BLOCK);
+        b.set(1, 7, -17, Blocks.GOLD_BLOCK);
+        b.set(0, 8, -17, Blocks.GOLD_BLOCK);
+        b.set(0, 6, -17, Blocks.GOLD_BLOCK);
+        b.set(0, 7, -17, Blocks.BLACK_CONCRETE);
         b.set(-5, 7, -16, banner(Direction.SOUTH));
         b.set(5, 7, -16, banner(Direction.SOUTH));
         // the clerk's lectern, below the bench
@@ -388,7 +390,7 @@ public final class CourtBuilder {
                         b.set(x, -1, z, speck(x, 1, z, 5) ? Blocks.GRAVEL : speck(x, 2, z, 3) ? Blocks.CRACKED_DEEPSLATE_BRICKS : Blocks.COBBLED_DEEPSLATE);
                     }
                     // the barred front, with an iron door in the middle (no handle on the inside)
-                    for (int y = 0; y <= 3; y++) {
+                    for (int y = 0; y <= 2; y++) {
                         b.join(x, y, bars, Blocks.IRON_BARS);
                     }
                 }
@@ -421,8 +423,9 @@ public final class CourtBuilder {
         b.set(-2, 3, 5, Blocks.COBWEB);
         b.set(2, 3, 5, Blocks.COBWEB);
         b.set(0, 3, 3, hanging(Blocks.LANTERN));
-        for (int[] w : new int[][]{{0, 1}, {0, 2}, {-1, 2}, {1, 2}}) {
-            b.join(w[0], w[1], 6, Blocks.IRON_BARS);
+        for (int x = -1; x <= 1; x++) {
+            b.join(x, 1, 6, Blocks.IRON_BARS);
+            b.join(x, 2, 6, Blocks.IRON_BARS);
         }
 
         // ---- the other cells
@@ -454,18 +457,18 @@ public final class CourtBuilder {
         b.set(6, 0, 4, candles(1));
 
         // ---- underneath: a lava lake, and basalt pillars standing in it
-        b.fill(-16, -11, -10, 16, -11, 30, Blocks.BASALT);
-        b.fill(-16, -10, -10, 16, -10, 30, Blocks.BASALT);
-        b.fill(-15, -10, -9, 15, -10, 29, Blocks.LAVA);
+        b.fill(-16, -7, -10, 16, -7, 30, Blocks.BASALT);
+        b.fill(-16, -6, -10, 16, -6, 30, Blocks.BASALT);
+        b.fill(-15, -6, -9, 15, -6, 29, Blocks.LAVA);
         b.fill(-12, -2, -8, 12, -2, 6, Blocks.BASALT);
         for (int x : new int[]{-12, -6, 0, 6, 12}) {
             for (int z : new int[]{-8, 6}) {
-                b.fill(x, -10, z, x, -3, z, log(Blocks.BASALT, Direction.Axis.Y));
+                b.fill(x, -6, z, x, -3, z, log(Blocks.BASALT, Direction.Axis.Y));
             }
         }
-        int[][] columns = {{-7, 14, 5}, {9, 19, 8}, {-11, 24, 3}, {3, 27, 6}, {12, 11, 4}};
+        int[][] columns = {{-7, 12, 4}, {9, 16, 7}, {-11, 21, 2}, {3, 24, 5}, {12, 10, 3}};
         for (int[] col : columns) {
-            b.fill(col[0], -10, col[1], col[0], -10 + col[2], col[1], log(Blocks.BASALT, Direction.Axis.Y));
+            b.fill(col[0], -6, col[1], col[0], -6 + col[2], col[1], log(Blocks.BASALT, Direction.Axis.Y));
         }
     }
 

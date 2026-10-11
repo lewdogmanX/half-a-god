@@ -150,11 +150,13 @@ public final class HalfAGodTests {
         Trial.passTime(p, Trial.DAY - 20);
         check(h, d.served == 0 && d.trialState == 2, "not a day yet");
         Trial.passTime(p, 20);
-        check(h, d.served == 1 && d.servedTicks == 0, "a day served after a whole day in the cell");
+        check(h, days == 1 ? d.trialState == 0 : d.served == 1 && d.servedTicks == 0, "a day served after a whole day in the cell");
         for (int i = 1; i < days; i++) {
             Trial.passTime(p, Trial.DAY);
         }
         check(h, d.trialState == 0, "released after serving");
+        JsonObject record = JsonParser.parseString(d.trials.get(d.trials.size() - 1)).getAsJsonObject();
+        check(h, record.get("outcome").getAsString().equals("served") && record.get("served").getAsInt() == days, "served the whole sentence: " + record);
         check(h, p.level().dimension() == Level.OVERWORLD && p.blockPosition().distSqr(home) < 9, "home again, by the bed");
         check(h, p.getInventory().countItem(Items.DIAMOND) == 5, "diamonds back");
         check(h, p.getInventory().countItem(Items.EMERALD) == 20, "emeralds back");
