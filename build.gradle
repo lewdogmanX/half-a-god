@@ -11,6 +11,13 @@ java.toolchain.languageVersion = JavaLanguageVersion.of(21)
 
 repositories { mavenCentral() }
 
+// compile-time stand-ins for other mods' classes our mixins touch (never packaged; the real mods supply them)
+sourceSets { stubs { java { srcDir 'src/stubs/java' } } }
+dependencies {
+    stubsCompileOnly 'com.google.guava:guava:32.1.2-jre'
+    compileOnly sourceSets.stubs.output
+}
+
 neoForge {
     version = project.neo_version
     runs {

@@ -25,3 +25,7 @@ type = "required"
 versionRange = "[1.21.1,1.21.2)"
 ordering = "NONE"
 side = "BOTH"
+
+# fixes a singleplayer crash between Antique Atlas and Surveyor (does nothing if they aren't installed)
+[[mixins]]
+config = "half_a_god.mixins.json"
