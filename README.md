@@ -77,10 +77,19 @@ Mebahel's quest-map key opens the Half a God story map (or use `/halfagod map`).
   off screen, an arrow at the edge points to it.
 - **Acts.** The arrows and the row of diamonds at the top turn the page; acts you haven't reached stay dark.
 - **Controls.** Drag to move, scroll to zoom (or + and -), the arrow keys or A and D turn the page, Space jumps to
-  where you are, C opens the Codex, Esc closes the journal page. "Quest list" opens Mebahel's own map.
+  where you are, C opens the Codex, Esc closes the journal page.
+  Mebahel's old quest map is gone; Mebahel's Quest Journal (for abandoning quests and choosing what's tracked) is untouched.
 
-**The Codex** is a book of what you've learned about the people, places and the cult. Entries appear as the story
-reaches them, with a red dot until you've read them.
+**The Codex** is a book with bookmarks:
+
+- **Lore:** the people, places and the cult, and the seven **Wardens** (with the day each one fell), as the story reaches them.
+- **Letters:** every letter Mara sent you, to read again.
+- **Your Path:** a chart of your reputation quest by quest across the acts, who you are now, and your rank in the
+  Watch and the Gilded Hand with what the next rank needs.
+- **What Became of Them:** once the story is over, a page for everyone you judged, saying how their life turned out
+  because of what you chose. It opens by itself when the epilogue ends; `/halfagod fates` brings it back.
+
+Unread entries and letters have a red dot.
 
 ## Antique Atlas
 
@@ -93,6 +102,8 @@ Every story character lives somewhere: Reeve Halden and Ashford's people in Ashf
 home village, the snowy village's people in a snowy village, and so on. When a quest needs someone, they're in their
 village, standing where you last saw them, and there's only ever one of them. Characters you meet for the first time
 settle in the village they're placed in. Guard Villagers and iron golems won't touch anyone you need to talk to or judge.
+Story characters glow only when it's their turn, never hand out Mebahel's random side quests, and if you talk to one
+too early they tell you what to do first.
 
 ## The world answers back
 
@@ -106,10 +117,26 @@ settle in the village they're placed in. Guard Villagers and iron golems won't t
   the Gilded Hand.
 - **Notice boards.** Each village you know puts up a sign by its bell: thanks, a call for Watch recruits, or a wanted
   poster, depending on who you are. When your reputation changes, the notice changes (even if you tore the old one down).
+- **Encounters on the road.** Now and then (at most every day and a half of game time, usually less often), something
+  happens on the road between villages: a wounded deserter, a merchant being robbed by highwaymen, a man running from
+  bounty hunters, a golden cult shrine, a hungry pilgrim. Feed them, save them, tear it down, or take what they have,
+  kill for the bounty, kneel and pray. Each one moves your reputation.
 - **Duties and contracts.** Walk into a village and a resident may glow: that's work. Watch duties (night watch,
   clearing the road, spiders in the hedges, raiders on the hill, creepers, bread for families, mending fences) raise
   your reputation a little. Gilded Hand contracts (the tithe, stealing a bell, rival pillagers, the farmers' share,
   gunpowder, bones for the Choir) pay more and drag it down. One at a time, at most every half a day.
+- **Ranks.** Finished duties and contracts earn ranks, and they're hard to get. Every job for the other side wears five
+  off your tally, and if it falls below a rank's mark you lose the rank.
+
+  | Watch | needs | Gilded Hand | needs |
+  | --- | --- | --- | --- |
+  | Watchman | 6 duties | Runner | 6 contracts |
+  | Sergeant of the Watch | 18, and Good or better | Collector | 18, and Fallen or worse |
+  | Captain of the Watch | 40, and a Saint | The Hand's Favourite | 40, and Wicked |
+
+  Each rank pays a bonus on every job. A Sergeant gets a Watchman at their side when attacked near a village at night
+  and guards come from further away; a Captain gets one day or night. A Collector shakes down twice as much and bounty
+  hunters come a quarter less often; the Hand's Favourite gets double Silas's cut and half the bounty hunters.
 
 ## What the mod adds to the story
 
@@ -150,6 +177,7 @@ settle in the village they're placed in. Guard Villagers and iron golems won't t
 | `/halfagod choose` | everyone | reopen a choice you closed |
 | `/halfagod chronicle` | everyone | the Chronicle so far |
 | `/halfagod map` | everyone | open the story map |
+| `/halfagod fates` | everyone | what became of them (after the ending) |
 | `/halfagod story` or `/halfagod unlockall` | operators | opens the whole story: every act and quest, what it needs and where it leads, with a button to start any quest |
 | `/halfagod jump <quest> [player]` | operators | start any story quest |
 | `/halfagod setrep <value> [player]` | operators | set reputation |

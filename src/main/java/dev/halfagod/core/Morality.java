@@ -111,7 +111,7 @@ public final class Morality {
 
         // Watchmen go home at dawn
         if (time < 13000 || time > 23000) {
-            for (Mob m : level.getEntitiesOfClass(Mob.class, player.getBoundingBox().inflate(96), m -> m.getTags().contains(WATCHMAN))) {
+            for (Mob m : level.getEntitiesOfClass(Mob.class, player.getBoundingBox().inflate(96), m -> m.getTags().contains(WATCHMAN) && m.tickCount > 2400)) {
                 m.discard();
             }
         }
@@ -182,9 +182,9 @@ public final class Morality {
         // a Saint (or a Sergeant of the Watch) gets a Watchman at night; the Captain of the Watch, any time
         boolean watchman = (night && (t == SAINT || watchRank >= 2)) || watchRank >= 3;
         if (watchman && inVillageNear(level, player.blockPosition())) {
-            long night = level.getDayTime() / 24000L;
-            if (LAST_WATCHMAN.getOrDefault(player.getUUID(), -1L) != night) {
-                LAST_WATCHMAN.put(player.getUUID(), night);
+            long today = level.getDayTime() / 24000L;
+            if (LAST_WATCHMAN.getOrDefault(player.getUUID(), -1L) != today) {
+                LAST_WATCHMAN.put(player.getUUID(), today);
                 spawnWatchman(player, level, attacker);
             }
         }

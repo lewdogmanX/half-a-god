@@ -1642,6 +1642,7 @@ public final class StoryMapScreen extends Screen {
         int bw = Math.min(width - 30, 520);
         int bx = (width - bw) / 2;
         int mid = bx + bw / 2;
+        g.fill(bx - 6, top - 4, bx + bw + 6, bottom + 4, 0xFF4A2A16);
         // bookmark ribbons along the top of the book
         String[] tabs = fates != null ? new String[]{"Lore", "Letters", "Your Path", "What Became of Them"} : new String[]{"Lore", "Letters", "Your Path"};
         if (codexTab >= tabs.length && statesKnown) {
@@ -1655,7 +1656,7 @@ public final class StoryMapScreen extends Screen {
             int col = on ? PAPER_LIGHT : hover ? 0xFF9A3A2A : 0xFF7A2418;
             g.fill(tx, top - (on ? 18 : 15), tx + w, top + (on ? 2 : 0), col);
             g.fill(tx, top - (on ? 18 : 15), tx + w, top - (on ? 17 : 14), on ? 0xFF8A6A32 : 0xFFB0503A);
-            g.drawString(font, tabs[i], tx + 8, top - (on ? 13 : 10), on ? RED_INK : 0xFFF2DCC0, false);
+            g.drawString(font, tabs[i], tx + 8, top - (on ? 13 : 12), on ? RED_INK : 0xFFF2DCC0, false);
             if (i == 1 && !on) {
                 for (JsonElement e : letters) {
                     if (!seenLore.contains(letterKey(e.getAsJsonObject()))) {
@@ -1672,8 +1673,7 @@ public final class StoryMapScreen extends Screen {
             });
             tx += w + 3;
         }
-        // the cover and two pages
-        g.fill(bx - 6, top - 4, bx + bw + 6, bottom + 4, 0xFF4A2A16);
+        // the two pages
         g.fill(bx - 5, bottom + 2, bx + bw + 5, bottom + 3, 0xFF8A6A32);
         g.fill(bx, top, bx + bw, bottom, PAPER_LIGHT);
         for (int i = 0; i < 10; i++) {
@@ -1882,16 +1882,16 @@ public final class StoryMapScreen extends Screen {
             int n = vals.size();
             java.util.function.IntUnaryOperator px = i -> cx0 + 3 + (int) Math.round((cx1 - cx0 - 8) * i / (double) (n - 1));
             java.util.function.IntUnaryOperator py = v -> cy0 + (int) Math.round((cy1 - cy0) * (100 - Math.max(-100, Math.min(100, v))) / 200.0);
-            int lastLabel = -1000;
+            int lastEnd = -1000;
             for (int k = 0; k < acts.size(); k++) {
                 int x = px.applyAsInt(Math.min(n - 1, acts.get(k)[0]));
                 for (int y = cy0; y < cy1; y += 3) {
                     g.fill(x, y, x + 1, y + 1, 0x606B5638);
                 }
                 String label = actNames.get(k).replace("Act ", "");
-                if (x - lastLabel > font.width(label) + 6) {
+                if (x + 2 > lastEnd + 5) {
                     g.drawString(font, label, x + 2, cy1 + 3, 0xFF8A6A32, false);
-                    lastLabel = x;
+                    lastEnd = x + 2 + font.width(label);
                 }
             }
             for (int i = 1; i < n; i++) {
@@ -1906,8 +1906,10 @@ public final class StoryMapScreen extends Screen {
             disc(g, ex, ey, 4, 0xFFD9A030);
             ring(g, ex, ey, 4, 1, 0xFF7A4A10);
         }
-        // right page: who you are now
-        int ry = top + 12;
+        // right page: who you are now (scrolls on small screens)
+        g.enableScissor(rx - 8, top + 4, rx + rw + 14, bottom - 4);
+        int ry = top + 12 - pageScroll;
+        int start = ry;
         g.drawString(font, "WHO YOU ARE", rx, ry, RED_INK, false);
         ry += 14;
         String tier = repTier();
@@ -1932,6 +1934,9 @@ public final class StoryMapScreen extends Screen {
         g.drawString(font, "Wardens fallen: " + fallen + " of 7", rx, ry, INK, false);
         ry += 11;
         g.drawString(font, "Letters received: " + letters.size(), rx, ry, INK, false);
+        ry += 11;
+        pageContentH = ry - start + 16;
+        g.disableScissor();
     }
 
     private int rankBlock(GuiGraphics g, int rx, int rw, int ry, String heading, String key) {
