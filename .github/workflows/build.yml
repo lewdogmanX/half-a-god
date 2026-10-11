@@ -30,6 +30,21 @@ jobs:
         run: |
           { echo '### Build failed'; echo '```'; grep -E "error:|warning: \[|What went wrong|> |FAILED|Exception|Caused by" build.log | head -150; echo '```'; echo '<details><summary>Last lines</summary>'; echo; echo '```'; tail -n 120 build.log; echo '```'; echo '</details>'; } > report.md
           gh api repos/${{ github.repository }}/commits/${{ github.sha }}/comments -F body=@report.md
+      - name: Game tests
+        id: gametest
+        continue-on-error: true
+        shell: bash
+        run: |
+          set -o pipefail
+          timeout 900 gradle runGametest --no-daemon 2>&1 | tee gametest.log
+      - name: Report game tests
+        if: always() && steps.gametest.outcome != 'skipped'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          { echo "### Game tests: ${{ steps.gametest.outcome }}"; echo '```'; grep -iE "gametest|game test|half_a_god|halfagodtests|required tests|failed|passed|Exception|Caused by|ERROR" gametest.log | grep -v "DEBUG" | head -120; echo '```'; echo '<details><summary>Last lines</summary>'; echo; echo '```'; tail -n 80 gametest.log; echo '```'; echo '</details>'; } > gt.md
+          gh api repos/${{ github.repository }}/commits/${{ github.sha }}/comments -F body=@gt.md
       - uses: actions/upload-artifact@v4
         if: success()
         with:

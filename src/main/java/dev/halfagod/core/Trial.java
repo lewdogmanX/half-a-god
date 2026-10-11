@@ -251,7 +251,14 @@ public final class Trial {
         if (!d.trialVerdict.isEmpty()) {
             o.add("verdict", JsonParser.parseString(d.trialVerdict));
         }
-        PacketDistributor.sendToPlayer(player, new Payloads.Trial(o.toString()));
+        send(player, new Payloads.Trial(o.toString()));
+    }
+
+    /** Sends a packet only if the player's game can take it (it always can with the mod installed; tests can't). */
+    public static void send(ServerPlayer player, net.minecraft.network.protocol.common.custom.CustomPacketPayload payload) {
+        if (player.connection != null && player.connection.hasChannel(payload.type())) {
+            PacketDistributor.sendToPlayer(player, payload);
+        }
     }
 
     // ------------------------------------------------------------------ the plea and the verdict

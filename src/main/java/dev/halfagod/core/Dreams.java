@@ -6,7 +6,6 @@ import net.minecraft.resources.ResourceLocation;
 import net.minecraft.server.level.ServerPlayer;
 import net.neoforged.bus.api.SubscribeEvent;
 import net.neoforged.neoforge.event.entity.player.PlayerWakeUpEvent;
-import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.ArrayList;
 import java.util.HashSet;
@@ -97,7 +96,7 @@ public final class Dreams {
 
     public static void send(ServerPlayer player, JsonObject dream) {
         if (dream != null) {
-            PacketDistributor.sendToPlayer(player, new Payloads.Dream(dream.toString()));
+            Trial.send(player, new Payloads.Dream(dream.toString()));
         }
     }
 

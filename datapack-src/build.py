@@ -468,6 +468,23 @@ if os.path.isdir(MOD_ROOT):
                     ignore=lambda d, names: [n for n in names if n == "function" and (d.endswith("half_a_god") or d.endswith("tags"))])
     json.dump({"pack": {"pack_format": 48, "description": "Half a God story (built into the mod)"}},
               open(os.path.join(dst, "pack.mcmeta"), "w"), indent=2)
+    # an empty 3x3x3 structure for the mod's game tests (CI runs them on a real server)
+    import gzip, struct
+    def _nbt_str(x):
+        b = x.encode("utf-8")
+        return struct.pack(">H", len(b)) + b
+    def _tag(t, name, payload):
+        return bytes([t]) + _nbt_str(name) + payload
+    def _ints(vals):
+        return bytes([3]) + struct.pack(">i", len(vals)) + b"".join(struct.pack(">i", v) for v in vals)
+    palette = bytes([10]) + struct.pack(">i", 1) + _tag(8, "Name", _nbt_str("minecraft:air")) + b"\x00"
+    blocks = bytes([10]) + struct.pack(">i", 0)
+    entities = bytes([10]) + struct.pack(">i", 0)
+    root = (_tag(9, "size", _ints([3, 3, 3])) + _tag(9, "palette", palette) + _tag(9, "blocks", blocks)
+            + _tag(9, "entities", entities) + _tag(3, "DataVersion", struct.pack(">i", 3955)) + b"\x00")
+    os.makedirs(os.path.join(dst, "data/half_a_god/structure"), exist_ok=True)
+    with gzip.open(os.path.join(dst, "data/half_a_god/structure/empty.nbt"), "wb") as f:
+        f.write(_tag(10, "", root))
 print("quests:", len(QUESTS), "extra files:", len(EXTRA))
 if MISSING_GREET:
     print("NPCs without a greeting:", MISSING_GREET)

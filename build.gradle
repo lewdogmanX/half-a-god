@@ -13,6 +13,13 @@ repositories { mavenCentral() }
 
 neoForge {
     version = project.neo_version
+    runs {
+        // game tests on a real server (CI runs: gradle runGametest)
+        gametest {
+            type = "gameTestServer"
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+    }
     mods {
         "${mod_id}" { sourceSet(sourceSets.main) }
     }
