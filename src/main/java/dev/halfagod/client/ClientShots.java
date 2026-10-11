@@ -218,9 +218,32 @@ public final class ClientShots {
         return o;
     }
 
+    private static int idle;
+    private static boolean opened;
+
     public static void tick(ClientTickEvent.Post e) {
         Minecraft mc = Minecraft.getInstance();
-        if (mc.player == null || mc.getSingleplayerServer() == null || index >= STEPS.size()) {
+        if (mc.player == null || mc.getSingleplayerServer() == null) {
+            // not in the world yet: say what's on screen, and open the test world from the title screen
+            idle++;
+            if (idle % 100 == 0) {
+                HalfAGod.LOG.info("SHOT waiting, screen: {}", mc.screen == null ? "none" : mc.screen.getClass().getName());
+                if (idle <= 300) {
+                    shot("00_waiting_" + idle);
+                }
+            }
+            if (!opened && idle > 60 && mc.screen instanceof net.minecraft.client.gui.screens.TitleScreen) {
+                opened = true;
+                HalfAGod.LOG.info("SHOT opening the test world");
+                mc.createWorldOpenFlows().openWorld("shots", () -> HalfAGod.LOG.info("SHOT world opening cancelled"));
+            }
+            if (idle > 20 * 60 * 8) {
+                HalfAGod.LOG.info("SHOT giving up waiting for the world");
+                mc.stop();
+            }
+            return;
+        }
+        if (index >= STEPS.size()) {
             return;
         }
         if (wait > 0) {

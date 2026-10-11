@@ -30,7 +30,7 @@ neoForge {
         shots {
             client()
             systemProperty 'halfagod.clientshots', 'true'
-            programArguments.addAll('--quickPlaySingleplayer', 'shots', '--width', '1280', '--height', '720', '--username', 'Tester')
+            programArguments.addAll('--width', '1280', '--height', '720', '--username', 'Tester')
             gameDirectory.set(project.file('run-shots'))
         }
     }
