@@ -1,0 +1,430 @@
+{
+ "dreams": [
+  {
+   "id": "past_1",
+   "kind": "past",
+   "order": 1,
+   "title": "The Charioteer",
+   "motif": "sun",
+   "lines": [
+    "You are driving a chariot of fire across the sky.",
+    "The horses are made of noon.",
+    "Someone laughs beside you. You can't see her face, only her hands on the reins next to yours."
+   ]
+  },
+  {
+   "id": "past_2",
+   "kind": "past",
+   "order": 2,
+   "title": "Embers",
+   "motif": "flame",
+   "lines": [
+    "She is young. Her hair is the colour of embers.",
+    "'Faster,' she says. 'Let them see us.'",
+    "Far below, the whole world looks up."
+   ]
+  },
+  {
+   "id": "past_3",
+   "kind": "past",
+   "order": 3,
+   "title": "The Spirit of the Sun",
+   "motif": "sun",
+   "lines": [
+    "A voice like a forge: 'You carry the sun. You do not get to love anything.'",
+    "The chariot shudders. The reins burn.",
+    "You wake with your palms hot."
+   ]
+  },
+  {
+   "id": "past_4",
+   "kind": "past",
+   "order": 4,
+   "title": "Two of You",
+   "motif": "eye",
+   "lines": [
+    "Two of you stand in a field of ash.",
+    "One is gold, and weeps. One is iron, and laughs.",
+    "Both of them have your face."
+   ]
+  },
+  {
+   "id": "past_5",
+   "kind": "past",
+   "order": 5,
+   "title": "The Head and the Body",
+   "motif": "crown",
+   "lines": [
+    "A head sits on an altar in a city of gold, eyes open.",
+    "Somewhere far below, a body walks the dark, looking for it.",
+    "Neither of them can sleep. Neither can you."
+   ]
+  },
+  {
+   "id": "past_6",
+   "kind": "past",
+   "order": 6,
+   "title": "Seven Keepers",
+   "motif": "chains",
+   "lines": [
+    "Seven great beasts circle you, holding the pieces of you apart.",
+    "One by one, they lie down.",
+    "Something, somewhere, is very glad."
+   ]
+  },
+  {
+   "id": "omen_the_first_letter",
+   "kind": "omen",
+   "act": "hag_the_first_letter_done",
+   "title": "A Bell With No Tongue",
+   "motif": "bell",
+   "lines": [
+    "A bell with no tongue swings in an empty tower.",
+    "In the square, a man in a fine coat weighs the villagers one at a time.",
+    "He smiles at you. He already knows what you weigh."
+   ]
+  },
+  {
+   "id": "omen_a1_ashford_burns",
+   "kind": "omen",
+   "act": "hag_a1_ashford_burns_done",
+   "title": "Counted",
+   "motif": "chains",
+   "lines": [
+    "Fourteen men walk north in chains.",
+    "Someone counts them as they pass. Fourteen. Fourteen. Fourteen.",
+    "The counting doesn't stop when the men are gone."
+   ]
+  },
+  {
+   "id": "omen_w1_the_skull_market",
+   "kind": "omen",
+   "act": "hag_w1_the_skull_market_done",
+   "title": "Three Skulls",
+   "motif": "crown",
+   "lines": [
+    "Three skulls on a heap of soul sand, waiting.",
+    "A black crown hangs in the air above them.",
+    "It is exactly the right size for your head."
+   ]
+  },
+  {
+   "id": "omen_h1_a_light_above_the_pit",
+   "kind": "omen",
+   "act": "hag_h1_a_light_above_the_pit_done",
+   "title": "An Empty Throne in the Sky",
+   "motif": "sun",
+   "lines": [
+    "A throne of cloud. Nobody on it.",
+    "The light on the throne is going out, very slowly.",
+    "Something up there is ashamed."
+   ]
+  },
+  {
+   "id": "omen_e1_the_librarians_request",
+   "kind": "omen",
+   "act": "hag_e1_the_librarians_request_done",
+   "title": "What the Dragon Forgot",
+   "motif": "eye",
+   "lines": [
+    "A dragon circles a pillar of black stone.",
+    "It has forgotten what it is guarding.",
+    "You haven't."
+   ]
+  },
+  {
+   "id": "omen_s1_cold_hearths",
+   "kind": "omen",
+   "act": "hag_s1_cold_hearths_done",
+   "title": "Seven Beasts",
+   "motif": "chains",
+   "lines": [
+    "Snow. Sand. Sea. Fire. A knight. A dragon's bones.",
+    "Each of them is holding something shut.",
+    "Each of them is so tired."
+   ]
+  },
+  {
+   "id": "omen_v1_blood_in_the_wells",
+   "kind": "omen",
+   "act": "hag_v1_blood_in_the_wells_done",
+   "title": "A Body in the Blood",
+   "motif": "drop",
+   "lines": [
+    "Something is growing in a pit of blood.",
+    "It has your hands.",
+    "It is waiting for a head."
+   ]
+  },
+  {
+   "id": "omen_m1_follow_the_crimson_bee",
+   "kind": "omen",
+   "act": "hag_m1_follow_the_crimson_bee_done",
+   "title": "The City of Gold",
+   "motif": "eye",
+   "lines": [
+    "Every door in the city has an eye painted on it.",
+    "Every eye turns to follow you.",
+    "At the end of the street stands a chariot with no horses."
+   ]
+  },
+  {
+   "id": "omen_z1_caution",
+   "kind": "omen",
+   "act": "hag_z1_caution_done",
+   "title": "Whole",
+   "motif": "crown",
+   "lines": [
+    "A head on a body. A god opens his eyes.",
+    "He looks at you and says your name, kindly.",
+    "That is the worst part."
+   ]
+  },
+  {
+   "id": "echo_peddler_slain",
+   "kind": "echo",
+   "trait": "peddler_slain",
+   "title": "Double Weight",
+   "motif": "eye",
+   "lines": [
+    "The Smiling Peddler sits at the end of your bed, counting gold coins onto the blanket.",
+    "'You were worth twice that,' he says. 'I'd have paid it.'"
+   ]
+  },
+  {
+   "id": "echo_heard_the_word",
+   "kind": "echo",
+   "trait": "heard_the_word",
+   "title": "The Book",
+   "motif": "bell",
+   "lines": [
+    "You are reading the Peddler's book. The words move on the page.",
+    "'Gold is faith made solid,' it says, in a voice you used to trust."
+   ]
+  },
+  {
+   "id": "echo_vael_slain",
+   "kind": "echo",
+   "trait": "vael_slain",
+   "title": "Counting",
+   "motif": "chains",
+   "lines": [
+    "Brother Vael counts the steps from his fortress to your door.",
+    "He never reaches the end. He keeps counting."
+   ]
+  },
+  {
+   "id": "echo_hag_vael_free",
+   "kind": "echo",
+   "trait": "hag_vael_free",
+   "title": "East",
+   "motif": "sun",
+   "lines": [
+    "A man in a cult robe walks east into the sunrise, counting his steps.",
+    "He stops, turns, and waves to you."
+   ]
+  },
+  {
+   "id": "echo_corwin_slain",
+   "kind": "echo",
+   "trait": "corwin_slain",
+   "title": "A Sack of Grain",
+   "motif": "drop",
+   "lines": [
+    "A sack of grain sits in the middle of the road.",
+    "Children walk past it, one by one, and none of them look at you."
+   ]
+  },
+  {
+   "id": "echo_corwin_spared",
+   "kind": "echo",
+   "trait": "corwin_spared",
+   "title": "Winter Bread",
+   "motif": "flame",
+   "lines": [
+    "You can smell bread. Somewhere, a child is warm.",
+    "That's all. That's the whole dream."
+   ]
+  },
+  {
+   "id": "echo_midwife_slain",
+   "kind": "echo",
+   "trait": "midwife_slain",
+   "title": "None of Them Spoke",
+   "motif": "drop",
+   "lines": [
+    "The blood pits are very quiet.",
+    "Then, all at once, all of them speak."
+   ]
+  },
+  {
+   "id": "echo_hag_midwife_cleric",
+   "kind": "echo",
+   "trait": "hag_midwife_cleric",
+   "title": "Counting Children",
+   "motif": "bell",
+   "lines": [
+    "The Midwife counts children in a chapel.",
+    "She reaches the last one, and starts again, smiling."
+   ]
+  },
+  {
+   "id": "echo_maraal_forgiven",
+   "kind": "echo",
+   "trait": "maraal_forgiven",
+   "title": "Grey and Red",
+   "motif": "flame",
+   "lines": [
+    "Maraal sits by your fire. Her hair is grey, then red, then grey again.",
+    "'Thank you,' she says, to someone who isn't you."
+   ]
+  },
+  {
+   "id": "echo_maraal_rejected",
+   "kind": "echo",
+   "trait": "maraal_rejected",
+   "title": "Unsent",
+   "motif": "bell",
+   "lines": [
+    "Letters pile up at a crossroads, unsent.",
+    "Every one of them is addressed to you."
+   ]
+  },
+  {
+   "id": "echo_hag_cruelty_x1_the_informant",
+   "kind": "echo",
+   "trait": "hag_cruelty_x1_the_informant",
+   "title": "The Green",
+   "motif": "drop",
+   "lines": [
+    "Wick is selling bread on the village green.",
+    "When you go to buy some, there's nobody there."
+   ]
+  },
+  {
+   "id": "echo_hag_mercy_x1_the_informant",
+   "kind": "echo",
+   "trait": "hag_mercy_x1_the_informant",
+   "title": "Flour",
+   "motif": "flame",
+   "lines": [
+    "Wick waves at you from a bakery doorway.",
+    "He has flour on his face. He looks embarrassed to be happy."
+   ]
+  },
+  {
+   "id": "echo_orsk_executed",
+   "kind": "echo",
+   "trait": "orsk_executed",
+   "title": "Tallies",
+   "motif": "chains",
+   "lines": [
+    "Someone is cutting marks into a post. Hundreds of marks.",
+    "Slowly you realise they're counting you."
+   ]
+  },
+  {
+   "id": "echo_orsk_spared",
+   "kind": "echo",
+   "trait": "orsk_spared",
+   "title": "Planks",
+   "motif": "flame",
+   "lines": [
+    "A man counts planks as he builds a house.",
+    "He reaches the end of the count, and the house is finished."
+   ]
+  },
+  {
+   "id": "echo_hag_lib_burn",
+   "kind": "echo",
+   "trait": "hag_lib_burn",
+   "title": "Ash Pages",
+   "motif": "flame",
+   "lines": [
+    "Pages of the Warden Journal fall like snow.",
+    "You catch one. It has your name on it, and then it burns."
+   ]
+  },
+  {
+   "id": "echo_hag_cruelty_2",
+   "kind": "echo",
+   "trait": "hag_cruelty_2",
+   "title": "Hungry",
+   "motif": "drop",
+   "lines": [
+    "Two little girls sit at an empty table.",
+    "Their father is out selling rabbits. Rabbits don't have skulls worth anything."
+   ]
+  },
+  {
+   "id": "echo_hag_mercy_5",
+   "kind": "echo",
+   "trait": "hag_mercy_5",
+   "title": "True Lights",
+   "motif": "wave",
+   "lines": [
+    "Lights on the rocks, all along the coast.",
+    "A man in chains is lighting them, one by one, and the ships come home."
+   ]
+  }
+ ],
+ "special": {
+  "kidnap": {
+   "id": "kidnap",
+   "kind": "special",
+   "title": "Torchlight",
+   "motif": "chains",
+   "lines": [
+    "Torchlight through your eyelids. Boots on the boards.",
+    "'That's them. Take them.'",
+    "A hood. Rope. The tar smell of the Watch's torches."
+   ]
+  },
+  "godsaw": {
+   "id": "godsaw",
+   "kind": "special",
+   "title": "What the God Saw",
+   "motif": "sun",
+   "lines": [
+    "You are the god, and you are carrying the sun across the sky.",
+    "Maraal is beside you. The Spirit of the Sun is shouting.",
+    "The Spirit throws her out of the sky.",
+    "You let go of the reins. You don't fall. You jump.",
+    "All the way down, you hold her.",
+    "The ground splits you in two when you land: the half that caught her, and the half that hated the sky for letting her go."
+   ]
+  },
+  "release": {
+   "id": "release",
+   "kind": "special",
+   "title": "Dawn",
+   "motif": "sun",
+   "lines": [
+    "They drag you out at dawn, blindfolded, and leave you where they found you.",
+    "Your things are beside you, tied in a sack with a Watch seal on it."
+   ]
+  },
+  "escape": {
+   "id": "escape",
+   "kind": "special",
+   "title": "Out",
+   "motif": "flame",
+   "lines": [
+    "The block gives. Behind it, a crack just wide enough for a desperate person.",
+    "You squeeze through into the dark, and drop, and run, and keep running.",
+    "By morning you're home. Your things are there too: someone in the Watch has a soft heart, or a price."
+   ]
+  },
+  "breakout": {
+   "id": "breakout",
+   "kind": "special",
+   "title": "The Hand Pays Its Debts",
+   "motif": "eye",
+   "lines": [
+    "Shouting. A door that shouldn't open, opening.",
+    "A man in gilded gloves: 'Silas sends his regards. And your things.'",
+    "You're home before the Watch has finished counting the guards."
+   ]
+  }
+ }
+}

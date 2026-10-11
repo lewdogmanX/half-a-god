@@ -4117,6 +4117,142 @@
    ]
   },
   {
+   "name": "Secrets",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_sec_tongue1",
+     "title": "A Voice Under the Gold",
+     "kind": "arc",
+     "summary": "The third shrine answered you. Not in any language you know: in the Old Tongue, the cult's own. One word, over and over. Write it down before it goes.",
+     "goals": [
+      "Collect 1 x writable book",
+      "Wait for next day",
+      "Talk to Village Elder"
+     ],
+     "needs": [],
+     "leads": [
+      "The Name Before"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_tongue2",
+     "title": "The Name Before",
+     "kind": "arc",
+     "summary": "The word is a name: the Chariot's name, from before the cult gave him another. A Believer's House would have it written somewhere, under the prayers. Find it, and find out why nobody says it.",
+     "goals": [
+      "Reach a believer house",
+      "Wait for next day",
+      "Talk to Village Elder"
+     ],
+     "needs": [],
+     "leads": []
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_pilgrim1",
+     "title": "The Last Pilgrim",
+     "kind": "arc",
+     "summary": "The pilgrim you fed knew your name. He is Oren, and long ago he taught a boy called Vael to count, before the cult taught Vael what to count. He asks one thing: light a candle where Vael kept his ledgers.",
+     "goals": [
+      "Collect 1 x candle",
+      "Enter the Nether",
+      "Reach a fortress",
+      "Leave the Nether"
+     ],
+     "needs": [],
+     "leads": [
+      "What Oren Left"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_pilgrim2",
+     "title": "What Oren Left",
+     "kind": "arc",
+     "summary": "Oren was gone by morning. He left his bowl at your door and a note: 'Thank you. Whatever he became, he was a good boy once. Fill this for whoever walks the road next.'",
+     "goals": [
+      "Collect 16 x bread",
+      "Talk to Village Elder"
+     ],
+     "needs": [],
+     "leads": []
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_godsaw1",
+     "title": "What the God Saw",
+     "kind": "arc",
+     "summary": "You dreamt the fall in full, and it doesn't match what anyone teaches. The hymn says the Sun Spirit threw him out of the sky. In your dream, he jumped. The Sun Spirit's hall might still show it.",
+     "goals": [
+      "Reach a gold dungeon",
+      "Wait for next day"
+     ],
+     "needs": [],
+     "leads": [
+      "Why a God Would Jump"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_godsaw2",
+     "title": "Why a God Would Jump",
+     "kind": "arc",
+     "summary": "Why would anyone leap out of the sky? Tell someone what you saw, and see if it sounds as true out loud.",
+     "goals": [
+      "Talk to Village Elder"
+     ],
+     "needs": [],
+     "leads": []
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_skyfire1",
+     "title": "Sky and Fire",
+     "kind": "arc",
+     "summary": "You carried something from the Aether into the Nether, and the Nether went quiet around you. Something down here recognises it. The silence leads toward a bastion.",
+     "goals": [
+      "Reach a bastion remnant",
+      "Collect 4 x gilded blackstone",
+      "Leave the Nether"
+     ],
+     "needs": [],
+     "leads": [
+      "The War of Halves"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_skyfire2",
+     "title": "The War of Halves",
+     "kind": "arc",
+     "summary": "The painting told a war: the sky against the fire, a god against himself. Show the gilded stone to someone old enough to know the stories.",
+     "goals": [
+      "Talk to Village Elder"
+     ],
+     "needs": [],
+     "leads": []
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_clean1",
+     "title": "A Letter from Silas",
+     "kind": "arc",
+     "summary": "Silas of the Gilded Hand has written to you. He finds you suspicious.",
+     "goals": [
+      "Wait for next day"
+     ],
+     "needs": [],
+     "leads": [
+      "Clean Hands"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_clean2",
+     "title": "Clean Hands",
+     "kind": "arc",
+     "summary": "Silas's man has been going through your things. He's somewhere near, in the Gilded Hand's colours. Catch him. What you do with him is up to you, and Silas is watching.",
+     "goals": [
+      "Defeat 1 x wandering trader"
+     ],
+     "needs": [],
+     "leads": []
+    }
+   ]
+  },
+  {
    "name": "Mebahel's RPG (Prologue and Act I): Settling In",
    "quests": [
     {

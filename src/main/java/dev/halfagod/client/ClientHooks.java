@@ -35,10 +35,23 @@ public final class ClientHooks {
 
     public static void onOpenMap(Payloads.OpenMap p) {
         StoryMapScreen screen = new StoryMapScreen(null);
-        if (p.fates()) {
-            screen.openFates();
+        if (!p.tab().isEmpty()) {
+            screen.openCodex(p.tab());
         }
         Minecraft.getInstance().setScreen(screen);
+    }
+
+    public static void onDream(Payloads.Dream p) {
+        Minecraft.getInstance().setScreen(new DreamScreen(p.json()));
+    }
+
+    public static void onTrial(Payloads.Trial p) {
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.screen instanceof TrialScreen t) {
+            t.update(p.json());
+        } else {
+            mc.setScreen(new TrialScreen(p.json()));
+        }
     }
 
     public static void onCinematic(Payloads.Cinematic p) {

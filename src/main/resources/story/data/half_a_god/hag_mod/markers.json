@@ -948,6 +948,46 @@
    "dim": "minecraft:overworld",
    "title": "The Unbreakable Head"
   },
+  "mebahelrpgrquest:hag_sec_tongue1": {
+   "dim": "minecraft:overworld",
+   "title": "A Voice Under the Gold"
+  },
+  "mebahelrpgrquest:hag_sec_tongue2": {
+   "dim": "minecraft:overworld",
+   "title": "The Name Before"
+  },
+  "mebahelrpgrquest:hag_sec_pilgrim1": {
+   "dim": "minecraft:the_nether",
+   "title": "The Last Pilgrim"
+  },
+  "mebahelrpgrquest:hag_sec_pilgrim2": {
+   "dim": "minecraft:overworld",
+   "title": "What Oren Left"
+  },
+  "mebahelrpgrquest:hag_sec_godsaw1": {
+   "dim": "aether:the_aether",
+   "title": "What the God Saw"
+  },
+  "mebahelrpgrquest:hag_sec_godsaw2": {
+   "dim": "minecraft:overworld",
+   "title": "Why a God Would Jump"
+  },
+  "mebahelrpgrquest:hag_sec_skyfire1": {
+   "dim": "minecraft:the_nether",
+   "title": "Sky and Fire"
+  },
+  "mebahelrpgrquest:hag_sec_skyfire2": {
+   "dim": "minecraft:overworld",
+   "title": "The War of Halves"
+  },
+  "mebahelrpgrquest:hag_sec_clean1": {
+   "dim": "minecraft:overworld",
+   "title": "A Letter from Silas"
+  },
+  "mebahelrpgrquest:hag_sec_clean2": {
+   "dim": "minecraft:overworld",
+   "title": "Clean Hands"
+  },
   "mebahelrpgrquest:hag_x1_the_informant": {
    "dim": "minecraft:overworld",
    "title": "The Informant"

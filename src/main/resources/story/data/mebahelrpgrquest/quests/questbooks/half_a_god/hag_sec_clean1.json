@@ -1,0 +1,47 @@
+{
+  "title": "A Letter from Silas",
+  "summary": "Silas of the Gilded Hand has written to you. He finds you suspicious.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "sleep_on_it",
+      "type": "wait_time",
+      "wait_until": "next_day",
+      "stage": 0,
+      "auto_advance": true,
+      "say": "You sleep badly. Something in the house has been moved. You're almost sure of it."
+    }
+  ],
+  "rewards": {
+    "xp": 200
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_sec_clean2",
+      "delay_ticks": 600,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sec_clean1_done"
+    ]
+  },
+  "quest_book": {
+    "title": "Clean Hands",
+    "author": "Silas",
+    "color": "red",
+    "pages": [
+      "Friend,\n\nThree acts, and not one drop of blood on you. Not a villager, not a villain, not a peddler with a smile. Do you know how rare that is? I have met saints. Saints have tempers.",
+      "I don't trust clean hands. Clean hands are hiding something.\n\nSo I've sent someone to find out what. Don't hurt him. Or do. Either way, I learn something.\n\n- S."
+    ],
+    "auto_claim_rewards": true
+  }
+}

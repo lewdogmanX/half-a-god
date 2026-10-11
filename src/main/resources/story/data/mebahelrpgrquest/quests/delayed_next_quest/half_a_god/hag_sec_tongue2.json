@@ -1,0 +1,87 @@
+{
+  "title": "The Name Before",
+  "summary": "The word is a name: the Chariot's name, from before the cult gave him another. A Believer's House would have it written somewhere, under the prayers. Find it, and find out why nobody says it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "under_the_prayers",
+      "reach": "netherman:believer_house",
+      "radius": 20000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Scratched into the floor under the Preacher's mat: the same angles. And a second line beneath them."
+    },
+    {
+      "id": "translate_it",
+      "type": "wait_time",
+      "wait_until": "next_day",
+      "stage": 1,
+      "auto_advance": true,
+      "say": "It takes you all night. 'He who speaks the name gives it back.'"
+    },
+    {
+      "id": "tell_the_elder",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "'So that's why they pray in angles,' the elder says. 'Not to keep from offending him. To keep from feeding him.'",
+      "name": "Village Elder"
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:emerald": 12,
+      "minecraft:experience_bottle": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sec_tongue2_done",
+      "hag_secret_tongue_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 2,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "golem_protected": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You found it, didn't you. Whatever it was. Sit down. Don't say it.",
+      "talk": [
+        [
+          "Every time it's said, he gets a piece back.",
+          "Then we'll not say it. Not here, not ever. Burn the book if you have to."
+        ],
+        [
+          "The cult never says it either.",
+          "Of course they don't. You don't feed a dog you're trying to keep hungry."
+        ]
+      ]
+    }
+  ]
+}

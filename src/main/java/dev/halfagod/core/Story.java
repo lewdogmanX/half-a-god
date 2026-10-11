@@ -28,11 +28,18 @@ public final class Story {
             return;
         }
         int t = player.tickCount;
+        Trial.tick(player);
         if (t % 40 == 7) {
             poll(player);
         }
+        if (Trial.inCourt(player)) {
+            return; // nothing else happens to you in the Watch's court
+        }
         if (t % 20 == 3) {
             Cast.tick(player);
+        }
+        if (t % 20 == 11) {
+            Secrets.tick(player);
         }
         if (t % 100 == 41) {
             Ranks.update(player);
@@ -88,6 +95,7 @@ public final class Story {
             }
         }
         Reputation.countMebahelChoices(player);
+        Secrets.checkClean(player, traits);
     }
 
     private static void recordChronicle(RepData d, String trait) {
@@ -127,6 +135,8 @@ public final class Story {
         }
 
         if (trait.startsWith("hag_") && trait.endsWith("_done") && !trait.startsWith("hag_base_")) {
+            // the margin note on the map is written in the mood you were in when you finished it
+            d.doneRep.put("mebahelrpgrquest:" + trait.substring(0, trait.length() - "_done".length()), (int) Math.round(d.value));
             Morality.onStoryQuestDone(player);
             d.path.add(Long.toString(Math.round(d.value)));
             while (d.path.size() > 800) {
@@ -137,6 +147,7 @@ public final class Story {
             d.moments.put(trait, player.level().getDayTime() / 24000L + 1);
         }
         Choices.onTrait(player, trait);
+        Secrets.onTrait(player, trait);
         Letters.onTrait(player, trait);
         Arcs.onTrait(player, trait);
 
@@ -146,7 +157,8 @@ public final class Story {
         // the story is over: show what became of everyone
         if (!d.fatesShown && Fates.storyOver(Meb.traits(player))) {
             d.fatesShown = true;
-            PacketDistributor.sendToPlayer(player, new Payloads.OpenMap(true));
+            d.endDay = player.level().getDayTime() / 24000L + 1;
+            PacketDistributor.sendToPlayer(player, new Payloads.OpenMap("story"));
         }
     }
 

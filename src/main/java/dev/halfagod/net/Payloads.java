@@ -103,13 +103,46 @@ public final class Payloads {
         }
     }
 
-    /** Server -> client: open the story map. */
-    public record OpenMap(boolean fates) implements CustomPacketPayload {
+    /** Server -> client: open the story map ("" the map, or a Codex page: fates, story, dreams, secrets, trials). */
+    public record OpenMap(String tab) implements CustomPacketPayload {
         public static final Type<OpenMap> TYPE = typeOf("open_map");
-        public static final StreamCodec<ByteBuf, OpenMap> CODEC = StreamCodec.composite(ByteBufCodecs.BOOL, OpenMap::fates, OpenMap::new);
+        public static final StreamCodec<ByteBuf, OpenMap> CODEC = StreamCodec.composite(ByteBufCodecs.STRING_UTF8, OpenMap::tab, OpenMap::new);
 
         @Override
         public Type<OpenMap> type() {
+            return TYPE;
+        }
+    }
+
+    /** Server -> client: a dream (JSON: title, motif, lines). */
+    public record Dream(String json) implements CustomPacketPayload {
+        public static final Type<Dream> TYPE = typeOf("dream");
+        public static final StreamCodec<ByteBuf, Dream> CODEC = StreamCodec.composite(ByteBufCodecs.stringUtf8(1 << 16), Dream::json, Dream::new);
+
+        @Override
+        public Type<Dream> type() {
+            return TYPE;
+        }
+    }
+
+    /** Server -> client: the Trial screen (JSON: the court's script, the pleas, and the verdict once given). */
+    public record Trial(String json) implements CustomPacketPayload {
+        public static final Type<Trial> TYPE = typeOf("trial");
+        public static final StreamCodec<ByteBuf, Trial> CODEC = StreamCodec.composite(ByteBufCodecs.stringUtf8(1 << 18), Trial::json, Trial::new);
+
+        @Override
+        public Type<Trial> type() {
+            return TYPE;
+        }
+    }
+
+    /** Client -> server: the accused's plea (or "continue" once the verdict has been read). */
+    public record Plea(String plea) implements CustomPacketPayload {
+        public static final Type<Plea> TYPE = typeOf("plea");
+        public static final StreamCodec<ByteBuf, Plea> CODEC = StreamCodec.composite(ByteBufCodecs.STRING_UTF8, Plea::plea, Plea::new);
+
+        @Override
+        public Type<Plea> type() {
             return TYPE;
         }
     }
@@ -122,6 +155,13 @@ public final class Payloads {
         r.playToClient(Cinematic.TYPE, Cinematic.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onCinematic(p)));
         r.playToClient(MapState.TYPE, MapState.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onMapState(p)));
         r.playToClient(OpenMap.TYPE, OpenMap.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onOpenMap(p)));
+        r.playToClient(Dream.TYPE, Dream.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onDream(p)));
+        r.playToClient(Trial.TYPE, Trial.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onTrial(p)));
+        r.playToServer(Plea.TYPE, Plea.CODEC, (p, ctx) -> ctx.enqueueWork(() -> {
+            if (ctx.player() instanceof ServerPlayer sp) {
+                dev.halfagod.core.Trial.onPlea(sp, p.plea());
+            }
+        }));
         r.playToServer(RequestMap.TYPE, RequestMap.CODEC, (p, ctx) -> ctx.enqueueWork(() -> {
             if (ctx.player() instanceof ServerPlayer sp) {
                 dev.halfagod.core.MapStates.send(sp);

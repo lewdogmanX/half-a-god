@@ -1,0 +1,49 @@
+{
+  "title": "What the God Saw",
+  "summary": "You dreamt the fall in full, and it doesn't match what anyone teaches. The hymn says the Sun Spirit threw him out of the sky. In your dream, he jumped. The Sun Spirit's hall might still show it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_spirits_hall",
+      "reach": "aether:gold_dungeon",
+      "radius": 20000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Under the dungeon's floor tiles, a scorch mark older than the dungeon: two shapes, one falling, one diving after it."
+    },
+    {
+      "id": "remember_it",
+      "type": "wait_time",
+      "wait_until": "next_day",
+      "stage": 1,
+      "auto_advance": true,
+      "say": "You don't dream that night. It feels like being allowed to rest."
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:golden_apple": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_sec_godsaw2",
+      "delay_ticks": 1200,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sec_godsaw1_done"
+    ]
+  }
+}

@@ -140,6 +140,11 @@ for _d in _duties["watch"] + _duties["hand"]:
     if _d not in quests: errs.append(f"duty {_d} missing")
     edges["START"].add(_d)
 
+# hidden questlines: the mod starts the first quest of each when it's found
+for _l in json.load(open(f"{ROOT}/data/half_a_god/hag_mod/secrets.json"))["lines"]:
+    if _l["first"] not in quests: errs.append(f"secret {_l['key']}: first quest {_l['first']} missing")
+    edges["START"].add(_l["first"])
+
 # reachability
 seen, stack = set(), ["START", "AZAZEL_BARREL"]
 while stack:

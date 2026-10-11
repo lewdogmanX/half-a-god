@@ -245,6 +245,36 @@
    "title": "Ashlord, the Infernal Dragon",
    "unlock": "mebahelrpgrquest:hag_f2_dragon_slayer",
    "text": "The last Warden, and once the Chariot's own mount. Where: the Dragon Tower. The smith said nothing alive was as hard as its bones."
+  },
+  {
+   "category": "Secrets",
+   "title": "The Old Tongue",
+   "unlock": "mebahelrpgrquest:hag_sec_tongue1",
+   "text": "The cult calls him Azazel. The Aether's hymn calls him Azriel. Neither is his name. His name was a word in the Old Tongue, something like 'the one who carries the sun across', and every time a mouth says it, a little of him comes back.\nThat is why the Faithful pray in angles and never in names. They are not afraid of offending him. They are afraid of feeding him.\nYou know the word now. You won't write it here."
+  },
+  {
+   "category": "Secrets",
+   "title": "The Last Pilgrim",
+   "unlock": "mebahelrpgrquest:hag_sec_pilgrim1",
+   "text": "Oren has walked the roads for fifty years. He taught village children their letters and their numbers, and one of them was a quick, quiet boy called Vael, who loved to count.\nThe cult found Vael at fifteen and taught him what to count: gold, skulls, people. Oren has been looking for him ever since, not to bring him home, only to tell him the count is done."
+  },
+  {
+   "category": "Secrets",
+   "title": "What the God Saw",
+   "unlock": "mebahelrpgrquest:hag_sec_godsaw1",
+   "text": "He wasn't thrown out of the sky. She was. The Sun Spirit cast Maraal down for loving the one who carried the sun, and he let go of the reins and jumped after her.\nHe caught her. The fall split him in two when they landed: the half that caught her, and the half that hated the sky for letting her go. The cult worships the second half. Maraal has spent every year since trying to find the first."
+  },
+  {
+   "category": "Secrets",
+   "title": "Sky and Fire",
+   "unlock": "mebahelrpgrquest:hag_sec_skyfire1",
+   "text": "The piglins remember a war nobody else does: the sky against the fire, fought by two halves of the same god. The gold half kept the sky. The iron half kept everything else.\nGilded blackstone is where the sun bled when the halves tore at each other. The cult mines it and calls it holy. The piglins mine it and call it a scar."
+  },
+  {
+   "category": "Secrets",
+   "title": "Clean Hands",
+   "unlock": "mebahelrpgrquest:hag_sec_clean1",
+   "text": "Silas doesn't believe in clean hands. In his trade, everybody's are dirty: the trick is only knowing whose.\nSo he sent a thief to find your secret, and the thief found nothing, and that frightened Silas more than any blade. A person with nothing to hide is a person who cannot be bought."
   }
  ]
 }

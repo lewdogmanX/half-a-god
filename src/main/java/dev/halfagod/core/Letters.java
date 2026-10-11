@@ -52,12 +52,18 @@ public final class Letters {
                 continue;
             }
             String author = Meb.hasTrait(player, "maraal_forgiven") ? "Maraal" : l.has("author") ? l.get("author").getAsString() : "Old Mara";
-            give(player, letter.get("title").getAsString(), author, letter.getAsJsonArray("pages"));
+            com.google.gson.JsonArray pages = letter.getAsJsonArray("pages").deepCopy();
+            // on a server with friends, Mara gossips about them
+            String ps = Rivalry.postscript(player);
+            if (ps != null) {
+                pages.add(ps);
+            }
+            give(player, letter.get("title").getAsString(), author, pages);
             // kept for the Codex, to read again
             JsonObject kept = new JsonObject();
             kept.addProperty("title", letter.get("title").getAsString());
             kept.addProperty("author", author);
-            kept.add("pages", letter.getAsJsonArray("pages"));
+            kept.add("pages", pages);
             kept.addProperty("day", player.level().getDayTime() / 24000L + 1);
             Reputation.data(player).letters.add(kept.toString());
         }

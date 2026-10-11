@@ -75,7 +75,7 @@ public final class StoryMapScreen extends Screen {
     private static JsonObject pendingStates;
 
     private record Node(String id, String title, String lane, String group, int col, int row, String summary, List<String> goals,
-                        List<Integer> stages, ItemStack icon, boolean choice, int chapter) {
+                        List<Integer> stages, ItemStack icon, boolean choice, int chapter, List<String> note) {
     }
 
     private record Chapter(String id, String name, String subtitle, List<Node> nodes, List<String[]> edges,
@@ -135,9 +135,23 @@ public final class StoryMapScreen extends Screen {
     private boolean showCodex;
     private int codexPick = -1;
     private int codexScroll;
-    /** 0 Lore, 1 Letters, 2 Your Path, 3 What Became of Them */
-    private int codexTab;
-    private final int[] tabPicks = {-1, -1, -1, -1};
+    /** lore, letters, path, dreams, secrets, trials, story, fates */
+    private String codexTab = "lore";
+    private final Map<String, Integer> tabPicks = new HashMap<>();
+    private boolean previewStory;
+    // what's new since the last update: margin notes, dreams, the hidden questlines, trials, the end card, friends
+    private final Map<String, Integer> doneRep = new HashMap<>();
+    private JsonArray dreams = new JsonArray();
+    private JsonArray secrets = new JsonArray();
+    private JsonArray trials = new JsonArray();
+    private JsonObject story = new JsonObject();
+    private boolean storyOver;
+    private JsonArray others = new JsonArray();
+    /** "Your Story": a frame or two drawn alone so it can be saved as a picture */
+    private int captureFrames;
+    private int cardX0, cardY0, cardX1, cardY1;
+    private String saveNote = "";
+    private long saveNoteAt;
     private int pageScroll;
     private int pageContentH;
     private JsonArray letters = new JsonArray();
@@ -189,12 +203,16 @@ public final class StoryMapScreen extends Screen {
                             if (n.has("stages")) {
                                 n.getAsJsonArray("stages").forEach(g -> st.add(g.getAsInt()));
                             }
+                            List<String> note = new ArrayList<>();
+                            if (n.has("note")) {
+                                n.getAsJsonArray("note").forEach(x -> note.add(x.getAsString()));
+                            }
                             ResourceLocation iconId = ResourceLocation.tryParse(n.get("icon").getAsString());
                             var item = iconId == null ? Items.PAPER : BuiltInRegistries.ITEM.get(iconId);
                             Node node = new Node(n.get("id").getAsString(), n.get("title").getAsString(), n.get("lane").getAsString(),
                                     n.has("group") ? n.get("group").getAsString() : "",
                                     n.get("col").getAsInt(), n.get("row").getAsInt(), n.get("summary").getAsString(), goals, st,
-                                    new ItemStack(item == Items.AIR ? Items.PAPER : item), n.get("choice").getAsBoolean(), ci);
+                                    new ItemStack(item == Items.AIR ? Items.PAPER : item), n.get("choice").getAsBoolean(), ci, note);
                             list.add(node);
                             nodes.put(node.id(), node);
                         }
@@ -277,6 +295,16 @@ public final class StoryMapScreen extends Screen {
         moments = o.has("moments") ? o.getAsJsonObject("moments") : new JsonObject();
         ranks = o.has("ranks") ? o.getAsJsonObject("ranks") : new JsonObject();
         day = o.has("day") ? o.get("day").getAsLong() : 0;
+        doneRep.clear();
+        if (o.has("doneRep")) {
+            o.getAsJsonObject("doneRep").entrySet().forEach(e -> doneRep.put(e.getKey(), e.getValue().getAsInt()));
+        }
+        dreams = o.has("dreams") ? o.getAsJsonArray("dreams") : new JsonArray();
+        secrets = o.has("secrets") ? o.getAsJsonArray("secrets") : new JsonArray();
+        trials = o.has("trials") ? o.getAsJsonArray("trials") : new JsonArray();
+        story = o.has("story") ? o.getAsJsonObject("story") : new JsonObject();
+        storyOver = o.has("storyOver") && o.get("storyOver").getAsBoolean();
+        others = o.has("others") ? o.getAsJsonArray("others") : new JsonArray();
         if (changed) {
             layoutDirty = true;
         }
@@ -792,6 +820,7 @@ public final class StoryMapScreen extends Screen {
         for (Sign s : signs) {
             drawSign(g, s);
         }
+        drawNotes(g, cx0, cy0, cx1, cy1);
         if (hoveredSeal != null) {
             Node n = hoveredSeal.node();
             int x = sx(hoveredSeal.x()), y = sy(hoveredSeal.y());
@@ -1017,6 +1046,63 @@ public final class StoryMapScreen extends Screen {
             g.fill(x - w / 2 - 2, ty - 1, x + w / 2 + 2, ty + 9, 0xD0EADBB8);
             g.drawString(font, line, x - w / 2, ty, color, false);
             ty += 10;
+        }
+    }
+
+    /** 0 good (Good, Saint), 1 wavering, 2 evil (Fallen, Wicked): the mood a quest's margin note is written in */
+    private int noteTone(Node n) {
+        Integer at = doneRep.get(n.id());
+        double r = at != null ? at : rep;
+        return r >= 20 ? 0 : r > -20 ? 1 : 2;
+    }
+
+    private String noteOf(Node n) {
+        if (n.note().size() < 3 || !done(n.id())) {
+            return null;
+        }
+        return n.note().get(noteTone(n));
+    }
+
+    /** What you scribbled beside each main-story quest you finished: dark ink, slightly crooked, above the seal. */
+    private void drawNotes(GuiGraphics g, int cx0, int cy0, int cx1, int cy1) {
+        if (zoom < 0.55f) {
+            return;
+        }
+        float scale = Math.max(0.5f, Math.min(0.85f, 0.62f * zoom / 0.7f));
+        for (Placed p : placed) {
+            String note = noteOf(p.node());
+            if (note == null) {
+                continue;
+            }
+            // only where there's room: nothing sits just above this seal
+            boolean crowded = false;
+            for (Placed q : placed) {
+                if (q != p && Math.abs(q.x() - p.x()) < COL_W * 0.6 && q.y() < p.y() && p.y() - q.y() < ROW_H * 1.2) {
+                    crowded = true;
+                    break;
+                }
+            }
+            if (crowded) {
+                continue;
+            }
+            int x = sx(p.x()), y = sy(p.y());
+            if (x < cx0 - 120 || x > cx1 + 120 || y < cy0 - 40 || y > cy1 + 60) {
+                continue;
+            }
+            int maxW = (int) ((COL_W - 14) / scale);
+            List<FormattedCharSequence> lines = font.split(Component.literal(note).withStyle(ChatFormatting.ITALIC), maxW);
+            int r = Math.max(7, Math.round(R * zoom));
+            int ink = noteTone(p.node()) == 2 ? 0xD06A1414 : noteTone(p.node()) == 0 ? 0xD02A3A1A : 0xD04A3420;
+            g.pose().pushPose();
+            g.pose().translate(x, y - r - 4 - lines.size() * 9 * scale, 0);
+            g.pose().mulPose(Axis.ZP.rotationDegrees(-3f + (Math.floorMod(p.node().id().hashCode(), 5) - 2) * 0.8f));
+            g.pose().scale(scale, scale, 1);
+            int ly = 0;
+            for (FormattedCharSequence line : lines) {
+                g.drawString(font, line, -font.width(line) / 2, ly, ink, false);
+                ly += 9;
+            }
+            g.pose().popPose();
         }
     }
 
@@ -1359,7 +1445,31 @@ public final class StoryMapScreen extends Screen {
             codexScroll = 0;
         }, unread && !showCodex);
         String help = showCodex ? "" : "Drag to move  ·  Scroll to zoom  ·  ← → turn the page  ·  Space: where you are";
-        if (!help.isEmpty() && x + 16 + font.width(help) < bx - 12) {
+        if (!others.isEmpty()) {
+            // friends on the server: how far along they are and who they've become
+            StringBuilder sb = new StringBuilder();
+            List<Component> tip = new ArrayList<>();
+            tip.add(Component.literal("Others on this server").withStyle(ChatFormatting.BOLD));
+            for (JsonElement e : others) {
+                JsonObject f = e.getAsJsonObject();
+                String act = f.get("act").getAsString();
+                String one = f.get("name").getAsString() + " (" + (act.isEmpty() ? "not started" : act) + ", " + f.get("tier").getAsString() + ")";
+                sb.append(sb.length() == 0 ? "" : "  ·  ").append(one);
+                String rank = !f.get("watch").getAsString().isEmpty() ? f.get("watch").getAsString() : f.get("hand").getAsString();
+                tip.add(Component.literal(one + (rank.isEmpty() ? "" : ", " + rank) + (f.get("rival").getAsBoolean() ? "  - your rival" : ""))
+                        .withColor(f.get("rival").getAsBoolean() ? 0xE07F6F : 0x3B2A1A));
+            }
+            String line = sb.toString();
+            int room = bx - 12 - (x + 16);
+            if (font.width(line) > room) {
+                line = font.plainSubstrByWidth(line, Math.max(20, room - font.width("..."))) + "...";
+            }
+            if (room > 40) {
+                int lx = (x + bx) / 2 - font.width(line) / 2;
+                g.drawString(font, line, lx, y, 0xFFC9A880, false);
+                hit(lx, y - 2, lx + font.width(line), y + 10, null, tip.toArray(new Component[0]));
+            }
+        } else if (!help.isEmpty() && x + 16 + font.width(help) < bx - 12) {
             g.drawString(font, help, (x + bx) / 2 - font.width(help) / 2, y, 0xFF8A7656, false);
         }
         g.pose().popPose();
@@ -1454,6 +1564,16 @@ public final class StoryMapScreen extends Screen {
         for (FormattedCharSequence line : font.split(Component.literal(n.summary()), iw)) {
             g.drawString(font, line, ix, y, 0xFF3B2A1A, false);
             y += 10;
+        }
+        String myNote = noteOf(n);
+        if (myNote != null) {
+            y += 6;
+            g.drawString(font, "IN THE MARGIN", ix, y, 0xFF8A6A32, false);
+            y += 12;
+            for (FormattedCharSequence line : font.split(Component.literal("\u201C" + myNote + "\u201D").withStyle(ChatFormatting.ITALIC), iw)) {
+                g.drawString(font, line, ix, y, noteTone(n) == 2 ? 0xFF6A1414 : 0xFF4A3420, false);
+                y += 10;
+            }
         }
         // objectives
         if (!n.goals().isEmpty()) {
@@ -1564,11 +1684,56 @@ public final class StoryMapScreen extends Screen {
     }
 
     // ------------------------------------------------------------------ the codex
-    /** Opens straight onto "What Became of Them" (when the story ends). */
-    public void openFates() {
+    /** Opens the Codex on a page: lore, letters, path, dreams, secrets, trials, story (Your Story), fates. */
+    public void openCodex(String page) {
         showCodex = true;
-        codexTab = 3;
+        codexTab = page;
+        if (page.equals("story")) {
+            previewStory = true;
+        }
     }
+
+    private static final String[][] TAB_NAMES = {{"lore", "Lore"}, {"letters", "Letters"}, {"path", "Your Path"}, {"dreams", "Dreams"},
+            {"secrets", "Secrets"}, {"trials", "Trials"}, {"story", "Your Story"}, {"fates", "What Became of Them"}};
+
+    /** the Codex's pages you have (some only appear once there's something on them) */
+    private List<String> tabs() {
+        List<String> out = new ArrayList<>(List.of("lore", "letters", "path"));
+        if (!dreams.isEmpty()) {
+            out.add("dreams");
+        }
+        out.add("secrets");
+        if (!trials.isEmpty()) {
+            out.add("trials");
+        }
+        if (storyOver || previewStory) {
+            out.add("story");
+        }
+        if (fates != null) {
+            out.add("fates");
+        }
+        return out;
+    }
+
+    private static String tabName(String id, boolean shortNames) {
+        if (shortNames && id.equals("fates")) {
+            return "Fates";
+        }
+        if (shortNames && id.equals("path")) {
+            return "Path";
+        }
+        if (shortNames && id.equals("story")) {
+            return "Story";
+        }
+        for (String[] t : TAB_NAMES) {
+            if (t[0].equals(id)) {
+                return t[1];
+            }
+        }
+        return id;
+    }
+
+    private static final Set<String> LORE_KINDS = Set.of("People", "Places", "The Cult", "Wardens");
 
     private List<Lore> unlockedLore() {
         List<Lore> out = new ArrayList<>();
@@ -1582,8 +1747,21 @@ public final class StoryMapScreen extends Screen {
         return out;
     }
 
+    private Lore loreTitled(String category, String title) {
+        for (Lore l : codex) {
+            if (l.category().equals(category) && l.title().equals(title)) {
+                return l;
+            }
+        }
+        return null;
+    }
+
     private static String letterKey(JsonObject l) {
         return "letter:" + l.get("title").getAsString() + "@" + (l.has("day") ? l.get("day").getAsLong() : 0);
+    }
+
+    private static String dreamKey(JsonObject d) {
+        return "dream:" + d.get("id").getAsString();
     }
 
     private boolean anyUnread() {
@@ -1597,6 +1775,11 @@ public final class StoryMapScreen extends Screen {
                 return true;
             }
         }
+        for (JsonElement e : dreams) {
+            if (!seenLore.contains(dreamKey(e.getAsJsonObject()))) {
+                return true;
+            }
+        }
         return false;
     }
 
@@ -1604,70 +1787,131 @@ public final class StoryMapScreen extends Screen {
     private record Row(String group, String groupNote, String title, String note, int dot, String seenKey) {
     }
 
-    private List<Row> rows(int tab) {
-        List<Row> out = new ArrayList<>();
-        if (tab == 0) {
-            for (Lore l : unlockedLore()) {
-                int have = 0, all = 0;
-                for (Lore o : codex) {
-                    if (o.category().equals(l.category())) {
-                        all++;
-                        if (reached(o.unlock())) {
-                            have++;
-                        }
-                    }
-                }
-                out.add(new Row(l.category(), have + " of " + all, l.title(), "", 0, l.title()));
-            }
-        } else if (tab == 1) {
-            for (int i = letters.size() - 1; i >= 0; i--) {
-                JsonObject l = letters.get(i).getAsJsonObject();
-                out.add(new Row("From " + l.get("author").getAsString().replace("Old ", ""), letters.size() + (letters.size() == 1 ? " letter" : " letters"),
-                        l.get("title").getAsString(), "day " + (l.has("day") ? l.get("day").getAsLong() : 0), 0, letterKey(l)));
-            }
-        } else if (tab == 3 && fates != null) {
-            for (JsonElement e : fates) {
-                JsonObject f = e.getAsJsonObject();
-                String kind = f.get("kind").getAsString();
-                out.add(new Row("What became of them", fates.size() + " people", f.get("name").getAsString(), "",
-                        kind.equals("mercy") ? MERCY : kind.equals("blade") ? BLADE : 0xFF9A8662, ""));
+    private int secretsFound() {
+        int n = 0;
+        for (JsonElement e : secrets) {
+            if (e.getAsJsonObject().get("found").getAsBoolean()) {
+                n++;
             }
         }
-        // the group header shows once per group
+        return n;
+    }
+
+    private List<Row> rows(String tab) {
+        List<Row> out = new ArrayList<>();
+        switch (tab) {
+            case "lore" -> {
+                for (Lore l : unlockedLore()) {
+                    int have = 0, all = 0;
+                    for (Lore o : codex) {
+                        if (o.category().equals(l.category())) {
+                            all++;
+                            if (reached(o.unlock())) {
+                                have++;
+                            }
+                        }
+                    }
+                    out.add(new Row(l.category(), have + " of " + all, l.title(), "", 0, l.title()));
+                }
+            }
+            case "letters" -> {
+                for (int i = letters.size() - 1; i >= 0; i--) {
+                    JsonObject l = letters.get(i).getAsJsonObject();
+                    out.add(new Row("From " + l.get("author").getAsString().replace("Old ", ""), letters.size() + (letters.size() == 1 ? " letter" : " letters"),
+                            l.get("title").getAsString(), "day " + (l.has("day") ? l.get("day").getAsLong() : 0), 0, letterKey(l)));
+                }
+            }
+            case "dreams" -> {
+                for (int i = dreams.size() - 1; i >= 0; i--) {
+                    JsonObject d = dreams.get(i).getAsJsonObject();
+                    out.add(new Row("Dreams", dreams.size() + (dreams.size() == 1 ? " dream" : " dreams"), d.get("title").getAsString(),
+                            "day " + (d.has("day") ? d.get("day").getAsLong() : 0), 0, dreamKey(d)));
+                }
+            }
+            case "secrets" -> {
+                for (JsonElement e : secrets) {
+                    JsonObject x = e.getAsJsonObject();
+                    boolean found = x.get("found").getAsBoolean(), done = x.get("done").getAsBoolean();
+                    out.add(new Row("Secrets found", secretsFound() + " / " + secrets.size(), x.get("name").getAsString(),
+                            done ? "done" : found ? "found" : "", found ? (done ? 0xFF7A4AB0 : 0xFFB48CFF) : 0x606B5638, ""));
+                }
+            }
+            case "trials" -> {
+                for (int i = trials.size() - 1; i >= 0; i--) {
+                    JsonObject t = trials.get(i).getAsJsonObject();
+                    boolean guilty = t.getAsJsonObject("verdict").get("guilty").getAsBoolean();
+                    out.add(new Row("The Watch's court", trials.size() + (trials.size() == 1 ? " trial" : " trials"),
+                            (guilty ? "Guilty" : "Free to go") + (t.has("act") && !t.get("act").getAsString().isEmpty() ? ", " + shortAct(t.get("act").getAsString()) : ""),
+                            "day " + t.get("day").getAsLong(), guilty ? RED_INK : MERCY, ""));
+                }
+            }
+            case "fates" -> {
+                if (fates != null) {
+                    for (JsonElement e : fates) {
+                        JsonObject f = e.getAsJsonObject();
+                        String kind = f.get("kind").getAsString();
+                        out.add(new Row("What became of them", fates.size() + " people", f.get("name").getAsString(), "",
+                                kind.equals("mercy") ? MERCY : kind.equals("blade") ? BLADE : 0xFF9A8662, ""));
+                    }
+                }
+            }
+            default -> {
+            }
+        }
         return out;
+    }
+
+    private static String shortAct(String act) {
+        int c = act.indexOf(':');
+        return c > 0 ? act.substring(0, c) : act;
     }
 
     private void drawCodex(GuiGraphics g, int mx, int my) {
         int top = TOP + 24, bottom = height - FOOT - 10;
-        int bw = Math.min(width - 30, 520);
+        int bw = Math.min(width - 30, 560);
         int bx = (width - bw) / 2;
         int mid = bx + bw / 2;
         g.fill(bx - 6, top - 4, bx + bw + 6, bottom + 4, 0xFF4A2A16);
-        // bookmark ribbons along the top of the book
-        String[] tabs = fates != null ? new String[]{"Lore", "Letters", "Your Path", "What Became of Them"} : new String[]{"Lore", "Letters", "Your Path"};
-        if (codexTab >= tabs.length && statesKnown) {
-            codexTab = 0;
+        // bookmark ribbons along the top of the book (shorter names if they don't fit)
+        List<String> tabs = tabs();
+        if (!tabs.contains(codexTab) && statesKnown) {
+            codexTab = "lore";
+        }
+        boolean shortNames = false;
+        int pad = 16;
+        int total = 0;
+        for (String t : tabs) {
+            total += font.width(tabName(t, false)) + pad + 3;
+        }
+        if (total > bw - 16) {
+            shortNames = true;
+            pad = 10;
         }
         int tx = bx + 8;
-        for (int i = 0; i < tabs.length; i++) {
-            int w = font.width(tabs[i]) + 16;
-            boolean on = i == codexTab;
+        for (String t : tabs) {
+            String name = tabName(t, shortNames);
+            int w = font.width(name) + pad;
+            boolean on = t.equals(codexTab);
             boolean hover = over(mx, my, tx, top - 18, tx + w, top);
-            int col = on ? PAPER_LIGHT : hover ? 0xFF9A3A2A : 0xFF7A2418;
+            int col = on ? PAPER_LIGHT : hover ? 0xFF9A3A2A : t.equals("secrets") ? 0xFF4A2A6A : 0xFF7A2418;
             g.fill(tx, top - (on ? 18 : 15), tx + w, top + (on ? 2 : 0), col);
             g.fill(tx, top - (on ? 18 : 15), tx + w, top - (on ? 17 : 14), on ? 0xFF8A6A32 : 0xFFB0503A);
-            g.drawString(font, tabs[i], tx + 8, top - (on ? 13 : 12), on ? RED_INK : 0xFFF2DCC0, false);
-            if (i == 1 && !on) {
+            g.drawString(font, name, tx + pad / 2, top - (on ? 13 : 12), on ? RED_INK : 0xFFF2DCC0, false);
+            boolean unread = false;
+            if (!on && t.equals("letters")) {
                 for (JsonElement e : letters) {
-                    if (!seenLore.contains(letterKey(e.getAsJsonObject()))) {
-                        disc(g, tx + w - 3, top - 13, 2, 0xFFFFD040);
-                        break;
-                    }
+                    unread |= !seenLore.contains(letterKey(e.getAsJsonObject()));
+                }
+            } else if (!on && t.equals("dreams")) {
+                for (JsonElement e : dreams) {
+                    unread |= !seenLore.contains(dreamKey(e.getAsJsonObject()));
                 }
             }
-            final int ti = i;
+            if (unread) {
+                disc(g, tx + w - 3, top - 13, 2, 0xFFFFD040);
+            }
             hit(tx, top - 18, tx + w, top, () -> {
-                codexTab = ti;
+                codexTab = t;
                 codexScroll = 0;
                 pageScroll = 0;
             });
@@ -1684,12 +1928,16 @@ public final class StoryMapScreen extends Screen {
         g.fill(mid, top, mid + 1, bottom, 0x60301E0C);
         int lx = bx + 14, lw = bw / 2 - 28;
         int rx = mid + 18, rw = bw / 2 - 32;
-        if (codexTab == 2) {
+        if (codexTab.equals("path")) {
             drawPath(g, lx, lw, rx, rw, top, bottom);
             return;
         }
+        if (codexTab.equals("story")) {
+            drawStoryCard(g, mx, my, bx, bw, top, bottom);
+            return;
+        }
         List<Row> list = rows(codexTab);
-        int pick = tabPicks[codexTab];
+        int pick = tabPicks.getOrDefault(codexTab, -1);
         if (pick < 0 || pick >= list.size()) {
             pick = 0;
             for (int i = 0; i < list.size(); i++) {
@@ -1698,7 +1946,7 @@ public final class StoryMapScreen extends Screen {
                     break;
                 }
             }
-            tabPicks[codexTab] = pick;
+            tabPicks.put(codexTab, pick);
             pageScroll = 0;
         }
         codexPick = pick;
@@ -1742,17 +1990,30 @@ public final class StoryMapScreen extends Screen {
             final int ix = i;
             if (my > top && my < bottom) {
                 hit(lx - 4, y - 2, lx + lw, y + 10, () -> {
-                    tabPicks[codexTab] = ix;
+                    tabPicks.put(codexTab, ix);
                     pageScroll = 0;
                 });
             }
             y += 13;
         }
-        if (codexTab == 0) {
-            int locked = codex.size() - list.size();
+        if (codexTab.equals("lore")) {
+            int all = 0;
+            for (Lore l : codex) {
+                if (LORE_KINDS.contains(l.category())) {
+                    all++;
+                }
+            }
+            int locked = all - list.size();
             if (locked > 0) {
                 y += 8;
                 g.drawString(font, Component.literal(locked + " more to discover").withStyle(ChatFormatting.ITALIC), lx, y, 0xFF9A8662, false);
+                y += 10;
+            }
+        } else if (codexTab.equals("secrets")) {
+            y += 8;
+            for (FormattedCharSequence line : font.split(Component.literal("Five hidden paths. Each one opens when you do something nobody asked you to.")
+                    .withStyle(ChatFormatting.ITALIC), lw)) {
+                g.drawString(font, line, lx, y, 0xFF9A8662, false);
                 y += 10;
             }
         }
@@ -1760,7 +2021,7 @@ public final class StoryMapScreen extends Screen {
         g.disableScissor();
         // right page: the entry
         if (list.isEmpty()) {
-            String none = codexTab == 1 ? "No letters yet. Someone will write." : codexTab == 3 ? "..." : "Nothing yet. Go and find out.";
+            String none = codexTab.equals("letters") ? "No letters yet. Someone will write." : codexTab.equals("fates") ? "..." : "Nothing yet. Go and find out.";
             g.drawString(font, Component.literal(none).withStyle(ChatFormatting.ITALIC), rx, top + 20, INK_SOFT, false);
             return;
         }
@@ -1771,45 +2032,256 @@ public final class StoryMapScreen extends Screen {
         g.enableScissor(mid + 4, top + 4, bx + bw, bottom - 4);
         int ry = top + 14 - pageScroll;
         int start = ry;
-        if (codexTab == 0) {
-            Lore l = unlockedLore().get(pick);
-            ry = pageHeading(g, rx, rw, ry, l.category().toUpperCase(), l.title());
-            Node from = nodes.get(l.unlock());
-            String trait = l.unlock().replace("mebahelrpgrquest:", "") + "_done";
-            if (l.category().equals("Wardens") && moments.has(trait)) {
-                g.drawString(font, Component.literal("Fell on day " + moments.get(trait).getAsLong() + " of your journey").withStyle(ChatFormatting.ITALIC), rx, ry, RED_INK, false);
-                ry += 12;
-            } else if (from != null) {
-                g.drawString(font, Component.literal("from " + from.title()).withStyle(ChatFormatting.ITALIC), rx, ry, 0xFF9A8662, false);
-                ry += 12;
+        switch (codexTab) {
+            case "lore" -> {
+                Lore l = unlockedLore().get(pick);
+                ry = pageHeading(g, rx, rw, ry, l.category().toUpperCase(), l.title());
+                Node from = nodes.get(l.unlock());
+                String trait = l.unlock().replace("mebahelrpgrquest:", "") + "_done";
+                if (l.category().equals("Wardens") && moments.has(trait)) {
+                    g.drawString(font, Component.literal("Fell on day " + moments.get(trait).getAsLong() + " of your journey").withStyle(ChatFormatting.ITALIC), rx, ry, RED_INK, false);
+                    ry += 12;
+                } else if (from != null) {
+                    g.drawString(font, Component.literal("from " + from.title()).withStyle(ChatFormatting.ITALIC), rx, ry, 0xFF9A8662, false);
+                    ry += 12;
+                }
+                ry = divider(g, rx, rw, ry) + 2;
+                ry = paragraph(g, l.text(), rx, rw, ry);
             }
-            ry = divider(g, rx, rw, ry) + 2;
-            ry = paragraph(g, l.text(), rx, rw, ry);
-        } else if (codexTab == 1) {
-            JsonObject l = letters.get(letters.size() - 1 - pick).getAsJsonObject();
-            ry = pageHeading(g, rx, rw, ry, "A LETTER  \u00b7  DAY " + (l.has("day") ? l.get("day").getAsLong() : 0), l.get("title").getAsString());
-            ry = divider(g, rx, rw, ry) + 2;
-            for (JsonElement pg : l.getAsJsonArray("pages")) {
-                ry = paragraph(g, pg.getAsString(), rx, rw, ry) + 6;
-            }
-            String sign = "- " + l.get("author").getAsString();
-            g.drawString(font, Component.literal(sign).withStyle(ChatFormatting.ITALIC), rx + rw - font.width(sign) - 4, ry, INK_SOFT, false);
-            ry += 12;
-        } else if (codexTab == 3 && fates != null) {
-            JsonObject f = fates.get(pick).getAsJsonObject();
-            ry = pageHeading(g, rx, rw, ry, "WHAT BECAME OF THEM", f.get("name").getAsString());
-            String kind = f.get("kind").getAsString();
-            String how = kind.equals("mercy") ? "You showed mercy" : kind.equals("blade") ? "You chose the blade" : "";
-            if (!how.isEmpty()) {
-                disc(g, rx + 3, ry + 3, 3, kind.equals("mercy") ? MERCY : BLADE);
-                g.drawString(font, Component.literal(how).withStyle(ChatFormatting.ITALIC), rx + 10, ry, kind.equals("mercy") ? 0xFF2E6B2E : 0xFF6A1010, false);
+            case "letters" -> {
+                JsonObject l = letters.get(letters.size() - 1 - pick).getAsJsonObject();
+                ry = pageHeading(g, rx, rw, ry, "A LETTER  ·  DAY " + (l.has("day") ? l.get("day").getAsLong() : 0), l.get("title").getAsString());
+                ry = divider(g, rx, rw, ry) + 2;
+                for (JsonElement pg : l.getAsJsonArray("pages")) {
+                    ry = paragraph(g, pg.getAsString(), rx, rw, ry) + 6;
+                }
+                String sign = "- " + l.get("author").getAsString();
+                g.drawString(font, Component.literal(sign).withStyle(ChatFormatting.ITALIC), rx + rw - font.width(sign) - 4, ry, INK_SOFT, false);
                 ry += 12;
             }
-            ry = divider(g, rx, rw, ry) + 2;
-            ry = paragraph(g, f.get("text").getAsString(), rx, rw, ry);
+            case "dreams" -> {
+                JsonObject d = dreams.get(dreams.size() - 1 - pick).getAsJsonObject();
+                String kind = d.has("kind") ? d.get("kind").getAsString() : "";
+                String kicker = (kind.equals("past") ? "WHAT HE WAS" : kind.equals("omen") ? "AN OMEN" : kind.equals("echo") ? "AN ECHO" : "A DREAM")
+                        + "  ·  NIGHT " + (d.has("day") ? d.get("day").getAsLong() : 0);
+                ry = pageHeading(g, rx, rw, ry, kicker, d.get("title").getAsString());
+                ry = divider(g, rx, rw, ry) + 4;
+                for (JsonElement e : d.getAsJsonArray("lines")) {
+                    for (FormattedCharSequence line : font.split(Component.literal(e.getAsString()).withStyle(ChatFormatting.ITALIC), rw)) {
+                        g.drawString(font, line, rx, ry, 0xFF3B2A1A, false);
+                        ry += 11;
+                    }
+                    ry += 6;
+                }
+            }
+            case "secrets" -> {
+                JsonObject x = secrets.get(pick).getAsJsonObject();
+                boolean found = x.get("found").getAsBoolean();
+                ry = pageHeading(g, rx, rw, ry, "A HIDDEN PATH", found ? x.get("name").getAsString() : "Not found yet");
+                if (!found) {
+                    ry = divider(g, rx, rw, ry) + 2;
+                    ry = paragraph(g, "Something out there is waiting for you to do the thing nobody would think to do. "
+                            + "Pray where you shouldn't, feed who you needn't, dream, wander, or keep your hands clean.", rx, rw, ry);
+                } else {
+                    g.drawString(font, Component.literal(x.get("done").getAsBoolean() ? "You followed it to the end" : "You're on it now")
+                            .withStyle(ChatFormatting.ITALIC), rx, ry, 0xFF7A4AB0, false);
+                    ry += 12;
+                    ry = divider(g, rx, rw, ry) + 2;
+                    ry = paragraph(g, x.get("how").getAsString(), rx, rw, ry) + 6;
+                    Lore l = loreTitled("Secrets", x.get("name").getAsString());
+                    if (l != null && x.get("done").getAsBoolean()) {
+                        ry = paragraph(g, l.text(), rx, rw, ry);
+                    } else if (l != null) {
+                        g.drawString(font, Component.literal("Follow it to the end to learn what it means.").withStyle(ChatFormatting.ITALIC), rx, ry, 0xFF9A8662, false);
+                        ry += 12;
+                    }
+                }
+            }
+            case "trials" -> {
+                JsonObject t = trials.get(trials.size() - 1 - pick).getAsJsonObject();
+                JsonObject v = t.getAsJsonObject("verdict");
+                boolean guilty = v.get("guilty").getAsBoolean();
+                ry = pageHeading(g, rx, rw, ry, "THE COURT OF THE WATCH  ·  DAY " + t.get("day").getAsLong(), guilty ? "Guilty" : "Free to go");
+                String plea = v.get("plea").getAsString().replace("_", " ");
+                String outcome = t.has("outcome") ? t.get("outcome").getAsString() : "";
+                String how = "You pleaded " + (plea.equals("silent") ? "nothing" : plea.equals("bribe") ? "with a juror's purse" : plea)
+                        + (guilty ? ". " + v.get("days").getAsInt() + " days in the cells" + (outcome.isEmpty() || outcome.equals("in the cells") ? "." : ": " + outcome + ".") : ".");
+                ry = paragraph(g, how, rx, rw, ry) + 2;
+                ry = divider(g, rx, rw, ry) + 2;
+                for (JsonElement e : t.getAsJsonArray("lines")) {
+                    JsonArray a = e.getAsJsonArray();
+                    Component c = Component.empty().append(Component.literal(a.get(0).getAsString() + ": ").withStyle(ChatFormatting.BOLD))
+                            .append(Component.literal(a.get(1).getAsString()));
+                    for (FormattedCharSequence line : font.split(c, rw)) {
+                        g.drawString(font, line, rx, ry, 0xFF3B2A1A, false);
+                        ry += 10;
+                    }
+                    ry += 4;
+                }
+            }
+            case "fates" -> {
+                if (fates != null) {
+                    JsonObject f = fates.get(pick).getAsJsonObject();
+                    ry = pageHeading(g, rx, rw, ry, "WHAT BECAME OF THEM", f.get("name").getAsString());
+                    String kind = f.get("kind").getAsString();
+                    String how = kind.equals("mercy") ? "You showed mercy" : kind.equals("blade") ? "You chose the blade" : "";
+                    if (!how.isEmpty()) {
+                        disc(g, rx + 3, ry + 3, 3, kind.equals("mercy") ? MERCY : BLADE);
+                        g.drawString(font, Component.literal(how).withStyle(ChatFormatting.ITALIC), rx + 10, ry, kind.equals("mercy") ? 0xFF2E6B2E : 0xFF6A1010, false);
+                        ry += 12;
+                    }
+                    ry = divider(g, rx, rw, ry) + 2;
+                    ry = paragraph(g, f.get("text").getAsString(), rx, rw, ry);
+                }
+            }
+            default -> {
+            }
         }
         pageContentH = ry - start + 20;
         g.disableScissor();
+    }
+
+    // ------------------------------------------------------------------ "Your Story": the end card
+    private void drawStoryCard(GuiGraphics g, int mx, int my, int bx, int bw, int top, int bottom) {
+        // the card: a sheet of parchment with a wax seal, centred on the open book
+        int cw = Math.min(bw - 40, 380), ch = Math.min(bottom - top - 16, 250);
+        int x0 = bx + (bw - cw) / 2, y0 = top + (bottom - top - ch) / 2;
+        cardX0 = x0 - 6;
+        cardY0 = y0 - 6;
+        cardX1 = x0 + cw + 6;
+        cardY1 = y0 + ch + 6;
+        g.fill(x0 - 6, y0 - 6, x0 + cw + 6, y0 + ch + 6, 0xFF2A1C11);
+        g.fill(x0 - 5, y0 - 5, x0 + cw + 5, y0 - 4, GILT);
+        g.fill(x0 - 5, y0 + ch + 4, x0 + cw + 5, y0 + ch + 5, GILT);
+        g.fill(x0, y0, x0 + cw, y0 + ch, PAPER);
+        drawPaper(g, x0, y0, x0 + cw, y0 + ch);
+        String name = story.has("name") ? story.get("name").getAsString() : "";
+        boolean over = storyOver;
+        String kicker = (over ? "THE STORY OF " : "THE STORY SO FAR: ") + name.toUpperCase();
+        g.drawString(font, kicker, x0 + cw / 2 - font.width(kicker) / 2, y0 + 10, RED_INK, false);
+        String ending = story.has("ending") ? story.get("ending").getAsString() : "";
+        int ey = y0 + 24;
+        if (font.width(ending) * 2 <= cw - 20) {
+            g.pose().pushPose();
+            g.pose().translate(x0 + cw / 2f - font.width(ending), ey, 0);
+            g.pose().scale(2, 2, 1);
+            g.drawString(font, ending, 0, 0, INK, false);
+            g.pose().popPose();
+            ey += 22;
+        } else {
+            g.drawString(font, Component.literal(ending).withStyle(ChatFormatting.BOLD), x0 + cw / 2 - font.width(ending) / 2, ey, INK, false);
+            ey += 12;
+        }
+        String half = story.has("half") ? story.get("half").getAsString() : "";
+        for (FormattedCharSequence line : font.split(Component.literal(half).withStyle(ChatFormatting.ITALIC), cw - 30)) {
+            g.drawString(font, line, x0 + cw / 2 - font.width(line) / 2, ey, 0xFF6B5638, false);
+            ey += 10;
+        }
+        ey += 4;
+        int dx = x0 + cw / 2;
+        g.fill(x0 + 20, ey, dx - 6, ey + 1, 0x606B5638);
+        g.fill(dx + 7, ey, x0 + cw - 20, ey + 1, 0x606B5638);
+        diamond(g, dx, ey, 2, 0xFF8A6A32);
+        ey += 8;
+        // the numbers, in two columns
+        String[][] stats = {
+                {"Days", num("days")}, {"Deaths", num("deaths")},
+                {"Spared", num("spared")}, {"Killed", num("killed")},
+                {"Villagers killed", num("villagers")}, {"Wardens fallen", num("wardens") + " of 7"},
+                {"Letters", num("letters")}, {"Dreams", num("dreams")},
+                {"Secrets", num("secrets") + " / " + num("secretsTotal")}, {"Trials", num("trials") + (story.has("escapes") && story.get("escapes").getAsInt() > 0 ? " (" + num("escapes") + " escaped)" : "")},
+        };
+        int colW = (cw - 40) / 2;
+        for (int i = 0; i < stats.length; i++) {
+            int sx = x0 + 20 + (i % 2) * (colW + 10);
+            int sy = ey + (i / 2) * 11;
+            g.drawString(font, stats[i][0], sx, sy, 0xFF6B5638, false);
+            g.drawString(font, stats[i][1], sx + colW - font.width(stats[i][1]), sy, INK, false);
+        }
+        ey += (stats.length + 1) / 2 * 11 + 4;
+        String watch = story.has("watch") ? story.get("watch").getAsString() : "", hand = story.has("hand") ? story.get("hand").getAsString() : "";
+        String rank = !watch.isEmpty() ? watch : !hand.isEmpty() ? hand : "Answered to no one";
+        String standing = (story.has("tier") ? story.get("tier").getAsString() : "") + "  ·  " + rank;
+        g.drawString(font, standing, x0 + cw / 2 - font.width(standing) / 2, ey, RED_INK, false);
+        ey += 14;
+        if (story.has("choices") && !story.getAsJsonArray("choices").isEmpty()) {
+            g.drawString(font, "BIGGEST CHOICES", x0 + 20, ey, 0xFF8A6A32, false);
+            ey += 11;
+            for (JsonElement e : story.getAsJsonArray("choices")) {
+                String c = font.plainSubstrByWidth("• " + e.getAsString(), cw - 40);
+                g.drawString(font, c, x0 + 22, ey, INK, false);
+                ey += 10;
+            }
+        }
+        // the half you became, as a seal in the corner
+        int sealX = x0 + cw - 26, sealY = y0 + ch - 26;
+        String tier = story.has("tier") ? story.get("tier").getAsString() : "";
+        RenderSystem.enableBlend();
+        RenderSystem.defaultBlendFunc();
+        g.blit(tier.equals("Saint") || tier.equals("Good") ? MapArt.GOLD : tier.equals("Wavering") ? MapArt.TOKEN : MapArt.WAX,
+                sealX - 14, sealY - 14, 28, 28, 0f, 0f, MapArt.SEAL, MapArt.SEAL, MapArt.SEAL, MapArt.SEAL);
+        RenderSystem.disableBlend();
+        g.drawString(font, "Half a God", x0 + 10, y0 + ch - 12, 0xFF9A8662, false);
+        if (captureFrames > 0) {
+            return; // the picture is being taken: no buttons on it
+        }
+        // save it as a picture
+        String label = "Save image";
+        int bw2 = font.width(label) + 14;
+        int bxx = x0 + cw / 2 - bw2 / 2, byy = y0 + ch + 10;
+        if (byy + 16 > bottom + 2) {
+            byy = y0 + ch - 20;
+            bxx = x0 + 10 + font.width("Half a God") + 10;
+        }
+        boolean hover = over(mx, my, bxx, byy, bxx + bw2, byy + 16);
+        g.fill(bxx, byy, bxx + bw2, byy + 16, hover ? 0xFF6B4A22 : 0xFF4A3218);
+        g.fill(bxx, byy, bxx + bw2, byy + 1, hover ? GILT_BRIGHT : 0xFF8A6A32);
+        g.drawString(font, label, bxx + 7, byy + 4, hover ? 0xFFFFF0C8 : 0xFFE8D2A0, false);
+        hit(bxx, byy, bxx + bw2, byy + 16, () -> captureFrames = 2, Component.literal("Saves this card to your screenshots folder"));
+        if (!saveNote.isEmpty() && Util.getMillis() - saveNoteAt < 6000) {
+            g.drawString(font, saveNote, x0 + cw / 2 - font.width(saveNote) / 2, Math.min(bottom - 10, byy + 20), 0xFFE8D2A0, false);
+        }
+        if (!over) {
+            String p = "(a preview: the story isn't over yet)";
+            g.drawString(font, Component.literal(p).withStyle(ChatFormatting.ITALIC), x0 + cw / 2 - font.width(p) / 2, y0 - 16, 0xFFC9A880, false);
+        }
+    }
+
+    private String num(String key) {
+        return story.has(key) ? Long.toString(story.get(key).getAsLong()) : "0";
+    }
+
+    /** Called between frames: cut the card out of what was just drawn and save it as a PNG. */
+    private void captureCard() {
+        Minecraft mc = Minecraft.getInstance();
+        double scale = mc.getWindow().getGuiScale();
+        int px0 = (int) Math.round(cardX0 * scale), py0 = (int) Math.round(cardY0 * scale);
+        int pw = (int) Math.round((cardX1 - cardX0) * scale), ph = (int) Math.round((cardY1 - cardY0) * scale);
+        try (com.mojang.blaze3d.platform.NativeImage full = net.minecraft.client.Screenshot.takeScreenshot(mc.getMainRenderTarget())) {
+            pw = Math.min(pw, full.getWidth() - px0);
+            ph = Math.min(ph, full.getHeight() - py0);
+            if (pw <= 0 || ph <= 0 || px0 < 0 || py0 < 0) {
+                saveNote = "Couldn't save the picture.";
+                saveNoteAt = Util.getMillis();
+                return;
+            }
+            try (com.mojang.blaze3d.platform.NativeImage card = new com.mojang.blaze3d.platform.NativeImage(pw, ph, false)) {
+                for (int y = 0; y < ph; y++) {
+                    for (int x = 0; x < pw; x++) {
+                        card.setPixelRGBA(x, y, full.getPixelRGBA(px0 + x, py0 + y));
+                    }
+                }
+                Path dir = mc.gameDirectory.toPath().resolve("screenshots");
+                Files.createDirectories(dir);
+                String name = "half_a_god_story_" + new java.text.SimpleDateFormat("yyyy-MM-dd_HH.mm.ss").format(new java.util.Date()) + ".png";
+                card.writeToFile(dir.resolve(name));
+                saveNote = "Saved to screenshots/" + name;
+            }
+        } catch (Exception e) {
+            HalfAGod.LOG.warn("Could not save the story card", e);
+            saveNote = "Couldn't save the picture.";
+        }
+        saveNoteAt = Util.getMillis();
     }
 
     private int pageHeading(GuiGraphics g, int rx, int rw, int ry, String kicker, String title) {
@@ -1935,6 +2407,36 @@ public final class StoryMapScreen extends Screen {
         ry += 11;
         g.drawString(font, "Letters received: " + letters.size(), rx, ry, INK, false);
         ry += 11;
+        g.drawString(font, "Dreams: " + dreams.size(), rx, ry, INK, false);
+        ry += 11;
+        g.drawString(font, "Secrets found: " + secretsFound() + " / " + secrets.size(), rx, ry, 0xFF5A2A8A, false);
+        ry += 11;
+        if (!trials.isEmpty()) {
+            int guilty = 0;
+            for (JsonElement e : trials) {
+                if (e.getAsJsonObject().getAsJsonObject("verdict").get("guilty").getAsBoolean()) {
+                    guilty++;
+                }
+            }
+            g.drawString(font, "Trials: " + trials.size() + " (" + guilty + " guilty)", rx, ry, RED_INK, false);
+            ry += 11;
+        }
+        // friends on the same server, and which of them are on the other side
+        if (!others.isEmpty()) {
+            ry = divider(g, rx, rw, ry + 2);
+            g.drawString(font, "ON THIS SERVER", rx, ry, 0xFF8A6A32, false);
+            ry += 11;
+            for (JsonElement e : others) {
+                JsonObject f = e.getAsJsonObject();
+                boolean rival = f.get("rival").getAsBoolean();
+                String act = f.get("act").getAsString();
+                String line = f.get("name").getAsString() + ": " + f.get("tier").getAsString() + (act.isEmpty() ? "" : ", " + act) + (rival ? " (rival)" : "");
+                for (FormattedCharSequence l : font.split(Component.literal(line), rw)) {
+                    g.drawString(font, l, rx, ry, rival ? RED_INK : INK, false);
+                    ry += 10;
+                }
+            }
+        }
         pageContentH = ry - start + 16;
         g.disableScissor();
     }
@@ -1959,6 +2461,14 @@ public final class StoryMapScreen extends Screen {
     }
 
     private int codexContentH;
+
+    @Override
+    public void tick() {
+        // "Save image": the card was drawn without its button for a frame or two; now cut it out and save it
+        if (captureFrames > 0 && --captureFrames == 0) {
+            captureCard();
+        }
+    }
 
     // =================================================================== input
     @Override
@@ -2060,18 +2570,19 @@ public final class StoryMapScreen extends Screen {
         }
         if (showCodex) {
             if (key == GLFW.GLFW_KEY_DOWN || key == GLFW.GLFW_KEY_S) {
-                tabPicks[codexTab] = Math.min(Math.max(0, rows(codexTab).size() - 1), codexPick + 1);
+                tabPicks.put(codexTab, Math.min(Math.max(0, rows(codexTab).size() - 1), codexPick + 1));
                 pageScroll = 0;
                 return true;
             }
             if (key == GLFW.GLFW_KEY_UP || key == GLFW.GLFW_KEY_W) {
-                tabPicks[codexTab] = Math.max(0, codexPick - 1);
+                tabPicks.put(codexTab, Math.max(0, codexPick - 1));
                 pageScroll = 0;
                 return true;
             }
             if (key == GLFW.GLFW_KEY_LEFT || key == GLFW.GLFW_KEY_A || key == GLFW.GLFW_KEY_RIGHT || key == GLFW.GLFW_KEY_D) {
-                int count = fates != null ? 4 : 3;
-                codexTab = Math.floorMod(codexTab + (key == GLFW.GLFW_KEY_LEFT || key == GLFW.GLFW_KEY_A ? -1 : 1), count);
+                List<String> tabs = tabs();
+                int i = Math.max(0, tabs.indexOf(codexTab));
+                codexTab = tabs.get(Math.floorMod(i + (key == GLFW.GLFW_KEY_LEFT || key == GLFW.GLFW_KEY_A ? -1 : 1), tabs.size()));
                 codexScroll = 0;
                 pageScroll = 0;
                 return true;

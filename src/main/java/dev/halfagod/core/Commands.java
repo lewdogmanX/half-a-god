@@ -2,6 +2,7 @@ package dev.halfagod.core;
 
 import com.mojang.brigadier.CommandDispatcher;
 import com.mojang.brigadier.arguments.IntegerArgumentType;
+import com.mojang.brigadier.arguments.StringArgumentType;
 import dev.halfagod.net.Payloads;
 import net.minecraft.ChatFormatting;
 import net.minecraft.commands.CommandSourceStack;
@@ -20,6 +21,7 @@ import static net.minecraft.commands.Commands.literal;
 /**
  * /halfagod rep | lostmyway | choose | chronicle            (everyone)
  * /halfagod story | unlockall | jump <quest> [player] | setrep <value> [player]   (operators)
+ * /halfagod test dream [id] | dreams reset | secret <name> | trial [status|night|escape|release|reset] | endcard | codex <page>   (operators)
  */
 public final class Commands {
     private Commands() {
@@ -54,12 +56,12 @@ public final class Commands {
                         c.getSource().sendFailure(Component.literal("Your story isn't over yet."));
                         return 0;
                     }
-                    net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(p, new dev.halfagod.net.Payloads.OpenMap(true));
+                    net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(p, new dev.halfagod.net.Payloads.OpenMap("fates"));
                     return 1;
                 }))
                 .then(literal("map").executes(c -> {
                     net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(c.getSource().getPlayerOrException(),
-                            new dev.halfagod.net.Payloads.OpenMap(false));
+                            new dev.halfagod.net.Payloads.OpenMap(""));
                     return 1;
                 }))
                 .then(literal("chronicle").executes(c -> {
@@ -73,11 +75,97 @@ public final class Commands {
                                 .executes(c -> jump(c.getSource(), ResourceLocationArgument.getId(c, "quest"), c.getSource().getPlayerOrException()))
                                 .then(argument("player", EntityArgument.player())
                                         .executes(c -> jump(c.getSource(), ResourceLocationArgument.getId(c, "quest"), EntityArgument.getPlayer(c, "player"))))))
+                .then(test())
                 .then(literal("setrep").requires(s -> s.hasPermission(2))
                         .then(argument("value", IntegerArgumentType.integer(-100, 100))
                                 .executes(c -> setRep(c.getSource().getPlayerOrException(), IntegerArgumentType.getInteger(c, "value")))
                                 .then(argument("player", EntityArgument.player())
                                         .executes(c -> setRep(EntityArgument.getPlayer(c, "player"), IntegerArgumentType.getInteger(c, "value")))))));
+    }
+
+    // ------------------------------------------------------------------ /halfagod test ... (operators): try the new things quickly
+    private static com.mojang.brigadier.builder.LiteralArgumentBuilder<CommandSourceStack> test() {
+        return literal("test").requires(s -> s.hasPermission(2))
+                .then(literal("dream")
+                        .executes(c -> dream(c.getSource(), ""))
+                        .then(argument("id", StringArgumentType.word())
+                                .suggests((c, b) -> {
+                                    for (com.google.gson.JsonObject d : StoryData.INSTANCE.dreams) {
+                                        b.suggest(d.get("id").getAsString());
+                                    }
+                                    StoryData.INSTANCE.specialDreams.keySet().forEach(b::suggest);
+                                    return b.buildFuture();
+                                })
+                                .executes(c -> dream(c.getSource(), StringArgumentType.getString(c, "id")))))
+                .then(literal("dreams").then(literal("reset").executes(c -> {
+                    RepData d = Reputation.data(c.getSource().getPlayerOrException());
+                    d.dreams.clear();
+                    d.lastDreamNight = -10;
+                    return ok(c.getSource(), "Dreams forgotten. The next full night's sleep can bring one (1 in 4).");
+                })))
+                .then(literal("secret")
+                        .then(argument("name", StringArgumentType.word())
+                                .suggests((c, b) -> {
+                                    for (com.google.gson.JsonObject l : StoryData.INSTANCE.secrets) {
+                                        b.suggest(l.get("key").getAsString());
+                                    }
+                                    return b.buildFuture();
+                                })
+                                .executes(c -> {
+                                    String key = StringArgumentType.getString(c, "name");
+                                    boolean found = Secrets.find(c.getSource().getPlayerOrException(), key, 20);
+                                    return ok(c.getSource(), found ? "Found the hidden questline \"" + key + "\"." : "Unknown, or already found: " + key);
+                                })))
+                .then(literal("trial")
+                        .executes(c -> ok(c.getSource(), Trial.testStart(c.getSource().getPlayerOrException())))
+                        .then(literal("status").executes(c -> ok(c.getSource(), Trial.status(c.getSource().getPlayerOrException()))))
+                        .then(literal("night").executes(c -> ok(c.getSource(), Trial.testDay(c.getSource().getPlayerOrException()))))
+                        .then(literal("escape").executes(c -> ok(c.getSource(), Trial.testEscape(c.getSource().getPlayerOrException()))))
+                        .then(literal("release").executes(c -> ok(c.getSource(), Trial.testRelease(c.getSource().getPlayerOrException()))))
+                        .then(literal("reset").executes(c -> {
+                            RepData d = Reputation.data(c.getSource().getPlayerOrException());
+                            d.trialActs.clear();
+                            d.convictions = 0;
+                            d.escapes = 0;
+                            return ok(c.getSource(), "The Watch has forgotten you (this act's trial can happen again).");
+                        })))
+                .then(literal("endcard").executes(c -> {
+                    ServerPlayer p = c.getSource().getPlayerOrException();
+                    PacketDistributor.sendToPlayer(p, new Payloads.OpenMap("story"));
+                    return ok(c.getSource(), "Opened \"Your Story\" (a preview until the story is really over).");
+                }))
+                .then(literal("codex")
+                        .then(argument("page", StringArgumentType.word())
+                                .suggests((c, b) -> {
+                                    for (String t : new String[]{"lore", "letters", "path", "dreams", "secrets", "trials", "story", "fates"}) {
+                                        b.suggest(t);
+                                    }
+                                    return b.buildFuture();
+                                })
+                                .executes(c -> {
+                                    PacketDistributor.sendToPlayer(c.getSource().getPlayerOrException(), new Payloads.OpenMap(StringArgumentType.getString(c, "page")));
+                                    return 1;
+                                })));
+    }
+
+    private static int dream(CommandSourceStack source, String id) throws com.mojang.brigadier.exceptions.CommandSyntaxException {
+        ServerPlayer p = source.getPlayerOrException();
+        com.google.gson.JsonObject d = id.isEmpty() ? Dreams.pick(p, Reputation.data(p)) : Dreams.byId(id);
+        if (d == null) {
+            source.sendFailure(Component.literal(id.isEmpty() ? "No dream left that fits where you are in the story." : "No dream called " + id));
+            return 0;
+        }
+        if (StoryData.INSTANCE.specialDreams.containsValue(d)) {
+            Dreams.send(p, d);
+        } else {
+            Dreams.dream(p, d);
+        }
+        return 1;
+    }
+
+    private static int ok(CommandSourceStack source, String text) {
+        source.sendSuccess(() -> Component.literal(text), false);
+        return 1;
     }
 
     private static int openStory(CommandSourceStack source) throws com.mojang.brigadier.exceptions.CommandSyntaxException {

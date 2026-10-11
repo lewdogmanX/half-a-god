@@ -40,6 +40,19 @@ public final class SettlementData extends SavedData {
         return root.getCompound(k);
     }
 
+    /** Every player with a record. */
+    public java.util.List<UUID> playerIds() {
+        java.util.List<UUID> out = new java.util.ArrayList<>();
+        for (String k : root.getAllKeys()) {
+            try {
+                out.add(UUID.fromString(k));
+            } catch (IllegalArgumentException ignored) {
+                // not a player
+            }
+        }
+        return out;
+    }
+
     /** A named section of this player's record (created if missing). */
     public CompoundTag section(UUID player, String name) {
         CompoundTag p = player(player);

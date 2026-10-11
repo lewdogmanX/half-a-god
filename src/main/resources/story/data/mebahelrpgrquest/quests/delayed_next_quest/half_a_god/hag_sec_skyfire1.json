@@ -1,0 +1,55 @@
+{
+  "title": "Sky and Fire",
+  "summary": "You carried something from the Aether into the Nether, and the Nether went quiet around you. Something down here recognises it. The silence leads toward a bastion.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "follow_the_silence",
+      "reach": "minecraft:bastion_remnant",
+      "radius": 20000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Deep in the bastion the piglins have painted a sun on the wall. Half of it is gold. Half of it is scratched out."
+    },
+    {
+      "id": "the_suns_blood",
+      "collect": "minecraft:gilded_blackstone",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Gilded blackstone: gold grown into stone. The piglins say it is where the sun bled when it fell."
+    },
+    {
+      "id": "carry_it_up",
+      "type": "leave_nether",
+      "stage": 2,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 900,
+    "items": {
+      "minecraft:gold_ingot": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_sec_skyfire2",
+      "delay_ticks": 1200,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sec_skyfire1_done"
+    ]
+  }
+}

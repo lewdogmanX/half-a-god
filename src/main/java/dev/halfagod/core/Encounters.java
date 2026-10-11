@@ -369,6 +369,7 @@ public final class Encounters {
                 player.addEffect(new MobEffectInstance(MobEffects.LUCK, 6000, 0));
                 say(player, "Hungry Pilgrim: he eats, then blesses you in a language you don't know. You feel lucky.", ChatFormatting.WHITE);
                 Reputation.change(player, 2, "you fed a pilgrim");
+                Secrets.onPilgrimFed(player);
                 level.playSound(null, target.blockPosition(), SoundEvents.AMETHYST_BLOCK_CHIME, SoundSource.NEUTRAL, 1f, 1.2f);
                 leave(level, target);
                 ACTIVE.remove(player.getUUID());
@@ -500,5 +501,6 @@ public final class Encounters {
         player.level().playSound(null, pos, SoundEvents.ELDER_GUARDIAN_CURSE, SoundSource.PLAYERS, 0.5f, 1.4f);
         say(player, "You kneel. The gold dulls to stone as something takes it, and gives you strength in return.", ChatFormatting.DARK_RED);
         Reputation.change(player, -4, "you prayed at a cult shrine");
+        Secrets.onPray(player);
     }
 }

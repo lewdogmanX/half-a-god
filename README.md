@@ -76,6 +76,12 @@ Mebahel's quest-map key opens the Half a God story map (or use `/halfagod map`).
 - **Now.** A note in the corner always shows the quest you're on and what to do next; click it to go there. If it's
   off screen, an arrow at the edge points to it.
 - **Acts.** The arrows and the row of diamonds at the top turn the page; acts you haven't reached stay dark.
+- **Margin notes.** Beside every main-story quest you've finished, your character has scribbled a note in the margin.
+  Its tone is set by your reputation at the moment you finished that quest (warm if you were Good or a Saint, flat if
+  Wavering, cold if Fallen or Wicked), so a player who turned halfway sees their notes turn too. The journal page shows
+  the note as well.
+- **Friends.** On a server, the footer shows the other players: which act they're in and who they've become (your
+  rivals, on the other side from you, in red when you hover).
 - **Controls.** Drag to move, scroll to zoom (or + and -), the arrow keys or A and D turn the page, Space jumps to
   where you are, C opens the Codex, Esc closes the journal page.
   Mebahel's old quest map is gone; Mebahel's Quest Journal (for abandoning quests and choosing what's tracked) is untouched.
@@ -86,8 +92,14 @@ Mebahel's quest-map key opens the Half a God story map (or use `/halfagod map`).
 - **Letters:** every letter Mara sent you, to read again.
 - **Your Path:** a chart of your reputation quest by quest across the acts, who you are now, and your rank in the
   Watch and the Gilded Hand with what the next rank needs.
+- **Dreams:** every dream you've had, to read again (appears after your first dream).
+- **Secrets:** the five hidden questlines. "Secrets found: 2 / 5", with the ones you haven't found shown as ???.
+- **Trials:** every time the Watch took you to court: what each witness said, your plea, the verdict, and how you got out.
+- **Your Story:** the end card: your ending and the half of the god you became, days, deaths, who you spared and
+  killed, Wardens, letters, dreams, secrets, trials, your rank and your three biggest choices. **Save image** puts it
+  in your screenshots folder to share. It opens by itself when the story ends.
 - **What Became of Them:** once the story is over, a page for everyone you judged, saying how their life turned out
-  because of what you chose. It opens by itself when the epilogue ends; `/halfagod fates` brings it back.
+  because of what you chose. `/halfagod fates` brings it back.
 
 Unread entries and letters have a red dot.
 
@@ -138,6 +150,58 @@ too early they tell you what to do first.
   and guards come from further away; a Captain gets one day or night. A Collector shakes down twice as much and bounty
   hunters come a quarter less often; the Hand's Favourite gets double Silas's cut and half the bounty hunters.
 
+## Dreams
+
+When you sleep through a whole night, about one night in four, you dream (never two nights running, never the same
+dream twice). The screen goes dark, a picture breathes in the middle, and a few lines appear one at a time. Click to
+see the rest, click again to wake. There are three kinds: the god's own past, told in order a dream at a time; omens
+about the act you're in; and echoes of choices you made coming back to you.
+
+## Hidden questlines
+
+Five questlines that aren't on the map until you find them. Each opens when you do something odd, with a title card
+("A hidden path opens"), and pays out in story: Codex pages and a fate of its own at the end. No items with powers.
+
+| Secret | How it opens |
+| --- | --- |
+| The Old Tongue | pray at three of the cult's golden shrines on the road (the first two whisper) |
+| The Last Pilgrim | feed three hungry pilgrims on the road, after you've met Brother Vael |
+| What the God Saw | have five dreams, then sleep a full night in the Aether |
+| Sky and Fire | carry anything from the Aether into the Nether |
+| Clean Hands | reach Act IV without killing a single villager or story character |
+
+## The Trial
+
+From Act II on, if you're Fallen or Wicked, the Watch can come for you in your sleep: once per act, on a random night
+(one in three). You wake in chains in the dock of the Watch's own court, a small dimension of its own. The judge hears
+witnesses, and every one tells something you really did. A witness you killed can't testify: the court only hears "the
+witness cannot be found". Then you plead:
+
+- **Guilty:** a day off the sentence.
+- **Not guilty:** walk free, or serve a day longer.
+- **Say nothing:** the court decides on the evidence.
+- **Pay a juror** (Gilded Hand rank and 16 emeralds from your things).
+
+Found guilty, you serve 1 to 5 days in an obsidian cell (more for a second conviction). Your things are kept as
+evidence. Each night you sleep in the cell is a day served, and dying puts you back in it. Ways out:
+
+- **Serve your time:** you walk out the same person you went in.
+- **Escape:** one block in the cell walls isn't quite right. Find it and break through. The Hand respects it (it counts
+  toward your Hand rank); the Watch puts a higher price on your head (more bounty hunters).
+- **Be broken out:** at Collector of the Hand or above, Silas's men come on the second night.
+
+However you get out, you wake up back in your own bed with all your things.
+
+## Multiplayer
+
+Everyone plays their own story; nothing forces a fight.
+
+- **One Ashford.** Ashford follows whoever is furthest along; the others share it.
+- **See each other.** The map's footer and the Codex show the other players' acts and reputations.
+- **Gossip.** Mara's letters sometimes end with news of another player.
+- **Rivals.** A Watch duty done while a Fallen or Wicked player is online (or a Hand contract while a Good one is) is
+  noted with a line on the action bar and 2 extra emeralds.
+
 ## What the mod adds to the story
 
 - **Choices with three or four answers:**
@@ -181,6 +245,23 @@ too early they tell you what to do first.
 | `/halfagod story` or `/halfagod unlockall` | operators | opens the whole story: every act and quest, what it needs and where it leads, with a button to start any quest |
 | `/halfagod jump <quest> [player]` | operators | start any story quest |
 | `/halfagod setrep <value> [player]` | operators | set reputation |
+
+**Testing (operators):**
+
+| Command | What |
+| --- | --- |
+| `/halfagod test dream` | dream now (a dream that fits where you are) |
+| `/halfagod test dream <id>` | a particular dream (tab completes; `kidnap`, `godsaw`, `release`, `escape`, `breakout` are the special ones) |
+| `/halfagod test dreams reset` | forget your dreams |
+| `/halfagod test secret <tongue\|pilgrim\|godsaw\|skyfire\|clean>` | find a hidden questline now |
+| `/halfagod test trial` | the Watch takes you to court now (any reputation, any act) |
+| `/halfagod test trial status` | where you are with the Watch and whether a trial is due |
+| `/halfagod test trial night` | serve one night of your sentence |
+| `/halfagod test trial escape` | where the loose block is |
+| `/halfagod test trial release` | let yourself out (things and bed back) |
+| `/halfagod test trial reset` | the Watch forgets you (this act's trial can happen again) |
+| `/halfagod test endcard` | open "Your Story" (a preview before the ending) |
+| `/halfagod test codex <page>` | open the Codex on a page |
 
 ## Building
 

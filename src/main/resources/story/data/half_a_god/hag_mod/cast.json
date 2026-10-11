@@ -582,6 +582,41 @@
    "structure": "minecraft:villages"
   },
   {
+   "quest": "mebahelrpgrquest:hag_sec_tongue1",
+   "stage": 2,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_sec_tongue2",
+   "stage": 2,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_sec_pilgrim2",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_sec_godsaw2",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_sec_skyfire2",
+   "stage": 0,
+   "name": "Village Elder",
+   "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
    "quest": "mebahelrpgrquest:hag_x1_the_informant_after",
    "stage": 0,
    "name": "Village Elder",
@@ -1648,6 +1683,56 @@
    [
     1,
     "Talk to Old Aurel"
+   ]
+  ],
+  "mebahelrpgrquest:hag_sec_tongue1": [
+   [
+    0,
+    "Collect 1 x writable book"
+   ],
+   [
+    1,
+    "Wait for next day"
+   ],
+   [
+    2,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_sec_tongue2": [
+   [
+    0,
+    "Reach a believer house"
+   ],
+   [
+    1,
+    "Wait for next day"
+   ],
+   [
+    2,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_sec_pilgrim2": [
+   [
+    0,
+    "Collect 16 x bread"
+   ],
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_sec_godsaw2": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_sec_skyfire2": [
+   [
+    0,
+    "Talk to Village Elder"
    ]
   ],
   "mebahelrpgrquest:hag_x1_the_informant_after": [

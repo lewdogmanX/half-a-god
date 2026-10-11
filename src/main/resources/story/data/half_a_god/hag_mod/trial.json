@@ -1,0 +1,305 @@
+{
+ "charges": [
+  {
+   "id": "peddler",
+   "trait": "peddler_slain",
+   "weight": 1,
+   "witness": "The Village Elder",
+   "testimony": "The Smiling Peddler was a liar and worse. But they cut him down in the market road, in front of the children.",
+   "silenced": []
+  },
+  {
+   "id": "corwin",
+   "trait": "corwin_slain",
+   "weight": 2,
+   "witness": "Reeve Halden",
+   "testimony": "Corwin stole a sack of grain for his sister's children. This one killed him for it. I buried him myself.",
+   "silenced": [
+    "hag_halden_killed_by_the_hand"
+   ]
+  },
+  {
+   "id": "orsk",
+   "trait": "orsk_executed",
+   "weight": 1,
+   "witness": "Dunn the Deserter",
+   "testimony": "Orsk was on his knees. He'd dropped his blade. They executed him anyway. I was there. I saw it.",
+   "silenced": [
+    "hag_cruelty_1"
+   ]
+  },
+  {
+   "id": "dunn",
+   "trait": "hag_cruelty_1",
+   "weight": 2,
+   "witness": "Orsk the Tally-Keeper",
+   "testimony": "Dunn threw down his crossbow at Ashford. He was done fighting. This one killed him for it.",
+   "silenced": [
+    "orsk_executed"
+   ]
+  },
+  {
+   "id": "tobin",
+   "trait": "hag_cruelty_2",
+   "weight": 2,
+   "witness": "Tobin the Scavenger",
+   "testimony": "I had one skull to sell and two girls to feed. They took the skull. One of my girls didn't see the spring.",
+   "silenced": []
+  },
+  {
+   "id": "ysolde",
+   "trait": "hag_cruelty_3",
+   "weight": 1,
+   "witness": "Sister Ysolde",
+   "testimony": "I painted that eye forty years ago, when I was young and stupid. I was punished for it in front of my whole chapel.",
+   "silenced": []
+  },
+  {
+   "id": "hale",
+   "trait": "hag_cruelty_4",
+   "weight": 2,
+   "witness": "The Librarian",
+   "testimony": "Brother Hale was a scholar. He was going to teach the Old Tongue to the world. They ended him.",
+   "silenced": []
+  },
+  {
+   "id": "mott",
+   "trait": "hag_cruelty_5",
+   "weight": 1,
+   "witness": "A Harbour Lad",
+   "testimony": "Saltjaw Mott was a wrecker, aye. But we watched them drown him off the rocks like a sack of cats.",
+   "silenced": []
+  },
+  {
+   "id": "ansel",
+   "trait": "hag_cruelty_6",
+   "weight": 2,
+   "witness": "The Midwife",
+   "testimony": "Ansel was sick. He was trying. I saw this one put him down like a dog.",
+   "silenced": [
+    "midwife_slain"
+   ]
+  },
+  {
+   "id": "garret",
+   "trait": "hag_cruelty_7",
+   "weight": 1,
+   "witness": "Reeve Halden",
+   "testimony": "Garret was Ashford's to judge. They took it out of my hands and judged him themselves.",
+   "silenced": [
+    "hag_halden_killed_by_the_hand"
+   ]
+  },
+  {
+   "id": "wick",
+   "trait": "hag_cruelty_x1_the_informant",
+   "weight": 2,
+   "witness": "Nell, Wick's Sister",
+   "testimony": "My brother sold patrol times for bread. They killed him on the village green. I came to see their face. I'll never forget it.",
+   "silenced": []
+  },
+  {
+   "id": "gorran",
+   "trait": "hag_cruelty_x2_the_bastille_warden",
+   "weight": 1,
+   "witness": "Brother Vael",
+   "testimony": "Gorran kept the Bastille's keys and gave the sick his bread. I know. I paid him. They left him dead with the keys in his hand.",
+   "silenced": [
+    "vael_slain",
+    "hag_vael_branded"
+   ]
+  },
+  {
+   "id": "ossian",
+   "trait": "hag_cruelty_x3_the_third_skull",
+   "weight": 1,
+   "witness": "Brother Vael",
+   "testimony": "Ossian sold skulls, like I counted them. Now his own is on a Bone Choir altar.",
+   "silenced": [
+    "vael_slain",
+    "hag_vael_branded"
+   ]
+  },
+  {
+   "id": "pilgrim_sun",
+   "trait": "hag_cruelty_x4_the_pilgrim_of_the_sun",
+   "weight": 1,
+   "witness": "Wren the Apiarist",
+   "testimony": "The Pilgrim of the Sun was harmless. They took his charm and sold it. The bees wouldn't go near them after.",
+   "silenced": []
+  },
+  {
+   "id": "garrison",
+   "trait": "hag_cruelty_x5_the_last_garrison_man",
+   "weight": 2,
+   "witness": "Ilse of the Snowy Village",
+   "testimony": "My husband was in the ice ten years. He came back, and this one sent him back to the snow.",
+   "silenced": []
+  },
+  {
+   "id": "vael",
+   "trait": "vael_slain",
+   "weight": 2,
+   "witness": "Ossian the Skull-Trader",
+   "testimony": "Brother Vael was a counter, not a killer. They killed him in his own fortress.",
+   "silenced": [
+    "hag_cruelty_x3_the_third_skull"
+   ]
+  },
+  {
+   "id": "vael_branded",
+   "trait": "hag_vael_branded",
+   "weight": 2,
+   "witness": "Brother Vael",
+   "testimony": "(The Captain calls Brother Vael. Nobody answers. Branded men don't live long once the cult finds them.)",
+   "silenced": [
+    "hag_vael_branded"
+   ]
+  },
+  {
+   "id": "midwife",
+   "trait": "midwife_slain",
+   "weight": 2,
+   "witness": "Ansel the Blood-Drinker",
+   "testimony": "She was trying to make it right. She was teaching me to stop. They killed her beside her own pits.",
+   "silenced": [
+    "hag_cruelty_6"
+   ]
+  },
+  {
+   "id": "pit",
+   "trait": "hag_midwife_kept_pit",
+   "weight": 2,
+   "witness": "The Cleric",
+   "testimony": "There is still a blood pit under that church. They let her keep it. 'For research.' It is not empty.",
+   "silenced": []
+  },
+  {
+   "id": "pell",
+   "trait": "gt_silenced_the_witness",
+   "weight": 3,
+   "witness": "Pell",
+   "testimony": "(The Captain calls Pell, the grower who was going to testify against the cartel. Nobody in the valley knows where he went.)",
+   "silenced": [
+    "gt_silenced_the_witness"
+   ]
+  },
+  {
+   "id": "vasco",
+   "trait": "hag_vasco_betrayal",
+   "weight": 1,
+   "witness": "Don Vasco",
+   "testimony": "We shook hands. Then they sold me out. I'm a criminal, your honour, but I keep my word.",
+   "silenced": [
+    "gt_vasco_killed"
+   ]
+  },
+  {
+   "id": "journal",
+   "trait": "hag_lib_sold",
+   "weight": 2,
+   "witness": "The Librarian",
+   "testimony": "Thirty years I waited for that journal. They sold it to the Gilded Hand before I'd read the first page.",
+   "silenced": []
+  },
+  {
+   "id": "faithful",
+   "trait": "hag_faithful_ended",
+   "weight": 2,
+   "witness": "Brother Hale",
+   "testimony": "They were beaten. They were kneeling. They were ended anyway.",
+   "silenced": [
+    "hag_cruelty_4"
+   ]
+  },
+  {
+   "id": "morrow",
+   "trait": "took_the_gold",
+   "weight": 1,
+   "witness": "Morrow the Assayer",
+   "testimony": "Oh, they took the Hand's gold, your honour. I weighed it myself. Every coin.",
+   "silenced": [
+    "morrow_slain"
+   ]
+  }
+ ],
+ "script": {
+  "open": [
+   [
+    "The Judge",
+    "This court of the Watch is in session. The accused stands before us in chains."
+   ],
+   [
+    "The Watch Captain",
+    "We found them asleep, your honour. They didn't wake until we'd tied them. We have witnesses."
+   ],
+   [
+    "The Judge",
+    "Then let us hear them."
+   ]
+  ],
+  "silent_witness": "The Captain calls {witness}. Silence. 'The witness cannot be found, your honour.'",
+  "villagers": [
+   "The Families",
+   "{n} of our people were killed by the accused. We have their names. We will read them if you want."
+  ],
+  "stores": [
+   "A Shopkeeper",
+   "They broke into our stores. {n} chests, emptied. Winter stores, some of them."
+  ],
+  "hand": [
+   "A Watchman",
+   "I watched them collect for the Gilded Hand. {n} times that I saw. Probably more."
+  ],
+  "shrines": [
+   "A Shepherd",
+   "I saw them kneel at a golden eye on the road. They prayed to it, your honour. It answered."
+  ],
+  "plea": [
+   "The Judge",
+   "You have heard the witnesses. How do you plead?"
+  ],
+  "no_case": [
+   "The Judge",
+   "There is no case here. Whoever brought this one in wasted the court's night. Take them home."
+  ],
+  "acquitted": [
+   "The Judge",
+   "The court is not convinced. The accused is free to go. Do not make us regret it."
+  ],
+  "guilty": [
+   "The Judge",
+   "Guilty. The accused will serve {days} in the obsidian cells."
+  ],
+  "bribe_worked": [
+   "The Judge",
+   "The jury cannot agree. One of them can't seem to stop looking at the floor. The accused is free to go."
+  ],
+  "bribe_failed": [
+   "The Judge",
+   "The jury is agreed. Even the one who was paid. Guilty: {days} in the obsidian cells."
+  ]
+ },
+ "pleas": [
+  {
+   "id": "guilty",
+   "label": "Guilty",
+   "hint": "A shorter sentence, if the court has a case."
+  },
+  {
+   "id": "not_guilty",
+   "label": "Not guilty",
+   "hint": "A gamble: walk free, or serve longer."
+  },
+  {
+   "id": "silent",
+   "label": "Say nothing",
+   "hint": "Let the court decide on the evidence alone."
+  },
+  {
+   "id": "bribe",
+   "label": "Pay a juror (16 emeralds from your things)",
+   "hint": "The Gilded Hand knows which juror. Needs Hand rank and 16 emeralds."
+  }
+ ]
+}

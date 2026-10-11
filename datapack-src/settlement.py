@@ -226,6 +226,8 @@ def produced_traits():
     for c in mod_tables.CHOICES:
         for o in c["options"]:
             out.add(o["trait"])
+    import hidden_lines
+    out |= hidden_lines.MOD_TRAITS
     return out
 
 

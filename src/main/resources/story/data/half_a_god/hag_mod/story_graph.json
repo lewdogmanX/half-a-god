@@ -1878,6 +1878,76 @@
    "kill": [],
    "book": false
   },
+  "mebahelrpgrquest:hag_sec_tongue1": {
+   "next": [
+    "mebahelrpgrquest:hag_sec_tongue2"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sec_tongue2": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sec_pilgrim1": {
+   "next": [
+    "mebahelrpgrquest:hag_sec_pilgrim2"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sec_pilgrim2": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sec_godsaw1": {
+   "next": [
+    "mebahelrpgrquest:hag_sec_godsaw2"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sec_godsaw2": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sec_skyfire1": {
+   "next": [
+    "mebahelrpgrquest:hag_sec_skyfire2"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sec_skyfire2": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_sec_clean1": {
+   "next": [
+    "mebahelrpgrquest:hag_sec_clean2"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
+  "mebahelrpgrquest:hag_sec_clean2": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
   "mebahelrpgrquest:hag_x1_the_informant": {
    "next": [],
    "spare": [

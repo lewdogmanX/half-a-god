@@ -208,6 +208,49 @@ public final class Settlement {
         String want = stage + (evil ? "e" : "g");
         SettlementData data = SettlementData.get(player.getServer());
         CompoundTag a = data.section(id, "ashford");
+        a.putInt("stage", stage);
+        // multiplayer: one Ashford per village. Whoever is furthest along decides what it looks like; the others share it.
+        CompoundTag shared = null;
+        for (UUID other : data.playerIds()) {
+            if (other.equals(id)) {
+                continue;
+            }
+            CompoundTag o = data.player(other).getCompound("ashford");
+            CastData.Place op = CastData.get(player.getServer()).place(other, "ashford");
+            if (!o.contains("anchor") || op == null || !op.dimension().equals(place.dimension())
+                    || BlockPos.of(o.getLong("anchor")).distSqr(place.pos()) > 200 * 200
+                    || (a.contains("anchor") && a.getLong("anchor") != o.getLong("anchor"))) {
+                continue; // a different village, or (from before) a lot of your own: leave both alone
+            }
+            int theirs = o.contains("stage") ? o.getInt("stage") : o.getString("built").isEmpty() ? 0 : o.getString("built").charAt(0) - '0';
+            boolean theyBuilt = !o.getString("built").isEmpty();
+            if (theirs > stage || (theirs == stage && theyBuilt && a.getString("built").isEmpty())) {
+                a.putString("follows", other.toString());
+                data.setDirty();
+                return; // they're further along: their Ashford stands
+            }
+            shared = o;
+        }
+        a.remove("follows");
+        if (shared != null && shared.contains("anchor")) {
+            // take over the shared lot: build on their anchor, and look after the blocks they put there
+            if (!a.contains("anchor") || a.getLong("anchor") != shared.getLong("anchor")) {
+                a.putLong("anchor", shared.getLong("anchor"));
+                a.putBoolean("levelled", true);
+                a.remove("built");
+            }
+            CompoundTag mine = a.getCompound("placed");
+            CompoundTag theirs = shared.getCompound("placed");
+            for (String k : theirs.getAllKeys()) {
+                if (!mine.contains(k)) {
+                    mine.putString(k, theirs.getString(k));
+                }
+            }
+            a.put("placed", mine);
+            shared.put("placed", new CompoundTag());
+            shared.putString("built", "");
+            data.setDirty();
+        }
         if (want.equals(a.getString("built"))) {
             return;
         }

@@ -7,6 +7,7 @@ import re
 from collections import defaultdict
 from lib import QUESTS, EXTRA, qid
 import base_quests
+import margin_notes
 
 CHAPTERS = [
     ("prologue", "Prologue", "The Bell That Won't Ring"),
@@ -41,13 +42,13 @@ RULES = [
     ("z", "end", "main"), ("g1_", "end", "main"), ("g2_", "end", "main"), ("b1_", "end", "main"), ("b2_", "end", "main"),
     ("b3_", "end", "main"), ("rep_end", "end", "road"),
     ("et", "after", "main"), ("ha", "after", "main"),
-    ("lp", "anytime", "pages"), ("ru", "anytime", "choices"),
+    ("lp", "anytime", "pages"), ("ru", "anytime", "choices"), ("sec_", "anytime", "secrets"),
 ]
 LANES = [
     ("main", "Main story", 0xF2C14E), ("arcane", "The Arcane Road", 0x9B7FE0), ("eyes", "The Eye Hunt", 0x6FC7C0),
     ("underworld", "The Blackwater Cartel", 0x5FAF5F), ("bumblezone", "The Honey Crown", 0xF0B030),
     ("legionary", "The Golden Legion", 0xE0A040), ("road", "The Reputation Road", 0x8FD68A),
-    ("choices", "Choices That Come Back", 0xE07F6F), ("pages", "Lost Pages", 0xB8B2A6),
+    ("choices", "Choices That Come Back", 0xE07F6F), ("secrets", "Secrets", 0x9B6AD0), ("pages", "Lost Pages", 0xB8B2A6),
     ("mebahel", "Mebahel's Questlines", 0x7FB8F0), ("side", "Side Quests", 0xA8A296),
 ]
 GATE_CHAPTER = {"the_first_letter": "prologue", "a1_ashford_burns": "act1", "w1_the_skull_market": "act2",
@@ -105,6 +106,13 @@ def build(goal_text):
         nodes[i] = {"id": i, "title": q["title"], "chapter": ch, "lane": lane, "summary": q["summary"],
                     "goals": [goal_text(gl) for gl in q["goals"]], "stages": [gl.get("stage", 0) for gl in q["goals"]],
                     "icon": _icon(q, "minecraft:paper"), "choice": "choice" in q}
+        if lane == "main":
+            # what you scribbled beside it: (good, wavering, evil), picked by your reputation when you finished it
+            assert k in margin_notes.N, f"main-story quest {k} has no margin note"
+            nodes[i]["note"] = list(margin_notes.N[k])
+            assert all(len(x) <= 46 for x in margin_notes.N[k]), f"margin note too long: {k}"
+        elif k in margin_notes.N:
+            raise SystemExit(f"margin note for {k}, which isn't on the main road")
         fl = q.get("flow", {})
         for kind, d in (("next", fl.get("delayed_next_quest")), ("spare", fl.get("on_spare", {}).get("delayed_next_quest")),
                         ("kill", fl.get("on_kill", {}).get("delayed_next_quest"))):
@@ -235,8 +243,8 @@ def build(goal_text):
         ids = {p["id"] for p in placed}
         chapters.append({
             "id": cid, "name": name, "subtitle": sub, "lanes": lanes_used,
-            "nodes": [dict({k: p[k] for k in ("id", "title", "lane", "col", "row", "summary", "goals", "stages", "icon", "choice")},
-                           group=p.get("line", "")) for p in placed],
+            "nodes": [dict({k: p[k] for k in ("id", "title", "lane", "col", "row", "summary", "goals", "stages", "icon", "choice") if k in p},
+                           group=p.get("line", ""), **({"note": p["note"]} if "note" in p else {})) for p in placed],
             "edges": sorted([[a, b, k] for a, b, k in edges if a in ids and b in ids]),
         })
     return {"chapters": chapters}

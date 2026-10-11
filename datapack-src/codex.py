@@ -110,6 +110,10 @@ entry("Wardens", "Ashlord, the Infernal Dragon", "f2_dragon_slayer",
       "The last Warden, and once the Chariot's own mount. Where: the Dragon Tower. "
       "The smith said nothing alive was as hard as its bones.")
 
+# ---- Secrets (shown on the Codex's Secrets page, not with the lore)
+import hidden_lines as _hidden
+_hidden.codex_entries(entry)
+
 
 def build():
     return {"entries": E}

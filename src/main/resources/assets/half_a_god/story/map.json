@@ -46,7 +46,12 @@
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Who is Mara? She writes like she knows me.",
+      "A letter from a stranger. Worth a look.",
+      "An old woman wants a hero. Does she pay?"
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_p1_the_bell",
@@ -67,7 +72,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Their bell rings again. So do the children.",
+      "Got the bell back. Not my bell.",
+      "The bell's back. I charged them for it."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_p2_winter_stores",
@@ -90,7 +100,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Full granary. Nobody starves this winter.",
+      "Wheat, potatoes, beef. Done.",
+      "Fed them. They owe me now."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_p3_the_shepherd",
@@ -111,7 +126,12 @@
      ],
      "icon": "minecraft:clock",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Tam's sheep have a shepherd again.",
+      "Whatever took Tam is dead. So is Tam.",
+      "The hills are mine at night now."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_p4_eye_on_chapel",
@@ -130,7 +150,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Scrubbed the eye off. It's still watching.",
+      "A golden eye. Someone's watching.",
+      "Real gold paint. Shame to scrub it."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_p5_raise_the_watch",
@@ -151,7 +176,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "A tower to keep them safe. Good stone.",
+      "They have a tower now. Fine.",
+      "A tower. Now they'll see me coming too."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_p6_market_road",
@@ -174,7 +204,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The farmer sold his harvest. He smiled.",
+      "Road's clear. For now.",
+      "Cleared the road. Took a toll."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_p7_gold_at_double_weight",
@@ -191,7 +226,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": true,
-     "group": ""
+     "group": "",
+     "note": [
+      "He smiled the whole time. I didn't.",
+      "The peddler. Whatever he was.",
+      "He paid double. I'd have taken triple."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_p7b_peddlers_debt",
@@ -208,7 +248,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "His friends came. I wish they hadn't.",
+      "'Paid for in advance.' Paid by whom?",
+      "Debt collectors. Collected them instead."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_p7s_the_peddlers_gift",
@@ -225,7 +270,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "A cult book. The elder wept reading it.",
+      "He left a book. I didn't like it.",
+      "Kept the book. Gold is faith made solid."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_p8_pillager_moon",
@@ -252,7 +302,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The village held. Every one of them.",
+      "Raiders came. Raiders went.",
+      "Good fight. Better loot."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_p9_who_pays_in_gold",
@@ -273,7 +328,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Someone paid for that raid. I'll find them.",
+      "Gold buys raids. Note that.",
+      "Gold buys raids. Noted. Fondly."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_x1_the_informant",
@@ -881,7 +941,12 @@
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Too late. I was too late for Ashford.",
+      "Ashford burned. Next village over.",
+      "Ashford burned. Not my village."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a2_what_was_left",
@@ -904,7 +969,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Bread and blankets. Never enough.",
+      "Brought supplies. They'll last a while.",
+      "Charity. They'd better remember it."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a3_roof_and_hearth",
@@ -927,7 +997,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Walls again. Halden almost smiled.",
+      "Walls up. Raiders will find walls.",
+      "I built their walls. I'll want rent."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a4_refugee_road",
@@ -948,7 +1023,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Two families safe at my door.",
+      "Got them here. Mostly in one piece.",
+      "Escort duty. Should've charged."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a5_beneath_the_pipes",
@@ -967,7 +1047,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The pipes stank of fear. Kept going.",
+      "Rusty pipes. Rusty cult.",
+      "Clever, the pipes. I'll remember them."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a6_believers_house",
@@ -990,7 +1075,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The Preacher prayed for them. I won't.",
+      "Found the house. Found the ledger.",
+      "Nice house. Quiet. Good for business."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a7_the_bastille",
@@ -1013,7 +1103,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Fourteen men. I'll bring every one home.",
+      "Cells for a hundred. Who builds that?",
+      "Cells for a hundred. Someone thinks big."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a8_ravagers_horn",
@@ -1032,7 +1127,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "No ravager runs anyone down tonight.",
+      "One horn. Two dead ravagers.",
+      "A fine horn. A finer trophy."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a9_open_the_cells",
@@ -1051,7 +1151,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Doors open. Some of them even walked.",
+      "Jailers dead. Prisoners free.",
+      "Freed them. Grateful men are useful."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a9i_the_invokers_fort",
@@ -1072,7 +1177,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The Invoker gave orders. Not any more.",
+      "The sorcerer's fort is quiet now.",
+      "The Invoker had taste. And gold."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a10_burning_door",
@@ -1091,7 +1201,12 @@
      ],
      "icon": "minecraft:bricks",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Through the fire, after them.",
+      "Built a portal. Stepped through.",
+      "The Nether. Smells like money."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a11_chains_at_the_fortress",
@@ -1112,7 +1227,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Broke the chains. My hands shook.",
+      "Fortress cleared. Survivors found.",
+      "Wither skeletons. Worth every skull."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a12_brother_vael",
@@ -1129,7 +1249,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": true,
-     "group": ""
+     "group": "",
+     "note": [
+      "Vael counts. I hope he counts the cost.",
+      "Vael. Steward. Accountant of souls.",
+      "Vael and I understand each other."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a12k_the_stewards_guard",
@@ -1146,7 +1271,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "His guard wanted revenge. I'm sorry.",
+      "The guard came. The guard went.",
+      "Loyal men. Shame about them."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a12s_vaels_map",
@@ -1163,7 +1293,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Spared him. He drew me a map. Fair.",
+      "A map in the netherrack. Useful.",
+      "His gold route. My gold route."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a13_tears_for_a_ward",
@@ -1182,7 +1317,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Ghast tears for healing. Strange medicine.",
+      "Tears delivered. Mara's orders.",
+      "Ghast tears. Expensive. Noted."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a14_night_of_the_faithful",
@@ -1205,7 +1345,12 @@
      ],
      "icon": "minecraft:clock",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "They came for the village. Found me.",
+      "The Faithful came. I was ready.",
+      "They came at night. So do I."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_a15_one_of_seven",
@@ -1222,7 +1367,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "'For now,' I told them. I hated it.",
+      "It's over. For now.",
+      "Over? I'm only getting started."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_w0_two_roads_meet",
@@ -1239,7 +1389,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Steel and spell. Same name: the Chariot.",
+      "Both roads end at the Chariot.",
+      "The Chariot. Now that's a patron."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_i1_the_priests_warning",
@@ -2171,7 +2326,12 @@
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Skulls for sale. Not if I can help it.",
+      "Three skulls make a Wither. Noted.",
+      "Skulls fetch a price. Interesting."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_w2_smite_the_dead",
@@ -2192,7 +2352,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "A weapon for the dead. Let them rest.",
+      "New blade. Old enemies.",
+      "A blade that kills the dead twice."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_w3_the_skull_harvest",
@@ -2211,7 +2376,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Every skull I take is one they can't.",
+      "Thinned the skeletons. Kept count.",
+      "Harvested. Kept a few skulls."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_w4_hold_the_black_bridge",
@@ -2230,7 +2400,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Held the bridge. Barely.",
+      "Choir-Master dead. Bridge held.",
+      "Held the bridge. Enjoyed it."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_w5_a_grave_for_a_nail",
@@ -2251,7 +2426,12 @@
      ],
      "icon": "minecraft:bricks",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "One of seven Wardens. Seven.",
+      "A grave and a Warden. Busy day.",
+      "Seven Wardens. Seven prizes."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_w6_the_withered_crown",
@@ -2268,7 +2448,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The Wither is dead. The sky went red.",
+      "Wither down. Star in hand.",
+      "A Nether Star. Mine, really."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_w7_a_light_they_cannot_dim",
@@ -2285,7 +2470,12 @@
      ],
      "icon": "minecraft:bricks",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "A beacon over home. Let them see it.",
+      "Beacon's lit. Nice light.",
+      "My beacon. Over my village."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_w8_six_remain",
@@ -2302,7 +2492,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Six remain. I'll be ready.",
+      "Six more. Fine.",
+      "Six more prizes."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_lg1_the_golden_legion",
@@ -3147,7 +3342,12 @@
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "A light from the pit. Mara lied.",
+      "Light in the sky. Mara says ignore it.",
+      "Mara keeps secrets. So do I."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_h2_hostile_paradise",
@@ -3168,7 +3368,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Heaven is empty. Who emptied it?",
+      "The Aether. Pretty. Empty. Odd.",
+      "Heaven, unguarded. Interesting."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_h3_do_you_believe_in_magic",
@@ -3187,7 +3392,12 @@
      ],
      "icon": "minecraft:bricks",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "An altar, and better tools. Thank you, sky.",
+      "Zanite. Better than iron.",
+      "Their altar works for anyone. Even me."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_h4_cockatrice_nights",
@@ -3206,7 +3416,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Thinned the beasts. Didn't like it.",
+      "Fewer cockatrices now.",
+      "Wild beasts. Wilder hunter."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_h5_the_bronze_halls",
@@ -3229,7 +3444,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The halls remember. So will I.",
+      "Bronze Dungeon cleared.",
+      "Bronze. Not gold. Still."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_h6_like_a_bossaru",
@@ -3246,7 +3466,12 @@
      ],
      "icon": "minecraft:bricks",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "A road of cloud. I walked on sky.",
+      "Cloud road built. Don't look down.",
+      "My road. In the sky. Ha."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_h7_medals_of_the_silver_court",
@@ -3269,7 +3494,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Ten medals. She knew the truth.",
+      "Ten medals for the Queen. Earned.",
+      "Medals. Shiny. Pocketed."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_h8_dethroned",
@@ -3286,7 +3516,12 @@
      ],
      "icon": "minecraft:bricks",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "A cairn for the Valkyries. They earned it.",
+      "Built the cairn. Holystone's heavy.",
+      "Built their cairn. They'd hate me."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_h9_extinguished",
@@ -3305,7 +3540,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The Sun Spirit threw them down. Why?",
+      "Azriel. Maraal. Remember the names.",
+      "Snuffed out a sun. Felt good."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_h10_fireproof",
@@ -3322,7 +3562,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Maraal. I can't stop thinking of it.",
+      "Told someone. They didn't believe me.",
+      "Maraal. Mara. Hm."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_i5_the_dead_king",
@@ -4100,7 +4345,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Two died before me. Going anyway.",
+      "Their bones. My road.",
+      "Two failed. I won't."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_e1_the_librarians_request",
@@ -4121,7 +4371,12 @@
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The Librarian. Thirty years of angles.",
+      "Eyes for the End. Books for her.",
+      "She reads the Old Tongue. Useful."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_e3_the_road_underground",
@@ -4144,7 +4399,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Kept the library from the cult.",
+      "Stronghold found. Cult too.",
+      "Their library. My library."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_e4_the_warden_journal",
@@ -4161,7 +4421,12 @@
      ],
      "icon": "minecraft:book",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The journal. Signed M.",
+      "Found the journal first.",
+      "A journal worth a fortune."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_e5_free_the_end",
@@ -4178,7 +4443,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The dragon's free now. So is the End.",
+      "Dragon dead. Second Warden.",
+      "A dragon. Dead. By my hand."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_e6_edge_of_the_world",
@@ -4197,7 +4467,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The cult reached even here. Even here.",
+      "End City. The cult was here.",
+      "The edge of the world. Mine to see."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_e7_the_nether_is_singing",
@@ -4214,7 +4489,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The Nether sings. It sounds like grief.",
+      "The Nether sings. Not well.",
+      "Let it sing. I'm listening."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_ea1_the_old_eye",
@@ -4965,7 +5245,12 @@
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Fires lit in the snow village.",
+      "Cold village. Warmer now.",
+      "They begged for firewood. I sold it."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_s2_the_frozen_garrison",
@@ -4988,7 +5273,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Laid the soldiers to rest. They saluted.",
+      "The garrison rests. Skor next.",
+      "Frozen soldiers. Easy pickings."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_s3_lost_in_the_snow",
@@ -5005,7 +5295,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Their grandfathers can rest now.",
+      "Skor dead. Village told.",
+      "No snow today. My doing."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_d1_the_buried_well",
@@ -5026,7 +5321,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Milk for the sick. The well breathes.",
+      "Desert village. Strange well.",
+      "Sick villagers pay anything."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_d2_the_nest_road",
@@ -5047,7 +5347,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Sirok is dead. The sand is quiet.",
+      "Sandworm down. Nest cleared.",
+      "A big sandworm. Dead."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_d3_the_beast_below",
@@ -5064,7 +5369,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "They'll dig their well out. Clean water.",
+      "Told them. They can dig.",
+      "Their water. Their problem now."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_c1_nets_and_knives",
@@ -5085,7 +5395,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "A dock rebuilt. Boats again.",
+      "Fixed the dock.",
+      "Fixed their dock. Charged by the plank."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_c2_the_tidecaller",
@@ -5106,7 +5421,12 @@
      ],
      "icon": "minecraft:clock",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Held the beach. Nobody drowned tonight.",
+      "Drowned came. Drowned went.",
+      "The tide answers to me now."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_c3_the_black_ship",
@@ -5131,7 +5451,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The black ship sank. The harbour cheered.",
+      "Kraken dead. Ship sunk.",
+      "A ship full of treasure. Was."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_c4_terror_of_the_depths",
@@ -5148,7 +5473,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Forty years of fear, gone.",
+      "Told the fishermen. Done.",
+      "They can fish. For a fee."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_u1_the_soul_guard",
@@ -5171,7 +5501,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Helvar fought like he wanted to lose.",
+      "Underworld Arena cleared.",
+      "A knight. A good fight."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_u2_helvars_oath",
@@ -5188,7 +5523,12 @@
      ],
      "icon": "minecraft:book",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "'If I fall, the door will open.' Oh no.",
+      "His oath. A door. Which door?",
+      "An oath. A door. Open it."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_u3_back_into_hell",
@@ -5205,7 +5545,12 @@
      ],
      "icon": "minecraft:paper",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Out of the Underworld. It's following.",
+      "Out. Mostly.",
+      "Hell was hospitable."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_f1_the_last_road",
@@ -5228,7 +5573,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "His mount, once. Sad, somehow.",
+      "Ashlord. Last Warden.",
+      "A dragon's bones. Priceless."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_f2_dragon_slayer",
@@ -5245,7 +5595,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The smith wept at the bones.",
+      "Bones shown. Bones returned.",
+      "Dragon slayer. Has a ring to it."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_f3_unbound",
@@ -5262,7 +5617,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Seven dead. Why don't I feel safer?",
+      "All seven Wardens. Done.",
+      "Seven. All mine."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_br1_the_watch_needs_eyes",
@@ -6654,7 +7014,12 @@
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Blood in the wells. Children drink there.",
+      "Blood in the water.",
+      "Blood is a currency too."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v2_the_sinful_church",
@@ -6675,7 +7040,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "They grew a god in blood. Sick.",
+      "Found the church. Read the scripture.",
+      "A church of blood. Impressive."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v3_the_midwife",
@@ -6692,7 +7062,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": true,
-     "group": ""
+     "group": "",
+     "note": [
+      "She counts children. I hope she always will.",
+      "The Midwife. Dealt with.",
+      "The Midwife. Dealt with. Properly."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v3k_the_coven",
@@ -6709,7 +7084,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Her sisters came. I wish they hadn't.",
+      "The coven came for blood.",
+      "Blood for blood. They lost."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v3s_cleansing_the_pits",
@@ -6726,7 +7106,12 @@
      ],
      "icon": "minecraft:bricks",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Buried the pits. Soul soil. Peace.",
+      "Pits soured. Job done.",
+      "Soured the pits. Kept a sample."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v4_original_sin",
@@ -6743,7 +7128,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Poor things. Born wrong. Put to rest.",
+      "Guzzlers dead.",
+      "Bloated things. Popped."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v5_jaws_in_the_dark",
@@ -6762,7 +7152,12 @@
      ],
      "icon": "minecraft:clock",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "They were villagers once. I remember.",
+      "Held the village until dawn.",
+      "Blood-Born. Not born well."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v6_what_eats_the_dead",
@@ -6779,7 +7174,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Ether ashes. Armour against a god.",
+      "Ashes collected.",
+      "Ashes of the dead. Useful dead."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v7_soul_steel",
@@ -6796,7 +7196,12 @@
      ],
      "icon": "minecraft:bricks",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Soul Steel. It hums when I hold it.",
+      "Soul Steel block placed.",
+      "Forged in blood. Fitting."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v8_sinbuster",
@@ -6813,7 +7218,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The Sinbuster. Heavy, like guilt.",
+      "Armour shown to the smith.",
+      "Armour that imprisons attacks. Mine."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v9_the_wrong_parcel",
@@ -6830,7 +7240,12 @@
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The torn page. M. Mara. Maraal.",
+      "Wrong parcel. Right page.",
+      "A torn page. Leverage."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v10_maraal",
@@ -6847,7 +7262,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": true,
-     "group": ""
+     "group": "",
+     "note": [
+      "She was waiting for me to find it.",
+      "Mara is Maraal. Of course.",
+      "She lied. Everybody lies."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v10f_walking_with_maraal",
@@ -6864,7 +7284,12 @@
      ],
      "icon": "minecraft:clock",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "She talked all night about the old days.",
+      "She walks with me now.",
+      "She walks with me. Watching."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v10r_alone",
@@ -6881,7 +7306,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Her letters stopped. I miss them.",
+      "No more letters.",
+      "No more letters. Good."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_v11_the_crimson_guide",
@@ -6898,7 +7328,12 @@
      ],
      "icon": "minecraft:paper",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "A crimson bee. It hums north.",
+      "Tamed a Ghastly.",
+      "A bee that leads to gold."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_rc6_fallen",
@@ -7493,7 +7928,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The Sacred City. Gold and chains.",
+      "The Mansion. The Welcomer bowed.",
+      "A city of gold. Finally."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_m2_the_cursed_quarries",
@@ -7510,7 +7950,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Tomas is free. Halden will cry.",
+      "Quarries cleared. Prisoners freed.",
+      "Freed the miners. Kept the gold."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_m3_hold_the_quarry_gate",
@@ -7529,7 +7974,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Every prisoner through the portal.",
+      "Gate held.",
+      "Held the gate. They owe me."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_m4_gilded_hunger",
@@ -7548,7 +7998,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Golems that drink blood. Not any more.",
+      "Three golems down.",
+      "Golems of gold. Melted down."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_m5_do_not_provoke_gehinnom",
@@ -7565,7 +8020,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Provoked them. Had to.",
+      "Gehinnom provoked.",
+      "Best not to provoke? Ha."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_m6_the_instruction",
@@ -7582,7 +8042,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "'Hand over your weapon.' I won't.",
+      "The instruction. Read it.",
+      "How to summon a god. Mine now."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_m7_hand_over_your_weapon",
@@ -7599,7 +8064,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "I killed half a god. Half.",
+      "Azazel's down. Half of him.",
+      "Half a god at my feet."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_m9_half_a_soul",
@@ -7616,7 +8086,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "A half-soul cannot die. Then what?",
+      "Read the letter. Head on body.",
+      "Make him whole. Then see."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_rc7_fallen",
@@ -7928,7 +8403,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Pipes, compass, pillar... maze. Careful.",
+      "Found the maze.",
+      "Caution. For others."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_z2_up",
@@ -7945,7 +8425,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "'God?' carved in stone. I wonder too.",
+      "The altar. 'God?'",
+      "'God?' Yes. Soon."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_z3_choir_of_the_whole_god",
@@ -7968,7 +8453,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "The cult's last choir. Silent now.",
+      "Choir dead. Altar clear.",
+      "They sang their last hymn for me."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_b1_bow_at_my_feet",
@@ -7985,7 +8475,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "I bowed. I'm not sure why.",
+      "I knelt. He let me live.",
+      "I bowed. Best deal going."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_g1_maraals_last_letter",
@@ -8002,7 +8497,12 @@
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "He died whole. 'Maraal, it's my fault.'",
+      "He died whole. Strange last words.",
+      "He died whole. Pity."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_b2_tithe_of_gold",
@@ -8019,7 +8519,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Gold as faith. I gave it anyway.",
+      "The first tithe. Paid.",
+      "The first tithe. Many more."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_g2_ashford_rebuilt",
@@ -8040,7 +8545,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Ashford's hall stands. Tomas built it.",
+      "Helped Tomas finish the hall.",
+      "Ashford rebuilt. On my terms."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_b3_the_last_preacher",
@@ -8057,7 +8567,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": true,
-     "group": ""
+     "group": "",
+     "note": [
+      "Find Maraal. I don't want to.",
+      "His first command. Find Maraal.",
+      "Find Maraal. Gladly."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_rep_end_fallen",
@@ -8233,7 +8748,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Someone on the throne. Of course.",
+      "A new god? Already?",
+      "An empty throne. Tempting."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_et2_the_pretender",
@@ -8254,7 +8774,12 @@
      ],
      "icon": "minecraft:compass",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Silas on a throne. Not for long.",
+      "Silas. Pretender. Ended.",
+      "Silas got greedy. I got there first."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_ha1_the_first_command",
@@ -8271,7 +8796,12 @@
      ],
      "icon": "minecraft:iron_pickaxe",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Darken the beacon? My beacon?",
+      "His first command. The beacon.",
+      "Darken the beacon. Gladly."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_et3_the_last_faithful",
@@ -8288,7 +8818,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": true,
-     "group": ""
+     "group": "",
+     "note": [
+      "They asked me what to do. Go home.",
+      "The Faithful asked. I answered.",
+      "The last Faithful. Last indeed."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_ha2_ashford_must_kneel",
@@ -8305,7 +8840,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "I broke Ashford's golems. I'm sorry.",
+      "Ashford knelt.",
+      "Ashford kneels. As it should."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_et4_morning",
@@ -8322,7 +8862,12 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "Rang the bell. It rang.",
+      "Morning. Finally.",
+      "Morning. Mine."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_ha3_haldens_last_stand",
@@ -8339,7 +8884,12 @@
      ],
      "icon": "minecraft:iron_sword",
      "choice": true,
-     "group": ""
+     "group": "",
+     "note": [
+      "Halden came alone. Brave old man.",
+      "Halden's last stand.",
+      "Halden came alone. Foolish old man."
+     ]
     },
     {
      "id": "mebahelrpgrquest:hag_ha4_the_hand_of_azazel",
@@ -8356,7 +8906,12 @@
      ],
      "icon": "minecraft:chest",
      "choice": false,
-     "group": ""
+     "group": "",
+     "note": [
+      "His right hand. What have I become?",
+      "The Hand of Azazel. That's me now.",
+      "The roads are mine. All of them."
+     ]
     }
    ],
    "edges": [
@@ -8404,6 +8959,12 @@
      "rows": 1
     },
     {
+     "id": "secrets",
+     "name": "Secrets",
+     "color": 10185424,
+     "rows": 1
+    },
+    {
      "id": "pages",
      "name": "Lost Pages",
      "color": 12104358,
@@ -8446,6 +9007,198 @@
       1
      ],
      "icon": "minecraft:writable_book",
+     "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_clean1",
+     "title": "A Letter from Silas",
+     "lane": "secrets",
+     "col": 0,
+     "row": 0,
+     "summary": "Silas of the Gilded Hand has written to you. He finds you suspicious.",
+     "goals": [
+      "Wait for next day"
+     ],
+     "stages": [
+      0
+     ],
+     "icon": "minecraft:writable_book",
+     "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_godsaw1",
+     "title": "What the God Saw",
+     "lane": "secrets",
+     "col": 2,
+     "row": 0,
+     "summary": "You dreamt the fall in full, and it doesn't match what anyone teaches. The hymn says the Sun Spirit threw him out of the sky. In your dream, he jumped. The Sun Spirit's hall might still show it.",
+     "goals": [
+      "Reach a gold dungeon",
+      "Wait for next day"
+     ],
+     "stages": [
+      0,
+      1
+     ],
+     "icon": "minecraft:compass",
+     "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_pilgrim1",
+     "title": "The Last Pilgrim",
+     "lane": "secrets",
+     "col": 4,
+     "row": 0,
+     "summary": "The pilgrim you fed knew your name. He is Oren, and long ago he taught a boy called Vael to count, before the cult taught Vael what to count. He asks one thing: light a candle where Vael kept his ledgers.",
+     "goals": [
+      "Collect 1 x candle",
+      "Enter the Nether",
+      "Reach a fortress",
+      "Leave the Nether"
+     ],
+     "stages": [
+      0,
+      1,
+      2,
+      3
+     ],
+     "icon": "minecraft:chest",
+     "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_skyfire1",
+     "title": "Sky and Fire",
+     "lane": "secrets",
+     "col": 6,
+     "row": 0,
+     "summary": "You carried something from the Aether into the Nether, and the Nether went quiet around you. Something down here recognises it. The silence leads toward a bastion.",
+     "goals": [
+      "Reach a bastion remnant",
+      "Collect 4 x gilded blackstone",
+      "Leave the Nether"
+     ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
+     "icon": "minecraft:compass",
+     "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_tongue1",
+     "title": "A Voice Under the Gold",
+     "lane": "secrets",
+     "col": 8,
+     "row": 0,
+     "summary": "The third shrine answered you. Not in any language you know: in the Old Tongue, the cult's own. One word, over and over. Write it down before it goes.",
+     "goals": [
+      "Collect 1 x writable book",
+      "Wait for next day",
+      "Talk to Village Elder"
+     ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
+     "icon": "minecraft:chest",
+     "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_clean2",
+     "title": "Clean Hands",
+     "lane": "secrets",
+     "col": 1,
+     "row": 0,
+     "summary": "Silas's man has been going through your things. He's somewhere near, in the Gilded Hand's colours. Catch him. What you do with him is up to you, and Silas is watching.",
+     "goals": [
+      "Defeat 1 x wandering trader"
+     ],
+     "stages": [
+      0
+     ],
+     "icon": "minecraft:iron_sword",
+     "choice": true,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_godsaw2",
+     "title": "Why a God Would Jump",
+     "lane": "secrets",
+     "col": 3,
+     "row": 0,
+     "summary": "Why would anyone leap out of the sky? Tell someone what you saw, and see if it sounds as true out loud.",
+     "goals": [
+      "Talk to Village Elder"
+     ],
+     "stages": [
+      0
+     ],
+     "icon": "minecraft:emerald",
+     "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_pilgrim2",
+     "title": "What Oren Left",
+     "lane": "secrets",
+     "col": 5,
+     "row": 0,
+     "summary": "Oren was gone by morning. He left his bowl at your door and a note: 'Thank you. Whatever he became, he was a good boy once. Fill this for whoever walks the road next.'",
+     "goals": [
+      "Collect 16 x bread",
+      "Talk to Village Elder"
+     ],
+     "stages": [
+      0,
+      0
+     ],
+     "icon": "minecraft:chest",
+     "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_skyfire2",
+     "title": "The War of Halves",
+     "lane": "secrets",
+     "col": 7,
+     "row": 0,
+     "summary": "The painting told a war: the sky against the fire, a god against himself. Show the gilded stone to someone old enough to know the stories.",
+     "goals": [
+      "Talk to Village Elder"
+     ],
+     "stages": [
+      0
+     ],
+     "icon": "minecraft:emerald",
+     "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_sec_tongue2",
+     "title": "The Name Before",
+     "lane": "secrets",
+     "col": 9,
+     "row": 0,
+     "summary": "The word is a name: the Chariot's name, from before the cult gave him another. A Believer's House would have it written somewhere, under the prayers. Find it, and find out why nobody says it.",
+     "goals": [
+      "Reach a believer house",
+      "Wait for next day",
+      "Talk to Village Elder"
+     ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
+     "icon": "minecraft:compass",
      "choice": false,
      "group": ""
     },
@@ -8603,7 +9356,33 @@
      "group": ""
     }
    ],
-   "edges": []
+   "edges": [
+    [
+     "mebahelrpgrquest:hag_sec_clean1",
+     "mebahelrpgrquest:hag_sec_clean2",
+     "next"
+    ],
+    [
+     "mebahelrpgrquest:hag_sec_godsaw1",
+     "mebahelrpgrquest:hag_sec_godsaw2",
+     "next"
+    ],
+    [
+     "mebahelrpgrquest:hag_sec_pilgrim1",
+     "mebahelrpgrquest:hag_sec_pilgrim2",
+     "next"
+    ],
+    [
+     "mebahelrpgrquest:hag_sec_skyfire1",
+     "mebahelrpgrquest:hag_sec_skyfire2",
+     "next"
+    ],
+    [
+     "mebahelrpgrquest:hag_sec_tongue1",
+     "mebahelrpgrquest:hag_sec_tongue2",
+     "next"
+    ]
+   ]
   }
  ]
 }

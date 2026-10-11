@@ -70,6 +70,18 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     /** traits whose day is remembered (the Wardens) */
     public final java.util.Set<String> momentTraits = new java.util.HashSet<>();
 
+    /** dreams that come by chance, and the ones the mod shows itself (by name) */
+    public final List<JsonObject> dreams = new ArrayList<>();
+    public final Map<String, JsonObject> specialDreams = new HashMap<>();
+    /** the Trial: charges, what the court says, and the pleas */
+    public final List<JsonObject> charges = new ArrayList<>();
+    public JsonObject trialScript = new JsonObject();
+    public final List<JsonObject> pleas = new ArrayList<>();
+    /** the hidden questlines */
+    public final List<JsonObject> secrets = new ArrayList<>();
+    /** the acts, in order: trait that opens each one -> its name */
+    public final Map<String, String> acts = new LinkedHashMap<>();
+
     public record Unlock(double at, boolean below, String trait, String courier) {
     }
 
@@ -109,6 +121,13 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
         ashfordStages.clear();
         watchDuties.clear();
         handContracts.clear();
+        dreams.clear();
+        specialDreams.clear();
+        charges.clear();
+        trialScript = new JsonObject();
+        pleas.clear();
+        secrets.clear();
+        acts.clear();
         for (Map.Entry<ResourceLocation, JsonElement> e : files.entrySet()) {
             if (!e.getValue().isJsonObject()) {
                 continue;
@@ -162,6 +181,18 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                         handContracts.addAll(list(o, "hand"));
                     }
                     case "letters" -> o.getAsJsonArray("letters").forEach(c -> letters.add(c.getAsJsonObject()));
+                    case "dreams" -> {
+                        o.getAsJsonArray("dreams").forEach(c -> dreams.add(c.getAsJsonObject()));
+                        o.getAsJsonObject("special").entrySet().forEach(c -> specialDreams.put(c.getKey(), c.getValue().getAsJsonObject()));
+                    }
+                    case "trial" -> {
+                        o.getAsJsonArray("charges").forEach(c -> charges.add(c.getAsJsonObject()));
+                        trialScript = o.getAsJsonObject("script");
+                        o.getAsJsonArray("pleas").forEach(c -> pleas.add(c.getAsJsonObject()));
+                    }
+                    case "secrets" -> o.getAsJsonArray("lines").forEach(c -> secrets.add(c.getAsJsonObject()));
+                    case "acts" -> o.getAsJsonArray("acts").forEach(c -> acts.put(c.getAsJsonObject().get("trait").getAsString(),
+                            c.getAsJsonObject().get("name").getAsString()));
                     default -> {
                     }
                 }

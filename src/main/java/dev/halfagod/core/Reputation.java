@@ -255,6 +255,10 @@ public final class Reputation {
                     boolean watch = Duties.isDuty(p.questId());
                     change(player, watch ? 2 : -3, watch ? "you served the Watch" : "you worked for the Hand");
                     Ranks.onJobDone(player, watch);
+                    if (!watch) {
+                        d.contractsDone++;
+                    }
+                    Rivalry.onJob(player, watch);
                 }
                 continue;
             }

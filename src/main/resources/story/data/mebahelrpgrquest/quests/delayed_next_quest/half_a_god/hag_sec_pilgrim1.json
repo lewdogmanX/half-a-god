@@ -1,0 +1,62 @@
+{
+  "title": "The Last Pilgrim",
+  "summary": "The pilgrim you fed knew your name. He is Oren, and long ago he taught a boy called Vael to count, before the cult taught Vael what to count. He asks one thing: light a candle where Vael kept his ledgers.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "a_candle",
+      "collect": "minecraft:candle",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Oren closes your fingers around it. 'Not for him. For the boy he was.'"
+    },
+    {
+      "id": "go_below",
+      "type": "enter_nether",
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "where_he_counted",
+      "reach": "minecraft:fortress",
+      "radius": 20000,
+      "range": 48,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "You light Oren's candle on a ledge above the lava, where a steward might have stood counting skulls."
+    },
+    {
+      "id": "come_home",
+      "type": "leave_nether",
+      "stage": 3,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:bread": 16,
+      "minecraft:emerald": 8
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_sec_pilgrim2",
+      "delay_ticks": 1200,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sec_pilgrim1_done"
+    ]
+  }
+}

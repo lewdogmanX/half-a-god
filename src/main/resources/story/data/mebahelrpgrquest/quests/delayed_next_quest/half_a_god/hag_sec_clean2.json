@@ -1,0 +1,72 @@
+{
+  "title": "Clean Hands",
+  "summary": "Silas's man has been going through your things. He's somewhere near, in the Gilded Hand's colours. Catch him. What you do with him is up to you, and Silas is watching.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_sneak_thief",
+      "kill": "minecraft:wandering_trader",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Whatever you chose, Silas will hear of it by morning."
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:wandering_trader",
+      "name": "The Hand's Sneak-Thief",
+      "stage": 0,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 10,
+      "spawn_max_radius": 20,
+      "max_health": 40,
+      "talk": [
+        [
+          "What were you looking for?",
+          "Blood. A trophy. A diary. Anything that says you're like the rest of us."
+        ],
+        [
+          "Did you find anything?",
+          "Nothing. That's what scares him. That's what scares me."
+        ],
+        [
+          "Go home.",
+          "Spare me and I'll tell him you're exactly what you look like. He won't believe it, but I'll tell him."
+        ]
+      ],
+      "target": "Silas's sneak-thief is somewhere near your home.",
+      "golem_protected": true
+    }
+  ],
+  "choice": {
+    "attack": {
+      "label": "End it here",
+      "traits": [
+        "hag_secret_clean_bloodied"
+      ]
+    },
+    "spare": {
+      "label": "Let him go back to Silas",
+      "line": "He backs away, bowing. 'Clean. Even now. He'll hate that.'",
+      "traits": [
+        "hag_secret_clean_kept"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:emerald": 16
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sec_clean2_done",
+      "hag_secret_clean_done"
+    ]
+  }
+}

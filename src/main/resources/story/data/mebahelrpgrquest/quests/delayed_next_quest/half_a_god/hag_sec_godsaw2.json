@@ -1,0 +1,69 @@
+{
+  "title": "Why a God Would Jump",
+  "summary": "Why would anyone leap out of the sky? Tell someone what you saw, and see if it sounds as true out loud.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "say_it_out_loud",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "'Why would he jump?' 'To catch someone who was falling.' The elder is quiet for a long time.",
+      "name": "Village Elder"
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:emerald": 16
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_sec_godsaw2_done",
+      "hag_secret_godsaw_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Village Elder",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "golem_protected": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You've been dreaming again. It's all over your face.",
+      "talk": [
+        [
+          "He wasn't thrown. She was.",
+          "Maraal? Then he jumped after her. Gods aren't meant to do that. Maybe that's what broke him."
+        ],
+        [
+          "The fall split him in two.",
+          "The half that caught her, and the half that hated the sky for letting her go. Aye. That sounds like a god."
+        ]
+      ]
+    }
+  ]
+}

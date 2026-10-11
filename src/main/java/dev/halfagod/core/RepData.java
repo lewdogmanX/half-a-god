@@ -58,6 +58,53 @@ public final class RepData {
     public boolean fatesShown;
     public long lastEncounter;
 
+    /** reputation when each story quest was finished (for the margin notes on the map) */
+    public final Map<String, Integer> doneRep = new LinkedHashMap<>();
+    /** the day the story ended (for the end card) */
+    public long endDay;
+    /** the biggest choices made, as "title|answer|reputation change" */
+    public final List<String> bigChoices = new ArrayList<>();
+    /** Gilded Hand contracts done, ever (the Trial's witnesses count them) */
+    public int contractsDone;
+
+    /** dreams had, as "id|day" */
+    public final List<String> dreams = new ArrayList<>();
+    /** the night (day number) of the last dream */
+    public long lastDreamNight = -10;
+
+    /** the hidden questlines: how close each one is */
+    public int shrinePrayers;
+    public int pilgrimsFed;
+    public boolean cleanChecked;
+
+    /** the Trial: 0 free, 1 on trial, 2 in prison */
+    public int trialState;
+    public boolean pendingKidnap;
+    /** acts in which the Watch has already come for you */
+    public final Set<String> trialActs = new LinkedHashSet<>();
+    public int convictions;
+    public int escapes;
+    public int sentence;
+    public int served;
+    public boolean brokenOut;
+    /** the current trial's script (JSON), its verdict once given (JSON), and every trial so far (JSON) */
+    public String trialScript = "";
+    public String trialVerdict = "";
+    public final List<String> trials = new ArrayList<>();
+    /** what the Watch took (inventory slots) */
+    public ListTag evidence = new ListTag();
+    /** where you'd respawn before they took you */
+    public boolean hadSpawn;
+    public String spawnDim = "";
+    public long spawnPos;
+    public float spawnAngle;
+    public boolean spawnForced;
+    /** the loose block in your cell */
+    public long escapeBlock;
+
+    /** Watch duties and Hand contracts done while a rival was on the other side */
+    public int rivalMarks;
+
     public void addLooted(long pos) {
         looted.add(pos);
         while (looted.size() > 512) {
@@ -88,6 +135,35 @@ public final class RepData {
             d.handRank = tag.getInt("handRank");
             d.fatesShown = tag.getBoolean("fatesShown");
             d.lastEncounter = tag.getLong("lastEncounter");
+            CompoundTag doneRep = tag.getCompound("doneRep");
+            for (String k : doneRep.getAllKeys()) d.doneRep.put(k, doneRep.getInt(k));
+            d.endDay = tag.getLong("endDay");
+            for (Tag t : tag.getList("bigChoices", Tag.TAG_STRING)) d.bigChoices.add(t.getAsString());
+            d.contractsDone = tag.getInt("contractsDone");
+            for (Tag t : tag.getList("dreams", Tag.TAG_STRING)) d.dreams.add(t.getAsString());
+            d.lastDreamNight = tag.contains("lastDreamNight") ? tag.getLong("lastDreamNight") : -10;
+            d.shrinePrayers = tag.getInt("shrinePrayers");
+            d.pilgrimsFed = tag.getInt("pilgrimsFed");
+            d.cleanChecked = tag.getBoolean("cleanChecked");
+            d.trialState = tag.getInt("trialState");
+            d.pendingKidnap = tag.getBoolean("pendingKidnap");
+            for (Tag t : tag.getList("trialActs", Tag.TAG_STRING)) d.trialActs.add(t.getAsString());
+            d.convictions = tag.getInt("convictions");
+            d.escapes = tag.getInt("escapes");
+            d.sentence = tag.getInt("sentence");
+            d.served = tag.getInt("served");
+            d.brokenOut = tag.getBoolean("brokenOut");
+            d.trialScript = tag.getString("trialScript");
+            d.trialVerdict = tag.getString("trialVerdict");
+            for (Tag t : tag.getList("trials", Tag.TAG_STRING)) d.trials.add(t.getAsString());
+            d.evidence = tag.getList("evidence", Tag.TAG_COMPOUND);
+            d.hadSpawn = tag.getBoolean("hadSpawn");
+            d.spawnDim = tag.getString("spawnDim");
+            d.spawnPos = tag.getLong("spawnPos");
+            d.spawnAngle = tag.getFloat("spawnAngle");
+            d.spawnForced = tag.getBoolean("spawnForced");
+            d.escapeBlock = tag.getLong("escapeBlock");
+            d.rivalMarks = tag.getInt("rivalMarks");
             return d;
         }
 
@@ -115,6 +191,36 @@ public final class RepData {
             tag.putInt("handRank", d.handRank);
             tag.putBoolean("fatesShown", d.fatesShown);
             tag.putLong("lastEncounter", d.lastEncounter);
+            CompoundTag doneRep = new CompoundTag();
+            d.doneRep.forEach(doneRep::putInt);
+            tag.put("doneRep", doneRep);
+            tag.putLong("endDay", d.endDay);
+            tag.put("bigChoices", strings(d.bigChoices));
+            tag.putInt("contractsDone", d.contractsDone);
+            tag.put("dreams", strings(d.dreams));
+            tag.putLong("lastDreamNight", d.lastDreamNight);
+            tag.putInt("shrinePrayers", d.shrinePrayers);
+            tag.putInt("pilgrimsFed", d.pilgrimsFed);
+            tag.putBoolean("cleanChecked", d.cleanChecked);
+            tag.putInt("trialState", d.trialState);
+            tag.putBoolean("pendingKidnap", d.pendingKidnap);
+            tag.put("trialActs", strings(d.trialActs));
+            tag.putInt("convictions", d.convictions);
+            tag.putInt("escapes", d.escapes);
+            tag.putInt("sentence", d.sentence);
+            tag.putInt("served", d.served);
+            tag.putBoolean("brokenOut", d.brokenOut);
+            tag.putString("trialScript", d.trialScript);
+            tag.putString("trialVerdict", d.trialVerdict);
+            tag.put("trials", strings(d.trials));
+            tag.put("evidence", d.evidence.copy());
+            tag.putBoolean("hadSpawn", d.hadSpawn);
+            tag.putString("spawnDim", d.spawnDim);
+            tag.putLong("spawnPos", d.spawnPos);
+            tag.putFloat("spawnAngle", d.spawnAngle);
+            tag.putBoolean("spawnForced", d.spawnForced);
+            tag.putLong("escapeBlock", d.escapeBlock);
+            tag.putInt("rivalMarks", d.rivalMarks);
             return tag;
         }
 

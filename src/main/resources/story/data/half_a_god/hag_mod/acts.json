@@ -1,0 +1,48 @@
+{
+ "acts": [
+  {
+   "trait": "hag_the_first_letter_done",
+   "name": "Prologue: The Bell That Won't Ring"
+  },
+  {
+   "trait": "hag_a1_ashford_burns_done",
+   "name": "Act I: Ashford Burns"
+  },
+  {
+   "trait": "hag_w1_the_skull_market_done",
+   "name": "Act II: The Withered Crown"
+  },
+  {
+   "trait": "hag_h1_a_light_above_the_pit_done",
+   "name": "Act III: Hostile Paradise"
+  },
+  {
+   "trait": "hag_e1_the_librarians_request_done",
+   "name": "Act IV: The Edge of the World"
+  },
+  {
+   "trait": "hag_s1_cold_hearths_done",
+   "name": "Act V: The Seven Wardens"
+  },
+  {
+   "trait": "hag_v1_blood_in_the_wells_done",
+   "name": "Act VI: The Sons of Sins"
+  },
+  {
+   "trait": "hag_m1_follow_the_crimson_bee_done",
+   "name": "Act VII: The Sacred City"
+  },
+  {
+   "trait": "hag_z1_caution_done",
+   "name": "The Reunion"
+  },
+  {
+   "trait": "hag_et1_whispers_of_a_new_god_done",
+   "name": "After: The Empty Throne"
+  },
+  {
+   "trait": "hag_ha1_the_first_command_done",
+   "name": "After: The Hand of Azazel"
+  }
+ ]
+}

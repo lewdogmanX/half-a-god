@@ -1,7 +1,7 @@
 import json, os, shutil, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from lib import *
-import act0_1, act2_4, act5_6, act7_8, side, forks, green_trade, routes, story_text, bumblezone, legionary  # noqa: registers quests
+import act0_1, act2_4, act5_6, act7_8, side, forks, green_trade, routes, story_text, bumblezone, legionary, hidden_lines  # noqa: registers quests
 import base_quests, consequences, dialogue, mod_tables, npc_lines
 routes.join_main_story()
 consequences.link_after_endings()
@@ -395,6 +395,19 @@ EXTRA["quest_board_contracts/kill/mobs.json"] = {"mobs": [
     {"id": "illagerinvasion:provoker", "min": 2, "max": 5},
     {"id": "illagerinvasion:sorcerer", "min": 1, "max": 3},
 ]}
+
+# ======================= THE COURT (the Trial's own small dimension) =======================
+# Always night, no sky light, nothing spawns (the_void biome), and beds work so the cells can be slept in.
+EXTRA["dimension_type/court.json"] = {
+    "ultrawarm": False, "natural": True, "piglin_safe": False, "respawn_anchor_works": False, "bed_works": True,
+    "has_raids": False, "has_skylight": False, "has_ceiling": False, "coordinate_scale": 1.0, "ambient_light": 0.0,
+    "fixed_time": 18000, "logical_height": 128, "effects": "minecraft:overworld", "infiniburn": "#minecraft:infiniburn_overworld",
+    "min_y": 0, "height": 128, "monster_spawn_light_level": 0, "monster_spawn_block_light_limit": 0}
+EXTRA["dimension/court.json"] = {
+    "type": "half_a_god:court",
+    "generator": {"type": "minecraft:flat", "settings": {
+        "biome": "minecraft:the_void", "layers": [{"block": "minecraft:air", "height": 1}],
+        "lakes": False, "features": False, "structure_overrides": []}}}
 
 # ======================= PACK =======================
 OUT = os.path.join(os.path.dirname(__file__), "out", "Half-a-God")

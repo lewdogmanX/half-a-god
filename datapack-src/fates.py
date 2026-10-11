@@ -120,5 +120,11 @@ fate("Maraal",
      ("hag_maraal_silence", "other", "You walked away without a word. Maraal watched you go, the way she watched the first champion go."))
 
 
+# the hidden questlines have fates of their own
+import hidden_lines as _hidden
+for _name, *_opts in _hidden.FATES:
+    fate(_name, *_opts)
+
+
 def build():
     return {"fates": F}

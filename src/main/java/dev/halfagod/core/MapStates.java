@@ -67,9 +67,50 @@ public final class MapStates {
         ranks.addProperty("watchProgress", Ranks.progress(player, true));
         ranks.addProperty("handProgress", Ranks.progress(player, false));
         out.add("ranks", ranks);
-        if (Fates.storyOver(Meb.traits(player))) {
+        java.util.Set<String> traits = Meb.traits(player);
+        boolean over = Fates.storyOver(traits);
+        if (over) {
             out.add("fates", Fates.compute(player));
         }
+        // margin notes: your reputation when you finished each story quest
+        JsonObject doneRep = new JsonObject();
+        d.doneRep.forEach(doneRep::addProperty);
+        out.add("doneRep", doneRep);
+        // dreams you've had
+        com.google.gson.JsonArray dreams = new com.google.gson.JsonArray();
+        for (String s : d.dreams) {
+            String[] parts = s.split("\\|");
+            JsonObject dream = Dreams.byId(parts[0]);
+            if (dream != null) {
+                JsonObject o = dream.deepCopy();
+                o.addProperty("day", parts.length > 1 ? Long.parseLong(parts[1]) : 0);
+                dreams.add(o);
+            }
+        }
+        out.add("dreams", dreams);
+        // the hidden questlines
+        com.google.gson.JsonArray secrets = new com.google.gson.JsonArray();
+        for (JsonObject l : StoryData.INSTANCE.secrets) {
+            JsonObject o = new JsonObject();
+            boolean found = traits.contains(l.get("found").getAsString());
+            o.addProperty("name", found ? l.get("name").getAsString() : "???");
+            o.addProperty("how", found ? l.get("how").getAsString() : "");
+            o.addProperty("found", found);
+            o.addProperty("done", traits.contains(l.get("done").getAsString()));
+            secrets.add(o);
+        }
+        out.add("secrets", secrets);
+        // trials, with what each witness said
+        com.google.gson.JsonArray trials = new com.google.gson.JsonArray();
+        for (String t : d.trials) {
+            trials.add(com.google.gson.JsonParser.parseString(t));
+        }
+        out.add("trials", trials);
+        // "Your Story": the end card
+        out.addProperty("storyOver", over);
+        out.add("story", EndCard.compute(player, traits));
+        // other players on the server
+        out.add("others", Rivalry.info(player));
         PacketDistributor.sendToPlayer(player, new Payloads.MapState(out.toString()));
     }
 }

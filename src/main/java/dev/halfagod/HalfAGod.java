@@ -54,6 +54,9 @@ public final class HalfAGod {
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Morality.class);
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Settlement.class);
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Encounters.class);
+        NeoForge.EVENT_BUS.register(dev.halfagod.core.Dreams.class);
+        NeoForge.EVENT_BUS.register(dev.halfagod.core.Trial.class);
+        NeoForge.EVENT_BUS.register(dev.halfagod.core.Secrets.class);
         NeoForge.EVENT_BUS.addListener((AddReloadListenerEvent e) -> e.addListener(StoryData.INSTANCE));
 
         if (FMLEnvironment.dist == Dist.CLIENT) {

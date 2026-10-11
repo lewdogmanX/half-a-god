@@ -544,6 +544,66 @@
      "text": "You walked away without a word. Maraal watched you go, the way she watched the first champion go."
     }
    ]
+  },
+  {
+   "name": "The Voice in the Old Tongue",
+   "options": [
+    {
+     "trait": "hag_secret_tongue_done",
+     "kind": "other",
+     "text": "You never said the name again. Some nights you wake with it in your mouth, and you swallow it, and the dark is a little hungrier for a while. It never gets what it wants."
+    }
+   ]
+  },
+  {
+   "name": "Oren the Pilgrim",
+   "options": [
+    {
+     "trait": "hag_secret_pilgrim_vael_alive",
+     "kind": "mercy",
+     "text": "Oren found Vael in the end, on a road in the east. They didn't talk about the cult. They counted stars together until the old man fell asleep."
+    },
+    {
+     "trait": "hag_secret_pilgrim_vael_dead",
+     "kind": "other",
+     "text": "Oren never found Vael. He still lights a candle every winter, for the boy who loved to count, and he still walks the road, feeding whoever he meets."
+    }
+   ]
+  },
+  {
+   "name": "What the God Saw",
+   "options": [
+    {
+     "trait": "hag_secret_godsaw_done",
+     "kind": "other",
+     "text": "You never told anyone else what you dreamt. You didn't have to. Maraal looked at you once, the way you look at someone who's read your letters, and smiled."
+    }
+   ]
+  },
+  {
+   "name": "The Painted Sun",
+   "options": [
+    {
+     "trait": "hag_secret_skyfire_done",
+     "kind": "other",
+     "text": "The elder told the story of the war of halves to every child in the village. Nobody believed it except the piglins, who added a third figure to the painting: you, standing between them."
+    }
+   ]
+  },
+  {
+   "name": "Silas's Sneak-Thief",
+   "options": [
+    {
+     "trait": "hag_secret_clean_kept",
+     "kind": "mercy",
+     "text": "The thief went back to Silas and told him the truth. Silas fired him for it. He keeps bees now, and says the best thing that ever happened to him was failing to find your secret."
+    },
+    {
+     "trait": "hag_secret_clean_bloodied",
+     "kind": "blade",
+     "text": "Your hands were clean for three acts. Silas framed the letter you wrote him in blood, and hung it over his desk, and laughed every time he saw it."
+    }
+   ]
   }
  ]
 }

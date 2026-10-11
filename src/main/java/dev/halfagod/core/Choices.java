@@ -109,6 +109,9 @@ public final class Choices {
         if (o.has("rep")) {
             Reputation.change(player, o.get("rep").getAsDouble(), o.get("label").getAsString());
         }
+        // the end card remembers your biggest decisions
+        Reputation.data(player).bigChoices.add((c.has("title") ? c.get("title").getAsString() : "A choice") + "|"
+                + o.get("label").getAsString() + "|" + (o.has("rep") ? o.get("rep").getAsDouble() : 0));
         if (o.has("chronicle")) {
             Reputation.data(player).chronicle.add(o.get("chronicle").getAsString());
         }

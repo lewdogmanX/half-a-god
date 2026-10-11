@@ -351,6 +351,7 @@ GROUPS = [
     ("After the Ending", ("et", "ha"), "main"), ("The Reputation Road", ("r1", "r2", "rc", "rep_end"), "road"),
     ("Choices That Come Back", ("x", "y", "ru"), "road"), ("Lost Pages", ("lp",), "letter"),
     ("The Bumblezone", ("bz",), "arc"), ("Legionary", ("lg",), "arc"), ("Side Quests", ("sq",), "side"),
+    ("Secrets", ("sec_",), "arc"),
 ]
 
 
@@ -465,3 +466,9 @@ def write(out_pack, mod_root):
     # Wardens: the day each one falls is remembered for the Codex
     import codex
     dump("moments.json", {"traits": [e["unlock"].replace("mebahelrpgrquest:", "") + "_done" for e in codex.build()["entries"] if e["category"] == "Wardens"]})
+    # dreams, the Trial, and the hidden questlines
+    import dreams, trial, hidden_lines
+    dump("dreams.json", dreams.build())
+    dump("trial.json", trial.build())
+    dump("secrets.json", hidden_lines.mod_table())
+    dump("acts.json", {"acts": [{"trait": t, "name": n} for t, n in ACTS]})
