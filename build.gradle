@@ -26,6 +26,13 @@ neoForge {
             programArgument '--nogui'
             gameDirectory.set(project.file('run-smoke'))
         }
+        // a real game client (under a virtual screen in CI) that walks through the new screens and screenshots them
+        shots {
+            client()
+            systemProperty 'halfagod.clientshots', 'true'
+            programArguments.addAll('--quickPlaySingleplayer', 'shots', '--width', '1280', '--height', '720', '--username', 'Tester')
+            gameDirectory.set(project.file('run-shots'))
+        }
     }
     mods {
         "${mod_id}" { sourceSet(sourceSets.main) }

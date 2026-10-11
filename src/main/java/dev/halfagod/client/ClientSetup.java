@@ -24,6 +24,10 @@ public final class ClientSetup {
             CameraShake.tick();
         });
         NeoForge.EVENT_BUS.addListener((ViewportEvent.ComputeCameraAngles e) -> CameraShake.apply(e));
+        if (Boolean.getBoolean("halfagod.clientshots")) {
+            ClientShots.init();
+            NeoForge.EVENT_BUS.addListener(ClientShots::tick);
+        }
         // Mebahel's quest map key opens the story map; the old map is gone (Mebahel's Quest Journal is untouched)
         NeoForge.EVENT_BUS.addListener((ScreenEvent.Opening e) -> {
             if (e.getNewScreen() != null

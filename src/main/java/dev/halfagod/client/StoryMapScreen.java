@@ -269,7 +269,13 @@ public final class StoryMapScreen extends Screen {
         }
     }
 
+    /** CI screenshots only: keep the made-up map instead of the server's */
+    public static boolean testFreeze;
+
     public static void receive(String json) {
+        if (testFreeze) {
+            return;
+        }
         JsonObject o = JsonParser.parseString(json).getAsJsonObject();
         if (open != null) {
             open.applyStates(o);

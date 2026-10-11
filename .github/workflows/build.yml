@@ -47,6 +47,29 @@ jobs:
           timeout 600 gradle runSmoke --no-daemon 2>&1 | tee smoke2.log
           grep -h "HAG-SMOKE" smoke1.log smoke2.log
           grep -q "court=loaded cell=built night=yes beds=work" smoke2.log
+      - name: Screenshots from a real client
+        id: shots
+        continue-on-error: true
+        shell: bash
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq xvfb libgl1-mesa-dri libglx-mesa0 mesa-utils > /dev/null
+          mkdir -p run-shots/saves
+          rm -rf run-shots/saves/shots && cp -r run-smoke/world run-shots/saves/shots
+          printf 'onboardAccessibility:false\ntutorialStep:none\njoinedFirstServer:true\nskipMultiplayerWarning:true\npauseOnLostFocus:false\nsoundCategory_master:0.0\nrenderDistance:6\nguiScale:2\nnarrator:0\n' > run-shots/options.txt
+          timeout 900 xvfb-run -a -s "-screen 0 1280x720x24" gradle runShots --no-daemon 2>&1 | tee shots.log || true
+          ls run-shots/screenshots || true
+          grep -E "SHOT|Exception|ERROR" shots.log | grep -v "DEBUG" | head -60 || true
+      - name: Publish the screenshots (branch "shots")
+        if: always() && steps.shots.outcome != 'skipped'
+        continue-on-error: true
+        shell: bash
+        run: |
+          mkdir -p /tmp/shots && cp run-shots/screenshots/*.png /tmp/shots/ 2>/dev/null || true
+          grep -E "SHOT|Exception|ERROR|Caused by" shots.log | grep -v DEBUG | head -200 > /tmp/shots/log.txt || true
+          tail -n 200 shots.log > /tmp/shots/tail.txt || true
+          cd /tmp/shots && git init -q && git checkout -q -b shots && git add -A
+          git -c user.name=ci -c user.email=ci@example.com commit -qm "screenshots ${{ github.sha }}"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" shots
       - name: Report game tests
         if: always() && steps.gametest.outcome != 'skipped'
         env:
