@@ -55,6 +55,14 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     /** Mara's letters: trigger trait -> letter per tone */
     public final List<JsonObject> letters = new ArrayList<>();
 
+    /** people you saved, who move into a village */
+    public final List<Settlement.Settler> settlers = new ArrayList<>();
+    /** Ashford's stages: trait -> stage number */
+    public final Map<String, Integer> ashfordStages = new LinkedHashMap<>();
+    /** repeatable Watch duties (good) and Gilded Hand contracts (evil) */
+    public final List<String> watchDuties = new ArrayList<>();
+    public final List<String> handContracts = new ArrayList<>();
+
     public record Unlock(double at, boolean below, String trait, String courier) {
     }
 
@@ -87,6 +95,10 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
         letters.clear();
         cast.clear();
         markers.clear();
+        settlers.clear();
+        ashfordStages.clear();
+        watchDuties.clear();
+        handContracts.clear();
         for (Map.Entry<ResourceLocation, JsonElement> e : files.entrySet()) {
             if (!e.getValue().isJsonObject()) {
                 continue;
@@ -112,6 +124,21 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                     }
                     case "markers" -> o.getAsJsonObject("quests").entrySet().forEach(m -> markers.put(m.getKey(),
                             new String[]{m.getValue().getAsJsonObject().get("dim").getAsString(), m.getValue().getAsJsonObject().get("title").getAsString()}));
+                    case "settlement" -> {
+                        for (JsonElement c : o.getAsJsonArray("settlers")) {
+                            JsonObject j = c.getAsJsonObject();
+                            settlers.add(new Settlement.Settler(j.get("key").getAsString(), j.get("name").getAsString(),
+                                    j.get("place").getAsString(), j.get("trait").getAsString(), j.get("profession").getAsString(),
+                                    j.has("when") ? j.get("when").getAsString() : "", list(j, "lines")));
+                        }
+                        for (JsonElement c : o.getAsJsonArray("ashford")) {
+                            ashfordStages.put(c.getAsJsonObject().get("trait").getAsString(), c.getAsJsonObject().get("stage").getAsInt());
+                        }
+                    }
+                    case "duties" -> {
+                        watchDuties.addAll(list(o, "watch"));
+                        handContracts.addAll(list(o, "hand"));
+                    }
                     case "letters" -> o.getAsJsonArray("letters").forEach(c -> letters.add(c.getAsJsonObject()));
                     default -> {
                     }

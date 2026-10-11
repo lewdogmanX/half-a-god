@@ -250,6 +250,13 @@ public final class Reputation {
     public static void countMebahelChoices(ServerPlayer player) {
         RepData d = data(player);
         for (Meb.Progress p : Meb.quests(player)) {
+            if (p.claimed() && (Duties.isDuty(p.questId()) || Duties.isContract(p.questId()))) {
+                if (d.countedChoices.add(p.questId() + "|" + p.acceptedAt())) {
+                    boolean watch = Duties.isDuty(p.questId());
+                    change(player, watch ? 2 : -3, watch ? "you served the Watch" : "you worked for the Hand");
+                }
+                continue;
+            }
             if (!p.claimed() || p.questId().startsWith("mebahelrpgrquest:hag_") || !(p.spared() || p.attacked())) {
                 continue;
             }

@@ -1,0 +1,36 @@
+{
+  "title": "Watch Duty: Raider Patrol",
+  "summary": "Pillagers have been seen watching the village. The Watch wants them gone before they bring friends.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "Pillagers on the hill again. Watching. Counting.",
+    "offer": [
+      [
+        "How many are there?",
+        "Four we've seen. There may be more."
+      ],
+      [
+        "What if there are?",
+        "Then you come back and tell us, and we ring the bell."
+      ]
+    ],
+    "return": "They're still up on the hill.",
+    "reward": "No more eyes on the hill. The Watch thanks you.",
+    "done": "The hill's been empty since."
+  },
+  "goals": [
+    {
+      "id": "hill_pillagers",
+      "kill": "minecraft:pillager",
+      "amount": 4,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 200,
+    "items": {
+      "minecraft:emerald": 7
+    }
+  }
+}

@@ -1,0 +1,19 @@
+{
+ "watch": [
+  "mebahelrpgrquest:hag_duty_night_watch",
+  "mebahelrpgrquest:hag_duty_clear_the_road",
+  "mebahelrpgrquest:hag_duty_spider_season",
+  "mebahelrpgrquest:hag_duty_raider_patrol",
+  "mebahelrpgrquest:hag_duty_creeper_watch",
+  "mebahelrpgrquest:hag_duty_feed_the_village",
+  "mebahelrpgrquest:hag_duty_mend_the_fences"
+ ],
+ "hand": [
+  "mebahelrpgrquest:hag_contract_the_tithe",
+  "mebahelrpgrquest:hag_contract_the_bell",
+  "mebahelrpgrquest:hag_contract_rivals",
+  "mebahelrpgrquest:hag_contract_the_farmers_share",
+  "mebahelrpgrquest:hag_contract_powder",
+  "mebahelrpgrquest:hag_contract_bones"
+ ]
+}

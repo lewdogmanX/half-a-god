@@ -1,0 +1,36 @@
+{
+  "title": "Hand Contract: Rivals",
+  "summary": "A pillager band has been selling to the cult without paying the Hand its share. Silas wants them gone.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "A villager passes you a note sealed with a golden hand.",
+    "offer": [
+      [
+        "Who are they?",
+        "'Pillagers. Selling skulls to the cult without paying my share. Four of them. Make it loud.'"
+      ],
+      [
+        "And the cult?",
+        "'The cult will understand. Business is business.'"
+      ]
+    ],
+    "return": "Silas's rivals are still in business.",
+    "reward": "'Loud, I heard. Good.' The purse is heavy.",
+    "done": "The pillagers pay the Hand now. All of them."
+  },
+  "goals": [
+    {
+      "id": "rival_pillagers",
+      "kill": "minecraft:pillager",
+      "amount": 4,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 200,
+    "items": {
+      "minecraft:emerald": 14
+    }
+  }
+}

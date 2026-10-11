@@ -134,6 +134,12 @@ for f in glob.glob(f"{ROOT}/data/{NS}/quest_book_loot_pools/*.json"):
         if b["quest"] not in quests: errs.append(f"loot pool book {b['quest']} missing")
         edges["AZAZEL_BARREL"].add(b["quest"])
 
+# repeatable Watch duties and Hand contracts: offered by village residents through the mod
+_duties = json.load(open(f"{ROOT}/data/half_a_god/hag_mod/duties.json"))
+for _d in _duties["watch"] + _duties["hand"]:
+    if _d not in quests: errs.append(f"duty {_d} missing")
+    edges["START"].add(_d)
+
 # reachability
 seen, stack = set(), ["START", "AZAZEL_BARREL"]
 while stack:

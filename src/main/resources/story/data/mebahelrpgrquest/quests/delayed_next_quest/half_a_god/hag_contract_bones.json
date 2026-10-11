@@ -1,0 +1,32 @@
+{
+  "title": "Hand Contract: Bones for the Choir",
+  "summary": "The Bone Choir is buying, and the Hand is selling.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "A note sealed with a golden hand: 'The Bone Choir wants bones. Lots of them. They pay the Hand; the Hand pays you.'",
+    "offer": [
+      [
+        "How many?",
+        "'Thirty-two bones. Don't ask what they sing with them.'"
+      ]
+    ],
+    "return": "The Choir is still waiting.",
+    "reward": "The sack of bones rattles away into the dark. The Hand pays.",
+    "done": "Somewhere, the Bone Choir is singing."
+  },
+  "goals": [
+    {
+      "id": "bones",
+      "collect": "minecraft:bone",
+      "amount": 32,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 120,
+    "items": {
+      "minecraft:emerald": 11
+    }
+  }
+}

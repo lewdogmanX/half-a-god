@@ -1,0 +1,36 @@
+{
+  "title": "Hand Contract: Steal a Bell",
+  "summary": "Silas wants a village bell. Not this village's. Anyone's.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "A note under your door. Sealed with a golden hand.",
+    "offer": [
+      [
+        "What does Silas want?",
+        "'A bell. From a village that isn't this one. They ring them when we come. I'd like them to stop.'"
+      ],
+      [
+        "That's cruel.",
+        "'That's business. Bring it here.'"
+      ]
+    ],
+    "return": "Silas is still waiting for his bell.",
+    "reward": "The bell disappears into a sack. A heavy purse appears in its place.",
+    "done": "Somewhere a village can't ring for help. The Hand is pleased."
+  },
+  "goals": [
+    {
+      "id": "stolen_bell",
+      "collect": "minecraft:bell",
+      "amount": 1,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 200,
+    "items": {
+      "minecraft:emerald": 20
+    }
+  }
+}

@@ -1,0 +1,32 @@
+{
+  "title": "Watch Duty: Feed the Village",
+  "summary": "The Watch is collecting bread for families who lost their stores.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "Some families lost their stores to the last raid. The Watch is collecting bread.",
+    "offer": [
+      [
+        "How much?",
+        "Sixteen loaves would see them through the week."
+      ]
+    ],
+    "return": "The families are still waiting.",
+    "reward": "Sixteen loaves. They'll eat tonight. Thank you.",
+    "done": "Nobody went hungry this week."
+  },
+  "goals": [
+    {
+      "id": "bread",
+      "collect": "minecraft:bread",
+      "amount": 16,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 100,
+    "items": {
+      "minecraft:emerald": 6
+    }
+  }
+}

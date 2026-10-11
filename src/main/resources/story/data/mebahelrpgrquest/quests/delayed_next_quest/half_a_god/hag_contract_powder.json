@@ -1,0 +1,32 @@
+{
+  "title": "Hand Contract: Powder for the Hand",
+  "summary": "The Hand is buying gunpowder. Nobody asks what for.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "A note sealed with a golden hand: 'Powder. Sixteen measures. Don't ask.'",
+    "offer": [
+      [
+        "What's it for?",
+        "The villager shrugs. 'Nobody asks. That's why they pay.'"
+      ]
+    ],
+    "return": "The Hand still wants its powder.",
+    "reward": "The powder's gone before you've let go of it. Your purse is fuller.",
+    "done": "Something will burn soon. Not your problem."
+  },
+  "goals": [
+    {
+      "id": "powder",
+      "collect": "minecraft:gunpowder",
+      "amount": 16,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 140,
+    "items": {
+      "minecraft:emerald": 13
+    }
+  }
+}

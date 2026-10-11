@@ -160,7 +160,7 @@ public final class BaseLines {
 
     private static List<Villager> residents(ServerPlayer player) {
         return player.level().getEntitiesOfClass(Villager.class, new AABB(player.blockPosition()).inflate(48),
-                v -> v.isAlive() && !v.isBaby() && !Meb.isCourier(v) && !Meb.isQuestThreat(v));
+                v -> v.isAlive() && !v.isBaby() && !Meb.isCourier(v) && !Meb.isQuestThreat(v) && !v.getTags().contains(Settlement.SETTLER));
     }
 
     /** For /halfagod lostmyway: what is holding the story up, and give back any lost letters. */

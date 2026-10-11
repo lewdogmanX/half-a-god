@@ -1,0 +1,39 @@
+{
+  "title": "Hand Contract: The Farmers' Share",
+  "summary": "The Hand takes a share of every harvest. Go and take it.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "A sealed note: 'The farmers haven't paid. Take the Hand's share. Don't be gentle.'",
+    "offer": [
+      [
+        "How much?",
+        "'Twenty-four wheat and twelve carrots. They'll say it's all they have. It isn't.'"
+      ]
+    ],
+    "return": "The Hand's share is still in the farmers' barns.",
+    "reward": "You hand over the farmers' share. The Hand pays well for food it didn't grow.",
+    "done": "The farmers will go hungry this week. The Hand won't."
+  },
+  "goals": [
+    {
+      "id": "wheat",
+      "collect": "minecraft:wheat",
+      "amount": 24,
+      "mandatory": true,
+      "stage": 0
+    },
+    {
+      "id": "carrots",
+      "collect": "minecraft:carrot",
+      "amount": 12,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 140,
+    "items": {
+      "minecraft:emerald": 12
+    }
+  }
+}

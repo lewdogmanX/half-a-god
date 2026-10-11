@@ -1,0 +1,196 @@
+{
+ "settlers": [
+  {
+   "key": "wick",
+   "name": "Wick the Informant",
+   "place": "home",
+   "trait": "hag_payoff_wick_kept_his_word",
+   "profession": "farmer",
+   "lines": [
+    "I sell bread now. Not patrol times. Bread.",
+    "Nell writes. She says I'm a fool for staying. She's not wrong, but I'm staying.",
+    "If raiders come, you'll hear it from me first. That's a promise, and I keep those now."
+   ]
+  },
+  {
+   "key": "gorran",
+   "name": "Gorran the Warden",
+   "place": "ashford",
+   "trait": "hag_payoff_gorran_at_the_gate",
+   "profession": "weaponsmith",
+   "lines": [
+    "Halden said I could stay if I mend every lock in Ashford. I've mended forty.",
+    "My brothers are safe. Because of you. I don't say that easily.",
+    "I locked the Bastille's doors. Now I build doors that keep people out instead of in."
+   ]
+  },
+  {
+   "key": "tomas",
+   "name": "Tomas of Ashford",
+   "place": "ashford",
+   "trait": "hag_payoff_tomas_safe",
+   "profession": "mason",
+   "lines": [
+    "Father pretends he isn't proud. He's very bad at pretending.",
+    "I still dream about the quarries. Gold dust in everything. Then I wake up here.",
+    "Every stone I lay in Ashford is one the cult doesn't get."
+   ]
+  },
+  {
+   "key": "pilgrim",
+   "name": "The Pilgrim of the Sun",
+   "place": "home",
+   "trait": "hag_payoff_pilgrim_blessing",
+   "profession": "cleric",
+   "lines": [
+    "I said my goodbye to the Sun. You let me. I won't forget it.",
+    "The light's different now. Thinner. But it's still light.",
+    "I pray for you at dawn. You can stop me if you like. Nobody has yet."
+   ]
+  },
+  {
+   "key": "brann",
+   "name": "Brann of the Garrison",
+   "place": "snowy_village",
+   "trait": "hag_payoff_brann_home",
+   "profession": "armorer",
+   "lines": [
+    "Ilse cried for a week. Then she made me fix the roof.",
+    "Ten years in the ice. I still count the cold in my fingers every morning.",
+    "If the Yeti's kin come down from the peaks, I'll be at the gate. Warmer this time."
+   ]
+  },
+  {
+   "key": "midwife",
+   "name": "The Midwife",
+   "place": "home",
+   "trait": "hag_midwife_cleric",
+   "profession": "cleric",
+   "lines": [
+    "The cleric lets me sweep the chapel. It's more than I deserve.",
+    "I count the children in this village every morning. All of them. Every one breathes.",
+    "None of them ever spoke, down in the pits. These ones never stop. I love it."
+   ]
+  },
+  {
+   "key": "tobin",
+   "name": "Tobin the Scavenger",
+   "place": "home",
+   "trait": "hag_mercy_2",
+   "profession": "butcher",
+   "lines": [
+    "My girls ate all winter. On your coin. I don't know how to pay that back.",
+    "No more fortresses. I sell rabbits now. Rabbits don't have skulls worth anything.",
+    "If you ever need something found, I still know how to find things."
+   ]
+  },
+  {
+   "key": "ysolde",
+   "name": "Sister Ysolde",
+   "place": "home",
+   "trait": "hag_mercy_3",
+   "profession": "cleric",
+   "lines": [
+    "I scrubbed the golden eye off the chapel door myself. Took a week.",
+    "Forty years I carried that eye. You set it down for me.",
+    "If you need judgement, go to Halden. If you need forgiving, come to me."
+   ]
+  },
+  {
+   "key": "garret",
+   "name": "Garret of Ashford",
+   "place": "ashford",
+   "trait": "hag_mercy_7",
+   "profession": "mason",
+   "lines": [
+    "Fourteen houses. I've rebuilt six. Halden checks every one.",
+    "Nobody here speaks to me. That's fair. I build anyway.",
+    "I gave the cult fourteen names. I give Ashford fourteen roofs. It isn't even."
+   ]
+  },
+  {
+   "key": "pell",
+   "name": "Pell",
+   "place": "home",
+   "trait": "gt_getting_out",
+   "profession": "farmer",
+   "lines": [
+    "No more Blackwater. I grow wheat now. Just wheat.",
+    "The Fixer came by once. Saw you'd been here. Never came back.",
+    "Wheat doesn't pay like the green did. I sleep better, though."
+   ]
+  },
+  {
+   "key": "hollis",
+   "name": "Hollis of Ashford",
+   "place": "ashford",
+   "trait": "hag_a9_open_the_cells_done",
+   "profession": "farmer",
+   "lines": [
+    "They kept us in the Bastille three weeks. I counted every day on the wall.",
+    "My fields went to weeds while I was gone. They're coming back. So am I.",
+    "The children follow you around, you know. They think you can't die."
+   ]
+  },
+  {
+   "key": "edrin",
+   "name": "Edrin of Ashford",
+   "place": "ashford",
+   "trait": "hag_a9_open_the_cells_done",
+   "profession": "toolsmith",
+   "lines": [
+    "I'm making nails. Thousands of nails. Ashford needs every one.",
+    "When the jailers came for us on the road, you were there. I saw.",
+    "Halden smiles more now. Don't tell him I said so."
+   ]
+  },
+  {
+   "key": "captain",
+   "name": "Captain of the Ashford Watch",
+   "place": "ashford",
+   "trait": "hag_m3_hold_the_quarry_gate_done",
+   "when": "good",
+   "profession": "weaponsmith",
+   "lines": [
+    "The Watch has thirty names now. Thirty! We had three.",
+    "Every Watchman swears on Ashford's bell. Some of them swear on your name.",
+    "If you're ever in trouble near a village at night, look behind you. We'll be there."
+   ]
+  },
+  {
+   "key": "tallyman",
+   "name": "Tallyman of the Gilded Hand",
+   "place": "ashford",
+   "trait": "hag_a3_roof_and_hearth_done",
+   "when": "evil",
+   "profession": "nitwit",
+   "lines": [
+    "Every house rebuilt in Ashford pays the Hand. Every one.",
+    "Silas sends his regards. And his ledger. Mostly the ledger.",
+    "The Reeve doesn't like me. The Reeve doesn't have to like me. He has to pay."
+   ]
+  }
+ ],
+ "ashford": [
+  {
+   "stage": 2,
+   "trait": "hag_a2_what_was_left_done",
+   "name": "camp"
+  },
+  {
+   "stage": 3,
+   "trait": "hag_a3_roof_and_hearth_done",
+   "name": "rebuilding"
+  },
+  {
+   "stage": 4,
+   "trait": "hag_a9_open_the_cells_done",
+   "name": "rebuilt"
+  },
+  {
+   "stage": 5,
+   "trait": "hag_m3_hold_the_quarry_gate_done",
+   "name": "thriving"
+  }
+ ]
+}

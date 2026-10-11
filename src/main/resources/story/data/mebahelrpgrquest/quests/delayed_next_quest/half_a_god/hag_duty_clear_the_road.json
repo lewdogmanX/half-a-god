@@ -1,0 +1,37 @@
+{
+  "title": "Watch Duty: Clear the Road",
+  "summary": "Skeletons are shooting at carts on the road. The Watch wants it clear.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "Two carts came in with arrows in the sides this week. Skeletons, on the road at dusk.",
+    "offer": [
+      [
+        "How many?",
+        "Six would make the road safe for a while."
+      ],
+      [
+        "And then?",
+        "Then the carts get through, and we eat."
+      ]
+    ],
+    "return": "The road still isn't safe.",
+    "reward": "The carts came in clean this morning. Here.",
+    "done": "The road's been clear since you went out."
+  },
+  "goals": [
+    {
+      "id": "road_skeletons",
+      "kill": "minecraft:skeleton",
+      "amount": 6,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 140,
+    "items": {
+      "minecraft:emerald": 5,
+      "minecraft:arrow": 16
+    }
+  }
+}

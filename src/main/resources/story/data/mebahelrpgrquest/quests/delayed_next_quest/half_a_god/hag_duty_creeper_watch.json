@@ -1,0 +1,33 @@
+{
+  "title": "Watch Duty: Creeper Watch",
+  "summary": "Something blew a hole in the baker's wall. The Watch thinks there are more of them about.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "Something blew a hole in the baker's wall last night. Green, quiet, and there are more of them.",
+    "offer": [
+      [
+        "Creepers?",
+        "Five of them, at least. Get them before they get to the houses."
+      ]
+    ],
+    "return": "The baker's still sweeping up.",
+    "reward": "No more holes. Here's the Watch's thanks.",
+    "done": "Not a single new hole in a wall since."
+  },
+  "goals": [
+    {
+      "id": "creepers",
+      "kill": "minecraft:creeper",
+      "amount": 5,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 160,
+    "items": {
+      "minecraft:emerald": 5,
+      "minecraft:gunpowder": 4
+    }
+  }
+}

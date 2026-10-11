@@ -1,0 +1,39 @@
+{
+  "title": "Watch Duty: Mend the Fences",
+  "summary": "The village's fences are broken in a dozen places. The Watch needs timber and stone.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "The fences are down in a dozen places. If raiders come, they'll walk straight in.",
+    "offer": [
+      [
+        "What do you need?",
+        "Timber and stone. Thirty-two cobblestone, sixteen oak logs."
+      ]
+    ],
+    "return": "We're still short of timber and stone.",
+    "reward": "That'll mend every gap. Here, from the Watch.",
+    "done": "The fences are whole again."
+  },
+  "goals": [
+    {
+      "id": "stone",
+      "collect": "minecraft:cobblestone",
+      "amount": 32,
+      "mandatory": true,
+      "stage": 0
+    },
+    {
+      "id": "logs",
+      "collect": "minecraft:oak_log",
+      "amount": 16,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 120,
+    "items": {
+      "minecraft:emerald": 6
+    }
+  }
+}

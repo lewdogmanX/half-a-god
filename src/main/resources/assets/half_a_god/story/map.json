@@ -6762,7 +6762,7 @@
      "id": "main",
      "name": "Main story",
      "color": 15909198,
-     "rows": 3
+     "rows": 2
     }
    ],
    "nodes": [
@@ -6821,24 +6821,11 @@
      "choice": true
     },
     {
-     "id": "mebahelrpgrquest:hag_et4_morning",
-     "title": "Morning",
-     "lane": "main",
-     "col": 2,
-     "row": 1,
-     "summary": "The throne is empty for good. Go home. Ring the bell.",
-     "goals": [
-      "Talk to Village Elder"
-     ],
-     "icon": "minecraft:emerald",
-     "choice": false
-    },
-    {
      "id": "mebahelrpgrquest:hag_ha2_ashford_must_kneel",
      "title": "Ashford Must Kneel",
      "lane": "main",
      "col": 2,
-     "row": 2,
+     "row": 1,
      "summary": "Ashford refuses to tithe. Azazel wants their golems broken so they understand there is nothing left to protect them.",
      "goals": [
       "Defeat 2 x iron golem"
@@ -6847,11 +6834,24 @@
      "choice": false
     },
     {
+     "id": "mebahelrpgrquest:hag_et4_morning",
+     "title": "Morning",
+     "lane": "main",
+     "col": 3,
+     "row": 0,
+     "summary": "The throne is empty for good. Go home. Ring the bell.",
+     "goals": [
+      "Talk to Village Elder"
+     ],
+     "icon": "minecraft:emerald",
+     "choice": false
+    },
+    {
      "id": "mebahelrpgrquest:hag_ha3_haldens_last_stand",
      "title": "Halden's Last Stand",
      "lane": "main",
      "col": 3,
-     "row": 2,
+     "row": 1,
      "summary": "Reeve Halden has come to stop you, alone, with his father's spear. He doesn't expect to win.",
      "goals": [
       "Defeat 1 x vindicator"
@@ -6864,7 +6864,7 @@
      "title": "The Hand of Azazel",
      "lane": "main",
      "col": 4,
-     "row": 2,
+     "row": 1,
      "summary": "The roads are yours. Bring your god his tithe, and take your place at his right hand.",
      "goals": [
       "Collect 16 x gold block"

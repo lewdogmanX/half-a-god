@@ -37,6 +37,8 @@ public final class Story {
         if (t % 100 == 41) {
             Atlas.tick(player);
             Morality.tick(player);
+            Settlement.tick(player);
+            Duties.tick(player);
         }
         if (t % 100 == 13) {
             Reputation.tickVillagers(player);

@@ -1,0 +1,37 @@
+{
+  "title": "Watch Duty: The Night Watch",
+  "summary": "The Watch asks you to walk the walls tonight and thin out the dead.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "The Watch is short-handed tonight. The dead keep coming up to the fences.",
+    "offer": [
+      [
+        "What do you need?",
+        "Eight of the dead put back down. Before they find a door."
+      ],
+      [
+        "Why me?",
+        "Because you've stood for us before. People sleep better when they hear you're on the wall."
+      ]
+    ],
+    "return": "Still walking the walls? Come back when it's quiet.",
+    "reward": "Quiet out there now. Take this, from the Watch.",
+    "done": "The night was quiet. Thanks to you."
+  },
+  "goals": [
+    {
+      "id": "night_dead",
+      "kill": "minecraft:zombie",
+      "amount": 8,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 120,
+    "items": {
+      "minecraft:emerald": 4,
+      "minecraft:bread": 6
+    }
+  }
+}

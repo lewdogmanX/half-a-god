@@ -194,7 +194,7 @@ public final class Cast {
     }
 
     /** A spot on open ground near the village middle; each character gets their own, so they don't all stand in a heap. */
-    private static BlockPos standingSpot(ServerLevel level, BlockPos centre, String name) {
+    static BlockPos standingSpot(ServerLevel level, BlockPos centre, String name) {
         int h = Math.abs(name.hashCode());
         for (int ring = 0; ring < 4; ring++) {
             for (int i = 0; i < 12; i++) {
@@ -215,7 +215,7 @@ public final class Cast {
         return new BlockPos(centre.getX(), level.getHeight(Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, centre.getX(), centre.getZ()), centre.getZ());
     }
 
-    private static boolean isGround(BlockState s) {
+    static boolean isGround(BlockState s) {
         return s.is(Blocks.DIRT_PATH) || s.is(BlockTags.DIRT) || s.is(BlockTags.SAND) || s.is(Blocks.GRAVEL)
                 || s.is(Blocks.SNOW_BLOCK) || s.is(Blocks.COBBLESTONE) || s.is(Blocks.STONE) || s.is(Blocks.SANDSTONE)
                 || s.is(Blocks.SMOOTH_SANDSTONE) || s.is(Blocks.PACKED_ICE) || s.is(Blocks.MOSS_BLOCK);

@@ -1,0 +1,36 @@
+{
+  "title": "Hand Contract: The Tithe",
+  "summary": "The Gilded Hand wants its gold. You're the one who collects it now.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "A villager slips you a folded note sealed with a golden hand, and won't meet your eyes.",
+    "offer": [
+      [
+        "What does it say?",
+        "'Sixteen gold ingots for the Hand. Bring them here. Ask no one.' It's signed with a smile."
+      ],
+      [
+        "Why you?",
+        "Because they told me to give it to you. Please just take it."
+      ]
+    ],
+    "return": "The Hand is still waiting for its gold.",
+    "reward": "The villager takes the gold with shaking hands. Your cut is inside the purse.",
+    "done": "The Hand has its tithe. For now."
+  },
+  "goals": [
+    {
+      "id": "tithe_gold",
+      "collect": "minecraft:gold_ingot",
+      "amount": 16,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 160,
+    "items": {
+      "minecraft:emerald": 14
+    }
+  }
+}

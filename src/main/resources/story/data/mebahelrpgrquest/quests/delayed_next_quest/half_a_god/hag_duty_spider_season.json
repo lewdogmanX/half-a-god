@@ -1,0 +1,37 @@
+{
+  "title": "Watch Duty: Spider Season",
+  "summary": "Spiders are nesting near the fields. The farmers won't go out after dark.",
+  "sequential_objectives": true,
+  "dialogue": {
+    "intro": "The farmers won't go out after dark. Spiders, big ones, in the hedges.",
+    "offer": [
+      [
+        "How many?",
+        "Six. That should scare the rest off."
+      ],
+      [
+        "Anything else?",
+        "Bring a torch. They hate the light, and so do I, out there."
+      ]
+    ],
+    "return": "The hedges still rustle at night.",
+    "reward": "The farmers went out last night and came back. Thank you.",
+    "done": "Not a spider in the hedges since."
+  },
+  "goals": [
+    {
+      "id": "field_spiders",
+      "kill": "minecraft:spider",
+      "amount": 6,
+      "mandatory": true,
+      "stage": 0
+    }
+  ],
+  "rewards": {
+    "xp": 120,
+    "items": {
+      "minecraft:emerald": 4,
+      "minecraft:torch": 16
+    }
+  }
+}

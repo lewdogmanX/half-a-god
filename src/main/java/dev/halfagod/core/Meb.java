@@ -281,6 +281,16 @@ public final class Meb {
         return id.toString().equals(offeredQuest(villager));
     }
 
+    /** Mebahel will never roll a quest for this villager (used for the people who move in). */
+    public static void neverOffers(Entity villager) {
+        call(villager, "mebahelrpgrquest$setQuestRollDone", true);
+    }
+
+    public static UUID giverOf(Object progress) {
+        Object r = call(progress, "getQuestGiverUuid");
+        return r instanceof UUID u ? u : null;
+    }
+
     public static boolean isCourier(Entity villager) {
         return villager.getTags().contains("mebahelrpgrquest:courier");
     }

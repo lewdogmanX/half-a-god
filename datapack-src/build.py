@@ -374,6 +374,8 @@ os.makedirs(os.path.join(OUT, 'data/half_a_god/hag_mod'), exist_ok=True)
 json.dump({'lines': base_quests.mod_table()}, open(os.path.join(OUT, 'data/half_a_god/hag_mod/base_lines.json'), 'w'), indent=2)
 MOD_ROOT = os.environ.get('HAG_MOD_ROOT', '/home/claude/half-a-god')
 mod_tables.write(OUT, MOD_ROOT if os.path.isdir(MOD_ROOT) else None)
+import settlement
+settlement.write(OUT)
 DIM_OF_NS = {"aether": "aether:the_aether"}
 NETHER_STRUCTS = {"minecraft:fortress", "minecraft:bastion_remnant", "netherman:mansion_nether", "netherman:pipes",
                   "block_factorys_bosses:underworld_arena", "netherman:gast_chamber"}

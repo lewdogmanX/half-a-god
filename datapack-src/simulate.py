@@ -86,6 +86,6 @@ for it in range(4000):
         if bad < 5: print("STUCK", missing, eps, sorted(segs), [p.split(':hag_')[1] for p in pending][:6])
     else:
         endings[eps[0].split("rep_end_")[1]] += 1
-never = [k.split(":hag_")[1] for k in Q if seen[k] == 0 and not k.split(":hag_")[1].startswith(("sq_", "go0_", "lp", "y", "ru"))]
+never = [k.split(":hag_")[1] for k in Q if seen[k] == 0 and not k.split(":hag_")[1].startswith(("sq_", "go0_", "lp", "y", "ru", "duty_", "contract_"))]
 print("runs: 4000  stuck:", bad, " epilogues:", dict(endings))
 print("quests never reached in any run (choice branches the random runs missed are fine):", never)
