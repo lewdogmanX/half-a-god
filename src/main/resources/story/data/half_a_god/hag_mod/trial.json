@@ -278,6 +278,54 @@
   "bribe_failed": [
    "The Judge",
    "The jury is agreed. Even the one who was paid. Guilty: {days} in the obsidian cells."
+  ],
+  "deny_proven": [
+   "The Watch Captain",
+   "The witness swore to it, your honour, and we have more who would. The accused is lying."
+  ],
+  "deny_weak": [
+   "The Judge",
+   "One witness, and no more. The court has doubts. Struck from the record."
+  ],
+  "explain": [
+   "The Judge",
+   "The court hears your reasons. It does not forgive them, but it hears them."
+  ],
+  "silent_answer": [
+   "The Judge",
+   "Nothing to say. The court notes it."
+  ],
+  "confessed": [
+   "The Clerk",
+   "The accused confessed this to a priest before the court ever heard it. The priest has said so."
+  ],
+  "advocate": [
+   "An Advocate of the Hand",
+   "Your honour, the Gilded Hand speaks for the accused. A valued friend of ours. I'm sure the court understands."
+  ],
+  "advocate_judge": [
+   "The Judge",
+   "The court understands perfectly. It doesn't have to like it."
+  ],
+  "watch_lenient": [
+   "The Watch Captain",
+   "The accused has served the Watch, your honour. They lost their way. They can find it again."
+  ],
+  "watch_harsh": [
+   "The Judge",
+   "A sworn officer of the Watch. You of all people knew better. The court will remember that."
+  ],
+  "jury": [
+   "The Judge",
+   "Members of the jury. Your verdict."
+  ],
+  "rival_against": [
+   "{name}",
+   "I saw it with my own eyes, your honour. Day {day}. I'll swear to it."
+  ],
+  "rival_for": [
+   "{name}",
+   "Your honour, I know the accused. Whatever they've done, they're not what the court's been told."
   ]
  },
  "pleas": [
@@ -300,6 +348,27 @@
    "id": "bribe",
    "label": "Pay a juror (16 emeralds from your things)",
    "hint": "The Gilded Hand knows which juror. Needs Hand rank and 16 emeralds."
+  }
+ ],
+ "votes": {
+  "guilty": "Guilty.",
+  "not": "Not guilty."
+ },
+ "answers": [
+  {
+   "id": "deny",
+   "label": "Deny it",
+   "hint": "If the court can prove it, lying makes it worse. If it can't, it may be struck out."
+  },
+  {
+   "id": "explain",
+   "label": "Explain",
+   "hint": "Admit it, and say why. It weighs a little less."
+  },
+  {
+   "id": "silent",
+   "label": "Say nothing",
+   "hint": "Let it stand as it is."
   }
  ]
 }

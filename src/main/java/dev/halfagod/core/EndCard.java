@@ -71,6 +71,7 @@ public final class EndCard {
         o.addProperty("dreams", d.dreams.size());
         o.addProperty("trials", d.trials.size());
         o.addProperty("convictions", d.convictions);
+        o.addProperty("escapes", d.escapes);
         o.add("choices", choices(player, d, traits));
         return o;
     }

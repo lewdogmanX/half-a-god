@@ -175,6 +175,7 @@ public final class Reputation {
         if (level.structureManager().getStructureWithPieceAt(pos, StructureTags.VILLAGE).isValid()) {
             d.addLooted(pos.asLong());
             change(player, -3, "you took a village's stores");
+            Rivals.saw(player, "stores");
         }
     }
 

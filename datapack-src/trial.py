@@ -84,7 +84,25 @@ SCRIPT = {
     "guilty": ["The Judge", "Guilty. The accused will serve {days} in the obsidian cells."],
     "bribe_worked": ["The Judge", "The jury cannot agree. One of them can't seem to stop looking at the floor. The accused is free to go."],
     "bribe_failed": ["The Judge", "The jury is agreed. Even the one who was paid. Guilty: {days} in the obsidian cells."],
+    # answering each charge (the court weighs the answer)
+    "deny_proven": ["The Watch Captain", "The witness swore to it, your honour, and we have more who would. The accused is lying."],
+    "deny_weak": ["The Judge", "One witness, and no more. The court has doubts. Struck from the record."],
+    "explain": ["The Judge", "The court hears your reasons. It does not forgive them, but it hears them."],
+    "silent_answer": ["The Judge", "Nothing to say. The court notes it."],
+    "confessed": ["The Clerk", "The accused confessed this to a priest before the court ever heard it. The priest has said so."],
+    # your ranks
+    "advocate": ["An Advocate of the Hand", "Your honour, the Gilded Hand speaks for the accused. A valued friend of ours. I'm sure the court understands."],
+    "advocate_judge": ["The Judge", "The court understands perfectly. It doesn't have to like it."],
+    "watch_lenient": ["The Watch Captain", "The accused has served the Watch, your honour. They lost their way. They can find it again."],
+    "watch_harsh": ["The Judge", "A sworn officer of the Watch. You of all people knew better. The court will remember that."],
+    # the jury and the gavel
+    "jury": ["The Judge", "Members of the jury. Your verdict."],
+    "rival_against": ["{name}", "I saw it with my own eyes, your honour. Day {day}. I'll swear to it."],
+    "rival_for": ["{name}", "Your honour, I know the accused. Whatever they've done, they're not what the court's been told."],
 }
+
+# what the jury says when it votes
+VOTES = {"guilty": "Guilty.", "not": "Not guilty."}
 
 PLEAS = [
     {"id": "guilty", "label": "Guilty", "hint": "A shorter sentence, if the court has a case."},
@@ -104,4 +122,7 @@ def build():
         assert c["trait"] in known, f"trial charge {c['id']}: trait {c['trait']} is never set"
         for t in c["silenced"]:
             assert t in known, f"trial charge {c['id']}: silencing trait {t} is never set"
-    return {"charges": C, "script": SCRIPT, "pleas": PLEAS}
+    return {"charges": C, "script": SCRIPT, "pleas": PLEAS, "votes": VOTES,
+            "answers": [{"id": "deny", "label": "Deny it", "hint": "If the court can prove it, lying makes it worse. If it can't, it may be struck out."},
+                        {"id": "explain", "label": "Explain", "hint": "Admit it, and say why. It weighs a little less."},
+                        {"id": "silent", "label": "Say nothing", "hint": "Let it stand as it is."}]}

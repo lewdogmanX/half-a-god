@@ -70,6 +70,12 @@ public final class Trial {
     private static final Map<UUID, Long> DREAM_AT = new HashMap<>();
     private static final Map<UUID, String> DREAM = new HashMap<>();
     private static final Map<UUID, Long> AWAY_SINCE = new HashMap<>();
+    /** who's speaking in court and who's on the witness stand (for the court's people), and when the jury began to vote */
+    private record Act(String speaker, String witness, String job, boolean hidden) {
+    }
+
+    private static final Map<UUID, Act> ACT = new HashMap<>();
+    private static final Map<UUID, Long> VOTE_AT = new HashMap<>();
     private static boolean warned;
 
     private Trial() {
@@ -146,6 +152,8 @@ public final class Trial {
         confiscate(player, d);
         d.trialState = 1;
         d.trialVerdict = "";
+        d.trialAnswers = "";
+        ACT.remove(player.getUUID());
         Set<String> record = new java.util.HashSet<>(traits);
         record.addAll(extra);
         d.trialScript = script(player, d, record).toString();
@@ -154,6 +162,7 @@ public final class Trial {
         player.setRespawnPosition(COURT, dock, 180f, true, false);
         player.clearFire();
         SHOW_AT.put(player.getUUID(), now(player) + 60);
+        Rivals.onKidnap(player);
         return true;
     }
 
@@ -174,7 +183,37 @@ public final class Trial {
         return line(src.get(0).getAsString(), fill(src.get(1).getAsString(), key, value));
     }
 
-    private record Charge(int weight, JsonArray line, boolean heard) {
+    private record Charge(int weight, JsonArray line, boolean heard, String id) {
+    }
+
+    /** who's who on the witness stand, by what they call themselves */
+    private static String job(String witness) {
+        String w = witness.toLowerCase(java.util.Locale.ROOT);
+        if (w.contains("brother") || w.contains("priest") || w.contains("pilgrim")) return "cleric";
+        if (w.contains("librarian") || w.contains("scholar")) return "librarian";
+        if (w.contains("shepherd")) return "shepherd";
+        if (w.contains("watch")) return "weaponsmith";
+        if (w.contains("shopkeeper") || w.contains("assayer") || w.contains("merchant")) return "cartographer";
+        if (w.contains("famil") || w.contains("farmer") || w.contains("widow")) return "farmer";
+        if (w.contains("smith")) return "toolsmith";
+        return "none";
+    }
+
+    private static JsonArray meta(JsonArray line, String id, int weight, String witness, boolean confessed) {
+        JsonObject m = new JsonObject();
+        m.addProperty("charge", id);
+        m.addProperty("w", weight);
+        m.addProperty("job", job(witness));
+        m.addProperty("confessed", confessed);
+        line.add(m);
+        return line;
+    }
+
+    private static Charge charge(RepData d, String id, int weight, String witness, String testimony) {
+        // a confessed charge is still read out, but weighs less
+        boolean confessed = d.confessed.contains(id);
+        int w = confessed ? Math.max(0, weight - 1) : weight;
+        return new Charge(w, meta(line(witness, testimony), id, w, witness, confessed), true, id);
     }
 
     public static JsonObject script(ServerPlayer player, RepData d, Set<String> traits) {
@@ -200,26 +239,31 @@ public final class Trial {
             for (JsonElement t : c.getAsJsonArray("silenced")) {
                 silenced |= traits.contains(t.getAsString());
             }
+            String id = c.get("id").getAsString();
             if (silenced) {
                 silent.add(new Charge(0, line("The Watch Captain", fill(s.get("silent_witness").getAsString(), "witness",
-                        c.get("witness").getAsString())), false));
+                        c.get("witness").getAsString())), false, id));
             } else {
-                heard.add(new Charge(c.get("weight").getAsInt(), line(c.get("witness").getAsString(), c.get("testimony").getAsString()), true));
+                heard.add(charge(d, id, c.get("weight").getAsInt(), c.get("witness").getAsString(), c.get("testimony").getAsString()));
             }
         }
         // what everyday life left behind
         int villagers = player.getStats().getValue(Stats.ENTITY_KILLED.get(EntityType.VILLAGER));
         if (villagers > 0 && s.has("villagers")) {
-            heard.add(new Charge(Math.min(3, 1 + villagers / 3), line(s.get("villagers"), "n", Integer.toString(villagers)), true));
+            JsonArray l = line(s.get("villagers"), "n", Integer.toString(villagers));
+            heard.add(charge(d, "villagers", Math.min(3, 1 + villagers / 3), l.get(0).getAsString(), l.get(1).getAsString()));
         }
         if (d.looted.size() >= 3 && s.has("stores")) {
-            heard.add(new Charge(1, line(s.get("stores"), "n", Integer.toString(d.looted.size())), true));
+            JsonArray l = line(s.get("stores"), "n", Integer.toString(d.looted.size()));
+            heard.add(charge(d, "stores", 1, l.get(0).getAsString(), l.get(1).getAsString()));
         }
         if (d.contractsDone >= 3 && s.has("hand")) {
-            heard.add(new Charge(1, line(s.get("hand"), "n", Integer.toString(d.contractsDone)), true));
+            JsonArray l = line(s.get("hand"), "n", Integer.toString(d.contractsDone));
+            heard.add(charge(d, "hand", 1, l.get(0).getAsString(), l.get(1).getAsString()));
         }
         if (d.shrinePrayers > 0 && s.has("shrines")) {
-            heard.add(new Charge(1, line(s.get("shrines"), "n", Integer.toString(d.shrinePrayers)), true));
+            JsonArray l = line(s.get("shrines"), "n", Integer.toString(d.shrinePrayers));
+            heard.add(charge(d, "shrines", 1, l.get(0).getAsString(), l.get(1).getAsString()));
         }
         heard.sort(Comparator.comparingInt(Charge::weight).reversed());
         int weight = 0;
@@ -228,6 +272,13 @@ public final class Trial {
             weight += c.weight();
             if (shown++ < 7) {
                 lines.add(c.line());
+                // a priest heard it first
+                if (d.confessed.contains(c.id()) && s.has("confessed")) {
+                    lines.add(s.get("confessed").deepCopy());
+                }
+            } else {
+                // charges the court doesn't read out still count, but can't be answered
+                c.line().get(2).getAsJsonObject().addProperty("unread", true);
             }
         }
         if (heard.size() > 7) {
@@ -236,11 +287,37 @@ public final class Trial {
         for (int i = 0; i < Math.min(3, silent.size()); i++) {
             lines.add(silent.get(i).line());
         }
+        // your standing with the Hand and the Watch
+        int mods = 0;
+        boolean advocate = Ranks.hand(player) >= 1 && s.has("advocate");
+        if (advocate) {
+            lines.add(s.get("advocate").deepCopy());
+            lines.add(s.get("advocate_judge").deepCopy());
+            mods -= Math.min(2, Ranks.hand(player));
+        }
+        if (d.watchRank >= 1 && s.has("watch_lenient")) {
+            boolean wicked = Reputation.tierIndex(d.value) == 0;
+            lines.add(s.get(wicked ? "watch_harsh" : "watch_lenient").deepCopy());
+            mods += wicked ? 1 : -1;
+        }
         if (s.has("plea")) {
             lines.add(s.get("plea").deepCopy());
         }
         out.add("lines", lines);
         out.addProperty("weight", weight);
+        out.addProperty("mods", mods);
+        out.addProperty("advocate", advocate);
+        JsonObject react = new JsonObject();
+        for (String k : new String[]{"deny_proven", "deny_weak", "explain", "silent_answer"}) {
+            if (s.has(k)) {
+                react.add(k, s.get(k).deepCopy());
+            }
+        }
+        out.add("react", react);
+        JsonArray answers = new JsonArray();
+        StoryData.INSTANCE.answers.forEach(a -> answers.add(a.deepCopy()));
+        out.add("answers", answers);
+        out.add("votesText", StoryData.INSTANCE.votes.deepCopy());
         out.addProperty("heard", heard.size());
         out.addProperty("silent", silent.size());
         JsonArray pleas = new JsonArray();
@@ -262,6 +339,7 @@ public final class Trial {
         }
         JsonObject o = JsonParser.parseString(d.trialScript).getAsJsonObject();
         o.addProperty("resume", resume);
+        o.add("answered", answers(d));
         if (!d.trialVerdict.isEmpty()) {
             o.add("verdict", JsonParser.parseString(d.trialVerdict));
         }
@@ -270,6 +348,227 @@ public final class Trial {
 
     public static void send(ServerPlayer player, net.minecraft.network.protocol.common.custom.CustomPacketPayload payload) {
         Net.send(player, payload);
+    }
+
+    // ------------------------------------------------------------------ answering each charge
+    public static JsonObject answers(RepData d) {
+        if (d.trialAnswers.isEmpty()) {
+            return new JsonObject();
+        }
+        try {
+            return JsonParser.parseString(d.trialAnswers).getAsJsonObject();
+        } catch (Exception e) {
+            return new JsonObject();
+        }
+    }
+
+    private static JsonObject metaOf(JsonArray line) {
+        return line.size() > 2 && line.get(2).isJsonObject() ? line.get(2).getAsJsonObject() : null;
+    }
+
+    /** how heavy the case is: every charge, as answered, plus your standing with the Hand and the Watch, and any rivals' words */
+    public static int weight(JsonObject script, RepData d) {
+        int w = script.get("weight").getAsInt();
+        JsonObject ans = answers(d);
+        JsonArray lines = script.getAsJsonArray("lines");
+        for (int i = 0; i < lines.size(); i++) {
+            JsonObject m = metaOf(lines.get(i).getAsJsonArray());
+            if (m == null || !m.has("charge") || m.has("unread") || !ans.has(Integer.toString(i))) {
+                continue;
+            }
+            int cw = m.get("w").getAsInt();
+            w += switch (ans.get(Integer.toString(i)).getAsString()) {
+                case "deny" -> cw >= 2 ? 1 : -cw;
+                case "explain" -> -Math.min(1, cw);
+                default -> 0;
+            };
+        }
+        w += script.has("mods") ? script.get("mods").getAsInt() : 0;
+        w += script.has("rival") ? script.get("rival").getAsInt() : 0;
+        return Math.max(0, w);
+    }
+
+    /** what the court says back to an answer */
+    private static JsonArray reaction(JsonObject script, JsonObject meta, String answer) {
+        JsonObject r = script.has("react") ? script.getAsJsonObject("react") : new JsonObject();
+        String key = switch (answer) {
+            case "deny" -> meta.get("w").getAsInt() >= 2 ? "deny_proven" : "deny_weak";
+            case "explain" -> "explain";
+            default -> "silent_answer";
+        };
+        return r.has(key) ? r.getAsJsonArray(key) : null;
+    }
+
+    /** the transcript as it was spoken: every line, with the court's reply after each answer */
+    private static JsonArray transcript(JsonObject script, RepData d) {
+        JsonArray out = new JsonArray();
+        JsonObject ans = answers(d);
+        JsonArray lines = script.getAsJsonArray("lines");
+        for (int i = 0; i < lines.size(); i++) {
+            JsonArray l = lines.get(i).getAsJsonArray();
+            out.add(line(l.get(0).getAsString(), l.get(1).getAsString()));
+            JsonObject m = metaOf(l);
+            if (m != null && ans.has(Integer.toString(i))) {
+                JsonArray r = reaction(script, m, ans.get(Integer.toString(i)).getAsString());
+                if (r != null) {
+                    out.add(line(r.get(0).getAsString(), r.get(1).getAsString()));
+                }
+            }
+        }
+        return out;
+    }
+
+    /** The accused's answer to one charge (deny, explain, silent). */
+    public static void onAnswer(ServerPlayer player, int index, String answer) {
+        RepData d = Reputation.data(player);
+        if (d.trialState != 1 || !d.trialVerdict.isEmpty() || d.trialScript.isEmpty()
+                || !(answer.equals("deny") || answer.equals("explain") || answer.equals("silent"))) {
+            return;
+        }
+        JsonObject script = JsonParser.parseString(d.trialScript).getAsJsonObject();
+        JsonArray lines = script.getAsJsonArray("lines");
+        if (index < 0 || index >= lines.size()) {
+            return;
+        }
+        JsonObject m = metaOf(lines.get(index).getAsJsonArray());
+        JsonObject ans = answers(d);
+        if (m == null || !m.has("charge") || m.has("unread") || ans.has(Integer.toString(index))) {
+            return;
+        }
+        ans.addProperty(Integer.toString(index), answer);
+        d.trialAnswers = ans.toString();
+        JsonArray r = reaction(script, m, answer);
+        if (r != null) {
+            speak(player, r.get(0).getAsString(), "", false);
+        }
+    }
+
+    /** The accused's screen has shown line `index`: the court acts it out (the speaker turns and glows, the witness stands). */
+    public static void onLineShown(ServerPlayer player, int index) {
+        RepData d = Reputation.data(player);
+        if (d.trialState != 1 || d.trialScript.isEmpty()) {
+            return;
+        }
+        JsonArray lines = JsonParser.parseString(d.trialScript).getAsJsonObject().getAsJsonArray("lines");
+        if (index < 0 || index >= lines.size()) {
+            return;
+        }
+        JsonArray l = lines.get(index).getAsJsonArray();
+        String speaker = l.get(0).getAsString();
+        JsonObject m = metaOf(l);
+        boolean missing = l.get(1).getAsString().contains("cannot be found");
+        speak(player, speaker, m != null && m.has("job") ? m.get("job").getAsString() : "", missing);
+        ServerLevel court = court(player.getServer());
+        // a heavy charge sets the gallery muttering
+        if (court != null && m != null && m.has("w") && m.get("w").getAsInt() >= 3) {
+            int slot = CourtData.get(court).slot(player.getUUID());
+            for (int i = 0; i < 6; i += 2) {
+                net.minecraft.world.entity.Entity g = CourtBuilder.find(court, slot, "gallery" + i);
+                if (g != null) {
+                    court.playSound(null, g.getX(), g.getY(), g.getZ(), SoundEvents.VILLAGER_NO, SoundSource.NEUTRAL, 0.8f, 0.7f + i * 0.08f);
+                }
+            }
+        }
+    }
+
+    private static String roleOf(String speaker) {
+        return switch (speaker) {
+            case "The Judge" -> "judge";
+            case "The Watch Captain" -> "captain";
+            case "The Clerk" -> "clerk";
+            case "An Advocate of the Hand" -> "advocate";
+            default -> "witness";
+        };
+    }
+
+    private static void speak(ServerPlayer player, String speaker, String job, boolean witnessMissing) {
+        String role = roleOf(speaker);
+        Act old = ACT.getOrDefault(player.getUUID(), new Act("", "", "none", false));
+        Act act = role.equals("witness") ? new Act(role, speaker, job.isEmpty() ? job(speaker) : job, false)
+                : new Act(role, old.witness(), old.job(), witnessMissing || old.hidden());
+        ACT.put(player.getUUID(), act);
+        ServerLevel court = court(player.getServer());
+        if (court == null) {
+            return;
+        }
+        int slot = CourtData.get(court).slot(player.getUUID());
+        CourtBuilder.ensureNpcs(court, slot, scene(player, Reputation.data(player), court, slot), player);
+        net.minecraft.world.entity.Entity e = CourtBuilder.find(court, slot, role);
+        if (e instanceof net.minecraft.world.entity.LivingEntity le) {
+            le.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.GLOWING, 70, 0, false, false));
+            court.playSound(null, le.getX(), le.getY(), le.getZ(), role.equals("judge") ? SoundEvents.VILLAGER_WORK_CLERIC : SoundEvents.VILLAGER_AMBIENT,
+                    SoundSource.NEUTRAL, 0.6f, 0.9f);
+        }
+    }
+
+    /** what the court and the prison look like for this player right now */
+    public static CourtBuilder.Scene scene(ServerPlayer player, RepData d, ServerLevel court, int slot) {
+        Act a = ACT.getOrDefault(player.getUUID(), new Act("", "", "none", false));
+        boolean advocate = false;
+        if (d.trialState == 1 && !d.trialScript.isEmpty()) {
+            JsonObject sc = JsonParser.parseString(d.trialScript).getAsJsonObject();
+            advocate = sc.has("advocate") && sc.get("advocate").getAsBoolean();
+        }
+        net.minecraft.world.entity.npc.VillagerProfession job = jobOf(a.job());
+        CourtBuilder.Scene c0 = new CourtBuilder.Scene(0, "", "", advocate, d.trialState == 1 ? a.witness() : "", job,
+                d.trialState == 1 && a.hidden(), d.trialState == 1 ? a.speaker() : "", true, Double.NaN);
+        return Prison.scene(player, d, court, slot, c0);
+    }
+
+    private static net.minecraft.world.entity.npc.VillagerProfession jobOf(String job) {
+        return switch (job) {
+            case "cleric" -> net.minecraft.world.entity.npc.VillagerProfession.CLERIC;
+            case "librarian" -> net.minecraft.world.entity.npc.VillagerProfession.LIBRARIAN;
+            case "shepherd" -> net.minecraft.world.entity.npc.VillagerProfession.SHEPHERD;
+            case "weaponsmith" -> net.minecraft.world.entity.npc.VillagerProfession.WEAPONSMITH;
+            case "cartographer" -> net.minecraft.world.entity.npc.VillagerProfession.CARTOGRAPHER;
+            case "farmer" -> net.minecraft.world.entity.npc.VillagerProfession.FARMER;
+            case "toolsmith" -> net.minecraft.world.entity.npc.VillagerProfession.TOOLSMITH;
+            default -> net.minecraft.world.entity.npc.VillagerProfession.NONE;
+        };
+    }
+
+    /** a rival's words, added to an accused player's trial before they plead (true if in time) */
+    public static boolean addRivalLine(ServerPlayer accused, String name, boolean against, long day) {
+        RepData d = Reputation.data(accused);
+        if (d.trialState != 1 || !d.trialVerdict.isEmpty() || d.trialScript.isEmpty()) {
+            return false;
+        }
+        JsonObject script = JsonParser.parseString(d.trialScript).getAsJsonObject();
+        JsonObject s = StoryData.INSTANCE.trialScript;
+        String key = against ? "rival_against" : "rival_for";
+        if (!s.has(key)) {
+            return false;
+        }
+        JsonArray src = s.getAsJsonArray(key);
+        JsonArray l = line(fill(src.get(0).getAsString(), "name", name), fill(fill(src.get(1).getAsString(), "name", name), "day", Long.toString(day)));
+        JsonObject m = new JsonObject();
+        m.addProperty("rival", true);
+        m.addProperty("job", "none");
+        l.add(m);
+        JsonArray lines = script.getAsJsonArray("lines");
+        JsonArray out = new JsonArray();
+        for (int i = 0; i < lines.size(); i++) {
+            if (i == lines.size() - 1) {
+                out.add(l);
+            }
+            out.add(lines.get(i));
+        }
+        // answers are kept by line number: everything from the plea on moves down one
+        JsonObject ans = answers(d);
+        JsonObject moved = new JsonObject();
+        for (Map.Entry<String, JsonElement> e : ans.entrySet()) {
+            int i = Integer.parseInt(e.getKey());
+            moved.add(Integer.toString(i >= lines.size() - 1 ? i + 1 : i), e.getValue());
+        }
+        d.trialAnswers = moved.toString();
+        script.add("lines", out);
+        script.addProperty("rival", (script.has("rival") ? script.get("rival").getAsInt() : 0) + (against ? 2 : -1));
+        d.trialScript = script.toString();
+        if (!SHOW_AT.containsKey(accused.getUUID())) {
+            show(accused, d, false);
+        }
+        return true;
     }
 
     // ------------------------------------------------------------------ the plea and the verdict
@@ -297,7 +596,7 @@ public final class Trial {
         if (!allowed) {
             return;
         }
-        int w = script.get("weight").getAsInt();
+        int w = weight(script, d);
         int base = Math.min(7, Math.max(1, Math.min(5, 1 + w / 2)) + d.convictions);
         JsonObject s = StoryData.INSTANCE.trialScript;
         boolean guilty;
@@ -332,8 +631,24 @@ public final class Trial {
         JsonObject v = new JsonObject();
         v.addProperty("plea", plea);
         v.addProperty("guilty", guilty);
+        v.addProperty("weight", w);
+        // the jury votes, one at a time (a bought juror makes it three and three)
+        int g = w == 0 ? 0 : guilty ? Math.min(6, 4 + player.getRandom().nextInt(3) + (w >= 8 ? 1 : 0))
+                : says.equals("bribe_worked") ? 3 : player.getRandom().nextInt(4);
+        List<Boolean> votes = new ArrayList<>();
+        for (int i = 0; i < 6; i++) {
+            votes.add(i < g);
+        }
+        java.util.Collections.shuffle(votes, new java.util.Random(player.getRandom().nextLong()));
+        JsonArray va = new JsonArray();
+        votes.forEach(va::add);
+        v.add("votes", va);
+        VOTE_AT.put(player.getUUID(), now(player));
         v.addProperty("days", guilty ? days : 0);
         JsonArray lines = new JsonArray();
+        if (s.has("jury")) {
+            lines.add(s.get("jury").deepCopy());
+        }
         if (s.has(says)) {
             lines.add(line(s.get(says), "days", days + (days == 1 ? " day" : " days")));
         }
@@ -354,7 +669,7 @@ public final class Trial {
         JsonObject t = new JsonObject();
         t.addProperty("day", script.get("day").getAsLong());
         t.addProperty("act", script.get("act").getAsString());
-        t.add("lines", script.getAsJsonArray("lines"));
+        t.add("lines", transcript(script, d));
         t.add("verdict", v);
         t.addProperty("outcome", v.get("guilty").getAsBoolean() ? "in the cells" : "acquitted");
         d.trials.add(t.toString());
@@ -378,6 +693,7 @@ public final class Trial {
         int slot = CourtData.get(court).slot(player.getUUID());
         CourtBuilder.ensure(court, slot);
         d.servedTicks = 0;
+        Prison.start(player, d);
         putInCell(player, court, slot);
         player.level().playSound(null, player.blockPosition(), SoundEvents.IRON_DOOR_CLOSE, SoundSource.BLOCKS, 1f, 0.6f);
         give(player, new ItemStack(Items.BREAD, 2));
@@ -397,21 +713,9 @@ public final class Trial {
         return (int) Math.max(1, (ticks + 1199) / 1200);
     }
 
-    /** Time spent in the cell (only while you're in it, and it can't be slept away): every DAY ticks is a day served. */
+    /** Time spent in the prison (only while you're in it, and it can't be slept away): every DAY ticks is a day served. */
     public static void passTime(ServerPlayer player, int ticks) {
-        RepData d = Reputation.data(player);
-        if (d.trialState != 2) {
-            return;
-        }
-        int before = d.servedTicks / 1200;
-        d.servedTicks += ticks;
-        if (d.servedTicks >= DAY) {
-            serveDay(player);
-        } else if (d.servedTicks / 1200 != before) {
-            // once a minute, how long is left
-            player.displayClientMessage(Component.literal("Day " + (d.served + 1) + " of " + d.sentence + ". "
-                    + minutesLeft(d) + " min to go.").withStyle(ChatFormatting.GRAY), true);
-        }
+        Prison.passTime(player, ticks);
     }
 
     /** A whole day gone by in the cell. */
@@ -429,7 +733,8 @@ public final class Trial {
             return;
         }
         if (d.served >= d.sentence) {
-            release(player, d, "served");
+            // sentence served: the doors open and you walk out
+            Prison.walkOut(player, d);
             return;
         }
         player.level().playSound(null, player.blockPosition(), SoundEvents.CHAIN_PLACE, SoundSource.BLOCKS, 1f, 0.7f);
@@ -438,7 +743,7 @@ public final class Trial {
     }
 
     // ------------------------------------------------------------------ going home
-    /** outcome: served, broken out, acquitted, released (by an operator) */
+    /** outcome: served, escaped, broken out, acquitted, released (by an operator) */
     public static void release(ServerPlayer player, RepData d, String outcome) {
         if (d.trialState == 0) {
             return;
@@ -452,6 +757,12 @@ public final class Trial {
         if (outcome.equals("broken out")) {
             d.brokenOut = true;
         }
+        if (outcome.equals("escaped")) {
+            // the Hand respects it; the Watch remembers it
+            d.handDone += 3;
+            d.watchDone = Math.max(0, d.watchDone - 5);
+        }
+        Prison.leave(player, d);
         d.trialState = 0;
         d.trialScript = "";
         d.trialVerdict = "";
@@ -465,6 +776,7 @@ public final class Trial {
         giveBack(player, d);
         restoreSpawn(player, d);
         String dream = switch (outcome) {
+            case "escaped" -> "escape";
             case "broken out" -> "breakout";
             case "served", "acquitted" -> "release";
             default -> "";
@@ -634,14 +946,23 @@ public final class Trial {
             DREAM_AT.remove(id);
             Dreams.send(player, StoryData.INSTANCE.specialDreams.get(DREAM.remove(id)));
         }
-        if (now % 20 != 0) {
-            return;
-        }
         ServerLevel court = court(player.getServer());
         if (court == null) {
             return;
         }
-        if (inCourt(player)) {
+        // the jury votes, one juror at a time, then the gavel
+        Long vote = VOTE_AT.get(id);
+        if (vote != null) {
+            jury(player, d, court, now - vote);
+        }
+        boolean here = inCourt(player);
+        if (here && d.trialState == 2 && player.isAlive()) {
+            Prison.tick(player, d, court, CourtData.get(court).slot(id), now);
+        }
+        if (now % 20 != 0) {
+            return;
+        }
+        if (here) {
             AWAY_SINCE.remove(id);
             int slot = CourtData.get(court).slot(id);
             if (CourtBuilder.ensure(court, slot)) {
@@ -654,12 +975,10 @@ public final class Trial {
                     putInCell(player, court, slot);
                 }
             }
-            CourtBuilder.ensureNpcs(court, slot);
+            CourtBuilder.ensureNpcs(court, slot, scene(player, d, court, slot), player);
             if (d.trialState == 0 && !DREAM_AT.containsKey(id)) {
                 // nobody should be here who isn't on trial or in a cell (an operator's teleport, an old save...)
                 goHome(player, d);
-            } else if (d.trialState == 2 && player.isAlive()) {
-                passTime(player, 20);
             }
         } else if (d.trialState != 0) {
             // taken out of the court by something else: give everything back after a little while
@@ -672,6 +991,32 @@ public final class Trial {
                 d.trialVerdict = "";
                 giveBack(player, d);
                 restoreSpawn(player, d);
+            }
+        }
+    }
+
+    private static void jury(ServerPlayer player, RepData d, ServerLevel court, long e) {
+        if (e > 220 || d.trialVerdict.isEmpty()) {
+            VOTE_AT.remove(player.getUUID());
+            return;
+        }
+        int slot = CourtData.get(court).slot(player.getUUID());
+        JsonObject v = JsonParser.parseString(d.trialVerdict).getAsJsonObject();
+        JsonArray votes = v.has("votes") ? v.getAsJsonArray("votes") : new JsonArray();
+        for (int i = 0; i < votes.size(); i++) {
+            if (e == 30 + i * 24L) {
+                net.minecraft.world.entity.Entity j = CourtBuilder.find(court, slot, "juror" + i);
+                if (j != null) {
+                    boolean g = votes.get(i).getAsBoolean();
+                    Prison.vote(court, j, g);
+                    court.playSound(null, j.getX(), j.getY(), j.getZ(), g ? SoundEvents.VILLAGER_NO : SoundEvents.VILLAGER_YES, SoundSource.NEUTRAL, 0.9f, 1f);
+                }
+            }
+        }
+        if (e == 184 || e == 190 || e == 196) {
+            net.minecraft.world.entity.Entity judge = CourtBuilder.find(court, slot, "judge");
+            if (judge != null) {
+                court.playSound(null, judge.getX(), judge.getY(), judge.getZ(), SoundEvents.NOTE_BLOCK_BASEDRUM.value(), SoundSource.NEUTRAL, 1.2f, 0.6f);
             }
         }
     }
@@ -702,6 +1047,11 @@ public final class Trial {
         if (!(event.getPlayer() instanceof ServerPlayer player) || !inCourt(player)) {
             return;
         }
+        if (Prison.onBreak(player, event.getPos())) {
+            // the quarry face: it counts, and it's never used up
+            event.setCanceled(true);
+            return;
+        }
         if (!player.isCreative()) {
             event.setCanceled(true);
         }
@@ -717,8 +1067,14 @@ public final class Trial {
     @SubscribeEvent(priority = EventPriority.HIGH)
     public static void onUseBlock(PlayerInteractEvent.RightClickBlock event) {
         // nothing in the court or the cells is yours to use (doors, the lectern, the chest...)
-        if (event.getEntity() instanceof ServerPlayer player && inCourt(player) && !player.isCreative()) {
-            event.setCanceled(true);
+        if (event.getEntity() instanceof ServerPlayer player && inCourt(player)) {
+            if (event.getHand() == net.minecraft.world.InteractionHand.MAIN_HAND) {
+                Prison.onUseBlock(player, event.getPos());
+            }
+            if (!player.isCreative()) {
+                // no doors, chests or lecterns; eating your bread is still allowed
+                event.setUseBlock(net.neoforged.neoforge.common.util.TriState.FALSE);
+            }
         }
     }
 
@@ -728,6 +1084,9 @@ public final class Trial {
             event.setCanceled(true);
             if (event.getEntity() instanceof ServerPlayer player && event.getHand() == net.minecraft.world.InteractionHand.MAIN_HAND) {
                 String role = CourtBuilder.role(event.getTarget());
+                if (Prison.onTalk(player, role)) {
+                    return;
+                }
                 String name = event.getTarget().hasCustomName() ? event.getTarget().getCustomName().getString() : "";
                 String line = role.equals("gaoler") ? "\"No beds in here. You'll feel every hour of it.\""
                         : role.startsWith("prisoner") ? "\"Don't bother with the walls. I've tried.\""
@@ -810,9 +1169,11 @@ public final class Trial {
         RepData d = Reputation.data(player);
         Set<String> traits = Meb.traits(player);
         String act = Dreams.actTrait(traits);
-        return "Trial state: " + (d.trialState == 0 ? "free" : d.trialState == 1 ? "on trial" : "in a cell (day " + (d.served + 1) + " of " + d.sentence + ", " + minutesLeft(d) + " min to go)")
+        return "Trial state: " + (d.trialState == 0 ? "free" : d.trialState == 1 ? "on trial" : "in prison (day " + (d.served + 1) + " of " + d.sentence + ", " + Prison.phaseName(d) + ", " + minutesLeft(d)
+                + " min to go; stone today " + d.labour + ", escape: plan " + d.planKnown + ", rounds " + d.knowsRounds + ", chisel " + d.hasChisel
+                + ", hole " + (100 * d.digProgress / Prison.digsNeeded()) + "%)")
                 + ". Act: " + StoryData.INSTANCE.acts.getOrDefault(act, "none") + (d.trialActs.contains(act) ? " (already tried this act)" : "")
-                + ". Tier: " + Reputation.tier(d.value) + ". Convictions: " + d.convictions
+                + ". Tier: " + Reputation.tier(d.value) + ". Convictions: " + d.convictions + ", escapes: " + d.escapes
                 + ". Court loaded: " + (court(player.getServer()) != null) + ".";
     }
 }

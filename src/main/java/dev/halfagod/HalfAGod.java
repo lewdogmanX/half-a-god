@@ -43,6 +43,11 @@ public final class HalfAGod {
                 e.addPackFinders(ResourceLocation.fromNamespaceAndPath(MODID, "story"), PackType.SERVER_DATA,
                         Component.literal("Half a God story"), PackSource.BUILT_IN, true, Pack.Position.TOP);
             }
+            // the paper-and-ink skin for Mebahel's quest board and contract notes (always on, on top)
+            if (e.getPackType() == PackType.CLIENT_RESOURCES) {
+                e.addPackFinders(ResourceLocation.fromNamespaceAndPath(MODID, "skin"), PackType.CLIENT_RESOURCES,
+                        Component.literal("Half a God: paper and ink"), PackSource.BUILT_IN, true, Pack.Position.TOP);
+            }
         });
 
         NeoForge.EVENT_BUS.register(Reputation.class);
@@ -57,6 +62,8 @@ public final class HalfAGod {
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Dreams.class);
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Trial.class);
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Secrets.class);
+        NeoForge.EVENT_BUS.register(dev.halfagod.core.Rivals.class);
+        NeoForge.EVENT_BUS.register(dev.halfagod.core.Words.class);
         NeoForge.EVENT_BUS.addListener((AddReloadListenerEvent e) -> e.addListener(StoryData.INSTANCE));
         if (Boolean.getBoolean("halfagod.smoketest")) {
             NeoForge.EVENT_BUS.register(dev.halfagod.test.SmokeTest.class);

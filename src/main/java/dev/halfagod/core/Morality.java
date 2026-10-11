@@ -97,12 +97,22 @@ public final class Morality {
 
         // Evil: bounty hunters come for you at night
         long time = level.getDayTime() % 24000L;
+        // a rival paid the Gilded Hand for your head: they come the first night you're out under the sky
+        RepData rd = Reputation.data(player);
+        if (!rd.bountyBy.isEmpty() && time > 13500 && time < 22000 && level.getDifficulty() != Difficulty.PEACEFUL
+                && level.dimension() == net.minecraft.world.level.Level.OVERWORLD && level.canSeeSky(player.blockPosition())) {
+            rd.bountyBy = "";
+            player.displayClientMessage(Component.literal(Rivals.text("warned")).withStyle(net.minecraft.ChatFormatting.RED), true);
+            sendHunters(player, level, false);
+        }
         if (t <= FALLEN && time > 13500 && time < 22000 && level.getDifficulty() != Difficulty.PEACEFUL
                 && level.dimension() == net.minecraft.world.level.Level.OVERWORLD) {
             long night = level.getDayTime() / 24000L;
             if (LAST_BOUNTY.getOrDefault(player.getUUID(), -1L) != night) {
                 LAST_BOUNTY.put(player.getUUID(), night);
                 float hunt = (t == WICKED ? 0.7f : 0.35f) * new float[]{1f, 1f, 0.75f, 0.5f}[Ranks.hand(player)]; // the Hand protects its own
+                // every escape from the Watch's prison puts a higher price on your head
+                hunt = Math.min(0.95f, hunt * (1f + 0.5f * Reputation.data(player).escapes));
                 if (level.random.nextFloat() < hunt) {
                     sendHunters(player, level, t == WICKED);
                 }

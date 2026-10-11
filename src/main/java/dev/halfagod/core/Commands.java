@@ -22,7 +22,8 @@ import static net.minecraft.commands.Commands.literal;
  * /halfagod rep | lostmyway | choose | chronicle            (everyone)
  * /halfagod story | unlockall | jump <quest> [player] | setrep <value> [player]   (operators)
  * /halfagod test story <prologue|act1..act7|end|after|random> [good|evil|waver|random] | story clear | story status   (operators)
- * /halfagod test dream [id] | dreams reset | secret <name> | trial [status|witnesses|day|release|reset] | endcard | codex <page>   (operators)
+ * /halfagod test dream [id] | dreams reset | secret <name> | trial [status|witnesses|day|rival|release|reset] | endcard | codex <page>   (operators)
+ * /halfagod test prison time <when> | escape <step> | visitor | quota  ·  confess | interrogate <who> | ahead | bounty <player>   (operators)
  */
 public final class Commands {
     private Commands() {
@@ -122,6 +123,11 @@ public final class Commands {
                         .then(literal("status").executes(c -> ok(c.getSource(), Trial.status(c.getSource().getPlayerOrException()))))
                         .then(literal("witnesses").executes(c -> ok(c.getSource(), Trial.testWitnesses(c.getSource().getPlayerOrException()))))
                         .then(literal("day").executes(c -> ok(c.getSource(), Trial.testDay(c.getSource().getPlayerOrException()))))
+                        .then(literal("rival").executes(c -> {
+                            ServerPlayer p = c.getSource().getPlayerOrException();
+                            return ok(c.getSource(), Trial.addRivalLine(p, "A Traveller", true, p.serverLevel().getDayTime() / 24000L + 1)
+                                    ? "A traveller speaks against you (before you plead)." : "You're not on trial, or you've already pleaded.");
+                        }))
                         .then(literal("release").executes(c -> ok(c.getSource(), Trial.testRelease(c.getSource().getPlayerOrException()))))
                         .then(literal("reset").executes(c -> {
                             RepData d = Reputation.data(c.getSource().getPlayerOrException());
@@ -129,6 +135,61 @@ public final class Commands {
                             d.convictions = 0;
                             return ok(c.getSource(), "The Watch has forgotten you (this act's trial can happen again).");
                         })))
+                .then(literal("prison")
+                        .then(literal("time").then(argument("when", StringArgumentType.word())
+                                .suggests((c, b) -> {
+                                    for (String w : new String[]{"morning", "labour", "supper", "night", "lightsout"}) {
+                                        b.suggest(w);
+                                    }
+                                    return b.buildFuture();
+                                })
+                                .executes(c -> ok(c.getSource(), Prison.testTime(c.getSource().getPlayerOrException(), StringArgumentType.getString(c, "when"))))))
+                        .then(literal("escape").then(argument("step", StringArgumentType.word())
+                                .suggests((c, b) -> {
+                                    for (String w : new String[]{"plan", "trust", "chisel", "dig"}) {
+                                        b.suggest(w);
+                                    }
+                                    return b.buildFuture();
+                                })
+                                .executes(c -> ok(c.getSource(), Prison.testEscape(c.getSource().getPlayerOrException(), StringArgumentType.getString(c, "step"))))))
+                        .then(literal("visitor").executes(c -> ok(c.getSource(), Prison.testVisitor(c.getSource().getPlayerOrException()))))
+                        .then(literal("quota").executes(c -> {
+                            RepData r = Reputation.data(c.getSource().getPlayerOrException());
+                            r.labour = 999;
+                            return ok(c.getSource(), "Today's quota is met.");
+                        })))
+                .then(literal("confess").executes(c -> {
+                    ServerPlayer p = c.getSource().getPlayerOrException();
+                    Reputation.data(p).lastConfession = -1;
+                    Words.confession(p);
+                    return 1;
+                }))
+                .then(literal("interrogate").then(argument("who", StringArgumentType.word())
+                        .suggests((c, b) -> {
+                            com.google.gson.JsonObject t = StoryData.INSTANCE.table("interrogations");
+                            if (t.has("people")) {
+                                t.getAsJsonArray("people").forEach(e -> b.suggest(e.getAsJsonObject().get("id").getAsString()));
+                            }
+                            return b.buildFuture();
+                        })
+                        .executes(c -> {
+                            ServerPlayer p = c.getSource().getPlayerOrException();
+                            String who = StringArgumentType.getString(c, "who");
+                            Reputation.data(p).interrogated.remove(who);
+                            Words.interrogate(p, who);
+                            return 1;
+                        })))
+                .then(literal("ahead").executes(c -> {
+                    ServerPlayer p = c.getSource().getPlayerOrException();
+                    Reputation.data(p).villagesHeard.clear();
+                    Words.ahead(p);
+                    return ok(c.getSource(), "Villages have forgotten you've visited: walk into one to hear what it's heard of you.");
+                }))
+                .then(literal("bounty").then(argument("target", EntityArgument.player()).executes(c -> {
+                    ServerPlayer target = EntityArgument.getPlayer(c, "target");
+                    Reputation.data(target).bountyBy = c.getSource().getTextName();
+                    return ok(c.getSource(), "A price on " + target.getName().getString() + "'s head: hunters come the next night they're out under the sky.");
+                })))
                 .then(literal("story")
                         .then(literal("clear").executes(c -> ok(c.getSource(), Simulate.clear(c.getSource().getPlayerOrException()))))
                         .then(literal("status").executes(c -> ok(c.getSource(), Simulate.status(c.getSource().getPlayerOrException()))))

@@ -2198,7 +2198,7 @@ public final class StoryMapScreen extends Screen {
                 {"Spared", num("spared")}, {"Killed", num("killed")},
                 {"Villagers killed", num("villagers")}, {"Wardens fallen", num("wardens") + " of 7"},
                 {"Letters", num("letters")}, {"Dreams", num("dreams")},
-                {"Secrets", num("secrets") + " / " + num("secretsTotal")}, {"Trials", num("trials")},
+                {"Secrets", num("secrets") + " / " + num("secretsTotal")}, {"Trials", num("trials") + (story.has("escapes") && story.get("escapes").getAsInt() > 0 ? " (" + num("escapes") + " escaped)" : "")},
         };
         int colW = (cw - 40) / 2;
         for (int i = 0; i < stats.length; i++) {
@@ -2444,6 +2444,18 @@ public final class StoryMapScreen extends Screen {
                 for (FormattedCharSequence l : font.split(Component.literal(line), rw)) {
                     g.drawString(font, l, rx, ry, rival ? RED_INK : INK, false);
                     ry += 10;
+                }
+                // the Gilded Hand takes contracts from its own
+                if (ranks.has("hand") && ranks.get("hand").getAsInt() >= 1 && f.has("uuid")) {
+                    String price = "[Put a price on their head]";
+                    g.drawString(font, price, rx + 6, ry, 0xFF8E1B1B, false);
+                    if (ry > top + 4 && ry + 10 < bottom - 4) {
+                        String uuid = f.get("uuid").getAsString();
+                        hit(rx + 6, ry - 1, rx + 6 + font.width(price), ry + 9,
+                                () -> net.neoforged.neoforge.network.PacketDistributor.sendToServer(new dev.halfagod.net.Payloads.Act("bounty", "", uuid)),
+                                Component.literal("The Gilded Hand sends hunters after them the next night (20 emeralds)."));
+                    }
+                    ry += 11;
                 }
             }
         }

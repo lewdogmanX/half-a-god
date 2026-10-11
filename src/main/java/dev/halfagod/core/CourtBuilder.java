@@ -44,7 +44,7 @@ import java.util.Set;
  * There's no bed and no way out: the days pass in real time.
  */
 public final class CourtBuilder {
-    public static final int VERSION = 3;
+    public static final int VERSION = 4;
     private static final int FLAGS = Block.UPDATE_CLIENTS | Block.UPDATE_KNOWN_SHAPE;
     public static final String NPC = "hag_court";
 
@@ -75,14 +75,34 @@ public final class CourtBuilder {
         return new Npc(role, name, show, Kind.VILLAGER, p, x, y, z, face(x, z, tx, tz));
     }
 
-    private static List<Npc> npcs() {
+    /**
+     * What the court and the prison look like right now, for one slot: the prison's part of the day (0 in the cells,
+     * 1 labour, 2 the cafeteria), who's visiting, whether the Hand has sent an advocate, who's on the witness stand, who
+     * is speaking, whether the quarry guard is watching the cart, and where the gaoler is on his night round (NaN: not).
+     */
+    public record Scene(int phase, String visitor, String visitorName, boolean advocate, String witnessName, VillagerProfession witnessJob,
+                        boolean witnessHidden, String speaker, boolean guardWatching, double gaolerX) {
+        public static final Scene QUIET = new Scene(0, "", "", false, "", VillagerProfession.NONE, false, "", true, Double.NaN);
+    }
+
+    public static final int PHASE_CELL = 0, PHASE_LABOUR = 1, PHASE_MEAL = 2;
+
+    /** c-relative places in the prison block (relative to CELL) */
+    public static final double[] LABOUR_ENTRY = {-15.5, 0, -0.5, 90};
+    public static final double[] MEAL_ENTRY = {15.5, 0, -0.5, -90};
+    public static final BlockPos CART = new BlockPos(-15, 0, 4);
+    public static final BlockPos DIG = new BlockPos(0, 0, 6);
+    public static final BlockPos GATE = new BlockPos(20, 0, -8);
+    private static final double[] GUARD_QUARRY = {-18.5, 0, 2.5};
+
+    private static List<Npc> npcs(Scene sc) {
         List<Npc> out = new ArrayList<>();
         double dx = DOCK.getX() + 0.5, dz = DOCK.getZ() + 0.5;
         // the court
         out.add(villager("judge", "The Judge", true, VillagerProfession.CLERIC, 0.5, 2, -11.5, dx, dz));
         out.add(villager("clerk", "The Clerk", true, VillagerProfession.LIBRARIAN, -2.5, 0, -9.5, -2.5, 0));
         out.add(villager("captain", "The Watch Captain", true, VillagerProfession.WEAPONSMITH, -2.5, 0, -4.5, 0.5, -11.5));
-        out.add(villager("witness", "The Witness", true, VillagerProfession.NONE, -5.5, 1, -6.5, dx, dz));
+        out.add(villager("witness", sc.witnessName().isEmpty() ? "The Witness" : sc.witnessName(), true, sc.witnessJob(), -5.5, 1, -6.5, dx, dz));
         VillagerProfession[] jp = {VillagerProfession.FARMER, VillagerProfession.LIBRARIAN, VillagerProfession.MASON,
                 VillagerProfession.SHEPHERD, VillagerProfession.FLETCHER, VillagerProfession.CARTOGRAPHER};
         for (int i = 0; i < 6; i++) {
@@ -98,13 +118,58 @@ public final class CourtBuilder {
         for (int i = 0; i < gallery.length; i++) {
             out.add(new Npc("gallery" + i, "", false, Kind.VILLAGER, gp[i], gallery[i][0], 0.5, gallery[i][1], 180f));
         }
-        // the prison block
-        double sx = CELL_SPOT.getX() + 0.5, sz = CELL_SPOT.getZ() + 0.5;
+        if (sc.advocate()) {
+            out.add(villager("advocate", "An Advocate of the Hand", true, VillagerProfession.CARTOGRAPHER, 2.5, 0, 0.5, 0.5, -11.5));
+        }
+
+        // the prison block (everything relative to CELL)
         int c = CELL.getZ();
-        out.add(villager("gaoler", "The Gaoler", true, VillagerProfession.TOOLSMITH, 1.5, 0, c - 0.5, sx, sz));
-        out.add(villager("prisoner0", "A Prisoner", false, VillagerProfession.NITWIT, 0.5, 0, c - 5.5, sx, sz));
-        out.add(villager("prisoner1", "A Prisoner", false, VillagerProfession.NONE, -6.5, 0, c - 6.5, -6.5, c));
-        out.add(villager("prisoner2", "A Prisoner", false, VillagerProfession.NITWIT, -5.5, 0, c + 4.5, -6, c));
+        double sx = CELL_SPOT.getX() + 0.5, sz = CELL_SPOT.getZ() + 0.5;
+        String[] names = {"Old Maddock", "Wren", "Brother Tam", "Kesh"};
+        VillagerProfession[] pj = {VillagerProfession.NITWIT, VillagerProfession.NONE, VillagerProfession.NITWIT, VillagerProfession.NONE};
+        double[][] cells = {{0.5, -5.5, 0.5, 4.5}, {-6.5, -6.5, -6.5, 0}, {-5.5, 4.5, -6, 0}, {6.5, 3.5, 6, 0}};
+        double[][] quarry = {{-24.5, -5.5}, {-24.5, -3.5}, {-24.5, 1.5}, {-24.5, 3.5}};
+        double[][] tables = {{17.5, -3.5, 180}, {20.5, -6.5, 0}, {18.5, 2.5, 0}, {22.5, 4.5, 180}};
+        for (int i = 0; i < 4; i++) {
+            String role = "prisoner" + i;
+            switch (sc.phase()) {
+                case PHASE_LABOUR -> out.add(new Npc(role, names[i], true, Kind.VILLAGER, pj[i], quarry[i][0], 0, c + quarry[i][1], 90f));
+                case PHASE_MEAL -> out.add(new Npc(role, names[i], true, Kind.VILLAGER, pj[i], tables[i][0], 0.5, c + tables[i][1], (float) tables[i][2]));
+                default -> out.add(villager(role, names[i], true, pj[i], cells[i][0], 0, c + cells[i][1], cells[i][2], c + cells[i][3]));
+            }
+        }
+        // two more inmates, who keep to themselves
+        double[][] inmatesCell = {{5.5, -6.5, 0}, {7.5, -5.5, 0}};
+        double[][] inmatesQuarry = {{-24.5, -1.5, 90}, {-22.5, 0.5, 90}};
+        double[][] inmatesMeal = {{23.5, -3.5, 180}, {16.5, 4.5, 180}};
+        for (int i = 0; i < 2; i++) {
+            double[] at = sc.phase() == PHASE_LABOUR ? inmatesQuarry[i] : sc.phase() == PHASE_MEAL ? inmatesMeal[i] : inmatesCell[i];
+            out.add(new Npc("inmate" + i, "", false, Kind.VILLAGER, i == 0 ? VillagerProfession.MASON : VillagerProfession.NONE,
+                    at[0], sc.phase() == PHASE_MEAL ? 0.5 : 0, c + at[1], (float) at[2]));
+        }
+        // the gaoler: watching your cell, at the quarry door, serving supper, or on his night round
+        if (!Double.isNaN(sc.gaolerX())) {
+            out.add(new Npc("gaoler", "The Gaoler", true, Kind.VILLAGER, VillagerProfession.TOOLSMITH, sc.gaolerX(), 0, c - 0.5, 90f));
+        } else if (sc.phase() == PHASE_LABOUR) {
+            out.add(villager("gaoler", "The Gaoler", true, VillagerProfession.TOOLSMITH, -15.5, 0, c - 2.5, -25, c));
+        } else if (sc.phase() == PHASE_MEAL) {
+            out.add(new Npc("gaoler", "The Gaoler", true, Kind.VILLAGER, VillagerProfession.TOOLSMITH, 26.5, 0, c - 0.5, 90f));
+        } else {
+            out.add(villager("gaoler", "The Gaoler", true, VillagerProfession.TOOLSMITH, 1.5, 0, c - 0.5, sx, sz));
+        }
+        // the prison's guards: one watching the quarry cart (or not), one at the gate
+        float gy = sc.guardWatching() ? face(GUARD_QUARRY[0], GUARD_QUARRY[2], CART.getX() + 0.5, CART.getZ() + 0.5) : 90f;
+        out.add(new Npc("guard2", "", false, Kind.GOLEM, null, GUARD_QUARRY[0], 0, c + GUARD_QUARRY[2], gy));
+        out.add(new Npc("guard3", "", false, Kind.GOLEM, null, 23.5, 0, c - 6.5, 0f));
+        if (!sc.visitor().isEmpty()) {
+            VillagerProfession vp = switch (sc.visitor()) {
+                case "hand" -> VillagerProfession.CARTOGRAPHER;
+                case "watch" -> VillagerProfession.WEAPONSMITH;
+                case "widow" -> VillagerProfession.SHEPHERD;
+                default -> VillagerProfession.CLERIC;
+            };
+            out.add(villager("visitor", sc.visitorName(), true, vp, 0.5, 0, c + 0.5, sx, sz));
+        }
         return out;
     }
 
@@ -116,14 +181,14 @@ public final class CourtBuilder {
             return false;
         }
         BlockPos o = origin(slot);
-        for (int cx = (o.getX() - 20) >> 4; cx <= (o.getX() + 20) >> 4; cx++) {
+        for (int cx = (o.getX() - 36) >> 4; cx <= (o.getX() + 36) >> 4; cx++) {
             for (int cz = (o.getZ() - 24) >> 4; cz <= (o.getZ() + 80) >> 4; cz++) {
                 level.getChunk(cx, cz);
             }
         }
         // clear whatever an older version built
         BlockState air = Blocks.AIR.defaultBlockState();
-        for (int x = -17; x <= 17; x++) {
+        for (int x = -34; x <= 34; x++) {
             for (int y = -16; y <= 14; y++) {
                 for (int z = -20; z <= 75; z++) {
                     BlockPos p = o.offset(x, y, z);
@@ -405,10 +470,8 @@ public final class CourtBuilder {
         b.set(11, 0, -2, Blocks.CHEST.defaultBlockState().setValue(ChestBlock.FACING, Direction.WEST));
         b.set(11, 0, 0, Blocks.BARREL.defaultBlockState().setValue(BarrelBlock.FACING, Direction.UP));
         b.set(11, 1, 0, Blocks.LANTERN);
-        b.set(11, 0, -1, Blocks.DARK_OAK_SLAB);
         b.set(-11, 3, -2, Blocks.COBWEB);
         b.set(-11, 3, 0, Blocks.COBWEB);
-        b.set(-11, 0, -1, Blocks.SKELETON_SKULL.defaultBlockState().setValue(SkullBlock.ROTATION, 12));
 
         // ---- your cell (the middle one on the south side): a hay cot, a cauldron, chains, and a window over the lava
         b.set(-2, 0, 4, log(Blocks.HAY_BLOCK, Direction.Axis.Z));
@@ -456,12 +519,21 @@ public final class CourtBuilder {
         b.set(4, 3, 5, Blocks.COBWEB);
         b.set(6, 0, 4, candles(1));
 
+        quarry(b);
+        cafeteria(b);
+        // the doors between: the corridor's west end to the quarry, east end to the cafeteria (two walls thick)
+        door(b, -12, -1, Blocks.IRON_DOOR, Direction.EAST, DoorHingeSide.LEFT);
+        b.fill(-13, 0, -1, -13, 1, -1, air);
+        door(b, 12, -1, Blocks.IRON_DOOR, Direction.WEST, DoorHingeSide.LEFT);
+        b.fill(13, 0, -1, 13, 1, -1, air);
+
         // ---- underneath: a lava lake, and basalt pillars standing in it
-        b.fill(-16, -7, -10, 16, -7, 30, Blocks.BASALT);
-        b.fill(-16, -6, -10, 16, -6, 30, Blocks.BASALT);
-        b.fill(-15, -6, -9, 15, -6, 29, Blocks.LAVA);
-        b.fill(-12, -2, -8, 12, -2, 6, Blocks.BASALT);
-        for (int x : new int[]{-12, -6, 0, 6, 12}) {
+        b.fill(-32, -7, -12, 32, -7, 30, Blocks.BASALT);
+        b.fill(-32, -6, -12, 32, -6, 30, Blocks.BASALT);
+        b.fill(-31, -6, -11, 31, -6, 29, Blocks.LAVA);
+        b.fill(-28, -2, -8, 28, -2, 6, Blocks.BASALT);
+        b.fill(19, -2, -13, 22, -2, -9, Blocks.BASALT);
+        for (int x : new int[]{-28, -20, -12, -6, 0, 6, 12, 20, 28}) {
             for (int z : new int[]{-8, 6}) {
                 b.fill(x, -6, z, x, -3, z, log(Blocks.BASALT, Direction.Axis.Y));
             }
@@ -472,17 +544,255 @@ public final class CourtBuilder {
         }
     }
 
+    /** the quarry, west of the cells: a stone face to break, a cart of tools, and a guard who watches it (mostly) */
+    private static void quarry(B b) {
+        BlockState air = Blocks.AIR.defaultBlockState();
+        for (int x = -28; x <= -13; x++) {
+            for (int y = -1; y <= 6; y++) {
+                for (int z = -8; z <= 6; z++) {
+                    b.set(x, y, z, speck(x, y, z, 6) ? Blocks.CRACKED_DEEPSLATE_BRICKS : Blocks.DEEPSLATE_BRICKS);
+                }
+            }
+        }
+        b.fill(-27, 0, -7, -14, 5, 5, air);
+        for (int x = -27; x <= -14; x++) {
+            for (int z = -7; z <= 5; z++) {
+                b.set(x, -1, z, speck(x, 0, z, 3) ? Blocks.GRAVEL : speck(x, 1, z, 4) ? Blocks.COBBLESTONE : Blocks.COARSE_DIRT);
+            }
+        }
+        // the face: stone, a little andesite, rubble at its foot
+        for (int z = -6; z <= 4; z++) {
+            for (int y = 0; y <= 4; y++) {
+                b.set(-27, y, z, speck(-27, y, z, 5) ? Blocks.ANDESITE : Blocks.STONE);
+            }
+            if (speck(-26, 0, z, 3)) {
+                b.set(-26, 0, z, Blocks.COBBLESTONE_SLAB);
+            }
+        }
+        // timber props along the walls, lanterns on chains
+        for (int z : new int[]{-7, -3, 1, 5}) {
+            b.fill(-14, 0, z, -14, 5, z, log(Blocks.STRIPPED_SPRUCE_LOG, Direction.Axis.Y));
+        }
+        for (int x : new int[]{-24, -19}) {
+            b.fill(x, 0, -7, x, 5, -7, log(Blocks.STRIPPED_SPRUCE_LOG, Direction.Axis.Y));
+            b.fill(x, 0, 5, x, 5, 5, log(Blocks.STRIPPED_SPRUCE_LOG, Direction.Axis.Y));
+            b.fill(x, 5, -6, x, 5, 4, log(Blocks.STRIPPED_SPRUCE_LOG, Direction.Axis.Z));
+            for (int z : new int[]{-4, 2}) {
+                b.set(x, 4, z, Blocks.CHAIN);
+                b.set(x, 3, z, hanging(Blocks.LANTERN));
+            }
+        }
+        // the cart: barrels of tools, a grindstone, a pile of rubble
+        b.set(CART.getX(), 0, CART.getZ(), Blocks.BARREL.defaultBlockState().setValue(BarrelBlock.FACING, Direction.UP));
+        b.set(CART.getX() - 1, 0, CART.getZ(), Blocks.GRINDSTONE);
+        b.set(CART.getX(), 0, CART.getZ() + 1, Blocks.BARREL.defaultBlockState().setValue(BarrelBlock.FACING, Direction.UP));
+        b.set(CART.getX() + 1, 1, CART.getZ(), Blocks.LANTERN);
+        b.set(CART.getX() + 1, 0, CART.getZ(), Blocks.CHEST.defaultBlockState().setValue(ChestBlock.FACING, Direction.WEST));
+        b.set(-16, 0, -6, Blocks.COBBLESTONE);
+        b.set(-17, 0, -6, Blocks.COBBLESTONE_SLAB);
+        b.set(-16, 0, -5, Blocks.COBBLESTONE_SLAB);
+    }
+
+    /** the cafeteria, east of the cells: two long tables, a serving counter, and the gate out at the back */
+    private static void cafeteria(B b) {
+        BlockState air = Blocks.AIR.defaultBlockState();
+        for (int x = 13; x <= 28; x++) {
+            for (int y = -1; y <= 5; y++) {
+                for (int z = -8; z <= 6; z++) {
+                    b.set(x, y, z, speck(x, y, z, 7) ? Blocks.MOSSY_STONE_BRICKS : Blocks.STONE_BRICKS);
+                }
+            }
+        }
+        b.fill(14, 0, -7, 27, 4, 5, air);
+        for (int x = 14; x <= 27; x++) {
+            for (int z = -7; z <= 5; z++) {
+                b.set(x, -1, z, ((x + z) & 1) == 0 ? Blocks.POLISHED_ANDESITE : Blocks.ANDESITE);
+            }
+        }
+        // two long tables with benches either side
+        BlockState north = Blocks.SPRUCE_STAIRS.defaultBlockState().setValue(StairBlock.FACING, Direction.NORTH);
+        BlockState south = Blocks.SPRUCE_STAIRS.defaultBlockState().setValue(StairBlock.FACING, Direction.SOUTH);
+        for (int table : new int[]{-5, 3}) {
+            for (int x = 16; x <= 24; x++) {
+                b.set(x, 0, table, log(Blocks.STRIPPED_SPRUCE_LOG, Direction.Axis.X));
+                b.set(x, 0, table - 1, north);
+                b.set(x, 0, table + 1, south);
+            }
+            for (int x : new int[]{17, 21, 24}) {
+                b.set(x, 1, table, Blocks.CANDLE.defaultBlockState().setValue(CandleBlock.CANDLES, 1).setValue(CandleBlock.LIT, true));
+            }
+            b.set(19, 1, table, Blocks.FLOWER_POT);
+        }
+        // the counter, and the kitchen behind it
+        for (int z = -6; z <= 4; z++) {
+            b.set(25, 0, z, Blocks.SPRUCE_PLANKS);
+            b.set(25, 1, z, Blocks.SMOOTH_STONE_SLAB);
+        }
+        b.set(26, 0, -5, Blocks.WATER_CAULDRON);
+        b.set(26, 0, -4, Blocks.CAULDRON);
+        b.set(26, 0, 3, Blocks.SMOKER);
+        b.set(26, 0, 4, Blocks.BARREL.defaultBlockState().setValue(BarrelBlock.FACING, Direction.UP));
+        b.set(27, 0, 1, Blocks.BARREL.defaultBlockState().setValue(BarrelBlock.FACING, Direction.UP));
+        // light
+        for (int[] l : new int[][]{{17, -5}, {22, -5}, {17, 3}, {22, 3}, {20, -1}}) {
+            b.set(l[0], 4, l[1], Blocks.CHAIN);
+            b.set(l[0], 3, l[1], hanging(Blocks.LANTERN));
+        }
+        // the gate: double iron doors in the north wall, and a dark passage behind (nobody sees past it)
+        for (int x = 19; x <= 22; x++) {
+            for (int y = -1; y <= 3; y++) {
+                for (int z = -13; z <= -9; z++) {
+                    b.set(x, y, z, Blocks.OBSIDIAN);
+                }
+            }
+        }
+        b.fill(20, 0, -12, 21, 2, -9, air);
+        b.set(20, 2, -11, hanging(Blocks.SOUL_LANTERN));
+        b.fill(18, 0, -8, 23, 3, -8, Blocks.POLISHED_BLACKSTONE_BRICKS);
+        door(b, GATE.getX(), GATE.getZ(), Blocks.IRON_DOOR, Direction.SOUTH, DoorHingeSide.LEFT);
+        door(b, GATE.getX() + 1, GATE.getZ(), Blocks.IRON_DOOR, Direction.SOUTH, DoorHingeSide.RIGHT);
+        b.set(19, 2, -7, Blocks.LANTERN);
+        b.set(22, 2, -7, Blocks.LANTERN);
+        b.set(19, 1, -7, Blocks.STONE_BRICK_WALL);
+        b.set(22, 1, -7, Blocks.STONE_BRICK_WALL);
+        b.set(19, 0, -7, Blocks.STONE_BRICK_WALL);
+        b.set(22, 0, -7, Blocks.STONE_BRICK_WALL);
+    }
+
+    // ------------------------------------------------------------------ doors, rooms and the hole
+    /** the doors the prison opens and shuts (c-relative lower halves) */
+    public enum Door { CELL, CELLS, WEST, EAST, GATE }
+
+    private static List<BlockPos> doorsOf(Door d) {
+        List<BlockPos> out = new ArrayList<>();
+        switch (d) {
+            case CELL -> out.add(new BlockPos(-2, 0, 1));
+            case CELLS -> {
+                for (int cx : new int[]{-6, 0, 6}) {
+                    out.add(new BlockPos(cx - 2, 0, 1));
+                    out.add(new BlockPos(cx - 2, 0, -3));
+                }
+            }
+            case WEST -> out.add(new BlockPos(-12, 0, -1));
+            case EAST -> out.add(new BlockPos(12, 0, -1));
+            case GATE -> {
+                out.add(GATE);
+                out.add(GATE.east());
+            }
+        }
+        return out;
+    }
+
+    /** opens or shuts some of the prison's doors (with the sound, once) */
+    public static void doors(ServerLevel level, int slot, Door which, boolean open) {
+        BlockPos c = origin(slot).offset(CELL);
+        boolean changed = false;
+        for (BlockPos rel : doorsOf(which)) {
+            for (int y = 0; y <= 1; y++) {
+                BlockPos p = c.offset(rel).above(y);
+                BlockState st = level.getBlockState(p);
+                if (st.getBlock() instanceof DoorBlock && st.getValue(DoorBlock.OPEN) != open) {
+                    level.setBlock(p, st.setValue(DoorBlock.OPEN, open), FLAGS);
+                    changed = true;
+                }
+            }
+        }
+        if (changed) {
+            BlockPos at = c.offset(doorsOf(which).get(0));
+            level.playSound(null, at, open ? net.minecraft.sounds.SoundEvents.IRON_DOOR_OPEN : net.minecraft.sounds.SoundEvents.IRON_DOOR_CLOSE,
+                    net.minecraft.sounds.SoundSource.BLOCKS, 1f, 0.8f);
+        }
+    }
+
+    public static boolean doorOpen(ServerLevel level, int slot, Door which) {
+        BlockState st = level.getBlockState(origin(slot).offset(CELL).offset(doorsOf(which).get(0)));
+        return st.getBlock() instanceof DoorBlock && st.getValue(DoorBlock.OPEN);
+    }
+
+    /** where someone is in the prison block: "cell" (yours), "corridor", "labour", "meal", "ledge", "gate" or "" */
+    public static String room(int slot, double x, double y, double z) {
+        BlockPos c = origin(slot).offset(CELL);
+        double rx = x - c.getX(), rz = z - c.getZ(), ry = y - c.getY();
+        if (ry < -3 || ry > 6) {
+            return "";
+        }
+        if (rz >= 6.9 && rz <= 9 && rx >= -1 && rx <= 16) {
+            return "ledge";
+        }
+        if (rx >= 19.5 && rx <= 22.5 && rz <= -8.2 && rz >= -13) {
+            return "gate";
+        }
+        if (rx >= -27 && rx < -13 && rz >= -7 && rz < 6) {
+            return "labour";
+        }
+        if (rx >= 13.5 && rx < 28 && rz >= -7 && rz < 6) {
+            return "meal";
+        }
+        if (rx >= -2 && rx < 3 && rz >= 1.5 && rz < 6) {
+            return "cell";
+        }
+        if (rx >= -12 && rx < 13 && rz >= -2 && rz < 1) {
+            return "corridor";
+        }
+        return "";
+    }
+
+    /** is this (absolute) block part of the quarry face? */
+    public static boolean isQuarryFace(int slot, BlockPos p) {
+        BlockPos r = p.subtract(origin(slot).offset(CELL));
+        return r.getX() == -27 && r.getY() >= 0 && r.getY() <= 4 && r.getZ() >= -6 && r.getZ() <= 4;
+    }
+
+    public static BlockPos abs(int slot, BlockPos rel) {
+        return origin(slot).offset(CELL).offset(rel);
+    }
+
+    /** the escape hole under your window: closed (the wall as built), or open with the ledge outside */
+    public static void hole(ServerLevel level, int slot, boolean open) {
+        BlockPos c = origin(slot).offset(CELL);
+        List<BlockPos> shapes = new ArrayList<>();
+        B b = new B(level, c, shapes);
+        if (open) {
+            b.set(0, 0, 6, Blocks.AIR);
+            b.set(0, 1, 6, Blocks.AIR);
+            // a ledge of basalt along the outside of the wall, east to the corner, and down
+            for (int x = 0; x <= 14; x++) {
+                b.set(x, -1, 7, Blocks.POLISHED_BASALT);
+                b.set(x, -1, 8, Blocks.BASALT);
+            }
+        } else {
+            b.set(0, 0, 6, Blocks.OBSIDIAN);
+            b.set(0, 1, 6, Blocks.IRON_BARS);
+            shapes.add(c.offset(0, 1, 6));
+            for (int x = 0; x <= 14; x++) {
+                b.set(x, -1, 7, Blocks.AIR);
+                b.set(x, -1, 8, Blocks.AIR);
+            }
+        }
+        for (BlockPos p : shapes) {
+            level.setBlock(p, Block.updateFromNeighbourShapes(level.getBlockState(p), level, p), FLAGS);
+        }
+        for (int x = -1; x <= 1; x++) {
+            BlockPos p = c.offset(x, 1, 6);
+            level.setBlock(p, Block.updateFromNeighbourShapes(level.getBlockState(p), level, p), FLAGS);
+        }
+    }
+
     // ------------------------------------------------------------------ the people
-    /** Puts the court's people in their places (once their part of the world is loaded), one of each. */
+    /** Puts the court's and the prison's people in their places (once their part of the world is loaded), one of each. */
     public static void ensureNpcs(ServerLevel level, int slot) {
+        ensureNpcs(level, slot, Scene.QUIET, null);
+    }
+
+    public static void ensureNpcs(ServerLevel level, int slot, Scene scene, net.minecraft.world.entity.player.Player viewer) {
         BlockPos o = origin(slot);
-        List<Npc> all = npcs();
+        List<Npc> all = npcs(scene);
         Set<String> roles = new HashSet<>();
         for (Npc n : all) {
             roles.add(NPC + "_" + n.role());
         }
-        // anyone left over from an older court
-        for (Entity e : level.getEntitiesOfClass(Entity.class, new AABB(o).inflate(40, 40, 0).expandTowards(0, 0, 80).expandTowards(0, 0, -30),
+        // anyone who isn't part of this scene (a visitor who's gone, the advocate after the trial, an older court's people)
+        for (Entity e : level.getEntitiesOfClass(Entity.class, new AABB(o).inflate(48, 40, 0).expandTowards(0, 0, 80).expandTowards(0, 0, -30),
                 e -> e.getTags().contains(NPC))) {
             boolean known = false;
             for (String t : e.getTags()) {
@@ -497,12 +807,7 @@ public final class CourtBuilder {
             if (!level.isPositionEntityTicking(at)) {
                 continue;
             }
-            String tag = NPC + "_" + n.role();
-            List<Entity> found = level.getEntitiesOfClass(Entity.class, new AABB(at).inflate(48), e -> e.getTags().contains(tag));
-            for (int i = 1; i < found.size(); i++) {
-                found.get(i).discard();
-            }
-            Entity e = found.isEmpty() ? null : found.get(0);
+            Entity e = find(level, slot, n.role());
             if (e != null && (n.kind() == Kind.GOLEM) != (e.getType() == EntityType.IRON_GOLEM)) {
                 e.discard();
                 e = null;
@@ -518,13 +823,59 @@ public final class CourtBuilder {
                     Meb.clearOffer(v);
                 }
             }
-            // they stand where they should, facing the right way
-            e.moveTo(o.getX() + n.x(), o.getY() + n.y(), o.getZ() + n.z(), n.yaw(), 0f);
-            e.setYHeadRot(n.yaw());
-            if (e instanceof Mob m) {
-                m.setYBodyRot(n.yaw());
+            float yaw = n.yaw();
+            if (viewer != null && n.role().equals(scene.speaker())) {
+                yaw = face(o.getX() + n.x(), o.getZ() + n.z(), viewer.getX(), viewer.getZ());
             }
+            // the right name, the right job, seen or not
+            if (!n.name().isEmpty() && (e.getCustomName() == null || !e.getCustomName().getString().equals(n.name()))) {
+                e.setCustomName(Component.literal(n.name()));
+            }
+            if (e instanceof Villager v && n.profession() != null && v.getVillagerData().getProfession() != n.profession()) {
+                v.setVillagerData(v.getVillagerData().setProfession(n.profession()).setLevel(5));
+                Meb.clearOffer(v);
+            }
+            e.setInvisible(n.role().equals("witness") && scene.witnessHidden());
+            // they stand where they should, facing the right way
+            put(e, o.getX() + n.x(), o.getY() + n.y(), o.getZ() + n.z(), yaw);
         }
+    }
+
+    private static void put(Entity e, double x, double y, double z, float yaw) {
+        if (e.distanceToSqr(x, y, z) > 0.01 || Math.abs(e.getYRot() - yaw) > 0.5f) {
+            e.moveTo(x, y, z, yaw, 0f);
+        }
+        e.setYHeadRot(yaw);
+        if (e instanceof Mob m) {
+            m.setYBodyRot(yaw);
+        }
+    }
+
+    /** one of the slot's people, by part (judge, gaoler, prisoner0...), if they're loaded */
+    public static Entity find(ServerLevel level, int slot, String role) {
+        String tag = NPC + "_" + role;
+        BlockPos o = origin(slot);
+        List<Entity> found = level.getEntitiesOfClass(Entity.class, new AABB(o).inflate(48, 40, 0).expandTowards(0, 0, 80).expandTowards(0, 0, -30),
+                e -> e.getTags().contains(tag));
+        for (int i = 1; i < found.size(); i++) {
+            found.get(i).discard();
+        }
+        return found.isEmpty() ? null : found.get(0);
+    }
+
+    /** moves one of the slot's people right now (relative to the slot's origin): the gaoler's round, the quarry guard's head */
+    public static void place(ServerLevel level, int slot, String role, double x, double y, double z, float yaw) {
+        Entity e = find(level, slot, role);
+        if (e != null) {
+            BlockPos o = origin(slot);
+            put(e, o.getX() + x, o.getY() + y, o.getZ() + z, yaw);
+        }
+    }
+
+    /** the quarry guard's face: towards the cart (watching) or the stone */
+    public static void guardLooks(ServerLevel level, int slot, boolean watching) {
+        float yaw = watching ? face(GUARD_QUARRY[0], GUARD_QUARRY[2], CART.getX() + 0.5, CART.getZ() + 0.5) : 90f;
+        place(level, slot, "guard2", GUARD_QUARRY[0], 0, CELL.getZ() + GUARD_QUARRY[2], yaw);
     }
 
     private static Entity spawn(ServerLevel level, Npc n) {

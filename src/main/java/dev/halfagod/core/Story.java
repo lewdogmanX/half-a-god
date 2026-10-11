@@ -148,6 +148,7 @@ public final class Story {
         }
         Choices.onTrait(player, trait);
         Secrets.onTrait(player, trait);
+        Words.onTrait(player, trait);
         Letters.onTrait(player, trait);
         Arcs.onTrait(player, trait);
 

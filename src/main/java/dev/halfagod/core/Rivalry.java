@@ -48,6 +48,7 @@ public final class Rivalry {
             RepData d = Reputation.data(p);
             JsonObject o = new JsonObject();
             o.addProperty("name", p.getName().getString());
+            o.addProperty("uuid", p.getUUID().toString());
             String act = actName(p);
             o.addProperty("act", act.contains(":") ? act.substring(0, act.indexOf(':')) : act);
             o.addProperty("tier", Reputation.tier(d.value));

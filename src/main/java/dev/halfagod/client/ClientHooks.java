@@ -54,6 +54,22 @@ public final class ClientHooks {
         }
     }
 
+    public static void onTalk(Payloads.Talk p) {
+        Minecraft mc = Minecraft.getInstance();
+        com.google.gson.JsonObject o = com.google.gson.JsonParser.parseString(p.json()).getAsJsonObject();
+        if (o.has("close")) {
+            if (mc.screen instanceof TalkScreen) {
+                mc.setScreen(null);
+            }
+            return;
+        }
+        if (mc.screen instanceof TalkScreen t) {
+            t.update(o);
+        } else {
+            mc.setScreen(new TalkScreen(o));
+        }
+    }
+
     public static void onCinematic(Payloads.Cinematic p) {
         Minecraft mc = Minecraft.getInstance();
         mc.gui.setTimes(12, 80, 24);

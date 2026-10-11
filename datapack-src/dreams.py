@@ -158,6 +158,10 @@ SPECIAL = {
     "release": {"id": "release", "kind": "special", "title": "Dawn", "motif": "sun", "lines": [
         "They drag you out at dawn, blindfolded, and leave you where they found you.",
         "Your things are beside you, tied in a sack with a Watch seal on it."]},
+    "escape": {"id": "escape", "kind": "special", "title": "Out", "motif": "flame", "lines": [
+        "A ledge of black stone, a lake of fire below, and nobody shouting yet.",
+        "You run until the ledge runs out, and then you jump into the dark, and the dark is a long way down.",
+        "You wake in your own bed. Your things are beside you in a Watch sack, still sealed. Nobody knows how. Nobody's asking."]},
     "breakout": {"id": "breakout", "kind": "special", "title": "The Hand Pays Its Debts", "motif": "eye",
                  "lines": [
                      "Shouting. A door that shouldn't open, opening.",

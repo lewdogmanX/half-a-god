@@ -150,10 +150,17 @@ public final class HalfAGodTests {
         Trial.passTime(p, Trial.DAY - 20);
         check(h, d.served == 0 && d.trialState == 2, "not a day yet");
         Trial.passTime(p, 20);
-        check(h, days == 1 ? d.trialState == 0 : d.served == 1 && d.servedTicks == 0, "a day served after a whole day in the cell");
+        check(h, days == 1 ? d.walkingOut : d.served == 1 && d.servedTicks == 0, "a day served after a whole day in the prison");
         for (int i = 1; i < days; i++) {
             Trial.passTime(p, Trial.DAY);
         }
+        // sentence served: the doors open and they walk out through the gate
+        int slot = CourtData.get(court).slot(p.getUUID());
+        check(h, d.trialState == 2 && d.walkingOut, "walking out");
+        check(h, CourtBuilder.doorOpen(court, slot, CourtBuilder.Door.GATE) && CourtBuilder.doorOpen(court, slot, CourtBuilder.Door.CELL), "the doors are open");
+        BlockPos gate = CourtBuilder.abs(slot, CourtBuilder.GATE);
+        p.teleportTo(court, gate.getX() + 0.5, gate.getY(), gate.getZ() - 2.5, 180f, 0f);
+        dev.halfagod.core.Prison.tick(p, d, court, slot, p.getServer().getTickCount());
         check(h, d.trialState == 0, "released after serving");
         JsonObject record = JsonParser.parseString(d.trials.get(d.trials.size() - 1)).getAsJsonObject();
         check(h, record.get("outcome").getAsString().equals("served") && record.get("served").getAsInt() == days, "served the whole sentence: " + record);
@@ -266,6 +273,200 @@ public final class HalfAGodTests {
         check(h, d.value == before, "reputation as it was: " + d.value);
         check(h, Dreams.actIndex(dev.halfagod.core.Meb.traits(p)) == -1, "back to no story");
         p.discard();
+        h.succeed();
+    }
+
+    /** the court acts it out: answers to each charge change the case, the jury votes, the Codex keeps it all */
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void answersAndJury(GameTestHelper h) {
+        court(h);
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        RepData d = Reputation.data(p);
+        check(h, Trial.kidnap(p, Trial.SAMPLE_RECORD), "taken");
+        JsonObject script = JsonParser.parseString(d.trialScript).getAsJsonObject();
+        int w0 = Trial.weight(script, d);
+        var lines = script.getAsJsonArray("lines");
+        java.util.List<Integer> charges = new java.util.ArrayList<>();
+        for (int i = 0; i < lines.size(); i++) {
+            var l = lines.get(i).getAsJsonArray();
+            if (l.size() > 2 && l.get(2).getAsJsonObject().has("charge")) {
+                charges.add(i);
+            }
+            Trial.onLineShown(p, i);
+        }
+        check(h, charges.size() == 4, "four charges to answer: " + charges.size());
+        int w1 = lines.get(charges.get(0)).getAsJsonArray().get(2).getAsJsonObject().get("w").getAsInt();
+        int w2 = lines.get(charges.get(1)).getAsJsonArray().get(2).getAsJsonObject().get("w").getAsInt();
+        Trial.onAnswer(p, charges.get(0), "deny");
+        Trial.onAnswer(p, charges.get(1), "explain");
+        Trial.onAnswer(p, charges.get(1), "deny"); // only the first answer counts
+        int expect = w0 + (w1 >= 2 ? 1 : -w1) - Math.min(1, w2);
+        check(h, Trial.weight(script, d) == Math.max(0, expect), "the answers weigh in: " + Trial.weight(script, d) + " not " + expect);
+        Trial.onPlea(p, "silent");
+        JsonObject v = JsonParser.parseString(d.trialVerdict).getAsJsonObject();
+        var votes = v.getAsJsonArray("votes");
+        int guiltyVotes = 0;
+        for (var e : votes) {
+            guiltyVotes += e.getAsBoolean() ? 1 : 0;
+        }
+        check(h, votes.size() == 6, "six jurors");
+        check(h, v.get("guilty").getAsBoolean() ? guiltyVotes >= 4 : guiltyVotes <= 3, "the votes match the verdict: " + guiltyVotes);
+        Trial.onPlea(p, "continue");
+        JsonObject t = JsonParser.parseString(d.trials.get(d.trials.size() - 1)).getAsJsonObject();
+        check(h, t.toString().contains("The court notes the lie") || t.toString().contains("Struck from the record"), "the Codex keeps the court's replies");
+        check(h, t.getAsJsonObject("verdict").has("votes"), "and the votes");
+        Trial.release(p, d, "released");
+        // the Gilded Hand speaks for its own
+        d.handRank = 2;
+        d.trialActs.clear();
+        check(h, Trial.kidnap(p, Trial.SAMPLE_RECORD), "taken again");
+        JsonObject s2 = JsonParser.parseString(d.trialScript).getAsJsonObject();
+        check(h, s2.get("advocate").getAsBoolean() && s2.get("mods").getAsInt() == -2, "an advocate of the Hand");
+        Trial.release(p, d, "released");
+        p.discard();
+        h.succeed();
+    }
+
+    /** a day in the prison: the quarry, supper, Old Maddock, and the way out */
+    @GameTest(template = "empty", timeoutTicks = 300)
+    public static void prisonDay(GameTestHelper h) {
+        ServerLevel court = court(h);
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        BlockPos home = h.absolutePos(new BlockPos(1, 1, 1));
+        p.teleportTo(h.getLevel(), home.getX() + 0.5, home.getY(), home.getZ() + 0.5, 0f, 0f);
+        p.setRespawnPosition(Level.OVERWORLD, home, 0f, true, false);
+        p.getInventory().setItem(5, new ItemStack(Items.DIAMOND, 3));
+        p.awardStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER), 12);
+        RepData d = Reputation.data(p);
+        check(h, Trial.kidnap(p), "taken");
+        Trial.onPlea(p, "not_guilty");
+        Trial.onPlea(p, "continue");
+        check(h, d.trialState == 2, "in prison");
+        d.sentence = 4;
+        int slot = CourtData.get(court).slot(p.getUUID());
+        // the quarry
+        dev.halfagod.core.Prison.testTime(p, "labour");
+        Trial.passTime(p, 1300);
+        check(h, CourtBuilder.room(slot, p.getX(), p.getY(), p.getZ()).equals("labour"), "dragged to the quarry");
+        check(h, p.getInventory().countItem(Items.WOODEN_PICKAXE) == 1, "a pickaxe for the day");
+        BlockPos face = CourtBuilder.abs(slot, new BlockPos(-27, 1, 0));
+        check(h, CourtBuilder.isQuarryFace(slot, face), "the quarry face");
+        for (int i = 0; i < 48; i++) {
+            dev.halfagod.core.Prison.onBreak(p, face);
+        }
+        check(h, d.labour == 48, "the quota: " + d.labour);
+        check(h, !court.getBlockState(face).isAir(), "the stone never runs out");
+        // supper
+        Trial.passTime(p, dev.halfagod.core.Prison.MEAL_BELL - d.servedTicks);
+        check(h, d.fed && p.getInventory().countItem(Items.WOODEN_PICKAXE) == 0, "fed tonight, and the pickaxe handed back");
+        int bread = p.getInventory().countItem(Items.BREAD);
+        Trial.passTime(p, 1220);
+        check(h, CourtBuilder.room(slot, p.getX(), p.getY(), p.getZ()).equals("meal"), "in the cafeteria");
+        check(h, p.getInventory().countItem(Items.BREAD) == bread + 3, "supper");
+        // Old Maddock
+        check(h, dev.halfagod.core.Prison.onTalk(p, "prisoner0"), "Maddock talks");
+        check(h, dev.halfagod.core.Talk.openOptions(p).containsAll(java.util.List.of("rumour", "where", "about", "escape")), "what you can ask him");
+        dev.halfagod.core.Talk.choose(p, "where");
+        dev.halfagod.core.Talk.choose(p, "escape");
+        check(h, d.planKnown, "his plan");
+        dev.halfagod.core.Talk.choose(p, "escape");
+        check(h, dev.halfagod.core.Talk.openOptions(p).contains("give"), "he wants your bread");
+        dev.halfagod.core.Talk.choose(p, "give");
+        check(h, d.knowsRounds, "he tells you the gaoler's rounds");
+        // the chisel: taken when the guard looks away, caught when he doesn't
+        dev.halfagod.core.Prison.testTime(p, "labour");
+        Trial.passTime(p, 1300);
+        int before = d.sentence;
+        boolean watching = dev.halfagod.core.Prison.guardWatching(slot, p.getServer().getTickCount());
+        dev.halfagod.core.Prison.onUseBlock(p, CourtBuilder.abs(slot, CourtBuilder.CART));
+        check(h, watching ? d.sentence == before + 2 && !d.hasChisel : d.hasChisel, "the cart: " + (watching ? "caught" : "stolen"));
+        d.hasChisel = true;
+        // digging: only after lights out
+        dev.halfagod.core.Prison.dig(p, d, p.getServer().getTickCount());
+        check(h, d.digProgress == 0, "no digging in the day");
+        dev.halfagod.core.Prison.testTime(p, "lightsout");
+        Trial.passTime(p, 40);
+        check(h, dev.halfagod.core.Prison.lightsOut(d) && CourtBuilder.room(slot, p.getX(), p.getY(), p.getZ()).equals("cell"), "lights out, in the cell");
+        for (int i = 0; i < dev.halfagod.core.Prison.digsNeeded(); i++) {
+            dev.halfagod.core.Prison.dig(p, d, p.getServer().getTickCount());
+        }
+        check(h, court.getBlockState(CourtBuilder.abs(slot, CourtBuilder.DIG)).isAir(), "through the wall");
+        BlockPos ledge = CourtBuilder.abs(slot, new BlockPos(11, -1, 7));
+        check(h, court.getBlockState(ledge).isSolid(), "a ledge outside");
+        p.teleportTo(court, ledge.getX() + 0.5, ledge.getY() + 1, ledge.getZ() + 0.5, -90f, 0f);
+        dev.halfagod.core.Prison.tick(p, d, court, slot, p.getServer().getTickCount());
+        check(h, d.trialState == 0 && d.escapes == 1, "escaped");
+        check(h, p.getInventory().countItem(Items.DIAMOND) == 3, "home with your things");
+        check(h, !court.getBlockState(CourtBuilder.abs(slot, CourtBuilder.DIG)).isAir(), "the hole is filled behind you");
+        check(h, JsonParser.parseString(d.trials.get(d.trials.size() - 1)).getAsJsonObject().get("outcome").getAsString().equals("escaped"), "the Codex says so");
+        p.discard();
+        h.succeed();
+    }
+
+    /** confession, interrogation, your reputation ahead of you */
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void wordsFollowYou(GameTestHelper h) {
+        court(h);
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        RepData d = Reputation.data(p);
+        p.awardStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER), 6);
+        JsonObject s1 = Trial.script(p, d, dev.halfagod.core.Meb.traits(p));
+        check(h, dev.halfagod.core.Words.sins(p).containsKey("villagers"), "something to confess");
+        dev.halfagod.core.Words.confess(p, "villagers");
+        check(h, !dev.halfagod.core.Words.sins(p).containsKey("villagers"), "confessed");
+        JsonObject s2 = Trial.script(p, d, dev.halfagod.core.Meb.traits(p));
+        check(h, s2.get("weight").getAsInt() == s1.get("weight").getAsInt() - 1, "a confessed charge weighs less: " + s1.get("weight") + " -> " + s2.get("weight"));
+        check(h, s2.toString().contains("confessed this to a priest"), "the clerk says so");
+        // interrogation: paid, it always works, once
+        p.getInventory().setItem(0, new ItemStack(Items.EMERALD, 7));
+        int letters = d.letters.size();
+        check(h, dev.halfagod.core.Words.ask(p, "vael", "bribe"), "Vael talks for money");
+        check(h, d.letters.size() == letters + 1 && p.getInventory().countItem(Items.EMERALD) == 2, "a note in the Codex, five emeralds gone");
+        check(h, !dev.halfagod.core.Words.ask(p, "vael", "bribe"), "only once");
+        // what a village has heard of you, through vanilla gossip
+        net.minecraft.world.entity.npc.Villager v = EntityType.VILLAGER.create(h.getLevel());
+        check(h, v != null, "a villager");
+        dev.halfagod.core.Words.rumour(v, p.getUUID(), -25);
+        check(h, v.getGossips().getReputation(p.getUUID(), t -> true) == -25, "they've heard bad things");
+        dev.halfagod.core.Words.rumour(v, p.getUUID(), 40);
+        check(h, v.getGossips().getReputation(p.getUUID(), t -> true) == 40, "now good things: " + v.getGossips().getReputation(p.getUUID(), t -> true));
+        p.discard();
+        h.succeed();
+    }
+
+    /** two players: a price on a rival's head, and a witness at a rival's trial */
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void rivals(GameTestHelper h) {
+        court(h);
+        ServerPlayer a = h.makeMockServerPlayerInLevel();
+        ServerPlayer b = h.makeMockServerPlayerInLevel();
+        check(h, !a.getUUID().equals(b.getUUID()), "two players");
+        a.teleportTo(h.getLevel(), b.getX() + 3, b.getY(), b.getZ(), 0f, 0f);
+        RepData da = Reputation.data(a), db = Reputation.data(b);
+        // the bounty
+        da.handRank = 1;
+        a.getInventory().setItem(0, new ItemStack(Items.EMERALD, 20));
+        check(h, dev.halfagod.core.Rivals.placeBounty(a, b.getUUID().toString()), "the Hand takes the job");
+        check(h, !db.bountyBy.isEmpty() && a.getInventory().countItem(Items.EMERALD) == 0, "paid, and a price on their head");
+        a.getInventory().setItem(0, new ItemStack(Items.EMERALD, 20));
+        check(h, !dev.halfagod.core.Rivals.placeBounty(a, b.getUUID().toString()), "not twice");
+        // a witness
+        dev.halfagod.core.Rivals.saw(b, "villager");
+        check(h, db.sightings.size() == 1 && db.sightings.get(0).startsWith(a.getUUID().toString()), "a saw it");
+        b.awardStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER), 3);
+        check(h, Trial.kidnap(b), "b is taken");
+        check(h, dev.halfagod.core.Talk.openOptions(a).contains("against"), "a is asked to speak");
+        JsonObject before = JsonParser.parseString(db.trialScript).getAsJsonObject();
+        int w = Trial.weight(before, db);
+        dev.halfagod.core.Talk.choose(a, "against");
+        JsonObject after = JsonParser.parseString(db.trialScript).getAsJsonObject();
+        check(h, Trial.weight(after, db) == w + 2, "a's words weigh against b");
+        check(h, after.getAsJsonArray("lines").size() == before.getAsJsonArray("lines").size() + 1, "a line in the transcript");
+        var lines = after.getAsJsonArray("lines");
+        check(h, lines.get(lines.size() - 1).getAsJsonArray().get(1).getAsString().contains("plead"), "before the plea");
+        Trial.release(b, db, "released");
+        a.discard();
+        b.discard();
         h.succeed();
     }
 

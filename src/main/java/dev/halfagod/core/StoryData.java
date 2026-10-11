@@ -83,6 +83,16 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     public final Map<String, String> acts = new LinkedHashMap<>();
     /** the story simulator's road: every chapter's main quests in order, with their forks, and side decisions */
     public final List<JsonObject> simChapters = new ArrayList<>();
+    /** other tables, whole, by file name (prison, interrogations, words) */
+    public final Map<String, JsonObject> tables = new HashMap<>();
+    /** the jury's two words, and the answers you can give to each charge */
+    public JsonObject votes = new JsonObject();
+    public final List<JsonObject> answers = new ArrayList<>();
+
+    public JsonObject table(String name) {
+        JsonObject o = tables.get(name);
+        return o == null ? new JsonObject() : o;
+    }
 
     public record Unlock(double at, boolean below, String trait, String courier) {
     }
@@ -131,6 +141,9 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
         secrets.clear();
         acts.clear();
         simChapters.clear();
+        tables.clear();
+        votes = new JsonObject();
+        answers.clear();
         for (Map.Entry<ResourceLocation, JsonElement> e : files.entrySet()) {
             if (!e.getValue().isJsonObject()) {
                 continue;
@@ -192,11 +205,18 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                         o.getAsJsonArray("charges").forEach(c -> charges.add(c.getAsJsonObject()));
                         trialScript = o.getAsJsonObject("script");
                         o.getAsJsonArray("pleas").forEach(c -> pleas.add(c.getAsJsonObject()));
+                        if (o.has("votes")) {
+                            votes = o.getAsJsonObject("votes");
+                        }
+                        if (o.has("answers")) {
+                            o.getAsJsonArray("answers").forEach(c -> answers.add(c.getAsJsonObject()));
+                        }
                     }
                     case "secrets" -> o.getAsJsonArray("lines").forEach(c -> secrets.add(c.getAsJsonObject()));
                     case "sim" -> o.getAsJsonArray("chapters").forEach(c -> simChapters.add(c.getAsJsonObject()));
                     case "acts" -> o.getAsJsonArray("acts").forEach(c -> acts.put(c.getAsJsonObject().get("trait").getAsString(),
                             c.getAsJsonObject().get("name").getAsString()));
+                    case "prison", "interrogations", "words" -> tables.put(e.getKey().getPath(), o);
                     default -> {
                     }
                 }

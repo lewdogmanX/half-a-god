@@ -470,6 +470,10 @@ def write(out_pack, mod_root):
     import dreams, trial, hidden_lines
     dump("dreams.json", dreams.build())
     dump("trial.json", trial.build())
+    import prison, interrogations, words
+    dump("prison.json", prison.build())
+    dump("interrogations.json", interrogations.build())
+    dump("words.json", words.build())
     dump("secrets.json", hidden_lines.mod_table())
     dump("acts.json", {"acts": [{"trait": t, "name": n} for t, n in ACTS]})
     # for operators: the story simulator's map of the road

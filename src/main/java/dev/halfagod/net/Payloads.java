@@ -147,6 +147,30 @@ public final class Payloads {
         }
     }
 
+    /** Server -> client: someone to talk to (JSON: id, name, title, lines, options [{id, label, hint}], style). */
+    public record Talk(String json) implements CustomPacketPayload {
+        public static final Type<Talk> TYPE = typeOf("talk");
+        public static final StreamCodec<ByteBuf, Talk> CODEC = StreamCodec.composite(ByteBufCodecs.stringUtf8(1 << 16), Talk::json, Talk::new);
+
+        @Override
+        public Type<Talk> type() {
+            return TYPE;
+        }
+    }
+
+    /** Client -> server: something the player did on one of the mod's screens (kind, and up to two arguments):
+     *  talk (talk id, option), line (trial line shown), answer (trial line, answer), bounty (player uuid). */
+    public record Act(String kind, String a, String b) implements CustomPacketPayload {
+        public static final Type<Act> TYPE = typeOf("act");
+        public static final StreamCodec<ByteBuf, Act> CODEC = StreamCodec.composite(ByteBufCodecs.STRING_UTF8, Act::kind,
+                ByteBufCodecs.STRING_UTF8, Act::a, ByteBufCodecs.STRING_UTF8, Act::b, Act::new);
+
+        @Override
+        public Type<Act> type() {
+            return TYPE;
+        }
+    }
+
     public static void register(RegisterPayloadHandlersEvent event) {
         PayloadRegistrar r = event.registrar("1");
         r.playToClient(RepSync.TYPE, RepSync.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onRep(p)));
@@ -160,6 +184,12 @@ public final class Payloads {
         r.playToServer(Plea.TYPE, Plea.CODEC, (p, ctx) -> ctx.enqueueWork(() -> {
             if (ctx.player() instanceof ServerPlayer sp) {
                 dev.halfagod.core.Trial.onPlea(sp, p.plea());
+            }
+        }));
+        r.playToClient(Talk.TYPE, Talk.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onTalk(p)));
+        r.playToServer(Act.TYPE, Act.CODEC, (p, ctx) -> ctx.enqueueWork(() -> {
+            if (ctx.player() instanceof ServerPlayer sp) {
+                dev.halfagod.core.Talk.onAct(sp, p.kind(), p.a(), p.b());
             }
         }));
         r.playToServer(RequestMap.TYPE, RequestMap.CODEC, (p, ctx) -> ctx.enqueueWork(() -> {

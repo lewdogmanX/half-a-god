@@ -1,0 +1,213 @@
+{
+ "approach": {
+  "threaten": {
+   "label": "Threaten them",
+   "hint": "Works if you're feared. Costs a little reputation.",
+   "rep": -3
+  },
+  "bribe": {
+   "label": "Pay them (5 emeralds)",
+   "hint": "Always works.",
+   "rep": 0
+  },
+  "reason": {
+   "label": "Reason with them",
+   "hint": "Works if you're trusted. Earns a little reputation.",
+   "rep": 1
+  },
+  "leave": {
+   "label": "Let them go without a word",
+   "hint": "",
+   "rep": 0
+  }
+ },
+ "people": [
+  {
+   "id": "peddler",
+   "trigger": "heard_the_word",
+   "name": "The Smiling Stranger",
+   "intro": "The stranger's smile is still there, but it's thinner now. Before he walks, you could ask him who he works for.",
+   "yes": {
+    "threaten": "'Easy. Easy! I'll talk. I like my teeth where they are.'",
+    "bribe": "'Now that's a language I speak.'",
+    "reason": "'You let me live. I suppose that's worth a truth or two.'"
+   },
+   "no": {
+    "threaten": "'Do your worst. They'll do worse to me if I talk.'",
+    "reason": "'Kind words. They won't keep me warm when the cult finds me.'"
+   },
+   "title": "What the Stranger Said",
+   "intel": "He was paid in gold that had been melted down and poured again, so nobody could trace it. The buyer always met him at night, at a different shrine each time, and never took off his gloves. 'Gilded,' he said. 'The gloves. Gold leaf on the knuckles.'"
+  },
+  {
+   "id": "wick",
+   "trigger": "hag_mercy_x1_the_informant",
+   "name": "Wick, the Informant",
+   "intro": "Wick is shaking. He promised to tell you who paid for the raid. Time to see how much he meant it.",
+   "yes": {
+    "threaten": "'Alright! Alright. Don't. I'll tell you everything.'",
+    "bribe": "'Five? For this? ...Fine. I've sold worse for less.'",
+    "reason": "'You kept your word. I'll keep mine.'"
+   },
+   "no": {
+    "threaten": "'You'll kill me anyway. Why should I make it easy?'",
+    "reason": "'You think the watch will protect me after this? Nobody protects a rat.'"
+   },
+   "title": "Wick's Confession",
+   "intel": "The raid was paid for twice: once by the cult, for the bell, and once by someone who wanted the village frightened enough to buy protection. Wick never saw the second buyer. He only saw the coins: Blackwater mint, every one."
+  },
+  {
+   "id": "vael",
+   "trigger": "vael_spared",
+   "name": "Brother Vael",
+   "intro": "Brother Vael folds his hands as if he's the one granting mercy. He knows more about the cult's trade than anyone alive.",
+   "yes": {
+    "threaten": "'Threats. How quaint. Very well: I am a coward, and cowards survive. Ask.'",
+    "bribe": "'Emeralds. You understand commerce. I like you better already.'",
+    "reason": "'You spared a man who buys people. That is either very foolish or very wise. I'll reward the wisdom.'"
+   },
+   "no": {
+    "threaten": "'You won't. You've already decided I live. I can see it on you.'",
+    "reason": "'Reason? I've reasoned with better than you, and sold them.'"
+   },
+   "title": "The Steward's Ledger",
+   "intel": "Everything the cult buys goes north, not into the Nether. The fortress is a counting house, nothing more. 'The gold is for a crown,' Vael said, 'and the crown is for a head that isn't grown yet. Don't ask me what that means. I only keep the ledger.'"
+  },
+  {
+   "id": "orsk",
+   "trigger": "orsk_spared",
+   "name": "Orsk, the Tally-Keeper",
+   "intro": "Orsk kept the raiders' tally. Every house, every barn, every life. He'll be handed over for judgement, but first you could ask what his tally said.",
+   "yes": {
+    "threaten": "'I'll talk. Just don't let them have me before I've said it.'",
+    "bribe": "'Money's no good where I'm going. ...I'll take it anyway.'",
+    "reason": "'You're the first one who's asked instead of hit. Alright.'"
+   },
+   "no": {
+    "threaten": "'Hit me, then. I've been hit by better.'",
+    "reason": "'Words. Ashford wants a rope, not words.'"
+   },
+   "title": "Orsk's Tally",
+   "intel": "The raiders weren't told to take food or gold. They were told to take count: how many in each house, how many children, how many old. 'Someone wanted to know how many lived here,' Orsk said. 'Not how much they had. How many.'"
+  },
+  {
+   "id": "corwin",
+   "trigger": "corwin_spared",
+   "name": "Corwin",
+   "intro": "Corwin can't stop thanking you. He stole from the granary, but he didn't steal alone.",
+   "yes": {
+    "threaten": "'Please, I'll tell you, there's no need for that!'",
+    "bribe": "'You're paying me? After I stole from you? ...I'll tell you anyway. Keep it.'",
+    "reason": "'Of course. Of course. Anything.'"
+   },
+   "no": {
+    "threaten": "He goes white and says nothing at all, and you know you've frightened the only honest thief in Ashford.",
+    "reason": "'I can't. They'd know it was me.'"
+   },
+   "title": "Who Else Was Hungry",
+   "intel": "Corwin wasn't stealing for himself. Half of what he took went to a family hiding in the old mill: refugees who never came through Ashford's gate because one of them wears a gold eye under his shirt, and is ashamed of it."
+  },
+  {
+   "id": "gorran",
+   "trigger": "hag_mercy_x2_the_bastille_warden",
+   "name": "Gorran, the Warden",
+   "intro": "Gorran holds out the keys before you even ask. He'll answer questions too, if you give him a reason.",
+   "yes": {
+    "threaten": "'You don't need to. I've been afraid for years. I'm tired of it.'",
+    "bribe": "'For my brothers. When they get out. Thank you.'",
+    "reason": "'You're decent. I'd forgotten what that looked like.'"
+   },
+   "no": {
+    "threaten": "'Kill me if you like. You'll still not know where they took the rest.'",
+    "reason": "'Not here. Not with their eyes on the walls.'"
+   },
+   "title": "The Deep Cells",
+   "intel": "The prisoners in the deep cells were never meant for ransom. Every new moon a cart took three away. Gorran never saw where. He only noticed the driver was blindfolded, the same as the prisoners."
+  },
+  {
+   "id": "ossian",
+   "trigger": "hag_mercy_x3_the_third_skull",
+   "name": "Ossian, the Skull-Trader",
+   "intro": "Ossian is terrified of you. Terrified piglins say interesting things.",
+   "yes": {
+    "threaten": "He squeals and talks so fast you have to make him start again.",
+    "bribe": "He bites each emerald, then talks.",
+    "reason": "He calms down enough to talk, which takes a while."
+   },
+   "no": {
+    "threaten": "He faints. When he wakes up he won't say a word.",
+    "reason": "He won't trust a human who isn't paying."
+   },
+   "title": "The Skull Market",
+   "intel": "There were never three skulls for sale. There were four. The fourth went to someone who paid in a currency Ossian won't name, and he crosses himself, piglin-fashion, every time he almost does."
+  },
+  {
+   "id": "pilgrim",
+   "trigger": "hag_mercy_x4_the_pilgrim_of_the_sun",
+   "name": "The Pilgrim of the Sun",
+   "intro": "The pilgrim still has the sunstone charm. He also has years of prayers in him, and some of them were answered.",
+   "yes": {
+    "threaten": "'The Sun forgives you. I'm not sure I do. But I'll tell you.'",
+    "bribe": "'I'll give it to the poor. Ask.'",
+    "reason": "'You spared what I love. I owe you the truth.'"
+   },
+   "no": {
+    "threaten": "He closes his eyes and prays until you leave him be.",
+    "reason": "'The Sun told me not to speak of it. I'm sorry.'"
+   },
+   "title": "What the Sun Said",
+   "intel": "The Sun Spirit once spoke to him in a dream. It said it had thrown someone out of the sky long ago, for loving the wrong thing, and that it was sorry. 'A god, sorry,' the pilgrim said. 'Can you imagine?'"
+  },
+  {
+   "id": "vasco",
+   "trigger": "gt_vasco_arrested",
+   "name": "Don Vasco",
+   "intro": "Don Vasco is in irons and still looks like he's buying the room. Before the Watch takes him, he'll trade one secret for... something.",
+   "yes": {
+    "threaten": "'Ha! I like you. Fine. One secret, on the house.'",
+    "bribe": "'Five emeralds. Insulting. ...Accepted.'",
+    "reason": "'An honest conversation. In my line of work, that's the rarest coin.'"
+   },
+   "no": {
+    "threaten": "'My men have threatened better. Some of them are in the river.'",
+    "reason": "'Reason is for people who lose. I'll see you at the trial.'"
+   },
+   "title": "Blackwater's Best-Kept Secret",
+   "intel": "Blackwater never minted its own coins. The Gilded Hand made them, and Vasco spent them where the Hand told him. 'I was a purse,' he said. 'A purse with a moustache. Ask Silas who holds the purse-strings.'"
+  },
+  {
+   "id": "brann",
+   "trigger": "hag_mercy_x5_the_last_garrison_man",
+   "name": "Brann",
+   "intro": "Brann is half-frozen and half-mad, and he wants to go home. He saw what the garrison saw, before the end.",
+   "yes": {
+    "threaten": "'Don't. Don't. I've had enough of being frightened. I'll tell you.'",
+    "bribe": "'For the road home. Yes. Thank you.'",
+    "reason": "'You're letting me go. You're really letting me go.'"
+   },
+   "no": {
+    "threaten": "He curls up in the snow and won't look at you.",
+    "reason": "He's too cold and too far gone to follow you."
+   },
+   "title": "What the Garrison Saw",
+   "intel": "The Yeti never came for the garrison. The garrison went looking for it, under orders sealed with a gold eye. 'Someone wanted the cold to come down to the villages,' Brann said. 'Someone wanted everyone hungry.'"
+  },
+  {
+   "id": "midwife",
+   "trigger": "midwife_spared",
+   "name": "The Midwife",
+   "intro": "The Midwife ran the blood pits. She's not afraid of you. She's not afraid of anything. But she might be tired of carrying it.",
+   "yes": {
+    "threaten": "'You think I fear pain? ...No. But I fear dying with this in me. Listen.'",
+    "bribe": "'Money. You'd pay for this? Then you deserve to hear it.'",
+    "reason": "'Mercy, from you. I'll give you mercy back: the truth.'"
+   },
+   "no": {
+    "threaten": "She laughs at you until you leave.",
+    "reason": "'Kindness is wasted on me. Go away.'"
+   },
+   "title": "The Midwife's Truth",
+   "intel": "The pits weren't for sacrifice. They were for testing: blood that was half-divine, and blood that was only hoping to be. 'We were looking for someone like you,' she said. 'Half and half. We never found one. Then you found us.'"
+  }
+ ]
+}

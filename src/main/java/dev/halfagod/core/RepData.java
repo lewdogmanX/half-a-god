@@ -101,6 +101,35 @@ public final class RepData {
     /** ticks of the current day already spent in the cell */
     public int servedTicks;
 
+    /** the trial's answers to each charge (JSON: line index -> deny/explain/silent), and what you've confessed to a priest */
+    public String trialAnswers = "";
+    public final Set<String> confessed = new LinkedHashSet<>();
+    public long lastConfession = -1;
+    /** other players who saw what you did: "uuid|name|what|day" (what: villager, stores) */
+    public final List<String> sightings = new ArrayList<>();
+
+    /** the prison day: stone broken today, days without the quota, fed today, today's visitor seen */
+    public int labour;
+    public int strikes;
+    public boolean fed;
+    public boolean visitorDone;
+    public int rumour;
+    public final Set<String> hintsGiven = new LinkedHashSet<>();
+    /** the escape: Maddock's plan heard, his trust earned (the rounds), the chisel, the hole, and escapes ever */
+    public boolean planKnown;
+    public boolean knowsRounds;
+    public boolean hasChisel;
+    public int digProgress;
+    public int escapes;
+    /** sentence served: the gate is open and you're walking out */
+    public boolean walkingOut;
+
+    /** interrogations done (by person), villages that have already heard of you (meeting points), a price on your head */
+    public final Set<String> interrogated = new LinkedHashSet<>();
+    public final Set<Long> villagesHeard = new LinkedHashSet<>();
+    public String bountyBy = "";
+    public final Map<String, Long> bountiesPlaced = new LinkedHashMap<>();
+
     /** Watch duties and Hand contracts done while a rival was on the other side */
     public int rivalMarks;
 
@@ -178,6 +207,27 @@ public final class RepData {
             d.spawnForced = tag.getBoolean("spawnForced");
             d.servedTicks = tag.getInt("servedTicks");
             d.rivalMarks = tag.getInt("rivalMarks");
+            d.trialAnswers = tag.getString("trialAnswers");
+            for (Tag t : tag.getList("confessed", Tag.TAG_STRING)) d.confessed.add(t.getAsString());
+            d.lastConfession = tag.contains("lastConfession") ? tag.getLong("lastConfession") : -1;
+            for (Tag t : tag.getList("sightings", Tag.TAG_STRING)) d.sightings.add(t.getAsString());
+            d.labour = tag.getInt("labour");
+            d.strikes = tag.getInt("strikes");
+            d.fed = tag.getBoolean("fed");
+            d.visitorDone = tag.getBoolean("visitorDone");
+            d.rumour = tag.getInt("rumour");
+            for (Tag t : tag.getList("hintsGiven", Tag.TAG_STRING)) d.hintsGiven.add(t.getAsString());
+            d.planKnown = tag.getBoolean("planKnown");
+            d.knowsRounds = tag.getBoolean("knowsRounds");
+            d.hasChisel = tag.getBoolean("hasChisel");
+            d.digProgress = tag.getInt("digProgress");
+            d.escapes = tag.getInt("escapes");
+            d.walkingOut = tag.getBoolean("walkingOut");
+            for (Tag t : tag.getList("interrogated", Tag.TAG_STRING)) d.interrogated.add(t.getAsString());
+            for (long l : tag.getLongArray("villagesHeard")) d.villagesHeard.add(l);
+            d.bountyBy = tag.getString("bountyBy");
+            CompoundTag bp = tag.getCompound("bountiesPlaced");
+            for (String k : bp.getAllKeys()) d.bountiesPlaced.put(k, bp.getLong(k));
             for (Tag t : tag.getList("simTraits", Tag.TAG_STRING)) d.simTraits.add(t.getAsString());
             CompoundTag dec = tag.getCompound("simDecisions");
             for (String k : dec.getAllKeys()) d.simDecisions.put(k, dec.getString(k));
@@ -240,6 +290,28 @@ public final class RepData {
             tag.putBoolean("spawnForced", d.spawnForced);
             tag.putInt("servedTicks", d.servedTicks);
             tag.putInt("rivalMarks", d.rivalMarks);
+            tag.putString("trialAnswers", d.trialAnswers);
+            tag.put("confessed", strings(d.confessed));
+            tag.putLong("lastConfession", d.lastConfession);
+            tag.put("sightings", strings(d.sightings));
+            tag.putInt("labour", d.labour);
+            tag.putInt("strikes", d.strikes);
+            tag.putBoolean("fed", d.fed);
+            tag.putBoolean("visitorDone", d.visitorDone);
+            tag.putInt("rumour", d.rumour);
+            tag.put("hintsGiven", strings(d.hintsGiven));
+            tag.putBoolean("planKnown", d.planKnown);
+            tag.putBoolean("knowsRounds", d.knowsRounds);
+            tag.putBoolean("hasChisel", d.hasChisel);
+            tag.putInt("digProgress", d.digProgress);
+            tag.putInt("escapes", d.escapes);
+            tag.putBoolean("walkingOut", d.walkingOut);
+            tag.put("interrogated", strings(d.interrogated));
+            tag.putLongArray("villagesHeard", d.villagesHeard.stream().mapToLong(Long::longValue).toArray());
+            tag.putString("bountyBy", d.bountyBy);
+            CompoundTag bp = new CompoundTag();
+            d.bountiesPlaced.forEach(bp::putLong);
+            tag.put("bountiesPlaced", bp);
             tag.put("simTraits", strings(d.simTraits));
             CompoundTag dec = new CompoundTag();
             d.simDecisions.forEach(dec::putString);

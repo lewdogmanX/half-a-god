@@ -7,6 +7,9 @@ import dev.halfagod.HalfAGod;
 import dev.halfagod.core.CourtBuilder;
 import dev.halfagod.core.CourtData;
 import dev.halfagod.core.Dreams;
+import dev.halfagod.core.Prison;
+import dev.halfagod.core.Talk;
+import dev.halfagod.core.Words;
 import dev.halfagod.core.EndCard;
 import dev.halfagod.core.RepData;
 import dev.halfagod.core.Reputation;
@@ -14,6 +17,7 @@ import dev.halfagod.core.StoryData;
 import dev.halfagod.core.Trial;
 import dev.halfagod.net.Payloads;
 import net.minecraft.client.Minecraft;
+import net.minecraft.core.BlockPos;
 import net.minecraft.client.Screenshot;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.server.level.ServerPlayer;
@@ -79,6 +83,33 @@ public final class ClientShots {
         sp.teleportTo(court, o.getX() + x, o.getY() + y, o.getZ() + z, yaw, pitch);
     }
 
+    private static final String[] ANSWERS = {"deny", "explain", "silent"};
+    private static int answered;
+
+    /** clicks through the court until it asks for an answer to a charge */
+    private static void untilAsking() {
+        Minecraft mc = Minecraft.getInstance();
+        for (int i = 0; i < 15 && mc.screen instanceof TrialScreen t && !t.isAsking(); i++) {
+            t.mouseClicked(1, 1, 0);
+        }
+    }
+
+    /** clicks through the court, answering each charge in turn */
+    private static void advance(int times) {
+        Minecraft mc = Minecraft.getInstance();
+        for (int i = 0; i < times && mc.screen != null; i++) {
+            if (mc.screen instanceof TrialScreen t && t.isAsking()) {
+                t.answerForTest(ANSWERS[answered++ % ANSWERS.length]);
+            } else {
+                mc.screen.mouseClicked(1, 1, 0);
+            }
+        }
+    }
+
+    private static int slot(ServerPlayer sp) {
+        return CourtData.get(Trial.court(sp.getServer())).slot(sp.getUUID());
+    }
+
     private static void click(int times) {
         Minecraft mc = Minecraft.getInstance();
         for (int i = 0; i < times && mc.screen != null; i++) {
@@ -98,14 +129,16 @@ public final class ClientShots {
         step(170, () -> server(sp -> Dreams.send(sp, Dreams.byId("past_2"))));
         step(10, () -> shot("02_dream"));
         step(30, () -> Minecraft.getInstance().setScreen(null));
-        step(100, () -> server(Trial::kidnap));
+        step(100, () -> server(sp -> Trial.kidnap(sp, Trial.SAMPLE_RECORD)));
         step(10, () -> shot("03_trial_taken"));
         step(20, () -> {
             trial = Minecraft.getInstance().screen;
-            click(4);
+            click(3);
         });
-        step(10, () -> shot("04_trial_court"));
-        step(20, () -> click(30));
+        step(15, () -> shot("04_trial_court"));
+        step(5, ClientShots::untilAsking);
+        step(25, () -> shot("04b_trial_answer"));
+        step(20, () -> advance(60));
         step(10, () -> shot("05_trial_plea"));
         step(30, () -> Minecraft.getInstance().setScreen(null));
         step(10, () -> shot("06_courtroom"));
@@ -118,14 +151,18 @@ public final class ClientShots {
         step(30, () -> shot("06d_court_gallery"));
         step(10, () -> server(sp -> at(sp, CourtBuilder.DOCK.getX() + 0.5, 0, CourtBuilder.DOCK.getZ() + 0.5, 180f, 0f)));
         step(20, () -> Minecraft.getInstance().setScreen(trial));
-        step(40, () -> PacketDistributor.sendToServer(new Payloads.Plea("silent")));
-        step(10, () -> shot("07_verdict"));
+        step(90, () -> PacketDistributor.sendToServer(new Payloads.Plea("silent")));
+        step(140, () -> shot("07_verdict_votes"));
+        step(10, () -> shot("07b_verdict"));
         step(80, () -> {
             PacketDistributor.sendToServer(new Payloads.Plea("continue"));
             Minecraft.getInstance().setScreen(null);
         });
         step(10, () -> shot("08_cell_bars"));
-        step(10, () -> server(sp -> Trial.passTime(sp, 1200)));
+        step(10, () -> server(sp -> {
+            Reputation.data(sp).sentence = 5;
+            Trial.passTime(sp, 1200);
+        }));
         step(10, () -> shot("08b_cell_time_left"));
         step(20, () -> look(0f, 25f));
         step(10, () -> shot("09_cell_window"));
@@ -134,17 +171,84 @@ public final class ClientShots {
         step(10, () -> server(sp -> at(sp, CourtBuilder.CELL_SPOT.getX() + 0.5, 0, CourtBuilder.CELL_SPOT.getZ() + 0.5, 180f, 0f)));
         step(20, () -> look(60f, 15f));
         step(10, () -> shot("10_cell_cot"));
-        step(20, () -> look(-110f, 10f));
-        step(10, () -> shot("10b_cell_cauldron"));
-        step(5, () -> server(sp -> {
-            RepData d = Reputation.data(sp);
-            for (int i = 0; i < 8 && d.trialState == 2; i++) {
-                Trial.serveDay(sp);
+        // the prison day: the quarry, the cafeteria, the other prisoners
+        step(10, () -> server(sp -> Prison.testTime(sp, "labour")));
+        step(40, () -> server(sp -> Trial.passTime(sp, 1220)));
+        step(40, () -> look(90f, 8f));
+        step(10, () -> shot("14_quarry"));
+        step(10, () -> server(sp -> {
+            BlockPos face = CourtBuilder.abs(slot(sp), new BlockPos(-27, 1, -1));
+            for (int i = 0; i < 5; i++) {
+                Prison.onBreak(sp, face);
             }
         }));
+        step(10, () -> look(140f, 10f));
+        step(10, () -> shot("14b_quarry_cart"));
+        step(10, () -> server(sp -> Prison.testTime(sp, "supper")));
+        step(40, () -> server(sp -> Trial.passTime(sp, 1220)));
+        step(40, () -> look(-90f, 6f));
+        step(10, () -> shot("15_cafeteria"));
+        step(10, () -> server(sp -> Prison.onTalk(sp, "prisoner0")));
+        step(25, () -> shot("16_talk_maddock"));
+        step(10, () -> server(sp -> Talk.choose(sp, "where")));
+        step(25, () -> shot("16b_talk_where"));
+        step(10, () -> server(sp -> Talk.choose(sp, "escape")));
+        step(25, () -> shot("16c_talk_escape"));
+        step(10, () -> {
+            server(sp -> Talk.choose(sp, "leave"));
+            Minecraft.getInstance().setScreen(null);
+        });
+        // morning: a visitor at your bars
+        step(10, () -> server(sp -> {
+            Prison.testTime(sp, "morning");
+            Prison.testVisitor(sp);
+        }));
+        step(60, () -> look(180f, 10f));
+        step(10, () -> shot("17_visitor"));
+        step(10, () -> server(sp -> Prison.onTalk(sp, "visitor")));
+        step(25, () -> shot("17b_visitor_talk"));
+        step(10, () -> {
+            server(sp -> Talk.choose(sp, "leave"));
+            Minecraft.getInstance().setScreen(null);
+        });
+        // lights out, and a hole under the window
+        step(10, () -> server(sp -> Prison.testTime(sp, "lightsout")));
+        step(40, () -> server(sp -> {
+            Trial.passTime(sp, 40);
+            Prison.testEscape(sp, "dig");
+            Prison.dig(sp, Reputation.data(sp), sp.getServer().getTickCount());
+        }));
+        step(30, () -> look(0f, 20f));
+        step(10, () -> shot("18_escape_hole"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 2.5, -1 + 1, CourtBuilder.CELL.getZ() + 7.5, -90f, 15f)));
+        step(30, () -> shot("18b_ledge"));
+        // ...but this time, serve it out and walk through the gate
+        step(10, () -> server(sp -> {
+            RepData d = Reputation.data(sp);
+            Prison.caught(sp, d, "dawn");
+            Prison.putIn(sp, "cell");
+            d.served = d.sentence - 1;
+            Trial.serveDay(sp);
+        }));
+        step(40, () -> look(180f, 5f));
+        step(10, () -> shot("19_walk_out"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 20.5, 0, CourtBuilder.CELL.getZ() - 6.5, 180f, 0f)));
+        step(30, () -> look(180f, 0f));
+        step(10, () -> shot("19b_the_gate"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 20.5, 0, CourtBuilder.CELL.getZ() - 10.5, 180f, 0f)));
         step(150, () -> {
         });
         step(10, () -> shot("11_home_dream"));
+        step(30, () -> Minecraft.getInstance().setScreen(null));
+        // confession, and an interrogation
+        step(20, () -> server(Words::confession));
+        step(25, () -> shot("20_confession"));
+        step(10, () -> server(sp -> Talk.choose(sp, "villagers")));
+        step(25, () -> shot("20b_confessed"));
+        step(10, () -> server(sp -> Words.interrogate(sp, "vael")));
+        step(25, () -> shot("21_interrogation"));
+        step(10, () -> server(sp -> Words.ask(sp, "vael", "bribe")));
+        step(25, () -> shot("21b_interrogation_answer"));
         step(30, () -> Minecraft.getInstance().setScreen(null));
         step(40, () -> server(sp -> {
             JsonObject fake = fakeMap(sp);
@@ -157,7 +261,7 @@ public final class ClientShots {
             });
         }));
         step(10, () -> shot("12_map_notes"));
-        for (String page : new String[]{"secrets", "trials", "dreams", "path", "story"}) {
+        for (String page : new String[]{"secrets", "trials", "dreams", "path", "letters", "story"}) {
             step(30, () -> {
                 if (Minecraft.getInstance().screen instanceof StoryMapScreen s) {
                     s.openCodex(page);
