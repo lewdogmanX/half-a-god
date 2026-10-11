@@ -77,9 +77,9 @@ public final class HalfAGodTests {
         int slot = 900;
         CourtBuilder.ensure(court, slot);
         BlockPos o = CourtBuilder.origin(slot);
-        BlockState bars = court.getBlockState(o.offset(CourtBuilder.DOCK).offset(-1, 0, 0));
-        check(h, bars.is(Blocks.IRON_BARS), "the dock has bars");
-        check(h, bars.getValue(IronBarsBlock.NORTH) || bars.getValue(IronBarsBlock.SOUTH), "the dock's bars join up");
+        BlockState rail = court.getBlockState(o.offset(CourtBuilder.DOCK).offset(-1, 0, 0));
+        check(h, rail.is(Blocks.DARK_OAK_FENCE), "the dock has a rail");
+        check(h, rail.getValue(net.minecraft.world.level.block.FenceBlock.NORTH) && rail.getValue(net.minecraft.world.level.block.FenceBlock.SOUTH), "the dock's rail joins up");
         BlockPos cell = o.offset(CourtBuilder.CELL);
         check(h, court.getBlockState(cell.offset(-1, 0, 0)).is(Blocks.BROWN_BED), "the cell has a bed");
         check(h, court.getBlockState(cell.offset(0, 0, -2)).is(Blocks.OBSIDIAN), "the cell is obsidian");

@@ -1095,7 +1095,8 @@ public final class StoryMapScreen extends Screen {
             if (x < cx0 - 120 || x > cx1 + 120 || y < cy0 - 40 || y > cy1 + 60) {
                 continue;
             }
-            int maxW = (int) ((COL_W - 14) / scale);
+            // as wide as the space between two seals on screen, in the note's own (smaller) letters
+            int maxW = (int) ((COL_W - 20) * zoom / scale);
             List<FormattedCharSequence> lines = font.split(Component.literal(note).withStyle(ChatFormatting.ITALIC), maxW);
             int r = Math.max(7, Math.round(R * zoom));
             int ink = noteTone(p.node()) == 2 ? 0xD06A1414 : noteTone(p.node()) == 0 ? 0xD02A3A1A : 0xD04A3420;
@@ -2110,7 +2111,7 @@ public final class StoryMapScreen extends Screen {
                 ry = pageHeading(g, rx, rw, ry, "THE COURT OF THE WATCH  ·  DAY " + t.get("day").getAsLong(), guilty ? "Guilty" : "Free to go");
                 String plea = v.get("plea").getAsString().replace("_", " ");
                 String outcome = t.has("outcome") ? t.get("outcome").getAsString() : "";
-                String how = "You pleaded " + (plea.equals("silent") ? "nothing" : plea.equals("bribe") ? "with a juror's purse" : plea)
+                String how = (plea.equals("silent") ? "You said nothing" : plea.equals("bribe") ? "You paid a juror" : "You pleaded " + plea)
                         + (guilty ? ". " + v.get("days").getAsInt() + " days in the cells" + (outcome.isEmpty() || outcome.equals("in the cells") ? "." : ": " + outcome + ".") : ".");
                 ry = paragraph(g, how, rx, rw, ry) + 2;
                 ry = divider(g, rx, rw, ry) + 2;
@@ -2160,7 +2161,9 @@ public final class StoryMapScreen extends Screen {
         g.fill(x0 - 5, y0 - 5, x0 + cw + 5, y0 - 4, GILT);
         g.fill(x0 - 5, y0 + ch + 4, x0 + cw + 5, y0 + ch + 5, GILT);
         g.fill(x0, y0, x0 + cw, y0 + ch, PAPER);
+        g.enableScissor(x0, y0, x0 + cw, y0 + ch);
         drawPaper(g, x0, y0, x0 + cw, y0 + ch);
+        g.disableScissor();
         String name = story.has("name") ? story.get("name").getAsString() : "";
         boolean over = storyOver;
         String kicker = (over ? "THE STORY OF " : "THE STORY SO FAR: ") + name.toUpperCase();

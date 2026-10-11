@@ -28,7 +28,7 @@ import java.util.List;
  * The cell: three by three, obsidian, a bed, a barred window over a lava lake, and a gaoler on the other side of the bars.
  */
 public final class CourtBuilder {
-    public static final int VERSION = 1;
+    public static final int VERSION = 2;
     private static final int FLAGS = Block.UPDATE_CLIENTS | Block.UPDATE_KNOWN_SHAPE;
     public static final String NPC = "hag_court";
 
@@ -134,24 +134,28 @@ public final class CourtBuilder {
                 }
             }
         }
-        // the dock: iron bars all round, two high
+        // the dock: a dark rail all round (too high to climb over), so the court can be seen
         set(level, o, DOCK.getX(), -1, DOCK.getZ(), Blocks.POLISHED_BLACKSTONE.defaultBlockState());
         for (int x = -1; x <= 1; x++) {
             for (int z = DOCK.getZ() - 1; z <= DOCK.getZ() + 1; z++) {
                 if (x == 0 && z == DOCK.getZ()) {
                     continue;
                 }
-                for (int y = 0; y <= 1; y++) {
-                    set(level, o, x, y, z, Blocks.IRON_BARS.defaultBlockState());
-                    shapes.add(o.offset(x, y, z));
-                }
+                set(level, o, x, 0, z, Blocks.DARK_OAK_FENCE.defaultBlockState());
+                shapes.add(o.offset(x, 0, z));
             }
         }
-        // light
-        BlockState lantern = Blocks.SOUL_LANTERN.defaultBlockState().setValue(LanternBlock.HANGING, true);
-        for (int[] l : new int[][]{{-4, -6}, {4, -6}, {-4, 0}, {4, 0}, {-4, 6}, {4, 6}, {0, -4}, {0, 5}}) {
+        // light: lanterns down the hall, soul lanterns either side of the bench, candles on the jury rail
+        BlockState lantern = Blocks.LANTERN.defaultBlockState().setValue(LanternBlock.HANGING, true);
+        for (int[] l : new int[][]{{-4, -6}, {4, -6}, {-4, -1}, {4, -1}, {-4, 4}, {4, 4}, {0, -2}, {0, 6}}) {
             set(level, o, l[0], 6, l[1], lantern);
         }
+        BlockState soul = Blocks.SOUL_LANTERN.defaultBlockState().setValue(LanternBlock.HANGING, true);
+        set(level, o, -3, 6, -9, soul);
+        set(level, o, 3, 6, -9, soul);
+        BlockState candle = Blocks.CANDLE.defaultBlockState().setValue(CandleBlock.CANDLES, 2).setValue(CandleBlock.LIT, true);
+        level.setBlock(o.offset(4, 1, -6), candle, FLAGS);
+        level.setBlock(o.offset(4, 1, -1), candle, FLAGS);
     }
 
     private static void cell(ServerLevel level, BlockPos c, List<BlockPos> shapes) {
@@ -168,7 +172,7 @@ public final class CourtBuilder {
         // the bed (head to the north) and a lantern
         set(level, c, -1, 0, 0, Blocks.BROWN_BED.defaultBlockState().setValue(BedBlock.FACING, Direction.NORTH).setValue(BedBlock.PART, BedPart.HEAD));
         set(level, c, -1, 0, 1, Blocks.BROWN_BED.defaultBlockState().setValue(BedBlock.FACING, Direction.NORTH).setValue(BedBlock.PART, BedPart.FOOT));
-        set(level, c, 1, 2, -1, Blocks.SOUL_LANTERN.defaultBlockState().setValue(LanternBlock.HANGING, true));
+        set(level, c, 1, 2, -1, Blocks.LANTERN.defaultBlockState().setValue(LanternBlock.HANGING, true));
         // the slit window over the lava, and the bars to the gaoler's room
         set(level, c, 0, 1, 2, Blocks.IRON_BARS.defaultBlockState());
         shapes.add(c.offset(0, 1, 2));
