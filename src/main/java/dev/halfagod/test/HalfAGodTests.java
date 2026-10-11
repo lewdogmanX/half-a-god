@@ -148,4 +148,78 @@ public final class HalfAGodTests {
         p.discard();
         h.succeed();
     }
+
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void waysOut(GameTestHelper h) {
+        court(h);
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        BlockPos home = h.absolutePos(new BlockPos(1, 1, 1));
+        p.teleportTo(h.getLevel(), home.getX() + 0.5, home.getY(), home.getZ() + 0.5, 0f, 0f);
+        p.setRespawnPosition(Level.OVERWORLD, home, 0f, true, false);
+        p.awardStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER), 12);
+        RepData d = Reputation.data(p);
+
+        // escape: the loose block
+        check(h, Trial.kidnap(p), "taken (escape)");
+        Trial.onPlea(p, "silent");
+        Trial.onPlea(p, "continue");
+        check(h, d.trialState == 2, "in a cell (escape)");
+        int hand = d.handDone;
+        Trial.release(p, d, "escaped");
+        check(h, d.trialState == 0 && d.escapes == 1, "escaped");
+        check(h, d.handDone == hand + 3, "the Hand respects it");
+        check(h, JsonParser.parseString(d.trials.get(d.trials.size() - 1)).getAsJsonObject().get("outcome").getAsString().equals("escaped"),
+                "the Codex says how they got out");
+
+        // the Hand breaks you out on the second night
+        d.handRank = 2;
+        check(h, Trial.kidnap(p), "taken (breakout)");
+        Trial.onPlea(p, "not_guilty");
+        Trial.onPlea(p, "continue");
+        check(h, d.trialState == 2 && d.sentence >= 3, "a long sentence for a repeat offender: " + d.sentence);
+        Trial.onNightInCell(p);
+        check(h, d.trialState == 2, "still inside after one night");
+        Trial.onNightInCell(p);
+        check(h, d.trialState == 0 && d.brokenOut, "Silas's men came on the second night");
+
+        // paying a juror: 16 emeralds come out of your things
+        d.handRank = 1;
+        p.getInventory().setItem(0, new ItemStack(Items.EMERALD, 20));
+        p.resetStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER));
+        p.awardStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER), 2);
+        check(h, Trial.kidnap(p), "taken (bribe)");
+        boolean offered = d.trialScript.contains("\"bribe\"");
+        check(h, offered, "a juror can be bought");
+        Trial.onPlea(p, "bribe");
+        Trial.onPlea(p, "continue");
+        check(h, d.trialState == 0, "the bought juror worked");
+        check(h, p.getInventory().countItem(Items.EMERALD) == 4, "16 emeralds paid: " + p.getInventory().countItem(Items.EMERALD));
+        p.discard();
+        h.succeed();
+    }
+
+    @GameTest(template = "empty")
+    public static void dreamsPick(GameTestHelper h) {
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        RepData d = Reputation.data(p);
+        Set<String> traits = Set.of("hag_the_first_letter_done", "hag_a1_ashford_burns_done", "hag_w1_the_skull_market_done", "peddler_slain");
+        java.util.Set<String> got = new java.util.HashSet<>();
+        for (int i = 0; i < 40; i++) {
+            JsonObject dream = Dreams.pick(p, d, traits);
+            if (dream == null) {
+                break;
+            }
+            String id = dream.get("id").getAsString();
+            check(h, got.add(id), "never the same dream twice: " + id);
+            String kind = dream.get("kind").getAsString();
+            check(h, !kind.equals("omen") || dream.get("act").getAsString().equals("hag_w1_the_skull_market_done"), "omens only for this act: " + id);
+            check(h, !kind.equals("echo") || traits.contains(dream.get("trait").getAsString()), "echoes only of what you did: " + id);
+            d.dreams.add(id + "|1");
+        }
+        check(h, got.contains("past_1") && got.contains("past_6"), "the god's past, all of it: " + got);
+        check(h, got.contains("echo_peddler_slain"), "the echo of the peddler: " + got);
+        check(h, got.contains("omen_w1_the_skull_market"), "the omen for Act II: " + got);
+        p.discard();
+        h.succeed();
+    }
 }

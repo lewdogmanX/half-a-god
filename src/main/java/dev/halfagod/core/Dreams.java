@@ -110,8 +110,11 @@ public final class Dreams {
 
     /** An echo, an omen or the next piece of the god's past, whichever there is (echoes most likely). */
     public static JsonObject pick(ServerPlayer player, RepData d) {
+        return pick(player, d, Meb.traits(player));
+    }
+
+    public static JsonObject pick(ServerPlayer player, RepData d, Set<String> traits) {
         Set<String> seen = seen(d);
-        Set<String> traits = Meb.traits(player);
         String act = actTrait(traits);
         List<JsonObject> echoes = new ArrayList<>(), omens = new ArrayList<>();
         JsonObject past = null;
