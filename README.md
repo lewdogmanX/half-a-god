@@ -250,6 +250,9 @@ Everyone plays their own story; nothing forces a fight.
 
 | Command | What |
 | --- | --- |
+| `/halfagod test story <point> [good\|evil\|waver\|random]` | jump to a believable point in the story without playing it: `prologue`, `act1` … `act7`, `end`, `after` or `random`. Everything before it is done (map, margin notes, Your Path, Wardens), decisions are made the way that kind of player would, and reputation follows. Laid over your real story; Mebahel's own quests don't move. Ashford and settlers do follow it, so use a test world. |
+| `/halfagod test story clear` | put your real story back exactly as it was |
+| `/halfagod test story status` | whether you're in a simulated story |
 | `/halfagod test dream` | dream now (a dream that fits where you are) |
 | `/halfagod test dream <id>` | a particular dream (tab completes; `kidnap`, `godsaw`, `release`, `escape`, `breakout` are the special ones) |
 | `/halfagod test dreams reset` | forget your dreams |

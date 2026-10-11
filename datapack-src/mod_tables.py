@@ -472,3 +472,6 @@ def write(out_pack, mod_root):
     dump("trial.json", trial.build())
     dump("secrets.json", hidden_lines.mod_table())
     dump("acts.json", {"acts": [{"trait": t, "name": n} for t, n in ACTS]})
+    # for operators: the story simulator's map of the road
+    import simdata
+    dump("sim.json", simdata.build(_goal_text))

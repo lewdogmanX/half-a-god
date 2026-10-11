@@ -105,6 +105,22 @@ public final class RepData {
     /** Watch duties and Hand contracts done while a rival was on the other side */
     public int rivalMarks;
 
+    /** operators' story simulator: made-up story traits laid over the real ones (Mebahel never sees them), the
+     *  decision made at each simulated quest (spare/kill), the quest you'd be on next, and your real record to go back to */
+    public final Set<String> simTraits = new LinkedHashSet<>();
+    public final Map<String, String> simDecisions = new LinkedHashMap<>();
+    public String simNext = "";
+    public String simLabel = "";
+    public CompoundTag simBackup = new CompoundTag();
+
+    public static CompoundTag save(RepData d, HolderLookup.Provider provider) {
+        return new Serializer().write(d, provider);
+    }
+
+    public static RepData load(CompoundTag tag, HolderLookup.Provider provider) {
+        return new Serializer().read(null, tag, provider);
+    }
+
     public void addLooted(long pos) {
         looted.add(pos);
         while (looted.size() > 512) {
@@ -164,6 +180,12 @@ public final class RepData {
             d.spawnForced = tag.getBoolean("spawnForced");
             d.escapeBlock = tag.getLong("escapeBlock");
             d.rivalMarks = tag.getInt("rivalMarks");
+            for (Tag t : tag.getList("simTraits", Tag.TAG_STRING)) d.simTraits.add(t.getAsString());
+            CompoundTag dec = tag.getCompound("simDecisions");
+            for (String k : dec.getAllKeys()) d.simDecisions.put(k, dec.getString(k));
+            d.simNext = tag.getString("simNext");
+            d.simLabel = tag.getString("simLabel");
+            d.simBackup = tag.getCompound("simBackup");
             return d;
         }
 
@@ -221,6 +243,13 @@ public final class RepData {
             tag.putBoolean("spawnForced", d.spawnForced);
             tag.putLong("escapeBlock", d.escapeBlock);
             tag.putInt("rivalMarks", d.rivalMarks);
+            tag.put("simTraits", strings(d.simTraits));
+            CompoundTag dec = new CompoundTag();
+            d.simDecisions.forEach(dec::putString);
+            tag.put("simDecisions", dec);
+            tag.putString("simNext", d.simNext);
+            tag.putString("simLabel", d.simLabel);
+            tag.put("simBackup", d.simBackup.copy());
             return tag;
         }
 

@@ -28,6 +28,20 @@ public final class MapStates {
                 states.addProperty(p.questId(), s);
             }
         }
+        // the story simulator's made-up progress shows on the map too
+        RepData sim = Reputation.data(player);
+        for (String t : sim.simTraits) {
+            if (t.startsWith("hag_") && t.endsWith("_done")) {
+                String q = "mebahelrpgrquest:" + t.substring(0, t.length() - "_done".length());
+                if (StoryData.INSTANCE.markers.containsKey(q) && !states.has(q)) {
+                    String dec = sim.simDecisions.getOrDefault(q, "");
+                    states.addProperty(q, dec.equals("spare") ? "done_spare" : dec.equals("kill") ? "done_kill" : "done");
+                }
+            }
+        }
+        if (!sim.simNext.isEmpty() && !states.has(sim.simNext)) {
+            states.addProperty(sim.simNext, "active");
+        }
         for (String quest : StoryData.INSTANCE.markers.keySet()) {
             if (!states.has(quest) && Meb.canSee(player, ResourceLocation.parse(quest))) {
                 states.addProperty(quest, "open");

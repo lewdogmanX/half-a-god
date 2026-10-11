@@ -483,7 +483,7 @@ if os.path.isdir(MOD_ROOT):
     root = (_tag(9, "size", _ints([3, 3, 3])) + _tag(9, "palette", palette) + _tag(9, "blocks", blocks)
             + _tag(9, "entities", entities) + _tag(3, "DataVersion", struct.pack(">i", 3955)) + b"\x00")
     os.makedirs(os.path.join(dst, "data/half_a_god/structure"), exist_ok=True)
-    with gzip.open(os.path.join(dst, "data/half_a_god/structure/empty.nbt"), "wb") as f:
+    with gzip.GzipFile(os.path.join(dst, "data/half_a_god/structure/empty.nbt"), "wb", mtime=0) as f:
         f.write(_tag(10, "", root))
 print("quests:", len(QUESTS), "extra files:", len(EXTRA))
 if MISSING_GREET:

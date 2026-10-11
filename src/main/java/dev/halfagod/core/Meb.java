@@ -118,11 +118,14 @@ public final class Meb {
     @SuppressWarnings("unchecked")
     public static Set<String> traits(ServerPlayer player) {
         Object r = call(player, "mebahelrpgrquest$getTraits");
-        return r instanceof Set<?> s ? new HashSet<>((Set<String>) s) : new HashSet<>();
+        Set<String> out = r instanceof Set<?> s ? new HashSet<>((Set<String>) s) : new HashSet<>();
+        // the operators' story simulator lays its made-up record over the real one (Mebahel never sees it)
+        out.addAll(Reputation.data(player).simTraits);
+        return out;
     }
 
     public static boolean hasTrait(ServerPlayer player, String trait) {
-        return Boolean.TRUE.equals(call(player, "mebahelrpgrquest$hasTrait", trait));
+        return Reputation.data(player).simTraits.contains(trait) || Boolean.TRUE.equals(call(player, "mebahelrpgrquest$hasTrait", trait));
     }
 
     /** Adds a Mebahel trait (used by quest requirements) and the matching story flag (used by ambient dialogue). */

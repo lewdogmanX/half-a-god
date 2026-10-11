@@ -214,6 +214,42 @@ public final class HalfAGodTests {
         h.succeed();
     }
 
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void storySimulator(GameTestHelper h) {
+        court(h);
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        double before = Reputation.data(p).value;
+        String msg = dev.halfagod.core.Simulate.run(p, "act3", "evil");
+        RepData d = Reputation.data(p);
+        check(h, msg.startsWith("Simulated"), msg);
+        check(h, Dreams.actIndex(dev.halfagod.core.Meb.traits(p)) == 3, "in Act III: " + msg);
+        check(h, d.value <= -20, "an evil playthrough is Fallen or worse: " + d.value);
+        check(h, !d.doneRep.isEmpty() && d.path.size() > 10, "the map and Your Path are filled in");
+        // the trial has a record to read from
+        int heard = 0;
+        for (int i = 0; i < 4 && heard == 0; i++) {
+            dev.halfagod.core.Simulate.run(p, "act3", "evil");
+            d = Reputation.data(p);
+            check(h, Trial.kidnap(p), "taken");
+            heard = JsonParser.parseString(d.trialScript).getAsJsonObject().get("heard").getAsInt();
+            Trial.release(p, d, "released");
+        }
+        check(h, heard > 0, "witnesses from the simulated story");
+        // the end of the story
+        dev.halfagod.core.Simulate.run(p, "end", "good");
+        d = Reputation.data(p);
+        check(h, dev.halfagod.core.Fates.storyOver(dev.halfagod.core.Meb.traits(p)), "the story is over");
+        check(h, !EndCard.compute(p, dev.halfagod.core.Meb.traits(p)).get("ending").getAsString().equals("Still Walking"), "an ending");
+        // and back to the real thing
+        dev.halfagod.core.Simulate.clear(p);
+        d = Reputation.data(p);
+        check(h, d.simTraits.isEmpty() && d.simBackup.isEmpty(), "the made-up record is gone");
+        check(h, d.value == before, "reputation as it was: " + d.value);
+        check(h, Dreams.actIndex(dev.halfagod.core.Meb.traits(p)) == -1, "back to no story");
+        p.discard();
+        h.succeed();
+    }
+
     @GameTest(template = "empty")
     public static void dreamsPick(GameTestHelper h) {
         ServerPlayer p = h.makeMockServerPlayerInLevel();

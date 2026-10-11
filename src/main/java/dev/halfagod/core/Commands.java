@@ -21,6 +21,7 @@ import static net.minecraft.commands.Commands.literal;
 /**
  * /halfagod rep | lostmyway | choose | chronicle            (everyone)
  * /halfagod story | unlockall | jump <quest> [player] | setrep <value> [player]   (operators)
+ * /halfagod test story <prologue|act1..act7|end|after|random> [good|evil|waver|random] | story clear | story status   (operators)
  * /halfagod test dream [id] | dreams reset | secret <name> | trial [status|witnesses|night|escape|release|reset] | endcard | codex <page>   (operators)
  */
 public final class Commands {
@@ -130,6 +131,24 @@ public final class Commands {
                             d.escapes = 0;
                             return ok(c.getSource(), "The Watch has forgotten you (this act's trial can happen again).");
                         })))
+                .then(literal("story")
+                        .then(literal("clear").executes(c -> ok(c.getSource(), Simulate.clear(c.getSource().getPlayerOrException()))))
+                        .then(literal("status").executes(c -> ok(c.getSource(), Simulate.status(c.getSource().getPlayerOrException()))))
+                        .then(argument("point", StringArgumentType.word())
+                                .suggests((c, b) -> {
+                                    Simulate.acts().forEach(b::suggest);
+                                    return b.buildFuture();
+                                })
+                                .executes(c -> ok(c.getSource(), Simulate.run(c.getSource().getPlayerOrException(), StringArgumentType.getString(c, "point"), "random")))
+                                .then(argument("as", StringArgumentType.word())
+                                        .suggests((c, b) -> {
+                                            for (String m : new String[]{"good", "evil", "waver", "random"}) {
+                                                b.suggest(m);
+                                            }
+                                            return b.buildFuture();
+                                        })
+                                        .executes(c -> ok(c.getSource(), Simulate.run(c.getSource().getPlayerOrException(),
+                                                StringArgumentType.getString(c, "point"), StringArgumentType.getString(c, "as")))))))
                 .then(literal("endcard").executes(c -> {
                     ServerPlayer p = c.getSource().getPlayerOrException();
                     Net.send(p, new Payloads.OpenMap("story"));

@@ -81,6 +81,8 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     public final List<JsonObject> secrets = new ArrayList<>();
     /** the acts, in order: trait that opens each one -> its name */
     public final Map<String, String> acts = new LinkedHashMap<>();
+    /** the story simulator's road: every chapter's main quests in order, with their forks, and side decisions */
+    public final List<JsonObject> simChapters = new ArrayList<>();
 
     public record Unlock(double at, boolean below, String trait, String courier) {
     }
@@ -128,6 +130,7 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
         pleas.clear();
         secrets.clear();
         acts.clear();
+        simChapters.clear();
         for (Map.Entry<ResourceLocation, JsonElement> e : files.entrySet()) {
             if (!e.getValue().isJsonObject()) {
                 continue;
@@ -191,6 +194,7 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                         o.getAsJsonArray("pleas").forEach(c -> pleas.add(c.getAsJsonObject()));
                     }
                     case "secrets" -> o.getAsJsonArray("lines").forEach(c -> secrets.add(c.getAsJsonObject()));
+                    case "sim" -> o.getAsJsonArray("chapters").forEach(c -> simChapters.add(c.getAsJsonObject()));
                     case "acts" -> o.getAsJsonArray("acts").forEach(c -> acts.put(c.getAsJsonObject().get("trait").getAsString(),
                             c.getAsJsonObject().get("name").getAsString()));
                     default -> {

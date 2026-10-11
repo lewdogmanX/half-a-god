@@ -1,0 +1,1098 @@
+{
+ "chapters": [
+  {
+   "id": "prologue",
+   "name": "Prologue",
+   "subtitle": "The Bell That Won't Ring",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_the_first_letter",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_p1_the_bell",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_p2_winter_stores",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_p3_the_shepherd",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_p4_eye_on_chapel",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_p5_raise_the_watch",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_p6_market_road",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_p7_gold_at_double_weight",
+     "choice": {
+      "spare": [
+       "heard_the_word"
+      ],
+      "kill": [
+       "peddler_slain"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_p7b_peddlers_debt",
+     "choice": null,
+     "branch": "kill",
+     "from": "mebahelrpgrquest:hag_p7_gold_at_double_weight"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_p7s_the_peddlers_gift",
+     "choice": null,
+     "branch": "spare",
+     "from": "mebahelrpgrquest:hag_p7_gold_at_double_weight"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_p8_pillager_moon",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_p9_who_pays_in_gold",
+     "choice": null
+    }
+   ],
+   "side": [
+    {
+     "id": "mebahelrpgrquest:hag_x1_the_informant",
+     "choice": {
+      "spare": [
+       "hag_mercy_x1_the_informant"
+      ],
+      "kill": [
+       "hag_cruelty_x1_the_informant"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "act1",
+   "name": "Act I",
+   "subtitle": "Ashford Burns",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_a1_ashford_burns",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a2_what_was_left",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a3_roof_and_hearth",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a4_refugee_road",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a5_beneath_the_pipes",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a6_believers_house",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a7_the_bastille",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a8_ravagers_horn",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a9_open_the_cells",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a9i_the_invokers_fort",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a10_burning_door",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a11_chains_at_the_fortress",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a12_brother_vael",
+     "choice": {
+      "spare": [
+       "vael_spared"
+      ],
+      "kill": [
+       "vael_slain"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a12k_the_stewards_guard",
+     "choice": null,
+     "branch": "kill",
+     "from": "mebahelrpgrquest:hag_a12_brother_vael"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a12s_vaels_map",
+     "choice": null,
+     "branch": "spare",
+     "from": "mebahelrpgrquest:hag_a12_brother_vael"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a13_tears_for_a_ward",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a14_night_of_the_faithful",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_a15_one_of_seven",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_w0_two_roads_meet",
+     "choice": null
+    }
+   ],
+   "side": [
+    {
+     "id": "mebahelrpgrquest:hag_r1_the_prisoner",
+     "choice": {
+      "spare": [
+       "orsk_spared"
+      ],
+      "kill": [
+       "orsk_executed"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_r2e_the_assayer",
+     "choice": {
+      "spare": [
+       "took_the_gold"
+      ],
+      "kill": [
+       "morrow_slain"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_r2g_the_granary_thief",
+     "choice": {
+      "spare": [
+       "corwin_spared"
+      ],
+      "kill": [
+       "corwin_slain"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc1_saint",
+     "choice": {
+      "spare": [
+       "hag_mercy_1"
+      ],
+      "kill": [
+       "hag_cruelty_1"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc1_waver",
+     "choice": {
+      "spare": [
+       "hag_mercy_1"
+      ],
+      "kill": [
+       "hag_cruelty_1"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc1_wicked",
+     "choice": {
+      "spare": [
+       "hag_mercy_1"
+      ],
+      "kill": [
+       "hag_cruelty_1"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_x2_the_bastille_warden",
+     "choice": {
+      "spare": [
+       "hag_mercy_x2_the_bastille_warden"
+      ],
+      "kill": [
+       "hag_cruelty_x2_the_bastille_warden"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "act2",
+   "name": "Act II",
+   "subtitle": "The Withered Crown",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_w1_the_skull_market",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_w2_smite_the_dead",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_w3_the_skull_harvest",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_w4_hold_the_black_bridge",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_w5_a_grave_for_a_nail",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_w6_the_withered_crown",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_w7_a_light_they_cannot_dim",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_w8_six_remain",
+     "choice": null
+    }
+   ],
+   "side": [
+    {
+     "id": "mebahelrpgrquest:hag_rc2_fallen",
+     "choice": {
+      "spare": [
+       "hag_mercy_2"
+      ],
+      "kill": [
+       "hag_cruelty_2"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc2_good",
+     "choice": {
+      "spare": [
+       "hag_mercy_2"
+      ],
+      "kill": [
+       "hag_cruelty_2"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc2_saint",
+     "choice": {
+      "spare": [
+       "hag_mercy_2"
+      ],
+      "kill": [
+       "hag_cruelty_2"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc2_wicked",
+     "choice": {
+      "spare": [
+       "hag_mercy_2"
+      ],
+      "kill": [
+       "hag_cruelty_2"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_x3_the_third_skull",
+     "choice": {
+      "spare": [
+       "hag_mercy_x3_the_third_skull"
+      ],
+      "kill": [
+       "hag_cruelty_x3_the_third_skull"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "act3",
+   "name": "Act III",
+   "subtitle": "Hostile Paradise",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_h1_a_light_above_the_pit",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_h2_hostile_paradise",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_h3_do_you_believe_in_magic",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_h4_cockatrice_nights",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_h5_the_bronze_halls",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_h6_like_a_bossaru",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_h7_medals_of_the_silver_court",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_h8_dethroned",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_h9_extinguished",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_h10_fireproof",
+     "choice": null
+    }
+   ],
+   "side": [
+    {
+     "id": "mebahelrpgrquest:hag_rc3_fallen",
+     "choice": {
+      "spare": [
+       "hag_mercy_3"
+      ],
+      "kill": [
+       "hag_cruelty_3"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc3_good",
+     "choice": {
+      "spare": [
+       "hag_mercy_3"
+      ],
+      "kill": [
+       "hag_cruelty_3"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc3_saint",
+     "choice": {
+      "spare": [
+       "hag_mercy_3"
+      ],
+      "kill": [
+       "hag_cruelty_3"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc3_waver",
+     "choice": {
+      "spare": [
+       "hag_mercy_3"
+      ],
+      "kill": [
+       "hag_cruelty_3"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc3_wicked",
+     "choice": {
+      "spare": [
+       "hag_mercy_3"
+      ],
+      "kill": [
+       "hag_cruelty_3"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun",
+     "choice": {
+      "spare": [
+       "hag_mercy_x4_the_pilgrim_of_the_sun"
+      ],
+      "kill": [
+       "hag_cruelty_x4_the_pilgrim_of_the_sun"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "act4",
+   "name": "Act IV",
+   "subtitle": "The Edge of the World",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_e0_the_road_to_the_end",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_e1_the_librarians_request",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_e3_the_road_underground",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_e4_the_warden_journal",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_e5_free_the_end",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_e6_edge_of_the_world",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_e7_the_nether_is_singing",
+     "choice": null
+    }
+   ],
+   "side": [
+    {
+     "id": "mebahelrpgrquest:hag_rc4_fallen",
+     "choice": {
+      "spare": [
+       "hag_mercy_4"
+      ],
+      "kill": [
+       "hag_cruelty_4"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc4_good",
+     "choice": {
+      "spare": [
+       "hag_mercy_4"
+      ],
+      "kill": [
+       "hag_cruelty_4"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc4_saint",
+     "choice": {
+      "spare": [
+       "hag_mercy_4"
+      ],
+      "kill": [
+       "hag_cruelty_4"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc4_waver",
+     "choice": {
+      "spare": [
+       "hag_mercy_4"
+      ],
+      "kill": [
+       "hag_cruelty_4"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc4_wicked",
+     "choice": {
+      "spare": [
+       "hag_mercy_4"
+      ],
+      "kill": [
+       "hag_cruelty_4"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "act5",
+   "name": "Act V",
+   "subtitle": "The Seven Wardens",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_s1_cold_hearths",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_s2_the_frozen_garrison",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_s3_lost_in_the_snow",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_d1_the_buried_well",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_d2_the_nest_road",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_d3_the_beast_below",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_c1_nets_and_knives",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_c2_the_tidecaller",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_c3_the_black_ship",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_c4_terror_of_the_depths",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_u1_the_soul_guard",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_u2_helvars_oath",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_u3_back_into_hell",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_f1_the_last_road",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_f2_dragon_slayer",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_f3_unbound",
+     "choice": null
+    }
+   ],
+   "side": [
+    {
+     "id": "mebahelrpgrquest:hag_tm1_a_generous_offer",
+     "choice": {
+      "spare": [
+       "gt_took_the_offer"
+      ],
+      "kill": [
+       "gt_refused_the_offer"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_br5_don_vasco_answers",
+     "choice": {
+      "spare": [
+       "gt_vasco_arrested"
+      ],
+      "kill": [
+       "gt_vasco_killed"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_gt8_a_customer_goes_under",
+     "choice": {
+      "spare": [
+       "gt_getting_out"
+      ],
+      "kill": [
+       "gt_silenced_the_witness"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_gt12_don_vasco",
+     "choice": {
+      "spare": [
+       "gt_partners"
+      ],
+      "kill": [
+       "gt_war_won"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc5_fallen",
+     "choice": {
+      "spare": [
+       "hag_mercy_5"
+      ],
+      "kill": [
+       "hag_cruelty_5"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc5_good",
+     "choice": {
+      "spare": [
+       "hag_mercy_5"
+      ],
+      "kill": [
+       "hag_cruelty_5"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc5_saint",
+     "choice": {
+      "spare": [
+       "hag_mercy_5"
+      ],
+      "kill": [
+       "hag_cruelty_5"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc5_waver",
+     "choice": {
+      "spare": [
+       "hag_mercy_5"
+      ],
+      "kill": [
+       "hag_cruelty_5"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc5_wicked",
+     "choice": {
+      "spare": [
+       "hag_mercy_5"
+      ],
+      "kill": [
+       "hag_cruelty_5"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_x5_the_last_garrison_man",
+     "choice": {
+      "spare": [
+       "hag_mercy_x5_the_last_garrison_man"
+      ],
+      "kill": [
+       "hag_cruelty_x5_the_last_garrison_man"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "act6",
+   "name": "Act VI",
+   "subtitle": "The Sons of Sins",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_v1_blood_in_the_wells",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v2_the_sinful_church",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v3_the_midwife",
+     "choice": {
+      "spare": [
+       "midwife_spared"
+      ],
+      "kill": [
+       "midwife_slain"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v3k_the_coven",
+     "choice": null,
+     "branch": "kill",
+     "from": "mebahelrpgrquest:hag_v3_the_midwife"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v3s_cleansing_the_pits",
+     "choice": null,
+     "branch": "spare",
+     "from": "mebahelrpgrquest:hag_v3_the_midwife"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v4_original_sin",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v5_jaws_in_the_dark",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v6_what_eats_the_dead",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v7_soul_steel",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v8_sinbuster",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v9_the_wrong_parcel",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v10_maraal",
+     "choice": {
+      "spare": [
+       "maraal_forgiven"
+      ],
+      "kill": [
+       "maraal_rejected"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v10f_walking_with_maraal",
+     "choice": null,
+     "branch": "spare",
+     "from": "mebahelrpgrquest:hag_v10_maraal"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v10r_alone",
+     "choice": null,
+     "branch": "kill",
+     "from": "mebahelrpgrquest:hag_v10_maraal"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_v11_the_crimson_guide",
+     "choice": null
+    }
+   ],
+   "side": [
+    {
+     "id": "mebahelrpgrquest:hag_rc6_fallen",
+     "choice": {
+      "spare": [
+       "hag_mercy_6"
+      ],
+      "kill": [
+       "hag_cruelty_6"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc6_good",
+     "choice": {
+      "spare": [
+       "hag_mercy_6"
+      ],
+      "kill": [
+       "hag_cruelty_6"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc6_saint",
+     "choice": {
+      "spare": [
+       "hag_mercy_6"
+      ],
+      "kill": [
+       "hag_cruelty_6"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc6_waver",
+     "choice": {
+      "spare": [
+       "hag_mercy_6"
+      ],
+      "kill": [
+       "hag_cruelty_6"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc6_wicked",
+     "choice": {
+      "spare": [
+       "hag_mercy_6"
+      ],
+      "kill": [
+       "hag_cruelty_6"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "act7",
+   "name": "Act VII",
+   "subtitle": "The Sacred City",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_m1_follow_the_crimson_bee",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_m2_the_cursed_quarries",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_m3_hold_the_quarry_gate",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_m4_gilded_hunger",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_m5_do_not_provoke_gehinnom",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_m6_the_instruction",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_m7_hand_over_your_weapon",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_m9_half_a_soul",
+     "choice": null
+    }
+   ],
+   "side": [
+    {
+     "id": "mebahelrpgrquest:hag_rc7_fallen",
+     "choice": {
+      "spare": [
+       "hag_mercy_7"
+      ],
+      "kill": [
+       "hag_cruelty_7"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc7_good",
+     "choice": {
+      "spare": [
+       "hag_mercy_7"
+      ],
+      "kill": [
+       "hag_cruelty_7"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc7_saint",
+     "choice": {
+      "spare": [
+       "hag_mercy_7"
+      ],
+      "kill": [
+       "hag_cruelty_7"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc7_waver",
+     "choice": {
+      "spare": [
+       "hag_mercy_7"
+      ],
+      "kill": [
+       "hag_cruelty_7"
+      ]
+     }
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rc7_wicked",
+     "choice": {
+      "spare": [
+       "hag_mercy_7"
+      ],
+      "kill": [
+       "hag_cruelty_7"
+      ]
+     }
+    }
+   ]
+  },
+  {
+   "id": "end",
+   "name": "The End",
+   "subtitle": "Whole",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_z1_caution",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_z2_up",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_z3_choir_of_the_whole_god",
+     "choice": null
+    },
+    {
+     "id": "mebahelrpgrquest:hag_b1_bow_at_my_feet",
+     "choice": null,
+     "road": "bad"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_g1_maraals_last_letter",
+     "choice": null,
+     "road": "good"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_b2_tithe_of_gold",
+     "choice": null,
+     "road": "bad"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_g2_ashford_rebuilt",
+     "choice": null,
+     "road": "good"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_b3_the_last_preacher",
+     "choice": {
+      "spare": [
+       "maraal_left"
+      ],
+      "kill": [
+       "maraal_killed_by_hand"
+      ]
+     },
+     "road": "bad"
+    }
+   ],
+   "side": []
+  },
+  {
+   "id": "after",
+   "name": "After",
+   "subtitle": "What Comes Next",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_et1_whispers_of_a_new_god",
+     "choice": null,
+     "road": "good"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_et2_the_pretender",
+     "choice": null,
+     "road": "good"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_ha1_the_first_command",
+     "choice": null,
+     "road": "bad"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_et3_the_last_faithful",
+     "choice": {
+      "spare": [
+       "hag_faithful_sent_home"
+      ],
+      "kill": [
+       "hag_faithful_ended"
+      ]
+     },
+     "road": "good"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_ha2_ashford_must_kneel",
+     "choice": null,
+     "road": "bad"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_et4_morning",
+     "choice": null,
+     "road": "good"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_ha3_haldens_last_stand",
+     "choice": {
+      "spare": [
+       "hag_halden_spared_by_the_hand"
+      ],
+      "kill": [
+       "hag_halden_killed_by_the_hand"
+      ]
+     },
+     "road": "bad"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_ha4_the_hand_of_azazel",
+     "choice": null,
+     "road": "bad"
+    }
+   ],
+   "side": []
+  }
+ ]
+}

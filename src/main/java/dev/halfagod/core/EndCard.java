@@ -52,6 +52,13 @@ public final class EndCard {
                 }
             }
         }
+        for (String dec : d.simDecisions.values()) {
+            if (dec.equals("spare")) {
+                spared++;
+            } else if (dec.equals("kill")) {
+                killed++;
+            }
+        }
         o.addProperty("spared", spared);
         o.addProperty("killed", killed);
         o.addProperty("villagers", player.getStats().getValue(Stats.ENTITY_KILLED.get(EntityType.VILLAGER)));
