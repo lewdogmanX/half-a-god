@@ -33,8 +33,16 @@ public final class MapStates {
                 states.addProperty(quest, "open");
             }
         }
+        // which objective each quest you're on has reached, so the map can tick off what's done
+        JsonObject stages = new JsonObject();
+        for (Object p : Meb.rawQuests(player)) {
+            if (Meb.isOpen(p)) {
+                stages.addProperty(Meb.questIdOf(p), Meb.stageOf(p));
+            }
+        }
         JsonObject out = new JsonObject();
         out.add("states", states);
+        out.add("stages", stages);
         out.addProperty("rep", Reputation.data(player).value);
         out.addProperty("op", player.hasPermissions(2));
         PacketDistributor.sendToPlayer(player, new Payloads.MapState(out.toString()));

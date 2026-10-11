@@ -37,10 +37,6 @@ public final class ClientHooks {
         Minecraft.getInstance().setScreen(new StoryMapScreen(null));
     }
 
-    public static void onOpenTravel(Payloads.OpenTravel p) {
-        Minecraft.getInstance().setScreen(new TravelScreen(p.json()));
-    }
-
     public static void onCinematic(Payloads.Cinematic p) {
         Minecraft mc = Minecraft.getInstance();
         mc.gui.setTimes(12, 80, 24);

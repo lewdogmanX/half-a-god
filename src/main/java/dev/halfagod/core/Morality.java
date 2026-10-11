@@ -43,12 +43,11 @@ import java.util.UUID;
 /**
  * What your reputation does to the world around you.
  *
- * Good (and more so Saint): villagers treat you as a hero (gifts and discounts), the Watch, guards and golems fight
- * for you near villages, a Saint gets a Watchman at their side when attacked near a village at night, and the lantern
- * road lets you travel between villages you know.
- * Evil (Fallen, and much more so Wicked): Silas pays a cut of every story job, frightened villagers hand things over,
- * smugglers move you between villages for a price. But bounty hunters come at night, illagers near you fight harder,
- * raids follow you into villages, clerics (and at Wicked, everyone) refuse to trade, and golems attack the Wicked.
+ * Good (and more so Saint): villagers treat you as a hero (gifts and discounts), and guards and golems fight for you
+ * near villages; a Saint gets a Watchman at their side when attacked near a village at night.
+ * Evil (Fallen, and much more so Wicked): Silas pays a cut of every story job and frightened villagers hand things over.
+ * But bounty hunters come at night, illagers near you fight harder, raids follow you into villages, clerics (and at
+ * Wicked, everyone) refuse to trade, and golems attack the Wicked.
  * Climbing back up turns all of it off again.
  */
 public final class Morality {

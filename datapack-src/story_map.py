@@ -103,8 +103,8 @@ def build(goal_text):
         if k.startswith("sq_"):
             lane = "side"
         nodes[i] = {"id": i, "title": q["title"], "chapter": ch, "lane": lane, "summary": q["summary"],
-                    "goals": [goal_text(gl) for gl in q["goals"]], "icon": _icon(q, "minecraft:paper"),
-                    "choice": "choice" in q}
+                    "goals": [goal_text(gl) for gl in q["goals"]], "stages": [gl.get("stage", 0) for gl in q["goals"]],
+                    "icon": _icon(q, "minecraft:paper"), "choice": "choice" in q}
         fl = q.get("flow", {})
         for kind, d in (("next", fl.get("delayed_next_quest")), ("spare", fl.get("on_spare", {}).get("delayed_next_quest")),
                         ("kill", fl.get("on_kill", {}).get("delayed_next_quest"))):
@@ -128,7 +128,7 @@ def build(goal_text):
             i = "mebahelrpgrquest:" + m
             q = base_quests.BASE[m][1]
             nodes[i] = {"id": i, "title": base_quests.title_of(m), "chapter": ch, "lane": "mebahel",
-                        "summary": _text(q.get("summary")), "goals": [], "icon": _icon(q, "minecraft:paper"),
+                        "summary": _text(q.get("summary")), "goals": [], "stages": [], "icon": _icon(q, "minecraft:paper"),
                         "choice": False, "line": base_quests.NAMES[chain]}
             for s in succ.get(m, ()):
                 add_edge(i, "mebahelrpgrquest:" + s, "next")
@@ -235,7 +235,8 @@ def build(goal_text):
         ids = {p["id"] for p in placed}
         chapters.append({
             "id": cid, "name": name, "subtitle": sub, "lanes": lanes_used,
-            "nodes": [{k: p[k] for k in ("id", "title", "lane", "col", "row", "summary", "goals", "icon", "choice")} for p in placed],
+            "nodes": [dict({k: p[k] for k in ("id", "title", "lane", "col", "row", "summary", "goals", "stages", "icon", "choice")},
+                           group=p.get("line", "")) for p in placed],
             "edges": sorted([[a, b, k] for a, b, k in edges if a in ids and b in ids]),
         })
     return {"chapters": chapters}

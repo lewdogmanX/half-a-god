@@ -41,8 +41,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_p1_the_bell",
@@ -56,8 +60,14 @@
       "Collect 2 x gold ingot",
       "Place 1 x bell"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_p2_winter_stores",
@@ -72,8 +82,15 @@
       "Collect 16 x cooked beef",
       "Talk to The Farmer"
      ],
+     "stages": [
+      0,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_p3_the_shepherd",
@@ -87,8 +104,14 @@
       "Defeat 10 x zombie",
       "Talk to Tam the Shepherd"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:clock",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_p4_eye_on_chapel",
@@ -101,8 +124,13 @@
       "Talk to The Cleric",
       "Place 8 x candle"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_p5_raise_the_watch",
@@ -116,8 +144,14 @@
       "Place 48 x stone bricks",
       "Place 8 x ladder"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_p6_market_road",
@@ -132,8 +166,15 @@
       "Defeat 1 x vindicator",
       "Talk to Market Elder"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      2
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_p7_gold_at_double_weight",
@@ -145,8 +186,12 @@
      "goals": [
       "Defeat 1 x wandering trader"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_p7b_peddlers_debt",
@@ -158,8 +203,12 @@
      "goals": [
       "Defeat 4 x vindicator"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_p7s_the_peddlers_gift",
@@ -171,8 +220,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_p8_pillager_moon",
@@ -189,8 +242,17 @@
       "Defeat 1 x witch",
       "Defeat 1 x ravager"
      ],
+     "stages": [
+      0,
+      1,
+      2,
+      2,
+      2,
+      2
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_p9_who_pays_in_gold",
@@ -204,8 +266,14 @@
       "Defeat 8 x pillager",
       "Find and read: Ledger of Tithes"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x1_the_informant",
@@ -217,8 +285,12 @@
      "goals": [
       "Defeat 1 x pillager"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x1_the_informant_after",
@@ -230,8 +302,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x1s_wicks_back_door",
@@ -244,8 +320,13 @@
       "Reach a pillager outpost",
       "Defeat 5 x pillager"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x1k_wicks_sister",
@@ -257,8 +338,12 @@
      "goals": [
       "Talk to Nell"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:village_new_home",
@@ -268,8 +353,10 @@
      "row": 0,
      "summary": "Help me raise this house, stranger, and I will see you paid from our common stores. Not merely for placing stone and timber, but for giving this village room enough to welcome another soul.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": "A New Home"
     },
     {
      "id": "mebahelrpgrquest:kill_10_skeletons",
@@ -279,8 +366,10 @@
      "row": 1,
      "summary": "Kill 10 skeletons around the village.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "Bones at Night"
     },
     {
      "id": "mebahelrpgrquest:kill_5_creepers",
@@ -290,8 +379,10 @@
      "row": 2,
      "summary": "Kill 5 creepers before they destroy the village.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "Quiet Fields"
     },
     {
      "id": "mebahelrpgrquest:village_arrival_1_clock",
@@ -301,8 +392,10 @@
      "row": 3,
      "summary": "A newly arrived villager needs a clock for their home and asks you to gather the materials required to craft one.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "Settling In"
     },
     {
      "id": "mebahelrpgrquest:village_arrival_2_armour_stand",
@@ -312,8 +405,10 @@
      "row": 3,
      "summary": "The villager wants an armour stand to display armour and weapons inside their new home.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "Settling In"
     },
     {
      "id": "mebahelrpgrquest:village_arrival_3_fireplace_supplies",
@@ -323,8 +418,10 @@
      "row": 3,
      "summary": "The villager claims to be building a fireplace, but each completed request reveals a worse idea.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "Settling In"
     },
     {
      "id": "mebahelrpgrquest:most_important_cow_chain_1_an_audience_with_her_majesty",
@@ -334,8 +431,10 @@
      "row": 4,
      "summary": "Tobyn's beloved cow Buttercup has wandered beyond the village. Find her, lure her home with wheat, and survive your first audience with 'Her Majesty.'",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Most Important Cow"
     },
     {
      "id": "mebahelrpgrquest:most_important_cow_chain_2_the_cow_has_spoken",
@@ -345,8 +444,10 @@
      "row": 4,
      "summary": "Buttercup becomes agitated whenever the night road is quiet. Wait for dark, follow the route she fears, and investigate the old mineshaft beneath it.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:clock",
-     "choice": false
+     "choice": false,
+     "group": "The Most Important Cow"
     },
     {
      "id": "mebahelrpgrquest:most_important_cow_chain_3_the_woman_who_knew_the_bell",
@@ -356,8 +457,10 @@
      "row": 4,
      "summary": "Find Roadwarden Nessa in another village and ask why a pillager ledger remembers Mara Porridge and Buttercup's bell.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": "The Most Important Cow"
     },
     {
      "id": "mebahelrpgrquest:most_important_cow_chain_4_the_price_of_a_queen",
@@ -367,8 +470,10 @@
      "row": 4,
      "summary": "A pillager envoy comes to bargain for Buttercup. Hear his terms, then decide whether a cow is worth risking two villages.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": "The Most Important Cow"
     },
     {
      "id": "mebahelrpgrquest:most_important_cow_chain_bargain_5_a_quiet_road",
@@ -378,8 +483,10 @@
      "row": 4,
      "summary": "You accepted the pillagers' bargain. Escort Tobyn and bring a cow to the old outpost, then discover what their promise of peace is really worth.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:lead",
-     "choice": false
+     "choice": false,
+     "group": "The Most Important Cow"
     },
     {
      "id": "mebahelrpgrquest:most_important_cow_chain_refuse_5_long_live_the_queen",
@@ -389,8 +496,10 @@
      "row": 5,
      "summary": "The bargain is broken. Keep Buttercup in the village and survive the raid that comes to silence the roads for good.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": "The Most Important Cow"
     },
     {
      "id": "mebahelrpgrquest:delivery_cobblestone_oak_log_other_village",
@@ -400,8 +509,10 @@
      "row": 6,
      "summary": "Carry cobblestone and oak logs to a messenger waiting in another village.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Neighbour's Order"
     },
     {
      "id": "mebahelrpgrquest:village_pig_enclosure",
@@ -411,8 +522,10 @@
      "row": 7,
      "summary": "Help me raise that first pen and bring two pigs safely inside it. If you do, I will see that you are rewarded not as a hired hand, but as a friend of this village.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": "The Pig Pen"
     },
     {
      "id": "mebahelrpgrquest:kill_10_zombies",
@@ -422,8 +535,10 @@
      "row": 8,
      "summary": "Kill 10 zombies for the village.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Restless Dead"
     },
     {
      "id": "mebahelrpgrquest:hag_sq_bells_tongue",
@@ -435,8 +550,12 @@
      "goals": [
       "Collect 12 x copper ingot"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_lost_lambs",
@@ -448,8 +567,12 @@
      "goals": [
       "Bring 3 x sheep"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_night_watch",
@@ -461,8 +584,12 @@
      "goals": [
       "Defend a raid"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_market_road",
@@ -474,8 +601,12 @@
      "goals": [
       "Escort someone home"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:lead",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_gold_collectors",
@@ -487,8 +618,12 @@
      "goals": [
       "Defeat 3 x vindicator"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": [
@@ -739,8 +874,14 @@
       "Defeat 4 x vindicator",
       "Talk to Reeve Halden"
      ],
+     "stages": [
+      0,
+      0,
+      1
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a2_what_was_left",
@@ -755,8 +896,15 @@
       "Collect 32 x coal",
       "Talk to Ashford Survivor"
      ],
+     "stages": [
+      0,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a3_roof_and_hearth",
@@ -771,8 +919,15 @@
       "Place 32 x glass pane",
       "Place 4 x white bed"
      ],
+     "stages": [
+      0,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a4_refugee_road",
@@ -786,8 +941,14 @@
       "Defeat 4 x vindicator",
       "Talk to Village Elder"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a5_beneath_the_pipes",
@@ -800,8 +961,13 @@
       "Reach a pipes",
       "Find and read: Pipe-Keeper's Log"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a6_believers_house",
@@ -816,8 +982,15 @@
       "Defeat 4 x vindicator",
       "Find and read: Ledger of Ashford"
      ],
+     "stages": [
+      0,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a7_the_bastille",
@@ -832,8 +1005,15 @@
       "Defeat 6 x archer",
       "Defeat 4 x skirmisher"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a8_ravagers_horn",
@@ -846,8 +1026,13 @@
       "Defeat 2 x ravager",
       "Collect 1 x ravager horn"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a9_open_the_cells",
@@ -860,8 +1045,13 @@
       "Defeat 5 x vindicator",
       "Talk to Freed Ashford Man"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a9i_the_invokers_fort",
@@ -875,8 +1065,14 @@
       "Defeat 6 x vindicator",
       "Defeat 1 x invoker"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a10_burning_door",
@@ -889,8 +1085,13 @@
       "Place 10 x obsidian",
       "Enter the Nether"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a11_chains_at_the_fortress",
@@ -904,8 +1105,14 @@
       "Defeat 8 x wither skeleton",
       "Leave the Nether"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a12_brother_vael",
@@ -917,8 +1124,12 @@
      "goals": [
       "Defeat 1 x evoker"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a12k_the_stewards_guard",
@@ -930,8 +1141,12 @@
      "goals": [
       "Defeat 4 x wither skeleton"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a12s_vaels_map",
@@ -943,8 +1158,12 @@
      "goals": [
       "Defeat 3 x piglin brute"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a13_tears_for_a_ward",
@@ -957,8 +1176,13 @@
       "Collect 4 x ghast tear",
       "Talk to The Cleric"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a14_night_of_the_faithful",
@@ -973,8 +1197,15 @@
       "Defeat 2 x evoker",
       "Defeat 1 x pillager"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      1
+     ],
      "icon": "minecraft:clock",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_a15_one_of_seven",
@@ -986,8 +1217,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_w0_two_roads_meet",
@@ -999,8 +1234,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_i1_the_priests_warning",
@@ -1013,8 +1252,13 @@
       "Place 1 x inscription table",
       "Collect 6 x arcane essence"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_i2_fire_in_the_tower",
@@ -1027,8 +1271,13 @@
       "Reach a pyromancer tower",
       "Defeat 1 x pyromancer"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_i3_the_evoker_fort",
@@ -1041,8 +1290,13 @@
       "Reach a evoker fort",
       "Defeat 1 x archevoker"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_i4_the_scroll_forge",
@@ -1054,8 +1308,12 @@
      "goals": [
       "Place 1 x scroll forge"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_r1_the_prisoner",
@@ -1067,8 +1325,12 @@
      "goals": [
       "Defeat 1 x pillager"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_r2e_the_assayer",
@@ -1080,8 +1342,12 @@
      "goals": [
       "Defeat 1 x wandering trader"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_r2g_the_granary_thief",
@@ -1093,8 +1359,12 @@
      "goals": [
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc1_saint",
@@ -1109,8 +1379,15 @@
       "Escort someone home",
       "Defeat 1 x pillager"
      ],
+     "stages": [
+      0,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:emerald",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc1_waver",
@@ -1125,8 +1402,15 @@
       "Talk to Ashford Elder",
       "Defeat 1 x pillager"
      ],
+     "stages": [
+      0,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc1_wicked",
@@ -1140,8 +1424,14 @@
       "Talk to Silas of the Gilded Hand",
       "Defeat 1 x pillager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x2_the_bastille_warden",
@@ -1153,8 +1443,12 @@
      "goals": [
       "Defeat 1 x vindicator"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x2_the_bastille_warden_after",
@@ -1166,8 +1460,12 @@
      "goals": [
       "Talk to Ashford Survivor"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x2s_the_wardens_debt",
@@ -1179,8 +1477,12 @@
      "goals": [
       "Talk to Gorran the Gatekeeper"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x2k_gorrans_brothers",
@@ -1193,8 +1495,13 @@
       "Wait for next night",
       "Defeat 4 x vindicator"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:no_banner_vindicator_chain_1_bread_at_the_shrine",
@@ -1204,8 +1511,10 @@
      "row": 0,
      "summary": "Find the lonely shrine beyond the village road and learn why a raider has been leaving food there. If this is a trap, end it before it reaches our doors.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Man With No Banner"
     },
     {
      "id": "mebahelrpgrquest:no_banner_vindicator_chain_2_the_no_banner_axe",
@@ -1215,8 +1524,10 @@
      "row": 0,
      "summary": "Find the vindicator who mourns at the shrine. Do not mistake silence for innocence, but do not let fear be your only judge.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Man With No Banner"
     },
     {
      "id": "mebahelrpgrquest:no_banner_vindicator_chain_kill_3_ashes_without_witness",
@@ -1226,8 +1537,10 @@
      "row": 0,
      "summary": "Rurik is dead, but his warning may still have been true. Search the outpost for the prison keys and end the raiders guarding them.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Man With No Banner"
     },
     {
      "id": "mebahelrpgrquest:no_banner_vindicator_chain_spare_3_names_in_ash",
@@ -1237,8 +1550,10 @@
      "row": 1,
      "summary": "Help me recover the keys and ledger from the outpost. If the names I remember are still written there, the captives may yet breathe free.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Man With No Banner"
     },
     {
      "id": "mebahelrpgrquest:no_banner_vindicator_chain_spare_4_trial_by_bell",
@@ -1248,8 +1563,10 @@
      "row": 0,
      "summary": "Stand with me beneath the bell while the village judges what I have done. If my old banner comes to silence me, let the village see who still serves it.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Man With No Banner"
     },
     {
      "id": "mebahelrpgrquest:no_banner_vindicator_chain_spare_5_oath_without_banner",
@@ -1259,8 +1576,10 @@
      "row": 0,
      "summary": "Stand with me one last time, and I will prove whether I am still a raider with better words, or a man worth trusting beside your road.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Man With No Banner"
     },
     {
      "id": "mebahelrpgrquest:village_defense_chain_1_iron_for_the_watch",
@@ -1270,8 +1589,10 @@
      "row": 2,
      "summary": "The village watch needs iron to repair battered golems before the next attack reaches the roads.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Village Watch"
     },
     {
      "id": "mebahelrpgrquest:village_defense_chain_2_raise_the_iron_golems",
@@ -1281,8 +1602,10 @@
      "row": 2,
      "summary": "The repaired village still needs new protectors. Bring two iron golems into the village before the warning bells ring.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": "The Village Watch"
     },
     {
      "id": "mebahelrpgrquest:village_defense_chain_3_the_bell_and_the_raid",
@@ -1292,8 +1615,10 @@
      "row": 2,
      "summary": "The village is repaired, guarded, and ready to stand. Ring the alarm by accepting the defense and survive the raid.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": "The Village Watch"
     },
     {
      "id": "mebahelrpgrquest:village_defense_chain_4_the_road_remembers",
@@ -1303,8 +1628,10 @@
      "row": 2,
      "summary": "After The Bell and the Raid, a worried villager warns you that fame has made you dangerous to powerful people. Find the first proof of a contract placed on your life.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Village Watch"
     },
     {
      "id": "mebahelrpgrquest:village_defense_chain_5_smoke_on_the_milestones",
@@ -1314,8 +1641,10 @@
      "row": 2,
      "summary": "The contract points to assassins hiding near the outpost road. Kill the collectors carrying the ledger pages before more names are marked for death.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Village Watch"
     },
     {
      "id": "mebahelrpgrquest:village_defense_chain_6_the_second_bell",
@@ -1325,8 +1654,10 @@
      "row": 2,
      "summary": "Strike the Quiet Ledger's counting room and kill the assassin-master who paid to turn your reputation into a corpse.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Village Watch"
     },
     {
      "id": "mebahelrpgrquest:witch_chain_1_hut_threat",
@@ -1336,8 +1667,10 @@
      "row": 3,
      "summary": "A villager says a witch is threatening the area.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:potion",
-     "choice": false
+     "choice": false,
+     "group": "The Witch of the Old Hut"
     },
     {
      "id": "mebahelrpgrquest:witch_chain_2_healing_brews",
@@ -1347,8 +1680,10 @@
      "row": 3,
      "summary": "The witch wants to brew medicine for the wounded animals caught between her hut and the village.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Witch of the Old Hut"
     },
     {
      "id": "mebahelrpgrquest:witch_chain_3_thorns_brothers",
@@ -1358,8 +1693,10 @@
      "row": 3,
      "summary": "Three undead brothers haunt a nearby mineshaft. Bound in thorned armor, they have begun moving toward the village.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Witch of the Old Hut"
     },
     {
      "id": "mebahelrpgrquest:witch_chain_4_evoker_conspiracy",
@@ -1369,8 +1706,10 @@
      "row": 3,
      "summary": "The Thorns Brothers were only the visible part of a larger plot. An evoker has been pushing threats toward the village from an outpost.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Witch of the Old Hut"
     },
     {
      "id": "mebahelrpgrquest:hag_sq_ashford_orphans",
@@ -1383,8 +1722,13 @@
       "Collect 24 x bread",
       "Collect 12 x white wool"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_halden_records",
@@ -1397,8 +1741,13 @@
       "Reach a pillager outpost",
       "Defeat 8 x pillager"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_echoes_in_the_pipes",
@@ -1410,8 +1759,12 @@
      "goals": [
       "Reach a pipes"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_ravager_hunt",
@@ -1423,8 +1776,12 @@
      "goals": [
       "Defeat 3 x ravager"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_bastille_survivors",
@@ -1436,8 +1793,12 @@
      "goals": [
       "Escort someone home"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:lead",
-     "choice": false
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": [
@@ -1803,8 +2164,14 @@
       "Reach a fortress",
       "Find and read: Price List"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_w2_smite_the_dead",
@@ -1818,8 +2185,14 @@
       "Collect 32 x bone",
       "Talk to The Armourer"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_w3_the_skull_harvest",
@@ -1832,8 +2205,13 @@
       "Defeat 25 x wither skeleton",
       "Defeat 10 x blaze"
      ],
+     "stages": [
+      0,
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_w4_hold_the_black_bridge",
@@ -1846,8 +2224,13 @@
       "Defeat 4 x wither skeleton",
       "Defeat 1 x wither skeleton"
      ],
+     "stages": [
+      0,
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_w5_a_grave_for_a_nail",
@@ -1861,8 +2244,14 @@
       "Place 3 x wither skeleton skull",
       "Defeat 1 x wither"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_w6_the_withered_crown",
@@ -1874,8 +2263,12 @@
      "goals": [
       "Collect 1 x nether star"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_w7_a_light_they_cannot_dim",
@@ -1887,8 +2280,12 @@
      "goals": [
       "Place 1 x beacon"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_w8_six_remain",
@@ -1900,8 +2297,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lg1_the_golden_legion",
@@ -1913,8 +2314,12 @@
      "goals": [
       "Talk to Old Aurel"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lg2_ghosts_of_the_legion",
@@ -1927,8 +2332,13 @@
       "Reach a bastion remnant",
       "Defeat 3 x piglin brute"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lg3_the_unbreakable",
@@ -1941,8 +2351,13 @@
       "Reach a bastion arena",
       "Defeat 1 x unbreakable"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lg4_the_thermal_heart",
@@ -1955,8 +2370,13 @@
       "Collect 1 x thermal stone",
       "Talk to Old Aurel"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lg5_the_unbreakable_head",
@@ -1968,8 +2388,12 @@
      "goals": [
       "Collect 1 x unbreakable head"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc2_fallen",
@@ -1983,8 +2407,14 @@
       "Defeat 4 x vindicator",
       "Defeat 1 x wandering trader"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:clock",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc2_good",
@@ -1998,8 +2428,14 @@
       "Place 32 x cobblestone wall",
       "Defeat 1 x wandering trader"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:emerald",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc2_saint",
@@ -2012,8 +2448,13 @@
       "Defeat 5 x wither skeleton",
       "Defeat 1 x wandering trader"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc2_wicked",
@@ -2027,8 +2468,14 @@
       "Talk to Silas of the Gilded Hand",
       "Defeat 1 x wandering trader"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x3_the_third_skull",
@@ -2040,8 +2487,12 @@
      "goals": [
       "Defeat 1 x piglin"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x3_the_third_skull_after",
@@ -2053,8 +2504,12 @@
      "goals": [
       "Defeat 3 x wither skeleton"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x3s_ossians_gift",
@@ -2066,8 +2521,12 @@
      "goals": [
       "Reach a bastion remnant"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x3k_the_choir_wants_it_back",
@@ -2080,8 +2539,13 @@
       "Wait for next night",
       "Defeat 4 x wither skeleton"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:blaze_mineshaft_threat",
@@ -2091,8 +2555,10 @@
      "row": 0,
      "summary": "A villager reports a blaze burning through an abandoned mineshaft.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "Fire in the Mine"
     },
     {
      "id": "mebahelrpgrquest:ash_court_chain_1_bones_beneath_the_village",
@@ -2102,8 +2568,10 @@
      "row": 1,
      "summary": "Clear the ash-marked skeletons prowling near the village and bring back enough bones for the elder to study.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Ash Court"
     },
     {
      "id": "mebahelrpgrquest:ash_court_chain_2_the_bone_anchor",
@@ -2113,8 +2581,10 @@
      "row": 1,
      "summary": "Destroy the skeleton spawner that has been packed with Nether ash before it draws stronger dead through.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_pickaxe",
-     "choice": false
+     "choice": false,
+     "group": "The Ash Court"
     },
     {
      "id": "mebahelrpgrquest:ash_court_chain_3_a_skull_for_proof",
@@ -2124,8 +2594,10 @@
      "row": 1,
      "summary": "Enter the Nether, track the fortress command line, and take a Wither captain's skull as proof.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": "The Ash Court"
     },
     {
      "id": "mebahelrpgrquest:ash_court_chain_4_the_warm_skull",
@@ -2135,8 +2607,10 @@
      "row": 1,
      "summary": "A different villager recognizes the Wither captain's skull and asks you to prove whether it is a warning, a key, or bait.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Ash Court"
     },
     {
      "id": "mebahelrpgrquest:ash_court_chain_5_black_glass_road",
@@ -2146,8 +2620,10 @@
      "row": 1,
      "summary": "Follow the skull's vision into the Nether, search a bastion, and recover the black-glass waystone once used to open a passage to the village.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": "The Ash Court"
     },
     {
      "id": "mebahelrpgrquest:ash_court_chain_6_the_court_answers",
@@ -2157,8 +2633,10 @@
      "row": 1,
      "summary": "Salvage the lost resonator core from a shipwreck, survive its drowned crew, build the tuned bell ward, and break the Ash Court's answer.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Ash Court"
     },
     {
      "id": "mebahelrpgrquest:ash_court_chain_7_names_under_stone",
@@ -2168,8 +2646,10 @@
      "row": 1,
      "summary": "Descend into an ancient city, recover the founders' ledger, and survive the Ash Court's attempt to erase its last witness.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": "The Ash Court"
     },
     {
      "id": "mebahelrpgrquest:ash_court_chain_8_the_last_debt",
@@ -2179,8 +2659,10 @@
      "row": 1,
      "summary": "Escort the ledger-bearer to the Hall Beneath the Eye, open the old passage, confront Avar Khel, and decide whether to destroy or renegotiate the village's protection.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:lead",
-     "choice": false
+     "choice": false,
+     "group": "The Ash Court"
     },
     {
      "id": "mebahelrpgrquest:ash_court_orr_veyl_ledger_without_chains",
@@ -2190,8 +2672,10 @@
      "row": 1,
      "summary": "Follow Orr's mark, bring back the names he hid from Avar Khel, and we will decide what a former keeper of chains can still become.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Ash Court"
     },
     {
      "id": "mebahelrpgrquest:armed_zombie_chain_1_ruined_portal",
@@ -2201,8 +2685,10 @@
      "row": 2,
      "summary": "A villager heard of an armed zombie guarding a ruined portal with the habits of a soldier, not a beast.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Knight at the Portal"
     },
     {
      "id": "mebahelrpgrquest:armed_zombie_chain_kill_2_seal_the_gate",
@@ -2212,8 +2698,10 @@
      "row": 2,
      "summary": "The armed zombie is dead, but the village wants proof that the ruined portal is no longer calling the dead.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_pickaxe",
-     "choice": false
+     "choice": false,
+     "group": "The Knight at the Portal"
     },
     {
      "id": "mebahelrpgrquest:armed_zombie_chain_spare_2_forgotten_road",
@@ -2223,8 +2711,10 @@
      "row": 3,
      "summary": "The spared zombie remembers a village road and asks you to escort it toward the place it once called home.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:lead",
-     "choice": false
+     "choice": false,
+     "group": "The Knight at the Portal"
     },
     {
      "id": "mebahelrpgrquest:armed_zombie_chain_kill_3_ashes_at_the_frame",
@@ -2234,8 +2724,10 @@
      "row": 2,
      "summary": "Breaking the portal stone stirred the things bound to it. The village asks you to clear the last dead drawn to the frame.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Knight at the Portal"
     },
     {
      "id": "mebahelrpgrquest:armed_zombie_chain_spare_3_name_in_iron",
@@ -2245,8 +2737,10 @@
      "row": 3,
      "summary": "The zombie remembers hiding keepsakes before the portal broke. It asks for iron and a red flower to steady the memory.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Knight at the Portal"
     },
     {
      "id": "mebahelrpgrquest:armed_zombie_chain_spare_4_oath_of_ash",
@@ -2256,8 +2750,10 @@
      "row": 2,
      "summary": "The dead warrior remembers the thing that came through the portal and bound his oath to ash.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Knight at the Portal"
     },
     {
      "id": "mebahelrpgrquest:smith_last_heat_chain_1_coals_for_the_cold_forge",
@@ -2267,8 +2763,10 @@
      "row": 4,
      "summary": "Bring me coal, iron, and a blast furnace, stranger. If we can wake the old forge safely, I will see you paid before the first sparks fade.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Smith's Last Heat"
     },
     {
      "id": "mebahelrpgrquest:smith_last_heat_chain_2_the_hammer_remembers",
@@ -2278,8 +2776,10 @@
      "row": 4,
      "summary": "Go to the old mine and silence whatever answered the forge. Return with raw iron so we know the mine still gives metal, not curses.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Smith's Last Heat"
     },
     {
      "id": "mebahelrpgrquest:smith_last_heat_chain_3_the_burnt_smith",
@@ -2289,8 +2789,10 @@
      "row": 4,
      "summary": "Face the smith who vanished into the mine and end the curse bound to his last work. Bring back his hammer, if anything of him remains.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The Smith's Last Heat"
     },
     {
      "id": "mebahelrpgrquest:hag_sq_quartz_for_the_cleric",
@@ -2303,8 +2805,13 @@
       "Enter the Nether",
       "Collect 32 x quartz"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_blaze_bounty",
@@ -2317,8 +2824,13 @@
       "Defeat 12 x blaze",
       "Collect 8 x blaze rod"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_beacon_keeper",
@@ -2330,8 +2842,12 @@
      "goals": [
       "Collect 9 x iron block"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": [
@@ -2626,8 +3142,12 @@
      "goals": [
       "Place 10 x glowstone"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_h2_hostile_paradise",
@@ -2641,8 +3161,14 @@
       "Collect 24 x ambrosium shard",
       "Collect 16 x skyroot log"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_h3_do_you_believe_in_magic",
@@ -2655,8 +3181,13 @@
       "Place 1 x altar",
       "Collect 4 x zanite gemstone"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_h4_cockatrice_nights",
@@ -2669,8 +3200,13 @@
       "Defeat 8 x cockatrice",
       "Defeat 6 x zephyr"
      ],
+     "stages": [
+      0,
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_h5_the_bronze_halls",
@@ -2685,8 +3221,15 @@
       "Defeat 1 x mimic",
       "Defeat 1 x slider"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_h6_like_a_bossaru",
@@ -2698,8 +3241,12 @@
      "goals": [
       "Place 16 x cold aercloud"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_h7_medals_of_the_silver_court",
@@ -2714,8 +3261,15 @@
       "Defeat 1 x valkyrie queen",
       "Find and read: The Hymn of Azriel"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      2
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_h8_dethroned",
@@ -2727,8 +3281,12 @@
      "goals": [
       "Place 16 x holystone bricks"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_h9_extinguished",
@@ -2741,8 +3299,13 @@
       "Reach a gold dungeon",
       "Defeat 1 x sun spirit"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_h10_fireproof",
@@ -2754,8 +3317,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_i5_the_dead_king",
@@ -2768,8 +3335,13 @@
       "Reach a catacombs",
       "Defeat 1 x dead king"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_i6_the_mountain_tower",
@@ -2782,8 +3354,13 @@
       "Reach a mountain tower",
       "Defeat 1 x cryomancer"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_i7_echo_of_tyros",
@@ -2797,8 +3374,14 @@
       "Defeat 2 x citadel keeper",
       "Defeat 1 x fire boss"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_i8_the_arcane_anvil",
@@ -2810,8 +3393,12 @@
      "goals": [
       "Place 1 x arcane anvil"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_bz1_a_letter_smelling_of_honey",
@@ -2823,8 +3410,12 @@
      "goals": [
       "Talk to Wren the Apiarist"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_bz2_pearls_and_patience",
@@ -2837,8 +3428,13 @@
       "Collect 6 x honeycomb",
       "Talk to Wren the Apiarist"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_bz3_into_the_comb",
@@ -2851,8 +3447,13 @@
       "Collect 8 x honey crystal shards",
       "Collect 4 x pollen puff"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_bz4_clogged_channels",
@@ -2864,8 +3465,12 @@
      "goals": [
       "Defeat 12 x slime"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_bz5_the_cell_maze",
@@ -2877,8 +3482,12 @@
      "goals": [
       "Reach a cell maze"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_bz6_the_hive_temple",
@@ -2890,8 +3499,12 @@
      "goals": [
       "Reach a hive temple"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_bz7_roots_that_bite",
@@ -2903,8 +3516,12 @@
      "goals": [
       "Defeat 3 x rootmin"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_bz8_audience_with_the_queen",
@@ -2916,8 +3533,12 @@
      "goals": [
       "Reach a throne pillar"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_bz9_the_queens_desire",
@@ -2929,8 +3550,12 @@
      "goals": [
       "Collect 1 x royal jelly bottle"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_bz10_the_honey_crown",
@@ -2942,8 +3567,12 @@
      "goals": [
       "Talk to Wren the Apiarist"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc3_fallen",
@@ -2957,8 +3586,14 @@
       "Talk to The Farmer",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc3_good",
@@ -2973,8 +3608,15 @@
       "Talk to The Cleric",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc3_saint",
@@ -2988,8 +3630,14 @@
       "Talk to The Cleric",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc3_waver",
@@ -3003,8 +3651,14 @@
       "Talk to The Cleric",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc3_wicked",
@@ -3018,8 +3672,14 @@
       "Talk to Silas of the Gilded Hand",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun",
@@ -3031,8 +3691,12 @@
      "goals": [
       "Defeat 1 x wandering trader"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun_after",
@@ -3044,8 +3708,12 @@
      "goals": [
       "Defeat 3 x blaze"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x4s_sunlight_in_a_bottle",
@@ -3057,8 +3725,12 @@
      "goals": [
       "Talk to The Pilgrim"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x4k_the_sun_remembers",
@@ -3071,8 +3743,13 @@
       "Wait for next night",
       "Defeat 4 x phantom"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:questbook_a_very_reasonable_treasure_map",
@@ -3082,8 +3759,10 @@
      "row": 0,
      "summary": "Follow Bastian Quill's perfectly safe, entirely uncursed instructions to recover the treasure he was regrettably unable to collect himself.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": "A Very Reasonable Treasure Map"
     },
     {
      "id": "mebahelrpgrquest:blackthorn_chain_1_the_courier_who_never_returned",
@@ -3093,8 +3772,10 @@
      "row": 1,
      "summary": "A village courier vanished on an old marsh route. Recover his satchel and find out why one impossible address appears in his ledger.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": "The Blackthorn House"
     },
     {
      "id": "mebahelrpgrquest:sculk_mineshaft_investigation",
@@ -3104,8 +3785,10 @@
      "row": 2,
      "summary": "Investigate a silent mineshaft where sculk is growing around an altered skeleton spawner, then destroy the source with TNT.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": "The Listening Mine"
     },
     {
      "id": "mebahelrpgrquest:hag_sq_sky_amber",
@@ -3117,8 +3800,12 @@
      "goals": [
       "Collect 12 x golden amber"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_swet_trouble",
@@ -3131,8 +3818,13 @@
       "Defeat 6 x blue swet",
       "Defeat 6 x golden swet"
      ],
+     "stages": [
+      0,
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_ambrosium_lamps",
@@ -3144,8 +3836,12 @@
      "goals": [
       "Collect 32 x ambrosium shard"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": [
@@ -3399,8 +4095,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_e1_the_librarians_request",
@@ -3414,8 +4114,14 @@
       "Collect 8 x ink sac",
       "Talk to The Librarian"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_e3_the_road_underground",
@@ -3430,8 +4136,15 @@
       "Defeat 2 x witch",
       "Defeat 1 x enderman"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_e4_the_warden_journal",
@@ -3443,8 +4156,12 @@
      "goals": [
       "Find and read: The Warden Journal"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_e5_free_the_end",
@@ -3456,8 +4173,12 @@
      "goals": [
       "Defeat 1 x ender dragon"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_e6_edge_of_the_world",
@@ -3470,8 +4191,13 @@
       "Reach a end city",
       "Defeat 8 x shulker"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_e7_the_nether_is_singing",
@@ -3483,8 +4209,12 @@
      "goals": [
       "Talk to The Librarian"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ea1_the_old_eye",
@@ -3496,8 +4226,12 @@
      "goals": [
       "Collect 1 x old eye"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_eb1_the_magical_eye",
@@ -3509,8 +4243,12 @@
      "goals": [
       "Collect 1 x magical eye"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ea2_the_rogue_eye",
@@ -3522,8 +4260,12 @@
      "goals": [
       "Collect 1 x rogue eye"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_eb2_the_nether_eye",
@@ -3536,8 +4278,13 @@
       "Enter the Nether",
       "Collect 1 x nether eye"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ea3_the_cold_eye",
@@ -3549,8 +4296,12 @@
      "goals": [
       "Collect 1 x cold eye"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_eb3_the_cursed_eye",
@@ -3562,8 +4313,12 @@
      "goals": [
       "Collect 1 x cursed eye"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ea4_the_black_eye",
@@ -3575,8 +4330,12 @@
      "goals": [
       "Collect 1 x black eye"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_eb4_the_wither_eye",
@@ -3588,8 +4347,12 @@
      "goals": [
       "Collect 1 x wither eye"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ea5_the_lost_eye",
@@ -3601,8 +4364,12 @@
      "goals": [
       "Collect 1 x lost eye"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_eb5_the_witch_eye",
@@ -3614,8 +4381,12 @@
      "goals": [
       "Collect 1 x witch eye"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ea6_the_corrupted_eye",
@@ -3627,8 +4398,12 @@
      "goals": [
       "Collect 1 x corrupted eye"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_eb6_the_undead_eye",
@@ -3640,8 +4415,12 @@
      "goals": [
       "Collect 1 x undead eye"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ea7_the_guardian_eye",
@@ -3654,8 +4433,13 @@
       "Defeat 1 x elder guardian",
       "Collect 1 x guardian eye"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc4_fallen",
@@ -3669,8 +4453,14 @@
       "Defeat 1 x evoker",
       "Defeat 1 x evoker"
      ],
+     "stages": [
+      0,
+      0,
+      1
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc4_good",
@@ -3684,8 +4474,14 @@
       "Talk to Reeve Halden",
       "Defeat 1 x evoker"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc4_saint",
@@ -3699,8 +4495,14 @@
       "Defeat 5 x vindicator",
       "Defeat 1 x evoker"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:clock",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc4_waver",
@@ -3713,8 +4515,13 @@
       "Talk to The Librarian",
       "Defeat 1 x evoker"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:emerald",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc4_wicked",
@@ -3728,8 +4535,14 @@
       "Defeat 3 x vindicator",
       "Defeat 1 x evoker"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:clock",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_y1_what_the_last_page_said",
@@ -3741,8 +4554,12 @@
      "goals": [
       "Talk to The Librarian"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_y2_the_hand_reads_too",
@@ -3754,8 +4571,12 @@
      "goals": [
       "Talk to Silas of the Gilded Hand"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:questbook_the_fourth_member",
@@ -3765,8 +4586,10 @@
      "row": 0,
      "summary": "Follow the journal of three adventurers whose expedition slowly begins to remember a man who was never with them.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:written_book",
-     "choice": false
+     "choice": false,
+     "group": "The Fourth Member"
     },
     {
      "id": "mebahelrpgrquest:merrick_remembers_you",
@@ -3776,8 +4599,10 @@
      "row": 0,
      "summary": "A man called Merrick has appeared nearby. He speaks as though the two of you have travelled together before.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:name_tag",
-     "choice": false
+     "choice": false,
+     "group": "The Fourth Member"
     },
     {
      "id": "mebahelrpgrquest:merrick_a_place_you_remember",
@@ -3787,8 +4612,10 @@
      "row": 0,
      "summary": "A ruined place has appeared in your quest journal with the uncomfortable certainty that you have been there before.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": "The Fourth Member"
     },
     {
      "id": "mebahelrpgrquest:merrick_the_end_remembers",
@@ -3798,8 +4625,10 @@
      "row": 0,
      "summary": "Merrick is dead. Something in the End disagrees.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:ender_eye",
-     "choice": false
+     "choice": false,
+     "group": "The Fourth Member"
     },
     {
      "id": "mebahelrpgrquest:the_sixth_voice",
@@ -3809,8 +4638,10 @@
      "row": 0,
      "summary": "A stranger has appeared nearby. He knows Merrick by name, and speaks as though you have forgotten him too.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:echo_shard",
-     "choice": false
+     "choice": false,
+     "group": "The Fourth Member"
     },
     {
      "id": "mebahelrpgrquest:questbook_the_house_that_owes_me_money",
@@ -3820,8 +4651,10 @@
      "row": 1,
      "summary": "Enforce a fourteen-emerald debt against a building that has so far refused every attempt at negotiation.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": "The House That Owes Me Money"
     },
     {
      "id": "mebahelrpgrquest:hag_sq_ender_hunt",
@@ -3833,8 +4666,12 @@
      "goals": [
       "Defeat 20 x enderman"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_copy_the_journal",
@@ -3847,8 +4684,13 @@
       "Collect 16 x book",
       "Collect 16 x feather"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_shulker_shells",
@@ -3860,8 +4702,12 @@
      "goals": [
       "Collect 6 x shulker shell"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": [
@@ -4112,8 +4958,14 @@
       "Collect 48 x spruce log",
       "Talk to Village Elder"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_s2_the_frozen_garrison",
@@ -4128,8 +4980,15 @@
       "Defeat 1 x yeti",
       "Find and read: Garrison Roll"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      2
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_s3_lost_in_the_snow",
@@ -4141,8 +5000,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_d1_the_buried_well",
@@ -4156,8 +5019,14 @@
       "Defeat 12 x husk",
       "Talk to Village Elder"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_d2_the_nest_road",
@@ -4171,8 +5040,14 @@
       "Reach a sandworm nest",
       "Defeat 1 x sandworm"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_d3_the_beast_below",
@@ -4184,8 +5059,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_c1_nets_and_knives",
@@ -4199,8 +5078,14 @@
       "Collect 16 x salmon",
       "Place 24 x oak fence"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_c2_the_tidecaller",
@@ -4214,8 +5099,14 @@
       "Defeat 8 x drowned",
       "Defeat 1 x drowned"
      ],
+     "stages": [
+      0,
+      1,
+      1
+     ],
      "icon": "minecraft:clock",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_c3_the_black_ship",
@@ -4231,8 +5122,16 @@
       "Defeat 1 x pirate captain",
       "Defeat 1 x kraken"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      1,
+      2
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_c4_terror_of_the_depths",
@@ -4244,8 +5143,12 @@
      "goals": [
       "Talk to Harbourmaster"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_u1_the_soul_guard",
@@ -4260,8 +5163,15 @@
       "Defeat 3 x soul knight wither skeleton",
       "Defeat 1 x underworld knight"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_u2_helvars_oath",
@@ -4273,8 +5183,12 @@
      "goals": [
       "Find and read: Helvar's Oath"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_u3_back_into_hell",
@@ -4286,8 +5200,12 @@
      "goals": [
       "Leave the Nether"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_f1_the_last_road",
@@ -4302,8 +5220,15 @@
       "Defeat 3 x flaming skeleton guard fireball",
       "Defeat 1 x infernal dragon"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_f2_dragon_slayer",
@@ -4315,8 +5240,12 @@
      "goals": [
       "Collect 8 x dragon bone"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_f3_unbound",
@@ -4328,8 +5257,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_br1_the_watch_needs_eyes",
@@ -4341,8 +5274,12 @@
      "goals": [
       "Talk to Captain of the Watch"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt1_a_note_in_the_stash",
@@ -4355,8 +5292,13 @@
       "Collect 16 x weed",
       "Talk to The Fixer"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_tm1_a_generous_offer",
@@ -4368,8 +5310,12 @@
      "goals": [
       "Defeat 1 x vindicator"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_br2_the_supply_line",
@@ -4382,8 +5328,13 @@
       "Reach a pillager outpost",
       "Defeat 6 x vindicator"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt1b_the_recruiters_terms",
@@ -4396,8 +5347,13 @@
       "Collect 16 x weed",
       "Talk to The Fixer"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_br3_the_bookkeeper",
@@ -4411,8 +5367,14 @@
       "Defeat 1 x sorcerer",
       "Find and read: Blackwater Ledger"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt2_seeds_of_the_trade",
@@ -4425,8 +5387,13 @@
       "Place 16 x weed crop",
       "Collect 32 x weed"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_br4_medicine_for_the_valley",
@@ -4439,8 +5406,13 @@
       "Collect 3 x narcan",
       "Talk to The Cleric"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt3_first_customers",
@@ -4453,8 +5425,13 @@
       "Collect 8 x joint",
       "Talk to Nervous Buyer"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_br5_don_vasco_answers",
@@ -4467,8 +5444,13 @@
       "Reach a labyrinth",
       "Defeat 1 x evoker"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt4_the_hash_market",
@@ -4481,8 +5463,13 @@
       "Collect 16 x hash",
       "Talk to The Fixer"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_br6_the_valley_breathes",
@@ -4494,8 +5481,12 @@
      "goals": [
       "Talk to Captain of the Watch"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_go0_a_way_out",
@@ -4507,8 +5498,12 @@
      "goals": [
       "Talk to Reeve Halden"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt5_blackwater_wants_a_word",
@@ -4520,8 +5515,12 @@
      "goals": [
       "Defeat 4 x vindicator"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt6_the_coca_fields",
@@ -4534,8 +5533,13 @@
       "Place 16 x coca crop",
       "Collect 32 x coca leaf"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt7_white_powder_money",
@@ -4548,8 +5552,13 @@
       "Collect 16 x cocaine",
       "Talk to The Fixer"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt8_a_customer_goes_under",
@@ -4563,8 +5572,14 @@
       "Talk to Buyer's Friend",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_go1_burn_it_down",
@@ -4577,8 +5592,13 @@
       "Break 16 x weed crop",
       "Talk to Reeve Halden"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:iron_pickaxe",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt9_turf_war",
@@ -4593,8 +5613,15 @@
       "Defeat 3 x pillager",
       "Defeat 1 x evoker"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      1
+     ],
      "icon": "minecraft:clock",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_go2_blackwater_sends_regards",
@@ -4607,8 +5634,13 @@
       "Wait for next night",
       "Defeat 6 x vindicator"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:clock",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt10_the_sorcerers_books",
@@ -4622,8 +5654,14 @@
       "Defeat 1 x sorcerer",
       "Find and read: Blackwater Ledger"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_go3_testimony",
@@ -4638,8 +5676,15 @@
       "Find and read: Blackwater Ledger",
       "Talk to Reeve Halden"
      ],
+     "stages": [
+      0,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt11_crystal",
@@ -4652,8 +5697,13 @@
       "Collect 16 x meth",
       "Talk to The Fixer"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt12_don_vasco",
@@ -4666,8 +5716,13 @@
       "Reach a labyrinth",
       "Defeat 1 x evoker"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt13p_the_big_shipment",
@@ -4681,8 +5736,14 @@
       "Collect 32 x hash",
       "Talk to The Fixer"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt13w_remnants",
@@ -4694,8 +5755,12 @@
      "goals": [
       "Defeat 8 x vindicator"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_gt14_king_of_the_valley",
@@ -4707,8 +5772,12 @@
      "goals": [
       "Talk to The Fixer"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc5_fallen",
@@ -4722,8 +5791,14 @@
       "Defeat 8 x drowned",
       "Defeat 1 x pillager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:clock",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc5_good",
@@ -4737,8 +5812,14 @@
       "Talk to Village Elder",
       "Defeat 1 x pillager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc5_saint",
@@ -4752,8 +5833,14 @@
       "Talk to Harbourmaster",
       "Defeat 1 x pillager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc5_waver",
@@ -4766,8 +5853,13 @@
       "Defeat 12 x stray",
       "Defeat 1 x pillager"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc5_wicked",
@@ -4780,8 +5872,13 @@
       "Defeat 1 x iron golem",
       "Defeat 1 x pillager"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x5_the_last_garrison_man",
@@ -4793,8 +5890,12 @@
      "goals": [
       "Defeat 1 x stray"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x5_the_last_garrison_man_after",
@@ -4806,8 +5907,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x5s_brann_comes_home",
@@ -4819,8 +5924,12 @@
      "goals": [
       "Talk to Ilse"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_x5k_a_widows_letter",
@@ -4832,8 +5941,12 @@
      "goals": [
       "Talk to Ilse"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:questbook_please_return_the_ship",
@@ -4843,8 +5956,10 @@
      "row": 0,
      "summary": "Locate the nineteen-years-overdue Patient Gull and settle a maritime debt that has outlived both the vessel and good sense.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": "Please Return the Ship"
     },
     {
      "id": "mebahelrpgrquest:questbook_the_captains_share",
@@ -4854,8 +5969,10 @@
      "row": 1,
      "summary": "Follow the articles of the lost Saint Marrow, settle the crew's dead accounts, and decide who is entitled to the captain's final share.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": "The Captain's Share"
     },
     {
      "id": "mebahelrpgrquest:captains_share_return_the_shares",
@@ -4865,8 +5982,10 @@
      "row": 1,
      "summary": "Captain Vale spared you one final piece of arithmetic: return twelve stolen shares to First Mate Orren.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The Captain's Share"
     },
     {
      "id": "mebahelrpgrquest:false_hero_chain_1_a_hero_trophy",
@@ -4876,8 +5995,10 @@
      "row": 2,
      "summary": "Bring back raider proof from the outpost road and test the village champion's story.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The False Hero"
     },
     {
      "id": "mebahelrpgrquest:false_hero_chain_2_the_last_witness",
@@ -4887,8 +6008,10 @@
      "row": 2,
      "summary": "Find the outpost witness, hear what happened, then decide whether truth is worth sparing a raider.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": "The False Hero"
     },
     {
      "id": "mebahelrpgrquest:false_hero_chain_kill_3_convenient_silence",
@@ -4898,8 +6021,10 @@
      "row": 2,
      "summary": "The witness is dead, and raiders are cleaning up the outpost road. Stop them before the lie becomes permanent.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The False Hero"
     },
     {
      "id": "mebahelrpgrquest:false_hero_chain_spare_3_name_beneath_medal",
@@ -4909,8 +6034,10 @@
      "row": 3,
      "summary": "Recover the dead guard's sword, written proof, and village cloth from the outpost road.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "The False Hero"
     },
     {
      "id": "mebahelrpgrquest:false_hero_chain_spare_4_the_false_hero",
@@ -4920,8 +6047,10 @@
      "row": 2,
      "summary": "Confront the village champion with the proof of his cowardice and defeat him on the outpost road.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "The False Hero"
     },
     {
      "id": "mebahelrpgrquest:undertaker_chain_1_graves_without_names",
@@ -4931,8 +6060,10 @@
      "row": 4,
      "summary": "Someone has been burying raiders, strays, and husks outside a desert village. Follow the fresh graves to an old pyramid and find the undertaker responsible.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:book",
-     "choice": false
+     "choice": false,
+     "group": "The Undertaker of Red Sand"
     },
     {
      "id": "mebahelrpgrquest:undertaker_chain_2_the_grave_he_cannot_fill",
@@ -4942,8 +6073,10 @@
      "row": 4,
      "summary": "Amar remembers that his body was removed during an old desert plague. Escort him to the ruined portal where the dead were taken and recover the order that condemned him to an unmarked disposal.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": "The Undertaker of Red Sand"
     },
     {
      "id": "mebahelrpgrquest:undertaker_chain_3_where_the_dead_were_sent",
@@ -4953,8 +6086,10 @@
      "row": 4,
      "summary": "Cross the ruined portal with Amar, follow the plague dead into the Nether, and search a fossil field for the last proof that Amar was ever meant to have a grave.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": "The Undertaker of Red Sand"
     },
     {
      "id": "mebahelrpgrquest:undertaker_chain_4_not_currently_available",
@@ -4964,8 +6099,10 @@
      "row": 4,
      "summary": "Amar has one final burial to arrange: his own. Help him mark the death of the man he was, then let him decide whether the grave needs an occupant.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": "The Undertaker of Red Sand"
     },
     {
      "id": "mebahelrpgrquest:hag_sq_frost_patrol",
@@ -4977,8 +6114,12 @@
      "goals": [
       "Defeat 12 x stray"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_husk_plague",
@@ -4990,8 +6131,12 @@
      "goals": [
       "Defeat 20 x husk"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_drowned_nets",
@@ -5003,8 +6148,12 @@
      "goals": [
       "Defeat 15 x drowned"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_pirate_hoard",
@@ -5017,8 +6166,13 @@
       "Reach a shipwreck",
       "Defeat 6 x drowned"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_soul_lanterns",
@@ -5030,8 +6184,12 @@
      "goals": [
       "Collect 12 x soul lantern"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_ash_cleanup",
@@ -5043,8 +6201,12 @@
      "goals": [
       "Defeat 4 x dragon guard sword"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": [
@@ -5487,8 +6649,12 @@
      "goals": [
       "Talk to The Librarian"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v2_the_sinful_church",
@@ -5502,8 +6668,14 @@
       "Defeat 2 x devourer",
       "Find and read: The Midwife's Recipe"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v3_the_midwife",
@@ -5515,8 +6687,12 @@
      "goals": [
       "Defeat 1 x witch"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v3k_the_coven",
@@ -5528,8 +6704,12 @@
      "goals": [
       "Defeat 4 x witch"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v3s_cleansing_the_pits",
@@ -5541,8 +6721,12 @@
      "goals": [
       "Place 16 x soul soil"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v4_original_sin",
@@ -5554,8 +6738,12 @@
      "goals": [
       "Defeat 3 x betrayed guzzler"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v5_jaws_in_the_dark",
@@ -5568,8 +6756,13 @@
       "Wait for next night",
       "Defeat 8 x zombie"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:clock",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v6_what_eats_the_dead",
@@ -5581,8 +6774,12 @@
      "goals": [
       "Collect 8 x ether ashes"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v7_soul_steel",
@@ -5594,8 +6791,12 @@
      "goals": [
       "Place 1 x soul steel block"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:bricks",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v8_sinbuster",
@@ -5607,8 +6808,12 @@
      "goals": [
       "Talk to The Smith"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v9_the_wrong_parcel",
@@ -5620,8 +6825,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v10_maraal",
@@ -5633,8 +6842,12 @@
      "goals": [
       "Defeat 1 x wandering trader"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v10f_walking_with_maraal",
@@ -5646,8 +6859,12 @@
      "goals": [
       "Wait for next day"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:clock",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v10r_alone",
@@ -5659,8 +6876,12 @@
      "goals": [
       "Defeat 3 x ghast"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_v11_the_crimson_guide",
@@ -5672,8 +6893,12 @@
      "goals": [
       "Enter the Nether"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc6_fallen",
@@ -5687,8 +6912,14 @@
       "Defeat 3 x witch",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:clock",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc6_good",
@@ -5702,8 +6933,14 @@
       "Place 4 x white bed",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:emerald",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc6_saint",
@@ -5717,8 +6954,14 @@
       "Talk to The Cleric",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc6_waver",
@@ -5732,8 +6975,14 @@
       "Talk to Reeve Halden",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc6_wicked",
@@ -5747,8 +6996,14 @@
       "Talk to Silas of the Gilded Hand",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:chest",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_y4_vaels_last_letter",
@@ -5760,8 +7015,12 @@
      "goals": [
       "Reach a ruined portal"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_y5_the_midwifes_daughter",
@@ -5773,8 +7032,12 @@
      "goals": [
       "Talk to Wren of the Pits"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:mad_scientist_chain_1_a_cure_for_the_common_death",
@@ -5784,8 +7047,10 @@
      "row": 0,
      "summary": "Doctor Edrin Vale claims he is close to a cheaper cure for zombification. Bring him the first ingredients for his restorative.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "A Cure for the Common Death"
     },
     {
      "id": "mebahelrpgrquest:mad_scientist_chain_2_the_control_group",
@@ -5795,8 +7060,10 @@
      "row": 0,
      "summary": "Doctor Vale needs one perfectly healthy chicken for what he insists is a rigorous control experiment.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": "A Cure for the Common Death"
     },
     {
      "id": "mebahelrpgrquest:mad_scientist_chain_3_the_assistants_last_notes",
@@ -5806,8 +7073,10 @@
      "row": 0,
      "summary": "Sera Marr, Doctor Vale's assistant, vanished while collecting samples in an old mineshaft. Find her field notes and learn what happened.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": "A Cure for the Common Death"
     },
     {
      "id": "mebahelrpgrquest:mad_scientist_chain_4_patient_thirteen",
@@ -5817,8 +7086,10 @@
      "row": 0,
      "summary": "Sera Marr is still alive in the loosest possible sense. Find her, hear what happened, and decide whether she is a patient, a witness, or a threat.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": "A Cure for the Common Death"
     },
     {
      "id": "mebahelrpgrquest:mad_scientist_chain_kill_5_the_grand_demonstration",
@@ -5828,8 +7099,10 @@
      "row": 0,
      "summary": "Doctor Vale is ready to prove his restorative before the entire village. Sera is gone, the apparatus is full, and the bell square has become his laboratory.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "A Cure for the Common Death"
     },
     {
      "id": "mebahelrpgrquest:mad_scientist_chain_spare_5_the_grand_demonstration",
@@ -5839,8 +7112,10 @@
      "row": 1,
      "summary": "Doctor Vale proceeds with his public experiment despite Sera's warning. She promised to dilute the serum before he begins. You are about to learn whether she succeeded.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "A Cure for the Common Death"
     },
     {
      "id": "mebahelrpgrquest:questbook_instructions_for_my_own_funeral",
@@ -5850,8 +7125,10 @@
      "row": 2,
      "summary": "Carry out Garrick Bell's extremely specific funeral instructions and discover why he was so insistent about the time of burial.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": "Instructions for My Own Funeral"
     },
     {
      "id": "mebahelrpgrquest:garrick_second_funeral",
@@ -5861,8 +7138,10 @@
      "row": 2,
      "summary": "Garrick's correction is very clear: return to the grave, use the bell, and this time speak to him before killing him.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": "Instructions for My Own Funeral"
     },
     {
      "id": "mebahelrpgrquest:garrick_third_funeral",
@@ -5872,8 +7151,10 @@
      "row": 2,
      "summary": "Garrick's third volume contains an unexpected correction: the next funeral belongs to Corwin, whose attempt to improve the family ritual has gone badly.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": "Instructions for My Own Funeral"
     },
     {
      "id": "mebahelrpgrquest:questbook_the_man_who_buried_himself",
@@ -5883,8 +7164,10 @@
      "row": 3,
      "summary": "Follow Calder Venn's final journal to the mineshaft where he sealed himself away from something that knew his footsteps, his tools, and perhaps his face.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": "The Man Who Buried Himself"
     },
     {
      "id": "mebahelrpgrquest:questbook_the_man_who_came_back_warm",
@@ -5894,8 +7177,10 @@
      "row": 4,
      "summary": "Follow Edric Hale's account of a journey through a ruined portal and discover what finally came back wearing his name.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": "The Man Who Came Back Warm"
     },
     {
      "id": "mebahelrpgrquest:hag_sq_blood_tithe",
@@ -5907,8 +7192,12 @@
      "goals": [
       "Collect 3 x bottle of blood"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_midwifes_debt",
@@ -5920,8 +7209,12 @@
      "goals": [
       "Collect 6 x ether ashes"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_grub_hunt",
@@ -5933,8 +7226,12 @@
      "goals": [
       "Defeat 4 x betrayed guzzler"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_crimson_honey",
@@ -5946,8 +7243,12 @@
      "goals": [
       "Collect 4 x crimson honey bottle"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": [
@@ -6186,8 +7487,13 @@
       "Reach a mansion nether",
       "Talk to The Welcomer"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_m2_the_cursed_quarries",
@@ -6199,8 +7505,12 @@
      "goals": [
       "Defeat 6 x manipulator"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_m3_hold_the_quarry_gate",
@@ -6213,8 +7523,13 @@
       "Defeat 4 x piglin brute",
       "Defeat 1 x piglin brute"
      ],
+     "stages": [
+      0,
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_m4_gilded_hunger",
@@ -6227,8 +7542,13 @@
       "Defeat 3 x gilded golem",
       "Talk to The Doctor"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_m5_do_not_provoke_gehinnom",
@@ -6240,8 +7560,12 @@
      "goals": [
       "Defeat 2 x guardian"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_m6_the_instruction",
@@ -6253,8 +7577,12 @@
      "goals": [
       "Collect 1 x note"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_m7_hand_over_your_weapon",
@@ -6266,8 +7594,12 @@
      "goals": [
       "Collect 1 x manipulator stick"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_m9_half_a_soul",
@@ -6279,8 +7611,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc7_fallen",
@@ -6297,8 +7633,17 @@
       "Talk to The Cleric",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:clock",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc7_good",
@@ -6314,8 +7659,16 @@
       "Escort someone home",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:clock",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc7_saint",
@@ -6331,8 +7684,16 @@
       "Talk to Reeve Halden",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:clock",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc7_waver",
@@ -6349,8 +7710,17 @@
       "Talk to Halden's Son",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      1,
+      2,
+      3
+     ],
      "icon": "minecraft:clock",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rc7_wicked",
@@ -6367,8 +7737,17 @@
       "Talk to Silas of the Gilded Hand",
       "Defeat 1 x villager"
      ],
+     "stages": [
+      0,
+      1,
+      1,
+      2,
+      3,
+      4
+     ],
      "icon": "minecraft:clock",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_y3_tomas_at_the_gate",
@@ -6380,8 +7759,12 @@
      "goals": [
       "Talk to Reeve Halden"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:zombie_disguise_friend",
@@ -6391,8 +7774,10 @@
      "row": 0,
      "summary": "A worried villager asks you to check on a friend who went deep underground to study zombies by pretending to be one of them.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": "A Friend in Disguise"
     },
     {
      "id": "mebahelrpgrquest:questbook_the_ash_merchant",
@@ -6402,8 +7787,10 @@
      "row": 1,
      "summary": "Follow the account book of Silas Dorn into the Nether and learn what the prices beside those human names really meant.",
      "goals": [],
+     "stages": [],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": "The Ash Merchant"
     },
     {
      "id": "mebahelrpgrquest:hag_sq_pay_the_freed",
@@ -6415,8 +7802,12 @@
      "goals": [
       "Collect 32 x gold ingot"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": [
@@ -6532,8 +7923,12 @@
      "goals": [
       "Reach a maze"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_z2_up",
@@ -6545,8 +7940,12 @@
      "goals": [
       "Reach a head altar"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_z3_choir_of_the_whole_god",
@@ -6561,8 +7960,15 @@
       "Defeat 1 x ravager",
       "Defeat 1 x evoker"
      ],
+     "stages": [
+      0,
+      0,
+      0,
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_b1_bow_at_my_feet",
@@ -6574,8 +7980,12 @@
      "goals": [
       "Collect 1 x quota"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_g1_maraals_last_letter",
@@ -6587,8 +7997,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_b2_tithe_of_gold",
@@ -6600,8 +8014,12 @@
      "goals": [
       "Collect 64 x gold ingot"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_g2_ashford_rebuilt",
@@ -6615,8 +8033,14 @@
       "Place 128 x stone bricks",
       "Place 1 x bell"
      ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_b3_the_last_preacher",
@@ -6628,8 +8052,12 @@
      "goals": [
       "Defeat 1 x wandering trader"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rep_end_fallen",
@@ -6641,8 +8069,12 @@
      "goals": [
       "Talk to Halden's Son"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rep_end_good",
@@ -6654,8 +8086,12 @@
      "goals": [
       "Talk to Reeve Halden"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rep_end_saint",
@@ -6667,8 +8103,12 @@
      "goals": [
       "Talk to Reeve Halden"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rep_end_waver",
@@ -6680,8 +8120,12 @@
      "goals": [
       "Talk to The Cleric"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_rep_end_wicked",
@@ -6693,8 +8137,12 @@
      "goals": [
       "Talk to Silas of the Gilded Hand"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_sq_the_last_raid",
@@ -6706,8 +8154,12 @@
      "goals": [
       "Defend a raid"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:paper",
-     "choice": false
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": [
@@ -6776,8 +8228,12 @@
      "goals": [
       "Talk to Reeve Halden"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_et2_the_pretender",
@@ -6791,8 +8247,14 @@
       "Defeat 4 x piglin brute",
       "Defeat 1 x evoker"
      ],
+     "stages": [
+      0,
+      1,
+      1
+     ],
      "icon": "minecraft:compass",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ha1_the_first_command",
@@ -6804,8 +8266,12 @@
      "goals": [
       "Break 1 x beacon"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_pickaxe",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_et3_the_last_faithful",
@@ -6817,8 +8283,12 @@
      "goals": [
       "Defeat 1 x vindicator"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ha2_ashford_must_kneel",
@@ -6830,8 +8300,12 @@
      "goals": [
       "Defeat 2 x iron golem"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_et4_morning",
@@ -6843,8 +8317,12 @@
      "goals": [
       "Talk to Village Elder"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:emerald",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ha3_haldens_last_stand",
@@ -6856,8 +8334,12 @@
      "goals": [
       "Defeat 1 x vindicator"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:iron_sword",
-     "choice": true
+     "choice": true,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ha4_the_hand_of_azazel",
@@ -6869,8 +8351,12 @@
      "goals": [
       "Collect 16 x gold block"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:chest",
-     "choice": false
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": [
@@ -6936,8 +8422,13 @@
       "Place 20 x lantern",
       "Talk to Village Elder"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_ru2_silas_makes_an_offer",
@@ -6950,8 +8441,13 @@
       "Talk to Silas of the Gilded Hand",
       "Defeat 1 x iron golem"
      ],
+     "stages": [
+      0,
+      1
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lp1_ancient_city",
@@ -6963,8 +8459,12 @@
      "goals": [
       "Reach a ancient city"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lp2_end_city",
@@ -6976,8 +8476,12 @@
      "goals": [
       "Reach a end city"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lp3_jungle_temple",
@@ -6989,8 +8493,12 @@
      "goals": [
       "Reach a jungle pyramid"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lp4_mansion",
@@ -7002,8 +8510,12 @@
      "goals": [
       "Reach a mansion"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lp5_treasure",
@@ -7015,8 +8527,12 @@
      "goals": [
       "Reach a buried treasure"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lp6_igloo",
@@ -7028,8 +8544,12 @@
      "goals": [
       "Reach a igloo"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lp7_outpost",
@@ -7041,8 +8561,12 @@
      "goals": [
       "Reach a pillager outpost"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lp8_ruin",
@@ -7054,8 +8578,12 @@
      "goals": [
       "Reach a ocean ruin cold"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     },
     {
      "id": "mebahelrpgrquest:hag_lp9_the_first_champion",
@@ -7067,8 +8595,12 @@
      "goals": [
       "Reach a trail ruins"
      ],
+     "stages": [
+      0
+     ],
      "icon": "minecraft:writable_book",
-     "choice": false
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": []

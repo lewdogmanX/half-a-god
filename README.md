@@ -48,7 +48,6 @@ Both sides have their rewards, but evil makes the world much harder on you.
 | Trading | cheaper trades | clerics won't serve the Fallen; nobody trades with the Wicked; golems attack the Wicked; wandering traders won't deal with them |
 | Money | | Silas pays you a cut of every story quest (4 / 8 emeralds); sneak + right-click a villager to scare something out of them (once a day each) |
 | Work | Watch duties | Gilded Hand contracts (they pay better) |
-| Travel | the lantern road: free | the smugglers: 8 emeralds a trip |
 | Ashford | rebuilt as the story goes on | stays burned, and the Gilded Hand moves in |
 | Notice boards | thanks with your name on it | a wanted poster with your name on it |
 
@@ -102,9 +101,6 @@ settle in the village they're placed in. Guard Villagers and iron golems won't t
   clearing the road, spiders in the hedges, raiders on the hill, creepers, bread for families, mending fences) raise
   your reputation a little. Gilded Hand contracts (the tithe, stealing a bell, rival pillagers, the farmers' share,
   gunpowder, bones for the Choir) pay more and drag it down. One at a time, at most every half a day.
-- **Travel.** Right-click a village bell (or `/halfagod travel`) to go to another village the story has taken you to,
-  if it's more than 96 blocks away: free on the lantern road if you're Good, 8 emeralds to the smugglers if you're
-  Fallen or Wicked.
 
 ## What the mod adds to the story
 
@@ -145,7 +141,6 @@ settle in the village they're placed in. Guard Villagers and iron golems won't t
 | `/halfagod choose` | everyone | reopen a choice you closed |
 | `/halfagod chronicle` | everyone | the Chronicle so far |
 | `/halfagod map` | everyone | open the story map |
-| `/halfagod travel` | everyone | travel to another village you know |
 | `/halfagod story` or `/halfagod unlockall` | operators | opens the whole story: every act and quest, what it needs and where it leads, with a button to start any quest |
 | `/halfagod jump <quest> [player]` | operators | start any story quest |
 | `/halfagod setrep <value> [player]` | operators | set reputation |

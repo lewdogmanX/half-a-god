@@ -286,6 +286,12 @@ public final class Meb {
         call(villager, "mebahelrpgrquest$setQuestRollDone", true);
     }
 
+    /** The objective stage a sequential quest is on (0 when unknown). */
+    public static int stageOf(Object progress) {
+        Object r = call(progress, "getCurrentObjectiveStage");
+        return r instanceof Number n ? n.intValue() : 0;
+    }
+
     public static UUID giverOf(Object progress) {
         Object r = call(progress, "getQuestGiverUuid");
         return r instanceof UUID u ? u : null;
