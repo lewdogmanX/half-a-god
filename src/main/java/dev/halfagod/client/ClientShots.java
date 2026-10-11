@@ -237,6 +237,16 @@ public final class ClientShots {
                 HalfAGod.LOG.info("SHOT opening the test world");
                 mc.createWorldOpenFlows().openWorld("shots", () -> HalfAGod.LOG.info("SHOT world opening cancelled"));
             }
+            // "this world uses experimental settings": go on anyway
+            if (mc.screen != null && idle % 20 == 10) {
+                for (var child : mc.screen.children()) {
+                    if (child instanceof net.minecraft.client.gui.components.Button b && b.getMessage().getString().contains("know what")) {
+                        HalfAGod.LOG.info("SHOT pressing: {}", b.getMessage().getString());
+                        b.onPress();
+                        break;
+                    }
+                }
+            }
             if (idle > 20 * 60 * 8) {
                 HalfAGod.LOG.info("SHOT giving up waiting for the world");
                 mc.stop();
