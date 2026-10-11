@@ -176,24 +176,70 @@ From Act II on, if you're Fallen or Wicked, the Watch can come for you in your s
 (one in three). You wake in chains in the dock of the Watch's own court, a small dimension of its own: a tall hall
 with the judge on a dais under the Watch's eye, a clerk, the Watch Captain, a witness stand, six jurors, two iron golem
 guards and a gallery of onlookers. The court speaks in a panel along the bottom of the screen, so you can watch it all
-happen. The judge hears witnesses, and every one tells something you really did. A witness you killed can't testify: the court only hears "the
-witness cannot be found". Then you plead:
+happen:
 
-- **Guilty:** a day off the sentence.
-- **Not guilty:** walk free, or serve a day longer.
-- **Say nothing:** the court decides on the evidence.
-- **Pay a juror** (Gilded Hand rank and 16 emeralds from your things).
+- **The court acts it out.** Whoever is speaking turns to you and glows. Each witness takes the stand in turn (the
+  stand stays empty for one who "cannot be found"), and the gallery mutters at the worst of it.
+- **Answer each charge.** After every witness: *deny it* (struck out if the court has only one witness, worse if it
+  has proof), *explain* (admit it and say why: it weighs a little less) or *say nothing*.
+- **Your standing counts.** The Gilded Hand sends an advocate for its members (the case weighs less). A sworn
+  officer of the Watch who has only lost their way gets leniency; a Wicked one hears "you of all people".
+- **A confession counts.** Anything you've confessed to a priest is still read out, but weighs less.
+- **Rivals speak.** Another player who saw what you did may testify against you, or for you.
 
-Found guilty, you serve 1 to 5 days (up to 7 for repeat convictions) in an obsidian cell in the Watch's prison block,
-over a lava lake, with other prisoners across the corridor and the gaoler watching you. Your things are kept as
-evidence. There's no bed and no way out: a day in the cells is a whole Minecraft day (20 real minutes) spent in the
-cell, and it only counts while you're there (logged out, the clock stops). The action bar tells you how long is left
-once a minute, and the gaoler pushes bread through the bars each day. Dying puts you back in the cell.
+A witness you killed can't testify. Then you plead (guilty: a day off; not guilty: walk free or a day longer; say
+nothing; or pay a juror with Hand rank and 16 emeralds), the six jurors vote one at a time, the gavel falls, and the
+verdict. The Codex keeps the whole transcript, your answers and the vote.
 
-- **Serve your time:** you walk out the same person you went in.
-- **Be broken out:** at Collector of the Hand or above, Silas's men come on the second day.
+## The Watch's prison
 
-However you get out, you wake up back in your own bed with all your things.
+Found guilty, you serve 1 to 5 days (up to 7 for repeat convictions) in the Watch's prison: obsidian cells over a lava
+lake, a quarry, a cafeteria and a gate, somewhere nobody can find. The other prisoners don't know where it is either.
+Your things are kept as evidence. There's no bed: a prison day is a whole Minecraft day (20 real minutes), counted only
+while you're there (logged out, the clock stops). The action bar tells you how long is left once a minute. Dying puts
+you back in your cell.
+
+A day, on bells (each time the doors open for a minute, then the guards drag anyone who dawdles):
+
+| Time | Where |
+| --- | --- |
+| 0:00 | your cell: morning (halfway through your sentence, someone visits) |
+| 5:00 | the quarry: hard labour. Break your quota of stone (48) with the pickaxe they hand you, or no supper. Three days short, and a day more |
+| 11:00 | the cafeteria: supper, and the other prisoners to talk to |
+| 16:00 | your cell: lights out, and the gaoler walks his rounds |
+
+**The prisoners.** Old Maddock, Wren, Brother Tam and Kesh will tell you rumours from outside, about themselves, how
+nobody knows where the prison is, and now and then a hint towards a hidden questline you haven't found.
+
+**The visitor.** Someone who matters to your story: a man in gilded gloves from Silas, the Watch Captain, a widow, or
+a hooded stranger who was brought blindfolded.
+
+**Walking out.** Sentence served, your door and the gate open and you walk out past the cafeteria.
+
+**Escaping (hard).** Ask Old Maddock. He'll want your bread before he trusts you; then he'll tap the pipes to warn you
+when the gaoler's coming. Steal a chisel from the quarry cart while the guard is looking the other way. Then dig at
+the wall under your window after lights out, a little each night, stopping whenever the gaoler passes. Through the
+wall, follow the ledge along the outside. Caught at any step (the guard sees you at the cart, the gaoler sees you
+digging, the morning search finds the chisel or the hole, or the bell rings with the hole open): two more days, and the
+tool and the hole are gone. Out, you wake at home with your things; the Hand respects it, the Watch remembers it
+(more bounty hunters).
+
+**Broken out.** At Collector of the Hand or above, Silas's men come on the second day.
+
+## Your reputation travels
+
+- **Ahead of you.** Villagers you've never met have heard of you: a Saint gets better prices, the Wicked pay more
+  (through vanilla's own villager gossip). The first time you walk into a village, you hear what it's heard.
+- **Confession.** Sneak and use a cleric to confess something the Watch could try you for (once a day).
+- **Interrogations.** When you spare one of the story's enemies, before they go you can threaten them (works if
+  you're feared; costs reputation), pay them (5 emeralds) or reason with them (works if you're trusted; earns a
+  little). What they tell you is kept in the Codex, under Letters.
+
+## Mebahel's screens, in paper and ink
+
+The mod has a built-in, always-on resource pack ("Half a God: paper and ink") that repaints Mebahel's quest board and
+contract notes (dark walnut, brass, aged parchment, brass tacks and red wax seals, at 16 times the resolution) and
+recolours his talk screen to match. Only how they look changes. Turn it off in Resource Packs if you prefer his.
 
 ## Multiplayer
 
@@ -204,6 +250,11 @@ Everyone plays their own story; nothing forces a fight.
 - **Gossip.** Mara's letters sometimes end with news of another player.
 - **Rivals.** A Watch duty done while a Fallen or Wicked player is online (or a Hand contract while a Good one is) is
   noted with a line on the action bar and 2 extra emeralds.
+- **A price on their head.** With a Gilded Hand rank and 20 emeralds, "Put a price on their head" (Codex, Your Path,
+  under the other players) sends the Hand's hunters after a player the next night they're out under the sky. Not on
+  someone higher in the Hand than you, and not the same player twice in three days.
+- **Witnesses.** If you were near another player when they killed a villager or emptied a village's stores, and the
+  Watch takes them, a runner asks whether you'll testify against them, speak for them, or stay out of it.
 
 ## What the mod adds to the story
 
@@ -257,13 +308,22 @@ Everyone plays their own story; nothing forces a fight.
 | `/halfagod test story clear` | put your real story back exactly as it was |
 | `/halfagod test story status` | whether you're in a simulated story |
 | `/halfagod test dream` | dream now (a dream that fits where you are) |
-| `/halfagod test dream <id>` | a particular dream (tab completes; `kidnap`, `godsaw`, `release`, `breakout` are the special ones) |
+| `/halfagod test dream <id>` | a particular dream (tab completes; `kidnap`, `godsaw`, `release`, `escape`, `breakout` are the special ones) |
 | `/halfagod test dreams reset` | forget your dreams |
 | `/halfagod test secret <tongue\|pilgrim\|godsaw\|skyfire\|clean>` | find a hidden questline now |
 | `/halfagod test trial` | the Watch takes you to court now (any reputation, any act) |
 | `/halfagod test trial status` | where you are with the Watch and whether a trial is due |
 | `/halfagod test trial witnesses` | a trial with a made-up record: four witnesses speak, three "cannot be found" (your real story isn't changed) |
 | `/halfagod test trial day` | serve one day of your sentence now, instead of waiting 20 minutes |
+| `/halfagod test trial rival` | a made-up traveller testifies against you (on trial, before you plead) |
+| `/halfagod test prison time <morning\|labour\|supper\|night\|lightsout>` | jump to that part of the prison day (the bell goes a second later) |
+| `/halfagod test prison quota` | today's stone quota is met |
+| `/halfagod test prison visitor` | today's visitor comes to your bars (in the morning) |
+| `/halfagod test prison escape <plan\|trust\|chisel\|dig>` | skip to a step of the escape (`dig`: one more dig at the wall gets you through, after lights out) |
+| `/halfagod test confess` | confession now, without a cleric |
+| `/halfagod test interrogate <who>` | an interrogation now (tab completes: peddler, wick, vael, orsk, corwin, gorran, ossian, pilgrim, vasco, brann, midwife) |
+| `/halfagod test ahead` | villages forget you've visited; walk into one to hear what it's heard of you |
+| `/halfagod test bounty <player>` | a price on a player's head, free (hunters come the next night they're out under the sky) |
 | `/halfagod test trial release` | let yourself out (things and bed back) |
 | `/halfagod test trial reset` | the Watch forgets you (this act's trial can happen again) |
 | `/halfagod test endcard` | open "Your Story" (a preview before the ending) |

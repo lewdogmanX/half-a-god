@@ -151,7 +151,7 @@ public final class CourtBuilder {
         if (!Double.isNaN(sc.gaolerX())) {
             out.add(new Npc("gaoler", "The Gaoler", true, Kind.VILLAGER, VillagerProfession.TOOLSMITH, sc.gaolerX(), 0, c - 0.5, 90f));
         } else if (sc.phase() == PHASE_LABOUR) {
-            out.add(villager("gaoler", "The Gaoler", true, VillagerProfession.TOOLSMITH, -15.5, 0, c - 2.5, -25, c));
+            out.add(villager("gaoler", "The Gaoler", true, VillagerProfession.TOOLSMITH, -20.5, 0, c - 5.5, -25, c));
         } else if (sc.phase() == PHASE_MEAL) {
             out.add(new Npc("gaoler", "The Gaoler", true, Kind.VILLAGER, VillagerProfession.TOOLSMITH, 26.5, 0, c - 0.5, 90f));
         } else {

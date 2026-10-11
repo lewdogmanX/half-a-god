@@ -127,8 +127,8 @@ public final class Rivals {
     public static void saw(ServerPlayer doer, String what) {
         RepData d = Reputation.data(doer);
         long day = day(doer);
-        for (ServerPlayer other : doer.serverLevel().players()) {
-            if (other == doer || other.distanceTo(doer) > 48 || other.isSpectator()) {
+        for (ServerPlayer other : doer.getServer().getPlayerList().getPlayers()) {
+            if (other == doer || other.level() != doer.level() || other.distanceTo(doer) > 48 || other.isSpectator()) {
                 continue;
             }
             String entry = other.getUUID() + "|" + other.getName().getString() + "|" + what + "|" + day;

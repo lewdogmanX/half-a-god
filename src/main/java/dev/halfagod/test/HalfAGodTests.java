@@ -198,8 +198,8 @@ public final class HalfAGodTests {
         RepData d = Reputation.data(p);
 
         // the Hand breaks you out on the second day
-        d.handRank = 2;
         check(h, Trial.kidnap(p), "taken (breakout)");
+        d.handRank = 2;
         Trial.onPlea(p, "not_guilty");
         Trial.onPlea(p, "continue");
         check(h, d.trialState == 2 && d.sentence >= 3, "a long sentence for a repeat offender: " + d.sentence);
@@ -212,7 +212,7 @@ public final class HalfAGodTests {
         d.handRank = 1;
         p.getInventory().setItem(0, new ItemStack(Items.EMERALD, 20));
         p.resetStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER));
-        p.awardStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER), 2);
+        p.awardStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER), 4);
         check(h, Trial.kidnap(p), "taken (bribe)");
         boolean offered = d.trialScript.contains("\"bribe\"");
         check(h, offered, "a juror can be bought");
@@ -313,7 +313,8 @@ public final class HalfAGodTests {
         check(h, v.get("guilty").getAsBoolean() ? guiltyVotes >= 4 : guiltyVotes <= 3, "the votes match the verdict: " + guiltyVotes);
         Trial.onPlea(p, "continue");
         JsonObject t = JsonParser.parseString(d.trials.get(d.trials.size() - 1)).getAsJsonObject();
-        check(h, t.toString().contains("The court notes the lie") || t.toString().contains("Struck from the record"), "the Codex keeps the court's replies");
+        check(h, (t.toString().contains("The accused is lying") || t.toString().contains("Struck from the record"))
+                && t.toString().contains("It does not forgive them"), "the Codex keeps the court's replies");
         check(h, t.getAsJsonObject("verdict").has("votes"), "and the votes");
         Trial.release(p, d, "released");
         // the Gilded Hand speaks for its own

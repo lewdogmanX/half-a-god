@@ -125,18 +125,35 @@ public final class Words {
         if (heard.contains(key) && had == want) {
             return;
         }
-        if (had > 0) {
-            v.getGossips().remove(player, GossipType.MINOR_POSITIVE, had);
-        } else if (had < 0) {
-            v.getGossips().remove(player, GossipType.MINOR_NEGATIVE, -had);
-        }
-        if (want > 0) {
-            v.getGossips().add(player, GossipType.MINOR_POSITIVE, want);
-        } else if (want < 0) {
-            v.getGossips().add(player, GossipType.MINOR_NEGATIVE, -want);
-        }
+        gossip(v, player, had, false);
+        gossip(v, player, want, true);
         heard.putInt(key, want);
         v.getPersistentData().put(HEARD, heard);
+    }
+
+    /** vanilla caps minor good gossip at 25, so anything above that is told as major good gossip (5 a time) */
+    private static void gossip(Villager v, UUID player, int amount, boolean add) {
+        if (amount < 0) {
+            if (add) {
+                v.getGossips().add(player, GossipType.MINOR_NEGATIVE, -amount);
+            } else {
+                v.getGossips().remove(player, GossipType.MINOR_NEGATIVE, -amount);
+            }
+        } else if (amount > 0) {
+            int minor = Math.min(25, amount);
+            int major = (amount - minor) / 5;
+            if (add) {
+                v.getGossips().add(player, GossipType.MINOR_POSITIVE, minor);
+                if (major > 0) {
+                    v.getGossips().add(player, GossipType.MAJOR_POSITIVE, major);
+                }
+            } else {
+                v.getGossips().remove(player, GossipType.MINOR_POSITIVE, minor);
+                if (major > 0) {
+                    v.getGossips().remove(player, GossipType.MAJOR_POSITIVE, major);
+                }
+            }
+        }
     }
 
     // ------------------------------------------------------------------ confession
