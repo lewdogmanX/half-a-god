@@ -2250,10 +2250,11 @@ public final class StoryMapScreen extends Screen {
         if (!saveNote.isEmpty() && Util.getMillis() - saveNoteAt < 6000) {
             g.drawString(font, saveNote, x0 + cw / 2 - font.width(saveNote) / 2, Math.min(bottom - 10, byy + 20), 0xFFE8D2A0, false);
         }
-        if (!over) {
-            String p = "(a preview: the story isn't over yet)";
-            g.drawString(font, Component.literal(p).withStyle(ChatFormatting.ITALIC), x0 + cw / 2 - font.width(p) / 2, y0 - 16, 0xFFC9A880, false);
-        }
+    }
+
+    /** CI screenshots: press "Save image" */
+    public void saveCardForTest() {
+        captureFrames = 2;
     }
 
     private String num(String key) {

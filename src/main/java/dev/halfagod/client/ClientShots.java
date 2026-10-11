@@ -141,6 +141,11 @@ public final class ClientShots {
             });
             step(10, () -> shot("13_codex_" + page));
         }
+        step(60, () -> {
+            if (Minecraft.getInstance().screen instanceof StoryMapScreen s) {
+                s.saveCardForTest();
+            }
+        });
         step(20, () -> Minecraft.getInstance().stop());
     }
 
