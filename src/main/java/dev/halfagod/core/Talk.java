@@ -14,7 +14,8 @@ import java.util.UUID;
 import java.util.function.Consumer;
 
 /**
- * Conversations on the mod's own screen: a name, a few lines, and some answers to pick from. Used by the prisoners,
+ * Conversations: a name, a few lines, and some answers to pick from. When Mebahel's mod is installed and the player is
+ * talking to someone they right-clicked, the client shows them on his talk screen; otherwise on the mod's own. Used by the prisoners,
  * visitors, the gaoler, confessions, interrogations, the Gilded Hand's price on a rival, and testifying at a rival's trial.
  * The server remembers what each answer does; the client only shows it and says which one was picked.
  */
@@ -26,6 +27,8 @@ public final class Talk {
     }
 
     private static final Map<UUID, Open> OPEN = new HashMap<>();
+    /** who the player is talking to (the person they right-clicked), for the camera and the name on the talk screen */
+    private static final Map<UUID, UUID> SPEAKER = new HashMap<>();
     private static int counter;
 
     private final ServerPlayer player;
@@ -42,6 +45,24 @@ public final class Talk {
 
     public static Talk to(ServerPlayer player, String name) {
         return new Talk(player, name);
+    }
+
+    /** the player has just started talking to this person (right-clicked them): the conversation is theirs until it ends */
+    public static void speaking(ServerPlayer player, net.minecraft.world.entity.Entity who) {
+        SPEAKER.put(player.getUUID(), who.getUUID());
+    }
+
+    private static String speaker(ServerPlayer player) {
+        UUID id = SPEAKER.get(player.getUUID());
+        if (id == null) {
+            return null;
+        }
+        net.minecraft.world.entity.Entity e = player.serverLevel().getEntity(id);
+        if (e == null || !e.isAlive() || e.distanceToSqr(player) > 144) {
+            SPEAKER.remove(player.getUUID());
+            return null;
+        }
+        return id.toString();
     }
 
     public Talk title(String t) {
@@ -88,6 +109,10 @@ public final class Talk {
         o.addProperty("name", name);
         o.addProperty("title", title);
         o.addProperty("style", style);
+        String who = speaker(player);
+        if (who != null) {
+            o.addProperty("entity", who);
+        }
         JsonArray ls = new JsonArray();
         lines.forEach(ls::add);
         o.add("lines", ls);
@@ -105,6 +130,7 @@ public final class Talk {
 
     public static void close(ServerPlayer player) {
         OPEN.remove(player.getUUID());
+        SPEAKER.remove(player.getUUID());
         JsonObject o = new JsonObject();
         o.addProperty("close", true);
         Net.send(player, new Payloads.Talk(o.toString()));
@@ -127,6 +153,10 @@ public final class Talk {
             return false;
         }
         op.action().accept(player);
+        if (!OPEN.containsKey(player.getUUID())) {
+            // nothing more to say: the conversation is over (the talk screen closes)
+            close(player);
+        }
         return true;
     }
 
@@ -143,6 +173,7 @@ public final class Talk {
                 Open o = OPEN.get(player.getUUID());
                 if (o != null && o.id().equals(a)) {
                     OPEN.remove(player.getUUID());
+                    SPEAKER.remove(player.getUUID());
                 }
             }
             case "line" -> Trial.onLineShown(player, parse(a));

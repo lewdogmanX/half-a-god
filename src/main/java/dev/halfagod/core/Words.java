@@ -165,6 +165,7 @@ public final class Words {
         }
         event.setCanceled(true);
         if (event.getHand() == net.minecraft.world.InteractionHand.MAIN_HAND) {
+            Talk.speaking(player, v);
             confession(player);
         }
     }

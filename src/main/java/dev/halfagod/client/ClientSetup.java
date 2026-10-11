@@ -16,13 +16,23 @@ public final class ClientSetup {
     }
 
     public static void init(IEventBus modBus) {
-        modBus.addListener((RegisterGuiLayersEvent e) ->
-                e.registerAbove(VanillaGuiLayers.BOSS_OVERLAY, ResourceLocation.fromNamespaceAndPath(HalfAGod.MODID, "reputation"), RepHud::render));
+        modBus.addListener((RegisterGuiLayersEvent e) -> {
+            e.registerAbove(VanillaGuiLayers.BOSS_OVERLAY, ResourceLocation.fromNamespaceAndPath(HalfAGod.MODID, "reputation"), RepHud::render);
+            // the trial's panel, over everything, while you look around the court
+            e.registerAboveAll(ResourceLocation.fromNamespaceAndPath(HalfAGod.MODID, "trial"), TrialScreen::hud);
+        });
         NeoForge.EVENT_BUS.addListener((CustomizeGuiOverlayEvent.BossEventProgress e) -> RepHud.onBossBar(e));
         NeoForge.EVENT_BUS.addListener((ClientTickEvent.Post e) -> {
             RepHud.tick();
             CameraShake.tick();
+            MebTalk.tick();
+            TrialScreen.clientTick();
         });
+        NeoForge.EVENT_BUS.addListener(TrialScreen::onClickInput);
+        NeoForge.EVENT_BUS.addListener(TrialScreen::onKey);
+        NeoForge.EVENT_BUS.addListener(TrialScreen::onMovement);
+        NeoForge.EVENT_BUS.addListener(TrialScreen::onLayer);
+        NeoForge.EVENT_BUS.addListener(TrialScreen::onLogout);
         NeoForge.EVENT_BUS.addListener((ViewportEvent.ComputeCameraAngles e) -> CameraShake.apply(e));
         if (Boolean.getBoolean("halfagod.clientshots")) {
             ClientShots.init();

@@ -7,14 +7,22 @@ import com.google.gson.JsonParser;
 import dev.halfagod.net.Payloads;
 import net.minecraft.ChatFormatting;
 import net.minecraft.Util;
+import net.minecraft.client.DeltaTracker;
+import net.minecraft.client.Minecraft;
 import net.minecraft.client.gui.GuiGraphics;
 import net.minecraft.client.gui.components.Button;
 import net.minecraft.client.gui.components.Tooltip;
 import net.minecraft.client.gui.screens.Screen;
 import net.minecraft.client.resources.sounds.SimpleSoundInstance;
 import net.minecraft.network.chat.Component;
+import net.minecraft.resources.ResourceLocation;
 import net.minecraft.sounds.SoundEvents;
 import net.minecraft.util.FormattedCharSequence;
+import net.neoforged.neoforge.client.event.ClientPlayerNetworkEvent;
+import net.neoforged.neoforge.client.event.InputEvent;
+import net.neoforged.neoforge.client.event.MovementInputUpdateEvent;
+import net.neoforged.neoforge.client.event.RenderGuiLayerEvent;
+import net.neoforged.neoforge.client.gui.VanillaGuiLayers;
 import net.neoforged.neoforge.network.PacketDistributor;
 import org.lwjgl.glfw.GLFW;
 
@@ -25,10 +33,13 @@ import java.util.Set;
 
 /**
  * The Trial, as you see it from the dock: you're taken in the night (a few dark lines), then the court speaks one line
- * at a time (click or wait) and the person speaking turns to you in the courtroom. After each witness you answer the
- * charge: deny it, explain it, or say nothing. Then you plead, the six jurors vote one by one, and the verdict. The court
- * stays in view: the words go in a panel along the bottom, with the court's name on a small banner at the top.
- * Esc doesn't get you out of court.
+ * at a time, waiting for you (click, Space or Enter) and the person speaking turns to you in the courtroom. After each
+ * witness you answer the charge: deny it, explain it, or say nothing. Then you plead, the six jurors vote one by one,
+ * and the verdict. The words go in a panel along the bottom, with the court's name on a small banner at the top.
+ *
+ * Most of the time the panel is drawn over the game, not as a menu: you can look around the courtroom (you can't walk
+ * out of the dock). Only when you have to answer a charge or plead does it become a screen with a cursor and buttons
+ * (or keys 1 to 4), and then it goes back. Esc doesn't get you out of court.
  */
 public final class TrialScreen extends Screen {
     private static final int PAPER = 0xE8EDE0C2;
@@ -56,6 +67,18 @@ public final class TrialScreen extends Screen {
     private final Set<Integer> answered = new HashSet<>();
     private final Set<Integer> told = new HashSet<>();
     private int panelX, panelY, panelW, panelH;
+
+    /** the trial in progress (drawn over the game, or the open screen when you must choose), or null */
+    private static TrialScreen active;
+    /** CI screenshots: hide the trial for a moment to look at the courtroom on its own */
+    public static boolean testHide;
+    private static long lastClick;
+    private static int awayTicks;
+    private static final ResourceLocation COURT = ResourceLocation.fromNamespaceAndPath("half_a_god", "court");
+    private static final java.util.Set<ResourceLocation> HIDDEN = java.util.Set.of(VanillaGuiLayers.HOTBAR, VanillaGuiLayers.JUMP_METER,
+            VanillaGuiLayers.EXPERIENCE_BAR, VanillaGuiLayers.PLAYER_HEALTH, VanillaGuiLayers.ARMOR_LEVEL, VanillaGuiLayers.FOOD_LEVEL,
+            VanillaGuiLayers.VEHICLE_HEALTH, VanillaGuiLayers.AIR_LEVEL, VanillaGuiLayers.SELECTED_ITEM_NAME, VanillaGuiLayers.EXPERIENCE_LEVEL,
+            ResourceLocation.fromNamespaceAndPath("half_a_god", "reputation"));
 
     public TrialScreen(String json) {
         super(Component.literal("The Court of the Watch"));
@@ -160,7 +183,7 @@ public final class TrialScreen extends Screen {
             for (int i = 0; i < answers.size(); i++) {
                 JsonObject a = answers.get(i).getAsJsonObject();
                 String id = a.get("id").getAsString();
-                Button b = Button.builder(Component.literal(a.get("label").getAsString()), btn -> answer(id))
+                Button b = Button.builder(Component.literal((i + 1) + ". " + a.get("label").getAsString()), btn -> answer(id))
                         .bounds(panelX + 12 + i * (bw + 8), panelY + panelH - 28, bw, 20).build();
                 if (a.has("hint")) {
                     b.setTooltip(Tooltip.create(Component.literal(a.get("hint").getAsString())));
@@ -177,17 +200,12 @@ public final class TrialScreen extends Screen {
                 String id = p.get("id").getAsString();
                 int bx = panelX + 12 + (i % cols) * (bw + 8);
                 int by = panelY + panelH - 8 - rows * 22 + (i / cols) * 22;
-                Button b = Button.builder(Component.literal(p.get("label").getAsString()), btn -> plead(id)).bounds(bx, by, bw, 20).build();
+                Button b = Button.builder(Component.literal((i + 1) + ". " + p.get("label").getAsString()), btn -> plead(id)).bounds(bx, by, bw, 20).build();
                 if (p.has("hint")) {
                     b.setTooltip(Tooltip.create(Component.literal(p.get("hint").getAsString())));
                 }
                 addRenderableWidget(b);
             }
-        } else if (phase == 3 && since() >= votesDone()) {
-            addRenderableWidget(Button.builder(Component.literal("Continue"), btn -> {
-                PacketDistributor.sendToServer(new Payloads.Plea("continue"));
-                onClose();
-            }).bounds(panelX + panelW - 112, panelY + panelH - 28, 100, 20).build());
         }
     }
 
@@ -229,15 +247,175 @@ public final class TrialScreen extends Screen {
 
     @Override
     public void tick() {
-        if (phase == 0 && since() > 1.4f + kidnap.size() * 2.6f + 1.5f) {
-            setPhase(1);
-        } else if (phase == 1 && asking < 0) {
-            if (shown == 0 || Util.getMillis() - lastLine > 3800) {
-                next();
-            }
-        } else if (phase == 3 && children().isEmpty() && since() >= votesDone()) {
-            rebuild();
+        // the court waits for you: only its first line comes by itself
+        if (phase == 1 && asking < 0 && shown == 0 && !lines.isEmpty()) {
+            next();
         }
+    }
+
+    private float kidnapDone() {
+        return kidnap.isEmpty() ? 0 : 1.0f + (kidnap.size() - 1) * 2.6f + 1.2f;
+    }
+
+    /** a click, Space or Enter: the next line (or all of what's fading in, or out of the court at the end) */
+    public void click() {
+        if (phase == 0) {
+            if (since() < kidnapDone()) {
+                phaseStart = Util.getMillis() - (long) (kidnapDone() * 1000);
+            } else {
+                setPhase(1);
+            }
+            return;
+        }
+        if (phase == 1 && asking < 0) {
+            next();
+        } else if (phase == 3 && verdict != null) {
+            if (since() < votesDone()) {
+                phaseStart = Util.getMillis() - (long) (votesDone() * 1000);
+            } else {
+                finish();
+            }
+        }
+    }
+
+    /** out of court: the server takes you to your cell, or home */
+    private void finish() {
+        PacketDistributor.sendToServer(new Payloads.Plea("continue"));
+        if (active == this) {
+            active = null;
+        }
+        Minecraft mc = Minecraft.getInstance();
+        if (mc.screen == this) {
+            mc.setScreen(null);
+        }
+    }
+
+    /** answering a charge, or pleading: the only times you need a cursor */
+    private boolean needsInput() {
+        return (phase == 1 && asking >= 0) || (phase == 2 && !pleaded);
+    }
+
+    /** opens the screen when there's a choice to make, and closes it again after (so you can look around) */
+    private void sync() {
+        Minecraft mc = Minecraft.getInstance();
+        if (testHide) {
+            if (mc.screen == this) {
+                mc.setScreen(null);
+            }
+            return;
+        }
+        if (needsInput()) {
+            if (mc.screen == null) {
+                mc.setScreen(this);
+            }
+        } else if (mc.screen == this) {
+            mc.setScreen(null);
+        }
+    }
+
+    // ------------------------------------------------------------------ the trial, from outside the screen
+    /** the court's script arrives (the first time, a resend, a rival's words, or the verdict) */
+    public static void receive(String json) {
+        if (active == null || (active.phase == 3 && !json.contains("\"verdict\""))) {
+            // (a new trial, never an old verdict left on screen)
+            active = new TrialScreen(json);
+        } else {
+            active.update(json);
+        }
+        active.sync();
+    }
+
+    public static TrialScreen active() {
+        return active;
+    }
+
+    /** the panel, drawn over the game whenever the trial isn't the open screen */
+    public static void hud(GuiGraphics g, DeltaTracker dt) {
+        TrialScreen t = active;
+        Minecraft mc = Minecraft.getInstance();
+        if (t == null || testHide || mc.screen == t) {
+            return;
+        }
+        int w = g.guiWidth(), h = g.guiHeight();
+        if (t.minecraft == null || t.width != w || t.height != h) {
+            t.init(mc, w, h);
+        }
+        t.render(g, -1, -1, dt.getGameTimeDeltaPartialTick(true));
+    }
+
+    public static void clientTick() {
+        TrialScreen t = active;
+        Minecraft mc = Minecraft.getInstance();
+        if (t == null) {
+            return;
+        }
+        if (mc.player == null || mc.level == null) {
+            active = null;
+            return;
+        }
+        if (mc.screen != t) {
+            t.tick();
+        }
+        t.sync();
+        // taken out of court some other way (the server ended the trial): the panel goes too
+        if (t.phase >= 1 && !mc.level.dimension().location().equals(COURT)) {
+            if (++awayTicks > 100) {
+                active = null;
+                if (mc.screen == t) {
+                    mc.setScreen(null);
+                }
+            }
+        } else {
+            awayTicks = 0;
+        }
+    }
+
+    private static boolean listening() {
+        Minecraft mc = Minecraft.getInstance();
+        return active != null && !testHide && mc.screen == null;
+    }
+
+    /** a click in the court moves the court on (and never hits anything) */
+    public static void onClickInput(InputEvent.InteractionKeyMappingTriggered e) {
+        if (!listening()) {
+            return;
+        }
+        e.setCanceled(true);
+        e.setSwingHand(false);
+        if ((e.isAttack() || e.isUseItem()) && Util.getMillis() - lastClick > 250) {
+            lastClick = Util.getMillis();
+            active.click();
+        }
+    }
+
+    public static void onKey(InputEvent.Key e) {
+        if (listening() && e.getAction() == GLFW.GLFW_PRESS
+                && (e.getKey() == GLFW.GLFW_KEY_SPACE || e.getKey() == GLFW.GLFW_KEY_ENTER || e.getKey() == GLFW.GLFW_KEY_KP_ENTER)) {
+            active.click();
+        }
+    }
+
+    /** you stay in the dock: you can look around, not walk (or jump) */
+    public static void onMovement(MovementInputUpdateEvent e) {
+        if (active != null && active.phase >= 1) {
+            var in = e.getInput();
+            in.leftImpulse = 0;
+            in.forwardImpulse = 0;
+            in.up = in.down = in.left = in.right = false;
+            in.jumping = false;
+            in.shiftKeyDown = false;
+        }
+    }
+
+    /** the hotbar and the bars are put away while the court sits (the panel is where they'd be) */
+    public static void onLayer(RenderGuiLayerEvent.Pre e) {
+        if (active != null && !testHide && HIDDEN.contains(e.getName())) {
+            e.setCanceled(true);
+        }
+    }
+
+    public static void onLogout(ClientPlayerNetworkEvent.LoggingOut e) {
+        active = null;
     }
 
     private void next() {
@@ -301,6 +479,10 @@ public final class TrialScreen extends Screen {
         super.render(g, mx, my, partial);
         if (phase == 0) {
             renderKidnap(g);
+            if (since() >= kidnapDone()) {
+                String hint = "Click, Space or Enter to continue";
+                g.drawString(font, hint, width / 2 - font.width(hint) / 2, height - 24, 0x80E8DCC4, false);
+            }
             return;
         }
         String head = "THE COURT OF THE WATCH";
@@ -322,14 +504,19 @@ public final class TrialScreen extends Screen {
         if (phase == 1 && asking >= 0) {
             g.drawString(font, "HOW DO YOU ANSWER THE CHARGE?", ix, bottom + 4, RED_INK, false);
         } else if (phase == 1) {
-            String hint = "click to go on";
-            g.drawString(font, hint, panelX + panelW - 8 - font.width(hint), panelY + panelH - 12, 0xFF9A8662, false);
+            String hint = "Click, Space or Enter to continue";
+            boolean blink = (Util.getMillis() / 600) % 2 == 0;
+            g.drawString(font, (blink ? "\u25B6 " : "  ") + hint, panelX + panelW - 8 - font.width("\u25B6 " + hint), panelY + panelH - 12, 0xFF9A8662, false);
         } else if (phase == 2 && !pleaded) {
             g.drawString(font, "HOW DO YOU PLEAD?", ix, bottom + 3, RED_INK, false);
         } else if (phase == 2) {
             g.drawString(font, Component.literal("The jury is out...").withStyle(ChatFormatting.ITALIC), ix, panelY + panelH - 16, 0xFF6B5638, false);
         } else if (phase == 3 && verdict != null) {
             renderVerdict(g, ix, iw);
+            if (since() >= votesDone()) {
+                String hint = "Click, Space or Enter to leave the court";
+                g.drawString(font, hint, panelX + panelW - 8 - font.width(hint), panelY + panelH - 12, 0xFF9A8662, false);
+            }
         }
     }
 
@@ -441,8 +628,8 @@ public final class TrialScreen extends Screen {
         if (super.mouseClicked(mx, my, button)) {
             return true;
         }
-        if (phase <= 1 && asking < 0) {
-            next();
+        if (!needsInput()) {
+            click();
             return true;
         }
         return false;
@@ -450,9 +637,21 @@ public final class TrialScreen extends Screen {
 
     @Override
     public boolean keyPressed(int key, int scan, int mods) {
-        if ((key == GLFW.GLFW_KEY_SPACE || key == GLFW.GLFW_KEY_ENTER) && phase <= 1 && asking < 0) {
-            next();
+        if ((key == GLFW.GLFW_KEY_SPACE || key == GLFW.GLFW_KEY_ENTER) && !needsInput()) {
+            click();
             return true;
+        }
+        // 1 to 4: the answers to a charge, or the pleas, in order
+        int n = key - GLFW.GLFW_KEY_1;
+        if (n >= 0 && n < 4) {
+            if (phase == 1 && asking >= 0 && data.has("answers") && n < data.getAsJsonArray("answers").size()) {
+                answer(data.getAsJsonArray("answers").get(n).getAsJsonObject().get("id").getAsString());
+                return true;
+            }
+            if (phase == 2 && !pleaded && n < data.getAsJsonArray("pleas").size()) {
+                plead(data.getAsJsonArray("pleas").get(n).getAsJsonObject().get("id").getAsString());
+                return true;
+            }
         }
         return super.keyPressed(key, scan, mods);
     }
@@ -470,6 +669,11 @@ public final class TrialScreen extends Screen {
     /** CI screenshots: is the court waiting on an answer to a charge? */
     public boolean isAsking() {
         return asking >= 0;
+    }
+
+    /** CI screenshots: a plea, as if its button were clicked */
+    public void pleadForTest(String id) {
+        plead(id);
     }
 
     /** CI screenshots: answer the charge on screen */

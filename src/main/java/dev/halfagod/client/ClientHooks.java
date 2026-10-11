@@ -46,12 +46,7 @@ public final class ClientHooks {
     }
 
     public static void onTrial(Payloads.Trial p) {
-        Minecraft mc = Minecraft.getInstance();
-        if (mc.screen instanceof TrialScreen t) {
-            t.update(p.json());
-        } else {
-            mc.setScreen(new TrialScreen(p.json()));
-        }
+        TrialScreen.receive(p.json());
     }
 
     public static void onTalk(Payloads.Talk p) {
@@ -61,6 +56,11 @@ public final class ClientHooks {
             if (mc.screen instanceof TalkScreen) {
                 mc.setScreen(null);
             }
+            MebTalk.close();
+            return;
+        }
+        // on Mebahel's own talk screen when his mod is here and you're talking to someone; otherwise on the mod's
+        if (MebTalk.show(o)) {
             return;
         }
         if (mc.screen instanceof TalkScreen t) {

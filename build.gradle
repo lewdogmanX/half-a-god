@@ -40,6 +40,13 @@ neoForge {
             programArguments.addAll('--width', '1280', '--height', '720', '--username', 'Tester')
             gameDirectory.set(project.file('run-shots'))
         }
+        // the same, with Sinytra Connector and Mebahel's RPG (a Fabric mod) in its mods folder, as in the modpack
+        shotsMeb {
+            client()
+            systemProperty 'halfagod.clientshots', 'true'
+            programArguments.addAll('--width', '1280', '--height', '720', '--username', 'Tester')
+            gameDirectory.set(project.file('run-shots-meb'))
+        }
     }
     mods {
         "${mod_id}" { sourceSet(sourceSets.main) }

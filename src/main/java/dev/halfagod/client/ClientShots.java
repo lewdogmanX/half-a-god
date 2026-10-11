@@ -44,7 +44,6 @@ public final class ClientShots {
     private static final List<Step> STEPS = new ArrayList<>();
     private static int index;
     private static int wait = 200;
-    private static Screen trial;
 
     private ClientShots() {
     }
@@ -88,22 +87,37 @@ public final class ClientShots {
 
     /** clicks through the court until it asks for an answer to a charge */
     private static void untilAsking() {
-        Minecraft mc = Minecraft.getInstance();
-        for (int i = 0; i < 15 && mc.screen instanceof TrialScreen t && !t.isAsking(); i++) {
-            t.mouseClicked(1, 1, 0);
+        for (int i = 0; i < 15 && TrialScreen.active() != null && !TrialScreen.active().isAsking(); i++) {
+            TrialScreen.active().click();
         }
     }
 
-    /** clicks through the court, answering each charge in turn */
+    /** clicks through the court, answering each charge in turn, until it asks for a plea */
     private static void advance(int times) {
-        Minecraft mc = Minecraft.getInstance();
-        for (int i = 0; i < times && mc.screen != null; i++) {
-            if (mc.screen instanceof TrialScreen t && t.isAsking()) {
+        for (int i = 0; i < times && TrialScreen.active() != null; i++) {
+            TrialScreen t = TrialScreen.active();
+            if (t.isAsking()) {
                 t.answerForTest(ANSWERS[answered++ % ANSWERS.length]);
             } else {
-                mc.screen.mouseClicked(1, 1, 0);
+                t.click();
             }
         }
+    }
+
+    private static void trialClick(int times) {
+        for (int i = 0; i < times && TrialScreen.active() != null; i++) {
+            TrialScreen.active().click();
+        }
+    }
+
+    /** right-clicks one of the prison's people (server side): who you talk to is who the talk screen turns to */
+    private static void talkTo(ServerPlayer sp, String role) {
+        net.minecraft.server.level.ServerLevel court = Trial.court(sp.getServer());
+        net.minecraft.world.entity.Entity who = CourtBuilder.find(court, slot(sp), role);
+        if (who != null) {
+            Talk.speaking(sp, who);
+        }
+        Prison.onTalk(sp, role);
     }
 
     private static void fly(ServerPlayer sp, boolean on) {
@@ -137,16 +151,19 @@ public final class ClientShots {
         step(30, () -> Minecraft.getInstance().setScreen(null));
         step(100, () -> server(sp -> Trial.kidnap(sp, Trial.SAMPLE_RECORD)));
         step(10, () -> shot("03_trial_taken"));
-        step(20, () -> {
-            trial = Minecraft.getInstance().screen;
-            click(3);
-        });
+        step(20, () -> trialClick(3));
         step(15, () -> shot("04_trial_court"));
+        // looking around while the court speaks: the jury, then the witness stand, then back to the bench
+        step(10, () -> look(-128f, 5f));
+        step(10, () -> shot("04c_trial_look_jury"));
+        step(10, () -> look(140f, 0f));
+        step(10, () -> shot("04d_trial_look_witness"));
+        step(10, () -> look(180f, 0f));
         step(5, ClientShots::untilAsking);
         step(25, () -> shot("04b_trial_answer"));
         step(20, () -> advance(60));
         step(10, () -> shot("05_trial_plea"));
-        step(30, () -> Minecraft.getInstance().setScreen(null));
+        step(30, () -> TrialScreen.testHide = true);
         step(10, () -> shot("06_courtroom"));
         // the court from other angles: the jury on the right, the witness stand on the left, and from the gallery
         step(10, () -> look(-128f, 5f));
@@ -169,14 +186,15 @@ public final class ClientShots {
             at(sp, CourtBuilder.DOCK.getX() + 0.5, 0, CourtBuilder.DOCK.getZ() + 0.5, 180f, 0f);
             fly(sp, false);
         }));
-        step(20, () -> Minecraft.getInstance().setScreen(trial));
-        step(90, () -> PacketDistributor.sendToServer(new Payloads.Plea("silent")));
+        step(20, () -> TrialScreen.testHide = false);
+        step(90, () -> {
+            if (TrialScreen.active() != null) {
+                TrialScreen.active().pleadForTest("silent");
+            }
+        });
         step(140, () -> shot("07_verdict_votes"));
         step(10, () -> shot("07b_verdict"));
-        step(80, () -> {
-            PacketDistributor.sendToServer(new Payloads.Plea("continue"));
-            Minecraft.getInstance().setScreen(null);
-        });
+        step(80, () -> trialClick(2));
         step(10, () -> shot("08_cell_bars"));
         step(10, () -> server(sp -> {
             Reputation.data(sp).sentence = 5;
@@ -225,7 +243,7 @@ public final class ClientShots {
         step(40, () -> server(sp -> Trial.passTime(sp, 1220)));
         step(40, () -> look(-90f, 6f));
         step(10, () -> shot("15_cafeteria"));
-        step(10, () -> server(sp -> Prison.onTalk(sp, "prisoner0")));
+        step(10, () -> server(sp -> talkTo(sp, "prisoner0")));
         step(25, () -> shot("16_talk_maddock"));
         step(10, () -> server(sp -> Talk.choose(sp, "where")));
         step(25, () -> shot("16b_talk_where"));
@@ -242,8 +260,15 @@ public final class ClientShots {
         }));
         step(60, () -> look(180f, 10f));
         step(10, () -> shot("17_visitor"));
-        step(10, () -> server(sp -> Prison.onTalk(sp, "visitor")));
+        step(10, () -> server(sp -> talkTo(sp, "visitor")));
         step(25, () -> shot("17b_visitor_talk"));
+        // on Mebahel's talk screen (when his mod is installed): click on to the visitor's next line
+        step(10, () -> {
+            if (MebTalk.open()) {
+                MebTalk.pickForTest(0);
+            }
+        });
+        step(40, () -> shot("17c_visitor_next"));
         step(10, () -> {
             server(sp -> Talk.choose(sp, "leave"));
             Minecraft.getInstance().setScreen(null);

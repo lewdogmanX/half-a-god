@@ -176,8 +176,9 @@ From Act II on, if you're Fallen or Wicked, the Watch can come for you in your s
 (one in three). You wake in chains in the dock of the Watch's own court, a small dimension of its own: a vaulted
 hall of deepslate and dark oak, with amber windows, chandeliers, balconies and a rose window, the judge on a raised
 bench before a crimson screen under the Watch's great eye and its rays of light, a clerk, the Watch Captain, a witness
-stand, six jurors in a two-tier box, the evidence table, two iron golem guards and a tiered gallery of onlookers. The court speaks in a panel along the bottom of the screen, so you can watch it all
-happen:
+stand, six jurors in a two-tier box, the evidence table, two iron golem guards and a tiered gallery of onlookers. The court speaks in a panel along the bottom of the screen, one line at a time, and waits for
+you: click, or press Space or Enter, when you've read it. You're held in the dock but free to look around while it
+speaks; a cursor only appears when you answer a charge or plead (buttons, or keys 1 to 4):
 
 - **The court acts it out.** Whoever is speaking turns to you and glows. Each witness takes the stand in turn (the
   stand stays empty for one who "cannot be found"), and the gallery mutters at the worst of it.
@@ -244,6 +245,11 @@ tool and the hole are gone. Out, you wake at home with your things; the Hand res
 The mod has a built-in, always-on resource pack ("Half a God: paper and ink") that repaints Mebahel's quest board and
 contract notes (dark walnut, brass, aged parchment, brass tacks and red wax seals, at 16 times the resolution) and
 recolours his talk screen to match. Only how they look changes. Turn it off in Resource Packs if you prefer his.
+
+The mod's own conversations (the prisoners, Old Maddock, the gaoler, your visitor, and confession at a cleric) use
+his talk screen too when his mod is installed through Sinytra Connector: his typewriter text, villager voices and
+camera, one line per page (click Continue), your answers on the last. If his screen can't be used for any reason, the
+mod's own talk screen opens instead.
 
 ## Multiplayer
 

@@ -1084,6 +1084,7 @@ public final class Trial {
             event.setCanceled(true);
             if (event.getEntity() instanceof ServerPlayer player && event.getHand() == net.minecraft.world.InteractionHand.MAIN_HAND) {
                 String role = CourtBuilder.role(event.getTarget());
+                Talk.speaking(player, event.getTarget());
                 if (Prison.onTalk(player, role)) {
                     return;
                 }
