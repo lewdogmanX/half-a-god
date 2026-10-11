@@ -75,7 +75,13 @@ public final class Trial {
     private Trial() {
     }
 
+    /** game tests only: the test server never loads dimensions from data packs, so the tests hold court in another level */
+    public static ServerLevel testCourt;
+
     public static ServerLevel court(MinecraftServer server) {
+        if (testCourt != null) {
+            return testCourt;
+        }
         ServerLevel l = server.getLevel(COURT);
         if (l == null && !warned) {
             warned = true;
@@ -85,7 +91,8 @@ public final class Trial {
     }
 
     public static boolean inCourt(ServerPlayer player) {
-        return player.level().dimension() == COURT;
+        return player.level().dimension() == COURT || (testCourt != null && player.level() == testCourt
+                && Math.abs(player.getX() - CourtBuilder.origin(CourtData.get(testCourt).slot(player.getUUID())).getX()) < 64);
     }
 
     private static long now(ServerPlayer player) {
@@ -254,11 +261,8 @@ public final class Trial {
         send(player, new Payloads.Trial(o.toString()));
     }
 
-    /** Sends a packet only if the player's game can take it (it always can with the mod installed; tests can't). */
     public static void send(ServerPlayer player, net.minecraft.network.protocol.common.custom.CustomPacketPayload payload) {
-        if (player.connection != null && player.connection.hasChannel(payload.type())) {
-            PacketDistributor.sendToPlayer(player, payload);
-        }
+        Net.send(player, payload);
     }
 
     // ------------------------------------------------------------------ the plea and the verdict

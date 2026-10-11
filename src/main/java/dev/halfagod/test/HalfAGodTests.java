@@ -61,10 +61,19 @@ public final class HalfAGodTests {
         h.succeed();
     }
 
+    /** The game-test server never loads dimensions from data packs (a real server does; CI checks that separately with a
+     *  real server run), so the tests hold court in the test level. */
+    private static ServerLevel court(GameTestHelper h) {
+        if (h.getLevel().getServer().getLevel(Trial.COURT) == null) {
+            Trial.testCourt = h.getLevel();
+        }
+        return Trial.court(h.getLevel().getServer());
+    }
+
     @GameTest(template = "empty")
     public static void courtBuilds(GameTestHelper h) {
-        ServerLevel court = Trial.court(h.getLevel().getServer());
-        check(h, court != null, "the court dimension is loaded");
+        ServerLevel court = court(h);
+        check(h, court != null, "somewhere to hold court");
         int slot = 900;
         CourtBuilder.ensure(court, slot);
         BlockPos o = CourtBuilder.origin(slot);
@@ -83,6 +92,7 @@ public final class HalfAGodTests {
 
     @GameTest(template = "empty", timeoutTicks = 200)
     public static void wholeTrial(GameTestHelper h) {
+        court(h);
         ServerPlayer p = h.makeMockServerPlayerInLevel();
         BlockPos home = h.absolutePos(new BlockPos(1, 1, 1));
         p.teleportTo(h.getLevel(), home.getX() + 0.5, home.getY(), home.getZ() + 0.5, 0f, 0f);
@@ -106,7 +116,7 @@ public final class HalfAGodTests {
         check(h, v.get("guilty").getAsBoolean(), "guilty");
         Trial.onPlea(p, "continue");
         check(h, d.trialState == 2, "in a cell");
-        check(h, Trial.inCourt(p), "still in the court's dimension");
+        check(h, Trial.inCourt(p), "still in court");
         check(h, d.sentence >= 1, "a sentence");
         ServerLevel court = Trial.court(p.getServer());
         check(h, court.getBlockState(BlockPos.of(d.escapeBlock)).is(Blocks.BLACK_CONCRETE), "the loose block is there");
@@ -116,7 +126,7 @@ public final class HalfAGodTests {
             Trial.onNightInCell(p);
         }
         check(h, d.trialState == 0, "released after serving");
-        check(h, p.level().dimension() == Level.OVERWORLD, "home again");
+        check(h, p.level().dimension() == Level.OVERWORLD && p.blockPosition().distSqr(home) < 9, "home again, by the bed");
         check(h, p.getInventory().countItem(Items.DIAMOND) == 5, "diamonds back");
         check(h, p.getInventory().countItem(Items.EMERALD) == 20, "emeralds back");
         check(h, home.equals(p.getRespawnPosition()), "their respawn point is back");

@@ -37,13 +37,23 @@ jobs:
         run: |
           set -o pipefail
           timeout 900 gradle runGametest --no-daemon 2>&1 | tee gametest.log
+      - name: Real server (new world, then the same world again)
+        id: smoke
+        continue-on-error: true
+        shell: bash
+        run: |
+          mkdir -p run-smoke && echo "eula=true" > run-smoke/eula.txt
+          timeout 600 gradle runSmoke --no-daemon 2>&1 | tee smoke1.log
+          timeout 600 gradle runSmoke --no-daemon 2>&1 | tee smoke2.log
+          grep -h "HAG-SMOKE" smoke1.log smoke2.log
+          grep -q "court=loaded cell=built night=yes beds=work" smoke2.log
       - name: Report game tests
         if: always() && steps.gametest.outcome != 'skipped'
         env:
           GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         shell: bash
         run: |
-          { echo "### Game tests: ${{ steps.gametest.outcome }}"; echo '```'; grep -iE "gametest|game test|half_a_god|halfagodtests|required tests|failed|passed|Exception|Caused by|ERROR" gametest.log | grep -v "DEBUG" | head -120; echo '```'; echo '<details><summary>Last lines</summary>'; echo; echo '```'; tail -n 80 gametest.log; echo '```'; echo '</details>'; } > gt.md
+          { echo "### Game tests: ${{ steps.gametest.outcome }}, real server: ${{ steps.smoke.outcome }}"; echo '```'; grep -h "HAG-SMOKE\|Exception\|ERROR" smoke1.log smoke2.log 2>/dev/null | head -40; echo '---'; grep -iE "gametest|game test|half_a_god|halfagodtests|required tests|failed|passed|Exception|Caused by|ERROR" gametest.log | grep -v "DEBUG" | head -120; echo '```'; echo '<details><summary>Last lines</summary>'; echo; echo '```'; tail -n 80 gametest.log; echo '```'; echo '</details>'; } > gt.md
           gh api repos/${{ github.repository }}/commits/${{ github.sha }}/comments -F body=@gt.md
       - uses: actions/upload-artifact@v4
         if: success()

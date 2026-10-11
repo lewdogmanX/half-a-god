@@ -111,6 +111,6 @@ public final class MapStates {
         out.add("story", EndCard.compute(player, traits));
         // other players on the server
         out.add("others", Rivalry.info(player));
-        PacketDistributor.sendToPlayer(player, new Payloads.MapState(out.toString()));
+        Net.send(player, new Payloads.MapState(out.toString()));
     }
 }

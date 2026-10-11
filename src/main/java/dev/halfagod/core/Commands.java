@@ -56,11 +56,11 @@ public final class Commands {
                         c.getSource().sendFailure(Component.literal("Your story isn't over yet."));
                         return 0;
                     }
-                    net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(p, new dev.halfagod.net.Payloads.OpenMap("fates"));
+                    Net.send(p, new dev.halfagod.net.Payloads.OpenMap("fates"));
                     return 1;
                 }))
                 .then(literal("map").executes(c -> {
-                    net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(c.getSource().getPlayerOrException(),
+                    Net.send(c.getSource().getPlayerOrException(),
                             new dev.halfagod.net.Payloads.OpenMap(""));
                     return 1;
                 }))
@@ -131,7 +131,7 @@ public final class Commands {
                         })))
                 .then(literal("endcard").executes(c -> {
                     ServerPlayer p = c.getSource().getPlayerOrException();
-                    PacketDistributor.sendToPlayer(p, new Payloads.OpenMap("story"));
+                    Net.send(p, new Payloads.OpenMap("story"));
                     return ok(c.getSource(), "Opened \"Your Story\" (a preview until the story is really over).");
                 }))
                 .then(literal("codex")
@@ -143,7 +143,7 @@ public final class Commands {
                                     return b.buildFuture();
                                 })
                                 .executes(c -> {
-                                    PacketDistributor.sendToPlayer(c.getSource().getPlayerOrException(), new Payloads.OpenMap(StringArgumentType.getString(c, "page")));
+                                    Net.send(c.getSource().getPlayerOrException(), new Payloads.OpenMap(StringArgumentType.getString(c, "page")));
                                     return 1;
                                 })));
     }
@@ -169,7 +169,7 @@ public final class Commands {
     }
 
     private static int openStory(CommandSourceStack source) throws com.mojang.brigadier.exceptions.CommandSyntaxException {
-        PacketDistributor.sendToPlayer(source.getPlayerOrException(), new Payloads.OpenStory(true));
+        Net.send(source.getPlayerOrException(), new Payloads.OpenStory(true));
         return 1;
     }
 

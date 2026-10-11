@@ -77,7 +77,7 @@ public final class Secrets {
             PENDING.remove(player.getUUID());
             JsonObject l = line(p.key());
             if (l != null) {
-                PacketDistributor.sendToPlayer(player, new Payloads.Cinematic("A hidden path opens", l.get("name").getAsString(),
+                Net.send(player, new Payloads.Cinematic("A hidden path opens", l.get("name").getAsString(),
                         0xC9A0FF, "minecraft:block.amethyst_block.resonate", 0, 0f));
             }
         }

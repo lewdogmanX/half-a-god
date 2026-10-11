@@ -58,6 +58,9 @@ public final class HalfAGod {
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Trial.class);
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Secrets.class);
         NeoForge.EVENT_BUS.addListener((AddReloadListenerEvent e) -> e.addListener(StoryData.INSTANCE));
+        if (Boolean.getBoolean("halfagod.smoketest")) {
+            NeoForge.EVENT_BUS.register(dev.halfagod.test.SmokeTest.class);
+        }
 
         if (FMLEnvironment.dist == Dist.CLIENT) {
             container.registerConfig(ModConfig.Type.CLIENT, dev.halfagod.client.ClientConfig.SPEC);

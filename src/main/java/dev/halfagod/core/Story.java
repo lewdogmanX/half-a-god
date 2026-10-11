@@ -121,7 +121,7 @@ public final class Story {
 
         JsonObject moment = StoryData.INSTANCE.cinematics.get(trait);
         if (moment != null) {
-            PacketDistributor.sendToPlayer(player, new Payloads.Cinematic(
+            Net.send(player, new Payloads.Cinematic(
                     str(moment, "title"), str(moment, "subtitle"),
                     moment.has("color") ? Integer.parseInt(moment.get("color").getAsString().replace("#", ""), 16) : 0xFFD27A,
                     str(moment, "sound"),
@@ -158,7 +158,7 @@ public final class Story {
         if (!d.fatesShown && Fates.storyOver(Meb.traits(player))) {
             d.fatesShown = true;
             d.endDay = player.level().getDayTime() / 24000L + 1;
-            PacketDistributor.sendToPlayer(player, new Payloads.OpenMap("story"));
+            Net.send(player, new Payloads.OpenMap("story"));
         }
     }
 

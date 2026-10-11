@@ -87,7 +87,7 @@ public final class Choices {
 
     private static void open(ServerPlayer player, JsonObject c) {
         LAST_OFFER.computeIfAbsent(player.getUUID(), k -> new HashMap<>()).put(c.get("id").getAsString(), player.level().getGameTime());
-        PacketDistributor.sendToPlayer(player, new Payloads.OpenChoice(c.toString()));
+        Net.send(player, new Payloads.OpenChoice(c.toString()));
     }
 
     public static void pick(ServerPlayer player, String id, int option) {

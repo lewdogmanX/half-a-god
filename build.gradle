@@ -19,6 +19,13 @@ neoForge {
             type = "gameTestServer"
             systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
         }
+        // a real dedicated server that checks the court dimension loads, then stops (CI: gradle runSmoke)
+        smoke {
+            type = "server"
+            systemProperty 'halfagod.smoketest', 'true'
+            programArgument '--nogui'
+            gameDirectory.set(project.file('run-smoke'))
+        }
     }
     mods {
         "${mod_id}" { sourceSet(sourceSets.main) }

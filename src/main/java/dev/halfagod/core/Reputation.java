@@ -99,7 +99,7 @@ public final class Reputation {
     }
 
     public static void sync(ServerPlayer player, double delta) {
-        PacketDistributor.sendToPlayer(player, new Payloads.RepSync((int) Math.round(data(player).value * 10), (int) Math.round(delta * 10)));
+        Net.send(player, new Payloads.RepSync((int) Math.round(data(player).value * 10), (int) Math.round(delta * 10)));
     }
 
     /** Story flags hag_tier_<tier> (only the current one) drive Mebahel's ambient villager lines. */

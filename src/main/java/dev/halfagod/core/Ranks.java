@@ -97,7 +97,7 @@ public final class Ranks {
             String name = watch ? WATCH[r] : HAND[r];
             String sub = watch ? new String[]{"", "The Watch knows your name", "They salute you at the gate", "Every Watchman in the land answers to you"}[r]
                     : new String[]{"", "Silas has your name in his ledger", "You collect for the Hand now", "Silas calls you his friend. Be afraid."}[r];
-            PacketDistributor.sendToPlayer(player, new Payloads.Cinematic(name, sub, watch ? 0x7FB8F0 : 0xE0A93A,
+            Net.send(player, new Payloads.Cinematic(name, sub, watch ? 0x7FB8F0 : 0xE0A93A,
                     watch ? "minecraft:block.bell.use" : "minecraft:entity.villager.celebrate", 0, 0f));
         }
         return r;
