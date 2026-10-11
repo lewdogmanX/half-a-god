@@ -202,6 +202,8 @@ public final class ClientShots {
         step(60, () -> shot("09e_cavern_wide"));
         step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() - 30.0, 12, CourtBuilder.CELL.getZ() + 20.0, -120f, 10f)));
         step(60, () -> shot("09f_cavern_falls"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 7.0, 11, CourtBuilder.CELL.getZ() + 15.0, 160f, 6f)));
+        step(60, () -> shot("09g_keep_roof"));
         step(10, () -> server(sp -> {
             at(sp, CourtBuilder.CELL_SPOT.getX() + 0.5, 0, CourtBuilder.CELL_SPOT.getZ() + 0.5, 180f, 0f);
             fly(sp, false);

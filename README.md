@@ -196,8 +196,9 @@ verdict. The Codex keeps the whole transcript, your answers and the vote.
 
 Found guilty, you serve 1 to 5 days (up to 7 for repeat convictions) in the Watch's prison: a fortress on a basalt
 shelf in a vast cavern deep underground, with lava falling down the walls into a lava lake, glow lichen and stalactites
-in the dark. Obsidian cells off a vaulted corridor, a quarry, a cafeteria and a gate, and beyond the gate a bridge over
-the lava and a tunnel into the rock. Somewhere nobody can find. The other prisoners don't know where it is either.
+in the dark. A black keep with battlements and a bell tower holds obsidian cells off a vaulted corridor; beside it a
+quarry cut into a crag of raw rock, and a buttressed hall with a smoking chimney for the cafeteria and the gate; beyond
+the gate, a bridge over the lava and a tunnel into the rock. Somewhere nobody can find. The other prisoners don't know where it is either.
 Your things are kept as evidence. There's no bed: a prison day is a whole Minecraft day (20 real minutes), counted only
 while you're there (logged out, the clock stops). The action bar tells you how long is left once a minute. Dying puts
 you back in your cell.

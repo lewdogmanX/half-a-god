@@ -63,7 +63,7 @@ import java.util.Set;
  * quarry, a cafeteria and a gate; beyond the gate, a bridge over the lava and a tunnel into the rock.
  */
 public final class CourtBuilder {
-    public static final int VERSION = 5;
+    public static final int VERSION = 6;
     private static final int FLAGS = Block.UPDATE_CLIENTS | Block.UPDATE_KNOWN_SHAPE;
     public static final String NPC = "hag_court";
 
@@ -245,6 +245,11 @@ public final class CourtBuilder {
         /** fences, bars, walls and panes: they join up with what's around them once everything's built */
         void join(int x, int y, int z, Block b) {
             set(x, y, z, b);
+            shapes.add(o.offset(x, y, z));
+        }
+
+        void join(int x, int y, int z, BlockState s) {
+            set(x, y, z, s);
             shapes.add(o.offset(x, y, z));
         }
 
@@ -576,13 +581,13 @@ public final class CourtBuilder {
         b.set(0, 1, -8, Blocks.SKELETON_SKULL.defaultBlockState().setValue(SkullBlock.ROTATION, 8));
         b.set(1, 1, -8, candles(3));
 
-        // ---- the dock: corner posts with lanterns, a dark rail between (too high to climb over)
+        // ---- the dock: a low dark rail all round (too high to climb over), posts and lamps only behind you
         b.fill(-1, -1, DOCK.getZ() - 1, 1, -1, DOCK.getZ() + 1, Blocks.POLISHED_BLACKSTONE);
         for (int x : new int[]{-1, 1}) {
-            for (int z : new int[]{DOCK.getZ() - 1, DOCK.getZ() + 1}) {
-                b.fill(x, 0, z, x, 1, z, log(Blocks.STRIPPED_DARK_OAK_LOG, Direction.Axis.Y));
-                b.set(x, 2, z, Blocks.LANTERN);
-            }
+            b.join(x, 0, DOCK.getZ() - 1, Blocks.DARK_OAK_FENCE);
+            b.join(x, 0, DOCK.getZ() + 1, Blocks.DARK_OAK_FENCE);
+            b.join(x, 1, DOCK.getZ() + 1, Blocks.DARK_OAK_FENCE);
+            b.set(x, 2, DOCK.getZ() + 1, Blocks.LANTERN);
         }
         b.join(0, 0, DOCK.getZ() - 1, Blocks.DARK_OAK_FENCE);
         b.join(0, 0, DOCK.getZ() + 1, Blocks.DARK_OAK_FENCE);
@@ -669,13 +674,16 @@ public final class CourtBuilder {
         }
 
         // ---- chandeliers: candles and lanterns on oak crosses down the middle, single lamps down the sides
-        for (int zc : new int[]{-10, -2, 6}) {
-            b.fill(0, 10, zc, 0, 13, zc, Blocks.CHAIN);
-            b.join(0, 9, zc, Blocks.DARK_OAK_FENCE);
+        // (none in the middle over the bench: nothing hangs in front of the eye)
+        for (int[] c : new int[][]{{0, -2}, {0, 6}, {-7, -10}, {7, -10}}) {
+            int xc = c[0], zc = c[1];
+            int top = Math.min(13, vault(Math.abs(xc)) - 1);
+            b.fill(xc, 10, zc, xc, top, zc, Blocks.CHAIN);
+            b.join(xc, 9, zc, Blocks.DARK_OAK_FENCE);
             for (int[] a : new int[][]{{1, 0}, {-1, 0}, {0, 1}, {0, -1}}) {
-                b.join(a[0], 9, zc + a[1], Blocks.DARK_OAK_FENCE);
-                b.set(a[0], 8, zc + a[1], hanging(Blocks.LANTERN));
-                b.set(a[0], 10, zc + a[1], candles(3));
+                b.join(xc + a[0], 9, zc + a[1], Blocks.DARK_OAK_FENCE);
+                b.set(xc + a[0], 8, zc + a[1], hanging(Blocks.LANTERN));
+                b.set(xc + a[0], 10, zc + a[1], candles(3));
             }
         }
         for (int zc : new int[]{-14, -6, 2, 10}) {
@@ -765,6 +773,233 @@ public final class CourtBuilder {
         b.fill(-13, 0, -2, -13, 1, -2, air);
         door(b, 12, -2, Blocks.IRON_DOOR, Direction.WEST, DoorHingeSide.LEFT);
         b.fill(13, 0, -2, 13, 1, -2, air);
+        outside(b);
+    }
+
+    // ------------------------------------------------------------------ the prison from outside
+    /** where the keep's piers stand along its long walls (in line with the walls between the cells) */
+    private static final int[] KEEP_PIERS = {-12, -9, -3, 3, 9, 12};
+
+    /**
+     * How the prison looks from the lava: a black keep with dressed stone, a cornice and battlements, and a bell tower on
+     * top; the cafeteria's hall with buttresses, battlements and a smoking chimney; the quarry a crag of raw rock; the shelf
+     * they stand on a ragged rim of basalt. Nothing here touches the ledge under your window.
+     */
+    private static void outside(B b) {
+        BlockState air = Blocks.AIR.defaultBlockState();
+        // ---- the shelf: a ragged rim beyond the walls (but open water, so to speak, under the ledge)
+        for (int x = -33; x <= 33; x++) {
+            for (int z = -14; z <= 9; z++) {
+                int ox = x < -29 ? -29 - x : x > 29 ? x - 29 : 0;
+                int oz = z < -11 ? -11 - z : z > 6 ? z - 6 : 0;
+                int out = Math.max(ox, oz);
+                if (out == 0 || (z >= 7 && x >= -3 && x <= 17)) {
+                    continue;
+                }
+                int reach = 1 + (int) Math.floor((fbm(x * 1.7, 3, z * 1.7) + 0.5) * 3.2);
+                if (out > reach) {
+                    continue;
+                }
+                b.set(x, -2, z, speck(x, -2, z, 3) ? Blocks.POLISHED_BASALT.defaultBlockState() : speck(x, -1, z, 4)
+                        ? Blocks.BLACKSTONE.defaultBlockState() : log(Blocks.BASALT, Direction.Axis.Y));
+                if (out < reach) {
+                    b.set(x, -3, z, Blocks.BLACKSTONE);
+                }
+            }
+        }
+
+        // ---- the keep (the cell block): a dark plinth, piers, a band at the lintels, a cornice, battlements
+        for (int face : new int[]{-11, 6}) {
+            int out = face < 0 ? -1 : 1;
+            Direction away = face < 0 ? Direction.NORTH : Direction.SOUTH;
+            for (int x = -12; x <= 12; x++) {
+                b.set(x, -1, face, Blocks.POLISHED_BLACKSTONE_BRICKS);
+                b.set(x, 3, face, Blocks.POLISHED_BLACKSTONE_BRICKS);
+                b.set(x, 5, face, ((x + 12) % 4 == 0) ? Blocks.CHISELED_POLISHED_BLACKSTONE : Blocks.POLISHED_BLACKSTONE_BRICKS);
+                // the cornice: stairs standing out under the battlements
+                b.join(x, 5, face + out, stairs(Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, away.getOpposite(), Half.TOP));
+                // battlements: a low wall, a merlon every third block
+                if (Math.floorMod(x, 3) == 0) {
+                    b.fill(x, 6, face, x, 7, face, Blocks.POLISHED_BLACKSTONE_BRICKS);
+                    b.set(x, 8, face, Blocks.POLISHED_BLACKSTONE_BRICK_SLAB);
+                } else {
+                    b.join(x, 6, face, Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
+                }
+            }
+            for (int x : KEEP_PIERS) {
+                for (int y = 0; y <= 4; y++) {
+                    b.set(x, y, face, Blocks.POLISHED_BLACKSTONE_BRICKS);
+                }
+            }
+            // lamps under the cornice between the piers
+            for (int x : new int[]{-6, 6}) {
+                b.set(x, 4, face + out, hanging(Blocks.SOUL_LANTERN));
+            }
+        }
+        for (int x = -12; x <= 12; x++) {
+            for (int z = -10; z <= 5; z++) {
+                if (z >= -4 && z <= 0) {
+                    continue; // the corridor's own ceiling
+                }
+                b.set(x, 5, z, speck(x, 5, z, 6) ? Blocks.CRACKED_POLISHED_BLACKSTONE_BRICKS : Blocks.POLISHED_BLACKSTONE_BRICKS);
+            }
+        }
+        // the other prisoners' windows: small and barred, like yours (the north row looks out through two walls)
+        for (int cx : new int[]{-6, 6}) {
+            for (int x = cx - 1; x <= cx + 1; x++) {
+                for (int y = 1; y <= 2; y++) {
+                    b.join(x, y, 6, Blocks.IRON_BARS);
+                }
+            }
+        }
+        for (int cx : new int[]{-6, 0, 6}) {
+            for (int x = cx - 1; x <= cx + 1; x++) {
+                for (int y = 1; y <= 2; y++) {
+                    b.set(x, y, -10, air);
+                    b.join(x, y, -11, Blocks.IRON_BARS);
+                }
+            }
+        }
+
+        // ---- the bell tower on the keep's roof (the bell you hear every day)
+        for (int x = -2; x <= 2; x++) {
+            for (int z = -9; z <= -5; z++) {
+                boolean rim = Math.abs(x) == 2 || z == -9 || z == -5;
+                boolean corner = Math.abs(x) == 2 && (z == -9 || z == -5);
+                for (int y = 6; y <= 12; y++) {
+                    boolean arch = y >= 9 && y <= 11 && !corner;
+                    if (!rim || arch) {
+                        b.set(x, y, z, y == 8 ? Blocks.POLISHED_BLACKSTONE.defaultBlockState() : y >= 9 && y <= 11 ? air
+                                : Blocks.POLISHED_BLACKSTONE_BRICKS.defaultBlockState());
+                    } else {
+                        b.set(x, y, z, corner ? log(Blocks.BASALT, Direction.Axis.Y) : y == 8 ? Blocks.CHISELED_POLISHED_BLACKSTONE.defaultBlockState()
+                                : Blocks.POLISHED_BLACKSTONE_BRICKS.defaultBlockState());
+                    }
+                }
+                b.set(x, 12, z, Blocks.POLISHED_BLACKSTONE_BRICKS);
+            }
+        }
+        for (int i = -1; i <= 1; i++) {
+            b.join(i, 9, -9, Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
+            b.join(i, 9, -5, Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
+            b.join(-2, 9, -7 + i, Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
+            b.join(2, 9, -7 + i, Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
+        }
+        b.set(0, 11, -7, Blocks.BELL.defaultBlockState()
+                .setValue(BlockStateProperties.BELL_ATTACHMENT, net.minecraft.world.level.block.state.properties.BellAttachType.CEILING)
+                .setValue(BlockStateProperties.HORIZONTAL_FACING, Direction.SOUTH));
+        // a pointed roof: two rings of stairs and a lamp on top
+        for (int r = 2; r >= 1; r--) {
+            int y = 15 - r;
+            for (int x = -r; x <= r; x++) {
+                for (int z = -7 - r; z <= -7 + r; z++) {
+                    if (Math.abs(x) != r && Math.abs(z + 7) != r) {
+                        b.set(x, y, z, Blocks.POLISHED_BLACKSTONE_BRICKS);
+                        continue;
+                    }
+                    Direction up = Math.abs(z + 7) == r ? (z < -7 ? Direction.SOUTH : Direction.NORTH) : (x < 0 ? Direction.EAST : Direction.WEST);
+                    b.join(x, y, z, stairs(Blocks.POLISHED_BLACKSTONE_BRICK_STAIRS, up, Half.BOTTOM));
+                }
+            }
+        }
+        b.set(0, 14, -7, Blocks.POLISHED_BLACKSTONE_BRICKS);
+        b.join(0, 15, -7, Blocks.POLISHED_BLACKSTONE_BRICK_WALL);
+        b.set(0, 16, -7, Blocks.SOUL_LANTERN);
+        b.watchBanner(0, 7, -4, Direction.SOUTH);
+        b.watchBanner(0, 7, -10, Direction.NORTH);
+        b.light(0, 10, -7, 9);
+
+        // ---- the hall (the cafeteria): a dark plinth, buttresses, battlements, a slate roof and the kitchen chimney
+        for (int x = 13; x <= 29; x++) {
+            b.set(x, -1, -11, Blocks.POLISHED_BLACKSTONE_BRICKS);
+            b.set(x, -1, 6, Blocks.POLISHED_BLACKSTONE_BRICKS);
+        }
+        for (int z = -11; z <= 6; z++) {
+            b.set(29, -1, z, Blocks.POLISHED_BLACKSTONE_BRICKS);
+        }
+        for (int x = 14; x <= 28; x++) {
+            for (int z = -10; z <= 5; z++) {
+                b.set(x, 8, z, Blocks.DEEPSLATE_TILE_SLAB);
+            }
+        }
+        // battlements round the hall's roof (the west side looks down on the keep)
+        for (int x = 13; x <= 29; x++) {
+            for (int z = -11; z <= 6; z++) {
+                if (x != 13 && x != 29 && z != -11 && z != 6) {
+                    continue;
+                }
+                if (Math.floorMod(x + z, 3) == 0) {
+                    b.set(x, 8, z, Blocks.STONE_BRICKS);
+                    b.set(x, 9, z, Blocks.STONE_BRICK_SLAB);
+                } else {
+                    b.join(x, 8, z, Blocks.STONE_BRICK_WALL);
+                }
+            }
+        }
+        // buttresses: east wall, north wall (either side of the gate), south wall (east of the ledge)
+        int[][] butts = {{30, -9}, {30, -4}, {30, 1}, {30, 5}, {15, -12}, {26, -12}, {19, 7}, {23, 7}, {27, 7}};
+        for (int[] bt : butts) {
+            int x = bt[0], z = bt[1];
+            Direction in = x == 30 ? Direction.WEST : z < 0 ? Direction.SOUTH : Direction.NORTH;
+            for (int y = -1; y <= 3; y++) {
+                b.set(x, y, z, speck(x, y, z, 6) ? Blocks.CRACKED_STONE_BRICKS : Blocks.STONE_BRICKS);
+            }
+            b.set(x, -1, z, Blocks.POLISHED_BLACKSTONE_BRICKS);
+            b.set(x, 4, z, stairs(Blocks.STONE_BRICK_STAIRS, in, Half.BOTTOM));
+            b.set(x, -2, z, Blocks.BASALT);
+        }
+        for (int[] l : new int[][]{{30, -6}, {30, 3}, {17, 7}, {25, 7}}) {
+            b.set(l[0], 3, l[1], Blocks.STONE_BRICKS);
+            b.set(l[0], 2, l[1], hanging(Blocks.LANTERN));
+        }
+        // the kitchen chimney, smoking
+        b.fill(27, 8, -7, 28, 10, -6, Blocks.STONE_BRICKS);
+        b.set(27, 11, -6, Blocks.CAMPFIRE);
+        b.set(28, 11, -6, Blocks.STONE_BRICK_SLAB);
+        b.set(27, 11, -7, Blocks.STONE_BRICK_SLAB);
+        b.set(28, 11, -7, Blocks.STONE_BRICK_SLAB);
+
+        // ---- the quarry: no walls at all from outside, just a crag of raw rock bulging out over the lava
+        for (int y = -1; y <= 10; y++) {
+            for (int z = -11; z <= 6; z++) {
+                int d = bulge(-30, y, z, y);
+                for (int k = 1; k <= d; k++) {
+                    b.set(-29 - k, y, z, rock(-29 - k, y, z));
+                }
+            }
+            for (int x = -29; x <= -13; x++) {
+                int dn = bulge(x, y, -12, y);
+                for (int k = 1; k <= dn; k++) {
+                    b.set(x, y, -11 - k, rock(x, y, -11 - k));
+                }
+                int ds = bulge(x, y, 7, y);
+                for (int k = 1; k <= ds; k++) {
+                    b.set(x, y, 6 + k, rock(x, y, 6 + k));
+                }
+            }
+        }
+        for (int x = -29; x <= -13; x++) {
+            for (int z = -11; z <= 6; z++) {
+                int edge = Math.min(Math.min(x + 29, -13 - x), Math.min(z + 11, 6 - z));
+                int h = (int) Math.floor((fbm(x * 1.3, 40, z * 1.3) + 0.4) * 4.5) - Math.max(0, 2 - edge);
+                for (int y = 11; y <= 10 + h; y++) {
+                    b.set(x, y, z, rock(x, y, z));
+                }
+                if (speck(x, 11 + Math.max(h, 0), z, 9)) {
+                    b.set(x, 11 + Math.max(h, 0), z, Blocks.GLOW_LICHEN.defaultBlockState().setValue(MultifaceBlock.getFaceProperty(Direction.DOWN), true));
+                }
+            }
+        }
+    }
+
+    /** how far the quarry's crag bulges out at a point of its wall (none at the foot, where it meets the shelf) */
+    private static int bulge(int x, int y, int z, int height) {
+        double n = fbm(x * 1.5 + 11, y * 1.5, z * 1.5);
+        int d = (int) Math.floor((n + 0.35) * 4.0);
+        if (height <= 1) {
+            d = Math.min(d, 1);
+        }
+        return Math.max(0, Math.min(3, d));
     }
 
     /** the cell block: a corridor five wide, three cells either side behind bars */
@@ -814,7 +1049,7 @@ public final class CourtBuilder {
             b.set(x, 0, -2, Blocks.IRON_TRAPDOOR);
         }
         for (int x : new int[]{-8, -1, 6}) {
-            b.light(x, 4, -3, 9);
+            b.light(x, 4, -3, 12);
         }
         // the cells
         for (int cx : new int[]{-6, 0, 6}) {
@@ -1182,7 +1417,7 @@ public final class CourtBuilder {
                         continue;
                     }
                     int h = hash(x, y, z, 11);
-                    if (y >= 10 && caveRock(x, y + 1, z) && Math.floorMod(h, 7) == 0) {
+                    if (y >= 10 && caveRock(x, y + 1, z) && Math.floorMod(h, 12) == 0) {
                         int len = 1 + Math.floorMod(h >> 4, 4);
                         int room = 0;
                         while (room < len && !caveRock(x, y - room, z) && cave(x, y - room, z) < 1) {
@@ -1196,7 +1431,7 @@ public final class CourtBuilder {
                         }
                         continue;
                     }
-                    if (y >= -4 && Math.floorMod(h >> 8, 11) == 0) {
+                    if (y >= -4 && Math.floorMod(h >> 8, 7) == 0) {
                         for (Direction d : new Direction[]{Direction.NORTH, Direction.SOUTH, Direction.EAST, Direction.WEST, Direction.UP}) {
                             if (caveRock(x + d.getStepX(), y + d.getStepY(), z + d.getStepZ())) {
                                 b.set(x, y, z, Blocks.GLOW_LICHEN.defaultBlockState().setValue(MultifaceBlock.getFaceProperty(d), true));
@@ -1243,6 +1478,16 @@ public final class CourtBuilder {
                     break;
                 }
                 b.set(px, y, pz, lava.setValue(LiquidBlock.LEVEL, 8));
+            }
+        }
+        // the glow off the lake, carried up into the dark (invisible lights, well away from the walls)
+        for (int x = -40; x <= 40; x += 8) {
+            for (int z = -16; z <= 36; z += 8) {
+                for (int y : new int[]{2, 11, 19}) {
+                    if (cave(x, y, z) < 0.8 && !caveRock(x, y, z)) {
+                        b.light(x, y, z, y < 10 ? 10 : 8);
+                    }
+                }
             }
         }
     }

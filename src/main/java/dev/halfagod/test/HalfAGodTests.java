@@ -94,6 +94,8 @@ public final class HalfAGodTests {
         check(h, court.getBlockState(spot).isAir() && court.getBlockState(spot.above()).isAir(), "room to stand in the cell");
         check(h, court.getBlockState(spot.below()).isSolid(), "a floor to stand on");
         check(h, court.getBlockState(cell.offset(-2, 0, 5)).is(Blocks.HAY_BLOCK), "a hay-bale cot");
+        check(h, court.getBlockState(cell.offset(0, 11, -7)).is(Blocks.BELL), "a bell in the tower");
+        check(h, court.getBlockState(cell.offset(0, 1, 7)).isAir() && court.getBlockState(cell.offset(5, 0, 7)).isAir(), "nothing in the way of the ledge");
         BlockState wall = court.getBlockState(cell.offset(0, 0, 6));
         check(h, wall.is(Blocks.OBSIDIAN) || wall.is(Blocks.CRYING_OBSIDIAN), "the cell is obsidian");
         BlockState bars = court.getBlockState(cell.offset(1, 2, 1));
