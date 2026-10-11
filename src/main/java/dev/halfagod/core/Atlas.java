@@ -74,7 +74,10 @@ public final class Atlas {
             f = types.getField("COLOR");
             COLOR = f.get(null);
             available = worldLandmarksOf != null && put != null && remove != null && create != null && builderAdd != null;
+        } catch (ClassNotFoundException | NoClassDefFoundError t) {
+            available = false; // Antique Atlas / Surveyor isn't installed: no markers, nothing else changes
         } catch (Throwable t) {
+            available = false;
             HalfAGod.LOG.warn("Half a God: Antique Atlas marker update failed", t);
         }
         if (available) {
