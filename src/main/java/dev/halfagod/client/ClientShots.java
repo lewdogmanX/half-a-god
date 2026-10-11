@@ -32,7 +32,7 @@ import java.util.function.Consumer;
  * a whole trial (court, verdict, cell) and the story map's new pages, taking a screenshot of each, then quits.
  */
 public final class ClientShots {
-    private record Step(int wait, Runnable run) {
+    private record Step(int pause, Runnable run) {
     }
 
     private static final List<Step> STEPS = new ArrayList<>();
@@ -233,6 +233,6 @@ public final class ClientShots {
         } catch (Exception ex) {
             HalfAGod.LOG.error("SHOT step {} failed", index, ex);
         }
-        wait = s.wait();
+        wait = s.pause();
     }
 }
