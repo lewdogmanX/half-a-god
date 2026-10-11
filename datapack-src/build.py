@@ -68,6 +68,7 @@ for qkey, (_, q) in QUESTS.items():
         continue
     talk_quests.add(qkey)
     threats = q.setdefault("threats", [])
+    handed_over = set()   # each thing you bring is handed to one person only
     for gl in talks:
         name = gl.get("name") or npc_name(gl["id"])
         gl["name"] = name
@@ -100,7 +101,9 @@ for qkey, (_, q) in QUESTS.items():
         # Anything you were asked to bring is handed over to this person (Mebahel's delivery): the items are taken,
         # unless the quest gives them straight back as its reward (then you're only showing them).
         reward_items = set(q.get("rewards", {}).get("items", {}))
-        bring = [x for x in q["goals"] if "collect" in x and x["stage"] < gl["stage"] and x["collect"] not in reward_items]
+        bring = [x for x in q["goals"] if "collect" in x and x["stage"] < gl["stage"] and x["collect"] not in reward_items
+                 and x["id"] not in handed_over]
+        handed_over.update(x["id"] for x in bring)
         if bring:
             npc["delivery_objectives"] = [x["id"] for x in bring]
             npc["delivery_choice_label"] = "Hand over what you brought"
@@ -117,6 +120,37 @@ for qkey, (_, q) in QUESTS.items():
     for gl in q["goals"]:
         if "kill" in gl and "from_threats" not in gl and gl["kill"] not in threat_entities:
             gl["from_threats"] = False
+
+# Mebahel only counts a "bring this" goal as done once it's handed over, and the person only takes it during their own
+# step. So the things you bring go into the same step as the person you bring them to (exactly how Mebahel's own
+# delivery quests are built), and the steps are renumbered so none is left empty.
+import bisect
+DELIVERY_MERGED = []
+for qkey, (_, q) in QUESTS.items():
+    moved = False
+    for t in q.get("threats", []):
+        ids = t.get("delivery_objectives") or []
+        for gl in q["goals"]:
+            if gl["id"] in ids and gl["stage"] != t.get("stage", 0):
+                gl["stage"] = t.get("stage", 0)
+                moved = True
+    if not moved:
+        continue
+    DELIVERY_MERGED.append(qkey)
+    stages = sorted({gl["stage"] for gl in q["goals"]})
+
+    def remap(old, stages=stages):
+        i = bisect.bisect_left(stages, old)
+        return min(i, len(stages) - 1)
+
+    for gl in q["goals"]:
+        gl["stage"] = remap(gl["stage"])
+    for t in q.get("threats", []):
+        if "stage" in t:
+            t["stage"] = remap(t["stage"])
+    for e in CAST:
+        if e["quest"] == qid(qkey):
+            e["stage"] = remap(e["stage"])
 
 for _, (_, q) in QUESTS.items():
     for t in q.get("threats", []):
@@ -424,5 +458,5 @@ if os.path.isdir(MOD_ROOT):
 print("quests:", len(QUESTS), "extra files:", len(EXTRA))
 if MISSING_GREET:
     print("NPCs without a greeting:", MISSING_GREET)
-print("quests where villagers now take the items:", len(DELIVERIES))
+print("quests where villagers now take the items:", len(DELIVERIES), "(steps merged in", len(DELIVERY_MERGED), ")")
 print("staged threats moved off structures:", sorted(set(STRUCTURE_FIXED)))

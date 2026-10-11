@@ -84,9 +84,9 @@
      ],
      "stages": [
       0,
-      1,
-      2,
-      3
+      0,
+      0,
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -898,9 +898,9 @@
      ],
      "stages": [
       0,
-      1,
-      2,
-      3
+      0,
+      0,
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -1178,7 +1178,7 @@
      ],
      "stages": [
       0,
-      1
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -1404,9 +1404,9 @@
      ],
      "stages": [
       0,
-      1,
-      2,
-      3
+      0,
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -1426,8 +1426,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -2187,8 +2187,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -2470,8 +2470,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -3430,7 +3430,7 @@
      ],
      "stages": [
       0,
-      1
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -3588,8 +3588,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -3611,8 +3611,8 @@
      "stages": [
       0,
       1,
-      2,
-      3
+      1,
+      2
      ],
      "icon": "minecraft:iron_sword",
      "choice": true,
@@ -3632,8 +3632,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -3653,8 +3653,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -3674,8 +3674,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -4116,8 +4116,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      0
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
@@ -4476,8 +4476,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -4960,8 +4960,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      0
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
@@ -5020,9 +5020,9 @@
       "Talk to Village Elder"
      ],
      "stages": [
-      0,
       1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -5294,7 +5294,7 @@
      ],
      "stages": [
       0,
-      1
+      0
      ],
      "icon": "minecraft:writable_book",
      "choice": false,
@@ -5349,7 +5349,7 @@
      ],
      "stages": [
       0,
-      1
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -5408,7 +5408,7 @@
      ],
      "stages": [
       0,
-      1
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -5427,7 +5427,7 @@
      ],
      "stages": [
       0,
-      1
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -5465,7 +5465,7 @@
      ],
      "stages": [
       0,
-      1
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -5554,7 +5554,7 @@
      ],
      "stages": [
       0,
-      1
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -5574,8 +5574,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -5699,7 +5699,7 @@
      ],
      "stages": [
       0,
-      1
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -5738,8 +5738,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      0
      ],
      "icon": "minecraft:chest",
      "choice": false,
@@ -5814,8 +5814,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -5835,8 +5835,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -6956,8 +6956,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -6977,8 +6977,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -6998,8 +6998,8 @@
      ],
      "stages": [
       0,
-      1,
-      2
+      0,
+      1
      ],
      "icon": "minecraft:chest",
      "choice": true,
@@ -7742,8 +7742,8 @@
       1,
       1,
       2,
-      3,
-      4
+      2,
+      3
      ],
      "icon": "minecraft:clock",
      "choice": true,

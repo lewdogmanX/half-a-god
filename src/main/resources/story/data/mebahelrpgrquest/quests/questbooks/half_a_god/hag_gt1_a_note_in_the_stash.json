@@ -14,7 +14,7 @@
       "id": "meet_the_fixer",
       "talk": "minecraft:villager",
       "amount": 1,
-      "stage": 1,
+      "stage": 0,
       "auto_advance": true,
       "say": "The Fixer weighs the sample in one hand and you in the other. 'You'll do.'",
       "name": "The Fixer"
@@ -58,7 +58,7 @@
     {
       "entity": "minecraft:villager",
       "name": "The Fixer",
-      "stage": 1,
+      "stage": 0,
       "structure": "minecraft:villages",
       "search_radius": 8000,
       "spawn_radius": 10,

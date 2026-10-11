@@ -14,7 +14,7 @@
       "id": "the_cleric",
       "talk": "minecraft:villager",
       "amount": 1,
-      "stage": 1,
+      "stage": 0,
       "auto_advance": true,
       "say": "'Three doses. Three people who wake up tomorrow. Thank you.'",
       "name": "The Cleric"
@@ -47,7 +47,7 @@
     {
       "entity": "minecraft:villager",
       "name": "The Cleric",
-      "stage": 1,
+      "stage": 0,
       "structure": "minecraft:villages",
       "search_radius": 8000,
       "spawn_radius": 10,

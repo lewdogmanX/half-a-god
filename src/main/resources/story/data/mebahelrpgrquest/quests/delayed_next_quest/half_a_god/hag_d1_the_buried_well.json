@@ -12,14 +12,14 @@
       "id": "milk",
       "collect": "minecraft:milk_bucket",
       "amount": 6,
-      "stage": 0,
+      "stage": 1,
       "auto_advance": true
     },
     {
       "id": "husks",
       "kill": "minecraft:husk",
       "amount": 12,
-      "stage": 1,
+      "stage": 0,
       "auto_advance": true,
       "from_threats": false
     },
@@ -27,7 +27,7 @@
       "id": "tend_the_sick",
       "talk": "minecraft:villager",
       "amount": 1,
-      "stage": 2,
+      "stage": 1,
       "auto_advance": true,
       "say": "The sick have poison wounds no husk could give.",
       "name": "Village Elder"
@@ -59,7 +59,7 @@
     {
       "entity": "minecraft:villager",
       "name": "Village Elder",
-      "stage": 2,
+      "stage": 1,
       "structure": "minecraft:village_desert",
       "search_radius": 8000,
       "spawn_radius": 10,

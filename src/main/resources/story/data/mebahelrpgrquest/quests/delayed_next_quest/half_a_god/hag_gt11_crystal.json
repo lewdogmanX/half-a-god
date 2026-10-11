@@ -14,7 +14,7 @@
       "id": "deliver",
       "talk": "minecraft:villager",
       "amount": 1,
-      "stage": 1,
+      "stage": 0,
       "auto_advance": true,
       "say": "The Fixer goes quiet, then very rich. 'With this, we don't need Blackwater. We need Blackwater gone.'",
       "name": "The Fixer"
@@ -46,7 +46,7 @@
     {
       "entity": "minecraft:villager",
       "name": "The Fixer",
-      "stage": 1,
+      "stage": 0,
       "structure": "minecraft:villages",
       "search_radius": 8000,
       "spawn_radius": 10,

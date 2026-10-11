@@ -44,6 +44,7 @@ public final class Story {
         }
         if (t % 100 == 13) {
             Reputation.tickVillagers(player);
+            Meb.repairStages(player);
             StoryGuard.restartAbandoned(player, false);
             Choices.offerPending(player, false);
             BaseLines.tick(player);

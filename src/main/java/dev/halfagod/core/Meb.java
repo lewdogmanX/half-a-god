@@ -292,6 +292,54 @@ public final class Meb {
         return r instanceof Number n ? n.intValue() : 0;
     }
 
+    /**
+     * Saves made before a story quest's steps were renumbered can sit on a step that no longer exists, which leaves the
+     * quest unable to move. Puts every open story quest back on a step that is really there.
+     */
+    public static void repairStages(ServerPlayer player) {
+        for (Object p : rawQuests(player)) {
+            String id = questIdOf(p);
+            if (!id.startsWith("mebahelrpgrquest:hag_") || !isOpen(p)) {
+                continue;
+            }
+            Object q = quest(ResourceLocation.parse(id));
+            Object objs = call(q, "allObjectives");
+            if (!(objs instanceof Collection<?> list) || list.isEmpty()) {
+                continue;
+            }
+            int cur = stageOf(p);
+            int below = -1;
+            int lowest = Integer.MAX_VALUE;
+            boolean found = false;
+            for (Object o : list) {
+                if (o == null || !Boolean.TRUE.equals(call(o, "isSequential"))) {
+                    continue;
+                }
+                Object s = call(o, "getStage");
+                if (!(s instanceof Number n)) {
+                    continue;
+                }
+                int st = n.intValue();
+                if (st == cur) {
+                    found = true;
+                    break;
+                }
+                lowest = Math.min(lowest, st);
+                if (st < cur) {
+                    below = Math.max(below, st);
+                }
+            }
+            if (found || lowest == Integer.MAX_VALUE) {
+                continue;
+            }
+            int to = below >= 0 ? below : lowest;
+            call(p, "setCurrentObjectiveStage", to);
+            call(p, "recomputeCompletion", q);
+            callStatic("net.mebahelrpgrquest.network.QuestNetworking", "syncQuestToClient", player, p);
+            HalfAGod.LOG.info("Half a God moved {} from step {} to step {} (the old step no longer exists)", id, cur, to);
+        }
+    }
+
     /** Takes back a random quest Mebahel rolled for this villager (story characters don't hand out side quests). */
     public static void clearOffer(Entity villager) {
         call(villager, "mebahelrpgrquest$setQuestId", (Object) null);

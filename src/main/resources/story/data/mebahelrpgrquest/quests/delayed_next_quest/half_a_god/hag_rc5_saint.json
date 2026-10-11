@@ -14,7 +14,7 @@
       "id": "give_to_the_harbourmaster",
       "talk": "minecraft:villager",
       "amount": 1,
-      "stage": 1,
+      "stage": 0,
       "auto_advance": true,
       "name": "Harbourmaster"
     },
@@ -22,7 +22,7 @@
       "id": "judge_5",
       "kill": "minecraft:pillager",
       "amount": 1,
-      "stage": 2,
+      "stage": 1,
       "auto_advance": true,
       "say": "Mott lit false lights on the rocks to wreck ships for cult gold. What you do next moves you on the scale."
     }
@@ -31,7 +31,7 @@
     {
       "entity": "minecraft:pillager",
       "name": "Saltjaw Mott",
-      "stage": 2,
+      "stage": 1,
       "spawn_on_accept": true,
       "spare": true,
       "glow": true,
@@ -62,7 +62,7 @@
     {
       "entity": "minecraft:villager",
       "name": "Harbourmaster",
-      "stage": 1,
+      "stage": 0,
       "structure": "minecraft:villages",
       "search_radius": 8000,
       "spawn_radius": 10,

@@ -14,7 +14,7 @@
       "id": "the_buyer",
       "talk": "minecraft:villager",
       "amount": 1,
-      "stage": 1,
+      "stage": 0,
       "auto_advance": true,
       "say": "He pays in emeralds and won't meet your eyes. 'Same time next week?'",
       "name": "Nervous Buyer"
@@ -49,7 +49,7 @@
     {
       "entity": "minecraft:villager",
       "name": "Nervous Buyer",
-      "stage": 1,
+      "stage": 0,
       "structure": "minecraft:villages",
       "search_radius": 8000,
       "spawn_radius": 10,

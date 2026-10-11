@@ -9,7 +9,7 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_p2_winter_stores",
-   "stage": 3,
+   "stage": 0,
    "name": "The Farmer",
    "place": "home",
    "structure": "minecraft:villages"
@@ -65,7 +65,7 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_a2_what_was_left",
-   "stage": 3,
+   "stage": 0,
    "name": "Ashford Survivor",
    "place": "ashford",
    "structure": "minecraft:villages"
@@ -100,7 +100,7 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_a13_tears_for_a_ward",
-   "stage": 1,
+   "stage": 0,
    "name": "The Cleric",
    "place": "home",
    "structure": "minecraft:villages"
@@ -121,7 +121,7 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_w2_smite_the_dead",
-   "stage": 2,
+   "stage": 0,
    "name": "The Armourer",
    "place": "home",
    "structure": "minecraft:villages"
@@ -142,7 +142,7 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_e1_the_librarians_request",
-   "stage": 2,
+   "stage": 0,
    "name": "The Librarian",
    "place": "char:The Librarian",
    "structure": "minecraft:villages"
@@ -156,7 +156,7 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_s1_cold_hearths",
-   "stage": 2,
+   "stage": 0,
    "name": "Village Elder",
    "place": "snowy_village",
    "structure": "minecraft:village_snowy"
@@ -170,7 +170,7 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_d1_the_buried_well",
-   "stage": 2,
+   "stage": 1,
    "name": "Village Elder",
    "place": "desert_village",
    "structure": "minecraft:village_desert"
@@ -254,49 +254,49 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_gt1_a_note_in_the_stash",
-   "stage": 1,
+   "stage": 0,
    "name": "The Fixer",
    "place": "char:The Fixer",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_gt3_first_customers",
-   "stage": 1,
+   "stage": 0,
    "name": "Nervous Buyer",
    "place": "buyers_village",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_gt4_the_hash_market",
-   "stage": 1,
+   "stage": 0,
    "name": "The Fixer",
    "place": "char:The Fixer",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_gt7_white_powder_money",
-   "stage": 1,
+   "stage": 0,
    "name": "The Fixer",
    "place": "char:The Fixer",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_gt8_a_customer_goes_under",
-   "stage": 1,
+   "stage": 0,
    "name": "Buyer's Friend",
    "place": "buyers_village",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_gt11_crystal",
-   "stage": 1,
+   "stage": 0,
    "name": "The Fixer",
    "place": "char:The Fixer",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_gt13p_the_big_shipment",
-   "stage": 2,
+   "stage": 0,
    "name": "The Fixer",
    "place": "char:The Fixer",
    "structure": "minecraft:villages"
@@ -331,7 +331,7 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_gt1b_the_recruiters_terms",
-   "stage": 1,
+   "stage": 0,
    "name": "The Fixer",
    "place": "char:The Fixer",
    "structure": "minecraft:villages"
@@ -345,7 +345,7 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_br4_medicine_for_the_valley",
-   "stage": 1,
+   "stage": 0,
    "name": "The Cleric",
    "place": "home",
    "structure": "minecraft:villages"
@@ -366,14 +366,14 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_rc1_waver",
-   "stage": 2,
+   "stage": 0,
    "name": "Ashford Elder",
    "place": "ashford",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_rc1_wicked",
-   "stage": 1,
+   "stage": 0,
    "name": "Silas of the Gilded Hand",
    "place": "char:Silas of the Gilded Hand",
    "structure": "minecraft:villages"
@@ -387,49 +387,49 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_rc2_wicked",
-   "stage": 1,
+   "stage": 0,
    "name": "Silas of the Gilded Hand",
    "place": "char:Silas of the Gilded Hand",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_rc3_saint",
-   "stage": 1,
+   "stage": 0,
    "name": "The Cleric",
    "place": "home",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_rc3_good",
-   "stage": 2,
+   "stage": 1,
    "name": "The Cleric",
    "place": "home",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_rc3_waver",
-   "stage": 1,
+   "stage": 0,
    "name": "The Cleric",
    "place": "home",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_rc3_fallen",
-   "stage": 1,
+   "stage": 0,
    "name": "The Farmer",
    "place": "home",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_rc3_wicked",
-   "stage": 1,
+   "stage": 0,
    "name": "Silas of the Gilded Hand",
    "place": "char:Silas of the Gilded Hand",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_rc4_good",
-   "stage": 1,
+   "stage": 0,
    "name": "Reeve Halden",
    "place": "ashford",
    "structure": "minecraft:villages"
@@ -443,21 +443,21 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_rc5_saint",
-   "stage": 1,
+   "stage": 0,
    "name": "Harbourmaster",
    "place": "char:Harbourmaster",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_rc5_good",
-   "stage": 1,
+   "stage": 0,
    "name": "Village Elder",
    "place": "snowy_village",
    "structure": "minecraft:village_snowy"
   },
   {
    "quest": "mebahelrpgrquest:hag_rc6_saint",
-   "stage": 1,
+   "stage": 0,
    "name": "The Cleric",
    "place": "home",
    "structure": "minecraft:villages"
@@ -471,14 +471,14 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_rc6_waver",
-   "stage": 1,
+   "stage": 0,
    "name": "Reeve Halden",
    "place": "ashford",
    "structure": "minecraft:villages"
   },
   {
    "quest": "mebahelrpgrquest:hag_rc6_wicked",
-   "stage": 1,
+   "stage": 0,
    "name": "Silas of the Gilded Hand",
    "place": "char:Silas of the Gilded Hand",
    "structure": "minecraft:villages"
@@ -506,7 +506,7 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_rc7_wicked",
-   "stage": 3,
+   "stage": 2,
    "name": "Silas of the Gilded Hand",
    "place": "char:Silas of the Gilded Hand",
    "structure": "minecraft:villages"
@@ -555,7 +555,7 @@
   },
   {
    "quest": "mebahelrpgrquest:hag_bz2_pearls_and_patience",
-   "stage": 1,
+   "stage": 0,
    "name": "Wren the Apiarist",
    "place": "char:Wren the Apiarist",
    "structure": "minecraft:villages"
@@ -728,15 +728,15 @@
     "Collect 64 x wheat"
    ],
    [
-    1,
+    0,
     "Collect 32 x potato"
    ],
    [
-    2,
+    0,
     "Collect 16 x cooked beef"
    ],
    [
-    3,
+    0,
     "Talk to The Farmer"
    ]
   ],
@@ -842,15 +842,15 @@
     "Collect 32 x bread"
    ],
    [
-    1,
+    0,
     "Collect 16 x white wool"
    ],
    [
-    2,
+    0,
     "Collect 32 x coal"
    ],
    [
-    3,
+    0,
     "Talk to Ashford Survivor"
    ]
   ],
@@ -902,7 +902,7 @@
     "Collect 4 x ghast tear"
    ],
    [
-    1,
+    0,
     "Talk to The Cleric"
    ]
   ],
@@ -924,11 +924,11 @@
     "Collect 12 x blaze rod"
    ],
    [
-    1,
+    0,
     "Collect 32 x bone"
    ],
    [
-    2,
+    0,
     "Talk to The Armourer"
    ]
   ],
@@ -950,11 +950,11 @@
     "Collect 24 x book"
    ],
    [
-    1,
+    0,
     "Collect 8 x ink sac"
    ],
    [
-    2,
+    0,
     "Talk to The Librarian"
    ]
   ],
@@ -970,11 +970,11 @@
     "Collect 64 x coal"
    ],
    [
-    1,
+    0,
     "Collect 48 x spruce log"
    ],
    [
-    2,
+    0,
     "Talk to Village Elder"
    ]
   ],
@@ -986,15 +986,15 @@
   ],
   "mebahelrpgrquest:hag_d1_the_buried_well": [
    [
-    0,
+    1,
     "Collect 6 x milk bucket"
    ],
    [
-    1,
+    0,
     "Defeat 12 x husk"
    ],
    [
-    2,
+    1,
     "Talk to Village Elder"
    ]
   ],
@@ -1078,7 +1078,7 @@
     "Collect 16 x weed"
    ],
    [
-    1,
+    0,
     "Talk to The Fixer"
    ]
   ],
@@ -1088,7 +1088,7 @@
     "Collect 8 x joint"
    ],
    [
-    1,
+    0,
     "Talk to Nervous Buyer"
    ]
   ],
@@ -1098,7 +1098,7 @@
     "Collect 16 x hash"
    ],
    [
-    1,
+    0,
     "Talk to The Fixer"
    ]
   ],
@@ -1108,7 +1108,7 @@
     "Collect 16 x cocaine"
    ],
    [
-    1,
+    0,
     "Talk to The Fixer"
    ]
   ],
@@ -1118,11 +1118,11 @@
     "Collect 1 x narcan"
    ],
    [
-    1,
+    0,
     "Talk to Buyer's Friend"
    ],
    [
-    2,
+    1,
     "Defeat 1 x villager"
    ]
   ],
@@ -1132,7 +1132,7 @@
     "Collect 16 x meth"
    ],
    [
-    1,
+    0,
     "Talk to The Fixer"
    ]
   ],
@@ -1142,11 +1142,11 @@
     "Collect 32 x cocaine"
    ],
    [
-    1,
+    0,
     "Collect 32 x hash"
    ],
    [
-    2,
+    0,
     "Talk to The Fixer"
    ]
   ],
@@ -1196,7 +1196,7 @@
     "Collect 16 x weed"
    ],
    [
-    1,
+    0,
     "Talk to The Fixer"
    ]
   ],
@@ -1212,7 +1212,7 @@
     "Collect 3 x narcan"
    ],
    [
-    1,
+    0,
     "Talk to The Cleric"
    ]
   ],
@@ -1246,15 +1246,15 @@
     "Collect 32 x bread"
    ],
    [
-    1,
+    0,
     "Collect 16 x iron ingot"
    ],
    [
-    2,
+    0,
     "Talk to Ashford Elder"
    ],
    [
-    3,
+    1,
     "Defeat 1 x pillager"
    ]
   ],
@@ -1264,11 +1264,11 @@
     "Collect 24 x emerald"
    ],
    [
-    1,
+    0,
     "Talk to Silas of the Gilded Hand"
    ],
    [
-    2,
+    1,
     "Defeat 1 x pillager"
    ]
   ],
@@ -1292,11 +1292,11 @@
     "Collect 2 x wither skeleton skull"
    ],
    [
-    1,
+    0,
     "Talk to Silas of the Gilded Hand"
    ],
    [
-    2,
+    1,
     "Defeat 1 x wandering trader"
    ]
   ],
@@ -1306,11 +1306,11 @@
     "Collect 6 x white apple"
    ],
    [
-    1,
+    0,
     "Talk to The Cleric"
    ],
    [
-    2,
+    1,
     "Defeat 1 x villager"
    ]
   ],
@@ -1324,11 +1324,11 @@
     "Collect 8 x aechor petal"
    ],
    [
-    2,
+    1,
     "Talk to The Cleric"
    ],
    [
-    3,
+    2,
     "Defeat 1 x villager"
    ]
   ],
@@ -1338,11 +1338,11 @@
     "Collect 16 x ambrosium shard"
    ],
    [
-    1,
+    0,
     "Talk to The Cleric"
    ],
    [
-    2,
+    1,
     "Defeat 1 x villager"
    ]
   ],
@@ -1352,11 +1352,11 @@
     "Collect 32 x skyroot log"
    ],
    [
-    1,
+    0,
     "Talk to The Farmer"
    ],
    [
-    2,
+    1,
     "Defeat 1 x villager"
    ]
   ],
@@ -1366,11 +1366,11 @@
     "Collect 16 x golden amber"
    ],
    [
-    1,
+    0,
     "Talk to Silas of the Gilded Hand"
    ],
    [
-    2,
+    1,
     "Defeat 1 x villager"
    ]
   ],
@@ -1380,11 +1380,11 @@
     "Collect 12 x ender pearl"
    ],
    [
-    1,
+    0,
     "Talk to Reeve Halden"
    ],
    [
-    2,
+    1,
     "Defeat 1 x evoker"
    ]
   ],
@@ -1404,11 +1404,11 @@
     "Collect 4 x oak boat"
    ],
    [
-    1,
+    0,
     "Talk to Harbourmaster"
    ],
    [
-    2,
+    1,
     "Defeat 1 x pillager"
    ]
   ],
@@ -1418,11 +1418,11 @@
     "Collect 6 x campfire"
    ],
    [
-    1,
+    0,
     "Talk to Village Elder"
    ],
    [
-    2,
+    1,
     "Defeat 1 x pillager"
    ]
   ],
@@ -1432,11 +1432,11 @@
     "Collect 4 x golden apple"
    ],
    [
-    1,
+    0,
     "Talk to The Cleric"
    ],
    [
-    2,
+    1,
     "Defeat 1 x villager"
    ]
   ],
@@ -1460,11 +1460,11 @@
     "Collect 32 x gold ingot"
    ],
    [
-    1,
+    0,
     "Talk to Reeve Halden"
    ],
    [
-    2,
+    1,
     "Defeat 1 x villager"
    ]
   ],
@@ -1474,11 +1474,11 @@
     "Collect 4 x bottle of blood"
    ],
    [
-    1,
+    0,
     "Talk to Silas of the Gilded Hand"
    ],
    [
-    2,
+    1,
     "Defeat 1 x villager"
    ]
   ],
@@ -1574,11 +1574,11 @@
     "Collect 4 x gold block"
    ],
    [
-    3,
+    2,
     "Talk to Silas of the Gilded Hand"
    ],
    [
-    4,
+    3,
     "Defeat 1 x villager"
    ]
   ],
@@ -1624,7 +1624,7 @@
     "Collect 6 x honeycomb"
    ],
    [
-    1,
+    0,
     "Talk to Wren the Apiarist"
    ]
   ],
