@@ -198,6 +198,22 @@ public final class HalfAGodTests {
         h.succeed();
     }
 
+    @GameTest(template = "empty", timeoutTicks = 200)
+    public static void sampleWitnesses(GameTestHelper h) {
+        court(h);
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        RepData d = Reputation.data(p);
+        check(h, Trial.kidnap(p, Trial.SAMPLE_RECORD), "taken with a made-up record");
+        JsonObject script = JsonParser.parseString(d.trialScript).getAsJsonObject();
+        check(h, script.get("heard").getAsInt() == 4, "four witnesses speak: " + script.get("heard"));
+        check(h, script.get("silent").getAsInt() == 3, "three can't be found: " + script.get("silent"));
+        check(h, d.trialScript.contains("Reeve Halden") && d.trialScript.contains("cannot be found"), "the right people");
+        Trial.release(p, d, "released");
+        check(h, d.trialState == 0, "let out");
+        p.discard();
+        h.succeed();
+    }
+
     @GameTest(template = "empty")
     public static void dreamsPick(GameTestHelper h) {
         ServerPlayer p = h.makeMockServerPlayerInLevel();

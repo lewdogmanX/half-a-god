@@ -123,6 +123,11 @@ public final class Trial {
 
     /** Takes the player to court now. */
     public static boolean kidnap(ServerPlayer player) {
+        return kidnap(player, Set.of());
+    }
+
+    /** extra: story choices the court treats as yours for this trial only (operators' "witnesses" test) */
+    public static boolean kidnap(ServerPlayer player, Set<String> extra) {
         RepData d = Reputation.data(player);
         d.pendingKidnap = false;
         ServerLevel court = court(player.getServer());
@@ -141,7 +146,9 @@ public final class Trial {
         confiscate(player, d);
         d.trialState = 1;
         d.trialVerdict = "";
-        d.trialScript = script(player, d, traits).toString();
+        Set<String> record = new java.util.HashSet<>(traits);
+        record.addAll(extra);
+        d.trialScript = script(player, d, record).toString();
         BlockPos dock = CourtBuilder.origin(slot).offset(CourtBuilder.DOCK);
         player.teleportTo(court, dock.getX() + 0.5, dock.getY(), dock.getZ() + 0.5, 180f, 0f);
         player.setRespawnPosition(COURT, dock, 180f, true, false);
@@ -716,6 +723,21 @@ public final class Trial {
     }
 
     // ------------------------------------------------------------------ for operators (/halfagod test trial ...)
+    /** a made-up record for testing: four witnesses who speak, three who can't (nothing is added to your real story) */
+    public static final Set<String> SAMPLE_RECORD = Set.of("corwin_slain", "hag_cruelty_2", "hag_cruelty_x1_the_informant", "hag_lib_sold",
+            "vael_slain", "hag_cruelty_x3_the_third_skull", "gt_silenced_the_witness");
+
+    public static String testWitnesses(ServerPlayer player) {
+        RepData d = Reputation.data(player);
+        if (d.trialState != 0) {
+            return "You're already on trial or in a cell (/halfagod test trial release first).";
+        }
+        if (court(player.getServer()) == null) {
+            return "The court dimension isn't loaded (is the Half a God story pack enabled?).";
+        }
+        return kidnap(player, SAMPLE_RECORD) ? "The Watch takes you, with a made-up record full of witnesses (your real story is unchanged)." : "Couldn't start a trial.";
+    }
+
     public static String testStart(ServerPlayer player) {
         RepData d = Reputation.data(player);
         if (d.trialState != 0) {

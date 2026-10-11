@@ -21,7 +21,7 @@ import static net.minecraft.commands.Commands.literal;
 /**
  * /halfagod rep | lostmyway | choose | chronicle            (everyone)
  * /halfagod story | unlockall | jump <quest> [player] | setrep <value> [player]   (operators)
- * /halfagod test dream [id] | dreams reset | secret <name> | trial [status|night|escape|release|reset] | endcard | codex <page>   (operators)
+ * /halfagod test dream [id] | dreams reset | secret <name> | trial [status|witnesses|night|escape|release|reset] | endcard | codex <page>   (operators)
  */
 public final class Commands {
     private Commands() {
@@ -119,6 +119,7 @@ public final class Commands {
                 .then(literal("trial")
                         .executes(c -> ok(c.getSource(), Trial.testStart(c.getSource().getPlayerOrException())))
                         .then(literal("status").executes(c -> ok(c.getSource(), Trial.status(c.getSource().getPlayerOrException()))))
+                        .then(literal("witnesses").executes(c -> ok(c.getSource(), Trial.testWitnesses(c.getSource().getPlayerOrException()))))
                         .then(literal("night").executes(c -> ok(c.getSource(), Trial.testDay(c.getSource().getPlayerOrException()))))
                         .then(literal("escape").executes(c -> ok(c.getSource(), Trial.testEscape(c.getSource().getPlayerOrException()))))
                         .then(literal("release").executes(c -> ok(c.getSource(), Trial.testRelease(c.getSource().getPlayerOrException()))))

@@ -256,6 +256,7 @@ Everyone plays their own story; nothing forces a fight.
 | `/halfagod test secret <tongue\|pilgrim\|godsaw\|skyfire\|clean>` | find a hidden questline now |
 | `/halfagod test trial` | the Watch takes you to court now (any reputation, any act) |
 | `/halfagod test trial status` | where you are with the Watch and whether a trial is due |
+| `/halfagod test trial witnesses` | a trial with a made-up record: four witnesses speak, three "cannot be found" (your real story isn't changed) |
 | `/halfagod test trial night` | serve one night of your sentence |
 | `/halfagod test trial escape` | where the loose block is |
 | `/halfagod test trial release` | let yourself out (things and bed back) |
