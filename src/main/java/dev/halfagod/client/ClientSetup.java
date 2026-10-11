@@ -24,9 +24,9 @@ public final class ClientSetup {
             CameraShake.tick();
         });
         NeoForge.EVENT_BUS.addListener((ViewportEvent.ComputeCameraAngles e) -> CameraShake.apply(e));
-        // Mebahel's quest map opens the story map instead (it has a button back to Mebahel's)
+        // Mebahel's quest map key opens the story map; the old map is gone (Mebahel's Quest Journal is untouched)
         NeoForge.EVENT_BUS.addListener((ScreenEvent.Opening e) -> {
-            if (e.getNewScreen() != null && !StoryMapScreen.openingClassic && ClientConfig.REPLACE_QUEST_MAP.get()
+            if (e.getNewScreen() != null
                     && e.getNewScreen().getClass().getName().equals("net.mebahelrpgrquest.client.gui.QuestMapScreen")) {
                 e.setNewScreen(new StoryMapScreen(e.getCurrentScreen()));
             }

@@ -104,9 +104,9 @@ public final class Payloads {
     }
 
     /** Server -> client: open the story map. */
-    public record OpenMap(boolean unused) implements CustomPacketPayload {
+    public record OpenMap(boolean fates) implements CustomPacketPayload {
         public static final Type<OpenMap> TYPE = typeOf("open_map");
-        public static final StreamCodec<ByteBuf, OpenMap> CODEC = StreamCodec.composite(ByteBufCodecs.BOOL, OpenMap::unused, OpenMap::new);
+        public static final StreamCodec<ByteBuf, OpenMap> CODEC = StreamCodec.composite(ByteBufCodecs.BOOL, OpenMap::fates, OpenMap::new);
 
         @Override
         public Type<OpenMap> type() {

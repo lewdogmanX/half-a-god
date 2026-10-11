@@ -37,6 +37,7 @@ public final class Cast {
     }
 
     private static final String DONE = "hag_cast_done";
+    private static final String NO_SIDE_QUESTS = "hag_no_side_quests";
     private static final String TAG = "hag_cast:";
 
     private Cast() {
@@ -54,9 +55,38 @@ public final class Cast {
                     trader.setDespawnDelay(0);
                 }
             }
-            List<Entry> entries = cast.get(Meb.questIdOf(progress));
+            String questId = Meb.questIdOf(progress);
+            int stage = Meb.stageOf(progress);
+            // Story characters never hand out Mebahel's random villager quests (talking to them too early used to open one)
+            for (UUID uuid : Meb.threatUuids(progress)) {
+                Entity e = find(player, uuid);
+                if (e instanceof net.minecraft.world.entity.npc.Villager v && !v.getTags().contains(NO_SIDE_QUESTS)) {
+                    String offered = Meb.offeredQuest(v);
+                    if (offered != null && !offered.startsWith("mebahelrpgrquest:hag_")) {
+                        if (Meb.offerTaken(v)) {
+                            continue; // you already took their side quest: leave it be so you can hand it in
+                        }
+                        Meb.clearOffer(v);
+                    } else {
+                        Meb.neverOffers(v);
+                    }
+                    v.addTag(NO_SIDE_QUESTS);
+                }
+            }
+            List<Entry> entries = cast.get(questId);
             if (entries == null) {
                 continue;
+            }
+            // a story character glows only when it's their turn
+            for (UUID uuid : Meb.threatUuids(progress)) {
+                if (find(player, uuid) instanceof Mob mob && mob.isAlive() && mob.hasCustomName() && mob.getCustomName() != null) {
+                    String nm = mob.getCustomName().getString();
+                    for (Entry entry : entries) {
+                        if (entry.name().equals(nm) && entry.stage() == stage) {
+                            mob.addEffect(new net.minecraft.world.effect.MobEffectInstance(net.minecraft.world.effect.MobEffects.GLOWING, 50, 0, false, false));
+                        }
+                    }
+                }
             }
             for (UUID uuid : Meb.threatUuids(progress)) {
                 Entity e = find(player, uuid);
@@ -219,6 +249,52 @@ public final class Cast {
         return s.is(Blocks.DIRT_PATH) || s.is(BlockTags.DIRT) || s.is(BlockTags.SAND) || s.is(Blocks.GRAVEL)
                 || s.is(Blocks.SNOW_BLOCK) || s.is(Blocks.COBBLESTONE) || s.is(Blocks.STONE) || s.is(Blocks.SANDSTONE)
                 || s.is(Blocks.SMOOTH_SANDSTONE) || s.is(Blocks.PACKED_ICE) || s.is(Blocks.MOSS_BLOCK);
+    }
+
+    /**
+     * Talking to a story character before it's their turn: they tell you what to do first, instead of Mebahel treating
+     * them as an ordinary villager.
+     */
+    @SubscribeEvent(priority = net.neoforged.bus.api.EventPriority.HIGHEST)
+    public static void onTalk(net.neoforged.neoforge.event.entity.player.PlayerInteractEvent.EntityInteract event) {
+        if (!(event.getEntity() instanceof ServerPlayer player) || !(event.getTarget() instanceof Mob mob) || !mob.hasCustomName()
+                || mob.getCustomName() == null) {
+            return;
+        }
+        String name = mob.getCustomName().getString();
+        List<Object> all = Meb.rawQuests(player);
+        for (Object progress : all) {
+            if (Meb.isOpen(progress) && mob.getUUID().equals(Meb.giverOf(progress))) {
+                return; // they gave you a quest of their own: let Mebahel handle it
+            }
+        }
+        for (Object progress : all) {
+            if (!Meb.isOpen(progress) || !Meb.threatUuids(progress).contains(mob.getUUID())) {
+                continue;
+            }
+            String questId = Meb.questIdOf(progress);
+            List<Entry> entries = StoryData.INSTANCE.cast.get(questId);
+            if (entries == null) {
+                return;
+            }
+            int stage = Meb.stageOf(progress);
+            for (Entry entry : entries) {
+                if (entry.name().equals(name) && entry.stage() > stage) {
+                    event.setCanceled(true);
+                    event.setCancellationResult(net.minecraft.world.InteractionResult.SUCCESS);
+                    if (event.getHand() == net.minecraft.world.InteractionHand.MAIN_HAND) {
+                        List<String> now = StoryData.INSTANCE.steps.getOrDefault(questId, Map.of()).getOrDefault(stage, List.of());
+                        String first = now.isEmpty() ? "finish what you started" : now.get(0);
+                        first = Character.toLowerCase(first.charAt(0)) + first.substring(1);
+                        mob.getLookControl().setLookAt(player);
+                        player.displayClientMessage(net.minecraft.network.chat.Component.literal(name + ": ").withStyle(net.minecraft.ChatFormatting.GOLD)
+                                .append(net.minecraft.network.chat.Component.literal("\"Not yet. First, " + first + ".\"").withStyle(net.minecraft.ChatFormatting.WHITE)), true);
+                    }
+                    return;
+                }
+            }
+            return;
+        }
     }
 
     /** An older copy of a character that comes back into the world after being replaced is removed. */

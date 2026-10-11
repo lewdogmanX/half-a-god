@@ -53,6 +53,13 @@ public final class Letters {
             }
             String author = Meb.hasTrait(player, "maraal_forgiven") ? "Maraal" : l.has("author") ? l.get("author").getAsString() : "Old Mara";
             give(player, letter.get("title").getAsString(), author, letter.getAsJsonArray("pages"));
+            // kept for the Codex, to read again
+            JsonObject kept = new JsonObject();
+            kept.addProperty("title", letter.get("title").getAsString());
+            kept.addProperty("author", author);
+            kept.add("pages", letter.getAsJsonArray("pages"));
+            kept.addProperty("day", player.level().getDayTime() / 24000L + 1);
+            Reputation.data(player).letters.add(kept.toString());
         }
     }
 

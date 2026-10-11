@@ -203,6 +203,48 @@
    "title": "The True Azazel",
    "unlock": "mebahelrpgrquest:hag_m9_half_a_soul",
    "text": "A half-soul cannot die. To end him, his head must be joined to his body, and then he must be killed while he is whole."
+  },
+  {
+   "category": "Wardens",
+   "title": "The Wither",
+   "unlock": "mebahelrpgrquest:hag_w6_the_withered_crown",
+   "text": "The first Warden, raised by the cult from three skulls in a pit you built. Where: the pit, in the overworld's open air. It died before it reached the daylight, and the Nether sky went red that night."
+  },
+  {
+   "category": "Wardens",
+   "title": "The Ender Dragon",
+   "unlock": "mebahelrpgrquest:hag_e5_free_the_end",
+   "text": "The second Warden, guarding something in the End it had long forgotten. Where: beyond the stronghold's portal. The night it fell, every villager in the world dreamt of a king with no head."
+  },
+  {
+   "category": "Wardens",
+   "title": "Skor, the Yeti",
+   "unlock": "mebahelrpgrquest:hag_s3_lost_in_the_snow",
+   "text": "The Warden of the snow, who kept a century-old garrison marching through the storm. Where: the Yeti Hideout, snowy plains. The day after it died, not one flake of snow fell anywhere."
+  },
+  {
+   "category": "Wardens",
+   "title": "Sirok, the Sandworm",
+   "unlock": "mebahelrpgrquest:hag_d3_the_beast_below",
+   "text": "The Warden of the sand, beneath a desert that 'breathed'. Where: the Sandworm Nest. The desert village dug its well back out, and the water came up clean."
+  },
+  {
+   "category": "Wardens",
+   "title": "Nerakyss, the Kraken",
+   "unlock": "mebahelrpgrquest:hag_c4_terror_of_the_depths",
+   "text": "The Warden of the sea, and the black ship that sailed with it. Where: the Kraken Ship, deep ocean. The harbour lads rowed out to watch it sink. First time anyone had dared in forty years."
+  },
+  {
+   "category": "Wardens",
+   "title": "Helvar, the Underworld Knight",
+   "unlock": "mebahelrpgrquest:hag_u3_back_into_hell",
+   "text": "A knight set at the Gate by the one who took the Chariot's head. He could not speak, so he wrote it down: 'If I fall, the door will open.' Where: the Underworld Arena, in the Nether."
+  },
+  {
+   "category": "Wardens",
+   "title": "Ashlord, the Infernal Dragon",
+   "unlock": "mebahelrpgrquest:hag_f2_dragon_slayer",
+   "text": "The last Warden, and once the Chariot's own mount. Where: the Dragon Tower. The smith said nothing alive was as hard as its bones."
   }
  ]
 }

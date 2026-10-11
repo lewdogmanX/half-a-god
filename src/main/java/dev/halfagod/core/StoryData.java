@@ -50,6 +50,8 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     public final List<BaseLines.Line> baseLines = new ArrayList<>();
     /** quest id -> the story characters its villagers play */
     public final Map<String, List<Cast.Entry>> cast = new HashMap<>();
+    /** quest id -> stage -> what that step asks for (for "not yet" lines) */
+    public final Map<String, Map<Integer, List<String>>> steps = new HashMap<>();
     /** quest id -> where its map marker belongs (dimension) and what it's called */
     public final Map<String, String[]> markers = new HashMap<>();
     /** Mara's letters: trigger trait -> letter per tone */
@@ -62,6 +64,11 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     /** repeatable Watch duties (good) and Gilded Hand contracts (evil) */
     public final List<String> watchDuties = new ArrayList<>();
     public final List<String> handContracts = new ArrayList<>();
+
+    /** what became of everyone you judged: per person, the first matching trait's line */
+    public final List<JsonObject> fates = new ArrayList<>();
+    /** traits whose day is remembered (the Wardens) */
+    public final java.util.Set<String> momentTraits = new java.util.HashSet<>();
 
     public record Unlock(double at, boolean below, String trait, String courier) {
     }
@@ -94,8 +101,11 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
         baseLines.clear();
         letters.clear();
         cast.clear();
+        steps.clear();
         markers.clear();
         settlers.clear();
+        fates.clear();
+        momentTraits.clear();
         ashfordStages.clear();
         watchDuties.clear();
         handContracts.clear();
@@ -121,6 +131,16 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                                     j.get("place").getAsString(), j.has("structure") ? j.get("structure").getAsString() : "",
                                     j.has("adopt") ? j.get("adopt").getAsString() : ""));
                         }
+                        if (o.has("steps")) {
+                            for (Map.Entry<String, JsonElement> q : o.getAsJsonObject("steps").entrySet()) {
+                                Map<Integer, List<String>> byStage = new java.util.TreeMap<>();
+                                for (JsonElement st : q.getValue().getAsJsonArray()) {
+                                    JsonArray a = st.getAsJsonArray();
+                                    byStage.computeIfAbsent(a.get(0).getAsInt(), k -> new ArrayList<>()).add(a.get(1).getAsString());
+                                }
+                                steps.put(q.getKey(), byStage);
+                            }
+                        }
                     }
                     case "markers" -> o.getAsJsonObject("quests").entrySet().forEach(m -> markers.put(m.getKey(),
                             new String[]{m.getValue().getAsJsonObject().get("dim").getAsString(), m.getValue().getAsJsonObject().get("title").getAsString()}));
@@ -135,6 +155,8 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                             ashfordStages.put(c.getAsJsonObject().get("trait").getAsString(), c.getAsJsonObject().get("stage").getAsInt());
                         }
                     }
+                    case "fates" -> o.getAsJsonArray("fates").forEach(f -> fates.add(f.getAsJsonObject()));
+                    case "moments" -> momentTraits.addAll(list(o, "traits"));
                     case "duties" -> {
                         watchDuties.addAll(list(o, "watch"));
                         handContracts.addAll(list(o, "hand"));

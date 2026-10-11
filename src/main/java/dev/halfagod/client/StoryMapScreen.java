@@ -71,7 +71,6 @@ public final class StoryMapScreen extends Screen {
     private static final int TOP = 46;
     private static final int FOOT = 24;
 
-    public static boolean openingClassic;
     private static StoryMapScreen open;
     private static JsonObject pendingStates;
 
@@ -136,6 +135,17 @@ public final class StoryMapScreen extends Screen {
     private boolean showCodex;
     private int codexPick = -1;
     private int codexScroll;
+    /** 0 Lore, 1 Letters, 2 Your Path, 3 What Became of Them */
+    private int codexTab;
+    private final int[] tabPicks = {-1, -1, -1, -1};
+    private int pageScroll;
+    private int pageContentH;
+    private JsonArray letters = new JsonArray();
+    private JsonArray path = new JsonArray();
+    private JsonArray fates;
+    private JsonObject moments = new JsonObject();
+    private JsonObject ranks = new JsonObject();
+    private long day;
     private final Set<String> seenLore = new HashSet<>();
 
     // frame state
@@ -261,6 +271,12 @@ public final class StoryMapScreen extends Screen {
         states = s;
         stages = st;
         rep = o.has("rep") ? o.get("rep").getAsDouble() : 0;
+        letters = o.has("letters") ? o.getAsJsonArray("letters") : new JsonArray();
+        path = o.has("path") ? o.getAsJsonArray("path") : new JsonArray();
+        fates = o.has("fates") ? o.getAsJsonArray("fates") : null;
+        moments = o.has("moments") ? o.getAsJsonObject("moments") : new JsonObject();
+        ranks = o.has("ranks") ? o.getAsJsonObject("ranks") : new JsonObject();
+        day = o.has("day") ? o.get("day").getAsLong() : 0;
         if (changed) {
             layoutDirty = true;
         }
@@ -632,19 +648,6 @@ public final class StoryMapScreen extends Screen {
     @Override
     public boolean isPauseScreen() {
         return false;
-    }
-
-    private void openClassic() {
-        try {
-            Class<?> c = Class.forName("net.mebahelrpgrquest.client.gui.QuestMapScreen");
-            Screen classic = (Screen) c.getConstructor(Screen.class).newInstance(this);
-            openingClassic = true;
-            Minecraft.getInstance().setScreen(classic);
-        } catch (Throwable t) {
-            HalfAGod.LOG.warn("Could not open Mebahel's quest map: {}", t.toString());
-        } finally {
-            openingClassic = false;
-        }
     }
 
     private void tickFrame() {
@@ -1272,9 +1275,14 @@ public final class StoryMapScreen extends Screen {
                 } : null, Component.literal(reachedCh ? chapters.get(i).name() + ": " + chapters.get(i).subtitle() : "Not reached yet"));
             }
         }
-        // who you are, top right
+        // who you are, top right (and your rank, if you have one)
         String tier = repTier();
         g.drawString(font, tier, width - 8 - font.width(tier), 5, 0xFF000000 | tierColor(), false);
+        int wr = ranks.has("watch") ? ranks.get("watch").getAsInt() : 0, hr = ranks.has("hand") ? ranks.get("hand").getAsInt() : 0;
+        if (wr > 0 || hr > 0) {
+            String title = wr >= hr ? ranks.get("watchTitle").getAsString() : ranks.get("handTitle").getAsString();
+            g.drawString(font, title, 8, 5, wr >= hr ? 0xFF8FB8E0 : 0xFFE0B860, false);
+        }
         g.pose().popPose();
     }
 
@@ -1345,14 +1353,7 @@ public final class StoryMapScreen extends Screen {
         // buttons, right to left
         int bx = width - 8;
         bx = button(g, mx, my, bx, y0 + 4, "Close", this::onClose, false);
-        bx = button(g, mx, my, bx, y0 + 4, "Quest list", this::openClassic, false);
-        boolean unread = false;
-        for (Lore l : unlockedLore()) {
-            if (!seenLore.contains(l.title())) {
-                unread = true;
-                break;
-            }
-        }
+        boolean unread = anyUnread();
         bx = button(g, mx, my, bx, y0 + 4, showCodex ? "Map" : "Codex", () -> {
             showCodex = !showCodex;
             codexScroll = 0;
@@ -1563,9 +1564,15 @@ public final class StoryMapScreen extends Screen {
     }
 
     // ------------------------------------------------------------------ the codex
+    /** Opens straight onto "What Became of Them" (when the story ends). */
+    public void openFates() {
+        showCodex = true;
+        codexTab = 3;
+    }
+
     private List<Lore> unlockedLore() {
         List<Lore> out = new ArrayList<>();
-        for (String cat : new String[]{"People", "Places", "The Cult"}) {
+        for (String cat : new String[]{"People", "Places", "The Cult", "Wardens"}) {
             for (Lore l : codex) {
                 if (l.category().equals(cat) && reached(l.unlock())) {
                     out.add(l);
@@ -1575,15 +1582,99 @@ public final class StoryMapScreen extends Screen {
         return out;
     }
 
+    private static String letterKey(JsonObject l) {
+        return "letter:" + l.get("title").getAsString() + "@" + (l.has("day") ? l.get("day").getAsLong() : 0);
+    }
+
+    private boolean anyUnread() {
+        for (Lore l : unlockedLore()) {
+            if (!seenLore.contains(l.title())) {
+                return true;
+            }
+        }
+        for (JsonElement e : letters) {
+            if (!seenLore.contains(letterKey(e.getAsJsonObject()))) {
+                return true;
+            }
+        }
+        return false;
+    }
+
+    /** One line on the left-hand page. */
+    private record Row(String group, String groupNote, String title, String note, int dot, String seenKey) {
+    }
+
+    private List<Row> rows(int tab) {
+        List<Row> out = new ArrayList<>();
+        if (tab == 0) {
+            for (Lore l : unlockedLore()) {
+                int have = 0, all = 0;
+                for (Lore o : codex) {
+                    if (o.category().equals(l.category())) {
+                        all++;
+                        if (reached(o.unlock())) {
+                            have++;
+                        }
+                    }
+                }
+                out.add(new Row(l.category(), have + " of " + all, l.title(), "", 0, l.title()));
+            }
+        } else if (tab == 1) {
+            for (int i = letters.size() - 1; i >= 0; i--) {
+                JsonObject l = letters.get(i).getAsJsonObject();
+                out.add(new Row("From " + l.get("author").getAsString().replace("Old ", ""), letters.size() + (letters.size() == 1 ? " letter" : " letters"),
+                        l.get("title").getAsString(), "day " + (l.has("day") ? l.get("day").getAsLong() : 0), 0, letterKey(l)));
+            }
+        } else if (tab == 3 && fates != null) {
+            for (JsonElement e : fates) {
+                JsonObject f = e.getAsJsonObject();
+                String kind = f.get("kind").getAsString();
+                out.add(new Row("What became of them", fates.size() + " people", f.get("name").getAsString(), "",
+                        kind.equals("mercy") ? MERCY : kind.equals("blade") ? BLADE : 0xFF9A8662, ""));
+            }
+        }
+        // the group header shows once per group
+        return out;
+    }
+
     private void drawCodex(GuiGraphics g, int mx, int my) {
-        int top = TOP + 10, bottom = height - FOOT - 10;
-        int bw = Math.min(width - 30, 520), bh = bottom - top;
+        int top = TOP + 24, bottom = height - FOOT - 10;
+        int bw = Math.min(width - 30, 520);
         int bx = (width - bw) / 2;
-        // the cover, then two pages
-        g.fill(bx - 6, top - 4, bx + bw + 6, bottom + 4, 0xFF4A2A16);
-        g.fill(bx - 5, top - 3, bx + bw + 5, top - 2, 0xFF8A6A32);
-        g.fill(bx - 5, bottom + 2, bx + bw + 5, bottom + 3, 0xFF8A6A32);
         int mid = bx + bw / 2;
+        // bookmark ribbons along the top of the book
+        String[] tabs = fates != null ? new String[]{"Lore", "Letters", "Your Path", "What Became of Them"} : new String[]{"Lore", "Letters", "Your Path"};
+        if (codexTab >= tabs.length && statesKnown) {
+            codexTab = 0;
+        }
+        int tx = bx + 8;
+        for (int i = 0; i < tabs.length; i++) {
+            int w = font.width(tabs[i]) + 16;
+            boolean on = i == codexTab;
+            boolean hover = over(mx, my, tx, top - 18, tx + w, top);
+            int col = on ? PAPER_LIGHT : hover ? 0xFF9A3A2A : 0xFF7A2418;
+            g.fill(tx, top - (on ? 18 : 15), tx + w, top + (on ? 2 : 0), col);
+            g.fill(tx, top - (on ? 18 : 15), tx + w, top - (on ? 17 : 14), on ? 0xFF8A6A32 : 0xFFB0503A);
+            g.drawString(font, tabs[i], tx + 8, top - (on ? 13 : 10), on ? RED_INK : 0xFFF2DCC0, false);
+            if (i == 1 && !on) {
+                for (JsonElement e : letters) {
+                    if (!seenLore.contains(letterKey(e.getAsJsonObject()))) {
+                        disc(g, tx + w - 3, top - 13, 2, 0xFFFFD040);
+                        break;
+                    }
+                }
+            }
+            final int ti = i;
+            hit(tx, top - 18, tx + w, top, () -> {
+                codexTab = ti;
+                codexScroll = 0;
+                pageScroll = 0;
+            });
+            tx += w + 3;
+        }
+        // the cover and two pages
+        g.fill(bx - 6, top - 4, bx + bw + 6, bottom + 4, 0xFF4A2A16);
+        g.fill(bx - 5, bottom + 2, bx + bw + 5, bottom + 3, 0xFF8A6A32);
         g.fill(bx, top, bx + bw, bottom, PAPER_LIGHT);
         for (int i = 0; i < 10; i++) {
             int a = (int) (0x38 * (i / 10.0));
@@ -1591,45 +1682,43 @@ public final class StoryMapScreen extends Screen {
             g.fill(mid + 9 - i, top, mid + 10 - i, bottom, a << 24);
         }
         g.fill(mid, top, mid + 1, bottom, 0x60301E0C);
-
-        List<Lore> known = unlockedLore();
-        if (codexPick < 0 || codexPick >= known.size()) {
-            codexPick = 0;
-            for (int i = 0; i < known.size(); i++) {
-                if (!seenLore.contains(known.get(i).title())) {
-                    codexPick = i;
+        int lx = bx + 14, lw = bw / 2 - 28;
+        int rx = mid + 18, rw = bw / 2 - 32;
+        if (codexTab == 2) {
+            drawPath(g, lx, lw, rx, rw, top, bottom);
+            return;
+        }
+        List<Row> list = rows(codexTab);
+        int pick = tabPicks[codexTab];
+        if (pick < 0 || pick >= list.size()) {
+            pick = 0;
+            for (int i = 0; i < list.size(); i++) {
+                if (!list.get(i).seenKey().isEmpty() && !seenLore.contains(list.get(i).seenKey())) {
+                    pick = i;
                     break;
                 }
             }
+            tabPicks[codexTab] = pick;
+            pageScroll = 0;
         }
+        codexPick = pick;
         // left page: the index
-        int lx = bx + 14, lw = bw / 2 - 28;
         g.enableScissor(bx, top + 4, mid - 6, bottom - 4);
         int y = top + 12 - codexScroll;
-        String cat = "";
-        for (int i = 0; i < known.size(); i++) {
-            Lore l = known.get(i);
-            if (!l.category().equals(cat)) {
-                cat = l.category();
-                int have = 0, all = 0;
-                for (Lore o : codex) {
-                    if (o.category().equals(cat)) {
-                        all++;
-                        if (reached(o.unlock())) {
-                            have++;
-                        }
-                    }
-                }
+        String group = null;
+        for (int i = 0; i < list.size(); i++) {
+            Row row = list.get(i);
+            if (!row.group().equals(group)) {
+                group = row.group();
                 if (i > 0) {
                     y += 6;
                 }
-                g.drawString(font, cat.toUpperCase(), lx, y, RED_INK, false);
-                String count = have + " of " + all;
-                g.drawString(font, count, lx + lw - font.width(count), y, 0xFF9A8662, false);
+                g.drawString(font, group.toUpperCase(), lx, y, RED_INK, false);
+                g.drawString(font, row.groupNote(), lx + lw - font.width(row.groupNote()), y, 0xFF9A8662, false);
                 g.fill(lx, y + 10, lx + lw, y + 11, 0x406B5638);
                 y += 15;
             }
-            boolean sel = i == codexPick;
+            boolean sel = i == pick;
             boolean hover = over(mx, my, lx - 4, y - 2, lx + lw, y + 10) && my > top && my < bottom;
             if (sel || hover) {
                 g.fill(lx - 4, y - 2, lx + lw, y + 10, sel ? 0x40C9A55A : 0x206B5638);
@@ -1637,66 +1726,231 @@ public final class StoryMapScreen extends Screen {
             if (sel) {
                 g.fill(lx - 4, y - 2, lx - 2, y + 10, RED_INK);
             }
-            g.drawString(font, font.plainSubstrByWidth(l.title(), lw - 16), lx + 2, y, sel ? INK : 0xFF5A4128, false);
-            if (!seenLore.contains(l.title())) {
-                disc(g, lx + lw - 5, y + 3, 2, 0xFFD03A2A);
+            int textX = lx + 2;
+            if (row.dot() != 0) {
+                disc(g, lx + 4, y + 3, 3, row.dot());
+                textX = lx + 11;
+            }
+            int noteW = row.note().isEmpty() ? 0 : font.width(row.note()) + 8;
+            g.drawString(font, font.plainSubstrByWidth(row.title(), lw - 16 - noteW - (textX - lx)), textX, y, sel ? INK : 0xFF5A4128, false);
+            if (!row.note().isEmpty()) {
+                g.drawString(font, row.note(), lx + lw - 8 - font.width(row.note()), y, 0xFF9A8662, false);
+            }
+            if (!row.seenKey().isEmpty() && !seenLore.contains(row.seenKey())) {
+                disc(g, lx + lw - 3, y + 3, 2, 0xFFD03A2A);
             }
             final int ix = i;
             if (my > top && my < bottom) {
-                hit(lx - 4, y - 2, lx + lw, y + 10, () -> codexPick = ix);
+                hit(lx - 4, y - 2, lx + lw, y + 10, () -> {
+                    tabPicks[codexTab] = ix;
+                    pageScroll = 0;
+                });
             }
             y += 13;
         }
-        int locked = codex.size() - known.size();
-        if (locked > 0) {
-            y += 8;
-            g.drawString(font, Component.literal(locked + " more to discover").withStyle(ChatFormatting.ITALIC), lx, y, 0xFF9A8662, false);
-            y += 10;
+        if (codexTab == 0) {
+            int locked = codex.size() - list.size();
+            if (locked > 0) {
+                y += 8;
+                g.drawString(font, Component.literal(locked + " more to discover").withStyle(ChatFormatting.ITALIC), lx, y, 0xFF9A8662, false);
+                y += 10;
+            }
         }
         codexContentH = y + codexScroll - top;
         g.disableScissor();
         // right page: the entry
-        int rx = mid + 18, rw = bw / 2 - 32;
-        if (known.isEmpty()) {
-            g.drawString(font, Component.literal("Nothing yet. Go and find out.").withStyle(ChatFormatting.ITALIC), rx, top + 20, INK_SOFT, false);
+        if (list.isEmpty()) {
+            String none = codexTab == 1 ? "No letters yet. Someone will write." : codexTab == 3 ? "..." : "Nothing yet. Go and find out.";
+            g.drawString(font, Component.literal(none).withStyle(ChatFormatting.ITALIC), rx, top + 20, INK_SOFT, false);
             return;
         }
-        Lore l = known.get(codexPick);
-        markSeen(l.title());
-        int ry = top + 14;
-        g.drawString(font, l.category().toUpperCase(), rx, ry, RED_INK, false);
+        Row row = list.get(pick);
+        if (!row.seenKey().isEmpty()) {
+            markSeen(row.seenKey());
+        }
+        g.enableScissor(mid + 4, top + 4, bx + bw, bottom - 4);
+        int ry = top + 14 - pageScroll;
+        int start = ry;
+        if (codexTab == 0) {
+            Lore l = unlockedLore().get(pick);
+            ry = pageHeading(g, rx, rw, ry, l.category().toUpperCase(), l.title());
+            Node from = nodes.get(l.unlock());
+            String trait = l.unlock().replace("mebahelrpgrquest:", "") + "_done";
+            if (l.category().equals("Wardens") && moments.has(trait)) {
+                g.drawString(font, Component.literal("Fell on day " + moments.get(trait).getAsLong() + " of your journey").withStyle(ChatFormatting.ITALIC), rx, ry, RED_INK, false);
+                ry += 12;
+            } else if (from != null) {
+                g.drawString(font, Component.literal("from " + from.title()).withStyle(ChatFormatting.ITALIC), rx, ry, 0xFF9A8662, false);
+                ry += 12;
+            }
+            ry = divider(g, rx, rw, ry) + 2;
+            ry = paragraph(g, l.text(), rx, rw, ry);
+        } else if (codexTab == 1) {
+            JsonObject l = letters.get(letters.size() - 1 - pick).getAsJsonObject();
+            ry = pageHeading(g, rx, rw, ry, "A LETTER  \u00b7  DAY " + (l.has("day") ? l.get("day").getAsLong() : 0), l.get("title").getAsString());
+            ry = divider(g, rx, rw, ry) + 2;
+            for (JsonElement pg : l.getAsJsonArray("pages")) {
+                ry = paragraph(g, pg.getAsString(), rx, rw, ry) + 6;
+            }
+            String sign = "- " + l.get("author").getAsString();
+            g.drawString(font, Component.literal(sign).withStyle(ChatFormatting.ITALIC), rx + rw - font.width(sign) - 4, ry, INK_SOFT, false);
+            ry += 12;
+        } else if (codexTab == 3 && fates != null) {
+            JsonObject f = fates.get(pick).getAsJsonObject();
+            ry = pageHeading(g, rx, rw, ry, "WHAT BECAME OF THEM", f.get("name").getAsString());
+            String kind = f.get("kind").getAsString();
+            String how = kind.equals("mercy") ? "You showed mercy" : kind.equals("blade") ? "You chose the blade" : "";
+            if (!how.isEmpty()) {
+                disc(g, rx + 3, ry + 3, 3, kind.equals("mercy") ? MERCY : BLADE);
+                g.drawString(font, Component.literal(how).withStyle(ChatFormatting.ITALIC), rx + 10, ry, kind.equals("mercy") ? 0xFF2E6B2E : 0xFF6A1010, false);
+                ry += 12;
+            }
+            ry = divider(g, rx, rw, ry) + 2;
+            ry = paragraph(g, f.get("text").getAsString(), rx, rw, ry);
+        }
+        pageContentH = ry - start + 20;
+        g.disableScissor();
+    }
+
+    private int pageHeading(GuiGraphics g, int rx, int rw, int ry, String kicker, String title) {
+        g.drawString(font, kicker, rx, ry, RED_INK, false);
         ry += 14;
-        if (font.width(l.title()) * 2 <= rw) {
+        if (font.width(title) * 2 <= rw) {
             g.pose().pushPose();
             g.pose().translate(rx, ry, 0);
             g.pose().scale(2, 2, 1);
-            g.drawString(font, l.title(), 0, 0, INK, false);
+            g.drawString(font, title, 0, 0, INK, false);
             g.pose().popPose();
-            ry += 22;
-        } else {
-            for (FormattedCharSequence line : font.split(Component.literal(l.title()).withStyle(ChatFormatting.BOLD), rw)) {
-                g.drawString(font, line, rx, ry, INK, false);
+            return ry + 22;
+        }
+        for (FormattedCharSequence line : font.split(Component.literal(title).withStyle(ChatFormatting.BOLD), rw)) {
+            g.drawString(font, line, rx, ry, INK, false);
+            ry += 11;
+        }
+        return ry + 3;
+    }
+
+    private int paragraph(GuiGraphics g, String text, int rx, int rw, int ry) {
+        for (String para : text.split("\n")) {
+            if (para.isBlank()) {
+                ry += 6;
+                continue;
+            }
+            for (FormattedCharSequence line : font.split(Component.literal(para), rw)) {
+                g.drawString(font, line, rx, ry, 0xFF3B2A1A, false);
                 ry += 11;
             }
-            ry += 3;
         }
-        Node from = nodes.get(l.unlock());
-        if (from != null) {
-            g.drawString(font, Component.literal("from " + from.title()).withStyle(ChatFormatting.ITALIC), rx, ry, 0xFF9A8662, false);
-            ry += 12;
+        return ry;
+    }
+
+    /** Your Path: your reputation across the story, and where you stand with the Watch and the Hand. */
+    private void drawPath(GuiGraphics g, int lx, int lw, int rx, int rw, int top, int bottom) {
+        g.drawString(font, "YOUR PATH", lx, top + 12, RED_INK, false);
+        g.drawString(font, Component.literal("who you were, quest by quest").withStyle(ChatFormatting.ITALIC), lx, top + 24, 0xFF9A8662, false);
+        int cx0 = lx + 34, cx1 = lx + lw, cy0 = top + 46, cy1 = bottom - 22;
+        // the five bands, Saint at the top
+        String[] names = {"Saint", "Good", "Wavering", "Fallen", "Wicked"};
+        int[] tint = {0x30E0B040, 0x2060A050, 0x10806040, 0x20C06030, 0x30A02020};
+        int[] ink = {0xFF9A6A10, 0xFF2E6B2E, 0xFF6B5638, 0xFF8A4A1A, 0xFF7A1818};
+        for (int i = 0; i < 5; i++) {
+            int y0 = cy0 + (cy1 - cy0) * i / 5, y1 = cy0 + (cy1 - cy0) * (i + 1) / 5;
+            g.fill(cx0, y0, cx1, y1, tint[i]);
+            g.drawString(font, names[i], lx - 2 + 32 - font.width(names[i]), (y0 + y1) / 2 - 4, ink[i], false);
         }
+        g.fill(cx0, cy0, cx0 + 1, cy1, 0x806B5638);
+        g.fill(cx0, (cy0 + cy1) / 2, cx1, (cy0 + cy1) / 2 + 1, 0x306B5638);
+        List<Integer> vals = new ArrayList<>();
+        List<int[]> acts = new ArrayList<>();
+        List<String> actNames = new ArrayList<>();
+        for (JsonElement e : path) {
+            String v = e.getAsString();
+            if (v.startsWith("#")) {
+                acts.add(new int[]{vals.size()});
+                actNames.add(v.substring(1));
+            } else {
+                try {
+                    vals.add(Integer.parseInt(v));
+                } catch (NumberFormatException ignored) {
+                    // skip
+                }
+            }
+        }
+        if (vals.size() < 2) {
+            g.drawString(font, Component.literal("Your path begins with your first few quests.").withStyle(ChatFormatting.ITALIC), cx0 + 6, (cy0 + cy1) / 2 - 14, INK_SOFT, false);
+        } else {
+            int n = vals.size();
+            java.util.function.IntUnaryOperator px = i -> cx0 + 3 + (int) Math.round((cx1 - cx0 - 8) * i / (double) (n - 1));
+            java.util.function.IntUnaryOperator py = v -> cy0 + (int) Math.round((cy1 - cy0) * (100 - Math.max(-100, Math.min(100, v))) / 200.0);
+            int lastLabel = -1000;
+            for (int k = 0; k < acts.size(); k++) {
+                int x = px.applyAsInt(Math.min(n - 1, acts.get(k)[0]));
+                for (int y = cy0; y < cy1; y += 3) {
+                    g.fill(x, y, x + 1, y + 1, 0x606B5638);
+                }
+                String label = actNames.get(k).replace("Act ", "");
+                if (x - lastLabel > font.width(label) + 6) {
+                    g.drawString(font, label, x + 2, cy1 + 3, 0xFF8A6A32, false);
+                    lastLabel = x;
+                }
+            }
+            for (int i = 1; i < n; i++) {
+                int x0 = px.applyAsInt(i - 1), y0 = py.applyAsInt(vals.get(i - 1)), x1 = px.applyAsInt(i), y1 = py.applyAsInt(vals.get(i));
+                int steps = Math.max(Math.abs(x1 - x0), Math.abs(y1 - y0));
+                for (int k = 0; k <= steps; k++) {
+                    int x = x0 + (x1 - x0) * k / Math.max(1, steps), y = y0 + (y1 - y0) * k / Math.max(1, steps);
+                    g.fill(x, y, x + 2, y + 2, 0xE05A2A10);
+                }
+            }
+            int ex = px.applyAsInt(n - 1), ey = py.applyAsInt(vals.get(n - 1));
+            disc(g, ex, ey, 4, 0xFFD9A030);
+            ring(g, ex, ey, 4, 1, 0xFF7A4A10);
+        }
+        // right page: who you are now
+        int ry = top + 12;
+        g.drawString(font, "WHO YOU ARE", rx, ry, RED_INK, false);
+        ry += 14;
+        String tier = repTier();
+        g.pose().pushPose();
+        g.pose().translate(rx, ry, 0);
+        g.pose().scale(2, 2, 1);
+        g.drawString(font, tier, 0, 0, 0xFF000000 | darken(tierColor(), 0.7), false);
+        g.pose().popPose();
+        ry += 22;
+        g.drawString(font, "Reputation " + Math.round(rep) + (day > 0 ? "  \u00b7  day " + day : ""), rx, ry, INK_SOFT, false);
+        ry += 12;
         ry = divider(g, rx, rw, ry);
-        ry += 2;
-        boolean first = true;
-        for (FormattedCharSequence line : font.split(Component.literal(l.text()), rw)) {
-            g.drawString(font, line, rx, ry, 0xFF3B2A1A, false);
-            ry += 11;
-            first = false;
+        ry = rankBlock(g, rx, rw, ry, "THE WATCH", "watch");
+        ry = rankBlock(g, rx, rw, ry + 4, "THE GILDED HAND", "hand");
+        ry = divider(g, rx, rw, ry + 2);
+        int fallen = 0;
+        for (Lore l : codex) {
+            if (l.category().equals("Wardens") && moments.has(l.unlock().replace("mebahelrpgrquest:", "") + "_done")) {
+                fallen++;
+            }
         }
-        if (!first) {
-            ry += 6;
-            diamond(g, rx + rw / 2, ry, 2, 0xFF8A6A32);
+        g.drawString(font, "Wardens fallen: " + fallen + " of 7", rx, ry, INK, false);
+        ry += 11;
+        g.drawString(font, "Letters received: " + letters.size(), rx, ry, INK, false);
+    }
+
+    private int rankBlock(GuiGraphics g, int rx, int rw, int ry, String heading, String key) {
+        g.drawString(font, heading, rx, ry, 0xFF8A6A32, false);
+        ry += 11;
+        int rank = ranks.has(key) ? ranks.get(key).getAsInt() : 0;
+        String title = ranks.has(key + "Title") ? ranks.get(key + "Title").getAsString() : "";
+        g.drawString(font, Component.literal(rank == 0 ? "Not one of them" : title).withStyle(rank == 0 ? ChatFormatting.ITALIC : ChatFormatting.BOLD), rx, ry,
+                rank == 0 ? 0xFF9A8662 : INK, false);
+        for (int i = 0; i < 3; i++) {
+            diamond(g, rx + rw - 30 + i * 10, ry + 3, 3, i < rank ? (key.equals("watch") ? 0xFF4A7AB0 : 0xFFC9A55A) : 0x406B5638);
         }
+        ry += 11;
+        String prog = ranks.has(key + "Progress") ? ranks.get(key + "Progress").getAsString() : "";
+        for (FormattedCharSequence line : font.split(Component.literal(prog), rw)) {
+            g.drawString(font, line, rx, ry, 0xFF6B5638, false);
+            ry += 10;
+        }
+        return ry + 2;
     }
 
     private int codexContentH;
@@ -1760,8 +2014,12 @@ public final class StoryMapScreen extends Screen {
     @Override
     public boolean mouseScrolled(double mx, double my, double scrollX, double scrollY) {
         if (showCodex) {
-            int view = height - FOOT - TOP - 28;
-            codexScroll = (int) Math.max(0, Math.min(Math.max(0, codexContentH - view), codexScroll - scrollY * 20));
+            int view = height - FOOT - TOP - 46;
+            if (mx > width / 2.0) {
+                pageScroll = (int) Math.max(0, Math.min(Math.max(0, pageContentH - view), pageScroll - scrollY * 20));
+            } else {
+                codexScroll = (int) Math.max(0, Math.min(Math.max(0, codexContentH - view), codexScroll - scrollY * 20));
+            }
             return true;
         }
         if (selected != null && mx >= canvasRight()) {
@@ -1797,11 +2055,20 @@ public final class StoryMapScreen extends Screen {
         }
         if (showCodex) {
             if (key == GLFW.GLFW_KEY_DOWN || key == GLFW.GLFW_KEY_S) {
-                codexPick = Math.min(Math.max(0, unlockedLore().size() - 1), codexPick + 1);
+                tabPicks[codexTab] = Math.min(Math.max(0, rows(codexTab).size() - 1), codexPick + 1);
+                pageScroll = 0;
                 return true;
             }
             if (key == GLFW.GLFW_KEY_UP || key == GLFW.GLFW_KEY_W) {
-                codexPick = Math.max(0, codexPick - 1);
+                tabPicks[codexTab] = Math.max(0, codexPick - 1);
+                pageScroll = 0;
+                return true;
+            }
+            if (key == GLFW.GLFW_KEY_LEFT || key == GLFW.GLFW_KEY_A || key == GLFW.GLFW_KEY_RIGHT || key == GLFW.GLFW_KEY_D) {
+                int count = fates != null ? 4 : 3;
+                codexTab = Math.floorMod(codexTab + (key == GLFW.GLFW_KEY_LEFT || key == GLFW.GLFW_KEY_A ? -1 : 1), count);
+                codexScroll = 0;
+                pageScroll = 0;
                 return true;
             }
             return super.keyPressed(key, scan, mods);

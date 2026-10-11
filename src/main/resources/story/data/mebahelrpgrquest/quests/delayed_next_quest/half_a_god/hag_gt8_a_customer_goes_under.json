@@ -65,7 +65,7 @@
       "spawn_radius": 10,
       "spawn_on_accept": true,
       "spare": false,
-      "glow": true,
+      "glow": false,
       "max_health": 60,
       "respawn_on_death": true,
       "golem_protected": true,

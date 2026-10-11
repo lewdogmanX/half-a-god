@@ -714,5 +714,1083 @@
    "place": "local",
    "adopt": "netherman:doctor"
   }
- ]
+ ],
+ "steps": {
+  "mebahelrpgrquest:hag_the_first_letter": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_p2_winter_stores": [
+   [
+    0,
+    "Collect 64 x wheat"
+   ],
+   [
+    1,
+    "Collect 32 x potato"
+   ],
+   [
+    2,
+    "Collect 16 x cooked beef"
+   ],
+   [
+    3,
+    "Talk to The Farmer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_p3_the_shepherd": [
+   [
+    0,
+    "Wait for next night"
+   ],
+   [
+    1,
+    "Defeat 10 x zombie"
+   ],
+   [
+    2,
+    "Talk to Tam the Shepherd"
+   ]
+  ],
+  "mebahelrpgrquest:hag_p4_eye_on_chapel": [
+   [
+    0,
+    "Talk to The Cleric"
+   ],
+   [
+    1,
+    "Place 8 x candle"
+   ]
+  ],
+  "mebahelrpgrquest:hag_p5_raise_the_watch": [
+   [
+    0,
+    "Talk to The Mason"
+   ],
+   [
+    1,
+    "Place 48 x stone bricks"
+   ],
+   [
+    2,
+    "Place 8 x ladder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_p6_market_road": [
+   [
+    0,
+    "Talk to The Farmer"
+   ],
+   [
+    1,
+    "Defeat 6 x pillager"
+   ],
+   [
+    1,
+    "Defeat 1 x vindicator"
+   ],
+   [
+    2,
+    "Talk to Market Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_p8_pillager_moon": [
+   [
+    0,
+    "Talk to Village Elder"
+   ],
+   [
+    1,
+    "Wait for next night"
+   ],
+   [
+    2,
+    "Defeat 8 x pillager"
+   ],
+   [
+    2,
+    "Defeat 4 x vindicator"
+   ],
+   [
+    2,
+    "Defeat 1 x witch"
+   ],
+   [
+    2,
+    "Defeat 1 x ravager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_a1_ashford_burns": [
+   [
+    0,
+    "Defeat 11 x pillager"
+   ],
+   [
+    0,
+    "Defeat 4 x vindicator"
+   ],
+   [
+    1,
+    "Talk to Reeve Halden"
+   ]
+  ],
+  "mebahelrpgrquest:hag_a2_what_was_left": [
+   [
+    0,
+    "Collect 32 x bread"
+   ],
+   [
+    1,
+    "Collect 16 x white wool"
+   ],
+   [
+    2,
+    "Collect 32 x coal"
+   ],
+   [
+    3,
+    "Talk to Ashford Survivor"
+   ]
+  ],
+  "mebahelrpgrquest:hag_a3_roof_and_hearth": [
+   [
+    0,
+    "Talk to Reeve Halden"
+   ],
+   [
+    1,
+    "Place 96 x oak planks"
+   ],
+   [
+    2,
+    "Place 32 x glass pane"
+   ],
+   [
+    3,
+    "Place 4 x white bed"
+   ]
+  ],
+  "mebahelrpgrquest:hag_a4_refugee_road": [
+   [
+    0,
+    "Talk to Ashford Survivor"
+   ],
+   [
+    1,
+    "Defeat 4 x vindicator"
+   ],
+   [
+    2,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_a9_open_the_cells": [
+   [
+    0,
+    "Defeat 5 x vindicator"
+   ],
+   [
+    1,
+    "Talk to Freed Ashford Man"
+   ]
+  ],
+  "mebahelrpgrquest:hag_a13_tears_for_a_ward": [
+   [
+    0,
+    "Collect 4 x ghast tear"
+   ],
+   [
+    1,
+    "Talk to The Cleric"
+   ]
+  ],
+  "mebahelrpgrquest:hag_a15_one_of_seven": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_p7s_the_peddlers_gift": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_w2_smite_the_dead": [
+   [
+    0,
+    "Collect 12 x blaze rod"
+   ],
+   [
+    1,
+    "Collect 32 x bone"
+   ],
+   [
+    2,
+    "Talk to The Armourer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_w8_six_remain": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_h10_fireproof": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_e1_the_librarians_request": [
+   [
+    0,
+    "Collect 24 x book"
+   ],
+   [
+    1,
+    "Collect 8 x ink sac"
+   ],
+   [
+    2,
+    "Talk to The Librarian"
+   ]
+  ],
+  "mebahelrpgrquest:hag_e7_the_nether_is_singing": [
+   [
+    0,
+    "Talk to The Librarian"
+   ]
+  ],
+  "mebahelrpgrquest:hag_s1_cold_hearths": [
+   [
+    0,
+    "Collect 64 x coal"
+   ],
+   [
+    1,
+    "Collect 48 x spruce log"
+   ],
+   [
+    2,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_s3_lost_in_the_snow": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_d1_the_buried_well": [
+   [
+    0,
+    "Collect 6 x milk bucket"
+   ],
+   [
+    1,
+    "Defeat 12 x husk"
+   ],
+   [
+    2,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_d3_the_beast_below": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_c4_terror_of_the_depths": [
+   [
+    0,
+    "Talk to Harbourmaster"
+   ]
+  ],
+  "mebahelrpgrquest:hag_f3_unbound": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_v1_blood_in_the_wells": [
+   [
+    0,
+    "Talk to The Librarian"
+   ]
+  ],
+  "mebahelrpgrquest:hag_v8_sinbuster": [
+   [
+    0,
+    "Talk to The Smith"
+   ]
+  ],
+  "mebahelrpgrquest:hag_v9_the_wrong_parcel": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_m9_half_a_soul": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_g1_maraals_last_letter": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_g2_ashford_rebuilt": [
+   [
+    0,
+    "Talk to Reeve Halden"
+   ],
+   [
+    1,
+    "Place 128 x stone bricks"
+   ],
+   [
+    2,
+    "Place 1 x bell"
+   ]
+  ],
+  "mebahelrpgrquest:hag_w0_two_roads_meet": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_e0_the_road_to_the_end": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_gt1_a_note_in_the_stash": [
+   [
+    0,
+    "Collect 16 x weed"
+   ],
+   [
+    1,
+    "Talk to The Fixer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_gt3_first_customers": [
+   [
+    0,
+    "Collect 8 x joint"
+   ],
+   [
+    1,
+    "Talk to Nervous Buyer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_gt4_the_hash_market": [
+   [
+    0,
+    "Collect 16 x hash"
+   ],
+   [
+    1,
+    "Talk to The Fixer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_gt7_white_powder_money": [
+   [
+    0,
+    "Collect 16 x cocaine"
+   ],
+   [
+    1,
+    "Talk to The Fixer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_gt8_a_customer_goes_under": [
+   [
+    0,
+    "Collect 1 x narcan"
+   ],
+   [
+    1,
+    "Talk to Buyer's Friend"
+   ],
+   [
+    2,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_gt11_crystal": [
+   [
+    0,
+    "Collect 16 x meth"
+   ],
+   [
+    1,
+    "Talk to The Fixer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_gt13p_the_big_shipment": [
+   [
+    0,
+    "Collect 32 x cocaine"
+   ],
+   [
+    1,
+    "Collect 32 x hash"
+   ],
+   [
+    2,
+    "Talk to The Fixer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_gt14_king_of_the_valley": [
+   [
+    0,
+    "Talk to The Fixer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_go0_a_way_out": [
+   [
+    0,
+    "Talk to Reeve Halden"
+   ]
+  ],
+  "mebahelrpgrquest:hag_go1_burn_it_down": [
+   [
+    0,
+    "Break 16 x weed crop"
+   ],
+   [
+    1,
+    "Talk to Reeve Halden"
+   ]
+  ],
+  "mebahelrpgrquest:hag_go3_testimony": [
+   [
+    0,
+    "Reach a sorcerer hut"
+   ],
+   [
+    1,
+    "Defeat 1 x sorcerer"
+   ],
+   [
+    2,
+    "Find and read: Blackwater Ledger"
+   ],
+   [
+    3,
+    "Talk to Reeve Halden"
+   ]
+  ],
+  "mebahelrpgrquest:hag_gt1b_the_recruiters_terms": [
+   [
+    0,
+    "Collect 16 x weed"
+   ],
+   [
+    1,
+    "Talk to The Fixer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_br1_the_watch_needs_eyes": [
+   [
+    0,
+    "Talk to Captain of the Watch"
+   ]
+  ],
+  "mebahelrpgrquest:hag_br4_medicine_for_the_valley": [
+   [
+    0,
+    "Collect 3 x narcan"
+   ],
+   [
+    1,
+    "Talk to The Cleric"
+   ]
+  ],
+  "mebahelrpgrquest:hag_br6_the_valley_breathes": [
+   [
+    0,
+    "Talk to Captain of the Watch"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc1_saint": [
+   [
+    0,
+    "Talk to Reeve Halden"
+   ],
+   [
+    1,
+    "Place 12 x lantern"
+   ],
+   [
+    2,
+    "Escort someone home"
+   ],
+   [
+    3,
+    "Defeat 1 x pillager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc1_waver": [
+   [
+    0,
+    "Collect 32 x bread"
+   ],
+   [
+    1,
+    "Collect 16 x iron ingot"
+   ],
+   [
+    2,
+    "Talk to Ashford Elder"
+   ],
+   [
+    3,
+    "Defeat 1 x pillager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc1_wicked": [
+   [
+    0,
+    "Collect 24 x emerald"
+   ],
+   [
+    1,
+    "Talk to Silas of the Gilded Hand"
+   ],
+   [
+    2,
+    "Defeat 1 x pillager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc2_good": [
+   [
+    0,
+    "Talk to Guard Captain"
+   ],
+   [
+    1,
+    "Place 32 x cobblestone wall"
+   ],
+   [
+    2,
+    "Defeat 1 x wandering trader"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc2_wicked": [
+   [
+    0,
+    "Collect 2 x wither skeleton skull"
+   ],
+   [
+    1,
+    "Talk to Silas of the Gilded Hand"
+   ],
+   [
+    2,
+    "Defeat 1 x wandering trader"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc3_saint": [
+   [
+    0,
+    "Collect 6 x white apple"
+   ],
+   [
+    1,
+    "Talk to The Cleric"
+   ],
+   [
+    2,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc3_good": [
+   [
+    0,
+    "Defeat 4 x aechor plant"
+   ],
+   [
+    1,
+    "Collect 8 x aechor petal"
+   ],
+   [
+    2,
+    "Talk to The Cleric"
+   ],
+   [
+    3,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc3_waver": [
+   [
+    0,
+    "Collect 16 x ambrosium shard"
+   ],
+   [
+    1,
+    "Talk to The Cleric"
+   ],
+   [
+    2,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc3_fallen": [
+   [
+    0,
+    "Collect 32 x skyroot log"
+   ],
+   [
+    1,
+    "Talk to The Farmer"
+   ],
+   [
+    2,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc3_wicked": [
+   [
+    0,
+    "Collect 16 x golden amber"
+   ],
+   [
+    1,
+    "Talk to Silas of the Gilded Hand"
+   ],
+   [
+    2,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc4_good": [
+   [
+    0,
+    "Collect 12 x ender pearl"
+   ],
+   [
+    1,
+    "Talk to Reeve Halden"
+   ],
+   [
+    2,
+    "Defeat 1 x evoker"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc4_waver": [
+   [
+    0,
+    "Talk to The Librarian"
+   ],
+   [
+    1,
+    "Defeat 1 x evoker"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc5_saint": [
+   [
+    0,
+    "Collect 4 x oak boat"
+   ],
+   [
+    1,
+    "Talk to Harbourmaster"
+   ],
+   [
+    2,
+    "Defeat 1 x pillager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc5_good": [
+   [
+    0,
+    "Collect 6 x campfire"
+   ],
+   [
+    1,
+    "Talk to Village Elder"
+   ],
+   [
+    2,
+    "Defeat 1 x pillager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc6_saint": [
+   [
+    0,
+    "Collect 4 x golden apple"
+   ],
+   [
+    1,
+    "Talk to The Cleric"
+   ],
+   [
+    2,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc6_good": [
+   [
+    0,
+    "Talk to Reeve Halden"
+   ],
+   [
+    1,
+    "Place 4 x white bed"
+   ],
+   [
+    2,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc6_waver": [
+   [
+    0,
+    "Collect 32 x gold ingot"
+   ],
+   [
+    1,
+    "Talk to Reeve Halden"
+   ],
+   [
+    2,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc6_wicked": [
+   [
+    0,
+    "Collect 4 x bottle of blood"
+   ],
+   [
+    1,
+    "Talk to Silas of the Gilded Hand"
+   ],
+   [
+    2,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc7_saint": [
+   [
+    0,
+    "Wait for next night"
+   ],
+   [
+    1,
+    "Defeat 4 x vindicator"
+   ],
+   [
+    1,
+    "Defeat 2 x pillager"
+   ],
+   [
+    2,
+    "Talk to Reeve Halden"
+   ],
+   [
+    3,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc7_waver": [
+   [
+    0,
+    "Wait for next night"
+   ],
+   [
+    1,
+    "Defeat 8 x vindicator"
+   ],
+   [
+    1,
+    "Defeat 3 x pillager"
+   ],
+   [
+    1,
+    "Defeat 1 x evoker"
+   ],
+   [
+    2,
+    "Talk to Halden's Son"
+   ],
+   [
+    3,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc7_fallen": [
+   [
+    0,
+    "Wait for next night"
+   ],
+   [
+    1,
+    "Defeat 10 x vindicator"
+   ],
+   [
+    1,
+    "Defeat 4 x pillager"
+   ],
+   [
+    1,
+    "Defeat 1 x ravager"
+   ],
+   [
+    2,
+    "Talk to The Cleric"
+   ],
+   [
+    3,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rc7_wicked": [
+   [
+    0,
+    "Wait for next night"
+   ],
+   [
+    1,
+    "Defeat 2 x iron golem"
+   ],
+   [
+    1,
+    "Defeat 4 x vindicator"
+   ],
+   [
+    2,
+    "Collect 4 x gold block"
+   ],
+   [
+    3,
+    "Talk to Silas of the Gilded Hand"
+   ],
+   [
+    4,
+    "Defeat 1 x villager"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rep_end_saint": [
+   [
+    0,
+    "Talk to Reeve Halden"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rep_end_good": [
+   [
+    0,
+    "Talk to Reeve Halden"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rep_end_waver": [
+   [
+    0,
+    "Talk to The Cleric"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rep_end_fallen": [
+   [
+    0,
+    "Talk to Halden's Son"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rep_end_wicked": [
+   [
+    0,
+    "Talk to Silas of the Gilded Hand"
+   ]
+  ],
+  "mebahelrpgrquest:hag_bz1_a_letter_smelling_of_honey": [
+   [
+    0,
+    "Talk to Wren the Apiarist"
+   ]
+  ],
+  "mebahelrpgrquest:hag_bz2_pearls_and_patience": [
+   [
+    0,
+    "Collect 6 x honeycomb"
+   ],
+   [
+    1,
+    "Talk to Wren the Apiarist"
+   ]
+  ],
+  "mebahelrpgrquest:hag_bz10_the_honey_crown": [
+   [
+    0,
+    "Talk to Wren the Apiarist"
+   ]
+  ],
+  "mebahelrpgrquest:hag_lg1_the_golden_legion": [
+   [
+    0,
+    "Talk to Old Aurel"
+   ]
+  ],
+  "mebahelrpgrquest:hag_lg4_the_thermal_heart": [
+   [
+    0,
+    "Collect 1 x thermal stone"
+   ],
+   [
+    1,
+    "Talk to Old Aurel"
+   ]
+  ],
+  "mebahelrpgrquest:hag_x1_the_informant_after": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_x1k_wicks_sister": [
+   [
+    0,
+    "Talk to Nell"
+   ]
+  ],
+  "mebahelrpgrquest:hag_x2_the_bastille_warden_after": [
+   [
+    0,
+    "Talk to Ashford Survivor"
+   ]
+  ],
+  "mebahelrpgrquest:hag_x2s_the_wardens_debt": [
+   [
+    0,
+    "Talk to Gorran the Gatekeeper"
+   ]
+  ],
+  "mebahelrpgrquest:hag_x4s_sunlight_in_a_bottle": [
+   [
+    0,
+    "Talk to The Pilgrim"
+   ]
+  ],
+  "mebahelrpgrquest:hag_x5_the_last_garrison_man_after": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_x5s_brann_comes_home": [
+   [
+    0,
+    "Talk to Ilse"
+   ]
+  ],
+  "mebahelrpgrquest:hag_x5k_a_widows_letter": [
+   [
+    0,
+    "Talk to Ilse"
+   ]
+  ],
+  "mebahelrpgrquest:hag_y1_what_the_last_page_said": [
+   [
+    0,
+    "Talk to The Librarian"
+   ]
+  ],
+  "mebahelrpgrquest:hag_y2_the_hand_reads_too": [
+   [
+    0,
+    "Talk to Silas of the Gilded Hand"
+   ]
+  ],
+  "mebahelrpgrquest:hag_y3_tomas_at_the_gate": [
+   [
+    0,
+    "Talk to Reeve Halden"
+   ]
+  ],
+  "mebahelrpgrquest:hag_y5_the_midwifes_daughter": [
+   [
+    0,
+    "Talk to Wren of the Pits"
+   ]
+  ],
+  "mebahelrpgrquest:hag_et1_whispers_of_a_new_god": [
+   [
+    0,
+    "Talk to Reeve Halden"
+   ]
+  ],
+  "mebahelrpgrquest:hag_et4_morning": [
+   [
+    0,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_ru1_the_lantern_road": [
+   [
+    0,
+    "Place 20 x lantern"
+   ],
+   [
+    1,
+    "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_ru2_silas_makes_an_offer": [
+   [
+    0,
+    "Talk to Silas of the Gilded Hand"
+   ],
+   [
+    1,
+    "Defeat 1 x iron golem"
+   ]
+  ],
+  "mebahelrpgrquest:hag_a6_believers_house": [
+   [
+    0,
+    "Reach a believer house"
+   ],
+   [
+    1,
+    "Talk to The Preacher"
+   ],
+   [
+    2,
+    "Defeat 4 x vindicator"
+   ],
+   [
+    3,
+    "Find and read: Ledger of Ashford"
+   ]
+  ],
+  "mebahelrpgrquest:hag_m1_follow_the_crimson_bee": [
+   [
+    0,
+    "Reach a mansion nether"
+   ],
+   [
+    1,
+    "Talk to The Welcomer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_m4_gilded_hunger": [
+   [
+    0,
+    "Defeat 3 x gilded golem"
+   ],
+   [
+    1,
+    "Talk to The Doctor"
+   ]
+  ]
+ }
 }

@@ -292,6 +292,13 @@ public final class Meb {
         return r instanceof Number n ? n.intValue() : 0;
     }
 
+    /** Takes back a random quest Mebahel rolled for this villager (story characters don't hand out side quests). */
+    public static void clearOffer(Entity villager) {
+        call(villager, "mebahelrpgrquest$setQuestId", (Object) null);
+        call(villager, "mebahelrpgrquest$setQuestClaimed", false);
+        call(villager, "mebahelrpgrquest$setQuestRollDone", true);
+    }
+
     public static UUID giverOf(Object progress) {
         Object r = call(progress, "getQuestGiverUuid");
         return r instanceof UUID u ? u : null;

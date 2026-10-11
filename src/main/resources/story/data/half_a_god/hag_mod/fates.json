@@ -1,0 +1,549 @@
+{
+ "fates": [
+  {
+   "name": "Reeve Halden",
+   "options": [
+    {
+     "trait": "hag_halden_killed_by_the_hand",
+     "kind": "blade",
+     "text": "The Gilded Hand came for Ashford's reeve in the end, and you let them. Ashford still lights a candle for him every winter. Nobody says your name when they do."
+    },
+    {
+     "trait": "hag_halden_spared_by_the_hand",
+     "kind": "mercy",
+     "text": "The Hand meant to make an example of him. You made them think better of it. Halden judged Ashford for twenty more years, fairly, and forgave slowly, as he always had."
+    },
+    {
+     "trait": "hag_rep_saint",
+     "kind": "mercy",
+     "text": "Halden lived to see Ashford whole again. He kept a chair by the hall fire that nobody else was allowed to sit in. It was yours."
+    },
+    {
+     "trait": "hag_rep_good",
+     "kind": "mercy",
+     "text": "Halden rebuilt Ashford one roof at a time. He never thanked you in words. He didn't need to."
+    },
+    {
+     "trait": "hag_rep_waver",
+     "kind": "other",
+     "text": "Halden never quite decided what you were. He kept your letters, though. All of them."
+    },
+    {
+     "trait": "hag_rep_fallen",
+     "kind": "other",
+     "text": "Halden barred his door the last time you came to Ashford. He watched you leave through the shutters, and did not sleep that night."
+    },
+    {
+     "trait": "hag_rep_wicked",
+     "kind": "blade",
+     "text": "Halden paid the Gilded Hand's tithe every month until he died, and every month he cursed the day he asked you for help."
+    }
+   ]
+  },
+  {
+   "name": "Tomas, Halden's son",
+   "options": [
+    {
+     "trait": "hag_tomas_home",
+     "kind": "mercy",
+     "text": "You sent him home. He became Ashford's mason, and then its reeve. He still can't walk past a quarry without his hands shaking."
+    },
+    {
+     "trait": "hag_tomas_guard",
+     "kind": "other",
+     "text": "He held the portal while the others ran. He came home a soldier, which was not what his father wanted, but it was what he was."
+    },
+    {
+     "trait": "hag_tomas_mocked",
+     "kind": "blade",
+     "text": "You laughed at him. He went home anyway, and never spoke of you again, not even to his father."
+    }
+   ]
+  },
+  {
+   "name": "Wick the Informant",
+   "options": [
+    {
+     "trait": "hag_payoff_wick_kept_his_word",
+     "kind": "mercy",
+     "text": "Wick sells bread in your village now. Not patrol times. Bread. Nell visits on feast days and calls him a fool, fondly."
+    },
+    {
+     "trait": "hag_mercy_x1_the_informant",
+     "kind": "mercy",
+     "text": "You let him go. Nobody knows quite where he went, but the raids on your village stopped, and that's an answer of sorts."
+    },
+    {
+     "trait": "hag_cruelty_x1_the_informant",
+     "kind": "blade",
+     "text": "Wick died on the village green. His sister Nell came to look you in the face, and then she went home and told everyone she met what kind of person you are."
+    }
+   ]
+  },
+  {
+   "name": "Gorran the Warden",
+   "options": [
+    {
+     "trait": "hag_payoff_gorran_at_the_gate",
+     "kind": "mercy",
+     "text": "Gorran mends Ashford's locks and keeps its gate. His brothers live with him. He builds doors that keep people out now, instead of in."
+    },
+    {
+     "trait": "hag_mercy_x2_the_bastille_warden",
+     "kind": "mercy",
+     "text": "You spared the Bastille's warden. He walked south to find his brothers. Whether he did, nobody in Ashford ever heard."
+    },
+    {
+     "trait": "hag_cruelty_x2_the_bastille_warden",
+     "kind": "blade",
+     "text": "Gorran died with the Bastille's keys in his hand. His brothers came looking for the one who did it."
+    }
+   ]
+  },
+  {
+   "name": "Ossian the Skull-Trader",
+   "options": [
+    {
+     "trait": "hag_payoff_ossians_gift",
+     "kind": "mercy",
+     "text": "Ossian left you gold for gold, and left the skull trade with it. Piglins in the Nether still argue about whether he's mad or wise."
+    },
+    {
+     "trait": "hag_mercy_x3_the_third_skull",
+     "kind": "mercy",
+     "text": "You let the skull-trader live. He was never seen in the bastions again."
+    },
+    {
+     "trait": "hag_cruelty_x3_the_third_skull",
+     "kind": "blade",
+     "text": "Ossian's skull ended up on a Bone Choir altar beside the ones he sold. They sang over it for a week."
+    }
+   ]
+  },
+  {
+   "name": "The Pilgrim of the Sun",
+   "options": [
+    {
+     "trait": "hag_payoff_pilgrim_blessing",
+     "kind": "mercy",
+     "text": "The pilgrim said his goodbye to the Sun and came down from the clouds. He prays at dawn in your village, for you, whether you like it or not."
+    },
+    {
+     "trait": "hag_mercy_x4_the_pilgrim_of_the_sun",
+     "kind": "mercy",
+     "text": "You let him pray. He stayed in the Aether, tending a dimmer sun, and was content."
+    },
+    {
+     "trait": "hag_cruelty_x4_the_pilgrim_of_the_sun",
+     "kind": "blade",
+     "text": "His sunstone charm sold for a fortune. The phantoms that hunt the high places never forgot who carried it."
+    }
+   ]
+  },
+  {
+   "name": "Brann of the Garrison",
+   "options": [
+    {
+     "trait": "hag_payoff_widows_letter",
+     "kind": "other",
+     "text": "Brann never came home. You gave his medal to Ilse instead. She hung it over the door, and never once asked how he died."
+    },
+    {
+     "trait": "hag_payoff_brann_home",
+     "kind": "mercy",
+     "text": "Ten years in the ice, and then home. Ilse cried for a week, then made him fix the roof. He keeps the snowy village's gate, warmer this time."
+    },
+    {
+     "trait": "hag_mercy_x5_the_last_garrison_man",
+     "kind": "mercy",
+     "text": "You let the last garrison man go. He walked down out of the snow, toward home."
+    },
+    {
+     "trait": "hag_cruelty_x5_the_last_garrison_man",
+     "kind": "blade",
+     "text": "The snowy village got what it asked for. They didn't feel any better afterwards."
+    }
+   ]
+  },
+  {
+   "name": "The Smiling Peddler",
+   "options": [
+    {
+     "trait": "heard_the_word",
+     "kind": "other",
+     "text": "You let the peddler walk. He painted golden eyes on chapel doors for years after. Some of them are still there."
+    },
+    {
+     "trait": "peddler_slain",
+     "kind": "blade",
+     "text": "The peddler's golden smile ended in the dust of the market road. Nobody came to claim him."
+    }
+   ]
+  },
+  {
+   "name": "Orsk the Tally-Keeper",
+   "options": [
+    {
+     "trait": "orsk_spared",
+     "kind": "mercy",
+     "text": "Orsk stood Halden's judgment and spent three years rebuilding what his raiders burned. He kept a tally of every plank."
+    },
+    {
+     "trait": "orsk_executed",
+     "kind": "blade",
+     "text": "You executed Orsk where he knelt. The raiders' tallies were never found."
+    }
+   ]
+  },
+  {
+   "name": "Corwin the Refugee",
+   "options": [
+    {
+     "trait": "corwin_spared",
+     "kind": "mercy",
+     "text": "You paid for the grain he stole. His sister's children ate all winter. Corwin has never once forgotten it."
+    },
+    {
+     "trait": "corwin_slain",
+     "kind": "blade",
+     "text": "Corwin died for a sack of grain. His sister's children were taken in by the Ashford families. They grew up knowing your name."
+    }
+   ]
+  },
+  {
+   "name": "Morrow the Assayer",
+   "options": [
+    {
+     "trait": "took_the_gold",
+     "kind": "other",
+     "text": "You took Morrow's gold and the Gilded Hand took you. He weighed coins for Silas until the day he died, smiling."
+    },
+    {
+     "trait": "morrow_slain",
+     "kind": "blade",
+     "text": "You cut the assayer down. The Gilded Hand sent a new one within the week."
+    }
+   ]
+  },
+  {
+   "name": "Dunn the Deserter",
+   "options": [
+    {
+     "trait": "hag_mercy_1",
+     "kind": "mercy",
+     "text": "Dunn threw down his crossbow at Ashford and never picked one up again. He lived out his days doing what he swore he would: staying."
+    },
+    {
+     "trait": "hag_cruelty_1",
+     "kind": "blade",
+     "text": "You executed the deserter. Other raiders who might have dropped their crossbows heard what happened to the one who did, and kept theirs."
+    }
+   ]
+  },
+  {
+   "name": "Tobin the Scavenger",
+   "options": [
+    {
+     "trait": "hag_mercy_2",
+     "kind": "mercy",
+     "text": "Tobin's girls ate all winter on your coin. He sells rabbits now. Rabbits don't have skulls worth anything."
+    },
+    {
+     "trait": "hag_cruelty_2",
+     "kind": "blade",
+     "text": "You took the skull from Tobin. His girls went hungry that winter. One of them didn't see the spring."
+    }
+   ]
+  },
+  {
+   "name": "Sister Ysolde",
+   "options": [
+    {
+     "trait": "hag_mercy_3",
+     "kind": "mercy",
+     "text": "Ysolde scrubbed the first golden eye off the chapel door with her own hands. It took a week. She has been forgiving people ever since."
+    },
+    {
+     "trait": "hag_cruelty_3",
+     "kind": "blade",
+     "text": "Sister Ysolde was punished for a door she painted forty years ago. The eye on it was never scrubbed off."
+    }
+   ]
+  },
+  {
+   "name": "Brother Hale",
+   "options": [
+    {
+     "trait": "hag_mercy_4",
+     "kind": "mercy",
+     "text": "Hale taught you the Old Tongue, and when it was over, he taught it to the Librarian. He is translating the cult's books, so nobody has to fear them again."
+    },
+    {
+     "trait": "hag_cruelty_4",
+     "kind": "blade",
+     "text": "You ended the scholar. Whatever else the Old Tongue said, nobody will ever know."
+    }
+   ]
+  },
+  {
+   "name": "Saltjaw Mott",
+   "options": [
+    {
+     "trait": "hag_mercy_5",
+     "kind": "mercy",
+     "text": "Mott works the harbour nets, in chains for the first year and then without them. He lights the true lights on the rocks now. Every night."
+    },
+    {
+     "trait": "hag_cruelty_5",
+     "kind": "blade",
+     "text": "You drowned the wrecker. The sea took him the way it took his thirty ships."
+    }
+   ]
+  },
+  {
+   "name": "Ansel the Blood-Drinker",
+   "options": [
+    {
+     "trait": "hag_mercy_6",
+     "kind": "mercy",
+     "text": "Ansel shook through one night and then many more. One morning he asked for water, just water, and kept asking. He has not touched the blood since."
+    },
+    {
+     "trait": "hag_cruelty_6",
+     "kind": "blade",
+     "text": "You put Ansel down. The blood wells dried up eventually. Nobody remembers him except the people he hurt."
+    }
+   ]
+  },
+  {
+   "name": "Garret of Ashford",
+   "options": [
+    {
+     "trait": "hag_mercy_7",
+     "kind": "mercy",
+     "text": "Garret has rebuilt more houses than the fourteen he emptied. Halden checks every one. Nobody speaks to him, and he builds anyway."
+    },
+    {
+     "trait": "hag_cruelty_7",
+     "kind": "blade",
+     "text": "You judged Garret yourself. Halden never quite forgave you for taking it out of his hands."
+    }
+   ]
+  },
+  {
+   "name": "Brother Vael",
+   "options": [
+    {
+     "trait": "vael_slain",
+     "kind": "blade",
+     "text": "You killed the cult's steward in the Nether. The gold kept flowing without him. It always does."
+    },
+    {
+     "trait": "hag_payoff_vael_spy",
+     "kind": "other",
+     "text": "Vael spied for you inside the cult. His last letter reached you. He didn't."
+    },
+    {
+     "trait": "hag_vael_trial",
+     "kind": "mercy",
+     "text": "Vael stood trial before Halden and was sent to rebuild the Bastille's cells into houses. He counts nails now, not skulls."
+    },
+    {
+     "trait": "hag_vael_free",
+     "kind": "mercy",
+     "text": "You let Vael go free. He was last seen walking east, counting his steps."
+    },
+    {
+     "trait": "hag_vael_branded",
+     "kind": "blade",
+     "text": "You branded Vael so the cult would know. They found him within the month."
+    }
+   ]
+  },
+  {
+   "name": "The Midwife",
+   "options": [
+    {
+     "trait": "midwife_slain",
+     "kind": "blade",
+     "text": "The Midwife died beside her blood pits. The things in them never spoke, and neither did she."
+    },
+    {
+     "trait": "hag_payoff_midwife_healed",
+     "kind": "mercy",
+     "text": "The cleric healed what could be healed. Her daughter came to find you, to say so. The Midwife counts the village's children every morning. All of them breathe."
+    },
+    {
+     "trait": "hag_midwife_cleric",
+     "kind": "mercy",
+     "text": "You sent her to the cleric. She sweeps the chapel and counts the village children every morning. It's more than she thinks she deserves."
+    },
+    {
+     "trait": "hag_midwife_exiled",
+     "kind": "other",
+     "text": "You exiled her from the valley. She walked into the desert and never came back."
+    },
+    {
+     "trait": "hag_midwife_watch",
+     "kind": "other",
+     "text": "The Watch took her. She answered every question they asked, for a year, and then they let her go."
+    },
+    {
+     "trait": "hag_midwife_kept_pit",
+     "kind": "blade",
+     "text": "You let her keep one pit, for research. It is still there. It is not empty."
+    }
+   ]
+  },
+  {
+   "name": "Pell",
+   "options": [
+    {
+     "trait": "gt_getting_out",
+     "kind": "mercy",
+     "text": "Pell grows wheat now. Just wheat. The Fixer came by once, saw your name on the gate, and never came back."
+    },
+    {
+     "trait": "gt_silenced_the_witness",
+     "kind": "blade",
+     "text": "Pell never testified. Nobody in the valley ever asked where he went."
+    }
+   ]
+  },
+  {
+   "name": "Don Vasco",
+   "options": [
+    {
+     "trait": "gt_vasco_killed",
+     "kind": "blade",
+     "text": "Don Vasco died in his own Labyrinth. The valley took a year to stop flinching at footsteps."
+    },
+    {
+     "trait": "hag_vasco_public",
+     "kind": "mercy",
+     "text": "Don Vasco stood trial in front of the whole valley. Every grower he'd squeezed came to watch. None of them looked away."
+    },
+    {
+     "trait": "hag_vasco_quiet",
+     "kind": "other",
+     "text": "The Watch dealt with Don Vasco quietly. Some say he's in a cell. Some say he's in the river."
+    },
+    {
+     "trait": "hag_vasco_testify",
+     "kind": "mercy",
+     "text": "You testified against Don Vasco yourself. The Labyrinth is a farm now."
+    },
+    {
+     "trait": "hag_vasco_ashford",
+     "kind": "other",
+     "text": "Don Vasco paid for Ashford's rebuilding, every coin of his half. He never liked it. Ashford never knew."
+    },
+    {
+     "trait": "hag_vasco_betrayal",
+     "kind": "blade",
+     "text": "You shook on it, and then you betrayed him. He saw it coming. He just didn't see it coming from you."
+    },
+    {
+     "trait": "hag_vasco_greedy",
+     "kind": "other",
+     "text": "You took the bigger half. Vasco smiled and paid, and hated you every day until he died."
+    },
+    {
+     "trait": "hag_vasco_even",
+     "kind": "other",
+     "text": "You split the valley down the middle with Don Vasco. A third of it still goes to the Chariot."
+    },
+    {
+     "trait": "gt_war_won",
+     "kind": "blade",
+     "text": "You broke Don Vasco's cartel by force. The valley breathes again, under a new kind of fear."
+    }
+   ]
+  },
+  {
+   "name": "The Librarian",
+   "options": [
+    {
+     "trait": "hag_lib_study",
+     "kind": "mercy",
+     "text": "The Librarian found what the cult missed in the Warden Journal, as she promised. She wrote it down for everyone, so nobody would ever have to fear the Old Tongue again."
+    },
+    {
+     "trait": "hag_lib_burn",
+     "kind": "other",
+     "text": "She watched the Warden Journal burn and said nothing for a long time. She never studied the Old Tongue again."
+    },
+    {
+     "trait": "hag_lib_sold",
+     "kind": "blade",
+     "text": "You sold the Warden Journal to the Gilded Hand. The Librarian locked her doors, and never opened them to you again."
+    },
+    {
+     "trait": "hag_lib_kept",
+     "kind": "other",
+     "text": "You kept the Warden Journal yourself. The Librarian still asks after it, every time you pass."
+    }
+   ]
+  },
+  {
+   "name": "The Last Faithful",
+   "options": [
+    {
+     "trait": "hag_faithful_sent_home",
+     "kind": "mercy",
+     "text": "The last of the Faithful went home. Some of them had families who had stopped waiting. They started again."
+    },
+    {
+     "trait": "hag_faithful_ended",
+     "kind": "blade",
+     "text": "You ended the last of the Faithful. The cult is gone. So are they."
+    }
+   ]
+  },
+  {
+   "name": "Maraal",
+   "options": [
+    {
+     "trait": "maraal_killed_by_hand",
+     "kind": "blade",
+     "text": "The Gilded Hand caught up with Maraal at last, and you let them. Nobody writes letters to strangers any more."
+    },
+    {
+     "trait": "maraal_left",
+     "kind": "other",
+     "text": "Maraal left. Some say she is choosing another champion, somewhere far away. Some say she finally rested."
+    },
+    {
+     "trait": "hag_maraal_start_again",
+     "kind": "mercy",
+     "text": "You forgave her and asked for nothing. Maraal lives in your village now, as Old Mara, and writes letters to nobody at all."
+    },
+    {
+     "trait": "hag_maraal_no_trust",
+     "kind": "mercy",
+     "text": "You forgave her, but you never trusted her. She understood. She still writes, once a year, and always signs her real name."
+    },
+    {
+     "trait": "hag_maraal_everything",
+     "kind": "mercy",
+     "text": "She told you everything. Every champion, every failure, all the way back. It took all winter. You wrote it down."
+    },
+    {
+     "trait": "hag_maraal_never",
+     "kind": "blade",
+     "text": "You told her never to write again. She never did."
+    },
+    {
+     "trait": "hag_maraal_one_day",
+     "kind": "other",
+     "text": "'Maybe one day,' you said. She is still waiting for that day. She is very good at waiting."
+    },
+    {
+     "trait": "hag_maraal_silence",
+     "kind": "other",
+     "text": "You walked away without a word. Maraal watched you go, the way she watched the first champion go."
+    }
+   ]
+  }
+ ]
+}

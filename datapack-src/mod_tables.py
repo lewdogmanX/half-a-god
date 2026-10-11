@@ -454,3 +454,14 @@ def write(out_pack, mod_root):
         lang = dict(dialogue.LANG)
         lang.update({"key.categories.half_a_god": "Half a God"})
         dump("en_us.json", lang, os.path.join(a, "lang"))
+    # what became of everyone you judged (the mod picks each person's line from your traits)
+    import fates, settlement
+    known = settlement.produced_traits()
+    for f in fates.F:
+        for o in f["options"]:
+            assert o["trait"] in known, f"fate of {f['name']}: trait {o['trait']} is never set"
+            assert o["kind"] in ("mercy", "blade", "other")
+    dump("fates.json", fates.build())
+    # Wardens: the day each one falls is remembered for the Codex
+    import codex
+    dump("moments.json", {"traits": [e["unlock"].replace("mebahelrpgrquest:", "") + "_done" for e in codex.build()["entries"] if e["category"] == "Wardens"]})

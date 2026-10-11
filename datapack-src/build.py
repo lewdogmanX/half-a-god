@@ -80,7 +80,8 @@ for qkey, (_, q) in QUESTS.items():
             greet = "There you are."
         npc = {"entity": "minecraft:villager", "name": name, "stage": gl["stage"], "structure": "minecraft:villages",
                "search_radius": 8000, "spawn_radius": 10, "spawn_on_accept": True,
-               "spare": False, "glow": True, "max_health": 60,
+               # the mod makes them glow only when it's their turn
+               "spare": False, "glow": False, "max_health": 60,
                # If a zombie or raid kills them, Mebahel puts them back (QuestEvents.respawnConfiguredThreatTargetAfterDeath)
                "respawn_on_death": True,
                # iron golems and Guard Villagers leave them alone
@@ -400,7 +401,12 @@ for k, (_, q) in QUESTS.items():
 for name in base_quests.BASE:
     MARKERS["mebahelrpgrquest:" + name] = {"dim": "minecraft:overworld", "title": base_quests.title_of(name)}
 json.dump({'quests': MARKERS}, open(os.path.join(OUT, 'data/half_a_god/hag_mod/markers.json'), 'w'), indent=1)
-json.dump({'npcs': CAST}, open(os.path.join(OUT, 'data/half_a_god/hag_mod/cast.json'), 'w'), indent=1)
+# what each quest with a story character asks for at each step (for "not yet" lines when you talk to them too early)
+STEPS = {}
+for _e in CAST:
+    _k = _e["quest"].split(":hag_")[1]
+    STEPS[_e["quest"]] = [[gl.get("stage", 0), mod_tables._goal_text(gl)] for gl in QUESTS[_k][1]["goals"]]
+json.dump({'npcs': CAST, 'steps': STEPS}, open(os.path.join(OUT, 'data/half_a_god/hag_mod/cast.json'), 'w'), indent=1)
 shutil.copy(os.path.join(os.path.dirname(__file__), "README.md"), os.path.join(OUT, "README.md"))
 # the mod ships the same datapack inside its jar as a built-in pack at the top of the pack list
 # (minus the load message, which is for the plain datapack)

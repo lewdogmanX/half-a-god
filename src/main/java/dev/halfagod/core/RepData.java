@@ -44,6 +44,19 @@ public final class RepData {
     public final Map<String, Integer> actRep = new LinkedHashMap<>();
     public boolean chronicleGiven;
     public long nextRepairTick;
+    /** Mara's letters as you received them (JSON: title, author, pages, day) */
+    public final List<String> letters = new ArrayList<>();
+    /** your reputation after every story quest, with "#Act" markers where acts begin */
+    public final List<String> path = new ArrayList<>();
+    /** trait -> the day it happened (the Wardens) */
+    public final Map<String, Long> moments = new LinkedHashMap<>();
+    /** Watch duties and Gilded Hand contracts done (each kind of work wears down the other's tally) */
+    public int watchDone;
+    public int handDone;
+    public int watchRank;
+    public int handRank;
+    public boolean fatesShown;
+    public long lastEncounter;
 
     public void addLooted(long pos) {
         looted.add(pos);
@@ -65,6 +78,16 @@ public final class RepData {
             for (long l : tag.getLongArray("looted")) d.looted.add(l);
             CompoundTag acts = tag.getCompound("acts");
             for (String k : acts.getAllKeys()) d.actRep.put(k, acts.getInt(k));
+            for (Tag t : tag.getList("letters", Tag.TAG_STRING)) d.letters.add(t.getAsString());
+            for (Tag t : tag.getList("path", Tag.TAG_STRING)) d.path.add(t.getAsString());
+            CompoundTag moments = tag.getCompound("moments");
+            for (String k : moments.getAllKeys()) d.moments.put(k, moments.getLong(k));
+            d.watchDone = tag.getInt("watchDone");
+            d.handDone = tag.getInt("handDone");
+            d.watchRank = tag.getInt("watchRank");
+            d.handRank = tag.getInt("handRank");
+            d.fatesShown = tag.getBoolean("fatesShown");
+            d.lastEncounter = tag.getLong("lastEncounter");
             return d;
         }
 
@@ -81,6 +104,17 @@ public final class RepData {
             CompoundTag acts = new CompoundTag();
             d.actRep.forEach(acts::putInt);
             tag.put("acts", acts);
+            tag.put("letters", strings(d.letters));
+            tag.put("path", strings(d.path));
+            CompoundTag moments = new CompoundTag();
+            d.moments.forEach(moments::putLong);
+            tag.put("moments", moments);
+            tag.putInt("watchDone", d.watchDone);
+            tag.putInt("handDone", d.handDone);
+            tag.putInt("watchRank", d.watchRank);
+            tag.putInt("handRank", d.handRank);
+            tag.putBoolean("fatesShown", d.fatesShown);
+            tag.putLong("lastEncounter", d.lastEncounter);
             return tag;
         }
 

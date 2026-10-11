@@ -14,7 +14,6 @@ public final class ClientConfig {
     public static final ModConfigSpec.IntValue WIDTH;
     public static final ModConfigSpec.BooleanValue SHOW_NUMBER;
     public static final ModConfigSpec.BooleanValue SCREEN_SHAKE;
-    public static final ModConfigSpec.BooleanValue REPLACE_QUEST_MAP;
 
     static {
         ModConfigSpec.Builder b = new ModConfigSpec.Builder();
@@ -30,8 +29,6 @@ public final class ClientConfig {
         b.pop();
         b.push("story");
         SCREEN_SHAKE = b.comment("Shake the screen at big story moments").define("screen_shake", true);
-        REPLACE_QUEST_MAP = b.comment("Open the Half a God story map instead of Mebahel's quest map (it has a button for the old one)")
-                .define("replace_quest_map", true);
         b.pop();
         SPEC = b.build();
     }

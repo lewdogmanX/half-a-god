@@ -34,7 +34,11 @@ public final class ClientHooks {
     }
 
     public static void onOpenMap(Payloads.OpenMap p) {
-        Minecraft.getInstance().setScreen(new StoryMapScreen(null));
+        StoryMapScreen screen = new StoryMapScreen(null);
+        if (p.fates()) {
+            screen.openFates();
+        }
+        Minecraft.getInstance().setScreen(screen);
     }
 
     public static void onCinematic(Payloads.Cinematic p) {

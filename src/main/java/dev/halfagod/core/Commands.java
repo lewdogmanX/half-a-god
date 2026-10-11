@@ -48,6 +48,15 @@ public final class Commands {
                     }
                     return 1;
                 }))
+                .then(literal("fates").executes(c -> {
+                    ServerPlayer p = c.getSource().getPlayerOrException();
+                    if (!Fates.storyOver(Meb.traits(p))) {
+                        c.getSource().sendFailure(Component.literal("Your story isn't over yet."));
+                        return 0;
+                    }
+                    net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(p, new dev.halfagod.net.Payloads.OpenMap(true));
+                    return 1;
+                }))
                 .then(literal("map").executes(c -> {
                     net.neoforged.neoforge.network.PacketDistributor.sendToPlayer(c.getSource().getPlayerOrException(),
                             new dev.halfagod.net.Payloads.OpenMap(false));

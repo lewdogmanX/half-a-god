@@ -35,6 +35,8 @@ public final class Story {
             Cast.tick(player);
         }
         if (t % 100 == 41) {
+            Ranks.update(player);
+            Encounters.tick(player);
             Atlas.tick(player);
             Morality.tick(player);
             Settlement.tick(player);
@@ -91,6 +93,7 @@ public final class Story {
         StoryData data = StoryData.INSTANCE;
         String act = data.chronicleActs.get(trait);
         if (act != null) {
+            d.path.add("#" + act);
             d.chronicle.add("#" + act);
             d.actRep.put(act, (int) Math.round(d.value));
         }
@@ -124,6 +127,13 @@ public final class Story {
 
         if (trait.startsWith("hag_") && trait.endsWith("_done") && !trait.startsWith("hag_base_")) {
             Morality.onStoryQuestDone(player);
+            d.path.add(Long.toString(Math.round(d.value)));
+            while (d.path.size() > 800) {
+                d.path.remove(0);
+            }
+        }
+        if (StoryData.INSTANCE.momentTraits.contains(trait)) {
+            d.moments.put(trait, player.level().getDayTime() / 24000L + 1);
         }
         Choices.onTrait(player, trait);
         Letters.onTrait(player, trait);
@@ -131,6 +141,11 @@ public final class Story {
 
         if (trait.startsWith("hag_rep_") && !d.chronicleGiven) {
             Chronicle.give(player, true);
+        }
+        // the story is over: show what became of everyone
+        if (!d.fatesShown && Fates.storyOver(Meb.traits(player))) {
+            d.fatesShown = true;
+            PacketDistributor.sendToPlayer(player, new Payloads.OpenMap(true));
         }
     }
 

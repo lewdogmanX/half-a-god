@@ -102,7 +102,8 @@ public final class Morality {
             long night = level.getDayTime() / 24000L;
             if (LAST_BOUNTY.getOrDefault(player.getUUID(), -1L) != night) {
                 LAST_BOUNTY.put(player.getUUID(), night);
-                if (level.random.nextFloat() < (t == WICKED ? 0.7f : 0.35f)) {
+                float hunt = (t == WICKED ? 0.7f : 0.35f) * new float[]{1f, 1f, 0.75f, 0.5f}[Ranks.hand(player)]; // the Hand protects its own
+                if (level.random.nextFloat() < hunt) {
                     sendHunters(player, level, t == WICKED);
                 }
             }
@@ -167,7 +168,7 @@ public final class Morality {
         }
         ServerLevel level = player.serverLevel();
         // the village's guards and golems come to help
-        List<Mob> helpers = level.getEntitiesOfClass(Mob.class, player.getBoundingBox().inflate(32),
+        List<Mob> helpers = level.getEntitiesOfClass(Mob.class, player.getBoundingBox().inflate(Ranks.watch(player) >= 2 ? 48 : 32),
                 m -> m instanceof IronGolem || isGuard(m) || m.getTags().contains(WATCHMAN));
         for (Mob h : helpers) {
             if (h.getTarget() == null || !h.getTarget().isAlive()) {
@@ -176,7 +177,11 @@ public final class Morality {
         }
         // a Saint gets a Watchman at their side at night near a village
         long time = level.getDayTime() % 24000L;
-        if (t == SAINT && time > 13000 && time < 23000 && inVillageNear(level, player.blockPosition())) {
+        boolean night = time > 13000 && time < 23000;
+        int watchRank = Ranks.watch(player);
+        // a Saint (or a Sergeant of the Watch) gets a Watchman at night; the Captain of the Watch, any time
+        boolean watchman = (night && (t == SAINT || watchRank >= 2)) || watchRank >= 3;
+        if (watchman && inVillageNear(level, player.blockPosition())) {
             long night = level.getDayTime() / 24000L;
             if (LAST_WATCHMAN.getOrDefault(player.getUUID(), -1L) != night) {
                 LAST_WATCHMAN.put(player.getUUID(), night);
@@ -268,6 +273,9 @@ public final class Morality {
                 case 3 -> new ItemStack(Items.GOLD_INGOT, 1 + r.nextInt(2));
                 default -> new ItemStack(Items.EMERALD, 2);
             };
+            if (Ranks.hand(player) >= 2) {
+                loot.setCount(Math.min(loot.getMaxStackSize(), loot.getCount() * 2)); // a Collector knows where they hide things
+            }
             ItemEntity drop = new ItemEntity(level, villager.getX(), villager.getY() + 1, villager.getZ(), loot);
             level.addFreshEntity(drop);
             level.playSound(null, villager.blockPosition(), SoundEvents.VILLAGER_HURT, SoundSource.NEUTRAL, 1f, 1f);
@@ -289,10 +297,11 @@ public final class Morality {
         if (t > FALLEN) {
             return;
         }
-        ItemStack cut = new ItemStack(Items.EMERALD, t == WICKED ? 8 : 4);
+        int amount = (t == WICKED ? 8 : 4) * (Ranks.hand(player) >= 3 ? 2 : 1);
+        ItemStack cut = new ItemStack(Items.EMERALD, amount);
         if (!player.getInventory().add(cut)) {
             player.drop(cut, false);
         }
-        player.displayClientMessage(Component.literal("Silas's cut: " + (t == WICKED ? 8 : 4) + " emeralds.").withStyle(ChatFormatting.GOLD), true);
+        player.displayClientMessage(Component.literal("Silas's cut: " + amount + " emeralds.").withStyle(ChatFormatting.GOLD), true);
     }
 }

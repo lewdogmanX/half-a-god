@@ -45,6 +45,31 @@ public final class MapStates {
         out.add("stages", stages);
         out.addProperty("rep", Reputation.data(player).value);
         out.addProperty("op", player.hasPermissions(2));
+        RepData d = Reputation.data(player);
+        // the Codex's pages: letters, your path, the Wardens, your ranks, and (once it's over) what became of them
+        com.google.gson.JsonArray letters = new com.google.gson.JsonArray();
+        for (String l : d.letters) {
+            letters.add(com.google.gson.JsonParser.parseString(l));
+        }
+        out.add("letters", letters);
+        com.google.gson.JsonArray path = new com.google.gson.JsonArray();
+        d.path.forEach(path::add);
+        out.add("path", path);
+        JsonObject moments = new JsonObject();
+        d.moments.forEach(moments::addProperty);
+        out.add("moments", moments);
+        out.addProperty("day", player.level().getDayTime() / 24000L + 1);
+        JsonObject ranks = new JsonObject();
+        ranks.addProperty("watch", d.watchRank);
+        ranks.addProperty("hand", d.handRank);
+        ranks.addProperty("watchTitle", Ranks.WATCH[d.watchRank]);
+        ranks.addProperty("handTitle", Ranks.HAND[d.handRank]);
+        ranks.addProperty("watchProgress", Ranks.progress(player, true));
+        ranks.addProperty("handProgress", Ranks.progress(player, false));
+        out.add("ranks", ranks);
+        if (Fates.storyOver(Meb.traits(player))) {
+            out.add("fates", Fates.compute(player));
+        }
         PacketDistributor.sendToPlayer(player, new Payloads.MapState(out.toString()));
     }
 }

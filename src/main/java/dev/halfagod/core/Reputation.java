@@ -254,6 +254,7 @@ public final class Reputation {
                 if (d.countedChoices.add(p.questId() + "|" + p.acceptedAt())) {
                     boolean watch = Duties.isDuty(p.questId());
                     change(player, watch ? 2 : -3, watch ? "you served the Watch" : "you worked for the Hand");
+                    Ranks.onJobDone(player, watch);
                 }
                 continue;
             }

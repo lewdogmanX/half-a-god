@@ -87,6 +87,29 @@ entry("The Cult", "The Champions of M.", "i6_the_mountain_tower",
 entry("The Cult", "The True Azazel", "m9_half_a_soul",
       "A half-soul cannot die. To end him, his head must be joined to his body, and then he must be killed while he is whole.")
 
+# ---- The Wardens (unlock when you've beaten them; the map shows the day it happened)
+entry("Wardens", "The Wither", "w6_the_withered_crown",
+      "The first Warden, raised by the cult from three skulls in a pit you built. Where: the pit, in the overworld's open air. "
+      "It died before it reached the daylight, and the Nether sky went red that night.")
+entry("Wardens", "The Ender Dragon", "e5_free_the_end",
+      "The second Warden, guarding something in the End it had long forgotten. Where: beyond the stronghold's portal. "
+      "The night it fell, every villager in the world dreamt of a king with no head.")
+entry("Wardens", "Skor, the Yeti", "s3_lost_in_the_snow",
+      "The Warden of the snow, who kept a century-old garrison marching through the storm. Where: the Yeti Hideout, snowy plains. "
+      "The day after it died, not one flake of snow fell anywhere.")
+entry("Wardens", "Sirok, the Sandworm", "d3_the_beast_below",
+      "The Warden of the sand, beneath a desert that 'breathed'. Where: the Sandworm Nest. "
+      "The desert village dug its well back out, and the water came up clean.")
+entry("Wardens", "Nerakyss, the Kraken", "c4_terror_of_the_depths",
+      "The Warden of the sea, and the black ship that sailed with it. Where: the Kraken Ship, deep ocean. "
+      "The harbour lads rowed out to watch it sink. First time anyone had dared in forty years.")
+entry("Wardens", "Helvar, the Underworld Knight", "u3_back_into_hell",
+      "A knight set at the Gate by the one who took the Chariot's head. He could not speak, so he wrote it down: 'If I fall, the door will open.' "
+      "Where: the Underworld Arena, in the Nether.")
+entry("Wardens", "Ashlord, the Infernal Dragon", "f2_dragon_slayer",
+      "The last Warden, and once the Chariot's own mount. Where: the Dragon Tower. "
+      "The smith said nothing alive was as hard as its bones.")
+
 
 def build():
     return {"entries": E}
