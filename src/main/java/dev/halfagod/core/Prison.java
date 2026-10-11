@@ -274,7 +274,7 @@ public final class Prison {
             d.visitorDone = true;
             String v = visitorFor(player, d);
             VISITOR.put(player.getUUID(), v);
-            say(player, "Someone is at your bars: " + visitorName(v) + ".", ChatFormatting.YELLOW);
+            say(player, "Someone is at your bars: " + visitorName(v) + ". (Use the bars to talk.)", ChatFormatting.YELLOW);
         }
     }
 
@@ -502,6 +502,17 @@ public final class Prison {
         }
         if (pos.equals(CourtBuilder.abs(slot, CourtBuilder.DIG))) {
             dig(player, d, now);
+            return;
+        }
+        // the bars of your cell: talk to whoever's on the other side (a visitor, or the gaoler)
+        BlockPos rel = pos.subtract(CourtBuilder.origin(slot).offset(CourtBuilder.CELL));
+        if (rel.getZ() == 1 && rel.getX() >= -2 && rel.getX() <= 2 && rel.getY() >= 0 && rel.getY() <= 2) {
+            Long last = NAG.get(player.getUUID());
+            if (last != null && now - last < 10) {
+                return;
+            }
+            NAG.put(player.getUUID(), now);
+            onTalk(player, visitorToday(player, d).isEmpty() ? "gaoler" : "visitor");
         }
     }
 
@@ -514,6 +525,9 @@ public final class Prison {
         if (!lightsOut(d)) {
             nag(player, now, text("escape_steps", "need_night"));
             return;
+        }
+        if (!player.getMainHandItem().isEmpty()) {
+            nag(player, now, "Dig with your hands free (nothing in your hand), and keep at it.");
         }
         if (d.digProgress >= digsNeeded()) {
             return;

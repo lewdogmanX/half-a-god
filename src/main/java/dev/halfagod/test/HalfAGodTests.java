@@ -453,7 +453,8 @@ public final class HalfAGodTests {
         check(h, !dev.halfagod.core.Rivals.placeBounty(a, b.getUUID().toString()), "not twice");
         // a witness
         dev.halfagod.core.Rivals.saw(b, "villager");
-        check(h, db.sightings.size() == 1 && db.sightings.get(0).startsWith(a.getUUID().toString()), "a saw it");
+        // (other tests' players may be close enough to have seen it too)
+        check(h, db.sightings.stream().anyMatch(x -> x.startsWith(a.getUUID().toString())), "a saw it: " + db.sightings);
         b.awardStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER), 3);
         check(h, Trial.kidnap(b), "b is taken");
         check(h, dev.halfagod.core.Talk.openOptions(a).contains("against"), "a is asked to speak");
