@@ -1,0 +1,70 @@
+name: Mebahel check
+# The mod with Sinytra Connector and Mebahel's RPG (a Fabric mod), as in the modpack: a normally installed NeoForge
+# client (Connector won't run in a development client) walks through the trial and the prison and takes screenshots.
+# Runs after every successful build, or by hand; uses that build's jar and test world.
+on:
+  workflow_run:
+    workflows: [ Build ]
+    types: [ completed ]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  meb:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: The latest build and its test world
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          RUN=$(gh run list -R ${{ github.repository }} --workflow Build --status success --limit 1 --json databaseId --jq '.[0].databaseId')
+          echo "build run: $RUN"
+          gh run download $RUN -R ${{ github.repository }} -n half-a-god -D jar
+          gh run download $RUN -R ${{ github.repository }} -n test-world -D world
+          ls -la jar world | head -30
+      - name: A NeoForge client with Connector, Forgified Fabric API and Mebahel's RPG
+        shell: bash
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq xvfb libgl1-mesa-dri libglx-mesa0 mesa-utils jq > /dev/null
+          pip install -q portablemc
+          mkdir -p run/mods run/saves
+          cp -r world run/saves/shots
+          printf 'onboardAccessibility:false\ntutorialStep:none\njoinedFirstServer:true\nskipMultiplayerWarning:true\npauseOnLostFocus:false\nsoundCategory_master:0.0\nrenderDistance:6\nguiScale:2\nnarrator:0\n' > run/options.txt
+          cp jar/*.jar run/mods/
+          mr() { curl -sfL "https://api.modrinth.com/v2/project/$1/version?loaders=%5B%22neoforge%22%5D&game_versions=%5B%221.21.1%22%5D" | jq -r '.[0].files[] | select(.primary) | .url' | head -1; }
+          for p in connector forgified-fabric-api; do
+            u=$(mr $p); echo "$p: $u"
+            curl -sfL -o "run/mods/$(basename "$u")" "$u"
+          done
+          curl -sfL -o run/mods/mebahelrpgrquest-3.4.4-fabric-1.21.1.jar https://cdn.modrinth.com/data/jNqtpcJu/versions/yVzM3N1c/mebahelrpgrquest-3.4.4-fabric-1.21.1.jar
+          ls -la run/mods
+          portablemc start --help > start-help.txt 2>&1 || true
+      - name: Play
+        id: play
+        continue-on-error: true
+        shell: bash
+        run: |
+          timeout 1800 xvfb-run -a -s "-screen 0 1280x720x24" portablemc --main-dir "$PWD/mc" --work-dir "$PWD/run" start \
+            --resolution 1280x720 --jvm "$JAVA_HOME/bin/java" --jvm-args="-Xmx3G -Dhalfagod.clientshots=true" \
+            -u Tester neoforge:1.21.1 2>&1 | tee play.log || true
+          ls run/screenshots || true
+          grep -iE "SHOT|Mebahel|Half a God|connector|Exception|ERROR" play.log | grep -v DEBUG | head -80 || true
+      - name: Publish the screenshots (branch "shots-meb")
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p /tmp/out && cp run/screenshots/*.png /tmp/out/ 2>/dev/null || true
+          cp start-help.txt /tmp/out/ 2>/dev/null || true
+          grep -iE "SHOT|Mebahel|Half a God|connector|Exception|ERROR|Caused by|mixin" play.log | grep -v DEBUG | head -400 > /tmp/out/log.txt || true
+          tail -n 300 play.log > /tmp/out/tail.txt || true
+          cp run/logs/latest.log /tmp/out/latest.log 2>/dev/null || true
+          cd /tmp/out && git init -q && git checkout -q -b shots-meb && git add -A
+          git -c user.name=ci -c user.email=ci@example.com commit -qm "Mebahel check ${{ github.sha }}"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" shots-meb

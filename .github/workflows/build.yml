@@ -2,6 +2,7 @@ name: Build
 on:
   push:
     branches: [ main ]
+    paths-ignore: [ '.github/workflows/meb.yml' ]
   workflow_dispatch:
 permissions:
   contents: write
@@ -59,33 +60,12 @@ jobs:
           timeout 900 xvfb-run -a -s "-screen 0 1280x720x24" gradle runShots --no-daemon 2>&1 | tee shots.log || true
           ls run-shots/screenshots || true
           grep -E "SHOT|Exception|ERROR" shots.log | grep -v "DEBUG" | head -60 || true
-      - name: Screenshots with Sinytra Connector and Mebahel's RPG
-        id: shotsmeb
-        continue-on-error: true
-        shell: bash
-        run: |
-          mkdir -p run-shots-meb/mods run-shots-meb/saves
-          rm -rf run-shots-meb/saves/shots && cp -r run-smoke/world run-shots-meb/saves/shots
-          cp run-shots/options.txt run-shots-meb/options.txt
-          mr() { curl -sfL "https://api.modrinth.com/v2/project/$1/version?loaders=%5B%22neoforge%22%5D&game_versions=%5B%221.21.1%22%5D" | jq -r '.[0].files[] | select(.primary) | .url' | head -1; }
-          for p in connector forgified-fabric-api; do
-            u=$(mr $p); echo "$p: $u"
-            [ -n "$u" ] && curl -sfL -o "run-shots-meb/mods/$(basename "$u")" "$u"
-          done
-          curl -sfL -o run-shots-meb/mods/mebahelrpgrquest-3.4.4-fabric-1.21.1.jar https://cdn.modrinth.com/data/jNqtpcJu/versions/yVzM3N1c/mebahelrpgrquest-3.4.4-fabric-1.21.1.jar
-          ls -la run-shots-meb/mods
-          timeout 1200 xvfb-run -a -s "-screen 0 1280x720x24" gradle runShotsMeb --no-daemon 2>&1 | tee shotsmeb.log || true
-          ls run-shots-meb/screenshots || true
-          grep -iE "SHOT|Mebahel|connector|Exception|ERROR" shotsmeb.log | grep -v "DEBUG" | head -80 || true
       - name: Publish the screenshots (branch "shots")
         if: always() && steps.shots.outcome != 'skipped'
         continue-on-error: true
         shell: bash
         run: |
-          mkdir -p /tmp/shots/meb && cp run-shots/screenshots/*.png /tmp/shots/ 2>/dev/null || true
-          cp run-shots-meb/screenshots/*.png /tmp/shots/meb/ 2>/dev/null || true
-          grep -iE "SHOT|Mebahel|half a god|connector|Exception|ERROR|Caused by|mixin" shotsmeb.log | grep -v DEBUG | head -300 > /tmp/shots/meb/log.txt || true
-          tail -n 300 shotsmeb.log > /tmp/shots/meb/tail.txt || true
+          mkdir -p /tmp/shots && cp run-shots/screenshots/*.png /tmp/shots/ 2>/dev/null || true
           grep -E "SHOT|Exception|ERROR|Caused by" shots.log | grep -v DEBUG | head -200 > /tmp/shots/log.txt || true
           tail -n 200 shots.log > /tmp/shots/tail.txt || true
           cd /tmp/shots && git init -q && git checkout -q -b shots && git add -A
@@ -104,6 +84,12 @@ jobs:
         with:
           name: half-a-god
           path: build/libs/*.jar
+      # the test world, for the check with Sinytra Connector and Mebahel's RPG (meb.yml)
+      - uses: actions/upload-artifact@v4
+        if: success()
+        with:
+          name: test-world
+          path: run-smoke/world
       - name: Publish the latest build
         if: success()
         uses: softprops/action-gh-release@v2
