@@ -28,7 +28,7 @@ public final class SmokeTest {
         if (court != null) {
             CourtBuilder.ensure(court, 3);
             BlockPos cell = CourtBuilder.origin(3).offset(CourtBuilder.CELL);
-            out.append(" cell=").append(court.getBlockState(cell.offset(-2, 0, 4)).is(Blocks.HAY_BLOCK) ? "built" : "BROKEN");
+            out.append(" cell=").append(court.getBlockState(cell.offset(-2, 0, 5)).is(Blocks.HAY_BLOCK) ? "built" : "BROKEN");
             out.append(" night=").append(court.dimensionType().hasFixedTime() && !court.isDay() ? "yes" : "NO");
         }
         out.append(" dreams=").append(StoryData.INSTANCE.dreams.size());

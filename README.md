@@ -173,9 +173,10 @@ Five questlines that aren't on the map until you find them. Each opens when you 
 ## The Trial
 
 From Act II on, if you're Fallen or Wicked, the Watch can come for you in your sleep: once per act, on a random night
-(one in three). You wake in chains in the dock of the Watch's own court, a small dimension of its own: a tall hall
-with the judge on a dais under the Watch's eye, a clerk, the Watch Captain, a witness stand, six jurors, two iron golem
-guards and a gallery of onlookers. The court speaks in a panel along the bottom of the screen, so you can watch it all
+(one in three). You wake in chains in the dock of the Watch's own court, a small dimension of its own: a vaulted
+hall of deepslate and dark oak, with amber windows, chandeliers, balconies and a rose window, the judge on a raised
+bench before a crimson screen under the Watch's great eye and its rays of light, a clerk, the Watch Captain, a witness
+stand, six jurors in a two-tier box, the evidence table, two iron golem guards and a tiered gallery of onlookers. The court speaks in a panel along the bottom of the screen, so you can watch it all
 happen:
 
 - **The court acts it out.** Whoever is speaking turns to you and glows. Each witness takes the stand in turn (the
@@ -193,8 +194,10 @@ verdict. The Codex keeps the whole transcript, your answers and the vote.
 
 ## The Watch's prison
 
-Found guilty, you serve 1 to 5 days (up to 7 for repeat convictions) in the Watch's prison: obsidian cells over a lava
-lake, a quarry, a cafeteria and a gate, somewhere nobody can find. The other prisoners don't know where it is either.
+Found guilty, you serve 1 to 5 days (up to 7 for repeat convictions) in the Watch's prison: a fortress on a basalt
+shelf in a vast cavern deep underground, with lava falling down the walls into a lava lake, glow lichen and stalactites
+in the dark. Obsidian cells off a vaulted corridor, a quarry, a cafeteria and a gate, and beyond the gate a bridge over
+the lava and a tunnel into the rock. Somewhere nobody can find. The other prisoners don't know where it is either.
 Your things are kept as evidence. There's no bed: a prison day is a whole Minecraft day (20 real minutes), counted only
 while you're there (logged out, the clock stops). The action bar tells you how long is left once a minute. Dying puts
 you back in your cell.

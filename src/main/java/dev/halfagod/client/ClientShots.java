@@ -106,6 +106,12 @@ public final class ClientShots {
         }
     }
 
+    private static void fly(ServerPlayer sp, boolean on) {
+        sp.getAbilities().mayfly = on;
+        sp.getAbilities().flying = on;
+        sp.onUpdateAbilities();
+    }
+
     private static int slot(ServerPlayer sp) {
         return CourtData.get(Trial.court(sp.getServer())).slot(sp.getUUID());
     }
@@ -149,7 +155,20 @@ public final class ClientShots {
         step(10, () -> shot("06c_court_witness"));
         step(10, () -> server(sp -> at(sp, CourtBuilder.DOCK.getX() + 0.5, 0, 12.5, 180f, -8f)));
         step(30, () -> shot("06d_court_gallery"));
-        step(10, () -> server(sp -> at(sp, CourtBuilder.DOCK.getX() + 0.5, 0, CourtBuilder.DOCK.getZ() + 0.5, 180f, 0f)));
+        // the whole hall from up by the rose window, and the bench from the floor
+        step(10, () -> server(sp -> {
+            fly(sp, true);
+            at(sp, 0.5, 8, 14.0, 180f, 16f);
+        }));
+        step(40, () -> shot("06e_court_overview"));
+        step(10, () -> server(sp -> at(sp, 0.5, 0, -6.5, 180f, -14f)));
+        step(30, () -> shot("06f_court_bench"));
+        step(10, () -> server(sp -> at(sp, -9.5, 7, 13.5, 205f, 14f)));
+        step(30, () -> shot("06g_court_balcony"));
+        step(10, () -> server(sp -> {
+            at(sp, CourtBuilder.DOCK.getX() + 0.5, 0, CourtBuilder.DOCK.getZ() + 0.5, 180f, 0f);
+            fly(sp, false);
+        }));
         step(20, () -> Minecraft.getInstance().setScreen(trial));
         step(90, () -> PacketDistributor.sendToServer(new Payloads.Plea("silent")));
         step(140, () -> shot("07_verdict_votes"));
@@ -171,6 +190,22 @@ public final class ClientShots {
         step(10, () -> server(sp -> at(sp, CourtBuilder.CELL_SPOT.getX() + 0.5, 0, CourtBuilder.CELL_SPOT.getZ() + 0.5, 180f, 0f)));
         step(20, () -> look(60f, 15f));
         step(10, () -> shot("10_cell_cot"));
+        // the corridor, and the prison in its cavern from over the lava
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() - 10.5, 0, CourtBuilder.CELL.getZ() - 2.5, -90f, 2f)));
+        step(30, () -> shot("09c_corridor"));
+        step(10, () -> server(sp -> {
+            fly(sp, true);
+            at(sp, CourtBuilder.CELL.getX() + 0.5, 6, CourtBuilder.CELL.getZ() + 26.0, 180f, 8f);
+        }));
+        step(60, () -> shot("09d_cavern_prison"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 33.0, 15, CourtBuilder.CELL.getZ() + 31.0, 133f, 24f)));
+        step(60, () -> shot("09e_cavern_wide"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() - 30.0, 12, CourtBuilder.CELL.getZ() + 20.0, -120f, 10f)));
+        step(60, () -> shot("09f_cavern_falls"));
+        step(10, () -> server(sp -> {
+            at(sp, CourtBuilder.CELL_SPOT.getX() + 0.5, 0, CourtBuilder.CELL_SPOT.getZ() + 0.5, 180f, 0f);
+            fly(sp, false);
+        }));
         // the prison day: the quarry, the cafeteria, the other prisoners
         step(10, () -> server(sp -> Prison.testTime(sp, "labour")));
         step(40, () -> server(sp -> Trial.passTime(sp, 1220)));
@@ -232,10 +267,14 @@ public final class ClientShots {
         }));
         step(40, () -> look(180f, 5f));
         step(10, () -> shot("19_walk_out"));
-        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 20.5, 0, CourtBuilder.CELL.getZ() - 6.5, 180f, 0f)));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 20.5, 0, CourtBuilder.CELL.getZ() - 7.5, 180f, 0f)));
         step(30, () -> look(180f, 0f));
         step(10, () -> shot("19b_the_gate"));
-        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 20.5, 0, CourtBuilder.CELL.getZ() - 10.5, 180f, 0f)));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 21.0, 0, CourtBuilder.CELL.getZ() - 21.5, 0f, 6f)));
+        step(40, () -> shot("19c_bridge_back"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 21.0, 0, CourtBuilder.CELL.getZ() - 18.5, 180f, 0f)));
+        step(30, () -> shot("19d_the_tunnel"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.CELL.getX() + 20.5, 0, CourtBuilder.CELL.getZ() - 12.5, 180f, 0f)));
         step(150, () -> {
         });
         step(10, () -> shot("11_home_dream"));

@@ -406,7 +406,7 @@ public final class Prison {
             return;
         }
         double x = 11.5 - 22.0 * k / ROUND_TICKS;
-        CourtBuilder.place(court, slot, "gaoler", x, 0, CourtBuilder.CELL.getZ() - 0.5, 90f);
+        CourtBuilder.place(court, slot, "gaoler", x, 0, CourtBuilder.CELL.getZ() + CourtBuilder.ROUND_Z, 90f);
         BlockPos c = CourtBuilder.origin(slot).offset(CourtBuilder.CELL);
         if (Math.abs(x) < 6 && k % 8 == 0) {
             court.playSound(null, c.getX() + x, c.getY(), c.getZ() - 0.5, SoundEvents.STONE_STEP, SoundSource.NEUTRAL, 0.6f, 0.8f);

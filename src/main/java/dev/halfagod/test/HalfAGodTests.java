@@ -80,14 +80,20 @@ public final class HalfAGodTests {
         BlockState rail = court.getBlockState(o.offset(CourtBuilder.DOCK).offset(-1, 0, 0));
         check(h, rail.is(Blocks.DARK_OAK_FENCE), "the dock has a rail");
         check(h, rail.getValue(net.minecraft.world.level.block.FenceBlock.NORTH) && rail.getValue(net.minecraft.world.level.block.FenceBlock.SOUTH), "the dock's rail joins up");
-        check(h, court.getBlockState(o.offset(0, 1, -12)).is(Blocks.DARK_OAK_PLANKS), "the judge sits up on a dais");
-        check(h, court.getBlockState(o.offset(-3, 0, -9)).is(Blocks.LECTERN), "the clerk has a lectern");
-        check(h, !court.getBlockState(o.offset(0, 0, 5)).is(Blocks.DARK_OAK_FENCE) && court.getBlockState(o.offset(3, 0, 5)).is(Blocks.DARK_OAK_FENCE), "the bar of the court");
+        check(h, court.getBlockState(o.offset(0, 1, -15)).is(Blocks.DARK_OAK_PLANKS), "the judge sits up on a dais");
+        check(h, court.getBlockState(o.offset(-4, 0, -10)).is(Blocks.LECTERN), "the clerk has a lectern");
+        check(h, !court.getBlockState(o.offset(0, 0, 4)).is(Blocks.DARK_OAK_FENCE) && court.getBlockState(o.offset(3, 0, 4)).is(Blocks.DARK_OAK_FENCE), "the bar of the court");
+        check(h, court.getBlockState(o.offset(0, 11, -22)).is(Blocks.BLACK_CONCRETE) && court.getBlockState(o.offset(0, 10, -21)).isAir(), "the Watch's eye");
+        check(h, court.getBlockState(o.offset(0, 15, 0)).is(Blocks.DARK_OAK_PLANKS) && court.getBlockState(o.offset(0, 13, 0)).isAir(), "a vaulted ceiling");
+        BlockPos lake = CourtBuilder.abs(slot, new BlockPos(0, -6, 20));
+        check(h, court.getBlockState(lake).is(Blocks.LAVA), "a lava lake under the cell window: " + court.getBlockState(lake));
+        check(h, court.getBlockState(CourtBuilder.abs(slot, new BlockPos(0, 24, 9))).isAir()
+                && !court.getBlockState(CourtBuilder.abs(slot, new BlockPos(0, 26, 9))).isAir(), "a cavern roof overhead");
         BlockPos cell = o.offset(CourtBuilder.CELL);
         BlockPos spot = o.offset(CourtBuilder.CELL_SPOT);
         check(h, court.getBlockState(spot).isAir() && court.getBlockState(spot.above()).isAir(), "room to stand in the cell");
         check(h, court.getBlockState(spot.below()).isSolid(), "a floor to stand on");
-        check(h, court.getBlockState(cell.offset(-2, 0, 4)).is(Blocks.HAY_BLOCK), "a hay-bale cot");
+        check(h, court.getBlockState(cell.offset(-2, 0, 5)).is(Blocks.HAY_BLOCK), "a hay-bale cot");
         BlockState wall = court.getBlockState(cell.offset(0, 0, 6));
         check(h, wall.is(Blocks.OBSIDIAN) || wall.is(Blocks.CRYING_OBSIDIAN), "the cell is obsidian");
         BlockState bars = court.getBlockState(cell.offset(1, 2, 1));
