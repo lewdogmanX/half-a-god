@@ -22,7 +22,7 @@ import static net.minecraft.commands.Commands.literal;
  * /halfagod rep | lostmyway | choose | chronicle            (everyone)
  * /halfagod story | unlockall | jump <quest> [player] | setrep <value> [player]   (operators)
  * /halfagod test story <prologue|act1..act7|end|after|random> [good|evil|waver|random] | story clear | story status   (operators)
- * /halfagod test dream [id] | dreams reset | secret <name> | trial [status|witnesses|night|escape|release|reset] | endcard | codex <page>   (operators)
+ * /halfagod test dream [id] | dreams reset | secret <name> | trial [status|witnesses|day|release|reset] | endcard | codex <page>   (operators)
  */
 public final class Commands {
     private Commands() {
@@ -121,14 +121,12 @@ public final class Commands {
                         .executes(c -> ok(c.getSource(), Trial.testStart(c.getSource().getPlayerOrException())))
                         .then(literal("status").executes(c -> ok(c.getSource(), Trial.status(c.getSource().getPlayerOrException()))))
                         .then(literal("witnesses").executes(c -> ok(c.getSource(), Trial.testWitnesses(c.getSource().getPlayerOrException()))))
-                        .then(literal("night").executes(c -> ok(c.getSource(), Trial.testDay(c.getSource().getPlayerOrException()))))
-                        .then(literal("escape").executes(c -> ok(c.getSource(), Trial.testEscape(c.getSource().getPlayerOrException()))))
+                        .then(literal("day").executes(c -> ok(c.getSource(), Trial.testDay(c.getSource().getPlayerOrException()))))
                         .then(literal("release").executes(c -> ok(c.getSource(), Trial.testRelease(c.getSource().getPlayerOrException()))))
                         .then(literal("reset").executes(c -> {
                             RepData d = Reputation.data(c.getSource().getPlayerOrException());
                             d.trialActs.clear();
                             d.convictions = 0;
-                            d.escapes = 0;
                             return ok(c.getSource(), "The Watch has forgotten you (this act's trial can happen again).");
                         })))
                 .then(literal("story")

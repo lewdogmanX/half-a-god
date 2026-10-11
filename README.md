@@ -173,8 +173,10 @@ Five questlines that aren't on the map until you find them. Each opens when you 
 ## The Trial
 
 From Act II on, if you're Fallen or Wicked, the Watch can come for you in your sleep: once per act, on a random night
-(one in three). You wake in chains in the dock of the Watch's own court, a small dimension of its own. The judge hears
-witnesses, and every one tells something you really did. A witness you killed can't testify: the court only hears "the
+(one in three). You wake in chains in the dock of the Watch's own court, a small dimension of its own: a tall hall
+with the judge on a dais under the Watch's eye, a clerk, the Watch Captain, a witness stand, six jurors, two iron golem
+guards and a gallery of onlookers. The court speaks in a panel along the bottom of the screen, so you can watch it all
+happen. The judge hears witnesses, and every one tells something you really did. A witness you killed can't testify: the court only hears "the
 witness cannot be found". Then you plead:
 
 - **Guilty:** a day off the sentence.
@@ -182,13 +184,14 @@ witness cannot be found". Then you plead:
 - **Say nothing:** the court decides on the evidence.
 - **Pay a juror** (Gilded Hand rank and 16 emeralds from your things).
 
-Found guilty, you serve 1 to 5 days in an obsidian cell (more for a second conviction). Your things are kept as
-evidence. Each night you sleep in the cell is a day served, and dying puts you back in it. Ways out:
+Found guilty, you serve 1 to 5 days (up to 7 for repeat convictions) in an obsidian cell in the Watch's prison block,
+over a lava lake, with other prisoners across the corridor and the gaoler watching you. Your things are kept as
+evidence. There's no bed and no way out: a day in the cells is a whole Minecraft day (20 real minutes) spent in the
+cell, and it only counts while you're there (logged out, the clock stops). The action bar tells you how long is left
+once a minute, and the gaoler pushes bread through the bars each day. Dying puts you back in the cell.
 
 - **Serve your time:** you walk out the same person you went in.
-- **Escape:** one block in the cell walls isn't quite right. Find it and break through. The Hand respects it (it counts
-  toward your Hand rank); the Watch puts a higher price on your head (more bounty hunters).
-- **Be broken out:** at Collector of the Hand or above, Silas's men come on the second night.
+- **Be broken out:** at Collector of the Hand or above, Silas's men come on the second day.
 
 However you get out, you wake up back in your own bed with all your things.
 
@@ -254,14 +257,13 @@ Everyone plays their own story; nothing forces a fight.
 | `/halfagod test story clear` | put your real story back exactly as it was |
 | `/halfagod test story status` | whether you're in a simulated story |
 | `/halfagod test dream` | dream now (a dream that fits where you are) |
-| `/halfagod test dream <id>` | a particular dream (tab completes; `kidnap`, `godsaw`, `release`, `escape`, `breakout` are the special ones) |
+| `/halfagod test dream <id>` | a particular dream (tab completes; `kidnap`, `godsaw`, `release`, `breakout` are the special ones) |
 | `/halfagod test dreams reset` | forget your dreams |
 | `/halfagod test secret <tongue\|pilgrim\|godsaw\|skyfire\|clean>` | find a hidden questline now |
 | `/halfagod test trial` | the Watch takes you to court now (any reputation, any act) |
 | `/halfagod test trial status` | where you are with the Watch and whether a trial is due |
 | `/halfagod test trial witnesses` | a trial with a made-up record: four witnesses speak, three "cannot be found" (your real story isn't changed) |
-| `/halfagod test trial night` | serve one night of your sentence |
-| `/halfagod test trial escape` | where the loose block is |
+| `/halfagod test trial day` | serve one day of your sentence now, instead of waiting 20 minutes |
 | `/halfagod test trial release` | let yourself out (things and bed back) |
 | `/halfagod test trial reset` | the Watch forgets you (this act's trial can happen again) |
 | `/halfagod test endcard` | open "Your Story" (a preview before the ending) |

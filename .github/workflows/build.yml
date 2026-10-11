@@ -46,7 +46,7 @@ jobs:
           timeout 600 gradle runSmoke --no-daemon 2>&1 | tee smoke1.log
           timeout 600 gradle runSmoke --no-daemon 2>&1 | tee smoke2.log
           grep -h "HAG-SMOKE" smoke1.log smoke2.log
-          grep -q "court=loaded cell=built night=yes beds=work" smoke2.log
+          grep -q "court=loaded cell=built night=yes" smoke2.log
       - name: Screenshots from a real client
         id: shots
         continue-on-error: true

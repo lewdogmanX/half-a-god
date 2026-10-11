@@ -103,8 +103,6 @@ public final class Morality {
             if (LAST_BOUNTY.getOrDefault(player.getUUID(), -1L) != night) {
                 LAST_BOUNTY.put(player.getUUID(), night);
                 float hunt = (t == WICKED ? 0.7f : 0.35f) * new float[]{1f, 1f, 0.75f, 0.5f}[Ranks.hand(player)]; // the Hand protects its own
-                // every escape from the Watch's cells puts a higher price on your head
-                hunt = Math.min(0.95f, hunt * (1f + 0.5f * Reputation.data(player).escapes));
                 if (level.random.nextFloat() < hunt) {
                     sendHunters(player, level, t == WICKED);
                 }

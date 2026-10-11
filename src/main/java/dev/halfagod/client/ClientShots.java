@@ -4,6 +4,8 @@ import com.google.gson.JsonArray;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
 import dev.halfagod.HalfAGod;
+import dev.halfagod.core.CourtBuilder;
+import dev.halfagod.core.CourtData;
 import dev.halfagod.core.Dreams;
 import dev.halfagod.core.EndCard;
 import dev.halfagod.core.RepData;
@@ -62,6 +64,21 @@ public final class ClientShots {
         Screenshot.grab(mc.gameDirectory, name + ".png", mc.getMainRenderTarget(), m -> HalfAGod.LOG.info("SHOT {}: {}", name, m.getString()));
     }
 
+    private static void look(float yaw, float pitch) {
+        Minecraft mc = Minecraft.getInstance();
+        mc.player.setYRot(yaw);
+        mc.player.setXRot(pitch);
+        mc.player.yRotO = yaw;
+        mc.player.xRotO = pitch;
+    }
+
+    /** moves the player within their court slot (server side) */
+    private static void at(ServerPlayer sp, double x, double y, double z, float yaw, float pitch) {
+        net.minecraft.server.level.ServerLevel court = Trial.court(sp.getServer());
+        net.minecraft.core.BlockPos o = CourtBuilder.origin(CourtData.get(court).slot(sp.getUUID()));
+        sp.teleportTo(court, o.getX() + x, o.getY() + y, o.getZ() + z, yaw, pitch);
+    }
+
     private static void click(int times) {
         Minecraft mc = Minecraft.getInstance();
         for (int i = 0; i < times && mc.screen != null; i++) {
@@ -92,6 +109,14 @@ public final class ClientShots {
         step(10, () -> shot("05_trial_plea"));
         step(30, () -> Minecraft.getInstance().setScreen(null));
         step(10, () -> shot("06_courtroom"));
+        // the court from other angles: the jury on the right, the witness stand on the left, and from the gallery
+        step(10, () -> look(-70f, 5f));
+        step(10, () -> shot("06b_court_jury"));
+        step(10, () -> look(140f, 0f));
+        step(10, () -> shot("06c_court_witness"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.DOCK.getX() + 0.5, 0, 12.5, 180f, -8f)));
+        step(30, () -> shot("06d_court_gallery"));
+        step(10, () -> server(sp -> at(sp, CourtBuilder.DOCK.getX() + 0.5, 0, CourtBuilder.DOCK.getZ() + 0.5, 180f, 0f)));
         step(20, () -> Minecraft.getInstance().setScreen(trial));
         step(40, () -> PacketDistributor.sendToServer(new Payloads.Plea("silent")));
         step(10, () -> shot("07_verdict"));
@@ -99,23 +124,19 @@ public final class ClientShots {
             PacketDistributor.sendToServer(new Payloads.Plea("continue"));
             Minecraft.getInstance().setScreen(null);
         });
-        step(10, () -> shot("08_cell_window"));
-        step(20, () -> {
-            Minecraft mc = Minecraft.getInstance();
-            mc.player.setYRot(-90f);
-            mc.player.setXRot(10f);
-        });
-        step(10, () -> shot("09_cell_gaoler"));
-        step(20, () -> {
-            Minecraft mc = Minecraft.getInstance();
-            mc.player.setYRot(180f);
-            mc.player.setXRot(0f);
-        });
-        step(10, () -> shot("10_cell_wall"));
+        step(10, () -> shot("08_cell_bars"));
+        step(10, () -> server(sp -> Trial.passTime(sp, 1200)));
+        step(10, () -> shot("08b_cell_time_left"));
+        step(20, () -> look(0f, 25f));
+        step(10, () -> shot("09_cell_window"));
+        step(20, () -> look(60f, 15f));
+        step(10, () -> shot("10_cell_cot"));
+        step(20, () -> look(-110f, 10f));
+        step(10, () -> shot("10b_cell_cauldron"));
         step(5, () -> server(sp -> {
             RepData d = Reputation.data(sp);
             for (int i = 0; i < 8 && d.trialState == 2; i++) {
-                Trial.onNightInCell(sp);
+                Trial.serveDay(sp);
             }
         }));
         step(150, () -> {

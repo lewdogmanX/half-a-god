@@ -80,13 +80,34 @@ public final class HalfAGodTests {
         BlockState rail = court.getBlockState(o.offset(CourtBuilder.DOCK).offset(-1, 0, 0));
         check(h, rail.is(Blocks.DARK_OAK_FENCE), "the dock has a rail");
         check(h, rail.getValue(net.minecraft.world.level.block.FenceBlock.NORTH) && rail.getValue(net.minecraft.world.level.block.FenceBlock.SOUTH), "the dock's rail joins up");
+        check(h, court.getBlockState(o.offset(0, 1, -12)).is(Blocks.DARK_OAK_PLANKS), "the judge sits up on a dais");
+        check(h, court.getBlockState(o.offset(-3, 0, -9)).is(Blocks.LECTERN), "the clerk has a lectern");
+        check(h, !court.getBlockState(o.offset(0, 0, 5)).is(Blocks.DARK_OAK_FENCE) && court.getBlockState(o.offset(3, 0, 5)).is(Blocks.DARK_OAK_FENCE), "the bar of the court");
         BlockPos cell = o.offset(CourtBuilder.CELL);
-        check(h, court.getBlockState(cell.offset(-1, 0, 0)).is(Blocks.BROWN_BED), "the cell has a bed");
-        check(h, court.getBlockState(cell.offset(0, 0, -2)).is(Blocks.OBSIDIAN), "the cell is obsidian");
-        check(h, court.getBlockState(cell.offset(0, 0, -1)).isAir(), "the cell is hollow");
-        BlockPos loose = CourtBuilder.loosen(court, slot, 7);
-        check(h, court.getBlockState(loose).is(Blocks.BLACK_CONCRETE), "one block is loose");
+        BlockPos spot = o.offset(CourtBuilder.CELL_SPOT);
+        check(h, court.getBlockState(spot).isAir() && court.getBlockState(spot.above()).isAir(), "room to stand in the cell");
+        check(h, court.getBlockState(spot.below()).isSolid(), "a floor to stand on");
+        check(h, court.getBlockState(cell.offset(-2, 0, 4)).is(Blocks.HAY_BLOCK), "a hay-bale cot");
+        BlockState wall = court.getBlockState(cell.offset(0, 0, 6));
+        check(h, wall.is(Blocks.OBSIDIAN) || wall.is(Blocks.CRYING_OBSIDIAN), "the cell is obsidian");
+        BlockState bars = court.getBlockState(cell.offset(1, 2, 1));
+        check(h, bars.is(Blocks.IRON_BARS) && bars.getValue(net.minecraft.world.level.block.IronBarsBlock.EAST)
+                && bars.getValue(net.minecraft.world.level.block.IronBarsBlock.WEST), "a barred front that joins up");
+        check(h, court.getBlockState(cell.offset(0, 1, 6)).is(Blocks.IRON_BARS), "a barred window");
+        int beds = 0;
+        for (BlockPos p : BlockPos.betweenClosed(cell.offset(-12, -1, -8), cell.offset(12, 4, 6))) {
+            if (court.getBlockState(p).getBlock() instanceof net.minecraft.world.level.block.BedBlock) {
+                beds++;
+            }
+        }
+        check(h, beds == 0, "no beds in the cells: " + beds);
         check(h, CourtData.get(court).builtVersion(slot) == CourtBuilder.VERSION, "the build is remembered");
+        check(h, !CourtBuilder.ensure(court, slot), "not built twice");
+        // an older court is cleared and rebuilt
+        court.setBlock(cell.offset(-1, 0, 0), Blocks.BROWN_BED.defaultBlockState(), 3);
+        CourtData.get(court).setBuilt(slot, 2);
+        check(h, CourtBuilder.ensure(court, slot), "an old court is rebuilt");
+        check(h, !(court.getBlockState(cell.offset(-1, 0, 0)).getBlock() instanceof net.minecraft.world.level.block.BedBlock), "the old bed is gone");
         h.succeed();
     }
 
@@ -119,11 +140,19 @@ public final class HalfAGodTests {
         check(h, Trial.inCourt(p), "still in court");
         check(h, d.sentence >= 1, "a sentence");
         ServerLevel court = Trial.court(p.getServer());
-        check(h, court.getBlockState(BlockPos.of(d.escapeBlock)).is(Blocks.BLACK_CONCRETE), "the loose block is there");
+        BlockPos spot = CourtBuilder.origin(CourtData.get(court).slot(p.getUUID())).offset(CourtBuilder.CELL_SPOT);
+        check(h, p.blockPosition().equals(spot), "in the cell: " + p.blockPosition() + " not " + spot);
+        check(h, p.getInventory().countItem(Items.BREAD) == 2, "bread through the bars");
 
-        int nights = d.sentence;
-        for (int i = 0; i < nights; i++) {
-            Trial.onNightInCell(p);
+        // the days pass in real time, in the cell
+        int days = d.sentence;
+        check(h, Trial.minutesLeft(d) == days * 20, "20 real minutes a day: " + Trial.minutesLeft(d));
+        Trial.passTime(p, Trial.DAY - 20);
+        check(h, d.served == 0 && d.trialState == 2, "not a day yet");
+        Trial.passTime(p, 20);
+        check(h, d.served == 1 && d.servedTicks == 0, "a day served after a whole day in the cell");
+        for (int i = 1; i < days; i++) {
+            Trial.passTime(p, Trial.DAY);
         }
         check(h, d.trialState == 0, "released after serving");
         check(h, p.level().dimension() == Level.OVERWORLD && p.blockPosition().distSqr(home) < 9, "home again, by the bed");
@@ -159,28 +188,16 @@ public final class HalfAGodTests {
         p.awardStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER), 12);
         RepData d = Reputation.data(p);
 
-        // escape: the loose block
-        check(h, Trial.kidnap(p), "taken (escape)");
-        Trial.onPlea(p, "silent");
-        Trial.onPlea(p, "continue");
-        check(h, d.trialState == 2, "in a cell (escape)");
-        int hand = d.handDone;
-        Trial.release(p, d, "escaped");
-        check(h, d.trialState == 0 && d.escapes == 1, "escaped");
-        check(h, d.handDone == hand + 3, "the Hand respects it");
-        check(h, JsonParser.parseString(d.trials.get(d.trials.size() - 1)).getAsJsonObject().get("outcome").getAsString().equals("escaped"),
-                "the Codex says how they got out");
-
-        // the Hand breaks you out on the second night
+        // the Hand breaks you out on the second day
         d.handRank = 2;
         check(h, Trial.kidnap(p), "taken (breakout)");
         Trial.onPlea(p, "not_guilty");
         Trial.onPlea(p, "continue");
         check(h, d.trialState == 2 && d.sentence >= 3, "a long sentence for a repeat offender: " + d.sentence);
-        Trial.onNightInCell(p);
-        check(h, d.trialState == 2, "still inside after one night");
-        Trial.onNightInCell(p);
-        check(h, d.trialState == 0 && d.brokenOut, "Silas's men came on the second night");
+        Trial.serveDay(p);
+        check(h, d.trialState == 2, "still inside after one day");
+        Trial.serveDay(p);
+        check(h, d.trialState == 0 && d.brokenOut, "Silas's men came on the second day");
 
         // paying a juror: 16 emeralds come out of your things
         d.handRank = 1;

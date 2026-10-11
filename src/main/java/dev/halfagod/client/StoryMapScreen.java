@@ -2198,7 +2198,7 @@ public final class StoryMapScreen extends Screen {
                 {"Spared", num("spared")}, {"Killed", num("killed")},
                 {"Villagers killed", num("villagers")}, {"Wardens fallen", num("wardens") + " of 7"},
                 {"Letters", num("letters")}, {"Dreams", num("dreams")},
-                {"Secrets", num("secrets") + " / " + num("secretsTotal")}, {"Trials", num("trials") + (story.has("escapes") && story.get("escapes").getAsInt() > 0 ? " (" + num("escapes") + " escaped)" : "")},
+                {"Secrets", num("secrets") + " / " + num("secretsTotal")}, {"Trials", num("trials")},
         };
         int colW = (cw - 40) / 2;
         for (int i = 0; i < stats.length; i++) {

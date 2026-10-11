@@ -42,7 +42,6 @@ import net.neoforged.neoforge.network.PacketDistributor;
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.HashMap;
-import java.util.HashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -52,9 +51,9 @@ import java.util.UUID;
 /**
  * The Trial. From Act II on, if you're Fallen or Wicked, the Watch can take you in your sleep (once per act, on a random
  * night). You wake in chains in a court of its own, hear witnesses tell what you really did (the ones you killed can't),
- * and plead. Guilty means the obsidian cells: sleep there to pass the days, find the block that isn't quite right, or,
- * if you're high enough in the Gilded Hand, wait for Silas's men. Either way you wake back home, in your own bed, with
- * your things.
+ * and plead. Guilty means the obsidian cells, and there's no sleeping through it and no way out: a day in the cells is a
+ * real Minecraft day (twenty minutes) spent in the cell, counted only while you're there. If you're high enough in the
+ * Gilded Hand, Silas's men come for you on the second day. Either way you wake back home, in your own bed, with your things.
  *
  * States (RepData.trialState): 0 free, 1 on trial (in the dock), 2 in prison.
  */
@@ -62,13 +61,14 @@ public final class Trial {
     public static final ResourceKey<Level> COURT = ResourceKey.create(Registries.DIMENSION, ResourceLocation.fromNamespaceAndPath(HalfAGod.MODID, "court"));
     private static final float CHANCE = 1f / 3f;
     private static final int BRIBE = 16;
+    /** a day in the cells: a full Minecraft day, in real time */
+    public static final int DAY = 24000;
 
     /** server tick at which to do something for a player: show the court, take them away after the verdict, show a dream */
     private static final Map<UUID, Long> SHOW_AT = new HashMap<>();
     private static final Map<UUID, Long> MOVE_AT = new HashMap<>();
     private static final Map<UUID, Long> DREAM_AT = new HashMap<>();
     private static final Map<UUID, String> DREAM = new HashMap<>();
-    private static final Set<UUID> ESCAPING = new HashSet<>();
     private static final Map<UUID, Long> AWAY_SINCE = new HashMap<>();
     private static boolean warned;
 
@@ -377,26 +377,54 @@ public final class Trial {
         }
         int slot = CourtData.get(court).slot(player.getUUID());
         CourtBuilder.ensure(court, slot);
-        BlockPos loose = CourtBuilder.loosen(court, slot, player.getRandom().nextInt(1000));
-        d.escapeBlock = loose.asLong();
-        BlockPos spot = CourtBuilder.origin(slot).offset(CourtBuilder.CELL_SPOT);
-        player.teleportTo(court, spot.getX() + 0.5, spot.getY(), spot.getZ() + 0.5, 0f, 0f);
-        player.setRespawnPosition(COURT, spot, 0f, true, false);
-        player.level().playSound(null, spot, SoundEvents.IRON_DOOR_CLOSE, SoundSource.BLOCKS, 1f, 0.6f);
+        d.servedTicks = 0;
+        putInCell(player, court, slot);
+        player.level().playSound(null, player.blockPosition(), SoundEvents.IRON_DOOR_CLOSE, SoundSource.BLOCKS, 1f, 0.6f);
+        give(player, new ItemStack(Items.BREAD, 2));
         player.displayClientMessage(Component.literal(d.sentence + (d.sentence == 1 ? " day" : " days")
-                + " in the cells. Sleep to pass them.").withStyle(ChatFormatting.RED), true);
+                + " in the cells. There's nothing to do but wait (" + minutesLeft(d) + " min).").withStyle(ChatFormatting.RED), true);
     }
 
-    /** A night slept in the cell counts as a day served. */
-    public static void onNightInCell(ServerPlayer player) {
+    private static void putInCell(ServerPlayer player, ServerLevel court, int slot) {
+        BlockPos spot = CourtBuilder.origin(slot).offset(CourtBuilder.CELL_SPOT);
+        player.teleportTo(court, spot.getX() + 0.5, spot.getY(), spot.getZ() + 0.5, 180f, 0f);
+        player.setRespawnPosition(COURT, spot, 180f, true, false);
+    }
+
+    /** real minutes (in the cell) until you're out */
+    public static int minutesLeft(RepData d) {
+        long ticks = (long) Math.max(0, d.sentence - d.served) * DAY - d.servedTicks;
+        return (int) Math.max(1, (ticks + 1199) / 1200);
+    }
+
+    /** Time spent in the cell (only while you're in it, and it can't be slept away): every DAY ticks is a day served. */
+    public static void passTime(ServerPlayer player, int ticks) {
+        RepData d = Reputation.data(player);
+        if (d.trialState != 2) {
+            return;
+        }
+        int before = d.servedTicks / 1200;
+        d.servedTicks += ticks;
+        if (d.servedTicks >= DAY) {
+            serveDay(player);
+        } else if (d.servedTicks / 1200 != before) {
+            // once a minute, how long is left
+            player.displayClientMessage(Component.literal("Day " + (d.served + 1) + " of " + d.sentence + ". "
+                    + minutesLeft(d) + " min to go.").withStyle(ChatFormatting.GRAY), true);
+        }
+    }
+
+    /** A whole day gone by in the cell. */
+    public static void serveDay(ServerPlayer player) {
         RepData d = Reputation.data(player);
         if (d.trialState != 2) {
             return;
         }
         d.served++;
+        d.servedTicks = 0;
         give(player, new ItemStack(Items.BREAD, 2));
-        // the Gilded Hand looks after its own: Silas's men come on the second night
-        if (Ranks.hand(player) >= 2 && d.served == 2) {
+        // the Gilded Hand looks after its own: Silas's men come on the second day
+        if (Ranks.hand(player) >= 2 && d.served == 2 && d.sentence > 2) {
             release(player, d, "broken out");
             return;
         }
@@ -404,12 +432,13 @@ public final class Trial {
             release(player, d, "served");
             return;
         }
-        player.displayClientMessage(Component.literal("Day " + d.served + " of " + d.sentence + " served. The gaoler pushes bread through the bars.")
-                .withStyle(ChatFormatting.GRAY), true);
+        player.level().playSound(null, player.blockPosition(), SoundEvents.CHAIN_PLACE, SoundSource.BLOCKS, 1f, 0.7f);
+        player.displayClientMessage(Component.literal("Day " + d.served + " of " + d.sentence + " served. The gaoler pushes bread through the bars. "
+                + minutesLeft(d) + " min to go.").withStyle(ChatFormatting.GRAY), true);
     }
 
     // ------------------------------------------------------------------ going home
-    /** outcome: served, escaped, broken out, acquitted, released (by an operator) */
+    /** outcome: served, broken out, acquitted, released (by an operator) */
     public static void release(ServerPlayer player, RepData d, String outcome) {
         if (d.trialState == 0) {
             return;
@@ -420,31 +449,22 @@ public final class Trial {
             t.addProperty("served", d.served);
             d.trials.set(d.trials.size() - 1, t.toString());
         }
-        switch (outcome) {
-            case "escaped" -> {
-                d.escapes++;
-                // the Hand respects it; the Watch remembers it
-                d.handDone += 3;
-                d.watchDone = Math.max(0, d.watchDone - 5);
-            }
-            case "broken out" -> d.brokenOut = true;
-            default -> {
-            }
+        if (outcome.equals("broken out")) {
+            d.brokenOut = true;
         }
         d.trialState = 0;
         d.trialScript = "";
         d.trialVerdict = "";
         d.sentence = 0;
         d.served = 0;
+        d.servedTicks = 0;
         UUID id = player.getUUID();
         SHOW_AT.remove(id);
         MOVE_AT.remove(id);
-        ESCAPING.remove(id);
         goHome(player, d);
         giveBack(player, d);
         restoreSpawn(player, d);
         String dream = switch (outcome) {
-            case "escaped" -> "escape";
             case "broken out" -> "breakout";
             case "served", "acquitted" -> "release";
             default -> "";
@@ -609,10 +629,6 @@ public final class Trial {
                 proceed(player, d);
             }
         }
-        if (ESCAPING.remove(id) && d.trialState == 2) {
-            release(player, d, "escaped");
-            return;
-        }
         Long dream = DREAM_AT.get(id);
         if (dream != null && now >= dream) {
             DREAM_AT.remove(id);
@@ -627,10 +643,23 @@ public final class Trial {
         }
         if (inCourt(player)) {
             AWAY_SINCE.remove(id);
-            CourtBuilder.ensureNpcs(court, CourtData.get(court).slot(id));
+            int slot = CourtData.get(court).slot(id);
+            if (CourtBuilder.ensure(court, slot)) {
+                // the court was rebuilt by an update while you were in it: back to your place
+                if (d.trialState == 1) {
+                    BlockPos dock = CourtBuilder.origin(slot).offset(CourtBuilder.DOCK);
+                    player.teleportTo(court, dock.getX() + 0.5, dock.getY(), dock.getZ() + 0.5, 180f, 0f);
+                    player.setRespawnPosition(COURT, dock, 180f, true, false);
+                } else if (d.trialState == 2) {
+                    putInCell(player, court, slot);
+                }
+            }
+            CourtBuilder.ensureNpcs(court, slot);
             if (d.trialState == 0 && !DREAM_AT.containsKey(id)) {
                 // nobody should be here who isn't on trial or in a cell (an operator's teleport, an old save...)
                 goHome(player, d);
+            } else if (d.trialState == 2 && player.isAlive()) {
+                passTime(player, 20);
             }
         } else if (d.trialState != 0) {
             // taken out of the court by something else: give everything back after a little while
@@ -655,7 +684,8 @@ public final class Trial {
             if (d.trialState == 1) {
                 SHOW_AT.put(player.getUUID(), now(player) + 60);
             } else if (d.trialState == 2) {
-                player.displayClientMessage(Component.literal("Day " + d.served + " of " + d.sentence + " served.").withStyle(ChatFormatting.GRAY), true);
+                player.displayClientMessage(Component.literal("Day " + (d.served + 1) + " of " + d.sentence + ". " + minutesLeft(d)
+                        + " min to go.").withStyle(ChatFormatting.GRAY), true);
             }
         }
     }
@@ -672,11 +702,6 @@ public final class Trial {
         if (!(event.getPlayer() instanceof ServerPlayer player) || !inCourt(player)) {
             return;
         }
-        RepData d = Reputation.data(player);
-        if (d.trialState == 2 && event.getPos().asLong() == d.escapeBlock) {
-            ESCAPING.add(player.getUUID());
-            return;
-        }
         if (!player.isCreative()) {
             event.setCanceled(true);
         }
@@ -689,14 +714,28 @@ public final class Trial {
         }
     }
 
+    @SubscribeEvent(priority = EventPriority.HIGH)
+    public static void onUseBlock(PlayerInteractEvent.RightClickBlock event) {
+        // nothing in the court or the cells is yours to use (doors, the lectern, the chest...)
+        if (event.getEntity() instanceof ServerPlayer player && inCourt(player) && !player.isCreative()) {
+            event.setCanceled(true);
+        }
+    }
+
     @SubscribeEvent(priority = EventPriority.HIGHEST)
     public static void onInteract(PlayerInteractEvent.EntityInteract event) {
         if (CourtBuilder.isCourtNpc(event.getTarget())) {
             event.setCanceled(true);
             if (event.getEntity() instanceof ServerPlayer player && event.getHand() == net.minecraft.world.InteractionHand.MAIN_HAND) {
+                String role = CourtBuilder.role(event.getTarget());
                 String name = event.getTarget().hasCustomName() ? event.getTarget().getCustomName().getString() : "";
-                String line = name.equals("The Gaoler") ? "\"Sleep. The days go faster asleep.\"" : "\"Silence in the court.\"";
-                player.displayClientMessage(Component.literal(name + ": " + line).withStyle(ChatFormatting.GRAY), true);
+                String line = role.equals("gaoler") ? "\"No beds in here. You'll feel every hour of it.\""
+                        : role.startsWith("prisoner") ? "\"Don't bother with the walls. I've tried.\""
+                        : role.startsWith("gallery") ? "\"Shh!\""
+                        : role.startsWith("guard") ? "" : "\"Silence in the court.\"";
+                if (!line.isEmpty()) {
+                    player.displayClientMessage(Component.literal((name.isEmpty() ? "" : name + ": ") + line).withStyle(ChatFormatting.GRAY), true);
+                }
             }
         }
     }
@@ -754,8 +793,8 @@ public final class Trial {
         if (d.trialState != 2) {
             return "You're not in a cell.";
         }
-        onNightInCell(player);
-        return "One night served.";
+        serveDay(player);
+        return "One day served.";
     }
 
     public static String testRelease(ServerPlayer player) {
@@ -767,22 +806,13 @@ public final class Trial {
         return "Released.";
     }
 
-    public static String testEscape(ServerPlayer player) {
-        RepData d = Reputation.data(player);
-        if (d.trialState != 2) {
-            return "You're not in a cell.";
-        }
-        BlockPos p = BlockPos.of(d.escapeBlock);
-        return "The loose block is at " + p.getX() + " " + p.getY() + " " + p.getZ() + " (break it to escape).";
-    }
-
     public static String status(ServerPlayer player) {
         RepData d = Reputation.data(player);
         Set<String> traits = Meb.traits(player);
         String act = Dreams.actTrait(traits);
-        return "Trial state: " + (d.trialState == 0 ? "free" : d.trialState == 1 ? "on trial" : "in a cell (" + d.served + "/" + d.sentence + ")")
+        return "Trial state: " + (d.trialState == 0 ? "free" : d.trialState == 1 ? "on trial" : "in a cell (day " + (d.served + 1) + " of " + d.sentence + ", " + minutesLeft(d) + " min to go)")
                 + ". Act: " + StoryData.INSTANCE.acts.getOrDefault(act, "none") + (d.trialActs.contains(act) ? " (already tried this act)" : "")
-                + ". Tier: " + Reputation.tier(d.value) + ". Convictions: " + d.convictions + ", escapes: " + d.escapes
+                + ". Tier: " + Reputation.tier(d.value) + ". Convictions: " + d.convictions
                 + ". Court loaded: " + (court(player.getServer()) != null) + ".";
     }
 }

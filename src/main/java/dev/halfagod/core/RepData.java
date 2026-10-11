@@ -83,7 +83,6 @@ public final class RepData {
     /** acts in which the Watch has already come for you */
     public final Set<String> trialActs = new LinkedHashSet<>();
     public int convictions;
-    public int escapes;
     public int sentence;
     public int served;
     public boolean brokenOut;
@@ -99,8 +98,8 @@ public final class RepData {
     public long spawnPos;
     public float spawnAngle;
     public boolean spawnForced;
-    /** the loose block in your cell */
-    public long escapeBlock;
+    /** ticks of the current day already spent in the cell */
+    public int servedTicks;
 
     /** Watch duties and Hand contracts done while a rival was on the other side */
     public int rivalMarks;
@@ -165,7 +164,6 @@ public final class RepData {
             d.pendingKidnap = tag.getBoolean("pendingKidnap");
             for (Tag t : tag.getList("trialActs", Tag.TAG_STRING)) d.trialActs.add(t.getAsString());
             d.convictions = tag.getInt("convictions");
-            d.escapes = tag.getInt("escapes");
             d.sentence = tag.getInt("sentence");
             d.served = tag.getInt("served");
             d.brokenOut = tag.getBoolean("brokenOut");
@@ -178,7 +176,7 @@ public final class RepData {
             d.spawnPos = tag.getLong("spawnPos");
             d.spawnAngle = tag.getFloat("spawnAngle");
             d.spawnForced = tag.getBoolean("spawnForced");
-            d.escapeBlock = tag.getLong("escapeBlock");
+            d.servedTicks = tag.getInt("servedTicks");
             d.rivalMarks = tag.getInt("rivalMarks");
             for (Tag t : tag.getList("simTraits", Tag.TAG_STRING)) d.simTraits.add(t.getAsString());
             CompoundTag dec = tag.getCompound("simDecisions");
@@ -228,7 +226,6 @@ public final class RepData {
             tag.putBoolean("pendingKidnap", d.pendingKidnap);
             tag.put("trialActs", strings(d.trialActs));
             tag.putInt("convictions", d.convictions);
-            tag.putInt("escapes", d.escapes);
             tag.putInt("sentence", d.sentence);
             tag.putInt("served", d.served);
             tag.putBoolean("brokenOut", d.brokenOut);
@@ -241,7 +238,7 @@ public final class RepData {
             tag.putLong("spawnPos", d.spawnPos);
             tag.putFloat("spawnAngle", d.spawnAngle);
             tag.putBoolean("spawnForced", d.spawnForced);
-            tag.putLong("escapeBlock", d.escapeBlock);
+            tag.putInt("servedTicks", d.servedTicks);
             tag.putInt("rivalMarks", d.rivalMarks);
             tag.put("simTraits", strings(d.simTraits));
             CompoundTag dec = new CompoundTag();

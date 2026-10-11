@@ -158,10 +158,6 @@ SPECIAL = {
     "release": {"id": "release", "kind": "special", "title": "Dawn", "motif": "sun", "lines": [
         "They drag you out at dawn, blindfolded, and leave you where they found you.",
         "Your things are beside you, tied in a sack with a Watch seal on it."]},
-    "escape": {"id": "escape", "kind": "special", "title": "Out", "motif": "flame", "lines": [
-        "The block gives. Behind it, a crack just wide enough for a desperate person.",
-        "You squeeze through into the dark, and drop, and run, and keep running.",
-        "By morning you're home. Your things are there too: someone in the Watch has a soft heart, or a price."]},
     "breakout": {"id": "breakout", "kind": "special", "title": "The Hand Pays Its Debts", "motif": "eye",
                  "lines": [
                      "Shouting. A door that shouldn't open, opening.",

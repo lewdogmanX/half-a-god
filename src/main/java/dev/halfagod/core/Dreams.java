@@ -60,8 +60,7 @@ public final class Dreams {
         }
         RepData d = Reputation.data(player);
         if (Trial.inCourt(player)) {
-            Trial.onNightInCell(player);
-            return;
+            return; // no dreams in the Watch's court
         }
         if (Trial.onWake(player)) {
             return; // the Watch came for you instead

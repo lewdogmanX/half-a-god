@@ -23,10 +23,11 @@ import java.util.List;
 
 /**
  * The Trial, as you see it from the dock: you're taken in the night (a few dark lines), then the court speaks one line
- * at a time (click or wait), then you plead, then the verdict. Esc doesn't get you out of court.
+ * at a time (click or wait), then you plead, then the verdict. The court stays in view: the words go in a panel along
+ * the bottom of the screen, with the court's name on a small banner at the top. Esc doesn't get you out of court.
  */
 public final class TrialScreen extends Screen {
-    private static final int PAPER = 0xFFEDE0C2;
+    private static final int PAPER = 0xE8EDE0C2;
     private static final int INK = 0xFF3B2A1A;
     private static final int RED_INK = 0xFF8E1B1B;
     private static final int GOLD = 0xFFC9A55A;
@@ -100,18 +101,21 @@ public final class TrialScreen extends Screen {
 
     private void rebuild() {
         clearWidgets();
-        panelW = Math.min(420, width - 30);
-        panelH = Math.min(height - 30, 300);
+        // a panel along the bottom, about two fifths of the screen: the court stays in view above it
+        panelW = Math.min(520, width - 20);
+        panelH = Math.max(100, Math.min(160, height * 2 / 5));
         panelX = (width - panelW) / 2;
-        panelY = (height - panelH) / 2;
+        panelY = height - panelH - 6;
         if (phase == 2 && !pleaded) {
             JsonArray pleas = data.getAsJsonArray("pleas");
-            int bw = (panelW - 36) / 2;
+            int cols = pleas.size() > 2 && panelW >= 440 ? Math.min(4, pleas.size()) : 2;
+            int bw = (panelW - 24 - (cols - 1) * 8) / cols;
+            int rows = (pleas.size() + cols - 1) / cols;
             for (int i = 0; i < pleas.size(); i++) {
                 JsonObject p = pleas.get(i).getAsJsonObject();
                 String id = p.get("id").getAsString();
-                int bx = panelX + 12 + (i % 2) * (bw + 12);
-                int by = panelY + panelH - 56 + (i / 2) * 24;
+                int bx = panelX + 12 + (i % cols) * (bw + 8);
+                int by = panelY + panelH - 8 - rows * 22 + (i / cols) * 22;
                 Button b = Button.builder(Component.literal(p.get("label").getAsString()), btn -> plead(id)).bounds(bx, by, bw, 20).build();
                 if (p.has("hint")) {
                     b.setTooltip(Tooltip.create(Component.literal(p.get("hint").getAsString())));
@@ -122,7 +126,7 @@ public final class TrialScreen extends Screen {
             addRenderableWidget(Button.builder(Component.literal("Continue"), btn -> {
                 PacketDistributor.sendToServer(new Payloads.Plea("continue"));
                 onClose();
-            }).bounds(width / 2 - 60, panelY + panelH - 30, 120, 20).build());
+            }).bounds(panelX + panelW - 112, panelY + panelH - 28, 100, 20).build());
         }
     }
 
@@ -170,13 +174,24 @@ public final class TrialScreen extends Screen {
             g.fill(0, 0, width, height, 0xFF000000);
             return;
         }
-        // the court stays visible behind the transcript, darkened
-        g.fill(0, 0, width, height, 0x90000000);
-        // the panel: dark wood, then paper
-        g.fill(panelX - 4, panelY - 4, panelX + panelW + 4, panelY + panelH + 4, 0xFF2A1C11);
+        // no darkening and no blur: the court is the background. A soft shade behind the panel, then dark wood and paper
+        g.fillGradient(0, panelY - 30, width, height, 0x00000000, 0x70000000);
+        g.fill(panelX - 4, panelY - 4, panelX + panelW + 4, panelY + panelH + 4, 0xD02A1C11);
         g.fill(panelX - 3, panelY - 3, panelX + panelW + 3, panelY - 2, GOLD);
         g.fill(panelX - 3, panelY + panelH + 2, panelX + panelW + 3, panelY + panelH + 3, GOLD);
         g.fill(panelX, panelY, panelX + panelW, panelY + panelH, PAPER);
+        // the banner at the top
+        String head = "THE COURT OF THE WATCH";
+        String sub = sub();
+        int bw = Math.max(font.width(head), font.width(sub)) + 28;
+        int bx = width / 2 - bw / 2;
+        g.fill(bx, 4, bx + bw, 30, 0xB0140D08);
+        g.fill(bx, 30, bx + bw, 31, GOLD);
+    }
+
+    private String sub() {
+        return (data.has("act") && !data.get("act").getAsString().isEmpty() ? data.get("act").getAsString() + "  ·  " : "")
+                + "day " + (data.has("day") ? data.get("day").getAsLong() : 0);
     }
 
     @Override
@@ -186,62 +201,73 @@ public final class TrialScreen extends Screen {
             renderKidnap(g);
             return;
         }
-        int ix = panelX + 14, iw = panelW - 28;
         String head = "THE COURT OF THE WATCH";
-        g.drawString(font, head, width / 2 - font.width(head) / 2, panelY + 10, RED_INK, false);
-        String sub = (data.has("act") && !data.get("act").getAsString().isEmpty() ? data.get("act").getAsString() + "  ·  " : "")
-                + "day " + (data.has("day") ? data.get("day").getAsLong() : 0);
-        g.drawString(font, Component.literal(sub).withStyle(ChatFormatting.ITALIC), width / 2 - font.width(sub) / 2, panelY + 22, 0xFF8A7656, false);
-        g.fill(ix, panelY + 34, ix + iw, panelY + 35, 0x606B5638);
-        // the transcript: the newest lines at the bottom of the page
-        int top = panelY + 40;
-        int bottom = phase == 3 ? panelY + panelH - 110 : phase == 2 ? panelY + panelH - 64 : panelY + panelH - 22;
-        List<FormattedCharSequence> out = new ArrayList<>();
-        List<Integer> colors = new ArrayList<>();
-        int n = phase == 1 ? shown : lines.size();
-        for (int i = 0; i < n; i++) {
-            String[] l = lines.get(i);
-            boolean quiet = l[1].startsWith("(") || l[1].contains("cannot be found");
-            Component c = Component.empty().append(Component.literal(l[0] + ": ").withStyle(ChatFormatting.BOLD))
-                    .append(quiet ? Component.literal(l[1]).withStyle(ChatFormatting.ITALIC) : Component.literal(l[1]));
-            for (FormattedCharSequence s : font.split(c, iw)) {
-                out.add(s);
-                colors.add(quiet ? 0xFF6B5638 : INK);
+        g.drawString(font, head, width / 2 - font.width(head) / 2, 8, GOLD, false);
+        String sub = sub();
+        g.drawString(font, Component.literal(sub).withStyle(ChatFormatting.ITALIC), width / 2 - font.width(sub) / 2, 19, 0xFFB8A27A, false);
+        int ix = panelX + 12, iw = panelW - 24;
+        // what's taking up the bottom of the panel (the pleas, the verdict), and so where the transcript has to stop
+        int rows = 0;
+        if (phase == 2 && !pleaded) {
+            JsonArray pleas = data.getAsJsonArray("pleas");
+            int cols = pleas.size() > 2 && panelW >= 440 ? Math.min(4, pleas.size()) : 2;
+            rows = (pleas.size() + cols - 1) / cols;
+        }
+        int top = panelY + 8;
+        int bottom = phase == 3 ? top : phase == 2 ? panelY + panelH - 8 - rows * 22 - (pleaded ? 6 : 16) : panelY + panelH - 16;
+        if (phase != 3) {
+            // the transcript: the newest line at the bottom, the ones before it fading upwards
+            List<FormattedCharSequence> out = new ArrayList<>();
+            List<Integer> colors = new ArrayList<>();
+            int n = phase == 1 ? shown : lines.size();
+            for (int i = 0; i < n; i++) {
+                String[] l = lines.get(i);
+                boolean quiet = l[1].startsWith("(") || l[1].contains("cannot be found");
+                boolean latest = i == n - 1;
+                Component c = Component.empty().append(Component.literal(l[0] + ": ").withStyle(latest ? ChatFormatting.DARK_RED : ChatFormatting.RESET)
+                                .withStyle(ChatFormatting.BOLD))
+                        .append(quiet ? Component.literal(l[1]).withStyle(ChatFormatting.ITALIC) : Component.literal(l[1]));
+                for (FormattedCharSequence seq : font.split(c, iw)) {
+                    out.add(seq);
+                    colors.add(quiet ? 0xFF6B5638 : latest ? INK : 0xFF7A6448);
+                }
+                if (!latest) {
+                    out.add(FormattedCharSequence.EMPTY);
+                    colors.add(INK);
+                }
             }
-            out.add(FormattedCharSequence.EMPTY);
-            colors.add(INK);
+            int maxLines = Math.max(1, (bottom - top) / 10);
+            int from = Math.max(0, out.size() - maxLines);
+            int y = top + Math.max(0, maxLines - (out.size() - from)) * 10;
+            g.enableScissor(panelX, top, panelX + panelW, bottom);
+            for (int i = from; i < out.size(); i++) {
+                g.drawString(font, out.get(i), ix, y, colors.get(i), false);
+                y += 10;
+            }
+            g.disableScissor();
         }
-        int maxLines = (bottom - top) / 10;
-        int from = Math.max(0, out.size() - maxLines);
-        int y = top;
-        g.enableScissor(panelX, top, panelX + panelW, bottom);
-        for (int i = from; i < out.size(); i++) {
-            g.drawString(font, out.get(i), ix, y, colors.get(i), false);
-            y += 10;
-        }
-        g.disableScissor();
         if (phase == 1) {
-            String hint = "click to go on";
-            g.drawString(font, hint, panelX + panelW - 8 - font.width(hint), panelY + panelH - 14, 0xFF9A8662, false);
+            String hint = "click to go on  ·  " + shown + " / " + lines.size();
+            g.drawString(font, hint, panelX + panelW - 8 - font.width(hint), panelY + panelH - 12, 0xFF9A8662, false);
         } else if (phase == 2 && !pleaded) {
-            g.drawString(font, "HOW DO YOU PLEAD?", ix, panelY + panelH - 70, RED_INK, false);
+            g.drawString(font, "HOW DO YOU PLEAD?", ix, bottom + 3, RED_INK, false);
         } else if (phase == 2) {
-            g.drawString(font, Component.literal("The jury is out...").withStyle(ChatFormatting.ITALIC), ix, panelY + panelH - 40, 0xFF6B5638, false);
+            g.drawString(font, Component.literal("The jury is out...").withStyle(ChatFormatting.ITALIC), ix, panelY + panelH - 16, 0xFF6B5638, false);
         } else if (phase == 3 && verdict != null) {
             boolean guilty = verdict.get("guilty").getAsBoolean();
             String big = guilty ? "GUILTY" : "FREE TO GO";
             g.pose().pushPose();
-            g.pose().translate(width / 2f - font.width(big), panelY + panelH - 104, 0);
+            g.pose().translate(ix, panelY + 10, 0);
             g.pose().scale(2, 2, 1);
             g.drawString(font, big, 0, 0, guilty ? RED_INK : 0xFF2E6B2E, false);
             g.pose().popPose();
-            int vy = panelY + panelH - 80;
+            int vy = panelY + 34;
             for (JsonElement e : verdict.getAsJsonArray("lines")) {
                 JsonArray a = e.getAsJsonArray();
                 Component c = Component.empty().append(Component.literal(a.get(0).getAsString() + ": ").withStyle(ChatFormatting.BOLD))
                         .append(Component.literal(a.get(1).getAsString()));
-                for (FormattedCharSequence s : font.split(c, iw)) {
-                    g.drawString(font, s, ix, vy, INK, false);
+                for (FormattedCharSequence seq : font.split(c, iw - 110)) {
+                    g.drawString(font, seq, ix, vy, INK, false);
                     vy += 10;
                 }
             }
