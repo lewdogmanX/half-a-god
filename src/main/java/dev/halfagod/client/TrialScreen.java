@@ -169,13 +169,18 @@ public final class TrialScreen extends Screen {
         return pleas.size() > 2 && panelW >= 440 ? Math.min(4, pleas.size()) : 2;
     }
 
-    private void rebuild() {
-        clearWidgets();
-        // a panel along the bottom, about two fifths of the screen: the court stays in view above it
+    /** a panel along the bottom: a low one while the court just talks (more of the court in view), taller for choices */
+    private void layout() {
         panelW = Math.min(520, width - 20);
-        panelH = Math.max(100, Math.min(160, height * 2 / 5));
+        boolean compact = (phase == 1 && asking < 0) || (phase == 2 && pleaded);
+        panelH = compact ? Math.max(80, Math.min(110, height / 4)) : Math.max(100, Math.min(160, height * 2 / 5));
         panelX = (width - panelW) / 2;
         panelY = height - panelH - 6;
+    }
+
+    private void rebuild() {
+        clearWidgets();
+        layout();
         if (phase == 1 && asking >= 0) {
             JsonArray answers = data.has("answers") ? data.getAsJsonArray("answers") : new JsonArray();
             int n = Math.max(1, answers.size());
@@ -454,6 +459,7 @@ public final class TrialScreen extends Screen {
             g.fill(0, 0, width, height, 0xFF000000);
             return;
         }
+        layout();
         // no darkening and no blur: the court is the background. A soft shade behind the panel, then dark wood and paper
         g.fillGradient(0, panelY - 30, width, height, 0x00000000, 0x70000000);
         g.fill(panelX - 4, panelY - 4, panelX + panelW + 4, panelY + panelH + 4, 0xD02A1C11);
