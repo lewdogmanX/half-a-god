@@ -46,6 +46,11 @@ jobs:
           curl -sfL -o run/mods/mebahelrpgrquest-3.4.4-fabric-1.21.1.jar https://cdn.modrinth.com/data/jNqtpcJu/versions/yVzM3N1c/mebahelrpgrquest-3.4.4-fabric-1.21.1.jar
           ls -la run/mods
           portablemc start --help > start-help.txt 2>&1 || true
+          # NeoForge, installed by its own installer (as a launcher would), into the launcher folder
+          mkdir -p mc && echo '{"profiles":{}}' > mc/launcher_profiles.json
+          curl -sfL -o neoforge-installer.jar https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.252/neoforge-21.1.252-installer.jar
+          java -jar neoforge-installer.jar --install-client mc > install.log 2>&1 || tail -40 install.log
+          ls mc/versions
       - name: Play
         id: play
         continue-on-error: true
@@ -53,7 +58,7 @@ jobs:
         run: |
           timeout 1800 xvfb-run -a -s "-screen 0 1280x720x24" portablemc --main-dir "$PWD/mc" --work-dir "$PWD/run" start \
             --resolution 1280x720 --jvm "$JAVA_HOME/bin/java" --jvm-args="-Xmx3G -Dhalfagod.clientshots=true" \
-            -u Tester neoforge:1.21.1 2>&1 | tee play.log || true
+            -u Tester neoforge-21.1.252 2>&1 | tee play.log || true
           ls run/screenshots || true
           grep -iE "SHOT|Mebahel|Half a God|connector|Exception|ERROR" play.log | grep -v DEBUG | head -80 || true
       - name: Publish the screenshots (branch "shots-meb")
@@ -61,7 +66,7 @@ jobs:
         shell: bash
         run: |
           mkdir -p /tmp/out && cp run/screenshots/*.png /tmp/out/ 2>/dev/null || true
-          cp start-help.txt /tmp/out/ 2>/dev/null || true
+          cp start-help.txt install.log /tmp/out/ 2>/dev/null || true
           grep -iE "SHOT|Mebahel|Half a God|connector|Exception|ERROR|Caused by|mixin" play.log | grep -v DEBUG | head -400 > /tmp/out/log.txt || true
           tail -n 300 play.log > /tmp/out/tail.txt || true
           cp run/logs/latest.log /tmp/out/latest.log 2>/dev/null || true
