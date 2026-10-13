@@ -48,19 +48,19 @@ public final class ClientShots {
     private ClientShots() {
     }
 
-    private static void step(int waitAfter, Runnable r) {
+    static void step(int waitAfter, Runnable r) {
         STEPS.add(new Step(waitAfter, r, null));
     }
 
     /** waits (up to a minute) until something is so, then goes on */
-    private static void until(java.util.function.BooleanSupplier c) {
+    static void until(java.util.function.BooleanSupplier c) {
         STEPS.add(new Step(0, () -> {
         }, c));
     }
 
     private static int waited;
 
-    private static void server(Consumer<ServerPlayer> c) {
+    static void server(Consumer<ServerPlayer> c) {
         Minecraft mc = Minecraft.getInstance();
         mc.getSingleplayerServer().execute(() -> {
             ServerPlayer sp = mc.getSingleplayerServer().getPlayerList().getPlayer(mc.player.getUUID());
@@ -70,7 +70,7 @@ public final class ClientShots {
         });
     }
 
-    private static void shot(String name) {
+    static void shot(String name) {
         Minecraft mc = Minecraft.getInstance();
         Screenshot.grab(mc.gameDirectory, name + ".png", mc.getMainRenderTarget(), m -> HalfAGod.LOG.info("SHOT {}: {}", name, m.getString()));
     }
@@ -128,7 +128,7 @@ public final class ClientShots {
         Prison.onTalk(sp, role);
     }
 
-    private static void fly(ServerPlayer sp, boolean on) {
+    static void fly(ServerPlayer sp, boolean on) {
         sp.getAbilities().mayfly = on;
         sp.getAbilities().flying = on;
         sp.onUpdateAbilities();
@@ -146,6 +146,10 @@ public final class ClientShots {
     }
 
     public static void init() {
+        if ("moon".equals(System.getProperty("halfagod.shots"))) {
+            MoonShots.init();
+            return;
+        }
         step(40, () -> server(sp -> {
             sp.awardStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER), 9);
             Reputation.change(sp, -70, "test");

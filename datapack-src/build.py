@@ -1,7 +1,7 @@
 import json, os, shutil, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from lib import *
-import act0_1, act2_4, act5_6, act7_8, side, forks, green_trade, routes, story_text, bumblezone, legionary, hidden_lines, azazel  # noqa: registers quests
+import act0_1, act2_4, act5_6, act7_8, side, forks, green_trade, routes, story_text, bumblezone, legionary, hidden_lines, azazel, moon  # noqa: registers quests
 import base_quests, consequences, dialogue, mod_tables, npc_lines
 routes.join_main_story()
 consequences.link_after_endings()
@@ -38,6 +38,7 @@ DELIVERIES = []
 # Where each character lives. Everyone not listed lives in a village of their own (fixed the first time you meet them).
 ASHFORD_FOLK = {"Reeve Halden", "Ashford Survivor", "Ashford Elder", "Halden's Son", "Captain of the Watch", "Guard Captain",
                 "Freed Ashford Man", "Old Aurel"}
+OBSERVATORY_FOLK = {"Hester Quill"}
 HOME_FOLK = {"The Mason", "The Armourer", "The Smith", "The Cleric", "Tam the Shepherd", "Wren of the Pits"}
 SNOW_QUESTS = ("s1_", "s2_", "s3_", "x5_", "x5s_", "x5k_", "rc5_good")
 DESERT_QUESTS = ("d1_", "d2_", "d3_")
@@ -104,13 +105,21 @@ for qkey, (_, q) in QUESTS.items():
         # unless the quest gives them straight back as its reward (then you're only showing them).
         reward_items = set(q.get("rewards", {}).get("items", {}))
         bring = [x for x in q["goals"] if "collect" in x and x["stage"] < gl["stage"] and x["collect"] not in reward_items
-                 and x["id"] not in handed_over]
+                 and x["id"] not in handed_over and not x.get("_keep")]
         handed_over.update(x["id"] for x in bring)
         if bring:
             npc["delivery_objectives"] = [x["id"] for x in bring]
             npc["delivery_choice_label"] = "Hand over what you brought"
             npc["delivered_line"] = gl.get("say") or "Thank you."
             DELIVERIES.append(qkey)
+        if name in OBSERVATORY_FOLK:
+            # she lives in her observatory, not a village: the quest's Hester takes the place of the astronomer there
+            npc["structure"] = "half_a_god:observatory"
+            npc["search_radius"] = 12000
+            npc.pop("min_structure_distance", None)
+            threats.append(npc)
+            CAST.append({"quest": qid(qkey), "stage": gl["stage"], "name": name, "place": "local", "adopt": "minecraft:villager"})
+            continue
         place = place_of(qkey, name)
         if place == "snowy_village":
             npc["structure"] = "minecraft:village_snowy"
@@ -419,6 +428,8 @@ os.makedirs(OUT)
 json.dump({"pack": {"pack_format": 48, "description": "Half a God - a story campaign for Mebahel's RPG (Cult of Azazel, Bosses' Rise, Sons of Sins, Aether, It Takes a Pillage, Iron's Spells, End Remastered, Illager Invasion, Addictives, Bumblezone, Legionary)"}},
           open(os.path.join(OUT, "pack.mcmeta"), "w"), indent=2)
 write_all(OUT)
+import moon_builds
+moon_builds.write_all(os.path.join(OUT, "data/half_a_god/structure"))
 base_quests.write(OUT)
 os.makedirs(os.path.join(OUT, 'data/half_a_god/hag_mod'), exist_ok=True)
 json.dump({'lines': base_quests.mod_table()}, open(os.path.join(OUT, 'data/half_a_god/hag_mod/base_lines.json'), 'w'), indent=2)

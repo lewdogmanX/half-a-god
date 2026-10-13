@@ -1,0 +1,66 @@
+{
+  "title": "The Silver Sea",
+  "summary": "Grey dust, black sky, the world hanging over you like a lantern. Somewhere near, the Faithful's wreck. Find it, and find out what they came for.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_wreck",
+      "reach": "half_a_god:faithful_wreck",
+      "radius": 4000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "A golden rocket, broken in two in a crater, and its pilgrims still kneeling beside it in their gold. They've been kneeling a long time."
+    },
+    {
+      "id": "the_log",
+      "type": "read_book",
+      "item": "minecraft:written_book",
+      "amount": 1,
+      "structure": "half_a_god:faithful_wreck",
+      "radius": 4000,
+      "in_chest": true,
+      "container": "minecraft:barrel",
+      "name": "The Ascension's Log",
+      "tag": "hag_ascension_log",
+      "quest_book": {
+        "title": "The Ascension's Log",
+        "author": "Brother Ascendant",
+        "pages": [
+          "Day 1. We rose on the Chariot's fire. Praise him. The world is so small from here. Brother Cail wept.",
+          "Day 3. The moon. Grey and silent. Two brothers have stopped breathing. The Priest says breath is a habit of the flesh, and that we will lose it, as we lose everything that is not faith.",
+          "Day 9. We have found the Silver King. He is so much bigger than the hymns. The blade is in his hand. We are commanded to break it, so no hand may ever raise it against our god again.",
+          "Day 40. We cannot break it. It does not break. The Priest says we will keep trying until we are dust. I think we are dust already. I think we have been for days."
+        ]
+      },
+      "stage": 1,
+      "auto_advance": true,
+      "say": "The last entry is in a different hand: 'Whoever reads this: he is still holding it.'"
+    }
+  ],
+  "rewards": {
+    "xp": 2000,
+    "items": {
+      "minecraft:gold_block": 2
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_mn8_the_man_in_the_moon",
+      "delay_ticks": 200,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "rocketnautics:moon"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_mn7_the_silver_sea_done"
+    ]
+  }
+}

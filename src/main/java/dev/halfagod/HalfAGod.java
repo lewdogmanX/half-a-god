@@ -35,6 +35,7 @@ public final class HalfAGod {
 
     public HalfAGod(IEventBus modBus, ModContainer container) {
         RepData.ATTACHMENTS.register(modBus);
+        dev.halfagod.item.ModItems.register(modBus);
         modBus.addListener(Payloads::register);
         // The story datapack lives in its own always-on pack at the top of the list, so its versions of
         // Mebahel's quests win over the originals no matter what order the mods load in.
@@ -67,6 +68,7 @@ public final class HalfAGod {
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Azazel.class);
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Arrest.class);
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Legends.class);
+        NeoForge.EVENT_BUS.register(dev.halfagod.core.Moon.class);
         NeoForge.EVENT_BUS.addListener((AddReloadListenerEvent e) -> e.addListener(StoryData.INSTANCE));
         if (Boolean.getBoolean("halfagod.smoketest")) {
             NeoForge.EVENT_BUS.register(dev.halfagod.test.SmokeTest.class);

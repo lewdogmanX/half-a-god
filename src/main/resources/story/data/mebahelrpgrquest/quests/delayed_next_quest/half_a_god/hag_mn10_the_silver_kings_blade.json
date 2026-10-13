@@ -1,0 +1,66 @@
+{
+  "title": "The Silver King's Blade",
+  "summary": "You're home, and alive, and the Eclipse is yours. Hester will want to see it. She'll want to see you, mostly.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "still_yours",
+      "collect": "half_a_god:eclipse",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "show_hester",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "She doesn't touch it. She just looks at it, and then at the sky, for a long time. 'He'd be glad it was you,' she says, as if she knew him.",
+      "name": "Hester Quill"
+    }
+  ],
+  "rewards": {
+    "xp": 3000,
+    "items": {
+      "minecraft:diamond": 4
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_mn10_the_silver_kings_blade_done",
+      "hag_eclipse_home"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Hester Quill",
+      "stage": 1,
+      "structure": "half_a_god:observatory",
+      "search_radius": 12000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "golem_protected": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came back. Nobody ever comes back. Let me see you. Let me see it."
+    }
+  ]
+}

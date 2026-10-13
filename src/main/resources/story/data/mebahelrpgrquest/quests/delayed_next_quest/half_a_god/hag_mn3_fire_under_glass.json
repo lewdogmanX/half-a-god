@@ -1,0 +1,38 @@
+{
+  "title": "Fire Under Glass",
+  "summary": "Before anyone sits on top of a fire, Hester wants to see one. Build a Rocket Thruster (Create: Cosmonautics) and set it down on solid ground. It drinks lava. Keep your eyebrows away from the business end.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "a_test_stand",
+      "place": "rocketnautics:rocket_thruster",
+      "amount": 1,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "It roars like the Nether's been let out of a bottle. Somewhere on the peak, a woman is cheering."
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:lava_bucket": 1
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_mn4_a_little_moon_of_our_own",
+      "delay_ticks": 600,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_mn3_fire_under_glass_done"
+    ]
+  }
+}

@@ -2,7 +2,8 @@
  "names": [
   "Dunn the Deserter",
   "Corwin the Refugee",
-  "Ansel the Blood-Drinker"
+  "Ansel the Blood-Drinker",
+  "Maraal"
  ],
  "profiles": {
   "Dunn the Deserter": "dunn",
@@ -72,6 +73,33 @@
     "Dunn the Deserter": "He was just a boy with a sick friend.",
     "Corwin the Refugee": "I stole grain to feed my children. What was that for?",
     "Ansel the Blood-Drinker": "I know that look. I wore it for two years."
+   }
+  },
+  {
+   "trait": "hag_mn6_what_the_probe_saw_done",
+   "lines": {
+    "Maraal": "Iskar? He's still up there? We never buried him. There was no one left to.",
+    "Dunn the Deserter": "A dead god on the moon. Sure. Why not. Nothing surprises me any more.",
+    "Corwin the Refugee": "You're going up there? On fire? ...Bring a coat.",
+    "Ansel the Blood-Drinker": "Something that big doesn't die all the way. Be careful."
+   }
+  },
+  {
+   "trait": "hag_iskar_blade",
+   "lines": {
+    "Maraal": "He gave it to you. He never let me hold it. Not once. ...Good. Use it well.",
+    "Dunn the Deserter": "That sword makes my teeth hurt. In a good way, I think.",
+    "Corwin the Refugee": "Come home. Just come home with it.",
+    "Ansel the Blood-Drinker": "It's hungry too. Different hunger. Cleaner."
+   }
+  },
+  {
+   "trait": "hag_iskar_rested",
+   "lines": {
+    "Maraal": "You buried him. Thank you. I've waited a thousand years for someone to do that.",
+    "Dunn the Deserter": "You left the sword with him. That's... decent. That's really decent.",
+    "Corwin the Refugee": "Everyone deserves a grave. Even gods.",
+    "Ansel the Blood-Drinker": "Rest. Lucky him."
    }
   },
   {

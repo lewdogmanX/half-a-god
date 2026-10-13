@@ -631,6 +631,41 @@
    "structure": "minecraft:villages"
   },
   {
+   "quest": "mebahelrpgrquest:hag_mn1_the_woman_who_watches_the_moon",
+   "stage": 0,
+   "name": "Hester Quill",
+   "place": "local",
+   "adopt": "minecraft:villager"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_mn2_a_metal_for_the_sky",
+   "stage": 0,
+   "name": "Hester Quill",
+   "place": "local",
+   "adopt": "minecraft:villager"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_mn6_what_the_probe_saw",
+   "stage": 0,
+   "name": "Hester Quill",
+   "place": "local",
+   "adopt": "minecraft:villager"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_mn10_the_silver_kings_blade",
+   "stage": 1,
+   "name": "Hester Quill",
+   "place": "local",
+   "adopt": "minecraft:villager"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_mn9r_rest",
+   "stage": 0,
+   "name": "Hester Quill",
+   "place": "local",
+   "adopt": "minecraft:villager"
+  },
+  {
    "quest": "mebahelrpgrquest:hag_x1_the_informant_after",
    "stage": 0,
    "name": "Village Elder",
@@ -1771,6 +1806,52 @@
    [
     0,
     "Talk to Freed Ashford Man"
+   ]
+  ],
+  "mebahelrpgrquest:hag_mn1_the_woman_who_watches_the_moon": [
+   [
+    0,
+    "Talk to Hester Quill"
+   ]
+  ],
+  "mebahelrpgrquest:hag_mn2_a_metal_for_the_sky": [
+   [
+    0,
+    "Collect 8 x titanium ingot"
+   ],
+   [
+    0,
+    "Talk to Hester Quill"
+   ]
+  ],
+  "mebahelrpgrquest:hag_mn6_what_the_probe_saw": [
+   [
+    0,
+    "Talk to Hester Quill"
+   ],
+   [
+    1,
+    "Collect 1 x space helmet"
+   ],
+   [
+    1,
+    "Collect 1 x jetpack"
+   ]
+  ],
+  "mebahelrpgrquest:hag_mn10_the_silver_kings_blade": [
+   [
+    0,
+    "Collect 1 x eclipse"
+   ],
+   [
+    1,
+    "Talk to Hester Quill"
+   ]
+  ],
+  "mebahelrpgrquest:hag_mn9r_rest": [
+   [
+    0,
+    "Talk to Hester Quill"
    ]
   ],
   "mebahelrpgrquest:hag_x1_the_informant_after": [

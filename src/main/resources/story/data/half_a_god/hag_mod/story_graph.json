@@ -1968,6 +1968,92 @@
    "kill": [],
    "book": true
   },
+  "mebahelrpgrquest:hag_mn1_the_woman_who_watches_the_moon": {
+   "next": [
+    "mebahelrpgrquest:hag_mn2_a_metal_for_the_sky"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_mn2_a_metal_for_the_sky": {
+   "next": [
+    "mebahelrpgrquest:hag_mn3_fire_under_glass"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_mn3_fire_under_glass": {
+   "next": [
+    "mebahelrpgrquest:hag_mn4_a_little_moon_of_our_own"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_mn4_a_little_moon_of_our_own": {
+   "next": [
+    "mebahelrpgrquest:hag_mn5_above_the_sky"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_mn5_above_the_sky": {
+   "next": [
+    "mebahelrpgrquest:hag_mn6_what_the_probe_saw"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_mn6_what_the_probe_saw": {
+   "next": [
+    "mebahelrpgrquest:hag_mn7_the_silver_sea"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_mn7_the_silver_sea": {
+   "next": [
+    "mebahelrpgrquest:hag_mn8_the_man_in_the_moon"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_mn8_the_man_in_the_moon": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_mn9r_rest"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_mn9_come_home_alive"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_mn9_come_home_alive": {
+   "next": [
+    "mebahelrpgrquest:hag_mn10_the_silver_kings_blade"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_mn10_the_silver_kings_blade": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_mn9r_rest": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
   "mebahelrpgrquest:hag_x1_the_informant": {
    "next": [],
    "spare": [

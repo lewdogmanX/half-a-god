@@ -1,0 +1,37 @@
+{
+ "start": "mebahelrpgrquest:hag_mn1_the_woman_who_watches_the_moon",
+ "structure": "half_a_god:observatory",
+ "iskar": "half_a_god:iskars_rest",
+ "moon": "rocketnautics:moon",
+ "breathing": [
+  "Moon-Mad Faithful",
+  "The Eclipse Priest",
+  "Iskar's Last Light"
+ ],
+ "take_trait": "hag_iskar_blade",
+ "rest_trait": "hag_iskar_rested",
+ "carry_quest": "mebahelrpgrquest:hag_mn9_come_home_alive",
+ "given": "The Eclipse comes out of his hand as if he let go. It's cold, and heavier than it looks, and it hums when you face the sun.",
+ "lost": "Your hand opens as you die. Far above, on the moon, the Eclipse is back in Iskar's hand.",
+ "again": "The Eclipse is in his hand again. It lets you take it, again. Come home alive this time.",
+ "home": "Your feet are on the overworld. The Eclipse is quiet in your hand now. It's yours.",
+ "rest_rep": 15,
+ "azazel_sees": "THAT BLADE. I watched it rise against me once. I watched it fall.",
+ "sizes": {
+  "observatory": [
+   23,
+   20,
+   26
+  ],
+  "faithful_wreck": [
+   41,
+   20,
+   31
+  ],
+  "iskars_rest": [
+   85,
+   19,
+   65
+  ]
+ }
+}

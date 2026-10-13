@@ -1000,6 +1000,50 @@
    "dim": "minecraft:overworld",
    "title": "Free Men Remember"
   },
+  "mebahelrpgrquest:hag_mn1_the_woman_who_watches_the_moon": {
+   "dim": "minecraft:overworld",
+   "title": "The Woman Who Watches the Moon"
+  },
+  "mebahelrpgrquest:hag_mn2_a_metal_for_the_sky": {
+   "dim": "minecraft:overworld",
+   "title": "A Metal for the Sky"
+  },
+  "mebahelrpgrquest:hag_mn3_fire_under_glass": {
+   "dim": "minecraft:overworld",
+   "title": "Fire Under Glass"
+  },
+  "mebahelrpgrquest:hag_mn4_a_little_moon_of_our_own": {
+   "dim": "minecraft:overworld",
+   "title": "A Little Moon of Our Own"
+  },
+  "mebahelrpgrquest:hag_mn5_above_the_sky": {
+   "dim": "rocketnautics:deep_space",
+   "title": "Above the Sky"
+  },
+  "mebahelrpgrquest:hag_mn6_what_the_probe_saw": {
+   "dim": "minecraft:overworld",
+   "title": "What the Probe Saw"
+  },
+  "mebahelrpgrquest:hag_mn7_the_silver_sea": {
+   "dim": "rocketnautics:moon",
+   "title": "The Silver Sea"
+  },
+  "mebahelrpgrquest:hag_mn8_the_man_in_the_moon": {
+   "dim": "rocketnautics:moon",
+   "title": "The Man in the Moon"
+  },
+  "mebahelrpgrquest:hag_mn9_come_home_alive": {
+   "dim": "rocketnautics:moon",
+   "title": "Come Home Alive"
+  },
+  "mebahelrpgrquest:hag_mn10_the_silver_kings_blade": {
+   "dim": "minecraft:overworld",
+   "title": "The Silver King's Blade"
+  },
+  "mebahelrpgrquest:hag_mn9r_rest": {
+   "dim": "minecraft:overworld",
+   "title": "Rest"
+  },
   "mebahelrpgrquest:hag_x1_the_informant": {
    "dim": "minecraft:overworld",
    "title": "The Informant"

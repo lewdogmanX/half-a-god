@@ -216,6 +216,9 @@ def courier(id, after_quest, book_quest, sender="Old Mara", lo=1200, hi=2400, tr
 
 def write_all(root):
     for id, (folder, q) in QUESTS.items():
+        for gl in q.get("goals", []):
+            for k in [k for k in gl if k.startswith("_")]:
+                del gl[k]   # build-time notes (_far, _talk, _keep), never written
         p = os.path.join(root, "data", QNS, "quests", folder, "half_a_god", f"hag_{id}.json")
         os.makedirs(os.path.dirname(p), exist_ok=True)
         json.dump(q, open(p, "w", encoding="utf-8"), indent=2, ensure_ascii=False)

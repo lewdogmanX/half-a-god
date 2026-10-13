@@ -145,6 +145,8 @@ public final class RepData {
     public int heat;
     /** the moon: the Eclipse brought home, or Iskar laid to rest */
     public boolean eclipseHome;
+    /** died carrying the Eclipse before bringing it home (Iskar's hand has it again) */
+    public boolean eclipseLost;
 
     /** operators' story simulator: made-up story traits laid over the real ones (Mebahel never sees them), the
      *  decision made at each simulated quest (spare/kill), the quest you'd be on next, and your real record to go back to */
@@ -208,6 +210,7 @@ public final class RepData {
             d.dealt = tag.contains("dealt") ? tag.getInt("dealt") : d.dealt;
             d.heat = tag.contains("heat") ? tag.getInt("heat") : d.heat;
             d.eclipseHome = tag.contains("eclipseHome") ? tag.getBoolean("eclipseHome") : d.eclipseHome;
+            d.eclipseLost = tag.contains("eclipseLost") ? tag.getBoolean("eclipseLost") : d.eclipseLost;
             d.pilgrimsFed = tag.getInt("pilgrimsFed");
             d.cleanChecked = tag.getBoolean("cleanChecked");
             d.trialState = tag.getInt("trialState");
@@ -299,6 +302,7 @@ public final class RepData {
             tag.putInt("dealt", d.dealt);
             tag.putInt("heat", d.heat);
             tag.putBoolean("eclipseHome", d.eclipseHome);
+            tag.putBoolean("eclipseLost", d.eclipseLost);
             tag.putInt("pilgrimsFed", d.pilgrimsFed);
             tag.putBoolean("cleanChecked", d.cleanChecked);
             tag.putInt("trialState", d.trialState);

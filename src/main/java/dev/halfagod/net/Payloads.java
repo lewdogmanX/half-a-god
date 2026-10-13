@@ -32,6 +32,17 @@ public final class Payloads {
         }
     }
 
+    /** Server -> client: the Eclipse was raised near you (the sky goes dark for a while). */
+    public record EclipseFx(int ticks) implements CustomPacketPayload {
+        public static final Type<EclipseFx> TYPE = typeOf("eclipse");
+        public static final StreamCodec<ByteBuf, EclipseFx> CODEC = StreamCodec.composite(ByteBufCodecs.VAR_INT, EclipseFx::ticks, EclipseFx::new);
+
+        @Override
+        public Type<EclipseFx> type() {
+            return TYPE;
+        }
+    }
+
     /** Server -> client: open the story viewer (operators only). */
     public record OpenStory(boolean op) implements CustomPacketPayload {
         public static final Type<OpenStory> TYPE = typeOf("open_story");
@@ -177,6 +188,7 @@ public final class Payloads {
         r.playToClient(OpenStory.TYPE, OpenStory.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onOpenStory(p)));
         r.playToClient(OpenChoice.TYPE, OpenChoice.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onOpenChoice(p)));
         r.playToClient(Cinematic.TYPE, Cinematic.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onCinematic(p)));
+        r.playToClient(EclipseFx.TYPE, EclipseFx.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.EclipseOverlay.start(p.ticks())));
         r.playToClient(MapState.TYPE, MapState.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onMapState(p)));
         r.playToClient(OpenMap.TYPE, OpenMap.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onOpenMap(p)));
         r.playToClient(Dream.TYPE, Dream.CODEC, (p, ctx) -> ctx.enqueueWork(() -> dev.halfagod.client.ClientHooks.onDream(p)));

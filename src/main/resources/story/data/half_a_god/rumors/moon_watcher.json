@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:moon_watcher",
+  "weight": 10,
+  "line": "There's a woman up on the peaks who watches the moon all night through a brass tube as long as a cart. Says it's a world. Says you could walk on it. Mad as a box of frogs.",
+  "conditions": {
+    "forbidden_traits": [
+      "hag_mn1_the_woman_who_watches_the_moon_done"
+    ]
+  }
+}

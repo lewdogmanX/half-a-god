@@ -1,0 +1,41 @@
+{
+  "title": "Above the Sky",
+  "summary": "You made it. The world is a ball under you, blue and green and very small. Set the probe free up here.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "set_it_free",
+      "place": "rocketnautics:sputnik",
+      "amount": 1,
+      "range": 30000000,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "It drifts away from you, turning, catching the sun. Beep. Beep. Down on the peak, Hester will be hearing it."
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "minecraft:experience_bottle": 6
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_mn6_what_the_probe_saw",
+      "delay_ticks": 200,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_mn5_above_the_sky_done"
+    ]
+  }
+}

@@ -17,6 +17,8 @@ public final class ClientSetup {
 
     public static void init(IEventBus modBus) {
         modBus.addListener((RegisterGuiLayersEvent e) -> {
+            // the Eclipse raised: the light goes out for a moment (under the hotbar and everything else)
+            e.registerBelow(VanillaGuiLayers.CAMERA_OVERLAYS, ResourceLocation.fromNamespaceAndPath(HalfAGod.MODID, "eclipse"), EclipseOverlay::render);
             e.registerAbove(VanillaGuiLayers.BOSS_OVERLAY, ResourceLocation.fromNamespaceAndPath(HalfAGod.MODID, "reputation"), RepHud::render);
             // the trial's panel, over everything, while you look around the court
             e.registerAboveAll(ResourceLocation.fromNamespaceAndPath(HalfAGod.MODID, "trial"), TrialScreen::hud);
@@ -27,6 +29,7 @@ public final class ClientSetup {
             CameraShake.tick();
             MebTalk.tick();
             TrialScreen.clientTick();
+            EclipseOverlay.tick();
         });
         NeoForge.EVENT_BUS.addListener(TrialScreen::onClickInput);
         NeoForge.EVENT_BUS.addListener(TrialScreen::onKey);

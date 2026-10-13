@@ -301,5 +301,10 @@
  "companion.half_a_god.ansel.dark.story.2.question": "Why stay?",
  "companion.half_a_god.ansel.dark.story.2.answer": "Because you sat with me when nobody else would. I'm trying to return the favour.",
  "companion.half_a_god.ansel.dark.name": "Ansel the Blood-Drinker",
+ "item.half_a_god.eclipse": "The Eclipse",
+ "item.half_a_god.eclipse.lore1": "Iskar's sword, made to cut the sun.",
+ "item.half_a_god.eclipse.lore2": "Twice as deadly to the Chariot and to things of fire.",
+ "item.half_a_god.eclipse.lore3": "Stronger by night, in the Nether, and on the moon.",
+ "item.half_a_god.eclipse.lore4": "Use: the sky goes dark around you (every 3 minutes).",
  "key.categories.half_a_god": "Half a God"
 }

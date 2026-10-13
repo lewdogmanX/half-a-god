@@ -1,0 +1,16 @@
+{
+  "values": [
+    {
+      "id": "rocketnautics:lunar_maria",
+      "required": false
+    },
+    {
+      "id": "rocketnautics:lunar_highlands",
+      "required": false
+    },
+    {
+      "id": "rocketnautics:lunar_megaregolith",
+      "required": false
+    }
+  ]
+}

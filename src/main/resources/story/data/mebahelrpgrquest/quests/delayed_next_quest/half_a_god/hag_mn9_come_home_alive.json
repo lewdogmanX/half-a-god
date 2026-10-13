@@ -1,0 +1,36 @@
+{
+  "title": "Come Home Alive",
+  "summary": "The Eclipse is cold in your hand, and heavier than it looks. It only answers to the living: die anywhere before your feet touch the overworld again and it goes home to his hand. Hester made you promise. Fuel for the way home.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_eclipse",
+      "collect": "half_a_god:eclipse",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true
+    }
+  ],
+  "rewards": {
+    "xp": 1000
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_mn10_the_silver_kings_blade",
+      "delay_ticks": 100,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_mn9_come_home_alive_done"
+    ]
+  }
+}

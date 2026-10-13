@@ -1,0 +1,37 @@
+{
+  "title": "A Little Moon of Our Own",
+  "summary": "Hester's dream: a Sputnik Probe, a little metal moon of our own, going round the world and looking down. Build one. Then build something that can carry it up, and carry it up.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_probe",
+      "collect": "rocketnautics:sputnik",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "It's small. It beeps. Hester has already named it."
+    }
+  ],
+  "rewards": {
+    "xp": 600
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_mn5_above_the_sky",
+      "delay_ticks": 40,
+      "silent_start": false,
+      "retry_delay_ticks": 100,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "rocketnautics:deep_space"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_mn4_a_little_moon_of_our_own_done"
+    ]
+  }
+}

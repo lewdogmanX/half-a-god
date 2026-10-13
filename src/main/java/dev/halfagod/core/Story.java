@@ -152,6 +152,7 @@ public final class Story {
         Letters.onTrait(player, trait);
         Arcs.onTrait(player, trait);
         Trade.onTrait(player, trait);
+        Moon.onTrait(player, trait);
 
         if (trait.startsWith("hag_rep_") && !d.chronicleGiven) {
             Chronicle.give(player, true);

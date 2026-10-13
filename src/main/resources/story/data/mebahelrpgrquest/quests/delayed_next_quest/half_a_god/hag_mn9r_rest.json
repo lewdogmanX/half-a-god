@@ -1,0 +1,60 @@
+{
+  "title": "Rest",
+  "summary": "You put the Eclipse back in his hand and left him to the dust. Tell Hester what you found, and what you did.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "tell_hester",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "'You buried a god,' she says. 'With his sword. Like a king.' She writes it down in the big book, slowly, the way people write things they want to last.",
+      "name": "Hester Quill"
+    }
+  ],
+  "rewards": {
+    "xp": 4000,
+    "items": {
+      "minecraft:diamond": 6,
+      "minecraft:emerald_block": 2
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_mn9r_rest_done",
+      "hag_iskar_rested"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Hester Quill",
+      "stage": 0,
+      "structure": "half_a_god:observatory",
+      "search_radius": 12000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "golem_protected": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came back. Your hands are empty. Tell me."
+    }
+  ]
+}

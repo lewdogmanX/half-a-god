@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:moon_home",
+  "weight": 10,
+  "line": "They say somebody went up to the moon and came back with a black sword. They say the moon's been a little brighter since.",
+  "conditions": {
+    "required_traits": [
+      "hag_eclipse_home"
+    ]
+  }
+}

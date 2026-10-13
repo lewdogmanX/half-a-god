@@ -4300,6 +4300,159 @@
    ]
   },
   {
+   "name": "Other",
+   "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_mn1_the_woman_who_watches_the_moon",
+     "title": "The Woman Who Watches the Moon",
+     "kind": "side",
+     "summary": "An observatory on the peak, a brass telescope pointed at the sky, and a woman who hasn't looked away from it in thirty years.",
+     "goals": [
+      "Talk to Hester Quill"
+     ],
+     "needs": [],
+     "leads": [
+      "A Metal for the Sky"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_mn2_a_metal_for_the_sky",
+     "title": "A Metal for the Sky",
+     "kind": "side",
+     "summary": "Hester says nothing made of iron will survive the climb. Titanium will: it's in these mountains, high up on the peaks or deep under them. Smelt some and bring her eight ingots to prove the hills have enough for a rocket.",
+     "goals": [
+      "Collect 8 x titanium ingot",
+      "Talk to Hester Quill"
+     ],
+     "needs": [],
+     "leads": [
+      "Fire Under Glass"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_mn3_fire_under_glass",
+     "title": "Fire Under Glass",
+     "kind": "side",
+     "summary": "Before anyone sits on top of a fire, Hester wants to see one. Build a Rocket Thruster (Create: Cosmonautics) and set it down on solid ground. It drinks lava. Keep your eyebrows away from the business end.",
+     "goals": [
+      "Place 1 x rocket thruster"
+     ],
+     "needs": [],
+     "leads": [
+      "A Little Moon of Our Own"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_mn4_a_little_moon_of_our_own",
+     "title": "A Little Moon of Our Own",
+     "kind": "side",
+     "summary": "Hester's dream: a Sputnik Probe, a little metal moon of our own, going round the world and looking down. Build one. Then build something that can carry it up, and carry it up.",
+     "goals": [
+      "Collect 1 x sputnik"
+     ],
+     "needs": [],
+     "leads": [
+      "Above the Sky"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_mn5_above_the_sky",
+     "title": "Above the Sky",
+     "kind": "side",
+     "summary": "You made it. The world is a ball under you, blue and green and very small. Set the probe free up here.",
+     "goals": [
+      "Place 1 x sputnik"
+     ],
+     "needs": [],
+     "leads": [
+      "What the Probe Saw"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_mn6_what_the_probe_saw",
+     "title": "What the Probe Saw",
+     "kind": "side",
+     "summary": "Hester has been at the receiver since the probe went up. She's seen him now. Go and hear it, then get ready to go: a Space Helmet, and a Jetpack to keep air in it.",
+     "goals": [
+      "Talk to Hester Quill",
+      "Collect 1 x space helmet",
+      "Collect 1 x jetpack"
+     ],
+     "needs": [],
+     "leads": [
+      "The Silver Sea"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_mn7_the_silver_sea",
+     "title": "The Silver Sea",
+     "kind": "side",
+     "summary": "Grey dust, black sky, the world hanging over you like a lantern. Somewhere near, the Faithful's wreck. Find it, and find out what they came for.",
+     "goals": [
+      "Reach a faithful wreck",
+      "Find and read: The Ascension's Log"
+     ],
+     "needs": [],
+     "leads": [
+      "The Man in the Moon"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_mn8_the_man_in_the_moon",
+     "title": "The Man in the Moon",
+     "kind": "side",
+     "summary": "Iskar, the Silver King, lies across the great crater with his sword in his hand. The Faithful who didn't die are still there, chipping at him. They don't breathe any more. They don't need to.",
+     "goals": [
+      "Reach a iskars rest",
+      "Defeat 6 x husk",
+      "Defeat 1 x evoker",
+      "Defeat 1 x allay"
+     ],
+     "needs": [],
+     "leads": [
+      "if spared: Rest",
+      "if killed: Come Home Alive"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_mn9_come_home_alive",
+     "title": "Come Home Alive",
+     "kind": "side",
+     "summary": "The Eclipse is cold in your hand, and heavier than it looks. It only answers to the living: die anywhere before your feet touch the overworld again and it goes home to his hand. Hester made you promise. Fuel for the way home.",
+     "goals": [
+      "Collect 1 x eclipse"
+     ],
+     "needs": [],
+     "leads": [
+      "The Silver King's Blade"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_mn10_the_silver_kings_blade",
+     "title": "The Silver King's Blade",
+     "kind": "side",
+     "summary": "You're home, and alive, and the Eclipse is yours. Hester will want to see it. She'll want to see you, mostly.",
+     "goals": [
+      "Collect 1 x eclipse",
+      "Talk to Hester Quill"
+     ],
+     "needs": [],
+     "leads": []
+    },
+    {
+     "id": "mebahelrpgrquest:hag_mn9r_rest",
+     "title": "Rest",
+     "kind": "side",
+     "summary": "You put the Eclipse back in his hand and left him to the dust. Tell Hester what you found, and what you did.",
+     "goals": [
+      "Talk to Hester Quill"
+     ],
+     "needs": [],
+     "leads": []
+    }
+   ]
+  },
+  {
    "name": "Mebahel's RPG (Prologue and Act I): Settling In",
    "quests": [
     {

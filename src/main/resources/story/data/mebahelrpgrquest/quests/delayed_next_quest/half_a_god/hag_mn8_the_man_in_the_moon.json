@@ -1,0 +1,192 @@
+{
+  "title": "The Man in the Moon",
+  "summary": "Iskar, the Silver King, lies across the great crater with his sword in his hand. The Faithful who didn't die are still there, chipping at him. They don't breathe any more. They don't need to.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "iskars_rest",
+      "reach": "half_a_god:iskars_rest",
+      "radius": 5000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "He's vast. Pale stone, burned black and gold where the sun went through him. A silver crown. His mouth is open, as if he died mid-word."
+    },
+    {
+      "id": "the_moon_mad",
+      "kill": "minecraft:husk",
+      "amount": 6,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "the_eclipse_priest",
+      "kill": "minecraft:evoker",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "The Priest's gold mask cracks in half. Under it, nothing at all. Then a light rises out of Iskar's open mouth: small, silver, cold."
+    },
+    {
+      "id": "the_last_light",
+      "kill": "minecraft:allay",
+      "amount": 1,
+      "stage": 3,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:husk",
+      "name": "Moon-Mad Faithful",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 6,
+      "spawn_max_radius": 16,
+      "count": 6,
+      "max_health": 60,
+      "equipment": {
+        "head": "minecraft:golden_helmet",
+        "chest": "minecraft:golden_chestplate"
+      },
+      "effects": [
+        {
+          "id": "minecraft:strength",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    },
+    {
+      "entity": "minecraft:evoker",
+      "name": "The Eclipse Priest",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 8,
+      "spawn_max_radius": 16,
+      "max_health": 420,
+      "equipment": {
+        "head": {
+          "item": "minecraft:golden_helmet",
+          "enchants": {
+            "minecraft:protection": 4
+          }
+        }
+      },
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:strength",
+          "amplifier": 1,
+          "duration_seconds": 3600,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:speed",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    },
+    {
+      "entity": "minecraft:allay",
+      "name": "Iskar's Last Light",
+      "stage": 3,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 2,
+      "spawn_max_radius": 5,
+      "max_health": 8,
+      "talk": [
+        [
+          "Iskar?",
+          "What's left. A little light, in the mouth of a dead king. You came a long way to see a corpse."
+        ],
+        [
+          "The blade.",
+          "The Eclipse. I made it to cut the sun, and I lifted it, and I was too slow. It has been waiting a thousand years for a faster hand."
+        ],
+        [
+          "Maraal.",
+          "My herald. I watched her fall and I did not move. I have had a long time to be sorry."
+        ],
+        [
+          "What should I do?",
+          "Take the blade, and finish what I started. Or put it back in my hand and let me be buried at last. Either way, little half-god, I am so tired."
+        ]
+      ],
+      "golem_protected": true
+    }
+  ],
+  "choice": {
+    "attack": {
+      "label": "Take the Eclipse",
+      "traits": [
+        "hag_iskar_blade"
+      ]
+    },
+    "spare": {
+      "label": "Lay him to rest with it",
+      "line": "The light sinks back into him like a sigh. The dust settles over his face. For the first time in a thousand years, the moon is quiet.",
+      "traits": [
+        "hag_iskar_rest"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 5000,
+    "items": {
+      "minecraft:experience_bottle": 16
+    }
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_mn9_come_home_alive",
+        "delay_ticks": 20,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "rocketnautics:moon"
+          ]
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_mn9r_rest",
+        "delay_ticks": 1200,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_mn8_the_man_in_the_moon_done"
+    ]
+  }
+}

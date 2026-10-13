@@ -411,6 +411,26 @@
    ]
   },
   {
+   "name": "Iskar, the Silver King",
+   "options": [
+    {
+     "trait": "hag_iskar_rested",
+     "kind": "mercy",
+     "text": "Iskar lies under the dust of the great crater with his sword in his hand, buried at last. On clear nights the moon looks like it's sleeping."
+    },
+    {
+     "trait": "hag_eclipse_home",
+     "kind": "blade",
+     "text": "Iskar lies on the moon with an empty hand. His sword came home with you, and the sun never looked at you quite the same way again."
+    },
+    {
+     "trait": "hag_iskar_blade",
+     "kind": "other",
+     "text": "Iskar's sword went back to his hand when you died with it. It's still there, waiting for a hand that comes home alive."
+    }
+   ]
+  },
+  {
    "name": "The Fixer",
    "options": [
     {

@@ -1,0 +1,14 @@
+{
+  "structures": [
+    {
+      "structure": "half_a_god:iskars_rest",
+      "weight": 1
+    }
+  ],
+  "placement": {
+    "type": "minecraft:random_spread",
+    "spacing": 32,
+    "separation": 12,
+    "salt": 177553129
+  }
+}

@@ -145,6 +145,11 @@ for _l in json.load(open(f"{ROOT}/data/half_a_god/hag_mod/secrets.json"))["lines
     if _l["first"] not in quests: errs.append(f"secret {_l['key']}: first quest {_l['first']} missing")
     edges["START"].add(_l["first"])
 
+# the moon storyline: the mod starts its first quest when you walk into an observatory
+_m = json.load(open(f"{ROOT}/data/half_a_god/hag_mod/moon.json"))
+if _m["start"] not in quests: errs.append(f"moon: first quest {_m['start']} missing")
+edges["START"].add(_m["start"])
+
 # reachability
 seen, stack = set(), ["START", "AZAZEL_BARREL"]
 while stack:

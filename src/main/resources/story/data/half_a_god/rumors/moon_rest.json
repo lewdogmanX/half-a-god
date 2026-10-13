@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:moon_rest",
+  "weight": 10,
+  "line": "The moon looked different last night. Peaceful. Like something up there finally went to sleep.",
+  "conditions": {
+    "required_traits": [
+      "hag_iskar_rested"
+    ]
+  }
+}

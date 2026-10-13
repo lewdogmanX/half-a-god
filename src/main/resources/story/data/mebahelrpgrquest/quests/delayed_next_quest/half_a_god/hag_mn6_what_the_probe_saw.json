@@ -1,0 +1,105 @@
+{
+  "title": "What the Probe Saw",
+  "summary": "Hester has been at the receiver since the probe went up. She's seen him now. Go and hear it, then get ready to go: a Space Helmet, and a Jetpack to keep air in it.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "hear_her",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "She's crying a little, and doesn't seem to notice. 'He's real. Thirty years, and he's real.'",
+      "name": "Hester Quill"
+    },
+    {
+      "id": "a_helmet",
+      "collect": "rocketnautics:space_helmet",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "air",
+      "collect": "rocketnautics:jetpack",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Helmet, air, fuel for the way home. Hester makes you say it back to her twice."
+    }
+  ],
+  "rewards": {
+    "xp": 1200,
+    "items": {
+      "minecraft:golden_carrot": 16
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_mn7_the_silver_sea",
+      "delay_ticks": 40,
+      "silent_start": false,
+      "retry_delay_ticks": 100,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "rocketnautics:moon"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_mn6_what_the_probe_saw_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Hester Quill",
+      "stage": 0,
+      "structure": "half_a_god:observatory",
+      "search_radius": 12000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "golem_protected": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "Come here. Come here and look at what your little moon sent back.",
+      "talk": [
+        [
+          "What did the probe see?",
+          "Him. Clear as you. A body across the great crater, pale as chalk, burned black where the sun hit him, and a sword in his hand. And a little gold wreck in a crater nearby. Someone tried before you."
+        ],
+        [
+          "Who is he?",
+          "The old songs have a name I never understood until tonight. Iskar. The Silver King, who drove the moon by night the way the Chariot drove the sun by day. The songs say the Chariot killed him. I thought it was a metaphor."
+        ],
+        [
+          "Why go?",
+          "Because the Faithful went, and they don't go anywhere for nothing. Because he's been lying there with nobody to bury him for a thousand years. And because that sword was made for one thing, and the thing it was made for is still out there."
+        ],
+        [
+          "What do I need?",
+          "A helmet that seals, and air to put in it. And fuel for the way home. Nobody ever plans for the way home. Promise me you will."
+        ]
+      ]
+    }
+  ]
+}

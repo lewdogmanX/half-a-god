@@ -42,14 +42,14 @@ RULES = [
     ("z", "end", "main"), ("g1_", "end", "main"), ("g2_", "end", "main"), ("b1_", "end", "main"), ("b2_", "end", "main"),
     ("b3_", "end", "main"), ("rep_end", "end", "road"),
     ("et", "after", "main"), ("ha", "after", "main"),
-    ("lp", "anytime", "pages"), ("ru", "anytime", "choices"), ("sec_", "anytime", "secrets"),
+    ("lp", "anytime", "pages"), ("ru", "anytime", "choices"), ("sec_", "anytime", "secrets"), ("mn", "anytime", "moon"),
 ]
 LANES = [
     ("main", "Main story", 0xF2C14E), ("arcane", "The Arcane Road", 0x9B7FE0), ("eyes", "The Eye Hunt", 0x6FC7C0),
     ("underworld", "The Blackwater Cartel", 0x5FAF5F), ("bumblezone", "The Honey Crown", 0xF0B030),
     ("legionary", "The Golden Legion", 0xE0A040), ("road", "The Reputation Road", 0x8FD68A),
     ("choices", "Choices That Come Back", 0xE07F6F), ("secrets", "Secrets", 0x9B6AD0), ("pages", "Lost Pages", 0xB8B2A6),
-    ("mebahel", "Mebahel's Questlines", 0x7FB8F0), ("side", "Side Quests", 0xA8A296),
+    ("mebahel", "Mebahel's Questlines", 0x7FB8F0), ("side", "Side Quests", 0xA8A296), ("moon", "The Silver King", 0xC9D3E6),
 ]
 GATE_CHAPTER = {"the_first_letter": "prologue", "a1_ashford_burns": "act1", "w1_the_skull_market": "act2",
                 "h1_a_light_above_the_pit": "act3", "e1_the_librarians_request": "act4", "s1_cold_hearths": "act5",

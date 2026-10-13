@@ -209,6 +209,18 @@ REACT = {
     "gt_silenced_the_witness": {"Dunn the Deserter": "He was just a boy with a sick friend.",
                                 "Corwin the Refugee": "I stole grain to feed my children. What was that for?",
                                 "Ansel the Blood-Drinker": "I know that look. I wore it for two years."},
+    "hag_mn6_what_the_probe_saw_done": {"Maraal": "Iskar? He's still up there? We never buried him. There was no one left to.",
+                                        "Dunn the Deserter": "A dead god on the moon. Sure. Why not. Nothing surprises me any more.",
+                                        "Corwin the Refugee": "You're going up there? On fire? ...Bring a coat.",
+                                        "Ansel the Blood-Drinker": "Something that big doesn't die all the way. Be careful."},
+    "hag_iskar_blade": {"Maraal": "He gave it to you. He never let me hold it. Not once. ...Good. Use it well.",
+                        "Dunn the Deserter": "That sword makes my teeth hurt. In a good way, I think.",
+                        "Corwin the Refugee": "Come home. Just come home with it.",
+                        "Ansel the Blood-Drinker": "It's hungry too. Different hunger. Cleaner."},
+    "hag_iskar_rested": {"Maraal": "You buried him. Thank you. I've waited a thousand years for someone to do that.",
+                         "Dunn the Deserter": "You left the sword with him. That's... decent. That's really decent.",
+                         "Corwin the Refugee": "Everyone deserves a grave. Even gods.",
+                         "Ansel the Blood-Drinker": "Rest. Lucky him."},
     "gt_got_out": {"Dunn the Deserter": "You walked away from the camp too. Welcome to the club.",
                    "Corwin the Refugee": "Good. Good.",
                    "Ansel the Blood-Drinker": "Getting clean is the hardest thing. You did it."},
@@ -435,7 +447,7 @@ def write(out_pack, mod_root):
     dump("choices.json", {"choices": CHOICES})
     dump("cinematics.json", {"moments": [{"trait": t, "title": ti, "subtitle": su, "color": c, "sound": so, "shake": sh, "strength": st}
                                          for t, ti, su, c, so, sh, st in CINE]})
-    dump("companions.json", {"names": list(dialogue.COMPANION_NAMES.values()),
+    dump("companions.json", {"names": list(dialogue.COMPANION_NAMES.values()) + ["Maraal"],
                              "profiles": {v: k for k, v in dialogue.COMPANION_NAMES.items()},
                              "reactions": [{"trait": t, "lines": l} for t, l in REACT.items()]})
     dump("chronicle.json", {"traits": CHRON, "acts": dict(ACTS)})
@@ -485,6 +497,8 @@ def write(out_pack, mod_root):
     dump("barks.json", mature.barks())
     import green_trade
     dump("trade.json", green_trade.TRADE)
+    import moon
+    dump("moon.json", moon.mod_table())
     if mod_root:
         # Cult of Azazel's English, in the story's voice (in the always-on built-in resource pack)
         nl = os.path.join(mod_root, "src/main/resources/skin/assets/netherman/lang")

@@ -504,4 +504,36 @@ public final class HalfAGodTests {
         p.discard();
         h.succeed();
     }
+
+    /** The moon: the three buildings load at the sizes they were drawn, and the Eclipse does what it says. */
+    @GameTest(template = "empty", timeoutTicks = 100)
+    public static void moonAndEclipse(GameTestHelper h) {
+        ServerLevel level = h.getLevel();
+        var sizes = StoryData.INSTANCE.table("moon").getAsJsonObject("sizes");
+        for (String name : sizes.keySet()) {
+            var t = level.getStructureManager().get(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath(HalfAGod.MODID, name));
+            check(h, t.isPresent(), "structure template " + name);
+            var size = t.get().getSize();
+            var want = sizes.getAsJsonArray(name);
+            check(h, size.getX() == want.get(0).getAsInt() && size.getY() == want.get(1).getAsInt() && size.getZ() == want.get(2).getAsInt(),
+                    name + " size " + size + " (built " + want + ")");
+        }
+        check(h, StoryData.INSTANCE.table("moon").has("start"), "moon table loaded");
+
+        ItemStack sword = new ItemStack(dev.halfagod.item.ModItems.ECLIPSE.get());
+        check(h, !sword.isDamageableItem(), "the Eclipse never wears out");
+        check(h, sword.has(net.minecraft.core.component.DataComponents.FIRE_RESISTANT), "the Eclipse can't burn");
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        p.setPos(h.absoluteVec(new net.minecraft.world.phys.Vec3(1.5, 2, 1.5)));
+        p.setItemInHand(net.minecraft.world.InteractionHand.MAIN_HAND, sword);
+        var zombie = h.spawn(EntityType.ZOMBIE, new BlockPos(4, 2, 4));
+        sword.getItem().use(level, p, net.minecraft.world.InteractionHand.MAIN_HAND);
+        check(h, zombie.hasEffect(net.minecraft.world.effect.MobEffects.MOVEMENT_SLOWDOWN) && zombie.hasEffect(net.minecraft.world.effect.MobEffects.WEAKNESS),
+                "the zombie is slowed and weakened");
+        check(h, p.hasEffect(net.minecraft.world.effect.MobEffects.DAMAGE_BOOST), "the wielder is stronger");
+        check(h, p.getCooldowns().isOnCooldown(sword.getItem()), "then it rests");
+        zombie.discard();
+        p.discard();
+        h.succeed();
+    }
 }

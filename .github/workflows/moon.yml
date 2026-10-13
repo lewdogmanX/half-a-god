@@ -1,0 +1,71 @@
+name: Moon check
+# The moon storyline in a normally installed NeoForge client with Create: Cosmonautics (and Create, Create Aeronautics
+# and Sable, which it needs): finds the observatory, the Faithful's wreck and Iskar's rest where they really generate,
+# photographs them, and the Eclipse. Runs after every successful build, or by hand; uses that build's jar and test world.
+on:
+  workflow_run:
+    workflows: [ Build ]
+    types: [ completed ]
+  workflow_dispatch:
+permissions:
+  contents: write
+  actions: read
+jobs:
+  moon:
+    if: ${{ github.event_name == 'workflow_dispatch' || github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 21
+      - name: The latest build and its test world
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        shell: bash
+        run: |
+          RUN=$(gh run list -R ${{ github.repository }} --workflow Build --status success --limit 1 --json databaseId --jq '.[0].databaseId')
+          echo "build run: $RUN"
+          gh run download $RUN -R ${{ github.repository }} -n half-a-god -D jar
+          gh run download $RUN -R ${{ github.repository }} -n test-world -D world
+      - name: A NeoForge client with Create, Sable, Create Aeronautics and Create Cosmonautics
+        shell: bash
+        run: |
+          sudo apt-get update -qq && sudo apt-get install -y -qq xvfb libgl1-mesa-dri libglx-mesa0 mesa-utils jq > /dev/null
+          pip install -q portablemc
+          mkdir -p run/mods run/saves
+          cp -r world run/saves/shots
+          printf 'onboardAccessibility:false\ntutorialStep:none\njoinedFirstServer:true\nskipMultiplayerWarning:true\npauseOnLostFocus:false\nsoundCategory_master:0.0\nrenderDistance:8\nguiScale:2\nnarrator:0\nfov:0.15\n' > run/options.txt
+          cp jar/*.jar run/mods/
+          for u in \
+            https://cdn.modrinth.com/data/LNytGWDc/versions/UjX6dr61/create-1.21.1-6.0.10.jar \
+            https://cdn.modrinth.com/data/T9PomCSv/versions/fg9dTRz9/sable-neoforge-1.21.1-2.0.6.jar \
+            https://cdn.modrinth.com/data/oWaK0Q19/versions/44pLdPGg/create-aeronautics-bundled-1.21.1-1.3.2.jar \
+            https://cdn.modrinth.com/data/micg1iTH/versions/HuCMavv8/cosmonautics-26.08.307.jar ; do
+            curl -sfL -o "run/mods/$(basename "$u")" "$u" || echo "could not download $u"
+          done
+          ls -la run/mods
+          mkdir -p mc && echo '{"profiles":{}}' > mc/launcher_profiles.json
+          curl -sfL -o neoforge-installer.jar https://maven.neoforged.net/releases/net/neoforged/neoforge/21.1.252/neoforge-21.1.252-installer.jar
+          java -jar neoforge-installer.jar --install-client mc > install.log 2>&1 || tail -40 install.log
+          ls mc/versions
+      - name: Play
+        continue-on-error: true
+        shell: bash
+        run: |
+          timeout 2400 xvfb-run -a -s "-screen 0 1280x720x24" portablemc --main-dir "$PWD/mc" --work-dir "$PWD/run" start \
+            --resolution 1280x720 --jvm "$JAVA_HOME/bin/java" --jvm-args="-Xmx5G -Dhalfagod.clientshots=true -Dhalfagod.shots=moon" \
+            -u Tester neoforge-21.1.252 2>&1 | tee play.log || true
+          ls run/screenshots || true
+          grep -iE "SHOT|Half a God|Exception|ERROR" play.log | grep -v DEBUG | head -80 || true
+      - name: Publish the screenshots (branch "shots-moon")
+        if: always()
+        shell: bash
+        run: |
+          mkdir -p /tmp/out && cp run/screenshots/*.png /tmp/out/ 2>/dev/null || true
+          grep -iE "SHOT|Half a God|Exception|ERROR|Caused by|Unknown block|structure" play.log | grep -v DEBUG | head -400 > /tmp/out/log.txt || true
+          tail -n 300 play.log > /tmp/out/tail.txt || true
+          cp run/logs/latest.log /tmp/out/latest.log 2>/dev/null || true
+          cd /tmp/out && git init -q && git checkout -q -b shots-moon && git add -A
+          git -c user.name=ci -c user.email=ci@example.com commit -qm "Moon check ${{ github.sha }}"
+          git push -qf "https://x-access-token:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}.git" shots-moon

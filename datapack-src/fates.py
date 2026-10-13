@@ -91,6 +91,10 @@ fate("The Midwife",
 fate("Pell",
      ("gt_getting_out", "mercy", "Pell grows wheat now. Just wheat. The Fixer came by once, saw your name on the gate, and never came back."),
      ("gt_silenced_the_witness", "blade", "Pell never testified. Nobody in the valley ever asked where he went."))
+fate("Iskar, the Silver King",
+     ("hag_iskar_rested", "mercy", "Iskar lies under the dust of the great crater with his sword in his hand, buried at last. On clear nights the moon looks like it's sleeping."),
+     ("hag_eclipse_home", "blade", "Iskar lies on the moon with an empty hand. His sword came home with you, and the sun never looked at you quite the same way again."),
+     ("hag_iskar_blade", "other", "Iskar's sword went back to his hand when you died with it. It's still there, waiting for a hand that comes home alive."))
 fate("The Fixer",
      ("gt_fixer_killed", "blade", "The Fixer died at a pillager outpost with half your strongbox under him. Nobody came to collect either."),
      ("gt_fixer_spared", "other", "The Fixer got his clean name. He keeps a tavern now, two valleys over, and never sits with his back to the door."))

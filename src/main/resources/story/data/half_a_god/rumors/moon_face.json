@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:moon_face",
+  "weight": 10,
+  "line": "My gran always said the man in the moon was watching us. Lately I've started to wonder if he's sad.",
+  "conditions": {
+    "required_traits": [
+      "hag_mn6_what_the_probe_saw_done"
+    ]
+  }
+}
