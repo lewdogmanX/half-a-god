@@ -47,6 +47,7 @@ GREET = {
     ("gt7_white_powder_money", "The Fixer"): "Is that the order? All of it?",
     ("gt8_a_customer_goes_under", "Buyer's Friend"): "Please, he's not waking up, please tell me you brought it!",
     ("gt11_crystal", "The Fixer"): "Crystal. Nobody in the valley has made it this clean. Let me look.",
+    ("gt11b_purity", "The Fixer"): "Is she done? Tell me she's done. And tell me you brought the batch.",
     ("gt13p_the_big_shipment", "The Fixer"): "Vasco's wagons are here. Is your half ready?",
     ("gt14_king_of_the_valley", "The Fixer"): "Look at you. A year ago you grew turnips.",
     ("go0_a_way_out", "Reeve Halden"): "So you got my letter. Sit down. This won't be easy for either of us.",
@@ -140,6 +141,9 @@ TALK = {
     ("gt8_a_customer_goes_under", "Buyer's Friend"): [
         ["I've got Narcan.", "Then hurry! He stopped breathing twice!"],
         ["He's breathing.", "He's breathing. Thank you. ...You sold it to him. Don't think I've forgotten that."]],
+    ("gt11b_purity", "The Fixer"): [
+        ["The Chemist's dead.", "Good. Nobody cuts my product with fucking chalk and lives to brag about it."],
+        ["The batch.", "Look at that. Clear as a bell. We could sell this to the gods."]],
     ("gt11_crystal", "The Fixer"): [
         ["Crystal.", "Purer than anything Blackwater ever made. You know what this means?"],
         ["Tell me.", "It means we don't need them any more. It means they need to be gone."]],

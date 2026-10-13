@@ -11,14 +11,14 @@ caught at any step costs two more days."""
 PRISONERS = [
     {"id": "maddock", "role": "prisoner0", "name": "Old Maddock",
      "about": [
-         "Forty years in and out of Watch cells. Poaching, mostly. Then a bit of smuggling. Then a bit of everything.",
-         "I was here when the gaoler was a boy carrying the slop buckets. He's kinder now. Not much.",
-         "Don't look at me like that. I'm not a monster. I'm just a man who never learned to want less."]},
+         "Forty years in and out of Watch cells. Poaching, mostly. Then a bit of smuggling. Then a bit of every fucking thing.",
+         "I was here when the gaoler was a snot-nosed boy carrying the slop buckets. He's kinder now. Not much. Still a prick.",
+         "Don't look at me like that. I'm not a monster. I'm just a greedy old bastard who never learned to want less."]},
     {"id": "wren", "role": "prisoner1", "name": "Wren",
      "about": [
          "I carried letters for the Gilded Hand. Didn't read them. That's what I told the court. It was even true, the first year.",
-         "I hear things. That's my whole trade. Ears. Ask me what's going on out there, I'll tell you what came in with the last cart.",
-         "Silas never came for me. He comes for the useful ones. I'm learning to be useful."]},
+         "I hear things. That's my whole bloody trade. Ears. Ask me what's going on out there, I'll tell you what came in with the last cart.",
+         "Silas never came for me. He comes for the useful ones. So here I am, learning to be fucking useful."]},
     {"id": "tam", "role": "prisoner2", "name": "Brother Tam",
      "about": [
          "I wore the gold eye for eleven years. I prayed in angles like they taught us. Then one night I asked the wrong question out loud.",
@@ -26,7 +26,7 @@ PRISONERS = [
          "I still pray. Just not to him."]},
     {"id": "kesh", "role": "prisoner3", "name": "Kesh",
      "about": [
-         "Grave-robbing, they said. I call it archaeology without permission.",
+         "Grave-robbing, they said. I call it archaeology without the bastards' permission.",
          "I've walked more of this world than the Watch has maps for. Ruins, shrines, holes nobody should climb into.",
          "The things I've seen on the roads... you'd not believe half. Ask me sometime. I'll tell you the half you would."]},
 ]
@@ -49,7 +49,7 @@ RUMOURS = [
 
 # where are we? Nobody knows.
 WHERE = {
-    "maddock": "Hood on, a cart, three days of bumping. Forty years and I've never once seen the road in. Could be under a mountain. Could be under your bed.",
+    "maddock": "Hood on, a cart, three days of bumping your arse raw. Forty years and I've never once seen the road in. Could be under a mountain. Could be under your bed.",
     "wren": "I counted the turns. Left, left, right, a long straight, then down. Down for an hour. Who builds a road that goes down for an hour?",
     "tam": "Look out of your window. Fire below and no sky I know. I've prayed every night to be told where we are. Nobody answers down here. Not even him.",
     "kesh": "I asked the gaoler once. He said they bring him in blindfolded too. Then he laughed, and I don't think it was a joke.",
@@ -69,37 +69,47 @@ HINTS = {
     "clean": ("maddock", "There's a kind of person the gods notice: one who gets to the fourth act of all this without a drop of anyone's blood on them. No villager, nobody that mattered. Not many of those."),
 }
 
+# what the other prisoners already know about you: said once, as a greeting, when it's true (first match wins)
+KNOWN = [
+    ("gt_kingpin", "wren", "'You're the grower. The one from the valley. Half this block's in here because of your product, and the other half's in here for selling it. Sit down before someone recognises you.'"),
+    ("hag_gt7_white_powder_money_done", "kesh", "'White powder money. I can smell it on you. My nephew got a taste for your stuff. He's not my nephew any more. He's just hungry.'"),
+    ("gt_cartel_broken", "maddock", "'You're the one who broke Blackwater. Half the lads in here owe you a punch and the other half owe you a drink. Watch your back at supper.'"),
+    ("gt_got_out", "maddock", "'Heard you burned your own fields and grassed on Blackwater. Takes balls. Or no sense. Usually both.'"),
+    ("hag_good_ending", "tam", "'They say the Chariot is dead. All of him. I prayed for that for eleven years, and now I don't know what to pray for.'"),
+    ("hag_hand_of_azazel", "tam", "'You knelt to him. I can see it on you, like gold leaf. Sit somewhere else, please. Anywhere else.'"),
+]
+
 # Old Maddock's way out
 ESCAPE = {
     "ask": "Is there a way out?",
     "plan": [
-        "Keep your voice down. ...There's always a way out. There's never a cheap one.",
+        "Keep your fucking voice down. ...There's always a way out. There's never a cheap one.",
         "Three things. A tool that bites stone: the quarry cart has chisels, if the guard ever looks the other way.",
         "A wall nobody checks: the one under your window. Dig at night, after lights out, with your hands free. Keep at it.",
         "And the gaoler's rounds. He walks the corridor when he likes. I know when he likes. But I don't know you yet.",
-        "Get caught and it's two more days, and they'll take whatever you've got. Still want out?"],
+        "Get caught and it's two more days, and they'll take every last thing you've got. Still want out?"],
     "trust": "Bring me your bread at supper, and maybe I'll know you.",
     "give": "Give him your bread",
     "given": [
         "He eats both pieces, slowly, watching you.",
         "Alright. After lights out I'll tap the pipe that runs through the cells. Twice. That's him coming. Hear the tap, stop digging. Stop breathing, if you can.",
         "And don't dig when the bell's about to go. They count us in the morning."],
-    "no_bread": "No bread, no trust. Earn your supper at the quarry first.",
+    "no_bread": "No bread, no trust. Go and break some fucking rocks first.",
     "progress": {
         "need_tool": "You've still no tool. The cart in the quarry. Watch the guard's head, not his hands.",
         "need_dig": "You've the tool. Now the wall, under your window, after lights out. Mind my taps.",
         "digging": "You're getting there. I can hear it at night. So can others, if you're careless.",
     },
-    "caught": "I warned you. Two more days, and back to nothing. Want to try again? I'd wait a while.",
+    "caught": "I fucking warned you. Two more days, and back to nothing. Want to try again? I'd wait a while, if I were you.",
 }
 
 # the gaoler
 GAOLER = {
-    "morning": "Morning. Bell goes soon. Quarry, then food, then sleep. Every day the same. You'll learn to like it.",
-    "labour": "Stone doesn't break itself. Your quota, or no supper.",
+    "morning": "Morning, sunshine. Bell goes soon. Quarry, then food, then sleep. Every bastard day the same. You'll learn to like it.",
+    "labour": "Stone doesn't break itself. Your quota, or you go to bed hungry. I don't give a shit which.",
     "meal": "Eat. Talk if you like. Talk quietly.",
-    "night": "Lights out. No beds in here. You'll feel every hour of it.",
-    "out": "Off you go. Don't come back. They always come back.",
+    "night": "Lights out. No beds in here. You'll feel every fucking hour of it.",
+    "out": "Off you go. Don't come back. ...They always fucking come back.",
 }
 
 LABOUR = {
@@ -161,7 +171,12 @@ def build():
     for k, (who, _) in HINTS.items():
         assert who in ids, k
     assert set(WHERE) == ids
+    import settlement
+    produced = settlement.produced_traits()
+    for t, w, _ in KNOWN:
+        assert w in ids and t in produced, (t, w)
     return {"prisoners": PRISONERS, "rumours": RUMOURS, "where": WHERE, "where_more": WHERE_MORE,
             "hints": {k: {"who": w, "text": t} for k, (w, t) in HINTS.items()},
             "escape": ESCAPE, "gaoler": GAOLER, "labour": LABOUR, "meal": MEAL, "escape_steps": ESCAPE_STEPS,
-            "escape_digs": ESCAPE_DIGS, "visitors": VISITORS}
+            "escape_digs": ESCAPE_DIGS, "visitors": VISITORS,
+            "known": [{"trait": t, "who": w, "text": x} for t, w, x in KNOWN]}

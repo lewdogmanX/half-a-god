@@ -158,6 +158,12 @@ public final class Commands {
                             r.labour = 999;
                             return ok(c.getSource(), "Today's quota is met.");
                         })))
+                .then(literal("arrest").executes(c -> {
+                    ServerPlayer p = c.getSource().getPlayerOrException();
+                    String r = Arrest.testNow(p);
+                    c.getSource().sendSuccess(() -> net.minecraft.network.chat.Component.literal(r), false);
+                    return 1;
+                }))
                 .then(literal("confess").executes(c -> {
                     ServerPlayer p = c.getSource().getPlayerOrException();
                     Reputation.data(p).lastConfession = -1;

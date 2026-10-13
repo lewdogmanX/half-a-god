@@ -23,6 +23,10 @@ CONFESSION = {
     "stores": "I broke into people's stores and took what they'd saved.",
     "hand": "I collected for the Gilded Hand.",
     "shrines": "I prayed at the cult's shrines, and something answered.",
+    "converted": "I brought people to the Chariot's faith. ({n} of them.) They don't know their own names now.",
+    "cult": "I did the cult's work. Their scroll, their quotas. I ticked them off like chores.",
+    "dealing": "I sold the valley poison. Hand to hand, for emeralds. ({n} times.)",
+    "resisted": "When the Watch came for me, I fought them. I won. I'm not sure that was winning.",
     "leave": "Leave",
 }
 
@@ -43,7 +47,8 @@ BOUNTY = {
 TESTIFY = {
     "title": "The Watch Has Taken {name}",
     "text": "A Watch runner finds you. '{name} is on trial tonight. You were there on day {day}, when they {what}. The court would hear you, if you'll speak.'",
-    "what": {"villager": "killed a villager", "stores": "broke into a village's stores"},
+    "what": {"villager": "killed a villager", "stores": "broke into a village's stores",
+             "conversion": "turned a villager to the cult's faith", "dealing": "sold product in the street"},
     "against": "Testify against them",
     "for": "Speak for them",
     "out": "Stay out of it",

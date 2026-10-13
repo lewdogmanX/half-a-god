@@ -1,0 +1,16 @@
+{
+  "id": "half_a_god:letter_from_the_quarries",
+  "trigger": {
+    "type": "quest_success",
+    "quest": "mebahelrpgrquest:hag_m3_hold_the_quarry_gate"
+  },
+  "delay": {
+    "min_ticks": 6000,
+    "max_ticks": 12000
+  },
+  "delivery": {
+    "type": "courier",
+    "sender": "A freed man of Ashford",
+    "quest_book": "mebahelrpgrquest:hag_y3_free_men_remember"
+  }
+}

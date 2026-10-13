@@ -133,6 +133,19 @@ public final class RepData {
     /** Watch duties and Hand contracts done while a rival was on the other side */
     public int rivalMarks;
 
+    /** the cult's work: villagers brought to "the faith", and cult quotas worked (the court hears both) */
+    public int conversions;
+    public int cultWork;
+    /** the Watch's enforcers: times you beat them off, the night they next come, and whether this trial began with a fight */
+    public int resisted;
+    public long arrestNight = -1;
+    public boolean foughtArrest;
+    /** street dealing (the Green Trade): sales made, and how much the Watch has noticed */
+    public int dealt;
+    public int heat;
+    /** the moon: the Eclipse brought home, or Iskar laid to rest */
+    public boolean eclipseHome;
+
     /** operators' story simulator: made-up story traits laid over the real ones (Mebahel never sees them), the
      *  decision made at each simulated quest (spare/kill), the quest you'd be on next, and your real record to go back to */
     public final Set<String> simTraits = new LinkedHashSet<>();
@@ -187,6 +200,14 @@ public final class RepData {
             for (Tag t : tag.getList("dreams", Tag.TAG_STRING)) d.dreams.add(t.getAsString());
             d.lastDreamNight = tag.contains("lastDreamNight") ? tag.getLong("lastDreamNight") : -10;
             d.shrinePrayers = tag.getInt("shrinePrayers");
+            d.conversions = tag.contains("conversions") ? tag.getInt("conversions") : d.conversions;
+            d.cultWork = tag.contains("cultWork") ? tag.getInt("cultWork") : d.cultWork;
+            d.resisted = tag.contains("resisted") ? tag.getInt("resisted") : d.resisted;
+            d.arrestNight = tag.contains("arrestNight") ? tag.getLong("arrestNight") : d.arrestNight;
+            d.foughtArrest = tag.contains("foughtArrest") ? tag.getBoolean("foughtArrest") : d.foughtArrest;
+            d.dealt = tag.contains("dealt") ? tag.getInt("dealt") : d.dealt;
+            d.heat = tag.contains("heat") ? tag.getInt("heat") : d.heat;
+            d.eclipseHome = tag.contains("eclipseHome") ? tag.getBoolean("eclipseHome") : d.eclipseHome;
             d.pilgrimsFed = tag.getInt("pilgrimsFed");
             d.cleanChecked = tag.getBoolean("cleanChecked");
             d.trialState = tag.getInt("trialState");
@@ -270,6 +291,14 @@ public final class RepData {
             tag.put("dreams", strings(d.dreams));
             tag.putLong("lastDreamNight", d.lastDreamNight);
             tag.putInt("shrinePrayers", d.shrinePrayers);
+            tag.putInt("conversions", d.conversions);
+            tag.putInt("cultWork", d.cultWork);
+            tag.putInt("resisted", d.resisted);
+            tag.putLong("arrestNight", d.arrestNight);
+            tag.putBoolean("foughtArrest", d.foughtArrest);
+            tag.putInt("dealt", d.dealt);
+            tag.putInt("heat", d.heat);
+            tag.putBoolean("eclipseHome", d.eclipseHome);
             tag.putInt("pilgrimsFed", d.pilgrimsFed);
             tag.putBoolean("cleanChecked", d.cleanChecked);
             tag.putInt("trialState", d.trialState);

@@ -11,13 +11,13 @@ def has(kind, rid):
 
 # modded structures / advancements straight from the jars
 structs, advs = set(), set()
-for f in glob.glob(f"{S}/**/data/*/worldgen/structure/*.json", recursive=True):
+for f in glob.glob(f"{S}/**/data/*/worldgen/structure/*.json", recursive=True) + glob.glob(f"{ROOT}/data/*/worldgen/structure/*.json"):
     ns = f.split("/data/")[1].split("/")[0]
     structs.add(f"{ns}:{os.path.basename(f)[:-5]}")
 for f in glob.glob(f"{S}/**/data/*/advancement/**/*.json", recursive=True):
     ns, rest = f.split("/data/")[1].split("/advancement/")
     advs.add(f"{ns}:{rest[:-5]}")
-structs |= {"minecraft:villages", "minecraft:fortress", "minecraft:stronghold", "minecraft:end_city", "minecraft:pillager_outpost", "minecraft:mansion", "minecraft:shipwreck", "minecraft:monument", "minecraft:bastion_remnant", "minecraft:ancient_city", "minecraft:end_city", "minecraft:jungle_pyramid", "minecraft:buried_treasure", "minecraft:igloo", "minecraft:ocean_ruin_cold", "minecraft:trail_ruins", "minecraft:ruined_portal", "minecraft:village_snowy", "minecraft:village_desert"}
+structs |= {"minecraft:villages", "minecraft:fortress", "minecraft:stronghold", "minecraft:end_city", "minecraft:pillager_outpost", "minecraft:mansion", "minecraft:shipwreck", "minecraft:monument", "minecraft:bastion_remnant", "minecraft:ancient_city", "minecraft:end_city", "minecraft:jungle_pyramid", "minecraft:buried_treasure", "minecraft:igloo", "minecraft:ocean_ruin_cold", "minecraft:trail_ruins", "minecraft:ruined_portal", "minecraft:village_snowy", "minecraft:village_desert", "minecraft:swamp_hut", "minecraft:desert_pyramid"}
 advs |= {"minecraft:story/root", "minecraft:story/smelt_iron", "minecraft:end/kill_dragon", "minecraft:nether/find_bastion"}
 for f in glob.glob(f"{ROOT}/data/*/advancement/**/*.json", recursive=True):
     ns, rest = f.split("/data/")[1].split("/advancement/")

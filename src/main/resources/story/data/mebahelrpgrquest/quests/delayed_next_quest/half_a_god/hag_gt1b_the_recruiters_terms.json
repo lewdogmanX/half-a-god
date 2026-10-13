@@ -16,7 +16,7 @@
       "amount": 1,
       "stage": 0,
       "auto_advance": true,
-      "say": "The Fixer weighs the sample in one hand and you in the other. 'You'll do.'",
+      "say": "The Fixer weighs the sample in one hand and you in the other. 'Not bad. Not fucking bad at all. You'll do.'",
       "name": "The Fixer"
     }
   ],
@@ -86,7 +86,7 @@
         "sample"
       ],
       "delivery_choice_label": "Hand over what you brought",
-      "delivered_line": "The Fixer weighs the sample in one hand and you in the other. 'You'll do.'"
+      "delivered_line": "The Fixer weighs the sample in one hand and you in the other. 'Not bad. Not fucking bad at all. You'll do.'"
     }
   ]
 }

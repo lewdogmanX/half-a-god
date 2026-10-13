@@ -1,0 +1,77 @@
+{
+  "title": "Free Men Remember",
+  "summary": "A letter from one of the men you freed from the Cursed Quarries. He's home in Ashford, and he'd like to see you.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "see_him",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "He shakes your hand too long, the way men do when they've been in chains. 'If anyone ever says a word against you,' he says, 'they'll have to say it over me.'",
+      "name": "Freed Ashford Man"
+    }
+  ],
+  "rewards": {
+    "xp": 800,
+    "items": {
+      "minecraft:cooked_beef": 8,
+      "minecraft:emerald": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_y3_free_men_remember_done",
+      "hag_quarry_men_remember"
+    ]
+  },
+  "quest_book": {
+    "title": "From the Quarries",
+    "author": "Corin Vale, of Ashford",
+    "color": "yellow",
+    "pages": [
+      "You won't remember me. I was the one with the broken hand, fourth in the line, the morning you came down into the quarries and killed the things that drove us.",
+      "Three years I dug gold for a god I'd never seen. I'd stopped being able to picture my wife's face. Now I see it every morning.",
+      "I'm home. Ashford's half-built and the roof leaks and I've never been happier. Come and see. I owe you a drink and a great deal more than a drink.\n\n- Corin Vale"
+    ],
+    "auto_claim_rewards": true
+  },
+  "threats": [
+    {
+      "entity": "minecraft:villager",
+      "name": "Freed Ashford Man",
+      "stage": 0,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "golem_protected": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "You came! You actually came. Sit. Sit down. I'll find the good cups.",
+      "min_structure_distance": 300
+    }
+  ],
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_m3_hold_the_quarry_gate"
+    ]
+  }
+}

@@ -3,6 +3,9 @@
   "minVersion": "0.8",
   "package": "dev.halfagod.mixin",
   "compatibilityLevel": "JAVA_21",
+  "mixins": [
+    "QuotaManagerMixin"
+  ],
   "client": [
     "SurveyorClientEventsMixin",
     "QuestDialogueScreenMixin",

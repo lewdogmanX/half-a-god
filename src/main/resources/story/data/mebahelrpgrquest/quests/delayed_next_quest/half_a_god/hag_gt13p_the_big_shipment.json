@@ -23,7 +23,7 @@
       "amount": 1,
       "stage": 0,
       "auto_advance": true,
-      "say": "Don Vasco's men load the wagons. 'Pleasure doing business.'",
+      "say": "Don Vasco's men load the wagons. One of them winks at you. 'Pleasure doing business, partner. Don't fuck it up.'",
       "name": "The Fixer"
     }
   ],
@@ -96,7 +96,7 @@
         "hash"
       ],
       "delivery_choice_label": "Hand over what you brought",
-      "delivered_line": "Don Vasco's men load the wagons. 'Pleasure doing business.'"
+      "delivered_line": "Don Vasco's men load the wagons. One of them winks at you. 'Pleasure doing business, partner. Don't fuck it up.'"
     }
   ]
 }

@@ -671,6 +671,17 @@
      }
     },
     {
+     "id": "mebahelrpgrquest:hag_gt15_the_fixers_price",
+     "choice": {
+      "spare": [
+       "gt_fixer_spared"
+      ],
+      "kill": [
+       "gt_fixer_killed"
+      ]
+     }
+    },
+    {
      "id": "mebahelrpgrquest:hag_rc5_fallen",
      "choice": {
       "spare": [

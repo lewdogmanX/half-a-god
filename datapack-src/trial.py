@@ -60,6 +60,14 @@ charge("pell", "gt_silenced_the_witness", 3, "Pell",
        ["gt_silenced_the_witness"])
 charge("vasco", "hag_vasco_betrayal", 1, "Don Vasco",
        "We shook hands. Then they sold me out. I'm a criminal, your honour, but I keep my word.", ["gt_vasco_killed"])
+charge("chemist", "hag_gt11b_purity_done", 1, "A Blind Man from the Valley",
+       "I bought from the witch, your honour, and lost my eyes to her chalk. Then I bought from this one, and it was clean. "
+       "That's the worst of it. It was clean, and I kept buying.")
+charge("fixer", "gt_fixer_spared", 3, "The Fixer",
+       "I kept their books, your honour. Every field, every buyer, every emerald. Here, page by page. I'd like my clean name now, please.",
+       ["gt_fixer_killed"])
+charge("kingpin", "gt_kingpin", 2, "Reeve Halden",
+       "The valley used to grow wheat. Now it grows whatever this one tells it to, and buries its children in the spring.", HALDEN_DEAD)
 charge("journal", "hag_lib_sold", 2, "The Librarian",
        "Thirty years I waited for that journal. They sold it to the Gilded Hand before I'd read the first page.")
 charge("faithful", "hag_faithful_ended", 2, "Brother Hale",
@@ -78,6 +86,12 @@ SCRIPT = {
     "stores": ["A Shopkeeper", "They broke into our stores. {n} chests, emptied. Winter stores, some of them."],
     "hand": ["A Watchman", "I watched them collect for the Gilded Hand. {n} times that I saw. Probably more."],
     "shrines": ["A Shepherd", "I saw them kneel at a golden eye on the road. They prayed to it, your honour. It answered."],
+    "converted": ["A Farmer's Wife", "My husband went into the Preacher's tent a farmer and came out with gold in his eyes. He doesn't know my name. They did that to him, your honour. {n} of ours, all told."],
+    "cult": ["The Watch Captain", "We found their Cult Scroll, your honour. Ticked off, every line. {n} things done for the Chariot, in their own hand."],
+    "dealing": ["A Mother from the Valley", "They sold it on our street. {n} times that anyone saw. My boy bought from them. My boy doesn't get out of bed now."],
+    "resisted": ["The Watch Captain", "They fought us, your honour. {n} times we came for them with the iron, and {n} times they put it in the ground."],
+    "freed_defence": ["Corin Vale, of Ashford", "Your honour, I dug gold in the Cursed Quarries for three years. This one came down and broke my chains. Whatever else they are, they're that as well."],
+    "fought_open": ["The Watch Captain", "They didn't come quietly, your honour. It took the iron to bring them down. We have witnesses."],
     "plea": ["The Judge", "You have heard the witnesses. How do you plead?"],
     "no_case": ["The Judge", "There is no case here. Whoever brought this one in wasted the court's night. Take them home."],
     "acquitted": ["The Judge", "The court is not convinced. The accused is free to go. Do not make us regret it."],

@@ -1,12 +1,14 @@
 import json, os, shutil, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from lib import *
-import act0_1, act2_4, act5_6, act7_8, side, forks, green_trade, routes, story_text, bumblezone, legionary, hidden_lines  # noqa: registers quests
+import act0_1, act2_4, act5_6, act7_8, side, forks, green_trade, routes, story_text, bumblezone, legionary, hidden_lines, azazel  # noqa: registers quests
 import base_quests, consequences, dialogue, mod_tables, npc_lines
 routes.join_main_story()
 consequences.link_after_endings()
 base_quests.weave()
 story_text.apply()
+import mature
+mature.apply()
 
 # v11 -> m1: waits in the Nether until a Ghastly is tamed (netherman:tame_ghastly)
 QUESTS["v11_the_crimson_guide"][1]["flow"] = {"delayed_next_quest": flow("m1_follow_the_crimson_bee", dims=NETHER, retry=400)}

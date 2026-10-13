@@ -91,6 +91,9 @@ fate("The Midwife",
 fate("Pell",
      ("gt_getting_out", "mercy", "Pell grows wheat now. Just wheat. The Fixer came by once, saw your name on the gate, and never came back."),
      ("gt_silenced_the_witness", "blade", "Pell never testified. Nobody in the valley ever asked where he went."))
+fate("The Fixer",
+     ("gt_fixer_killed", "blade", "The Fixer died at a pillager outpost with half your strongbox under him. Nobody came to collect either."),
+     ("gt_fixer_spared", "other", "The Fixer got his clean name. He keeps a tavern now, two valleys over, and never sits with his back to the door."))
 fate("Don Vasco",
      ("gt_vasco_killed", "blade", "Don Vasco died in his own Labyrinth. The valley took a year to stop flinching at footsteps."),
      ("hag_vasco_public", "mercy", "Don Vasco stood trial in front of the whole valley. Every grower he'd squeezed came to watch. None of them looked away."),

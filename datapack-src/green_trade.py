@@ -26,6 +26,10 @@ quest("gt1_a_note_in_the_stash", "A Note in the Stash",
       rewards={"xp": 300, "items": {"minecraft:emerald": 16}},
       nxt=flow("gt2_seeds_of_the_trade"))
 QUESTS["gt1_a_note_in_the_stash"][1]["goals"][1]["_far"] = True
+FIXER_TALK = [["Who are you?", "Nobody. That's the job. Nobody knows the Fixer, and the Fixer knows every fucker in the valley."],
+              ["How'd you get into this?", "My dad grew wheat. The wheat failed and the cult's tithe didn't. You do the maths."],
+              ["Can I trust you?", "Fuck, no. But you can trust that I like money, and right now you make me money. Same thing, mostly."]]
+QUESTS["gt1_a_note_in_the_stash"][1]["goals"][1]["_talk"] = FIXER_TALK
 
 quest("gt2_seeds_of_the_trade", "Seeds of the Trade",
       "The Fixer wants a real operation, not a windowsill. Plant a field and fill an order.",
@@ -122,6 +126,24 @@ quest("gt11_crystal", "Crystal",
       [collect("crystal", f"{AD}:meth", 16, 0),
        talk("deliver", 1, "The Fixer goes quiet, then very rich. 'With this, we don't need Blackwater. We need Blackwater gone.'", name=FIX)],
       rewards={"xp": 2000, "items": {"minecraft:emerald_block": 6}},
+      nxt=flow("gt11b_purity", delay=2400))
+
+quest("gt11b_purity", "Purity",
+      "Blackwater has a cook of its own: a witch in a swamp hut they call the Chemist, who cuts her crystal with chalk and "
+      "lye. Buyers are going blind on it, and blaming yours. The Fixer wants her gone, and he wants the valley to know "
+      "whose product is clean: put her out of business, then bring him a bigger batch than she ever made.",
+      [reach("find_the_cook", "minecraft:swamp_hut", 0, radius=12000),
+       kill("the_chemist", "minecraft:witch", 1, 1, "Her cauldron is full of something grey that smokes. Chalk, lye, and worse. "
+                                                    "Her notebook says 'Blackwater pays by the pound, not by the buyer.'"),
+       collect("a_clean_batch", f"{AD}:meth", 32, 2),
+       talk("deliver_the_batch", 3, "The Fixer holds a crystal up to the light and laughs like a child. 'Clean. Fucking "
+                                    "clean. Now every junkie in the valley knows whose name to ask for. Yours.'", name=FIX)],
+      threats=[threat("minecraft:witch", "Blackwater's Chemist", stage=1, hp=120, structure="minecraft:swamp_hut", search=12000,
+                      smin=2, smax=8, effects=fx(("minecraft:resistance", 0))),
+               threat("minecraft:vindicator", "The Chemist's Guard", stage=1, count=3, hp=56, structure="minecraft:swamp_hut",
+                      search=12000, smin=4, smax=12, equipment=eq(mainhand=("minecraft:iron_axe", {"minecraft:sharpness": 2})))],
+      rewards={"xp": 2200, "items": {"minecraft:emerald_block": 6}},
+      traits={"complete": ["gt_clean_crystal"]},
       nxt=flow("gt12_don_vasco"))
 
 quest("gt12_don_vasco", "Don Vasco",
@@ -161,6 +183,36 @@ quest("gt14_king_of_the_valley", "King of the Valley",
       [talk("the_fixer", 0, "'Every week, the money comes. Every week, someone pays for it. Try not to count those.'", name=FIX)],
       rewards={"xp": 5000, "items": {"minecraft:emerald_block": 16, "minecraft:diamond_block": 2}},
       traits={"complete": ["gt_kingpin", "hag_act5_arc_done"]})
+
+# ---- the Fixer's price (a coda, by courier, a while after you're king): he sells your name to the Watch
+courier("gt_nothing_personal", "gt14_king_of_the_valley", "gt15_the_fixers_price", sender="The Fixer", lo=12000, hi=24000)
+quest("gt15_the_fixers_price", "The Fixer's Price",
+      "The Fixer is gone, and so is half the strongbox. He left a letter: the Watch offered him a clean name for yours, and "
+      "he took it. He's hiding with hired crossbows at a pillager outpost until the Watch comes to collect him. "
+      "Get there first. Then decide what a man like that is worth.",
+      [reach("find_the_fixer", "minecraft:pillager_outpost", 0, radius=12000),
+       kill("the_crossbows", "minecraft:pillager", 4, 1),
+       kill("the_fixer", "minecraft:villager", 1, 2, "He doesn't run. 'I'd have done the same to you,' he says. 'You know I would. "
+                                                      "You'd have done it first, if you'd thought of it.'")],
+      threats=[threat("minecraft:pillager", "The Fixer's Hired Crossbow", stage=1, count=4, hp=48, structure="minecraft:pillager_outpost",
+                      search=12000, smin=4, smax=14, equipment=eq(mainhand=("minecraft:crossbow", {"minecraft:quick_charge": 2}))),
+               threat("minecraft:villager", "The Fixer", stage=2, hp=40, spare=True, structure="minecraft:pillager_outpost",
+                      search=12000, smin=2, smax=6,
+                      talk=[["Why?", "Because the Watch was coming for one of us, and I've always liked me better. Nothing personal."],
+                            ["After everything I built.", "You built it on my name and my buyers. I just took my half back early."],
+                            ["They'll hang you anyway.", "No they fucking won't. I'm a witness now. Witnesses get to live. Ask Pell. Oh. Right."]])],
+      choice={"attack": {"label": "Nobody sells me", "traits": ["gt_fixer_killed"]},
+              "spare": {"label": "Let him run to the Watch", "line": "He backs away, then runs, and doesn't look back. "
+                                                                         "He'll tell them everything. He was always good at talking.",
+                        "traits": ["gt_fixer_spared"]}},
+      book=book("Nothing Personal", "The Fixer", [
+          "You'll have noticed the strongbox.\n\nI took my half. Call it a finder's fee: I found you, after all.",
+          "The Watch came to me last week. They know everything except your name, and they offered me my whole life back "
+          "for it. A clean name. No more looking over my shoulder.",
+          "I said yes. Of course I said yes. You'd have said yes.\n\nNothing personal. It never was.\n\n- F."], color="green"),
+      rewards={"xp": 2500, "items": {"minecraft:emerald_block": 8}},
+      traits={"accept": ["gt_fixer_talked"]})
+QUESTS["gt15_the_fixers_price"][1]["dialogue"] = {"reward": "The outpost is quiet. Somewhere, the Watch is writing your name down anyway."}
 
 # =====================================================================================================
 # GETTING OUT (you spared the witness, or the mod saw you climb back to Good mid-trade)
@@ -234,6 +286,7 @@ quest("gt1b_the_recruiters_terms", "The Recruiter's Terms",
       rewards={"xp": 300, "items": {"minecraft:emerald": 16}},
       nxt=flow("gt2_seeds_of_the_trade"))
 QUESTS["gt1b_the_recruiters_terms"][1]["goals"][1]["_far"] = True
+QUESTS["gt1b_the_recruiters_terms"][1]["goals"][1]["_talk"] = FIXER_TALK
 
 # =====================================================================================================
 # THE BLACKWATER RAID (Saint / Good)
@@ -319,6 +372,12 @@ for state, book_q, who in (("saint", "br1_the_watch_needs_eyes", "Reeve Halden")
 EXTRA["courier_deliveries/gt_way_out.json"] = {"id": f"{NS}:gt_way_out", "trigger": {"type": "custom"},
                                                "delay": {"min_ticks": 600, "max_ticks": 1800},
                                                "delivery": {"type": "courier", "sender": "Reeve Halden", "quest_book": qid("go0_a_way_out")}}
+
+# for the mod: every hand-to-hand sale counts (the court hears how many), and when the Fixer starts talking, the Watch comes
+TRADE = {"sales": ["hag_gt3_first_customers_done", "hag_gt4_the_hash_market_done", "hag_gt7_white_powder_money_done",
+                   "hag_gt11_crystal_done", "hag_gt11b_purity_done", "hag_gt13p_the_big_shipment_done", "hag_gt1b_the_recruiters_terms_done"],
+         "watch_hears": ["gt_fixer_talked", "gt_fixer_spared"],
+         "watch_line": "Word in the valley: the Fixer's been seen talking to the Watch. They'll come for you soon. Very soon."}
 
 # Repeatable street deliveries on the quest board, with a high-emerald reward table
 EXTRA["quest_board_contracts/deliveries/deliveries.json"] = {"deliveries": [

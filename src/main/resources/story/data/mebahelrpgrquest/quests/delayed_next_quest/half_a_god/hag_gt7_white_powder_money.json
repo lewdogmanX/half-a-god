@@ -16,7 +16,7 @@
       "amount": 1,
       "stage": 0,
       "auto_advance": true,
-      "say": "The Fixer counts emeralds into your hands until they spill. 'This is what the valley pays.'",
+      "say": "The Fixer counts emeralds into your hands until they spill. 'This is what the valley pays. Don't spend it all on whores and horses.'",
       "name": "The Fixer"
     }
   ],
@@ -89,7 +89,7 @@
         "product"
       ],
       "delivery_choice_label": "Hand over what you brought",
-      "delivered_line": "The Fixer counts emeralds into your hands until they spill. 'This is what the valley pays.'"
+      "delivered_line": "The Fixer counts emeralds into your hands until they spill. 'This is what the valley pays. Don't spend it all on whores and horses.'"
     }
   ]
 }

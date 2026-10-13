@@ -351,6 +351,23 @@ public final class ClientShots {
                 s.saveCardForTest();
             }
         });
+        // the Watch's enforcers come for you (out in the world, at night)
+        step(20, () -> Minecraft.getInstance().setScreen(null));
+        step(10, () -> server(sp -> {
+            sp.serverLevel().setDayTime(18000);
+            dev.halfagod.core.Arrest.testNow(sp);
+        }));
+        step(80, () -> server(sp -> {
+            net.minecraft.world.entity.animal.IronGolem g = sp.serverLevel().getNearestEntity(net.minecraft.world.entity.animal.IronGolem.class,
+                    net.minecraft.world.entity.ai.targeting.TargetingConditions.forNonCombat().ignoreLineOfSight(), sp, sp.getX(), sp.getY(), sp.getZ(),
+                    sp.getBoundingBox().inflate(48));
+            if (g != null) {
+                double dx = g.getX() - sp.getX(), dz = g.getZ() - sp.getZ();
+                float yaw = (float) (Math.toDegrees(Math.atan2(dz, dx)) - 90.0);
+                sp.teleportTo(sp.serverLevel(), sp.getX(), sp.getY(), sp.getZ(), yaw, 5f);
+            }
+        }));
+        step(20, () -> shot("22_enforcers"));
         step(20, () -> Minecraft.getInstance().stop());
     }
 

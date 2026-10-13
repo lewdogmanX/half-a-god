@@ -148,6 +148,10 @@ SPECIAL = {
         "Torchlight through your eyelids. Boots on the boards.",
         "'That's them. Take them.'",
         "A hood. Rope. The tar smell of the Watch's torches."]},
+    "beaten": {"id": "beaten", "kind": "special", "title": "Iron", "motif": "chains", "lines": [
+        "The last of the iron catches you across the jaw, and the ground comes up to meet you.",
+        "'That's them. Get the bastard in the cart.'",
+        "A hood. Rope. Somebody's boot on your back the whole long way down."]},
     "godsaw": {"id": "godsaw", "kind": "special", "title": "What the God Saw", "motif": "sun", "lines": [
         "You are the god, and you are carrying the sun across the sky.",
         "Maraal is beside you. The Spirit of the Sun is shouting.",

@@ -664,6 +664,10 @@
    "dim": "minecraft:overworld",
    "title": "Crystal"
   },
+  "mebahelrpgrquest:hag_gt11b_purity": {
+   "dim": "minecraft:overworld",
+   "title": "Purity"
+  },
   "mebahelrpgrquest:hag_gt12_don_vasco": {
    "dim": "minecraft:overworld",
    "title": "Don Vasco"
@@ -679,6 +683,10 @@
   "mebahelrpgrquest:hag_gt14_king_of_the_valley": {
    "dim": "minecraft:overworld",
    "title": "King of the Valley"
+  },
+  "mebahelrpgrquest:hag_gt15_the_fixers_price": {
+   "dim": "minecraft:overworld",
+   "title": "The Fixer's Price"
   },
   "mebahelrpgrquest:hag_go0_a_way_out": {
    "dim": "minecraft:overworld",
@@ -987,6 +995,10 @@
   "mebahelrpgrquest:hag_sec_clean2": {
    "dim": "minecraft:overworld",
    "title": "Clean Hands"
+  },
+  "mebahelrpgrquest:hag_y3_free_men_remember": {
+   "dim": "minecraft:overworld",
+   "title": "Free Men Remember"
   },
   "mebahelrpgrquest:hag_x1_the_informant": {
    "dim": "minecraft:overworld",

@@ -1,0 +1,149 @@
+{
+  "title": "Purity",
+  "summary": "Blackwater has a cook of its own: a witch in a swamp hut they call the Chemist, who cuts her crystal with chalk and lye. Buyers are going blind on it, and blaming yours. The Fixer wants her gone, and he wants the valley to know whose product is clean: put her out of business, then bring him a bigger batch than she ever made.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_cook",
+      "reach": "minecraft:swamp_hut",
+      "radius": 12000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "the_chemist",
+      "kill": "minecraft:witch",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true,
+      "say": "Her cauldron is full of something grey that smokes. Chalk, lye, and worse. Her notebook says 'Blackwater pays by the pound, not by the buyer.'"
+    },
+    {
+      "id": "a_clean_batch",
+      "collect": "addictives:meth",
+      "amount": 32,
+      "stage": 2,
+      "auto_advance": true
+    },
+    {
+      "id": "deliver_the_batch",
+      "talk": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "The Fixer holds a crystal up to the light and laughs like a child. 'Clean. Fucking clean. Now every junkie in the valley knows whose name to ask for. Yours.'",
+      "name": "The Fixer"
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:witch",
+      "name": "Blackwater's Chemist",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 2,
+      "spawn_max_radius": 8,
+      "max_health": 120,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ]
+    },
+    {
+      "entity": "minecraft:vindicator",
+      "name": "The Chemist's Guard",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 12,
+      "count": 3,
+      "max_health": 56,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:iron_axe",
+          "enchants": {
+            "minecraft:sharpness": 2
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "The Fixer",
+      "stage": 2,
+      "structure": "minecraft:villages",
+      "search_radius": 8000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "golem_protected": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "Is she done? Tell me she's done. And tell me you brought the batch.",
+      "talk": [
+        [
+          "The Chemist's dead.",
+          "Good. Nobody cuts my product with fucking chalk and lives to brag about it."
+        ],
+        [
+          "The batch.",
+          "Look at that. Clear as a bell. We could sell this to the gods."
+        ]
+      ],
+      "delivery_objectives": [
+        "a_clean_batch"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "The Fixer holds a crystal up to the light and laughs like a child. 'Clean. Fucking clean. Now every junkie in the valley knows whose name to ask for. Yours.'"
+    }
+  ],
+  "rewards": {
+    "xp": 2200,
+    "items": {
+      "minecraft:emerald_block": 6
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_gt12_don_vasco",
+      "delay_ticks": 60,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_gt11b_purity_done",
+      "gt_clean_crystal"
+    ]
+  }
+}

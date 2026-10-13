@@ -1250,6 +1250,14 @@
   },
   "mebahelrpgrquest:hag_gt11_crystal": {
    "next": [
+    "mebahelrpgrquest:hag_gt11b_purity"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_gt11b_purity": {
+   "next": [
     "mebahelrpgrquest:hag_gt12_don_vasco"
    ],
    "spare": [],
@@ -1287,6 +1295,12 @@
    "spare": [],
    "kill": [],
    "book": false
+  },
+  "mebahelrpgrquest:hag_gt15_the_fixers_price": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
   },
   "mebahelrpgrquest:hag_go0_a_way_out": {
    "next": [
@@ -1948,6 +1962,12 @@
    "kill": [],
    "book": false
   },
+  "mebahelrpgrquest:hag_y3_free_men_remember": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": true
+  },
   "mebahelrpgrquest:hag_x1_the_informant": {
    "next": [],
    "spare": [
@@ -2300,6 +2320,10 @@
    "book": "mebahelrpgrquest:hag_eb1_the_magical_eye"
   },
   {
+   "after": "mebahelrpgrquest:hag_gt14_king_of_the_valley",
+   "book": "mebahelrpgrquest:hag_gt15_the_fixers_price"
+  },
+  {
    "after": "mebahelrpgrquest:hag_rc5_saint",
    "book": "mebahelrpgrquest:hag_br1_the_watch_needs_eyes"
   },
@@ -2330,6 +2354,10 @@
   {
    "after": "mebahelrpgrquest:hag_w1_the_skull_market",
    "book": "mebahelrpgrquest:hag_lg1_the_golden_legion"
+  },
+  {
+   "after": "mebahelrpgrquest:hag_m3_hold_the_quarry_gate",
+   "book": "mebahelrpgrquest:hag_y3_free_men_remember"
   },
   {
    "after": "mebahelrpgrquest:hag_h1_a_light_above_the_pit",

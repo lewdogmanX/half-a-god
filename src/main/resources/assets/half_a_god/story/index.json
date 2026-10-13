@@ -1553,6 +1553,22 @@
      ],
      "needs": [],
      "leads": [
+      "Purity"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_gt11b_purity",
+     "title": "Purity",
+     "kind": "arc",
+     "summary": "Blackwater has a cook of its own: a witch in a swamp hut they call the Chemist, who cuts her crystal with chalk and lye. Buyers are going blind on it, and blaming yours. The Fixer wants her gone, and he wants the valley to know whose product is clean: put her out of business, then bring him a bigger batch than she ever made.",
+     "goals": [
+      "Reach a swamp hut",
+      "Defeat 1 x witch",
+      "Collect 32 x meth",
+      "Talk to The Fixer"
+     ],
+     "needs": [],
+     "leads": [
       "Don Vasco"
      ]
     },
@@ -1608,6 +1624,23 @@
       "Talk to The Fixer"
      ],
      "needs": [],
+     "leads": [
+      "letter: The Fixer's Price"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_gt15_the_fixers_price",
+     "title": "The Fixer's Price",
+     "kind": "arc",
+     "summary": "The Fixer is gone, and so is half the strongbox. He left a letter: the Watch offered him a clean name for yours, and he took it. He's hiding with hired crossbows at a pillager outpost until the Watch comes to collect him. Get there first. Then decide what a man like that is worth.",
+     "goals": [
+      "Reach a pillager outpost",
+      "Defeat 4 x pillager",
+      "Defeat 1 x villager"
+     ],
+     "needs": [
+      "King of the Valley"
+     ],
      "leads": []
     },
     {
@@ -2035,7 +2068,8 @@
      ],
      "needs": [],
      "leads": [
-      "Gilded Hunger"
+      "Gilded Hunger",
+      "letter: Free Men Remember"
      ]
     },
     {
@@ -3036,6 +3070,19 @@
   {
    "name": "Choices That Come Back",
    "quests": [
+    {
+     "id": "mebahelrpgrquest:hag_y3_free_men_remember",
+     "title": "Free Men Remember",
+     "kind": "road",
+     "summary": "A letter from one of the men you freed from the Cursed Quarries. He's home in Ashford, and he'd like to see you.",
+     "goals": [
+      "Talk to Freed Ashford Man"
+     ],
+     "needs": [
+      "Hold the Quarry Gate"
+     ],
+     "leads": []
+    },
     {
      "id": "mebahelrpgrquest:hag_x1_the_informant",
      "title": "The Informant",

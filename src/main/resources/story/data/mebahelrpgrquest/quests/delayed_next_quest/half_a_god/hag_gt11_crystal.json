@@ -16,7 +16,7 @@
       "amount": 1,
       "stage": 0,
       "auto_advance": true,
-      "say": "The Fixer goes quiet, then very rich. 'With this, we don't need Blackwater. We need Blackwater gone.'",
+      "say": "The Fixer goes quiet, then very rich. 'Christ. With this we don't need Blackwater. We need Blackwater in the fucking ground.'",
       "name": "The Fixer"
     }
   ],
@@ -28,12 +28,15 @@
   },
   "flow": {
     "delayed_next_quest": {
-      "quest": "mebahelrpgrquest:hag_gt12_don_vasco",
-      "delay_ticks": 60,
+      "quest": "mebahelrpgrquest:hag_gt11b_purity",
+      "delay_ticks": 2400,
       "silent_start": false,
       "retry_delay_ticks": 200,
       "conditions": {
-        "player_not_in_combat": true
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
       }
     }
   },
@@ -85,7 +88,7 @@
         "crystal"
       ],
       "delivery_choice_label": "Hand over what you brought",
-      "delivered_line": "The Fixer goes quiet, then very rich. 'With this, we don't need Blackwater. We need Blackwater gone.'"
+      "delivered_line": "The Fixer goes quiet, then very rich. 'Christ. With this we don't need Blackwater. We need Blackwater in the fucking ground.'"
     }
   ]
 }

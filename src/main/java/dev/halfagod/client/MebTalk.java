@@ -22,9 +22,8 @@ import java.util.UUID;
 import java.util.WeakHashMap;
 
 /**
- * The mod's conversations (the prisoners, the gaoler, the visitor, the cleric) on Mebahel's own talk screen, when his mod
- * is installed (through Sinytra Connector): his typewriter text, his villager voices, his camera turning to whoever
- * you're talking to. Each line is a page you click on from; the last page has the answers. The answers come back here,
+ * All of the mod's conversations on Mebahel's own talk screen, when his mod is installed (through Sinytra Connector):
+ * his typewriter text, his villager voices, his camera turning to whoever you're talking to (when someone is there). Each line is a page you click on from; the last page has the answers. The answers come back here,
  * not to his quests (a small mixin hands his screen's option list and clicks to this class).
  *
  * Everything is looked up by name, carefully: if his screen isn't there, or something in it has changed, this says so
@@ -36,6 +35,7 @@ public final class MebTalk {
     private static final String OPTION = SCREEN + "$DialogueOption";
     /** our own option actions (his are all small numbers or negative) */
     static final int NEXT = 9_001, FIRST_ANSWER = 9_100;
+    private static final String NOBODY = "00000000-0000-0000-0000-000000000000";
 
     private static final class State {
         String id = "";
@@ -153,11 +153,12 @@ public final class MebTalk {
     // ------------------------------------------------------------------ from the server
     /** a conversation arrives: opens it on his screen (or carries on the one open). False: show it on the mod's own. */
     public static boolean show(JsonObject o) {
-        if (!o.has("entity") || !ready()) {
+        if (!ready()) {
             return false;
         }
         Minecraft mc = Minecraft.getInstance();
-        String entity = o.get("entity").getAsString();
+        // nobody standing there (a runner's message, the Hand's agent): his screen still works, it just shows the name
+        String entity = o.has("entity") ? o.get("entity").getAsString() : NOBODY;
         Object current = mc.screen;
         State s = current == null ? null : STATES.get(current);
         if (s != null && s.entity.equals(entity)) {
@@ -208,14 +209,20 @@ public final class MebTalk {
 
     private static void fill(State s, JsonObject o, List<String> pages) {
         s.id = o.get("id").getAsString();
-        s.entity = o.get("entity").getAsString();
+        s.entity = o.has("entity") ? o.get("entity").getAsString() : NOBODY;
         s.pages.clear();
         s.pages.addAll(pages);
         s.answers.clear();
         JsonArray opts = o.has("options") ? o.getAsJsonArray("options") : new JsonArray();
         for (JsonElement e : opts) {
             JsonObject j = e.getAsJsonObject();
-            s.answers.add(new String[]{j.get("id").getAsString(), j.get("label").getAsString()});
+            // his option rows have no room for a note, so a short one goes after the answer itself
+            String label = j.get("label").getAsString();
+            String hint = j.has("hint") ? j.get("hint").getAsString() : "";
+            if (!hint.isEmpty() && hint.length() <= 60) {
+                label = label + "  (" + hint + ")";
+            }
+            s.answers.add(new String[]{j.get("id").getAsString(), label});
         }
         s.page = 0;
         s.waiting = false;

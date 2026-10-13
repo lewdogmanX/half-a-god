@@ -1,0 +1,24 @@
+{
+ "unlock": [
+  "hag_m5_do_not_provoke_gehinnom_done",
+  "hag_good_ending",
+  "hag_hand_of_azazel"
+ ],
+ "knelt": [
+  "hag_b1_bow_at_my_feet_done",
+  "hag_hand_of_azazel"
+ ],
+ "locked": {
+  "summon": "The gold won't take. Something in the stone is waiting for someone else, or for later.",
+  "altar": "The altar is cold under your hand. It isn't time.",
+  "compass": "The needle spins and spins. Whatever it points at doesn't want to be found. Not yet.",
+  "scroll": "The scroll's ink won't stay still long enough to read. It isn't for you. Not yet.",
+  "azazel": "Something tried to come through, and couldn't. Not yet. He isn't ready for you, and you aren't ready for him."
+ },
+ "scroll_good": "The ink crawls away from your fingers. The Chariot doesn't write to people like you.",
+ "work": "The cult's work. It's in your hands now, and it doesn't wash off.",
+ "conversion": "Its eyes go gold, and it doesn't know your name any more. Somebody will notice.",
+ "totem": "The totem cracks. The blow that should have killed you goes somewhere else.",
+ "rep_work": -2,
+ "rep_conversion": -5
+}

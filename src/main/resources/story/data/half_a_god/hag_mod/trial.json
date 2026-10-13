@@ -195,6 +195,34 @@
    ]
   },
   {
+   "id": "chemist",
+   "trait": "hag_gt11b_purity_done",
+   "weight": 1,
+   "witness": "A Blind Man from the Valley",
+   "testimony": "I bought from the witch, your honour, and lost my eyes to her chalk. Then I bought from this one, and it was clean. That's the worst of it. It was clean, and I kept buying.",
+   "silenced": []
+  },
+  {
+   "id": "fixer",
+   "trait": "gt_fixer_spared",
+   "weight": 3,
+   "witness": "The Fixer",
+   "testimony": "I kept their books, your honour. Every field, every buyer, every emerald. Here, page by page. I'd like my clean name now, please.",
+   "silenced": [
+    "gt_fixer_killed"
+   ]
+  },
+  {
+   "id": "kingpin",
+   "trait": "gt_kingpin",
+   "weight": 2,
+   "witness": "Reeve Halden",
+   "testimony": "The valley used to grow wheat. Now it grows whatever this one tells it to, and buries its children in the spring.",
+   "silenced": [
+    "hag_halden_killed_by_the_hand"
+   ]
+  },
+  {
    "id": "journal",
    "trait": "hag_lib_sold",
    "weight": 2,
@@ -254,6 +282,30 @@
   "shrines": [
    "A Shepherd",
    "I saw them kneel at a golden eye on the road. They prayed to it, your honour. It answered."
+  ],
+  "converted": [
+   "A Farmer's Wife",
+   "My husband went into the Preacher's tent a farmer and came out with gold in his eyes. He doesn't know my name. They did that to him, your honour. {n} of ours, all told."
+  ],
+  "cult": [
+   "The Watch Captain",
+   "We found their Cult Scroll, your honour. Ticked off, every line. {n} things done for the Chariot, in their own hand."
+  ],
+  "dealing": [
+   "A Mother from the Valley",
+   "They sold it on our street. {n} times that anyone saw. My boy bought from them. My boy doesn't get out of bed now."
+  ],
+  "resisted": [
+   "The Watch Captain",
+   "They fought us, your honour. {n} times we came for them with the iron, and {n} times they put it in the ground."
+  ],
+  "freed_defence": [
+   "Corin Vale, of Ashford",
+   "Your honour, I dug gold in the Cursed Quarries for three years. This one came down and broke my chains. Whatever else they are, they're that as well."
+  ],
+  "fought_open": [
+   "The Watch Captain",
+   "They didn't come quietly, your honour. It took the iron to bring them down. We have witnesses."
   ],
   "plea": [
    "The Judge",

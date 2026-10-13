@@ -295,6 +295,13 @@
    "structure": "minecraft:villages"
   },
   {
+   "quest": "mebahelrpgrquest:hag_gt11b_purity",
+   "stage": 2,
+   "name": "The Fixer",
+   "place": "char:The Fixer",
+   "structure": "minecraft:villages"
+  },
+  {
    "quest": "mebahelrpgrquest:hag_gt13p_the_big_shipment",
    "stage": 0,
    "name": "The Fixer",
@@ -614,6 +621,13 @@
    "stage": 0,
    "name": "Village Elder",
    "place": "home",
+   "structure": "minecraft:villages"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_y3_free_men_remember",
+   "stage": 0,
+   "name": "Freed Ashford Man",
+   "place": "ashford",
    "structure": "minecraft:villages"
   },
   {
@@ -1168,6 +1182,24 @@
    ],
    [
     0,
+    "Talk to The Fixer"
+   ]
+  ],
+  "mebahelrpgrquest:hag_gt11b_purity": [
+   [
+    0,
+    "Reach a swamp hut"
+   ],
+   [
+    1,
+    "Defeat 1 x witch"
+   ],
+   [
+    2,
+    "Collect 32 x meth"
+   ],
+   [
+    2,
     "Talk to The Fixer"
    ]
   ],
@@ -1733,6 +1765,12 @@
    [
     0,
     "Talk to Village Elder"
+   ]
+  ],
+  "mebahelrpgrquest:hag_y3_free_men_remember": [
+   [
+    0,
+    "Talk to Freed Ashford Man"
    ]
   ],
   "mebahelrpgrquest:hag_x1_the_informant_after": [

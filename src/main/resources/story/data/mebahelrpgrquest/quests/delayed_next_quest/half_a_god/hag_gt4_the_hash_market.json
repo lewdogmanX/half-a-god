@@ -16,7 +16,7 @@
       "amount": 1,
       "stage": 0,
       "auto_advance": true,
-      "say": "'Now we're talking. You've got a knack for this, which should worry you.'",
+      "say": "'Now we're fucking talking. You've got a knack for this, which should scare the shit out of you.'",
       "name": "The Fixer"
     }
   ],
@@ -85,7 +85,7 @@
         "hash"
       ],
       "delivery_choice_label": "Hand over what you brought",
-      "delivered_line": "'Now we're talking. You've got a knack for this, which should worry you.'"
+      "delivered_line": "'Now we're fucking talking. You've got a knack for this, which should scare the shit out of you.'"
     }
   ]
 }

@@ -216,9 +216,8 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                     case "sim" -> o.getAsJsonArray("chapters").forEach(c -> simChapters.add(c.getAsJsonObject()));
                     case "acts" -> o.getAsJsonArray("acts").forEach(c -> acts.put(c.getAsJsonObject().get("trait").getAsString(),
                             c.getAsJsonObject().get("name").getAsString()));
-                    case "prison", "interrogations", "words" -> tables.put(e.getKey().getPath(), o);
-                    default -> {
-                    }
+                    // everything else is kept whole, by name (prison, interrogations, words, azazel, legends, the arrest, the moon...)
+                    default -> tables.put(e.getKey().getPath(), o);
                 }
             } catch (Exception ex) {
                 HalfAGod.LOG.error("Half a God: could not read story table {}", e.getKey(), ex);

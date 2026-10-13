@@ -16,7 +16,7 @@
       "amount": 1,
       "stage": 0,
       "auto_advance": true,
-      "say": "He pays in emeralds and won't meet your eyes. 'Same time next week?'",
+      "say": "He pays in emeralds and won't meet your eyes. His hands shake. 'Same time next week? Please?'",
       "name": "Nervous Buyer"
     }
   ],
@@ -89,7 +89,7 @@
         "joints"
       ],
       "delivery_choice_label": "Hand over what you brought",
-      "delivered_line": "He pays in emeralds and won't meet your eyes. 'Same time next week?'"
+      "delivered_line": "He pays in emeralds and won't meet your eyes. His hands shake. 'Same time next week? Please?'"
     }
   ]
 }

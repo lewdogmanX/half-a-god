@@ -106,7 +106,7 @@ public final class Trial {
     }
 
     // ------------------------------------------------------------------ when the Watch comes
-    private static boolean due(ServerPlayer player, RepData d) {
+    static boolean due(ServerPlayer player, RepData d) {
         if (d.trialState != 0 || d.pendingKidnap || player.isCreative() || player.isSpectator()) {
             return false;
         }
@@ -117,14 +117,9 @@ public final class Trial {
         return !d.trialActs.contains(Dreams.actTrait(traits)) && court(player.getServer()) != null;
     }
 
-    /** On waking from a full night: maybe the Watch came. True if they did (no dream tonight). */
+    /** On waking from a full night: the Watch doesn't take people in their sleep any more (see {@link Arrest}). */
     public static boolean onWake(ServerPlayer player) {
-        RepData d = Reputation.data(player);
-        if (!due(player, d) || player.getRandom().nextFloat() >= CHANCE) {
-            return false;
-        }
-        d.pendingKidnap = true;
-        return true;
+        return false;
     }
 
     /** Takes the player to court now. */
@@ -157,6 +152,7 @@ public final class Trial {
         Set<String> record = new java.util.HashSet<>(traits);
         record.addAll(extra);
         d.trialScript = script(player, d, record).toString();
+        d.foughtArrest = false;
         BlockPos dock = CourtBuilder.origin(slot).offset(CourtBuilder.DOCK);
         player.teleportTo(court, dock.getX() + 0.5, dock.getY(), dock.getZ() + 0.5, 180f, 0f);
         player.setRespawnPosition(COURT, dock, 180f, true, false);
@@ -219,11 +215,16 @@ public final class Trial {
     public static JsonObject script(ServerPlayer player, RepData d, Set<String> traits) {
         JsonObject s = StoryData.INSTANCE.trialScript;
         JsonObject out = new JsonObject();
-        JsonObject kidnap = StoryData.INSTANCE.specialDreams.get("kidnap");
+        // taken by force (the enforcers beat you down) or, from older saves, in your sleep
+        JsonObject kidnap = StoryData.INSTANCE.specialDreams.get(d.foughtArrest && StoryData.INSTANCE.specialDreams.containsKey("beaten") ? "beaten" : "kidnap");
         out.add("kidnap", kidnap != null ? kidnap.getAsJsonArray("lines") : new JsonArray());
         JsonArray lines = new JsonArray();
         if (s.has("open")) {
-            s.getAsJsonArray("open").forEach(l -> lines.add(l.deepCopy()));
+            JsonArray open = s.getAsJsonArray("open");
+            for (int i = 0; i < open.size(); i++) {
+                // brought in by force: the Captain says so
+                lines.add(i == 1 && d.foughtArrest && s.has("fought_open") ? s.get("fought_open").deepCopy() : open.get(i).deepCopy());
+            }
         }
         if (d.convictions > 0) {
             lines.add(line("The Watch Captain", "The accused has stood in this dock before, your honour. " + d.convictions
@@ -265,6 +266,23 @@ public final class Trial {
             JsonArray l = line(s.get("shrines"), "n", Integer.toString(d.shrinePrayers));
             heard.add(charge(d, "shrines", 1, l.get(0).getAsString(), l.get(1).getAsString()));
         }
+        // the cult's work, the street trade, and fighting the Watch when it came
+        if (d.conversions > 0 && s.has("converted")) {
+            JsonArray l = line(s.get("converted"), "n", Integer.toString(d.conversions));
+            heard.add(charge(d, "converted", Math.min(3, 1 + d.conversions / 3), l.get(0).getAsString(), l.get(1).getAsString()));
+        }
+        if (d.cultWork >= 3 && s.has("cult")) {
+            JsonArray l = line(s.get("cult"), "n", Integer.toString(d.cultWork));
+            heard.add(charge(d, "cult", 2, l.get(0).getAsString(), l.get(1).getAsString()));
+        }
+        if (d.dealt >= 3 && s.has("dealing")) {
+            JsonArray l = line(s.get("dealing"), "n", Integer.toString(d.dealt));
+            heard.add(charge(d, "dealing", Math.min(3, 1 + d.dealt / 8), l.get(0).getAsString(), l.get(1).getAsString()));
+        }
+        if (d.resisted > 0 && s.has("resisted")) {
+            JsonArray l = line(s.get("resisted"), "n", Integer.toString(d.resisted));
+            heard.add(charge(d, "resisted", Math.min(3, d.resisted), l.get(0).getAsString(), l.get(1).getAsString()));
+        }
         heard.sort(Comparator.comparingInt(Charge::weight).reversed());
         int weight = 0;
         int shown = 0;
@@ -294,6 +312,11 @@ public final class Trial {
             lines.add(s.get("advocate").deepCopy());
             lines.add(s.get("advocate_judge").deepCopy());
             mods -= Math.min(2, Ranks.hand(player));
+        }
+        // the men you freed from the Cursed Quarries remember it
+        if (traits.contains("hag_m2_the_cursed_quarries_done") && s.has("freed_defence")) {
+            lines.add(s.get("freed_defence").deepCopy());
+            mods -= 1;
         }
         if (d.watchRank >= 1 && s.has("watch_lenient")) {
             boolean wicked = Reputation.tierIndex(d.value) == 0;

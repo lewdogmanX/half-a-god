@@ -5,6 +5,8 @@ NS = "half_a_god"
 QNS = "mebahelrpgrquest"  # the quest map only draws quests in this namespace
 QUESTS = {}      # id -> (folder, dict)
 EXTRA = {}       # relative path -> dict
+# other mods' namespaces the pack writes into (as they are, not under half_a_god/)
+OTHER_NS = ("minecraft/", "mebahelrpgrquest/", "sons_of_sins/", "netherman/", "rocketnautics/")
 
 
 def qid(x):
@@ -218,6 +220,6 @@ def write_all(root):
         os.makedirs(os.path.dirname(p), exist_ok=True)
         json.dump(q, open(p, "w", encoding="utf-8"), indent=2, ensure_ascii=False)
     for rel, d in EXTRA.items():
-        p = os.path.join(root, "data", rel if rel.startswith(("minecraft/", "mebahelrpgrquest/")) else os.path.join(NS, rel))
+        p = os.path.join(root, "data", rel if rel.startswith(OTHER_NS) else os.path.join(NS, rel))
         os.makedirs(os.path.dirname(p), exist_ok=True)
         json.dump(d, open(p, "w", encoding="utf-8"), indent=2, ensure_ascii=False)

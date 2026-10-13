@@ -1,0 +1,128 @@
+{
+  "title": "The Fixer's Price",
+  "summary": "The Fixer is gone, and so is half the strongbox. He left a letter: the Watch offered him a clean name for yours, and he took it. He's hiding with hired crossbows at a pillager outpost until the Watch comes to collect him. Get there first. Then decide what a man like that is worth.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "find_the_fixer",
+      "reach": "minecraft:pillager_outpost",
+      "radius": 12000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "the_crossbows",
+      "kill": "minecraft:pillager",
+      "amount": 4,
+      "stage": 1,
+      "auto_advance": true
+    },
+    {
+      "id": "the_fixer",
+      "kill": "minecraft:villager",
+      "amount": 1,
+      "stage": 2,
+      "auto_advance": true,
+      "say": "He doesn't run. 'I'd have done the same to you,' he says. 'You know I would. You'd have done it first, if you'd thought of it.'"
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:pillager",
+      "name": "The Fixer's Hired Crossbow",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 4,
+      "spawn_max_radius": 14,
+      "count": 4,
+      "max_health": 48,
+      "equipment": {
+        "mainhand": {
+          "item": "minecraft:crossbow",
+          "enchants": {
+            "minecraft:quick_charge": 2
+          }
+        }
+      }
+    },
+    {
+      "entity": "minecraft:villager",
+      "name": "The Fixer",
+      "stage": 2,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 2,
+      "spawn_max_radius": 6,
+      "max_health": 40,
+      "talk": [
+        [
+          "Why?",
+          "Because the Watch was coming for one of us, and I've always liked me better. Nothing personal."
+        ],
+        [
+          "After everything I built.",
+          "You built it on my name and my buyers. I just took my half back early."
+        ],
+        [
+          "They'll hang you anyway.",
+          "No they fucking won't. I'm a witness now. Witnesses get to live. Ask Pell. Oh. Right."
+        ]
+      ],
+      "golem_protected": true
+    }
+  ],
+  "choice": {
+    "attack": {
+      "label": "Nobody sells me",
+      "traits": [
+        "gt_fixer_killed"
+      ]
+    },
+    "spare": {
+      "label": "Let him run to the Watch",
+      "line": "He backs away, then runs, and doesn't look back. He'll tell them everything. He was always good at talking.",
+      "traits": [
+        "gt_fixer_spared"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 2500,
+    "items": {
+      "minecraft:emerald_block": 8
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_gt15_the_fixers_price_done"
+    ],
+    "accept": [
+      "gt_fixer_talked"
+    ]
+  },
+  "quest_book": {
+    "title": "Nothing Personal",
+    "author": "The Fixer",
+    "color": "green",
+    "pages": [
+      "You'll have noticed the strongbox.\n\nI took my half. Call it a finder's fee: I found you, after all.",
+      "The Watch came to me last week. They know everything except your name, and they offered me my whole life back for it. A clean name. No more looking over my shoulder.",
+      "I said yes. Of course I said yes. You'd have said yes.\n\nNothing personal. It never was.\n\n- F."
+    ],
+    "auto_claim_rewards": true
+  },
+  "dialogue": {
+    "reward": "The outpost is quiet. Somewhere, the Watch is writing your name down anyway."
+  },
+  "requires": {
+    "quests": [
+      "mebahelrpgrquest:hag_gt14_king_of_the_valley"
+    ]
+  }
+}

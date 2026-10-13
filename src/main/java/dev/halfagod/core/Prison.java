@@ -604,7 +604,7 @@ public final class Prison {
         if (who == null) {
             return false;
         }
-        menu(player, who, List.of(greeting(who, d)));
+        menu(player, who, List.of(known(player, who, d)));
         return true;
     }
 
@@ -618,6 +618,23 @@ public final class Prison {
             }
         }
         return null;
+    }
+
+    /** the first time a prisoner knows something about you (your trade, your god), they say that instead of hello */
+    private static String known(ServerPlayer player, JsonObject who, RepData d) {
+        if (t().has("known")) {
+            java.util.Set<String> traits = Meb.traits(player);
+            String id = who.get("id").getAsString();
+            for (JsonElement e : t().getAsJsonArray("known")) {
+                JsonObject k = e.getAsJsonObject();
+                String key = "known:" + k.get("trait").getAsString();
+                if (k.get("who").getAsString().equals(id) && traits.contains(k.get("trait").getAsString()) && !d.hintsGiven.contains(key)) {
+                    d.hintsGiven.add(key);
+                    return k.get("text").getAsString();
+                }
+            }
+        }
+        return greeting(who, d);
     }
 
     private static String greeting(JsonObject who, RepData d) {

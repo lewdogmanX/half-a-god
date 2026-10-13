@@ -6066,10 +6066,33 @@
      "group": ""
     },
     {
+     "id": "mebahelrpgrquest:hag_gt11b_purity",
+     "title": "Purity",
+     "lane": "underworld",
+     "col": 14,
+     "row": 2,
+     "summary": "Blackwater has a cook of its own: a witch in a swamp hut they call the Chemist, who cuts her crystal with chalk and lye. Buyers are going blind on it, and blaming yours. The Fixer wants her gone, and he wants the valley to know whose product is clean: put her out of business, then bring him a bigger batch than she ever made.",
+     "goals": [
+      "Reach a swamp hut",
+      "Defeat 1 x witch",
+      "Collect 32 x meth",
+      "Talk to The Fixer"
+     ],
+     "stages": [
+      0,
+      1,
+      2,
+      2
+     ],
+     "icon": "minecraft:compass",
+     "choice": false,
+     "group": ""
+    },
+    {
      "id": "mebahelrpgrquest:hag_gt12_don_vasco",
      "title": "Don Vasco",
      "lane": "underworld",
-     "col": 14,
+     "col": 15,
      "row": 2,
      "summary": "Don Vasco, head of Blackwater, waits in the Labyrinth. Make him a partner, or make him an example.",
      "goals": [
@@ -6088,7 +6111,7 @@
      "id": "mebahelrpgrquest:hag_gt13p_the_big_shipment",
      "title": "The Big Shipment",
      "lane": "underworld",
-     "col": 15,
+     "col": 16,
      "row": 2,
      "summary": "With Blackwater as partners, the first joint shipment goes out. Fill your half.",
      "goals": [
@@ -6109,7 +6132,7 @@
      "id": "mebahelrpgrquest:hag_gt13w_remnants",
      "title": "Remnants",
      "lane": "underworld",
-     "col": 15,
+     "col": 16,
      "row": 0,
      "summary": "Blackwater's survivors want revenge for their Don. Finish the war.",
      "goals": [
@@ -6126,7 +6149,7 @@
      "id": "mebahelrpgrquest:hag_gt14_king_of_the_valley",
      "title": "King of the Valley",
      "lane": "underworld",
-     "col": 16,
+     "col": 17,
      "row": 2,
      "summary": "You run the valley's green trade now. Show the Fixer what you've built.",
      "goals": [
@@ -6137,6 +6160,27 @@
      ],
      "icon": "minecraft:emerald",
      "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_gt15_the_fixers_price",
+     "title": "The Fixer's Price",
+     "lane": "underworld",
+     "col": 18,
+     "row": 2,
+     "summary": "The Fixer is gone, and so is half the strongbox. He left a letter: the Watch offered him a clean name for yours, and he took it. He's hiding with hired crossbows at a pillager outpost until the Watch comes to collect him. Get there first. Then decide what a man like that is worth.",
+     "goals": [
+      "Reach a pillager outpost",
+      "Defeat 4 x pillager",
+      "Defeat 1 x villager"
+     ],
+     "stages": [
+      0,
+      1,
+      2
+     ],
+     "icon": "minecraft:writable_book",
+     "choice": true,
      "group": ""
     },
     {
@@ -6702,6 +6746,11 @@
     ],
     [
      "mebahelrpgrquest:hag_gt11_crystal",
+     "mebahelrpgrquest:hag_gt11b_purity",
+     "next"
+    ],
+    [
+     "mebahelrpgrquest:hag_gt11b_purity",
      "mebahelrpgrquest:hag_gt12_don_vasco",
      "next"
     ],
@@ -6724,6 +6773,16 @@
      "mebahelrpgrquest:hag_gt13w_remnants",
      "mebahelrpgrquest:hag_gt14_king_of_the_valley",
      "next"
+    ],
+    [
+     "mebahelrpgrquest:hag_gt14_king_of_the_valley",
+     "mebahelrpgrquest:hag_gt15_the_fixers_price",
+     "letter"
+    ],
+    [
+     "mebahelrpgrquest:hag_gt14_king_of_the_valley",
+     "mebahelrpgrquest:hag_gt15_the_fixers_price",
+     "needs"
     ],
     [
      "mebahelrpgrquest:hag_gt1_a_note_in_the_stash",
@@ -8242,6 +8301,23 @@
      "group": ""
     },
     {
+     "id": "mebahelrpgrquest:hag_y3_free_men_remember",
+     "title": "Free Men Remember",
+     "lane": "choices",
+     "col": 4,
+     "row": 0,
+     "summary": "A letter from one of the men you freed from the Cursed Quarries. He's home in Ashford, and he'd like to see you.",
+     "goals": [
+      "Talk to Freed Ashford Man"
+     ],
+     "stages": [
+      0
+     ],
+     "icon": "minecraft:writable_book",
+     "choice": false,
+     "group": ""
+    },
+    {
      "id": "mebahelrpgrquest:zombie_disguise_friend",
      "title": "Among the Dead",
      "lane": "mebahel",
@@ -8340,6 +8416,16 @@
      "mebahelrpgrquest:hag_m3_hold_the_quarry_gate",
      "mebahelrpgrquest:hag_m4_gilded_hunger",
      "next"
+    ],
+    [
+     "mebahelrpgrquest:hag_m3_hold_the_quarry_gate",
+     "mebahelrpgrquest:hag_y3_free_men_remember",
+     "letter"
+    ],
+    [
+     "mebahelrpgrquest:hag_m3_hold_the_quarry_gate",
+     "mebahelrpgrquest:hag_y3_free_men_remember",
+     "needs"
     ],
     [
      "mebahelrpgrquest:hag_m4_gilded_hunger",

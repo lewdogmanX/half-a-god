@@ -151,6 +151,7 @@ public final class Story {
         Words.onTrait(player, trait);
         Letters.onTrait(player, trait);
         Arcs.onTrait(player, trait);
+        Trade.onTrait(player, trait);
 
         if (trait.startsWith("hag_rep_") && !d.chronicleGiven) {
             Chronicle.give(player, true);

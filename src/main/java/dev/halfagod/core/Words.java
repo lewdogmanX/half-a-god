@@ -197,6 +197,15 @@ public final class Words {
         if (d.shrinePrayers > 0 && !d.confessed.contains("shrines") && c.has("shrines")) {
             out.put("shrines", c.get("shrines").getAsString());
         }
+        // the cult's work, the street trade, and fighting the Watch
+        int[] counts = {d.conversions, d.cultWork, d.dealt, d.resisted};
+        String[] keys = {"converted", "cult", "dealing", "resisted"};
+        int[] least = {1, 3, 3, 1};
+        for (int i = 0; i < keys.length; i++) {
+            if (counts[i] >= least[i] && !d.confessed.contains(keys[i]) && c.has(keys[i])) {
+                out.put(keys[i], c.get(keys[i]).getAsString().replace("{n}", Integer.toString(counts[i])));
+            }
+        }
         return out;
     }
 
@@ -273,6 +282,13 @@ public final class Words {
         RepData d = Reputation.data(player);
         if (p == null || d.interrogated.contains(id)) {
             return;
+        }
+        // the one you spared is still standing there: the talk screen turns to them
+        String who = p.get("name").getAsString();
+        for (net.minecraft.world.entity.LivingEntity e : player.serverLevel().getEntitiesOfClass(net.minecraft.world.entity.LivingEntity.class,
+                player.getBoundingBox().inflate(32), e -> e != player && e.isAlive() && e.hasCustomName() && e.getCustomName().getString().equals(who))) {
+            Talk.speaking(player, e);
+            break;
         }
         JsonObject ap = StoryData.INSTANCE.table("interrogations").getAsJsonObject("approach");
         Talk talk = Talk.to(player, p.get("name").getAsString()).title("Before they go").line(p.get("intro").getAsString());
