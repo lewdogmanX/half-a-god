@@ -10,17 +10,13 @@ import net.minecraft.tags.StructureTags;
 import net.minecraft.util.Mth;
 import net.minecraft.world.effect.MobEffects;
 import net.minecraft.world.entity.LivingEntity;
-import net.minecraft.world.entity.Mob;
 import net.minecraft.world.entity.ai.gossip.GossipContainer;
 import net.minecraft.world.entity.ai.gossip.GossipType;
 import net.minecraft.world.entity.animal.IronGolem;
-import net.minecraft.world.entity.monster.Enemy;
 import net.minecraft.world.entity.monster.ZombieVillager;
-import net.minecraft.world.entity.npc.AbstractVillager;
 import net.minecraft.world.entity.npc.Villager;
 import net.minecraft.world.entity.npc.WanderingTrader;
 import net.minecraft.world.entity.player.Player;
-import net.minecraft.world.entity.raid.Raider;
 import net.minecraft.world.level.block.entity.BlockEntity;
 import net.minecraft.world.level.block.entity.RandomizableContainerBlockEntity;
 import net.minecraft.world.phys.AABB;
@@ -136,14 +132,9 @@ public final class Reputation {
             change(player, -10, "you killed a trader");
         } else if (victim instanceof IronGolem golem && !golem.isPlayerCreated()) {
             change(player, -10, "you killed a village guardian");
-        } else if (victim instanceof Raider raider && raider.getCurrentRaid() != null) {
-            change(player, 1, "");
-        } else if (victim instanceof Mob mob && victim instanceof Enemy) {
-            LivingEntity target = mob.getTarget();
-            if (target instanceof AbstractVillager || target instanceof IronGolem) {
-                change(player, 0.5, "");
-            }
         }
+        // animals, pillagers, monsters: killing them moves nothing either way (saving a village from a raid still
+        // counts, through Hero of the Village)
     }
 
     @SubscribeEvent
@@ -260,10 +251,9 @@ public final class Reputation {
     /** Mebahel's own quests in which a person was killed (by player): only those count as cruelty */
     private static final Map<UUID, java.util.Set<String>> PEOPLE_KILLED = new java.util.concurrent.ConcurrentHashMap<>();
 
-    /** someone, not something: villagers and other folk, illagers, witches, piglins */
+    /** someone, not something: villagers and the other village folk (never animals, pillagers or monsters) */
     static boolean isPerson(LivingEntity e) {
-        return e instanceof net.minecraft.world.entity.npc.Npc || e instanceof net.minecraft.world.entity.monster.AbstractIllager
-                || e instanceof net.minecraft.world.entity.monster.Witch || e instanceof net.minecraft.world.entity.monster.piglin.AbstractPiglin;
+        return e instanceof net.minecraft.world.entity.npc.Npc;
     }
 
     /** For Mebahel's own (non-story) quests: sparing counts as mercy, killing a person as cruelty. */

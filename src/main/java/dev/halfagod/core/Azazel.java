@@ -265,9 +265,15 @@ public final class Azazel {
         say(p, text(null, "conversion"));
     }
 
-    /** his cult quotas (from a small mixin on his QuotaManager): every bit of the cult's work counts against you */
+    /** his quota tasks: 0 altar, 1 kill villagers, 2 sacrifice mobs (any kill), 3 mine gold, 4/5 convert pillagers/villagers */
+    private static final int TASK_SACRIFICE = 2;
+
+    /**
+     * his cult quotas (from a small mixin on his QuotaManager): progress his quota actually took counts against you.
+     * Except "sacrifice mobs": that's any kill at all (animals, pillagers, monsters), and killing those is nobody's business.
+     */
     public static void onQuota(Player player, int task, int amount) {
-        if (!(player instanceof ServerPlayer p) || amount <= 0) {
+        if (!(player instanceof ServerPlayer p) || amount <= 0 || task == TASK_SACRIFICE) {
             return;
         }
         RepData d = Reputation.data(p);

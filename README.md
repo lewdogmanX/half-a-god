@@ -28,8 +28,8 @@ What moves it:
   - looting a village's chests (-3)
   - curing a zombie villager (+8)
   - Hero of the Village (+12)
-  - killing raiders during a raid, and monsters that are hunting villagers
   - trading
+  - killing animals, slimes, pillagers or monsters never moves it, either way
 
 What it changes:
 
@@ -287,7 +287,8 @@ any titanium, and any Air War titanium you already have crafts straight into Cos
   the story has sent you to him. His structures still generate; they just wait. (Creative players aren't stopped.)
 - **His words, rewritten.** The guidebook (the Book of the Chariot) and his lines are the story's.
 - **The Cult's way is noticed.** Converting villagers and working the Cult Scroll's quotas cost reputation, and other
-  players see it. The Scroll only answers to those who knelt to him (or the Wicked).
+  players see it. Only progress the Scroll actually takes counts, and never its "sacrifice mobs" quota (that's any kill
+  at all). The Scroll only answers to those who knelt to him (or the Wicked).
 - **The Totem of Rebirth** saves you where you stand, not at spawn.
 - **Freed men remember.** Free the prisoners of the Cursed Quarries and one of them comes looking for you later.
 - **Sons of Sins' churches** are three times rarer, as fits something so late in the story.
@@ -337,8 +338,8 @@ Everyone plays their own story; nothing forces a fight.
 
 ## What the mod adds to the story
 
-- **Fair reputation:** in Mebahel's own quests, only killing a person you could have spared counts against you. Hunts,
-  culls and monsters never do.
+- **Fair reputation:** in Mebahel's own quests, only killing a person (a villager or other village folk) you could have
+  spared counts against you. Hunts, culls, pillagers and monsters never do.
 - **Choices with three or four answers:**
   - the Librarian's Bargain
   - the One Who Speaks

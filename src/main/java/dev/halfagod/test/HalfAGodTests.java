@@ -507,6 +507,36 @@ public final class HalfAGodTests {
         h.succeed();
     }
 
+    /** Killing animals, slimes and pillagers moves reputation neither way; killing a villager still does. */
+    @GameTest(template = "empty", timeoutTicks = 100)
+    public static void killsThatDontCount(GameTestHelper h) {
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        p.setPos(h.absoluteVec(new net.minecraft.world.phys.Vec3(1.5, 2, 1.5)));
+        RepData d = Reputation.data(p);
+        d.value = 0;
+        var kinds = java.util.List.<EntityType<? extends net.minecraft.world.entity.Mob>>of(EntityType.COW, EntityType.PIG, EntityType.SLIME,
+                EntityType.PILLAGER, EntityType.VINDICATOR, EntityType.ZOMBIE);
+        for (var kind : kinds) {
+            var mob = h.spawn(kind, new BlockPos(3, 2, 3));
+            mob.hurt(p.damageSources().playerAttack(p), 10000f);
+            check(h, mob.isDeadOrDying(), "the " + kind.getDescription().getString() + " died");
+            check(h, d.value == 0, "killing a " + kind.getDescription().getString() + " left reputation alone: " + d.value);
+            mob.discard();
+        }
+        // Cult of Azazel's "sacrifice mobs" quota is any kill at all: never the cult's work as far as reputation goes
+        dev.halfagod.core.Azazel.onQuota(p, 2, 1);
+        check(h, d.value == 0, "a sacrifice-mobs quota kill left reputation alone: " + d.value);
+        dev.halfagod.core.Azazel.onQuota(p, 1, 1);
+        check(h, d.value < 0, "a destroy-the-village quota kill still counts: " + d.value);
+        d.value = 0;
+        var villager = h.spawn(EntityType.VILLAGER, new BlockPos(3, 2, 3));
+        villager.hurt(p.damageSources().playerAttack(p), 10000f);
+        check(h, d.value == -15, "killing a villager still costs you: " + d.value);
+        villager.discard();
+        p.discard();
+        h.succeed();
+    }
+
     /** The moon: the three buildings load at the sizes they were drawn, and the Eclipse does what it says. */
     @GameTest(template = "empty", timeoutTicks = 100)
     public static void moonAndEclipse(GameTestHelper h) {
