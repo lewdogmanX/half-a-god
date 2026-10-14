@@ -40,7 +40,7 @@ final class RibbitShots {
             level.setDayTime(6000);
             var h = level.registryAccess().registryOrThrow(Registries.STRUCTURE)
                     .getHolderOrThrow(ResourceKey.create(Registries.STRUCTURE, ResourceLocation.parse("ribbits:ribbit_village")));
-            var found = level.getChunkSource().getGenerator().findNearestMapStructure(level, HolderSet.direct(h), sp.blockPosition(), 40, false);
+            var found = level.getChunkSource().getGenerator().findNearestMapStructure(level, HolderSet.direct(h), sp.blockPosition(), 100, false);
             village = found == null ? null : found.getFirst();
             HalfAGod.LOG.info("SHOT ribbit village: {}", village);
             if (village != null) {
