@@ -101,74 +101,146 @@ final class MoonShots {
 
     /** find where a structure really generates (or, failing that, put one down), fly round it and take pictures */
     private static void visit(ResourceKey<Level> dim, String id, String name, double dist, int up, int... angles) {
+        // 1. where does it generate? (a bounded search, the way /locate does it) Then go and hover over it
         ClientShots.step(1, () -> {
             ready = false;
             ClientShots.server(sp -> {
                 try {
-                    find(sp, dim, id);
-                } catch (Exception e) {
-                    HalfAGod.LOG.error("SHOT could not find {}", id, e);
+                    search(sp, dim, id);
+                } catch (Throwable e) {
+                    HalfAGod.LOG.error("SHOT could not search for {}", id, e);
                 }
                 ready = true;
             });
         });
-        for (int k = 0; k < 4; k++) {
-            ClientShots.until(() -> ready);   // (each waits up to a minute; generating a crater's worth of moon takes a while)
+        for (int k = 0; k < 3; k++) {
+            ClientShots.until(() -> ready);
         }
+        ClientShots.step(1, () -> {
+            if (!ready) {
+                dumpServer("searching for " + id);
+            }
+            loaded = false;
+        });
+        // 2. let the game load and generate the chunks there, as it would for anyone flying over
+        for (int k = 0; k < 5; k++) {
+            ClientShots.until(() -> chunksIn(id));
+        }
+        ClientShots.step(1, () -> {
+            if (!loaded) {
+                dumpServer("loading the chunks round " + id);
+            }
+            ClientShots.server(sp -> {
+                try {
+                    box(sp, id);
+                } catch (Throwable e) {
+                    HalfAGod.LOG.error("SHOT could not get the bounds of {}", id, e);
+                }
+            });
+        });
+        ClientShots.step(40, () -> {
+        });
+        // 3. round about it
         for (int i = 0; i < angles.length; i++) {
             int a = angles[i];
             ClientShots.step(1, () -> ClientShots.server(sp -> view(sp, id, a, dist, up)));
-            ClientShots.step(i == 0 ? 320 : 100, () -> {
+            ClientShots.step(i == 0 ? 200 : 100, () -> {
             });
             ClientShots.step(10, () -> ClientShots.shot(name + "_" + a));
         }
     }
 
-    private static void find(ServerPlayer sp, ResourceKey<Level> dim, String id) {
+    private static final Map<String, BlockPos> AT = new HashMap<>();
+    private static volatile boolean loaded;
+    private static volatile boolean asking;
+
+    private static Holder<Structure> holder(ServerLevel level, String id) {
+        return level.registryAccess().registryOrThrow(Registries.STRUCTURE)
+                .getHolderOrThrow(ResourceKey.create(Registries.STRUCTURE, ResourceLocation.parse(id)));
+    }
+
+    private static void search(ServerPlayer sp, ResourceKey<Level> dim, String id) {
         ServerLevel level = sp.getServer().getLevel(dim);
         if (level == null) {
             HalfAGod.LOG.error("SHOT no dimension {}", dim.location());
             return;
         }
-        Holder<Structure> h = level.registryAccess().registryOrThrow(Registries.STRUCTURE)
-                .getHolderOrThrow(ResourceKey.create(Registries.STRUCTURE, ResourceLocation.parse(id)));
         BlockPos from = dim == Level.OVERWORLD ? sp.blockPosition() : BlockPos.ZERO;
-        var found = level.getChunkSource().getGenerator().findNearestMapStructure(level, HolderSet.direct(h), from, 160, false);
-        StructureStart start = null;
-        if (found != null) {
-            BlockPos p = found.getFirst();
-            start = level.getChunk(SectionPos.blockToSectionCoord(p.getX()), SectionPos.blockToSectionCoord(p.getZ())).getStartForStructure(h.value());
-            HalfAGod.LOG.info("SHOT {} generates at {}", id, p);
+        long t0 = System.currentTimeMillis();
+        var found = level.getChunkSource().getGenerator().findNearestMapStructure(level, HolderSet.direct(holder(level, id)), from, 12, false);
+        BlockPos p = found != null ? found.getFirst() : from.offset(700, 0, 700);
+        HalfAGod.LOG.info("SHOT {}: {} {} ({} ms)", id, found != null ? "generates at" : "not found nearby; will put one down at", p,
+                System.currentTimeMillis() - t0);
+        AT.put(id, p);
+        WHERE.put(id, dim);
+        sp.teleportTo(level, p.getX() + 8.5, 200, p.getZ() + 8.5, 0f, 90f);
+    }
+
+    /** are the chunks round it loaded (asks the server, without making it wait) */
+    private static boolean chunksIn(String id) {
+        if (loaded) {
+            return true;
         }
+        if (!asking) {
+            asking = true;
+            ClientShots.server(sp -> {
+                BlockPos p = AT.get(id);
+                ServerLevel level = WHERE.containsKey(id) ? sp.getServer().getLevel(WHERE.get(id)) : null;
+                boolean all = true;
+                if (p != null && level != null) {
+                    int cx = SectionPos.blockToSectionCoord(p.getX()), cz = SectionPos.blockToSectionCoord(p.getZ());
+                    for (int x = cx - 4; x <= cx + 4 && all; x++) {
+                        for (int z = cz - 4; z <= cz + 4 && all; z++) {
+                            all = level.getChunkSource().hasChunk(x, z);
+                        }
+                    }
+                }
+                loaded = all;
+                asking = false;
+            });
+        }
+        return false;
+    }
+
+    private static void box(ServerPlayer sp, String id) {
+        BlockPos p = AT.get(id);
+        ServerLevel level = WHERE.containsKey(id) ? sp.getServer().getLevel(WHERE.get(id)) : null;
+        if (p == null || level == null) {
+            return;
+        }
+        Holder<Structure> h = holder(level, id);
+        StructureStart start = level.getChunk(SectionPos.blockToSectionCoord(p.getX()), SectionPos.blockToSectionCoord(p.getZ())).getStartForStructure(h.value());
         if (start == null || !start.isValid()) {
-            // not found nearby: put one down the way the /place command does
-            BlockPos p = from.offset(600, 0, 600);
+            // none here: put one down the way the /place command does
             var gen = level.getChunkSource().getGenerator();
             start = h.value().generate(level.registryAccess(), gen, gen.getBiomeSource(), level.getChunkSource().randomState(),
                     level.getStructureManager(), level.getSeed(), new ChunkPos(p), 0, level, b -> true);
-            HalfAGod.LOG.info("SHOT {} not found nearby; placing one at {} (valid: {})", id, p, start.isValid());
+            HalfAGod.LOG.info("SHOT {}: placing one at {} (valid: {})", id, p, start.isValid());
             if (!start.isValid()) {
                 return;
             }
             BoundingBox b = start.getBoundingBox();
             StructureStart st = start;
             ChunkPos.rangeClosed(new ChunkPos(SectionPos.blockToSectionCoord(b.minX()), SectionPos.blockToSectionCoord(b.minZ())),
-                    new ChunkPos(SectionPos.blockToSectionCoord(b.maxX()), SectionPos.blockToSectionCoord(b.maxZ()))).forEach(cp -> {
-                level.getChunk(cp.x, cp.z);
-                st.placeInChunk(level, level.structureManager(), gen, level.getRandom(),
-                        new BoundingBox(cp.getMinBlockX(), level.getMinBuildHeight(), cp.getMinBlockZ(), cp.getMaxBlockX(), level.getMaxBuildHeight(), cp.getMaxBlockZ()), cp);
-            });
+                    new ChunkPos(SectionPos.blockToSectionCoord(b.maxX()), SectionPos.blockToSectionCoord(b.maxZ()))).forEach(cp ->
+                    st.placeInChunk(level, level.structureManager(), gen, level.getRandom(),
+                            new BoundingBox(cp.getMinBlockX(), level.getMinBuildHeight(), cp.getMinBlockZ(), cp.getMaxBlockX(), level.getMaxBuildHeight(), cp.getMaxBlockZ()), cp));
         }
-        BoundingBox b = start.getBoundingBox();
-        // make sure every chunk it touches (and a ring round it) is generated, so it's all there to see
-        for (int cx = SectionPos.blockToSectionCoord(b.minX()) - 2; cx <= SectionPos.blockToSectionCoord(b.maxX()) + 2; cx++) {
-            for (int cz = SectionPos.blockToSectionCoord(b.minZ()) - 2; cz <= SectionPos.blockToSectionCoord(b.maxZ()) + 2; cz++) {
-                level.getChunk(cx, cz);
+        BOXES.put(id, start.getBoundingBox());
+        HalfAGod.LOG.info("SHOT {} box {}", id, start.getBoundingBox());
+    }
+
+    /** if the server is stuck, say where */
+    private static void dumpServer(String what) {
+        for (var e : Thread.getAllStackTraces().entrySet()) {
+            if (e.getKey().getName().equals("Server thread")) {
+                StringBuilder sb = new StringBuilder();
+                for (StackTraceElement el : e.getValue()) {
+                    sb.append("\n    at ").append(el);
+                }
+                HalfAGod.LOG.error("SHOT stalled {}: the server thread is at{}", what, sb);
             }
         }
-        BOXES.put(id, b);
-        WHERE.put(id, dim);
-        HalfAGod.LOG.info("SHOT {} box {}", id, b);
     }
 
     private static void lookFrom(ServerPlayer sp, ServerLevel level, double x, double y, double z, double tx, double ty, double tz) {
@@ -190,8 +262,8 @@ final class MoonShots {
         double r = Math.max(b.getXSpan(), b.getZSpan()) * dist;
         double a = Math.toRadians(angle);
         double x = cx + r * Math.cos(a), z = cz + r * Math.sin(a);
-        level.getChunk(SectionPos.blockToSectionCoord((int) x), SectionPos.blockToSectionCoord((int) z));
-        double y = Math.max(b.maxY() + up, level.getHeight(Heightmap.Types.MOTION_BLOCKING, (int) x, (int) z) + 4);
+        boolean in = level.getChunkSource().hasChunk(SectionPos.blockToSectionCoord((int) x), SectionPos.blockToSectionCoord((int) z));
+        double y = in ? Math.max(b.maxY() + up, level.getHeight(Heightmap.Types.MOTION_BLOCKING, (int) x, (int) z) + 4) : b.maxY() + up + 10;
         lookFrom(sp, level, x, y, z, cx, ty, cz);
     }
 
