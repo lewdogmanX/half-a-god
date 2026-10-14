@@ -56,6 +56,8 @@ final class MoonShots {
             s.overworld().setWeatherParameters(12000, 0, false, false);
         }));
         ClientShots.step(10, () -> Minecraft.getInstance().options.hideGui = true);
+        // the camera: a spectator (nothing falls, nothing gets in the way: Cosmonautics takes away flying on the moon)
+        ClientShots.step(5, () -> ClientShots.server(sp -> sp.setGameMode(GameType.SPECTATOR)));
         // a control: load somewhere far off with nothing of ours in it, the same way (does that alone stall?)
         ClientShots.step(1, () -> {
             loaded = false;
@@ -97,10 +99,11 @@ final class MoonShots {
         // the Eclipse: in hand on the crater's rim, raised, and its tooltip
         ClientShots.step(10, () -> Minecraft.getInstance().options.hideGui = false);
         ClientShots.step(30, () -> ClientShots.server(sp -> {
+            sp.setGameMode(GameType.CREATIVE);
             sp.getInventory().selected = 0;
             sp.getInventory().setItem(0, new ItemStack(ModItems.ECLIPSE.get()));
             sp.inventoryMenu.broadcastChanges();
-            closeUp(sp, "half_a_god:iskars_rest", 250, 0.55, 6);
+            closeUp(sp, "half_a_god:iskars_rest", 250, 0.55, 1);
         }));
         ClientShots.step(60, () -> {
         });
@@ -115,8 +118,10 @@ final class MoonShots {
         });
         ClientShots.step(10, () -> {
             Minecraft mc = Minecraft.getInstance();
-            if (mc.screen instanceof InventoryScreen inv) {
-                double scale = mc.getWindow().getGuiScale();
+            double scale = mc.getWindow().getGuiScale();
+            if (mc.screen instanceof net.minecraft.client.gui.screens.inventory.CreativeModeInventoryScreen inv) {
+                GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), (inv.getGuiLeft() + 17) * scale, (inv.getGuiTop() + 120) * scale);
+            } else if (mc.screen instanceof InventoryScreen inv) {
                 GLFW.glfwSetCursorPos(mc.getWindow().getWindow(), (inv.getGuiLeft() + 16) * scale, (inv.getGuiTop() + 150) * scale);
             }
         });
@@ -261,8 +266,10 @@ final class MoonShots {
                     st.placeInChunk(level, level.structureManager(), gen, level.getRandom(),
                             new BoundingBox(cp.getMinBlockX(), level.getMinBuildHeight(), cp.getMinBlockZ(), cp.getMaxBlockX(), level.getMaxBuildHeight(), cp.getMaxBlockZ()), cp));
         }
-        BOXES.put(id, start.getBoundingBox());
-        HalfAGod.LOG.info("SHOT {} box {}", id, start.getBoundingBox());
+        BoundingBox pieces = BoundingBox.encapsulatingBoxes(start.getPieces().stream().map(net.minecraft.world.level.levelgen.structure.StructurePiece::getBoundingBox).toList())
+                .orElse(start.getBoundingBox());
+        BOXES.put(id, pieces);
+        HalfAGod.LOG.info("SHOT {} box {} (pieces {})", id, start.getBoundingBox(), pieces);
     }
 
     /** if the server is stuck, say where */
@@ -299,9 +306,23 @@ final class MoonShots {
         double r = Math.max(b.getXSpan(), b.getZSpan()) * dist;
         double a = Math.toRadians(angle);
         double x = cx + r * Math.cos(a), z = cz + r * Math.sin(a);
-        boolean in = level.getChunkSource().hasChunk(SectionPos.blockToSectionCoord((int) x), SectionPos.blockToSectionCoord((int) z));
-        double y = in ? Math.max(b.maxY() + up, level.getHeight(Heightmap.Types.MOTION_BLOCKING, (int) x, (int) z) + 4) : b.maxY() + up + 10;
+        double y = clearY(level, x, z, cx, cz, b.maxY() + up);
         lookFrom(sp, level, x, y, z, cx, ty, cz);
+    }
+
+    private static int height(ServerLevel level, double x, double z) {
+        level.getChunk(SectionPos.blockToSectionCoord((int) Math.floor(x)), SectionPos.blockToSectionCoord((int) Math.floor(z)));
+        return level.getHeight(Heightmap.Types.MOTION_BLOCKING, (int) Math.floor(x), (int) Math.floor(z));
+    }
+
+    /** high enough to see over whatever's between the camera and the build (a hillside, a crater's rim) */
+    private static double clearY(ServerLevel level, double x, double z, double tx, double tz, double atLeast) {
+        double y = atLeast;
+        for (int i = 0; i <= 14; i++) {
+            double t = i / 20.0;
+            y = Math.max(y, height(level, x + (tx - x) * t, z + (tz - z) * t) + 4);
+        }
+        return y;
     }
 
     /** lower and nearer, from the crater's edge */
@@ -315,9 +336,9 @@ final class MoonShots {
         double r = Math.max(b.getXSpan(), b.getZSpan()) * dist;
         double a = Math.toRadians(angle);
         double x = cx + r * Math.cos(a), z = cz + r * Math.sin(a);
-        int ground = level.getHeight(Heightmap.Types.MOTION_BLOCKING, (int) x, (int) z);
-        double gy = level.getHeight(Heightmap.Types.MOTION_BLOCKING, (int) cx, (int) cz);
-        lookFrom(sp, level, x, ground + up, z, cx, gy, cz);
+        int ground = height(level, x, z);
+        double gy = height(level, cx, cz);
+        lookFrom(sp, level, x, up <= 1 ? ground : clearY(level, x, z, cx, cz, ground + up), z, cx, gy, cz);
     }
 
     /** inside the observatory: by the telescope's pier, across the study, and up into the dome */
