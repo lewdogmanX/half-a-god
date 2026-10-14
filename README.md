@@ -90,7 +90,9 @@ Mebahel's quest-map key opens the Half a God story map (or use `/halfagod map`).
 **The Codex** is a book with bookmarks:
 
 - **Lore:** the people, places and the cult, and the seven **Wardens** (with the day each one fell), as the story reaches them.
-- **Letters:** every letter Mara sent you, to read again.
+- **Letters:** every letter you've been sent (couriers' letters from the first one on, and Mara's at the end of each
+  act), every book you've found on a quest (logs, ledgers, last pages), and your interrogation notes, to read again.
+  Letters you'd already had before this update are added the first time you play.
 - **Your Path:** a chart of your reputation quest by quest across the acts, who you are now, and your rank in the
   Watch and the Gilded Hand with what the next rank needs.
 - **Dreams:** every dream you've had, to read again (appears after your first dream).

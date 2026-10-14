@@ -147,6 +147,9 @@ public final class RepData {
     public boolean eclipseHome;
     /** died carrying the Eclipse before bringing it home (Iskar's hand has it again) */
     public boolean eclipseLost;
+    /** the story's letters and found books already kept in the Codex (quest id, or quest id # stage for a found book) */
+    public final Set<String> booksKept = new LinkedHashSet<>();
+    public boolean booksBackfilled;
 
     /** operators' story simulator: made-up story traits laid over the real ones (Mebahel never sees them), the
      *  decision made at each simulated quest (spare/kill), the quest you'd be on next, and your real record to go back to */
@@ -211,6 +214,7 @@ public final class RepData {
             d.heat = tag.contains("heat") ? tag.getInt("heat") : d.heat;
             d.eclipseHome = tag.contains("eclipseHome") ? tag.getBoolean("eclipseHome") : d.eclipseHome;
             d.eclipseLost = tag.contains("eclipseLost") ? tag.getBoolean("eclipseLost") : d.eclipseLost;
+            d.booksBackfilled = tag.getBoolean("booksBackfilled");
             d.pilgrimsFed = tag.getInt("pilgrimsFed");
             d.cleanChecked = tag.getBoolean("cleanChecked");
             d.trialState = tag.getInt("trialState");
@@ -248,6 +252,7 @@ public final class RepData {
             d.escapes = tag.getInt("escapes");
             d.walkingOut = tag.getBoolean("walkingOut");
             for (Tag t : tag.getList("interrogated", Tag.TAG_STRING)) d.interrogated.add(t.getAsString());
+            for (Tag t : tag.getList("booksKept", Tag.TAG_STRING)) d.booksKept.add(t.getAsString());
             for (long l : tag.getLongArray("villagesHeard")) d.villagesHeard.add(l);
             d.bountyBy = tag.getString("bountyBy");
             CompoundTag bp = tag.getCompound("bountiesPlaced");
@@ -303,6 +308,7 @@ public final class RepData {
             tag.putInt("heat", d.heat);
             tag.putBoolean("eclipseHome", d.eclipseHome);
             tag.putBoolean("eclipseLost", d.eclipseLost);
+            tag.putBoolean("booksBackfilled", d.booksBackfilled);
             tag.putInt("pilgrimsFed", d.pilgrimsFed);
             tag.putBoolean("cleanChecked", d.cleanChecked);
             tag.putInt("trialState", d.trialState);
@@ -340,6 +346,7 @@ public final class RepData {
             tag.putInt("escapes", d.escapes);
             tag.putBoolean("walkingOut", d.walkingOut);
             tag.put("interrogated", strings(d.interrogated));
+            tag.put("booksKept", strings(d.booksKept));
             tag.putLongArray("villagesHeard", d.villagesHeard.stream().mapToLong(Long::longValue).toArray());
             tag.putString("bountyBy", d.bountyBy);
             CompoundTag bp = new CompoundTag();

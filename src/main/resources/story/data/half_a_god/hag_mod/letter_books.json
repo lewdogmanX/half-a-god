@@ -1,0 +1,967 @@
+{
+ "books": {
+  "mebahelrpgrquest:hag_a5_beneath_the_pipes#1": {
+   "title": "Pipe-Keeper's Log",
+   "author": "A Believer",
+   "pages": [
+    "The pipes carry the prayers down. Do not ask where down is.",
+    "New stock moved to the believer house. Keep them fed. The Sacred City wants them alive."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_a6_believers_house#3": {
+   "title": "Ledger of Ashford",
+   "author": "A Believer",
+   "pages": [
+    "Ashford men: 14. Held at the BASTILLE until the portal is ready.",
+    "Then through the Nether to the Quarries. Stock for the Quarries. The Chariot wants gold, and gold wants hands."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_br3_the_bookkeeper#2": {
+   "title": "Blackwater Ledger",
+   "author": "The Sorcerer",
+   "pages": [
+    "Weekly takings: 3,000 emeralds. Tithe to the Chariot: one third.",
+    "Don Vasco holds court in the Labyrinth. Bring tribute or bring an army."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_e4_the_warden_journal#0": {
+   "title": "The Warden Journal",
+   "author": "M.",
+   "pages": [
+    "Seven hold the Nails. Seven keep the halves apart.",
+    "Ash below. Silence beyond. Frost, Sand, Tide. The Gate. The Flame.",
+    "[A page has been torn out here. Recently. The tear is clean.]"
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_go3_testimony#2": {
+   "title": "Blackwater Ledger",
+   "author": "The Sorcerer",
+   "pages": [
+    "Weekly takings: 3,000 emeralds. Tithe to the Chariot: one third.",
+    "New grower (see page 9). Promising. Watch him."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_gt10_the_sorcerers_books#2": {
+   "title": "Blackwater Ledger",
+   "author": "The Sorcerer",
+   "pages": [
+    "Weekly takings: 3,000 emeralds. Tithe to the Chariot: one third.",
+    "Don Vasco holds court in the Labyrinth. Bring tribute or bring an army."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_h7_medals_of_the_silver_court#2": {
+   "title": "The Hymn of Azriel",
+   "author": "The Silver Court",
+   "pages": [
+    "Azriel, Charioteer of the Sun, drove the Sun across our sky for a thousand years.",
+    "He wanted it for himself. He tried to take it.",
+    "Maraal of the Silver Court rode beside him. She did not stop him.\n\nThey fell together, and the Sun Spirit threw them into the burning deep."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_mn7_the_silver_sea#1": {
+   "title": "The Ascension's Log",
+   "author": "Brother Ascendant",
+   "pages": [
+    "Day 1. We rose on the Chariot's fire. Praise him. The world is so small from here. Brother Cail wept.",
+    "Day 3. The moon. Grey and silent. Two brothers have stopped breathing. The Priest says breath is a habit of the flesh, and that we will lose it, as we lose everything that is not faith.",
+    "Day 9. We have found the Silver King. He is so much bigger than the hymns. The blade is in his hand. We are commanded to break it, so no hand may ever raise it against our god again.",
+    "Day 40. We cannot break it. It does not break. The Priest says we will keep trying until we are dust. I think we are dust already. I think we have been for days."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_p9_who_pays_in_gold#2": {
+   "title": "Ledger of Tithes",
+   "author": "Camp Quartermaster",
+   "pages": [
+    "Received of the Faithful: 40 gold. For the village by the hill. Burn nothing. Take people.",
+    "Payment owed on delivery to the Sacred City. Souls by weight. The Chariot pays in full.",
+    "Next contract: ASHFORD. Tonight."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_s2_the_frozen_garrison#2": {
+   "title": "Garrison Roll",
+   "author": "Sergeant Halm",
+   "pages": [
+    "We guard the Nail of Frost. We do not leave our post.",
+    "If the beast wakes, the Nail goes with it. Do not wake the beast.\n\nWhoever reads this: please, do not wake the beast."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_u2_helvars_oath#0": {
+   "title": "Helvar's Oath",
+   "author": "Helvar",
+   "pages": [
+    "I hold the Gate. I was set here by the one who took his head.",
+    "If I fall, the door I kept shut will open.\n\nIf you are reading this, you have killed five of us already.\n\nStop."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_v2_the_sinful_church#2": {
+   "title": "The Midwife's Recipe",
+   "author": "The Midwife",
+   "pages": [
+    "Carcass into blood. Pray.",
+    "If it lives, it is a son.\nIf it speaks, it is Him.\n\nNone have spoken yet. Pour more."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:garrick_third_funeral#1": {
+   "title": "Improved Funeral Procedure",
+   "author": "Corwin Bell",
+   "pages": [
+    "Uncle Garrick's problem is obvious: everyone keeps following his instructions instead of improving them.",
+    "He says never ring the family bell three times. I have therefore rung it four times. This is called careful interpretation.",
+    "He says the dead should remain lying down. I have placed the coffin upright so gravity can assist.",
+    "The villagers have asked me to stop. This is the sort of resistance every innovator faces.",
+    "If this works, Garrick will finally remain dead. If it does not, I will revise the procedure personally."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:merrick_a_place_you_remember#1": {
+   "title": "A Page in Your Handwriting",
+   "author": "Unknown",
+   "pages": [
+    "Merrick remembers things before I do.",
+    "That does not mean he is lying.",
+    "I counted four chairs tonight.",
+    "There were five shadows.",
+    "Do not tell Merrick.",
+    "He thinks he is the fourth."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:blackthorn_chain_2_a_place_set_for_no_one": {
+   "title": "Dinner at Blackthorn House",
+   "author": "M.",
+   "pages": [
+    "BLACKTHORN HOUSE\n\nThe household requests the pleasure of your company at dinner.",
+    "The table will be laid at dusk.",
+    "Formal dress is appreciated but no longer enforced.",
+    "Your arrival has been anticipated.",
+    "One place remains vacant.",
+    "You need not bring anything.",
+    "The House remembers its guests.",
+    "Present this invitation at the door.\n\nM.\nSteward"
+   ]
+  },
+  "mebahelrpgrquest:blackthorn_chain_2_a_place_set_for_no_one#1": {
+   "title": "Blackthorn Guest Ledger",
+   "author": "Merrin",
+   "pages": [
+    "BLACKTHORN HOUSE\nDINNER REGISTER\n\nLord Alistair Blackthorn\nLady Ysabet Blackthorn\nTwelve invited guests.",
+    "1. Lord Peregrin Vale\n2. Mara Vale\n3. Father Elric\n4. Magistrate Hobb\n5. Ysra Pell\n6. Dorn Fell",
+    "7. Lady Morwen Ash\n8. Sir Tavin Reed\n9. Oren Glass\n10. Mira Glass\n11. Doctor Wren\n12. Captain Sera Holt",
+    "THIRTEENTH PLACE:\n\nLeave set.\nDo not clear.\nDo not assign without the Master's instruction.",
+    "All twelve guests arrived before dusk.\n\nThe thirteenth chair remained empty.",
+    "The Master ordered the place kept warm.",
+    "The guests departed.\n\nThe place remained set.",
+    "The family died.\n\nThe place remained set.",
+    "I have replaced the silver six times.\n\nI no longer remember when the dining room became quiet.",
+    "The order remains."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:false_hero_rusk_debt_of_breath": {
+   "title": "A Debt of Breath",
+   "author": "Rusk",
+   "pages": [
+    "To the one who let me walk away,\n\nYou told me to speak, then leave your village roads. I did both. One was easier.",
+    "My old crew heard that I spoke to you. Raiders have several names for a witness who survives. None of them are meant kindly.",
+    "I found something I should have burned years ago: a black ledger of raids, payments, marked villages, and the men who sold the roads between them.",
+    "My name is in it.\n\nNot beside every crime. Enough of them.",
+    "Meet me by the broken portal away from the village. I will not come closer while their dead still have reason to know my face.",
+    "If you come armed, fair.\nIf you come alone, foolish.\n\nCome anyway.\n\n- Rusk"
+   ]
+  },
+  "mebahelrpgrquest:hag_a1_ashford_burns": {
+   "title": "Ashford Burns",
+   "author": "Old Mara",
+   "pages": [
+    "The camp's ledger said Ashford. It was right.\n\nThe raid has started. Go now, go fast, and do not let the Brand-Carrier leave alive.",
+    "Afterwards, find the reeve. His name is Halden. He is a stubborn man. You will like him.\n\n- M."
+   ]
+  },
+  "mebahelrpgrquest:hag_br1_the_watch_needs_eyes": {
+   "title": "The Watch Needs Eyes",
+   "author": "Reeve Halden",
+   "pages": [
+    "There's a cartel in the valley called Blackwater. They sell weed, hash, worse. People are dying of it.",
+    "And a third of every emerald they make goes to the Chariot. Every sale keeps the cult's beasts fed.",
+    "The Watch has a captain who wants them gone and can't get close. You can. Go and see her.\n\n- Halden"
+   ]
+  },
+  "mebahelrpgrquest:hag_bz1_a_letter_smelling_of_honey": {
+   "title": "A Letter Smelling of Honey",
+   "author": "Wren the Apiarist",
+   "pages": [
+    "You don't know me. I keep bees in the village over the hill, or I did.\n\nThe night the light rose out of the Wither's pit, my bees flew into their nests and didn't come out. Not dead. Just gone.",
+    "My grandmother said there's a country inside the comb. A queen. She went once and came back with honey that glowed.\n\nCome and see me. Please.\n\n- Wren"
+   ]
+  },
+  "mebahelrpgrquest:hag_e1_the_librarians_request": {
+   "title": "What Did They Tell You?",
+   "author": "Old Mara",
+   "pages": [
+    "I told you to leave the sky alone. What did they tell you up there?",
+    "Never mind. It does not matter. Old proud things tell old proud lies.\n\nGo to the End. A librarian will help you. - M."
+   ]
+  },
+  "mebahelrpgrquest:hag_eb1_the_magical_eye": {
+   "title": "Twelve Eyes",
+   "author": "The Librarian",
+   "pages": [
+    "Ordinary eyes of ender will not open this gate any more. The frames want older eyes, sixteen kinds, scattered across the world.",
+    "You take the overworld. I've marked the rest on this page: the Nether, the dead, and the crafted ones. Twelve should open it."
+   ]
+  },
+  "mebahelrpgrquest:hag_g1_maraals_last_letter": {
+   "title": "Maraal's Last Letter",
+   "author": "Maraal",
+   "pages": [
+    "If you are reading this, he is dead, all of him, and so am I. My half-life ended with his.",
+    "Whether you forgave me or not, you finished what I could not. I am sorry for Ashford. I am sorry for all of it.",
+    "It was never your fault. It was mine.\n\nThank you.\n\n- Maraal, once of the Silver Court"
+   ]
+  },
+  "mebahelrpgrquest:hag_go0_a_way_out": {
+   "title": "A Way Out",
+   "author": "Reeve Halden",
+   "pages": [
+    "I know about the fields.\n\nI also know about the things you've done since. People talk about both.",
+    "Come and see me. There's a way out of the Blackwater trade that doesn't end in a ditch. It will cost you your fields and your profit, and it will be worth it.\n\n- Halden"
+   ]
+  },
+  "mebahelrpgrquest:hag_gt15_the_fixers_price": {
+   "title": "Nothing Personal",
+   "author": "The Fixer",
+   "pages": [
+    "You'll have noticed the strongbox.\n\nI took my half. Call it a finder's fee: I found you, after all.",
+    "The Watch came to me last week. They know everything except your name, and they offered me my whole life back for it. A clean name. No more looking over my shoulder.",
+    "I said yes. Of course I said yes. You'd have said yes.\n\nNothing personal. It never was.\n\n- F."
+   ]
+  },
+  "mebahelrpgrquest:hag_gt1_a_note_in_the_stash": {
+   "title": "A Note in the Stash",
+   "author": "Old Mara",
+   "pages": [
+    "Forgive me for this one.\n\nThe Blackwater Cartel pays the cult a third of everything. That money keeps the beasts' keepers fed. To reach their Don you must become one of them.\n\nThis note was in one of their stashes. - M.",
+    "If you found this, you know what the seeds are for.",
+    "The valley pays well for green. Grow some. Bring me a sample. Ask for the Fixer in any village two hills over.",
+    "Don't bring the guards. Don't bring the priest. Don't bring your conscience."
+   ]
+  },
+  "mebahelrpgrquest:hag_h1_a_light_above_the_pit": {
+   "title": "Leave the Sky Alone",
+   "author": "Old Mara",
+   "pages": [
+    "I hear the villagers saw a light go up from your pit.\n\nIgnore it. There is nothing above the clouds but old, proud things that will not help you.",
+    "Go to the End instead. Find a stronghold. The next Warden waits there.\n\nPlease. - M."
+   ]
+  },
+  "mebahelrpgrquest:hag_i1_the_priests_warning": {
+   "title": "A Priest's Warning",
+   "author": "The Priest",
+   "pages": [
+    "The Faithful who burned Ashford were not only axes and torches. Some of them cast fire with their hands.",
+    "That is evoker magic, stolen and sold. Build an inscription table. Learn to write spells. Then go and take back what they stole."
+   ]
+  },
+  "mebahelrpgrquest:hag_i5_the_dead_king": {
+   "title": "The Dead Are Restless",
+   "author": "The Priest",
+   "pages": [
+    "The Wither's death rang through every grave. In the Catacombs, a king sat up.",
+    "He was a hero once, they say. Someone sent him to kill a god. Go and ask him how that went."
+   ]
+  },
+  "mebahelrpgrquest:hag_lg1_the_golden_legion": {
+   "title": "The Golden Legion",
+   "author": "Old Aurel",
+   "pages": [
+    "They tell me you are hunting wither skulls in the Nether. So did I, once, and I found something worse.\n\nCome and see an old soldier. I have a story nobody believes.",
+    "- Aurel, late of the Ashford Watch"
+   ]
+  },
+  "mebahelrpgrquest:hag_lp1_ancient_city": {
+   "title": "Warden Journal, Page 1",
+   "author": "The First Champion",
+   "pages": [
+    "I am the first. She found me in a field and told me I was going to kill a god.",
+    "I laughed. She didn't. That was how I knew."
+   ]
+  },
+  "mebahelrpgrquest:hag_lp2_end_city": {
+   "title": "Warden Journal, Page 2",
+   "author": "The First Champion",
+   "pages": [
+    "Seven Wardens hold his pieces apart. Kill one and the others grow hungry.",
+    "She says I must kill all seven. She says it the way you'd say 'fetch water'."
+   ]
+  },
+  "mebahelrpgrquest:hag_lp3_jungle_temple": {
+   "title": "Warden Journal, Page 3",
+   "author": "The First Champion",
+   "pages": [
+    "She has two names. I only know the second one.",
+    "At night she writes letters to someone who will never answer."
+   ]
+  },
+  "mebahelrpgrquest:hag_lp4_mansion": {
+   "title": "Warden Journal, Page 4",
+   "author": "The First Champion",
+   "pages": [
+    "The cult offered me a crown. I nearly took it.",
+    "She said nothing. She just looked tired. That was worse."
+   ]
+  },
+  "mebahelrpgrquest:hag_lp5_treasure": {
+   "title": "Warden Journal, Page 5",
+   "author": "The First Champion",
+   "pages": [
+    "Three Wardens dead. My hands shake now even when I sleep.",
+    "I buried my sword's twin here. In case the next one needs it."
+   ]
+  },
+  "mebahelrpgrquest:hag_lp6_igloo": {
+   "title": "Warden Journal, Page 6",
+   "author": "The First Champion",
+   "pages": [
+    "I sheltered here with the second champion. He was younger than I was.",
+    "He asked me if it was worth it. I lied."
+   ]
+  },
+  "mebahelrpgrquest:hag_lp7_outpost": {
+   "title": "Warden Journal, Page 7",
+   "author": "The First Champion",
+   "pages": [
+    "Five Wardens dead. The sixth killed me. Or it will. I'm writing this the night before.",
+    "If you are reading this, she found someone else. Be kinder to her than I was."
+   ]
+  },
+  "mebahelrpgrquest:hag_lp8_ruin": {
+   "title": "Warden Journal, Page 8",
+   "author": "The First Champion",
+   "pages": [
+    "Bury me where the old stones are, where the road used to be.",
+    "Don't put my name on it. She'll come and read it, and she's cried enough."
+   ]
+  },
+  "mebahelrpgrquest:hag_lp9_the_first_champion": {
+   "title": "The Last Page",
+   "author": "Old Mara",
+   "pages": [
+    "You found all of them. I didn't think anyone ever would.\n\nShe was the first. I loved her like a daughter and sent her to die.",
+    "Go to her grave if you want. Don't tell me what it looks like."
+   ]
+  },
+  "mebahelrpgrquest:hag_r1_the_prisoner": {
+   "title": "We Caught One",
+   "author": "Reeve Halden",
+   "pages": [
+    "We caught one alive. Orsk. He kept the raiders' tally, how many men, how much gold.\n\nAshford wants to hang him from what's left of the hall.",
+    "I want to know what you think. You saved us. That gives you the right to choose.\n\nCome and look him in the eye. Read this and he'll be brought to you.\n\n- Halden"
+   ]
+  },
+  "mebahelrpgrquest:hag_ru1_the_lantern_road": {
+   "title": "Light the Road",
+   "author": "The Villages of the Old Road",
+   "pages": [
+    "We've talked it over, all of us, from the river to the hills.\n\nWe want the old road lit again.",
+    "We want you to light the first lantern. You know why."
+   ]
+  },
+  "mebahelrpgrquest:hag_ru2_silas_makes_an_offer": {
+   "title": "A Business Proposal",
+   "author": "Silas of the Gilded Hand",
+   "pages": [
+    "I've followed your career with interest.\n\nYou and I want the same things. Gold. Fear. Quiet.",
+    "Come and talk. Bring nothing but ambition.\n\n- S."
+   ]
+  },
+  "mebahelrpgrquest:hag_s1_cold_hearths": {
+   "title": "Five More Beasts",
+   "author": "Old Mara",
+   "pages": [
+    "Five more stir: one in the snow, one under the sand, one in the deep sea, one in the burning deep, and one in a tower of fire.",
+    "Start with the snow. Help the people there first. They have earned it.\n\n- M."
+   ]
+  },
+  "mebahelrpgrquest:hag_sec_clean1": {
+   "title": "Clean Hands",
+   "author": "Silas",
+   "pages": [
+    "Friend,\n\nThree acts, and not one drop of blood on you. Not a villager, not a villain, not a peddler with a smile. Do you know how rare that is? I have met saints. Saints have tempers.",
+    "I don't trust clean hands. Clean hands are hiding something.\n\nSo I've sent someone to find out what. Don't hurt him. Or do. Either way, I learn something.\n\n- S."
+   ]
+  },
+  "mebahelrpgrquest:hag_the_first_letter": {
+   "title": "A Letter from Old Mara",
+   "author": "Old Mara",
+   "pages": [
+    "To the one in the new iron armour,\n\nYou do not know me. I know you. I have watched a great many people start with nothing, and you are the first in a long time who started well.",
+    "There is a village near you. It is quiet. It will not stay quiet.\n\nGo there. Help them with the small things. The small things are how you learn where the big things are hiding.",
+    "Someone is buying gold at twice its worth. Someone is painting eyes on chapel doors.\n\nNotice it. Say nothing yet.\n\nI will write again.\n\n- M."
+   ]
+  },
+  "mebahelrpgrquest:hag_tm1_a_generous_offer": {
+   "title": "A Generous Offer",
+   "author": "A friend in the valley",
+   "pages": [
+    "We've been watching you.\n\nYou are not like the other heroes. You understand that the world is not clean.",
+    "Meet our man on the road and hear what we have to offer. You'll find him near wherever you read this.\n\n- B."
+   ]
+  },
+  "mebahelrpgrquest:hag_v1_blood_in_the_wells": {
+   "title": "Where the Blood Pits Are",
+   "author": "Old Mara",
+   "pages": [
+    "It is done. All seven.\n\nNow the cult will try the only road left to it: if it cannot free his body, it will grow him a new one.",
+    "They pour blood into pits and throw dead flesh into it. What crawls out, they call sons.\n\nCome. I will explain everything. - M."
+   ]
+  },
+  "mebahelrpgrquest:hag_v9_the_wrong_parcel": {
+   "title": "The Torn Page",
+   "author": "Maraal",
+   "pages": [
+    "Seven Nails I drove, and seven keepers I bound.\n\nAsh: the Wither. Silence: the Dragon. Frost: Skor. Sand: Sirok. Tide: Nerakyss. The Gate: Helvar. The Flame: Ashlord, who was his.",
+    "Kill the keepers and the Nails break, and the halves may find each other.\n\nNever let anyone kill them all.",
+    "- Maraal, first Preacher of Azriel, who took his head."
+   ]
+  },
+  "mebahelrpgrquest:hag_w1_the_skull_market": {
+   "title": "They Are Buying Skulls",
+   "author": "Old Mara",
+   "pages": [
+    "Three skulls and four blocks of soul sand. That is all it takes to wake the Wither.",
+    "If the cult wakes it, they will try to bind it. They will fail, and the world will burn while they fail.\n\nGo into the Nether. Find out who is selling. - M."
+   ]
+  },
+  "mebahelrpgrquest:hag_w1_the_skull_market#2": {
+   "title": "Price List",
+   "author": "The Skull Market",
+   "pages": [
+    "One wither skull: three villagers, or forty gold.",
+    "Buyer: THE CHARIOT. Deliver to the Lair, past the Sacred City.",
+    "Three skulls make a crown. The crown wakes the Nail of Ash."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:hag_x1k_wicks_sister": {
+   "title": "A Letter in Bad Handwriting",
+   "author": "Nell",
+   "pages": [
+    "You hanged my brother.\n\nI'm not coming to hurt you. I couldn't if I wanted to.",
+    "I just want to look at the person who decided he wasn't worth a second chance. I'll be in a village to the west.\n\n- Nell"
+   ]
+  },
+  "mebahelrpgrquest:hag_x1s_wicks_back_door": {
+   "title": "Wick's Back Door",
+   "author": "Wick",
+   "pages": [
+    "You let me go. Most wouldn't have.\n\nThere's a wagon train at the outpost east of you. Grain they took, and two of yours in the cart.",
+    "I loosened a stake on the north side. Go at night.\n\nWe're square now. Mostly.\n\n- W."
+   ]
+  },
+  "mebahelrpgrquest:hag_x2k_gorrans_brothers": {
+   "title": "Four Names",
+   "author": "Unsigned",
+   "pages": [
+    "Gorran Ost.\n\nYou took his keys off his body.\n\nWe were the reason he held them.",
+    "We're coming for you. Tonight, or the night after.\n\nFour of us. One for each year he kept that job to keep us alive."
+   ]
+  },
+  "mebahelrpgrquest:hag_x2s_the_wardens_debt": {
+   "title": "A Gate Without a Lock",
+   "author": "Gorran",
+   "pages": [
+    "You let me walk out of the Bastille.\n\nI found a village that needed a gate guard and didn't ask questions.",
+    "Come and see me. I've kept something for you all this time.\n\n- Gorran"
+   ]
+  },
+  "mebahelrpgrquest:hag_x3k_the_choir_wants_it_back": {
+   "title": "A Hymn Sheet",
+   "author": "The Bone Choir",
+   "pages": [
+    "Thief of the third.\n\nWe sing for what is ours.\n\nWe are coming to collect it."
+   ]
+  },
+  "mebahelrpgrquest:hag_x3s_ossians_gift": {
+   "title": "For the Fair One",
+   "author": "Ossian",
+   "pages": [
+    "You paid me!\n\nNobody pays Ossian. They threaten Ossian.",
+    "I found a quiet place. Old bastion. I left you something on the top floor. Gold for gold.\n\n- O."
+   ]
+  },
+  "mebahelrpgrquest:hag_x4k_the_sun_remembers": {
+   "title": "Scorched Feathers",
+   "author": "Unsigned",
+   "pages": [
+    "A bundle of scorched feathers, tied with a pilgrim's cord. Nothing else."
+   ]
+  },
+  "mebahelrpgrquest:hag_x4s_sunlight_in_a_bottle": {
+   "title": "To the One Who Let Me Finish",
+   "author": "The Pilgrim",
+   "pages": [
+    "I saw the light go out.\n\nI am not angry. I had my prayer.",
+    "Come to the village by the river, if you pass. I have something that remembers the Sun."
+   ]
+  },
+  "mebahelrpgrquest:hag_x5k_a_widows_letter": {
+   "title": "Give Me His Medal",
+   "author": "Ilse",
+   "pages": [
+    "You found my husband alive after ten years, and you killed him.\n\nI'm told you had reasons.",
+    "Bring me his medal. That's all I want from you."
+   ]
+  },
+  "mebahelrpgrquest:hag_x5s_brann_comes_home": {
+   "title": "From the Snowy Village",
+   "author": "Ilse",
+   "pages": [
+    "My husband came home after ten years.\n\nYou walked him to our door when you had every reason not to.",
+    "Come and eat with us when you pass.\n\n- Ilse, wife of Brann"
+   ]
+  },
+  "mebahelrpgrquest:hag_y1_what_the_last_page_said": {
+   "title": "The Last Page",
+   "author": "The Librarian",
+   "pages": [
+    "You let me keep the journal. I've barely slept.\n\nThe last page isn't a prayer. It's a smith's note.",
+    "Come and see me. I've made you something from it."
+   ]
+  },
+  "mebahelrpgrquest:hag_y2_the_hand_reads_too": {
+   "title": "A Bonus",
+   "author": "Silas of the Gilded Hand",
+   "pages": [
+    "The journal sold beautifully.\n\nCome and collect your bonus. Bring a bag.\n\n- S."
+   ]
+  },
+  "mebahelrpgrquest:hag_y3_free_men_remember": {
+   "title": "From the Quarries",
+   "author": "Corin Vale, of Ashford",
+   "pages": [
+    "You won't remember me. I was the one with the broken hand, fourth in the line, the morning you came down into the quarries and killed the things that drove us.",
+    "Three years I dug gold for a god I'd never seen. I'd stopped being able to picture my wife's face. Now I see it every morning.",
+    "I'm home. Ashford's half-built and the roof leaks and I've never been happier. Come and see. I owe you a drink and a great deal more than a drink.\n\n- Corin Vale"
+   ]
+  },
+  "mebahelrpgrquest:hag_y3_tomas_at_the_gate": {
+   "title": "You Sent Him Home",
+   "author": "Reeve Halden",
+   "pages": [
+    "My son came home furious with you.\n\nThank you.",
+    "Come and see me. I have something that should go with you into the dark.\n\n- Halden"
+   ]
+  },
+  "mebahelrpgrquest:hag_y4_vaels_last_letter": {
+   "title": "They Know",
+   "author": "Brother Vael",
+   "pages": [
+    "They know about me. I have hours, not days.\n\nI left everything I learned at a ruined portal near you.",
+    "The maps of the Sacred City. The guard rotations. The name of the door that is never locked.",
+    "You could have killed me in the fortress. You made me useful instead. I hope I was.\n\n- V."
+   ]
+  },
+  "mebahelrpgrquest:hag_y5_the_midwifes_daughter": {
+   "title": "My Mother Talks About You",
+   "author": "Wren",
+   "pages": [
+    "My mother says you could have killed her and didn't.\n\nShe says you sent her somewhere she could get better.",
+    "I'd like to meet you. I'm at the cleric's village."
+   ]
+  },
+  "mebahelrpgrquest:questbook_a_very_reasonable_treasure_map": {
+   "title": "A Very Reasonable Treasure Map",
+   "author": "Bastian Quill, Licensed Treasure Hunter",
+   "pages": [
+    "A VERY REASONABLE TREASURE MAP\n\nProperty of Bastian Quill, licensed treasure hunter, amateur cartographer, and man suffering from absolutely no curse whatsoever.",
+    "First, a legal clarification.\n\nI am not cursed.\n\nI have never been cursed.\n\nAny screaming heard while I owned this map was unrelated to the map and, in several cases, exaggerated.",
+    "The treasure lies beside an old ruined Nether portal.\n\nYou will recognize the correct sort of place immediately: broken stone, unpleasant air, and the strong feeling that someone made a poor decision there.",
+    "Before going, acquire one fresh cod.\n\nThis is for diplomacy.\n\nIf the cod vanishes from your possession during the journey, diplomacy has succeeded. Do not investigate further.",
+    "At the ruined portal, place a carved pumpkin close to the old frame.\n\nThe pumpkin is for protection.\n\nDo not put the cod on your head and attempt to negotiate with the pumpkin. I tried that.",
+    "Then wait until night.\n\nThis is important. Treasure of this quality dislikes daylight.\n\nSo did my three business partners, toward the end.",
+    "If three dead men appear, remain calm.\n\nThey may claim I betrayed them, stole the map, abandoned them underground, or used them to test a curse-transfer ritual.\n\nThese accusations are technically historical.",
+    "Once they are dealt with, search the portal ruins carefully. I left a receipt with the treasure.\n\nPlease read it before spending anything.\n\nFor bookkeeping reasons.",
+    "One final assurance:\n\nThe route is safe.\nThe instructions are reasonable.\nThe treasure is valuable.\n\nTwo of those statements are entirely true."
+   ]
+  },
+  "mebahelrpgrquest:questbook_a_very_reasonable_treasure_map#5": {
+   "title": "Receipt of Transfer",
+   "author": "Bastian Quill",
+   "pages": [
+    "TRANSFER RECEIPT\n\nOne (1) persistent funerary curse, origin disputed, transferred in full to the bearer who completed the prescribed rite.",
+    "Prescribed rite:\n\nOne fish surrendered.\nOne smiling guardian raised.\nOne moon witnessed.\nThree creditors returned to rest.\n\nAll conditions satisfied.",
+    "If you are reading this, congratulations. The treasure is now legally yours.\n\nSo is everything that was attached to it.",
+    "Before you become upset, please note that I did write 'entirely uncursed' in the map.\n\nI did not write 'the treasure'.",
+    "I recommend avoiding mirrors for several days.\n\nWarmest regards,\nBastian Quill\nFormerly Cursed"
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:questbook_instructions_for_my_own_funeral": {
+   "title": "Instructions for My Own Funeral",
+   "author": "Garrick Bell",
+   "pages": [
+    "INSTRUCTIONS FOR MY FUNERAL\n\nTo be followed exactly.\n\nI have attended four funerals in my life and all were organized by amateurs.",
+    "One: three candles. Not two. Not four. Three.\n\nTwo: no red flowers. They make me look cheap.",
+    "Three: one egg must be present.\n\nThis is a family matter and none of your concern.",
+    "Four: my sword goes on the right side.\n\nI am right-handed. I refuse to spend eternity reaching across myself.",
+    "Five through nine concern acceptable bread, seating, weather, and my nephew Corwin. Corwin is not to improvise anything.",
+    "Ten: bury me near old ruined stone. I always liked ruins. They make one's own failures seem modest.",
+    "Eleven: place the three candles close to the grave.\n\nTwelve: wait until after sunset before finishing the ceremony.",
+    "Thirteen: if I make a noise, do not panic.\n\nFourteen: if I sit up, remain calm.\n\nFifteen: if I ask for water, do not give me any. It only encourages things.",
+    "Sixteen: if I stand, consult Paragraph Seventeen.\n\nEighteen: under no circumstances let Corwin claim I wanted a closed casket.",
+    "Nineteen: if all instructions are followed, my estate will compensate whoever endured this nonsense.",
+    "Twenty: if something goes wrong, I accept no responsibility.\n\nI will be dead."
+   ]
+  },
+  "mebahelrpgrquest:questbook_please_return_the_ship": {
+   "title": "Please Return the Ship",
+   "author": "Marrow & Finch Recovery",
+   "pages": [
+    "NOTICE OF UNRETURNED PROPERTY\n\nVessel: Patient Gull\nBorrower: Edric Moor\nReturn date: nineteen years overdue.",
+    "Penalty: two emeralds per day, plus administrative costs, harbor costs, recovery costs, weather costs, and costs associated with calculating costs.",
+    "The vessel remains company property regardless of weather, piracy, sinking, structural disassembly, acts of gods, acts of fish, or borrower inconvenience.",
+    "Salvage agents are authorized to locate the Patient Gull and recover company property from the borrower.",
+    "Clause Nine: death of the borrower does not void outstanding maritime obligations.",
+    "Last reported wreckage lies somewhere along the coast. Return the ship in serviceable condition where possible. Where impossible, return it anyway."
+   ]
+  },
+  "mebahelrpgrquest:questbook_please_return_the_ship#1": {
+   "title": "Edric Moor's Log",
+   "author": "Edric Moor",
+   "pages": [
+    "DAY 1\n\nBorrowed the Patient Gull for three days. Paid the deposit. Signed every page they put in front of me. I remember this because my hand cramped.",
+    "DAY 3\n\nStorm took the mast. The rocks took the hull. The sea has, in practical terms, taken possession of the ship.",
+    "DAY 4\n\nMarrow & Finch's contract says loss of vessel does not constitute return of vessel. I checked twice. Lawyers are a form of weather.",
+    "YEAR 2\n\nThey sent another notice. Two emeralds per day. I no longer know whether I owe them a ship or a small kingdom.",
+    "YEAR 11\n\nNo notices this year. That worries me more than the notices did.",
+    "YEAR 19\n\nI came back to the wreck. If I am going to be found, I would rather be found beside the thing I supposedly still possess.",
+    "I had nineteen years to pay. Then the sea collected first. If someone finds me afterward, please ask the company whether drowning counts as a late fee."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:questbook_the_ash_merchant": {
+   "title": "The Ash Merchant",
+   "author": "Silas Dorn",
+   "pages": [
+    "ACCOUNT BOOK - SILAS DORN\n\nQuartz, blaze powder, iron, leather, food. Standard exchange rates recorded on the following pages.",
+    "The first pages are ordinary enough. Then names begin appearing between the goods.",
+    "Mira Vale - 12 gold.\nTomas Reed - 19 gold.\nJeren Holt - 9 gold.\n\nI told myself they were debts.",
+    "There are more names after that. Beside each one, a price.",
+    "If this book reaches the Overworld, follow the ruined portal marked with three cuts in the obsidian. The road beyond leads toward the bastion where the accounts are kept.",
+    "Do not assume the person holding a ledger is the one making the sales.",
+    "In places like this, even a prisoner may be useful enough to be given a pen."
+   ]
+  },
+  "mebahelrpgrquest:questbook_the_ash_merchant#3": {
+   "title": "Accounts in Ash",
+   "author": "Silas Dorn",
+   "pages": [
+    "Mira Vale - 12 gold.\nTomas Reed - 19 gold.\nJeren Holt - 9 gold.\nUnnamed child - 6 gold.\n\nAll marked RECEIVED.",
+    "The handwriting changes here.\n\n'Not sold. Bought back.'",
+    "I kept the prices because forgetting them felt worse. Every name is someone taken through the portal. Every payment is what I gathered to bring one home.",
+    "The bastion clerks call me merchant because I count well. Let them. A prisoner who can count is still a prisoner.",
+    "My own price is forty-eight gold.\n\nI have forty-seven.",
+    "If someone from the Overworld finds this, do not waste your life carrying forty-eight gold into this place.\n\nJust make sure the book leaves with you."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:questbook_the_ash_merchant#5": {
+   "title": "The Forty-Eighth Ingot",
+   "author": "Silas Dorn",
+   "pages": [
+    "I found the last ingot.",
+    "One of the guards dropped it beside the furnace and never noticed.",
+    "I held forty-eight gold in my hands for perhaps ten breaths.",
+    "Then they brought in a girl from the Overworld. Her price was one.",
+    "I bought her instead.",
+    "My balance is forty-seven again.\n\nI think I can live with that.\n\nI hope she can too."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:questbook_the_captains_share": {
+   "title": "The Captain's Share",
+   "author": "Harbor Clerk Edden",
+   "pages": [
+    "SALVAGE NOTICE\n\nThe Saint Marrow failed to arrive with twelve registered shares of cargo and one captain's share.",
+    "Wreckage has been reported along the coast. Any licensed or unlicensed finder may inspect the vessel provided the ship's articles are preserved.",
+    "The crew were known to be unusually strict about division of salvage. First Mate Orren once delayed unloading for six hours over a missing copper coin.",
+    "If the captain's chest is found sealed, do not assume the contents belong to the captain. Read the articles first.",
+    "Last known master: Captain Vale. Last known first mate: Orren. No survivors have reported to port."
+   ]
+  },
+  "mebahelrpgrquest:questbook_the_captains_share#1": {
+   "title": "Saint Marrow's Articles",
+   "author": "First Mate Orren",
+   "pages": [
+    "SHIP'S ARTICLES\n\nSaint Marrow. Seven crew. Five passengers. Twelve shares of salvage. One additional captain's share after all other shares are paid.",
+    "No share passes to another sailor by death. A dead man's portion remains his until landfall, where it is delivered to his family or buried with his name.",
+    "First Mate Orren. Mara Fen. Hobb Tanner. Lysa Pell. Corven Dey. Neral Pike. Captain Vale.\n\nFive passengers entered separately in the manifest.",
+    "ADDENDUM, hand of Captain Vale:\n\nOrren drowned first. His share remained aboard. Mara followed two nights later. I moved both portions to the captain's chest for safekeeping.",
+    "SECOND ADDENDUM:\n\nHobb is dead. The others refuse to touch the chest. They say the articles were not a suggestion. Superstition is becoming expensive.",
+    "FINAL ENTRY:\n\nThere are more shares in my chest than living names on my deck. The arithmetic is excellent. Everything else is not."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:questbook_the_fourth_member": {
+   "title": "The Fourth Member",
+   "author": "Vessa Marr",
+   "pages": [
+    "EXPEDITION JOURNAL\n\nMembers:\nJorn Vale\nVessa Marr\nHaldrin Pike\n\nThree of us. Three shares. No hired hands.",
+    "Jorn found a stronghold map in a ruined library. Haldrin says the place will already be picked clean.\n\nI say an empty ruin is still worth seeing once.",
+    "We crossed the river before dusk. Jorn fell in and blamed the current. Haldrin blamed Jorn. I laughed until my ribs hurt.",
+    "Merrick made breakfast this morning.\n\nHe burned it again.",
+    "I read that sentence back three times.\n\nI do not remember writing Merrick's name before today.",
+    "Jorn says Merrick has travelled with us since the birch road.\n\nHaldrin says longer.\n\nBoth looked genuinely worried when I asked what they meant.",
+    "The worst part is that I remember him now.\n\nMerrick at the river. Merrick carrying my pack when I hurt my ankle. Merrick singing badly in the rain.",
+    "Those memories feel older than this journal.\n\nThis journal says they are lies.",
+    "We reached the stronghold.\n\nI am leaving this journal where another traveller may find it. Inside, I will keep a second ledger from this point onward.",
+    "There were three of us when we entered.\n\nI am writing that sentence while I still know it is true."
+   ]
+  },
+  "mebahelrpgrquest:questbook_the_fourth_member#1": {
+   "title": "Expedition Ledger",
+   "author": "Vessa Marr",
+   "pages": [
+    "SUPPLIES AT ENTRY\n\nJorn Vale\nVessa Marr\nHaldrin Pike\n\nThree bedrolls. Three torches each. Three shares of food. Three shares of whatever we find.",
+    "Someone changed the food tally to four.\n\nJorn says I did it because I always forget Merrick's share.\n\nI asked him who Merrick was.",
+    "Jorn stared at me for a long time.\n\nThen he laughed and asked whether I had struck my head.\n\nHaldrin laughed too.",
+    "I remember Merrick telling that joke by the river.\n\nI remember being angry with him.\n\nThere was no Merrick at the river.",
+    "I checked the first page again.\n\nThree names.\n\nThe ink is mine.\n\nWhy did I pack four cups?",
+    "Merrick says the lower hall is safe.\n\nI do not remember seeing him enter this place.\n\nI do remember him walking in front of me."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:questbook_the_fourth_member#3": {
+   "title": "The Last Count",
+   "author": "Vessa Marr",
+   "pages": [
+    "Jorn. Vessa. Haldrin.\n\nThree names.\n\nI have counted them twenty times.",
+    "Jorn is dead. Haldrin is dead. I will be soon.\n\nMerrick is sitting across from me and asking why I keep writing only three names.",
+    "He remembers my mother.\n\nHe remembers the red scarf Jorn lost last winter.\n\nHe remembers things I remember too.\n\nThat is what frightens me.",
+    "I asked Merrick where we first met.\n\nHe said, 'You know where.'\n\nFor one heartbeat I did.",
+    "There were three of us when we entered.\n\nI know this because I wrote it before the memories changed.",
+    "Now I remember four voices around every fire we ever made.",
+    "If you find this book alone, do not count us again.",
+    "And if a man named Merrick ever asks whether you remember him, do not answer."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:questbook_the_house_that_owes_me_money": {
+   "title": "The House That Owes Me Money",
+   "author": "Hadrin Pell, Licensed Collector",
+   "pages": [
+    "NOTICE OF DELINQUENT PROPERTY\n\nThe residence presently standing on Lot Seven owes me fourteen emeralds.",
+    "To be clear, I do not mean the owner.\n\nThe owner moved away three months ago and was, in all financial matters, exemplary.",
+    "The house itself owes me money.",
+    "I concealed fourteen emeralds somewhere inside the property during a period of temporary concern regarding taxation.",
+    "Upon returning, I was unable to locate them.\n\nThe house has therefore retained money belonging to me without consent.",
+    "I attempted peaceful recovery.\n\nI knocked.\nI threatened legal action.\nI read the relevant statute aloud through the window.",
+    "During the third reading, the front door closed by itself.\n\nHostile negotiation.",
+    "If you find this notice, locate the property, search its records, and recover the fourteen emeralds.",
+    "You may keep a reasonable collection fee.\n\nDo not allow the house to intimidate you.\n\nIt is property."
+   ]
+  },
+  "mebahelrpgrquest:questbook_the_house_that_owes_me_money#1": {
+   "title": "Final Demand to Premises",
+   "author": "Hadrin Pell, Collector",
+   "pages": [
+    "TO THE HOUSE CURRENTLY OCCUPYING LOT SEVEN:\n\nYou owe me fourteen emeralds.",
+    "I have knocked politely on six occasions. You have declined to answer on all six.",
+    "On my seventh visit, a shutter fell from the upper window and struck my hat.\n\nI consider this intimidation.",
+    "I have therefore authorized inspection of the foundations. The money was last seen entering the property in my possession.",
+    "If fourteen emeralds are discovered beneath the floor, seize them immediately.\n\nThis is not theft. This is accounting."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:questbook_the_man_who_buried_himself": {
+   "title": "The Man Who Buried Himself",
+   "author": "Calder Venn",
+   "pages": [
+    "I have begun keeping count of my own footsteps.\n\nThis is not something a sane man does.\n\nI am writing that down because I would like at least one honest sentence left if this journal is found.",
+    "Three nights ago I heard a pickaxe deeper in the mine.\n\nOne strike after mine.\n\nAlways one.\n\nI stopped. It stopped.\nI struck twice. It answered twice.",
+    "I thought another miner had found my tunnel.\n\nI called out.\n\nMy own voice answered from beyond the timber supports.\n\nNot an echo. It coughed before repeating my words.",
+    "This morning I found footprints in the dust.\n\nSame boots as mine. Same split heel. Same missing nail on the left sole.\n\nThey began where my tracks ended.",
+    "I sent the others back to the surface. Told them the supports were failing.\n\nCowardly lie.\n\nUseful lie.\n\nWhatever is following me has shown no interest in anyone else.",
+    "I started walling passages behind me.\n\nEvery morning one wall has a fresh mark on the other side.\n\nNot scratches.\n\nPickaxe blows.",
+    "Tonight I saw a hand beneath the last support.\n\nIt wore my wedding ring.\n\nMine is still on my finger.",
+    "There is an abandoned chamber deeper in the mineshaft. I am taking stone, food, and this journal there.\n\nI will build the wall with myself inside it.",
+    "If the thing is me, then burying myself buries it too.\n\nIf it is not me, perhaps it will stay outside trying to become a man no one can reach.",
+    "I am leaving the final pages in the chamber.\n\nDo not open the wall because you want an answer.\n\nSome answers become worse when they can walk."
+   ]
+  },
+  "mebahelrpgrquest:questbook_the_man_who_buried_himself#1": {
+   "title": "The Last Page",
+   "author": "Calder Venn",
+   "pages": [
+    "I stopped digging for an hour.\n\nThe other pick stopped too.\n\nI coughed. Something beyond the wall coughed a moment later.",
+    "There are two shadows when I hold one torch.\n\nI checked three times.\n\nOne belongs to me.\n\nThe other begins at my boots.",
+    "I have built the wall from the inside. Four stones thick where the old support split.\n\nIf the thing wants my face, it can have it in here where no one else has to see.",
+    "If someone finds this, leave the wall closed.\n\nIf curiosity wins, look carefully at what comes out.",
+    "If there are two of me, I was right.\n\nIf there is only one, I was worse.",
+    "Do not ask which one is Calder.\n\nI no longer know what answer would prove it."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:questbook_the_man_who_came_back_warm": {
+   "title": "The Man Who Came Back Warm",
+   "author": "Edric Hale",
+   "pages": [
+    "If this journal is in someone else's hands, I either found the road home or failed badly enough that my belongings became public property.",
+    "A ruined portal swallowed me when the floor beneath it collapsed. I woke in the Nether with half a frame behind me and no fire to wake it.",
+    "I followed a fortress until I found another broken portal beneath black stone stairs. That is where I first heard my wife call my name.",
+    "Her name was Lysa.\n\nShe died six years ago.\n\nI buried her myself.",
+    "The first time she called, I ran toward the sound.\n\nThe second time, I answered.\n\nThe third time, something laughed with my voice.",
+    "Three black skeletons watch the chamber. They never attack the portal. They only listen.",
+    "I have decided to leave the second portal dark. I will return the way I came, even if it takes weeks.",
+    "If you find my ruined portal, follow my route and read what I left in the fortress.\n\nI need someone else to know what learned our voices down there.",
+    "One last thing.\n\nThe Nether has baked the water from my skin and the sleep from my head.\n\nIf I ever come home warm, that is not me."
+   ]
+  },
+  "mebahelrpgrquest:questbook_the_man_who_came_back_warm#3": {
+   "title": "What Answered Me",
+   "author": "Edric Hale",
+   "pages": [
+    "I found the second portal beneath the black stairs. It is unlit, but every night I hear Lysa calling from the other side.",
+    "Lysa has been dead for six years.\n\nI know that sentence. I have written it twelve times.\n\nStill, when she says my name, I answer.",
+    "The thing knows her voice now. Yesterday it used mine too.\n\nIt asked me to light the portal so that 'we can all go home.'",
+    "I killed the three skeletons watching this chamber. They were not guards. They were listeners. Every one of them turned its skull toward the portal whenever she spoke.",
+    "I am going back through my own portal instead.\n\nIf I return and I am warm, do not trust me.\n\nNothing living stays warm this long down here.",
+    "If something reaches the Overworld wearing my face, kill it before it learns another voice."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:ash_court_chain_7_names_under_stone#1": {
+   "title": "Ledger of the First Bell",
+   "author": "Edran Vale, First Bell-Keeper",
+   "pages": [
+    "Winter, Year 0\n\nThe red fever has taken thirty-one villagers. Avar Khel offers medicine, armed sentries, and a ward against undead in return for one living prisoner each winter.",
+    "The prisoner must be delivered alive to the black-glass waystone beyond the north road. When the village bell rings at midnight, the Court's collectors will open the passage and take custody.",
+    "First payment: Harl Fen, condemned for murdering the miller's son.\nSecond: Mara Voss, raider captured at the east field.\nBoth deliveries were witnessed by Edran Vale and Tomas Reed.",
+    "Fifth payment: an unknown traveler found sleeping in the hayloft. No charge was proven. The council voted four to three that breaking the agreement would endanger forty-seven villagers.",
+    "Ninth payment: Selka, called a thief. Her pack contained bread and a child's wooden horse. Tomas objected. We rang the bell before he could warn her.",
+    "After the twelfth winter, we refused another delivery. Brakka's piglins agreed to hide the waystone in their bastion. We buried this ledger below the ancient city and told our children the ward was a blessing.",
+    "The agreement remains recorded in the Hall Beneath the Eye. Destroying the collectors does not end it. The village representative must renounce it before Avar Khel—or kill him and break the ward by force."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:ash_court_orr_veyl_ledger_without_chains#1": {
+   "title": "Names Orr Would Not Burn",
+   "author": "Orr Veyl",
+   "pages": [
+    "I kept copies because Avar Khel trusted chains more than memory. I told myself records were not judgment. I was wrong.",
+    "Selka stole bread because the child with her had not eaten. The council wrote thief. I wrote witness.",
+    "Mara Voss raided a road, then warned the mill before her own band returned. The council wrote raider. I wrote debt repaid.",
+    "Tomas Reed objected to the ninth delivery and vanished before winter ended. The council wrote transfer. I wrote silenced.",
+    "Finch had no known name. Pell Arden was exiled for refusing the vote. If these pages reach the bell, let their names outlive my service."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:blackthorn_chain_1_the_courier_who_never_returned#1": {
+   "title": "Courier's Route Ledger",
+   "author": "Tomas Wren",
+   "pages": [
+    "ROUTE LEDGER\n\nEastmere: grain invoice. Delivered.\nOakfield: two letters. Delivered.\nMiller's Crossing: tax notice. Refused. Left with wife.",
+    "Blackthorn House: dining order. Delivered.\n\nThirteen settings. One left unused.",
+    "Blackthorn House: dining order. Delivered.\n\nThirteen settings. One left unused.",
+    "Blackthorn House: dining order. Delivered.\n\nI have copied that entry every month for twenty-three years.",
+    "Asked the steward why a house with no guests requires thirteen settings.\n\nHe asked why a courier with no invitation required an answer.",
+    "Checked the county maps. Blackthorn House is not marked.\n\nAsked at three villages. One old woman knew the name. She said the house was abandoned before her grandmother was born.",
+    "Delivered there again today.",
+    "The steward asked whether I knew anyone who still travelled after dark.\n\nI said yes.",
+    "He asked for the traveler's name.\n\nI gave him the name from the village notice board.",
+    "I should not have said yes."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:blackthorn_chain_3_the_final_guest#0": {
+   "title": "The Master's Last Letter",
+   "author": "Alistair Blackthorn",
+   "pages": [
+    "Merrin continues to ask who the final guest is. I continue to tell him that a proper servant does not question the seating plan.",
+    "There may be no final guest.",
+    "I dislike writing that sentence.",
+    "The others think my suspicions have become absurd. Perhaps they are right. Perhaps there is no hidden claimant, no betrayer, no stranger waiting for the house to lower its guard.",
+    "But if I clear the place and I am wrong, I invite ruin.",
+    "If I keep it set and I am wrong, only Merrin suffers the inconvenience.",
+    "He is patient.",
+    "The servants have an old saying: Blackthorn House keeps what serves it well. Merrin calls that superstition. I have never corrected him.",
+    "If I am wrong, Merrin will wait forever.",
+    "I find that preferable to being surprised."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:false_hero_rusk_no_banner_behind_me#2": {
+   "title": "Black-Road Ledger",
+   "author": "Hadrik Black-Sash",
+   "pages": [
+    "WEST ROAD ACCOUNTS\n\nVale crossing - paid.\nMill bridge - paid.\nBluebell village - refused.\nNorth ford - route sold.",
+    "Rusk: scouted Bluebell approach. Two guards, one golem, weak eastern fence. Full share.",
+    "Rusk: led west-road party. Merchant cart taken intact. Driver survived. Half share after dispute.",
+    "Rusk: night watch at Harth farm. House burned during collection. Claims he did not light it. Captain notes that ash spends the same.",
+    "Rusk: unreliable since medal affair. Asked twice whether prisoners were necessary. Watch him.",
+    "Rusk: gone. If found, kill before he learns how much of this ledger has his name in it."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:mad_scientist_chain_3_the_assistants_last_notes#1": {
+   "title": "Sera's Field Notes",
+   "author": "Sera Marr",
+   "pages": [
+    "Trial 18: Vale's restorative closes necrotic wounds. The tissue does not stop afterward. He calls the extra growth acceptable variance.",
+    "Trial 21: he increased the redstone concentration again. The cadaver gained nearly a handspan in height before the restraints broke.",
+    "I was bitten moving the last subject. Vale says the restorative can save me. I want to believe him. I know too much not to be afraid.",
+    "Third dose. Hunger worse. Hands larger. He wants a fourth. I said no. If I still know my name tomorrow, I am leaving. My name is Sera Marr. My name is Sera Marr."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:most_important_cow_chain_2_the_cow_has_spoken#2": {
+   "title": "Tunnel Route Ledger",
+   "author": "North Road Detail",
+   "pages": [
+    "Tunnel Four remains dry. Keep digging beneath the north road. No banners above ground.",
+    "The bell-cow still reacts to tar and horn leather. Keep scouts downwind until the village road is cut.",
+    "Old report attached: Mara Porridge trained the animal during the border years. If the cow remains alive, assume the road is being watched.",
+    "Three scouts remain below until the tunnel reaches the well line. Do not surface unless the bell-cow is gone."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:sculk_mineshaft_investigation#1": {
+   "title": "Foreman's Last Survey",
+   "author": "Foreman Darek",
+   "pages": [
+    "Third shift. Blue veins have crossed the western rail and reached the old skeleton cage. They pulse whenever a cart moves.",
+    "The skeletons no longer carry bows. Each one grows a dark blue crown over the skull. They face every sound at once.",
+    "Breaking the growth only makes the cage spin faster. The supports around it are already hollow.",
+    "If anyone returns, place the powder beside the cage and bring the whole chamber down. Do not strike the spawner by hand."
+   ],
+   "found": true
+  },
+  "mebahelrpgrquest:undertaker_chain_1_graves_without_names#1": {
+   "title": "Burial Ledger of Qasra",
+   "author": "Amar",
+   "pages": [
+    "BURIAL LEDGER\n\nUnnamed traveler. Found west of the village. No possessions worth recording.",
+    "Two raiders. One red sash, one broken crossbow. Buried separately. They argued enough while alive.",
+    "Stray. No name. Arrow removed before burial. Professional courtesy.",
+    "Husk. No marks. Sand in the lungs, though that seems redundant.",
+    "Child of Qasra. Name damaged on the old token. Reburied beneath clean stone.",
+    "Three pillagers. No one claimed them. This is not the same as no one having loved them.",
+    "Amar.\nUndertaker.\nGrave prepared.\nOccupant absent.",
+    "I have delayed the final entry again.\n\nThis is becoming unprofessional."
+   ],
+   "found": true
+  }
+ }
+}

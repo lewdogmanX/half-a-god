@@ -96,6 +96,7 @@ public final class Story {
         }
         Reputation.countMebahelChoices(player);
         Secrets.checkClean(player, traits);
+        Letters.keepBooks(player);
     }
 
     private static void recordChronicle(RepData d, String trait) {

@@ -57,6 +57,8 @@ public final class HalfAGodTests {
         check(h, d.secrets.size() == 5, "secrets loaded: " + d.secrets.size());
         check(h, d.acts.size() >= 9, "acts loaded: " + d.acts.size());
         check(h, Dreams.byId("past_1") != null, "a dream by id");
+        check(h, StoryData.INSTANCE.table("letter_books").getAsJsonObject("books").has("mebahelrpgrquest:hag_the_first_letter"),
+                "the first letter is kept for the Codex");
         check(h, Dreams.actIndex(Set.of("hag_w1_the_skull_market_done")) == 2, "Act II is act 2");
         h.succeed();
     }

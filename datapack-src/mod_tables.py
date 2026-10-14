@@ -437,12 +437,42 @@ def story_index():
     return {"acts": acts}
 
 
+def _plain(v):
+    """a quest's text: a string, or Mebahel's {"translate": ..., "fallback": ...}"""
+    if isinstance(v, dict):
+        return v.get("fallback") or v.get("text") or ""
+    return v if isinstance(v, str) else ""
+
+
+def letter_books(out_pack):
+    """Every letter and found book in the story, for the Codex: a quest's own letter (the one a courier brings) by quest
+    id, and a book found during a quest (its log, ledger, last page) by quest id # stage."""
+    import glob
+    books = {}
+    for f in sorted(glob.glob(os.path.join(out_pack, "data", "mebahelrpgrquest", "quests", "**", "*.json"), recursive=True)):
+        q = json.load(open(f, encoding="utf-8"))
+        if not isinstance(q, dict):
+            continue
+        qid = "mebahelrpgrquest:" + os.path.basename(f)[:-5]
+
+        def one(b):
+            return {"title": _plain(b.get("title")), "author": _plain(b.get("author")) or "Unknown",
+                    "pages": [p for p in (_plain(x) for x in b.get("pages", [])) if p]}
+        if isinstance(q.get("quest_book"), dict):
+            books[qid] = one(q["quest_book"])
+        for gl in (q.get("goals") if isinstance(q.get("goals"), list) else []):
+            if isinstance(gl, dict) and isinstance(gl.get("quest_book"), dict):
+                books[f"{qid}#{gl.get('stage', 0)}"] = dict(one(gl["quest_book"]), found=True)
+    return books
+
+
 def write(out_pack, mod_root):
     _choice_chronicle()
     d = os.path.join(out_pack, "data/half_a_god/hag_mod")
     os.makedirs(d, exist_ok=True)
     def dump(name, obj, root=d):
         json.dump(obj, open(os.path.join(root, name), "w", encoding="utf-8"), indent=1, ensure_ascii=False)
+    dump("letter_books.json", {"books": letter_books(out_pack)})
     dump("reputation.json", REP)
     dump("choices.json", {"choices": CHOICES})
     dump("cinematics.json", {"moments": [{"trait": t, "title": ti, "subtitle": su, "color": c, "sound": so, "shake": sh, "strength": st}

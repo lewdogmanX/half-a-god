@@ -69,6 +69,69 @@ public final class Letters {
         }
     }
 
+    /**
+     * Every story letter a courier brings you, and every book you find on a quest, kept in the Codex to read again.
+     * Letters are kept when their quest starts (that's when the letter arrives); a found book once you're past the step
+     * where you find it. The first time this runs on an old save, it keeps everything you'd already had, oldest first.
+     */
+    public static void keepBooks(ServerPlayer player) {
+        JsonObject t = StoryData.INSTANCE.table("letter_books");
+        if (!t.has("books")) {
+            return;
+        }
+        JsonObject books = t.getAsJsonObject("books");
+        RepData d = Reputation.data(player);
+        java.util.Map<String, Integer> stageOf = new java.util.HashMap<>();
+        for (Object raw : Meb.rawQuests(player)) {
+            stageOf.put(Meb.questIdOf(raw), Meb.stageOf(raw));
+        }
+        List<Meb.Progress> got = new ArrayList<>(Meb.quests(player));
+        got.sort(java.util.Comparator.comparingLong(Meb.Progress::acceptedAt));
+        List<String> fresh = new ArrayList<>();
+        for (Meb.Progress p : got) {
+            String q = p.questId();
+            if (books.has(q) && !d.booksKept.contains(q) && !fresh.contains(q)) {
+                fresh.add(q);
+            }
+            for (String key : books.keySet()) {
+                if (!key.startsWith(q + "#") || d.booksKept.contains(key) || fresh.contains(key)) {
+                    continue;
+                }
+                int stage = Integer.parseInt(key.substring(key.indexOf('#') + 1));
+                boolean past = p.claimed() || stageOf.getOrDefault(q, 0) > stage;
+                if (past) {
+                    fresh.add(key);
+                }
+            }
+        }
+        if (fresh.isEmpty()) {
+            d.booksBackfilled = true;
+            return;
+        }
+        List<String> entries = new ArrayList<>();
+        for (String key : fresh) {
+            JsonObject b = books.getAsJsonObject(key);
+            JsonObject kept = new JsonObject();
+            kept.addProperty("title", b.get("title").getAsString());
+            kept.addProperty("author", b.get("author").getAsString());
+            kept.add("pages", b.getAsJsonArray("pages").deepCopy());
+            if (b.has("found")) {
+                kept.addProperty("found", true);
+            }
+            if (d.booksBackfilled) {
+                kept.addProperty("day", player.level().getDayTime() / 24000L + 1);   // (before this, nobody wrote the day down)
+            }
+            entries.add(kept.toString());
+            d.booksKept.add(key);
+        }
+        if (d.booksBackfilled) {
+            d.letters.addAll(entries);
+        } else {
+            d.letters.addAll(0, entries);   // the ones you had before the Codex kept them: oldest, so first
+            d.booksBackfilled = true;
+        }
+    }
+
     private static void give(ServerPlayer player, String title, String author, Iterable<JsonElement> pages) {
         List<Filterable<Component>> out = new ArrayList<>();
         for (JsonElement p : pages) {

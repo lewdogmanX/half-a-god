@@ -1764,7 +1764,7 @@ public final class StoryMapScreen extends Screen {
     }
 
     private static String letterKey(JsonObject l) {
-        return "letter:" + l.get("title").getAsString() + "@" + (l.has("day") ? l.get("day").getAsLong() : 0);
+        return "letter:" + l.get("title").getAsString() + "/" + l.get("author").getAsString() + "@" + (l.has("day") ? l.get("day").getAsLong() : 0);
     }
 
     private static String dreamKey(JsonObject d) {
@@ -1825,7 +1825,7 @@ public final class StoryMapScreen extends Screen {
                 for (int i = letters.size() - 1; i >= 0; i--) {
                     JsonObject l = letters.get(i).getAsJsonObject();
                     out.add(new Row("From " + l.get("author").getAsString().replace("Old ", ""), letters.size() + (letters.size() == 1 ? " letter" : " letters"),
-                            l.get("title").getAsString(), "day " + (l.has("day") ? l.get("day").getAsLong() : 0), 0, letterKey(l)));
+                            l.get("title").getAsString(), l.has("day") ? "day " + l.get("day").getAsLong() : "", 0, letterKey(l)));
                 }
             }
             case "dreams" -> {
@@ -2057,7 +2057,8 @@ public final class StoryMapScreen extends Screen {
             }
             case "letters" -> {
                 JsonObject l = letters.get(letters.size() - 1 - pick).getAsJsonObject();
-                ry = pageHeading(g, rx, rw, ry, "A LETTER  ·  DAY " + (l.has("day") ? l.get("day").getAsLong() : 0), l.get("title").getAsString());
+                String kicker = l.has("found") && l.get("found").getAsBoolean() ? "FOUND ON THE ROAD" : "A LETTER";
+                ry = pageHeading(g, rx, rw, ry, kicker + (l.has("day") ? "  ·  DAY " + l.get("day").getAsLong() : ""), l.get("title").getAsString());
                 ry = divider(g, rx, rw, ry) + 2;
                 for (JsonElement pg : l.getAsJsonArray("pages")) {
                     ry = paragraph(g, pg.getAsString(), rx, rw, ry) + 6;
