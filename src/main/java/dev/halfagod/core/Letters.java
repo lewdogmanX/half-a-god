@@ -104,6 +104,15 @@ public final class Letters {
                 }
             }
         }
+        // and anything from a quest you've finished (its "done" mark), even if Mebahel no longer lists the quest
+        java.util.Set<String> traits = Meb.traits(player);
+        for (String key : books.keySet()) {
+            String q = key.contains("#") ? key.substring(0, key.indexOf('#')) : key;
+            String path = q.substring(q.indexOf(':') + 1);
+            if (!d.booksKept.contains(key) && !fresh.contains(key) && traits.contains(path + "_done")) {
+                fresh.add(key);
+            }
+        }
         if (fresh.isEmpty()) {
             d.booksBackfilled = true;
             return;
