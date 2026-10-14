@@ -1,0 +1,1136 @@
+[22:54:48] [main/INFO]: ModLauncher running: args [--username, Tester, --version, neoforge-21.1.252, --gameDir, /home/runner/work/half-a-god/half-a-god/run, --assetsDir, /home/runner/work/half-a-god/half-a-god/mc/assets, --assetIndex, 17, --uuid, 3757eb323c215a02b53c1d05b43f42f1, --accessToken, ❄❄❄❄❄❄❄❄, --clientId, , --xuid, , --userType, , --versionType, release, --width, 1280, --height, 720, --fml.neoForgeVersion, 21.1.252, --fml.fmlVersion, 4.0.44, --fml.mcVersion, 1.21.1, --fml.neoFormVersion, 20240808.144430, --launchTarget, forgeclient]
+[22:54:48] [main/INFO]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.12.1+1-LTS
+[22:54:48] [main/INFO]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.12.1 by Eclipse Adoptium; OS Linux arch amd64 version 6.17.0-1022-azure
+[22:54:48] [main/INFO]: Loading ImmediateWindowProvider fmlearlywindow
+[22:54:48] [main/INFO]: Trying GL version 4.6
+[22:54:48] [main/INFO]: Trying GL version 4.5
+[22:54:50] [main/INFO]: Requested GL version 4.5 got version 4.5
+[22:54:50] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/sponge-mixin-0.15.2+mixin.0.8.7.jar%23107!/ Service=ModLauncher Env=CLIENT
+[22:54:50] [pool-2-thread-1/INFO]: GL info: llvmpipe (LLVM 20.1.2, 256 bits) GL version 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4, Mesa
+[22:54:50] [main/INFO]: Found mod file "client-1.21.1-20240808.144430-srg.jar" [locator: production client provider +net.neoforged:neoforge:21.1.252:client]
+[22:54:50] [main/INFO]: Found mod file "neoforge-21.1.252-universal.jar" [locator: PathBasedLocator[name=neoforge, paths=[/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/neoforge/21.1.252/neoforge-21.1.252-universal.jar]], reader: mod manifest]
+[22:54:50] [main/INFO]: Found library file "~nonexistent" [locator: org.sinytra.connector.locator.ConnectorEarlyLocatorBootstrap@384fc774]
+[22:54:50] [main/INFO]: Found mod file "forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar" [locator: {mods folder locator at /home/runner/work/half-a-god/half-a-god/run/mods}, reader: mod manifest]
+[22:54:50] [main/INFO]: Found mod file "geckolib-neoforge-1.21.1-4.9.3.jar" [locator: {mods folder locator at /home/runner/work/half-a-god/half-a-god/run/mods}, reader: mod manifest]
+[22:54:50] [main/INFO]: Found mod file "half-a-god-1.0.0.jar" [locator: {mods folder locator at /home/runner/work/half-a-god/half-a-god/run/mods}, reader: mod manifest]
+[22:54:50] [main/WARN]: Skipping jar. File mods/mebahelrpgrquest-3.5.0-fabric-1.21.1.jar is a Fabric mod and cannot be loaded
+[22:54:50] [main/INFO]: Found mod file "Ribbits-1.21.1-NeoForge-4.1.6.jar" [locator: {mods folder locator at /home/runner/work/half-a-god/half-a-god/run/mods}, reader: mod manifest]
+[22:54:50] [main/INFO]: Found mod file "YungsApi-1.21.1-NeoForge-5.1.9.jar" [locator: {mods folder locator at /home/runner/work/half-a-god/half-a-god/run/mods}, reader: mod manifest]
+[22:54:51] [main/WARN]: Attempted to select a dependency jar for JarJar which was passed in as source: library:net.fabricmc.loader. Using Mod File: /~nonexistent
+[22:54:51] [main/INFO]: Found 46 dependencies adding them to mods collection
+[22:54:51] [main/INFO]: Found mod file "fabric-transfer-api-v1-5.4.4+6244b11119.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found gamelibrary file "mixinextras-neoforge-0.5.3.jar" [parent: neoforge-21.1.252-universal.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-game-rule-api-v1-1.0.53+36d727be19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-api-base-0.4.42+d1308ded19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-renderer-api-v1-3.4.1+9125b6dc19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-renderer-registries-v1-3.2.69+df3654b319.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-api-lookup-api-v1-1.6.72+6244b11119.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-blockrenderlayer-v1-1.1.52+c290471319.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-item-api-v1-11.3.0+b24c12f719.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found library file "net.neoforged.neoforge-coremods-21.1.252.jar" [parent: neoforge-21.1.252-universal.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-model-loading-api-v1-2.1.0+6e8f52c719.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-block-api-v1-1.1.0+b0c22bb819.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-rendering-fluids-v1-3.1.6+ddc51b4719.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-resource-conditions-api-v1-4.3.0+5bdd099819.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-screen-handler-api-v1-1.3.91+8dbc56dd19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-resource-loader-v0-1.3.1+4ea8954419.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-rendering-v1-5.1.0+1a09bd5a19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-renderer-indigo-1.7.1+9125b6dc19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-item-group-api-v1-4.1.7+e324903319.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-convention-tags-v1-2.1.7+7f945d5b19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-gametest-api-v1-2.0.5+29f188ce19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-block-view-api-v2-1.0.11+e9036fd419.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-convention-tags-v2-2.12.0+75d3639619.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-command-api-v2-2.2.28+36d727be19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-data-attachment-api-v1-1.4.7+26d408aa19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-biome-api-v1-13.0.31+1e62d33c19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-entity-events-v1-1.8.0+e46a02ca19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-registry-sync-v0-5.3.2+f9aace1619.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-recipe-api-v1-5.0.16+59440bcc19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-loot-api-v2-3.0.15+a3ee712d19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-object-builder-api-v1-15.2.1+cc242efd19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-loot-api-v3-1.0.3+333dfad919.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-screen-api-v1-2.0.26+9991ca2f19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-rendering-data-attachment-v1-0.3.49+73761d2e19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-networking-api-v1-4.3.1+7e3d421f19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-sound-api-v1-1.0.23+10b84f8419.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-particles-v1-4.0.2+824f924c19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-message-api-v1-6.0.14+6a754fce19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-content-registries-v0-8.0.19+5e0d320019.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-transitive-access-wideners-v1-6.2.0+6c854b6f19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-lifecycle-events-v1-2.6.0+e40d8add19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-tag-api-v1-1.3.0+3e2bcb4b19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-data-generation-api-v1-20.3.0+3e2bcb4b19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-events-interaction-v0-0.7.14+057f5afd19.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-key-binding-api-v1-1.0.47+62cc7ce119.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Found mod file "fabric-client-tags-api-v1-1.2.0+5adff2d719.jar" [parent: forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar, locator: jarinjar, reader: mod manifest]
+[22:54:51] [main/INFO]: Dependency resolution found 1 candidates to load
+[22:54:55] [main/INFO]: Found mod file "mebahelrpgrquest-3.5.0-fabric-1.21.1_mapped_moj_1.21.1.jar" [locator: org.sinytra.connector.locator.ConnectorLocator@4362d7df]
+[22:54:55] [main/INFO]: Found 2 dependencies adding them to mods collection
+[22:54:55] [main/INFO]: Found mod file "org.sinytra.connector-2.0.0-beta.17+1.21.1-mod.jar" [parent: , locator: org.sinytra.connector.locator.ConnectorLocator@4362d7df, reader: mod manifest]
+[22:54:55] [main/INFO]: Found gamelibrary file "runtime-1.0.0+1.21.1.jar" [parent: , locator: org.sinytra.connector.locator.ConnectorLocator@4362d7df, reader: mod manifest]
+[22:54:55] [main/INFO]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Forgified Fabric API 0.116.15+2.3.5+1.21.1 (fabric_api)
+		Forgified Fabric API Base 0.4.42+d1308ded19 (fabric_api_base)
+		Forgified Fabric API Lookup API (v1) 1.6.72+6244b11119 (fabric_api_lookup_api_v1)
+		Forgified Fabric Biome API (v1) 13.0.31+1e62d33c19 (fabric_biome_api_v1)
+		Forgified Fabric Block API (v1) 1.1.0+b0c22bb819 (fabric_block_api_v1)
+		Forgified Fabric BlockRenderLayer Registration (v1) 1.1.52+c290471319 (fabric_blockrenderlayer_v1)
+		Forgified Fabric BlockView API (v2) 1.0.11+e9036fd419 (fabric_block_view_api_v2)
+		Forgified Fabric Client Tags 1.2.0+5adff2d719 (fabric_client_tags_api_v1)
+		Forgified Fabric Command API (v2) 2.2.28+36d727be19 (fabric_command_api_v2)
+		Forgified Fabric Content Registries (v0) 8.0.19+5e0d320019 (fabric_content_registries_v0)
+		Forgified Fabric Convention Tags 2.1.7+7f945d5b19 (fabric_convention_tags_v1)
+		Forgified Fabric Convention Tags (v2) 2.12.0+75d3639619 (fabric_convention_tags_v2)
+		Forgified Fabric Data Attachment API (v1) 1.4.7+26d408aa19 (fabric_data_attachment_api_v1)
+		Forgified Fabric Data Generation API (v1) 20.3.0+3e2bcb4b19 (fabric_data_generation_api_v1)
+		Forgified Fabric Entity Events (v1) 1.8.0+e46a02ca19 (fabric_entity_events_v1)
+		Forgified Fabric Events Interaction (v0) 0.7.14+057f5afd19 (fabric_events_interaction_v0)
+		Forgified Fabric Game Rule API (v1) 1.0.53+36d727be19 (fabric_game_rule_api_v1)
+		Forgified Fabric Game Test API (v1) 2.0.5+29f188ce19 (fabric_gametest_api_v1)
+		Forgified Fabric Item API (v1) 11.3.0+b24c12f719 (fabric_item_api_v1)
+		Forgified Fabric Item Group API (v1) 4.1.7+e324903319 (fabric_item_group_api_v1)
+		Forgified Fabric Key Binding API (v1) 1.0.47+62cc7ce119 (fabric_key_binding_api_v1)
+		Forgified Fabric Lifecycle Events (v1) 2.6.0+e40d8add19 (fabric_lifecycle_events_v1)
+		Forgified Fabric Loot API (v2) 3.0.15+a3ee712d19 (fabric_loot_api_v2)
+		Forgified Fabric Loot API (v3) 1.0.3+333dfad919 (fabric_loot_api_v3)
+		Forgified Fabric Message API (v1) 6.0.14+6a754fce19 (fabric_message_api_v1)
+		Forgified Fabric Model Loading API (v1) 2.1.0+6e8f52c719 (fabric_model_loading_api_v1)
+		Forgified Fabric Networking API (v1) 4.3.1+7e3d421f19 (fabric_networking_api_v1)
+		Forgified Fabric Object Builder API (v1) 15.2.1+cc242efd19 (fabric_object_builder_api_v1)
+		Forgified Fabric Particles (v1) 4.0.2+824f924c19 (fabric_particles_v1)
+		Forgified Fabric Recipe API (v1) 5.0.16+59440bcc19 (fabric_recipe_api_v1)
+		Forgified Fabric Registry Sync (v0) 5.3.2+f9aace1619 (fabric_registry_sync_v0)
+		Forgified Fabric Renderer - Indigo 1.7.1+9125b6dc19 (fabric_renderer_indigo)
+		Forgified Fabric Renderer API (v1) 3.4.1+9125b6dc19 (fabric_renderer_api_v1)
+		Forgified Fabric Renderer Registries (v1) 3.2.69+df3654b319 (fabric_renderer_registries_v1)
+		Forgified Fabric Rendering (v1) 5.1.0+1a09bd5a19 (fabric_rendering_v1)
+		Forgified Fabric Rendering Data Attachment (v1) 0.3.49+73761d2e19 (fabric_rendering_data_attachment_v1)
+		Forgified Fabric Rendering Fluids (v1) 3.1.6+ddc51b4719 (fabric_rendering_fluids_v1)
+		Forgified Fabric Resource Conditions API (v1) 4.3.0+5bdd099819 (fabric_resource_conditions_api_v1)
+		Forgified Fabric Resource Loader (v0) 1.3.1+4ea8954419 (fabric_resource_loader_v0)
+		Forgified Fabric Screen API (v1) 2.0.26+9991ca2f19 (fabric_screen_api_v1)
+		Forgified Fabric Screen Handler API (v1) 1.3.91+8dbc56dd19 (fabric_screen_handler_api_v1)
+		Forgified Fabric Sound API (v1) 1.0.23+10b84f8419 (fabric_sound_api_v1)
+		Forgified Fabric Tag API (v1) 1.3.0+3e2bcb4b19 (fabric_tag_api_v1)
+		Forgified Fabric Transfer API (v1) 5.4.4+6244b11119 (fabric_transfer_api_v1)
+		Forgified Fabric Transitive Access Wideners (v1) 6.2.0+6c854b6f19 (fabric_transitive_access_wideners_v1)
+		GeckoLib 4 4.9.3 (geckolib)
+		Half a God 1.0.0 (half_a_god)
+		Mebahel's RPG: Villager Quests & Companions 3.5.0-fabric-1.21.1 (mebahelrpgrquest)
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.252 (neoforge)
+		Ribbits 1.21.1-NeoForge-4.1.6 (ribbits)
+		Sinytra Connector 2.0.0-beta.17+1.21.1 (connector)
+		YUNG's API 1.21.1-NeoForge-5.1.9 (yungsapi)
+[22:54:56] [main/INFO]: Successfully made module authlib transformable
+[22:54:56] [main/INFO]: Successfully made module brigadier transformable
+[22:54:56] [main/INFO]: Compatibility level set to JAVA_17
+[22:54:56] [main/INFO]: Compatibility level set to JAVA_21
+[22:54:56] [main/INFO]: Launching target 'forgeclient' with arguments [--version, neoforge-21.1.252, --gameDir, /home/runner/work/half-a-god/half-a-god/run, --assetsDir, /home/runner/work/half-a-god/half-a-god/mc/assets, --uuid, 3757eb323c215a02b53c1d05b43f42f1, --username, Tester, --assetIndex, 17, --accessToken, ❄❄❄❄❄❄❄❄, --clientId, , --xuid, , --userType, , --versionType, release, --width, 1280, --height, 720]
+[22:54:56] [main/WARN]: Reference map 'geckolib.refmap.json' for geckolib.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:54:56] [main/WARN]: Reference map 'yungsapi.refmap.json' for yungsapi.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:54:56] [main/WARN]: Reference map 'ribbits.refmap.json' for ribbits.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:54:56] [main/WARN]: Reference map 'ribbits.refmap.json' for ribbits_neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:54:56] [main/WARN]: Reference map '' for adapter.init.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:54:56] [main/WARN]: Error loading class: com/benji/netherman/QuotaManager (java.lang.ClassNotFoundException: com.benji.netherman.QuotaManager)
+[22:54:56] [main/WARN]: Error loading class: folk/sisby/surveyor/client/SurveyorClientEvents$Invoke (java.lang.ClassNotFoundException: folk.sisby.surveyor.client.SurveyorClientEvents$Invoke)
+[22:54:57] [main/WARN]: Error loading class: com/leon/saintsdragons/server/entity/dragons/ignivorus/Ignivorus (java.lang.ClassNotFoundException: com.leon.saintsdragons.server.entity.dragons.ignivorus.Ignivorus)
+[22:54:57] [main/WARN]: Error loading class: com/leon/saintsdragons/server/entity/dragons/raevyx/Raevyx (java.lang.ClassNotFoundException: com.leon.saintsdragons.server.entity.dragons.raevyx.Raevyx)
+[22:54:57] [main/WARN]: Error loading class: com/leon/saintsdragons/server/entity/dragons/atroxiia/Atroxiia (java.lang.ClassNotFoundException: com.leon.saintsdragons.server.entity.dragons.atroxiia.Atroxiia)
+[22:54:57] [main/WARN]: Error loading class: com/leon/saintsdragons/server/entity/dragons/varasuchus/Varasuchus (java.lang.ClassNotFoundException: com.leon.saintsdragons.server.entity.dragons.varasuchus.Varasuchus)
+[22:54:57] [main/WARN]: Error loading class: com/leon/saintsdragons/server/entity/dragons/volitans/Volitans (java.lang.ClassNotFoundException: com.leon.saintsdragons.server.entity.dragons.volitans.Volitans)
+[22:54:57] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+[14Oct2026 22:54:59.399] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 229 Datafixer optimizations took 399 milliseconds
+[14Oct2026 22:55:05.628] [main/WARN] [net.minecraft.client.main.Main/]: Unrecognized user type: 
+[14Oct2026 22:55:05.777] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-srg.jar%23184!/assets/.mcassetsroot' uses unexpected schema
+[14Oct2026 22:55:05.777] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-srg.jar%23184!/data/.mcassetsroot' uses unexpected schema
+[14Oct2026 22:55:05.813] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[14Oct2026 22:55:05.821] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Tester
+[14Oct2026 22:55:05.956] [Render thread/INFO] [mebahelrpgrquest/]: [Mebahel's RPG - Villager Quests] Registering sounds.
+[14Oct2026 22:55:05.957] [Render thread/INFO] [mebahelrpgrquest/]: [Mebahel's RPG - Villager Quests] Registering screen handlers.
+[14Oct2026 22:55:06.084] [Render thread/INFO] [mebahelrpgrquest/]: Mebahel RPG Quest initialized.
+[14Oct2026 22:55:06.403] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.3+5
+[14Oct2026 22:55:06.792] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.252, for MC 1.21.1
+[14Oct2026 22:55:06.821] [modloading-worker-0/INFO] [net.fabricmc.fabric.impl.client.indigo.Indigo/]: [Indigo] Registering Indigo renderer!
+[14Oct2026 22:55:07.222] [Ribbits Supporter JSON Thread/INFO] [ribbits/]: Successfully loaded supporters.json file!
+[14Oct2026 22:55:08.438] [Render thread/ERROR] [com.mojang.text2speech.Narrator/]: Error while loading the narrator
+com.mojang.text2speech.Narrator$InitializeException: Failed to load library flite
+	at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:69) ~[text2speech-1.17.9.jar%23138!/:?]
+	at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar%23138!/:?]
+	at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar%23138!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:21) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:609) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:214) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2398!/:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+Caused by: java.lang.UnsatisfiedLinkError: Unable to load library 'flite':
+libflite.so: cannot open shared object file: No such file or directory
+libflite.so: cannot open shared object file: No such file or directory
+Native library (linux-x86-64/libflite.so) not found in resource path (/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/fancymodloader/earlydisplay/4.0.44/earlydisplay-4.0.44.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/fancymodloader/loader/4.0.44/loader-4.0.44.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/accesstransformers/at-modlauncher/10.0.1/at-modlauncher-10.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/accesstransformers/10.0.1/accesstransformers-10.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/bus/8.0.5/bus-8.0.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/coremods/7.0.3/coremods-7.0.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/modlauncher/11.0.5/modlauncher-11.0.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/mergetool/2.0.0/mergetool-2.0.0-api.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/electronwill/night-config/toml/3.8.3/toml-3.8.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/electronwill/night-config/core/3.8.3/core-3.8.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarSelector/0.4.1/JarJarSelector-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarMetadata/0.4.1/JarJarMetadata-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/maven/maven-artifact/3.8.5/maven-artifact-3.8.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/jodah/typetools/0.6.3/typetools-0.6.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecrell/terminalconsoleappender/1.3.0/terminalconsoleappender-1.3.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/sponge-mixin-0.15.2+mixin.0.8.7.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/bootstraplauncher/2.0.2/bootstraplauncher-2.0.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/securejarhandler/3.0.8/securejarhandler-3.0.8.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-commons/9.10.1/asm-commons-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-util/9.10.1/asm-util-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-analysis/9.10.1/asm-analysis-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-tree/9.10.1/asm-tree-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm/9.10.1/asm-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarFileSystems/0.4.1/JarJarFileSystems-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/antlr/antlr4-runtime/4.13.1/antlr4-runtime-4.13.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/logging/1.2.7/logging-1.2.7.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.22.1/log4j-slf4j2-impl-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jline/jline-reader/3.20.0/jline-reader-3.20.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jline/jline-terminal/3.20.0/jline-terminal-3.20.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecraftforge/srgutils/0.4.15/srgutils-0.4.15.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/codehaus/plexus/plexus-utils/3.3.0/plexus-utils-3.3.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/machinezoo/noexception/noexception/1.7.1/noexception-1.7.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/ibm/icu/icu4j/73.2/icu4j-73.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/authlib/6.0.54/authlib-6.0.54.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/patchy/2.2.10/patchy-2.2.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/text2speech/1.17.9/text2speech-1.17.9.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-handler/4.1.97.Final/netty-handler-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-classes-epoll/4.1.97.Final/netty-transport-classes-epoll-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/it/unimi/dsi/fastutil/8.5.12/fastutil-8.5.12.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/commons/commons-compress/1.26.0/commons-compress-1.26.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jcraft/jorbis/0.0.17/jorbis-0.0.17.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/home/runner/work/half-a-god/half-a-god/mc/versions/neoforge-21.1.252/neoforge-21.1.252.jar)
+	at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:325) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+	at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+	at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+	at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar%23138!/:?]
+	... 20 more
+	Suppressed: java.lang.UnsatisfiedLinkError: libflite.so: cannot open shared object file: No such file or directory
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.Native.open(Native Method) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:213) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar%23138!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:21) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:609) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:214) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2398!/:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+	Suppressed: java.lang.UnsatisfiedLinkError: libflite.so: cannot open shared object file: No such file or directory
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.Native.open(Native Method) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:226) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar%23138!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:21) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:609) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:214) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2398!/:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+	Suppressed: java.io.IOException: Native library (linux-x86-64/libflite.so) not found in resource path (/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/fancymodloader/earlydisplay/4.0.44/earlydisplay-4.0.44.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/fancymodloader/loader/4.0.44/loader-4.0.44.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/accesstransformers/at-modlauncher/10.0.1/at-modlauncher-10.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/accesstransformers/10.0.1/accesstransformers-10.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/bus/8.0.5/bus-8.0.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/coremods/7.0.3/coremods-7.0.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/modlauncher/11.0.5/modlauncher-11.0.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/mergetool/2.0.0/mergetool-2.0.0-api.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/electronwill/night-config/toml/3.8.3/toml-3.8.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/electronwill/night-config/core/3.8.3/core-3.8.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarSelector/0.4.1/JarJarSelector-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarMetadata/0.4.1/JarJarMetadata-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/maven/maven-artifact/3.8.5/maven-artifact-3.8.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/jodah/typetools/0.6.3/typetools-0.6.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecrell/terminalconsoleappender/1.3.0/terminalconsoleappender-1.3.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/sponge-mixin-0.15.2+mixin.0.8.7.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/bootstraplauncher/2.0.2/bootstraplauncher-2.0.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/securejarhandler/3.0.8/securejarhandler-3.0.8.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-commons/9.10.1/asm-commons-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-util/9.10.1/asm-util-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-analysis/9.10.1/asm-analysis-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-tree/9.10.1/asm-tree-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm/9.10.1/asm-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarFileSystems/0.4.1/JarJarFileSystems-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/antlr/antlr4-runtime/4.13.1/antlr4-runtime-4.13.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/logging/1.2.7/logging-1.2.7.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.22.1/log4j-slf4j2-impl-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jline/jline-reader/3.20.0/jline-reader-3.20.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jline/jline-terminal/3.20.0/jline-terminal-3.20.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecraftforge/srgutils/0.4.15/srgutils-0.4.15.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/codehaus/plexus/plexus-utils/3.3.0/plexus-utils-3.3.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/machinezoo/noexception/noexception/1.7.1/noexception-1.7.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/ibm/icu/icu4j/73.2/icu4j-73.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/authlib/6.0.54/authlib-6.0.54.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/patchy/2.2.10/patchy-2.2.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/text2speech/1.17.9/text2speech-1.17.9.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-handler/4.1.97.Final/netty-handler-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-classes-epoll/4.1.97.Final/netty-transport-classes-epoll-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/it/unimi/dsi/fastutil/8.5.12/fastutil-8.5.12.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/commons/commons-compress/1.26.0/commons-compress-1.26.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jcraft/jorbis/0.0.17/jorbis-0.0.17.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/home/runner/work/half-a-god/half-a-god/mc/versions/neoforge-21.1.252/neoforge-21.1.252.jar)
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.Native.extractFromResourcePath(Native.java:1141) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:297) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar%23138!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:21) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:609) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:214) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2398!/:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+[14Oct2026 22:55:08.489] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, fabric, mod_resources, mod/fabric_transfer_api_v1, mod/fabric_renderer_api_v1, mod/geckolib, mod/half_a_god, mod/fabric_item_api_v1, mod/fabric_model_loading_api_v1, mod/fabric_rendering_fluids_v1, mod/fabric_screen_handler_api_v1, mod/fabric_resource_loader_v0, mod/fabric_rendering_v1, mod/fabric_renderer_indigo, mod/fabric_convention_tags_v1, mod/neoforge, mod/fabric_block_view_api_v2, mod/fabric_convention_tags_v2, mod/fabric_command_api_v2, mod/yungsapi, mod/fabric_data_attachment_api_v1, mod/fabric_screen_api_v1, mod/mebahelrpgrquest, mod/fabric_particles_v1, mod/connector, mod/fabric_api,forgified_fabric_api, mod/fabric_content_registries_v0, mod/fabric_transitive_access_wideners_v1, mod/fabric_game_rule_api_v1, mod/fabric_api_base, mod/fabric_renderer_registries_v1, mod/fabric_api_lookup_api_v1, mod/fabric_blockrenderlayer_v1, mod/fabric_block_api_v1, mod/fabric_resource_conditions_api_v1, mod/ribbits, mod/fabric_item_group_api_v1, mod/fabric_gametest_api_v1, mod/fabric_biome_api_v1, mod/fabric_entity_events_v1, mod/fabric_registry_sync_v0, mod/fabric_recipe_api_v1, mod/fabric_loot_api_v2, mod/fabric_object_builder_api_v1, mod/fabric_loot_api_v3, mod/fabric_rendering_data_attachment_v1, mod/fabric_networking_api_v1, mod/fabric_sound_api_v1, mod/fabric_message_api_v1, mod/fabric_lifecycle_events_v1, mod/fabric_tag_api_v1, mod/fabric_data_generation_api_v1, mod/fabric_events_interaction_v0, mod/fabric_key_binding_api_v1, mod/fabric_client_tags_api_v1, mod/half_a_god:skin
+[14Oct2026 22:55:08.787] [Worker-Main-1/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.05.hex, loading
+[14Oct2026 22:55:09.071] [Render thread/INFO] [ribbits/]: Registering Ribbit umbrella types...
+[14Oct2026 22:55:09.071] [Render thread/INFO] [ribbits/]: Registering Ribbit professions...
+[14Oct2026 22:55:09.071] [Render thread/INFO] [ribbits/]: Registering Ribbit instruments...
+[14Oct2026 22:55:09.308] [Worker-Main-1/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_jp_patch-15.1.05.hex, loading
+[14Oct2026 22:55:11.409] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[14Oct2026 22:55:11.412] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[14Oct2026 22:55:11.434] [Render thread/ERROR] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Error starting SoundSystem. Turning off sounds & music
+java.lang.IllegalStateException: Failed to open OpenAL device
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.audio.Library.openDeviceOrFallback(Library.java:302) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.audio.Library.init(Library.java:154) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundEngine.loadLibrary(SoundEngine.java:107) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundEngine.reload(SoundEngine.java:99) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundManager.apply(SoundManager.java:128) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundManager.apply(SoundManager.java:42) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:19) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:69) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:148) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:23) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:122) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:111) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.runTick(Minecraft.java:1155) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:807) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2398!/:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+[14Oct2026 22:55:11.652] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x4 minecraft:textures/atlas/blocks.png-atlas
+[14Oct2026 22:55:11.679] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[14Oct2026 22:55:11.681] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[14Oct2026 22:55:11.683] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[14Oct2026 22:55:11.685] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[14Oct2026 22:55:11.692] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[14Oct2026 22:55:11.693] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[14Oct2026 22:55:11.694] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[14Oct2026 22:55:11.696] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[14Oct2026 22:55:11.788] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/particles.png-atlas
+[14Oct2026 22:55:11.791] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[14Oct2026 22:55:11.792] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[14Oct2026 22:55:11.793] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[14Oct2026 22:55:11.794] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 1024x512x0 minecraft:textures/atlas/gui.png-atlas
+[14Oct2026 22:55:11.872] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[14Oct2026 22:55:12.056] [Render thread/INFO] [net.neoforged.neoforge.client.entity.animation.json.AnimationLoader/]: Loaded 0 entity animations
+[14Oct2026 22:55:14.651] [Render thread/INFO] [dev.halfagod.HalfAGod/]: SHOT opening the test world
+[14Oct2026 22:55:15.441] [Render thread/INFO] [net.minecraft.server.MinecraftServer/]: Found new data pack fabric, loading it automatically
+[14Oct2026 22:55:15.441] [Render thread/INFO] [net.minecraft.server.MinecraftServer/]: Found new data pack mod/yungsapi:locate_replacer, loading it automatically
+[14Oct2026 22:55:16.881] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 1302 recipes
+[14Oct2026 22:55:17.040] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 1407 advancements
+[14Oct2026 22:55:17.049] [Render thread/INFO] [dev.halfagod.HalfAGod/]: Half a God story tables: 10 choices, 22 cinematic moments, 309 story quests, 30 of Mebahel's questlines.
+[14Oct2026 22:55:17.059] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_please_return_the_ship uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[14Oct2026 22:55:17.060] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_please_return_the_ship uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[14Oct2026 22:55:17.060] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_captains_share uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[14Oct2026 22:55:17.060] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_captains_share uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[14Oct2026 22:55:17.061] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_fourth_member uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[14Oct2026 22:55:17.061] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_fourth_member uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[14Oct2026 22:55:17.061] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_fourth_member uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[14Oct2026 22:55:17.061] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_fourth_member uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[14Oct2026 22:55:17.073] [Render thread/INFO] [mebahelrpgrquest/]: Loaded 59 quest book(s) and 26 quest-book loot pool(s).
+[14Oct2026 22:55:17.078] [Render thread/INFO] [mebahelrpgrquest/]: Loaded 16 companion dialogue profile(s).
+[14Oct2026 22:55:17.087] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:blaze_mineshaft_threat
+[14Oct2026 22:55:17.088] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:captains_share_return_the_shares
+[14Oct2026 22:55:17.089] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a10_burning_door
+[14Oct2026 22:55:17.089] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a11_chains_at_the_fortress
+[14Oct2026 22:55:17.092] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a12_brother_vael
+[14Oct2026 22:55:17.092] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a12k_the_stewards_guard
+[14Oct2026 22:55:17.093] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a12s_vaels_map
+[14Oct2026 22:55:17.094] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a13_tears_for_a_ward
+[14Oct2026 22:55:17.095] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a14_night_of_the_faithful
+[14Oct2026 22:55:17.096] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a15_one_of_seven
+[14Oct2026 22:55:17.097] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a2_what_was_left
+[14Oct2026 22:55:17.097] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a3_roof_and_hearth
+[14Oct2026 22:55:17.099] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a4_refugee_road
+[14Oct2026 22:55:17.099] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a5_beneath_the_pipes
+[14Oct2026 22:55:17.100] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a6_believers_house
+[14Oct2026 22:55:17.100] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a7_the_bastille
+[14Oct2026 22:55:17.101] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a8_ravagers_horn
+[14Oct2026 22:55:17.102] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a9_open_the_cells
+[14Oct2026 22:55:17.102] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a9i_the_invokers_fort
+[14Oct2026 22:55:17.103] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_b1_bow_at_my_feet
+[14Oct2026 22:55:17.103] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_b2_tithe_of_gold
+[14Oct2026 22:55:17.103] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_b3_the_last_preacher
+[14Oct2026 22:55:17.104] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br2_the_supply_line
+[14Oct2026 22:55:17.104] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br3_the_bookkeeper
+[14Oct2026 22:55:17.105] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br4_medicine_for_the_valley
+[14Oct2026 22:55:17.106] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br5_don_vasco_answers
+[14Oct2026 22:55:17.106] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br6_the_valley_breathes
+[14Oct2026 22:55:17.107] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz10_the_honey_crown
+[14Oct2026 22:55:17.107] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz2_pearls_and_patience
+[14Oct2026 22:55:17.108] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz3_into_the_comb
+[14Oct2026 22:55:17.108] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz4_clogged_channels
+[14Oct2026 22:55:17.109] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz5_the_cell_maze
+[14Oct2026 22:55:17.109] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz6_the_hive_temple
+[14Oct2026 22:55:17.109] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz7_roots_that_bite
+[14Oct2026 22:55:17.109] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz8_audience_with_the_queen
+[14Oct2026 22:55:17.110] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz9_the_queens_desire
+[14Oct2026 22:55:17.110] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_c1_nets_and_knives
+[14Oct2026 22:55:17.111] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_c2_the_tidecaller
+[14Oct2026 22:55:17.112] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_c3_the_black_ship
+[14Oct2026 22:55:17.112] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_c4_terror_of_the_depths
+[14Oct2026 22:55:17.113] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_bones
+[14Oct2026 22:55:17.113] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_powder
+[14Oct2026 22:55:17.113] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_rivals
+[14Oct2026 22:55:17.114] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_the_bell
+[14Oct2026 22:55:17.114] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_the_farmers_share
+[14Oct2026 22:55:17.114] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_the_tithe
+[14Oct2026 22:55:17.115] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_d1_the_buried_well
+[14Oct2026 22:55:17.116] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_d2_the_nest_road
+[14Oct2026 22:55:17.116] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_d3_the_beast_below
+[14Oct2026 22:55:17.117] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_clear_the_road
+[14Oct2026 22:55:17.117] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_creeper_watch
+[14Oct2026 22:55:17.117] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_feed_the_village
+[14Oct2026 22:55:17.118] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_mend_the_fences
+[14Oct2026 22:55:17.118] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_night_watch
+[14Oct2026 22:55:17.119] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_raider_patrol
+[14Oct2026 22:55:17.119] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_spider_season
+[14Oct2026 22:55:17.119] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e0_the_road_to_the_end
+[14Oct2026 22:55:17.120] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e3_the_road_underground
+[14Oct2026 22:55:17.121] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e4_the_warden_journal
+[14Oct2026 22:55:17.121] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e5_free_the_end
+[14Oct2026 22:55:17.121] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e6_edge_of_the_world
+[14Oct2026 22:55:17.122] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e7_the_nether_is_singing
+[14Oct2026 22:55:17.122] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea1_the_old_eye
+[14Oct2026 22:55:17.123] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea2_the_rogue_eye
+[14Oct2026 22:55:17.123] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea3_the_cold_eye
+[14Oct2026 22:55:17.123] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea4_the_black_eye
+[14Oct2026 22:55:17.123] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea5_the_lost_eye
+[14Oct2026 22:55:17.124] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea6_the_corrupted_eye
+[14Oct2026 22:55:17.124] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea7_the_guardian_eye
+[14Oct2026 22:55:17.125] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb2_the_nether_eye
+[14Oct2026 22:55:17.125] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb3_the_cursed_eye
+[14Oct2026 22:55:17.125] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb4_the_wither_eye
+[14Oct2026 22:55:17.126] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb5_the_witch_eye
+[14Oct2026 22:55:17.126] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb6_the_undead_eye
+[14Oct2026 22:55:17.126] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_et1_whispers_of_a_new_god
+[14Oct2026 22:55:17.127] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_et2_the_pretender
+[14Oct2026 22:55:17.128] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_et3_the_last_faithful
+[14Oct2026 22:55:17.128] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_et4_morning
+[14Oct2026 22:55:17.128] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_f1_the_last_road
+[14Oct2026 22:55:17.129] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_f2_dragon_slayer
+[14Oct2026 22:55:17.129] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_f3_unbound
+[14Oct2026 22:55:17.130] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_g2_ashford_rebuilt
+[14Oct2026 22:55:17.130] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_go1_burn_it_down
+[14Oct2026 22:55:17.131] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_go2_blackwater_sends_regards
+[14Oct2026 22:55:17.132] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_go3_testimony
+[14Oct2026 22:55:17.132] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt10_the_sorcerers_books
+[14Oct2026 22:55:17.132] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt11_crystal
+[14Oct2026 22:55:17.133] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt11b_purity
+[14Oct2026 22:55:17.134] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt12_don_vasco
+[14Oct2026 22:55:17.135] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt13p_the_big_shipment
+[14Oct2026 22:55:17.135] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt13w_remnants
+[14Oct2026 22:55:17.136] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt14_king_of_the_valley
+[14Oct2026 22:55:17.137] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt1b_the_recruiters_terms
+[14Oct2026 22:55:17.137] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt2_seeds_of_the_trade
+[14Oct2026 22:55:17.138] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt3_first_customers
+[14Oct2026 22:55:17.138] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt4_the_hash_market
+[14Oct2026 22:55:17.139] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt5_blackwater_wants_a_word
+[14Oct2026 22:55:17.139] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt6_the_coca_fields
+[14Oct2026 22:55:17.139] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt7_white_powder_money
+[14Oct2026 22:55:17.140] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt8_a_customer_goes_under
+[14Oct2026 22:55:17.141] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt9_turf_war
+[14Oct2026 22:55:17.142] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h10_fireproof
+[14Oct2026 22:55:17.142] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h2_hostile_paradise
+[14Oct2026 22:55:17.142] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h3_do_you_believe_in_magic
+[14Oct2026 22:55:17.143] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h4_cockatrice_nights
+[14Oct2026 22:55:17.143] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h5_the_bronze_halls
+[14Oct2026 22:55:17.143] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h6_like_a_bossaru
+[14Oct2026 22:55:17.144] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h7_medals_of_the_silver_court
+[14Oct2026 22:55:17.144] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h8_dethroned
+[14Oct2026 22:55:17.144] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h9_extinguished
+[14Oct2026 22:55:17.145] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ha1_the_first_command
+[14Oct2026 22:55:17.145] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ha2_ashford_must_kneel
+[14Oct2026 22:55:17.145] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ha3_haldens_last_stand
+[14Oct2026 22:55:17.146] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ha4_the_hand_of_azazel
+[14Oct2026 22:55:17.146] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i2_fire_in_the_tower
+[14Oct2026 22:55:17.146] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i3_the_evoker_fort
+[14Oct2026 22:55:17.147] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i4_the_scroll_forge
+[14Oct2026 22:55:17.147] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i6_the_mountain_tower
+[14Oct2026 22:55:17.147] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i7_echo_of_tyros
+[14Oct2026 22:55:17.148] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i8_the_arcane_anvil
+[14Oct2026 22:55:17.148] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lg2_ghosts_of_the_legion
+[14Oct2026 22:55:17.148] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lg3_the_unbreakable
+[14Oct2026 22:55:17.149] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lg4_the_thermal_heart
+[14Oct2026 22:55:17.149] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lg5_the_unbreakable_head
+[14Oct2026 22:55:17.149] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m1_follow_the_crimson_bee
+[14Oct2026 22:55:17.150] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m2_the_cursed_quarries
+[14Oct2026 22:55:17.150] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m3_hold_the_quarry_gate
+[14Oct2026 22:55:17.151] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m4_gilded_hunger
+[14Oct2026 22:55:17.151] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m5_do_not_provoke_gehinnom
+[14Oct2026 22:55:17.151] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m6_the_instruction
+[14Oct2026 22:55:17.152] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m7_hand_over_your_weapon
+[14Oct2026 22:55:17.152] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m9_half_a_soul
+[14Oct2026 22:55:17.152] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn10_the_silver_kings_blade
+[14Oct2026 22:55:17.153] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn1_the_woman_who_watches_the_moon
+[14Oct2026 22:55:17.153] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn2_a_metal_for_the_sky
+[14Oct2026 22:55:17.154] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn3_fire_under_glass
+[14Oct2026 22:55:17.154] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn4_a_little_moon_of_our_own
+[14Oct2026 22:55:17.154] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn5_above_the_sky
+[14Oct2026 22:55:17.155] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn6_what_the_probe_saw
+[14Oct2026 22:55:17.155] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn7_the_silver_sea
+[14Oct2026 22:55:17.156] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn8_the_man_in_the_moon
+[14Oct2026 22:55:17.156] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn9_come_home_alive
+[14Oct2026 22:55:17.157] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn9r_rest
+[14Oct2026 22:55:17.157] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p1_the_bell
+[14Oct2026 22:55:17.157] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p2_winter_stores
+[14Oct2026 22:55:17.159] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p3_the_shepherd
+[14Oct2026 22:55:17.159] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p4_eye_on_chapel
+[14Oct2026 22:55:17.160] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p5_raise_the_watch
+[14Oct2026 22:55:17.160] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p6_market_road
+[14Oct2026 22:55:17.161] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p7_gold_at_double_weight
+[14Oct2026 22:55:17.161] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p7b_peddlers_debt
+[14Oct2026 22:55:17.162] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p7s_the_peddlers_gift
+[14Oct2026 22:55:17.164] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p8_pillager_moon
+[14Oct2026 22:55:17.164] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p9_who_pays_in_gold
+[14Oct2026 22:55:17.165] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_r2e_the_assayer
+[14Oct2026 22:55:17.165] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_r2g_the_granary_thief
+[14Oct2026 22:55:17.166] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rb1_a_song_gone_quiet
+[14Oct2026 22:55:17.166] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rb2_reed_shell_and_hide
+[14Oct2026 22:55:17.167] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rb3_the_bog_hag
+[14Oct2026 22:55:17.167] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rb4_the_moonrise_chorus
+[14Oct2026 22:55:17.168] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc1_saint
+[14Oct2026 22:55:17.168] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc1_waver
+[14Oct2026 22:55:17.172] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc1_wicked
+[14Oct2026 22:55:17.173] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc2_fallen
+[14Oct2026 22:55:17.174] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc2_good
+[14Oct2026 22:55:17.174] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc2_saint
+[14Oct2026 22:55:17.178] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc2_wicked
+[14Oct2026 22:55:17.179] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc3_fallen
+[14Oct2026 22:55:17.179] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc3_good
+[14Oct2026 22:55:17.180] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc3_saint
+[14Oct2026 22:55:17.180] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc3_waver
+[14Oct2026 22:55:17.183] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc3_wicked
+[14Oct2026 22:55:17.184] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc4_fallen
+[14Oct2026 22:55:17.184] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc4_good
+[14Oct2026 22:55:17.185] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc4_saint
+[14Oct2026 22:55:17.186] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc4_waver
+[14Oct2026 22:55:17.187] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc4_wicked
+[14Oct2026 22:55:17.187] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc5_fallen
+[14Oct2026 22:55:17.188] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc5_good
+[14Oct2026 22:55:17.189] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc5_saint
+[14Oct2026 22:55:17.189] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc5_waver
+[14Oct2026 22:55:17.189] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc5_wicked
+[14Oct2026 22:55:17.190] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc6_fallen
+[14Oct2026 22:55:17.190] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc6_good
+[14Oct2026 22:55:17.191] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc6_saint
+[14Oct2026 22:55:17.192] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc6_waver
+[14Oct2026 22:55:17.192] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc6_wicked
+[14Oct2026 22:55:17.193] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc7_fallen
+[14Oct2026 22:55:17.194] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc7_good
+[14Oct2026 22:55:17.195] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc7_saint
+[14Oct2026 22:55:17.196] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc7_waver
+[14Oct2026 22:55:17.197] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc7_wicked
+[14Oct2026 22:55:17.197] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rep_end_fallen
+[14Oct2026 22:55:17.197] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rep_end_good
+[14Oct2026 22:55:17.198] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rep_end_saint
+[14Oct2026 22:55:17.198] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rep_end_waver
+[14Oct2026 22:55:17.199] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rep_end_wicked
+[14Oct2026 22:55:17.200] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_s2_the_frozen_garrison
+[14Oct2026 22:55:17.200] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_s3_lost_in_the_snow
+[14Oct2026 22:55:17.200] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_clean2
+[14Oct2026 22:55:17.201] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_godsaw1
+[14Oct2026 22:55:17.201] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_godsaw2
+[14Oct2026 22:55:17.201] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_pilgrim1
+[14Oct2026 22:55:17.202] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_pilgrim2
+[14Oct2026 22:55:17.202] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_skyfire1
+[14Oct2026 22:55:17.202] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_skyfire2
+[14Oct2026 22:55:17.203] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_tongue1
+[14Oct2026 22:55:17.203] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_tongue2
+[14Oct2026 22:55:17.204] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_u1_the_soul_guard
+[14Oct2026 22:55:17.204] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_u2_helvars_oath
+[14Oct2026 22:55:17.204] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_u3_back_into_hell
+[14Oct2026 22:55:17.204] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v10_maraal
+[14Oct2026 22:55:17.205] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v10f_walking_with_maraal
+[14Oct2026 22:55:17.205] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v10r_alone
+[14Oct2026 22:55:17.205] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v11_the_crimson_guide
+[14Oct2026 22:55:17.205] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v2_the_sinful_church
+[14Oct2026 22:55:17.206] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v3_the_midwife
+[14Oct2026 22:55:17.206] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v3k_the_coven
+[14Oct2026 22:55:17.206] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v3s_cleansing_the_pits
+[14Oct2026 22:55:17.207] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v4_original_sin
+[14Oct2026 22:55:17.207] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v5_jaws_in_the_dark
+[14Oct2026 22:55:17.207] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v6_what_eats_the_dead
+[14Oct2026 22:55:17.208] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v7_soul_steel
+[14Oct2026 22:55:17.208] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v8_sinbuster
+[14Oct2026 22:55:17.208] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w0_two_roads_meet
+[14Oct2026 22:55:17.209] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w2_smite_the_dead
+[14Oct2026 22:55:17.209] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w3_the_skull_harvest
+[14Oct2026 22:55:17.209] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w4_hold_the_black_bridge
+[14Oct2026 22:55:17.210] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w5_a_grave_for_a_nail
+[14Oct2026 22:55:17.210] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w6_the_withered_crown
+[14Oct2026 22:55:17.210] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w7_a_light_they_cannot_dim
+[14Oct2026 22:55:17.210] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w8_six_remain
+[14Oct2026 22:55:17.211] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x1_the_informant
+[14Oct2026 22:55:17.211] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x1_the_informant_after
+[14Oct2026 22:55:17.211] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x2_the_bastille_warden
+[14Oct2026 22:55:17.215] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x2_the_bastille_warden_after
+[14Oct2026 22:55:17.215] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x3_the_third_skull
+[14Oct2026 22:55:17.215] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x3_the_third_skull_after
+[14Oct2026 22:55:17.216] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun
+[14Oct2026 22:55:17.216] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun_after
+[14Oct2026 22:55:17.217] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x5_the_last_garrison_man
+[14Oct2026 22:55:17.217] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x5_the_last_garrison_man_after
+[14Oct2026 22:55:17.217] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_z1_caution
+[14Oct2026 22:55:17.217] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_z2_up
+[14Oct2026 22:55:17.221] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_z3_choir_of_the_whole_god
+[14Oct2026 22:55:17.222] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:garrick_second_funeral
+[14Oct2026 22:55:17.223] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:garrick_third_funeral
+[14Oct2026 22:55:17.223] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:merrick_a_place_you_remember
+[14Oct2026 22:55:17.225] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:merrick_remembers_you
+[14Oct2026 22:55:17.226] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:merrick_the_end_remembers
+[14Oct2026 22:55:17.226] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:the_sixth_voice
+[14Oct2026 22:55:17.226] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:delivery_cobblestone_oak_log_other_village
+[14Oct2026 22:55:17.228] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:blackthorn_chain_2_a_place_set_for_no_one
+[14Oct2026 22:55:17.228] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_rusk_debt_of_breath
+[14Oct2026 22:55:17.229] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a1_ashford_burns
+[14Oct2026 22:55:17.229] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br1_the_watch_needs_eyes
+[14Oct2026 22:55:17.230] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz1_a_letter_smelling_of_honey
+[14Oct2026 22:55:17.230] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e1_the_librarians_request
+[14Oct2026 22:55:17.230] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb1_the_magical_eye
+[14Oct2026 22:55:17.231] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_g1_maraals_last_letter
+[14Oct2026 22:55:17.231] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_go0_a_way_out
+[14Oct2026 22:55:17.232] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt15_the_fixers_price
+[14Oct2026 22:55:17.232] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt1_a_note_in_the_stash
+[14Oct2026 22:55:17.232] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h1_a_light_above_the_pit
+[14Oct2026 22:55:17.233] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i1_the_priests_warning
+[14Oct2026 22:55:17.233] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i5_the_dead_king
+[14Oct2026 22:55:17.233] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lg1_the_golden_legion
+[14Oct2026 22:55:17.233] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp1_ancient_city
+[14Oct2026 22:55:17.234] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp2_end_city
+[14Oct2026 22:55:17.234] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp3_jungle_temple
+[14Oct2026 22:55:17.234] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp4_mansion
+[14Oct2026 22:55:17.234] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp5_treasure
+[14Oct2026 22:55:17.235] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp6_igloo
+[14Oct2026 22:55:17.235] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp7_outpost
+[14Oct2026 22:55:17.235] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp8_ruin
+[14Oct2026 22:55:17.235] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp9_the_first_champion
+[14Oct2026 22:55:17.236] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_r1_the_prisoner
+[14Oct2026 22:55:17.236] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ru1_the_lantern_road
+[14Oct2026 22:55:17.236] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ru2_silas_makes_an_offer
+[14Oct2026 22:55:17.237] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_s1_cold_hearths
+[14Oct2026 22:55:17.237] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_clean1
+[14Oct2026 22:55:17.237] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_the_first_letter
+[14Oct2026 22:55:17.238] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_tm1_a_generous_offer
+[14Oct2026 22:55:17.238] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v1_blood_in_the_wells
+[14Oct2026 22:55:17.238] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v9_the_wrong_parcel
+[14Oct2026 22:55:17.239] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w1_the_skull_market
+[14Oct2026 22:55:17.239] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x1k_wicks_sister
+[14Oct2026 22:55:17.240] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x1s_wicks_back_door
+[14Oct2026 22:55:17.240] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x2k_gorrans_brothers
+[14Oct2026 22:55:17.240] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x2s_the_wardens_debt
+[14Oct2026 22:55:17.241] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x3k_the_choir_wants_it_back
+[14Oct2026 22:55:17.241] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x3s_ossians_gift
+[14Oct2026 22:55:17.241] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x4k_the_sun_remembers
+[14Oct2026 22:55:17.242] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x4s_sunlight_in_a_bottle
+[14Oct2026 22:55:17.242] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x5k_a_widows_letter
+[14Oct2026 22:55:17.242] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x5s_brann_comes_home
+[14Oct2026 22:55:17.243] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y1_what_the_last_page_said
+[14Oct2026 22:55:17.243] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y2_the_hand_reads_too
+[14Oct2026 22:55:17.243] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y3_free_men_remember
+[14Oct2026 22:55:17.244] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y3_tomas_at_the_gate
+[14Oct2026 22:55:17.244] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y4_vaels_last_letter
+[14Oct2026 22:55:17.244] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y5_the_midwifes_daughter
+[14Oct2026 22:55:17.245] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_a_very_reasonable_treasure_map
+[14Oct2026 22:55:17.245] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_instructions_for_my_own_funeral
+[14Oct2026 22:55:17.246] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_please_return_the_ship
+[14Oct2026 22:55:17.246] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_ash_merchant
+[14Oct2026 22:55:17.249] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_captains_share
+[14Oct2026 22:55:17.250] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_fourth_member
+[14Oct2026 22:55:17.250] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_house_that_owes_me_money
+[14Oct2026 22:55:17.252] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_man_who_buried_himself
+[14Oct2026 22:55:17.252] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_man_who_came_back_warm
+[14Oct2026 22:55:17.253] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_1_ruined_portal
+[14Oct2026 22:55:17.253] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_kill_2_seal_the_gate
+[14Oct2026 22:55:17.254] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_kill_3_ashes_at_the_frame
+[14Oct2026 22:55:17.255] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_spare_2_forgotten_road
+[14Oct2026 22:55:17.255] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_spare_3_name_in_iron
+[14Oct2026 22:55:17.255] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_spare_4_oath_of_ash
+[14Oct2026 22:55:17.256] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_1_bones_beneath_the_village
+[14Oct2026 22:55:17.257] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_2_the_bone_anchor
+[14Oct2026 22:55:17.257] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_3_a_skull_for_proof
+[14Oct2026 22:55:17.258] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_4_the_warm_skull
+[14Oct2026 22:55:17.259] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_5_black_glass_road
+[14Oct2026 22:55:17.260] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_6_the_court_answers
+[14Oct2026 22:55:17.262] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_7_names_under_stone
+[14Oct2026 22:55:17.263] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_8_the_last_debt
+[14Oct2026 22:55:17.266] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_orr_veyl_ledger_without_chains
+[14Oct2026 22:55:17.267] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:blackthorn_chain_1_the_courier_who_never_returned
+[14Oct2026 22:55:17.267] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:blackthorn_chain_3_the_final_guest
+[14Oct2026 22:55:17.268] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:blackthorn_chain_4_a_seat_for_the_dead
+[14Oct2026 22:55:17.268] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_chain_1_a_hero_trophy
+[14Oct2026 22:55:17.269] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_chain_2_the_last_witness
+[14Oct2026 22:55:17.269] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_chain_kill_3_convenient_silence
+[14Oct2026 22:55:17.270] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_chain_spare_3_name_beneath_medal
+[14Oct2026 22:55:17.270] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_chain_spare_4_the_false_hero
+[14Oct2026 22:55:17.271] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_rusk_no_banner_behind_me
+[14Oct2026 22:55:17.271] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:kill_10_skeletons
+[14Oct2026 22:55:17.272] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:kill_10_zombies
+[14Oct2026 22:55:17.272] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:kill_5_creepers
+[14Oct2026 22:55:17.272] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_1_a_cure_for_the_common_death
+[14Oct2026 22:55:17.273] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_2_the_control_group
+[14Oct2026 22:55:17.274] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_3_the_assistants_last_notes
+[14Oct2026 22:55:17.274] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_4_patient_thirteen
+[14Oct2026 22:55:17.278] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_kill_5_the_grand_demonstration
+[14Oct2026 22:55:17.278] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_spare_5_the_grand_demonstration
+[14Oct2026 22:55:17.279] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:most_important_cow_chain_1_an_audience_with_her_majesty
+[14Oct2026 22:55:17.279] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:most_important_cow_chain_2_the_cow_has_spoken
+[14Oct2026 22:55:17.280] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:most_important_cow_chain_3_the_woman_who_knew_the_bell
+[14Oct2026 22:55:17.280] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:most_important_cow_chain_4_the_price_of_a_queen
+[14Oct2026 22:55:17.281] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:most_important_cow_chain_bargain_5_a_quiet_road
+[14Oct2026 22:55:17.282] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:most_important_cow_chain_refuse_5_long_live_the_queen
+[14Oct2026 22:55:17.282] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:no_banner_vindicator_chain_1_bread_at_the_shrine
+[14Oct2026 22:55:17.282] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:no_banner_vindicator_chain_2_the_no_banner_axe
+[14Oct2026 22:55:17.283] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:no_banner_vindicator_chain_kill_3_ashes_without_witness
+[14Oct2026 22:55:17.283] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:no_banner_vindicator_chain_spare_3_names_in_ash
+[14Oct2026 22:55:17.284] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:no_banner_vindicator_chain_spare_4_trial_by_bell
+[14Oct2026 22:55:17.285] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:no_banner_vindicator_chain_spare_5_oath_without_banner
+[14Oct2026 22:55:17.286] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:sculk_mineshaft_investigation
+[14Oct2026 22:55:17.286] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:smith_last_heat_chain_1_coals_for_the_cold_forge
+[14Oct2026 22:55:17.286] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:smith_last_heat_chain_2_the_hammer_remembers
+[14Oct2026 22:55:17.287] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:smith_last_heat_chain_3_the_burnt_smith
+[14Oct2026 22:55:17.288] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:undertaker_chain_1_graves_without_names
+[14Oct2026 22:55:17.289] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:undertaker_chain_2_the_grave_he_cannot_fill
+[14Oct2026 22:55:17.289] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:undertaker_chain_3_where_the_dead_were_sent
+[14Oct2026 22:55:17.290] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:undertaker_chain_4_not_currently_available
+[14Oct2026 22:55:17.290] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:village_arrival_1_clock
+[14Oct2026 22:55:17.291] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:village_arrival_2_armour_stand
+[14Oct2026 22:55:17.291] [Render thread/WARN] [mebahelrpgrquest/]: Ignored incomplete dialogue step 0 in quest mebahelrpgrquest:village_arrival_3_fireplace_supplies.
+[14Oct2026 22:55:17.291] [Render thread/WARN] [mebahelrpgrquest/]: Ignored incomplete dialogue step 1 in quest mebahelrpgrquest:village_arrival_3_fireplace_supplies.
+[14Oct2026 22:55:17.291] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:village_arrival_3_fireplace_supplies
+[14Oct2026 22:55:17.292] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:village_new_home
+[14Oct2026 22:55:17.292] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:village_pig_enclosure
+[14Oct2026 22:55:17.293] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:village_defense_chain_1_iron_for_the_watch
+[14Oct2026 22:55:17.293] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:village_defense_chain_2_raise_the_iron_golems
+[14Oct2026 22:55:17.293] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:village_defense_chain_3_the_bell_and_the_raid
+[14Oct2026 22:55:17.294] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:village_defense_chain_4_the_road_remembers
+[14Oct2026 22:55:17.294] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:village_defense_chain_5_smoke_on_the_milestones
+[14Oct2026 22:55:17.295] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:village_defense_chain_6_the_second_bell
+[14Oct2026 22:55:17.295] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:witch_chain_1_hut_threat
+[14Oct2026 22:55:17.295] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:witch_chain_2_healing_brews
+[14Oct2026 22:55:17.296] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:witch_chain_3_thorns_brothers
+[14Oct2026 22:55:17.296] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:witch_chain_4_evoker_conspiracy
+[14Oct2026 22:55:17.297] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_ambrosium_lamps
+[14Oct2026 22:55:17.297] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_ash_cleanup
+[14Oct2026 22:55:17.297] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_ashford_orphans
+[14Oct2026 22:55:17.297] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_bastille_survivors
+[14Oct2026 22:55:17.298] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_beacon_keeper
+[14Oct2026 22:55:17.298] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_bells_tongue
+[14Oct2026 22:55:17.298] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_blaze_bounty
+[14Oct2026 22:55:17.298] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_blood_tithe
+[14Oct2026 22:55:17.299] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_copy_the_journal
+[14Oct2026 22:55:17.299] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_crimson_honey
+[14Oct2026 22:55:17.299] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_drowned_nets
+[14Oct2026 22:55:17.299] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_echoes_in_the_pipes
+[14Oct2026 22:55:17.300] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_ender_hunt
+[14Oct2026 22:55:17.300] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_frost_patrol
+[14Oct2026 22:55:17.300] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_gold_collectors
+[14Oct2026 22:55:17.300] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_grub_hunt
+[14Oct2026 22:55:17.301] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_halden_records
+[14Oct2026 22:55:17.301] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_husk_plague
+[14Oct2026 22:55:17.301] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_lost_lambs
+[14Oct2026 22:55:17.302] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_market_road
+[14Oct2026 22:55:17.302] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_midwifes_debt
+[14Oct2026 22:55:17.302] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_night_watch
+[14Oct2026 22:55:17.302] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_pay_the_freed
+[14Oct2026 22:55:17.303] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_pirate_hoard
+[14Oct2026 22:55:17.303] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_quartz_for_the_cleric
+[14Oct2026 22:55:17.303] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_ravager_hunt
+[14Oct2026 22:55:17.304] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_shulker_shells
+[14Oct2026 22:55:17.304] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_sky_amber
+[14Oct2026 22:55:17.304] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_soul_lanterns
+[14Oct2026 22:55:17.304] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_swet_trouble
+[14Oct2026 22:55:17.308] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sq_the_last_raid
+[14Oct2026 22:55:17.308] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:zombie_disguise_friend
+[14Oct2026 22:55:17.309] [Render thread/INFO] [mebahelrpgrquest/]: Loaded 411 quest(s).
+[14Oct2026 22:55:17.314] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest board analytical values: 55 items, 21 entities, 20 structures, 8 enchantments.
+[14Oct2026 22:55:17.325] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unavailable quest board delivery item addictives:weed.
+[14Oct2026 22:55:17.325] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unavailable quest board delivery item addictives:joint.
+[14Oct2026 22:55:17.325] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unavailable quest board delivery item addictives:hash.
+[14Oct2026 22:55:17.325] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unavailable quest board delivery item addictives:cocaine.
+[14Oct2026 22:55:17.332] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:fire_dragon_flesh.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:fire_dragon_blood.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_red.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/fire/difficulty_common references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:fire_dragon_blood.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:fire_dragon_flesh.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_red.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/fire/difficulty_dangerous references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:fire_dragon_blood.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:fire_dragon_flesh.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_bronze.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:fire_dragon_heart.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/fire/difficulty_deadly references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.333] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:fire_dragon_blood.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_gray.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:fire_dragon_heart.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragon_skull_fire.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/fire/difficulty_legendary references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:fire_dragon_blood.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_green.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:fire_dragon_heart.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragon_skull_fire.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/fire/difficulty_nightmare references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:ice_dragon_flesh.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:ice_dragon_blood.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_blue.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/ice/difficulty_common references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.334] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:ice_dragon_blood.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:ice_dragon_flesh.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_blue.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/ice/difficulty_dangerous references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:ice_dragon_blood.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:ice_dragon_flesh.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_sapphire.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:ice_dragon_heart.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/ice/difficulty_deadly references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:ice_dragon_blood.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_silver.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:ice_dragon_heart.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragon_skull_ice.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/ice/difficulty_legendary references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.335] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:ice_dragon_blood.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_white.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:ice_dragon_heart.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragon_skull_ice.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/ice/difficulty_nightmare references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_flesh.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_blood.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_electric.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/lightning/difficulty_common references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_blood.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_flesh.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_electric.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/lightning/difficulty_dangerous references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_blood.
+[14Oct2026 22:55:17.336] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_flesh.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_amethyst.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_heart.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/lightning/difficulty_deadly references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_blood.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_black.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_heart.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragon_skull_lightning.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/lightning/difficulty_legendary references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_blood.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_copper.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_heart.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragon_skull_lightning.
+[14Oct2026 22:55:17.337] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/lightning/difficulty_nightmare references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.338] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item sons_of_sins:ether_ashes.
+[14Oct2026 22:55:17.338] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:crimson_arrow.
+[14Oct2026 22:55:17.338] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:faith_part.
+[14Oct2026 22:55:17.338] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:chance_totem.
+[14Oct2026 22:55:17.338] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table half_a_god:hag_legendary references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.338] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item block_factorys_bosses:kraken_tooth.
+[14Oct2026 22:55:17.338] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item block_factorys_bosses:dragon_bone.
+[14Oct2026 22:55:17.338] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table half_a_god:hag_nightmare references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.338] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:atroxiia_scale.
+[14Oct2026 22:55:17.338] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:atroxiia_egg.
+[14Oct2026 22:55:17.338] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/atroxiia references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:draconian_flesh.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:draconian_pellucida.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:ancient_dragonite_fragment.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/draconian_swarm references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:ignivorus_wing_hide.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:ignivorus_tooth.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:ignivorus_heart.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:ignivorus_egg.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/ignivorus references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:nulljaw_binder.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/nulljaw references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:raevyx_wingtalon.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:raevyx_wing_hide.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:raevyx_egg.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/raevyx references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:varasuchus_scale.
+[14Oct2026 22:55:17.339] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:varasuchus_egg.
+[14Oct2026 22:55:17.340] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/varasuchus references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.340] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:volitans_scale.
+[14Oct2026 22:55:17.340] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:volitans_spine.
+[14Oct2026 22:55:17.340] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:volitans_egg.
+[14Oct2026 22:55:17.340] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/volitans references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.341] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id takesapillage:legioner.
+[14Oct2026 22:55:17.341] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id takesapillage:archer.
+[14Oct2026 22:55:17.341] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id takesapillage:skirmisher.
+[14Oct2026 22:55:17.341] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id aether:cockatrice.
+[14Oct2026 22:55:17.341] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id aether:zephyr.
+[14Oct2026 22:55:17.341] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id illagerinvasion:marauder.
+[14Oct2026 22:55:17.341] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id illagerinvasion:inquisitor.
+[14Oct2026 22:55:17.341] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id illagerinvasion:basher.
+[14Oct2026 22:55:17.342] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id illagerinvasion:provoker.
+[14Oct2026 22:55:17.342] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id illagerinvasion:sorcerer.
+[14Oct2026 22:55:17.346] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item sons_of_sins:ether_ashes.
+[14Oct2026 22:55:17.346] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:crimson_arrow.
+[14Oct2026 22:55:17.346] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:faith_part.
+[14Oct2026 22:55:17.346] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:chance_totem.
+[14Oct2026 22:55:17.346] [Render thread/WARN] [mebahelrpgrquest/]: Quest board spawn-group reward table half_a_god:hag_legendary references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.346] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item block_factorys_bosses:kraken_tooth.
+[14Oct2026 22:55:17.346] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item block_factorys_bosses:dragon_bone.
+[14Oct2026 22:55:17.346] [Render thread/WARN] [mebahelrpgrquest/]: Quest board spawn-group reward table half_a_god:hag_nightmare references unavailable modded content; its global rewards will be used.
+[14Oct2026 22:55:17.347] [Render thread/INFO] [mebahelrpgrquest/]: Loaded 8 quest board mob(s), 22 spawn group(s), 19 delivery contract(s), 4 blight incursion(s), 21 kill reward option(s), 0 kill reward table(s), 6 spawn-group reward option(s), 6 spawn-group reward table(s), 11 delivery reward option(s), 8 delivery reward table(s), and 29 equipment table(s).
+[14Oct2026 22:55:17.348] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:ash_road_whisper
+[14Oct2026 22:55:17.348] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:ashford_counted
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:ashford_quiet
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:bad_end
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:bastille_cells
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:bees_home
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:bells_ring
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:blood_wells
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:chapel_healer_worried
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:city_with_eye
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:cold_forge_last_heat
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:crimson_bees
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:dim_sun
+[14Oct2026 22:55:17.349] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:garrison_rest
+[14Oct2026 22:55:17.350] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:god_carved
+[14Oct2026 22:55:17.350] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:good_end
+[14Oct2026 22:55:17.350] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:headless_king
+[14Oct2026 22:55:17.350] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:heaven_empty
+[14Oct2026 22:55:17.350] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:knife_after_the_bell
+[14Oct2026 22:55:17.350] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:knights_oath
+[14Oct2026 22:55:17.350] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:mara_isnt_mara
+[14Oct2026 22:55:17.350] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:mara_letters
+[14Oct2026 22:55:17.350] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:maraal_forgiven
+[14Oct2026 22:55:17.350] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:maraal_rejected
+[14Oct2026 22:55:17.350] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:mercy_is_remembered
+[14Oct2026 22:55:17.351] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:mine_smoke_below
+[14Oct2026 22:55:17.351] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:moon_face
+[14Oct2026 22:55:17.351] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:moon_home
+[14Oct2026 22:55:17.351] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:moon_rest
+[14Oct2026 22:55:17.351] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:moon_watcher
+[14Oct2026 22:55:17.351] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:nether_singing
+[14Oct2026 22:55:17.351] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:new_village_wrong_time
+[14Oct2026 22:55:17.351] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:no_snow
+[14Oct2026 22:55:17.351] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:peddler_slain
+[14Oct2026 22:55:17.352] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:peddler_spared
+[14Oct2026 22:55:17.352] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:ravager_horn
+[14Oct2026 22:55:17.352] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:red_sky
+[14Oct2026 22:55:17.352] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_climb
+[14Oct2026 22:55:17.352] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_fallen
+[14Oct2026 22:55:17.352] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_good
+[14Oct2026 22:55:17.352] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_saint
+[14Oct2026 22:55:17.352] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_saint_end
+[14Oct2026 22:55:17.352] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_waver
+[14Oct2026 22:55:17.353] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_wicked
+[14Oct2026 22:55:17.353] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_wicked_end
+[14Oct2026 22:55:17.353] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:ribbits_chorus
+[14Oct2026 22:55:17.353] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:ribbits_quiet
+[14Oct2026 22:55:17.353] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:roads_not_safe
+[14Oct2026 22:55:17.353] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:seven_dead
+[14Oct2026 22:55:17.353] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:signed_m
+[14Oct2026 22:55:17.353] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:start_eye
+[14Oct2026 22:55:17.353] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:start_gold
+[14Oct2026 22:55:17.353] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:start_tam
+[14Oct2026 22:55:17.354] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:strange_friend_at_dusk
+[14Oct2026 22:55:17.354] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:tidecaller
+[14Oct2026 22:55:17.354] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:too_many_hands
+[14Oct2026 22:55:17.354] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:unbreakable
+[14Oct2026 22:55:17.354] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:vael_slain
+[14Oct2026 22:55:17.354] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:vael_spared
+[14Oct2026 22:55:17.354] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:who_is_maraal
+[14Oct2026 22:55:17.354] [Render thread/INFO] [mebahelrpgrquest/]: Loaded 60 rumor(s).
+[14Oct2026 22:55:17.359] [Render thread/INFO] [mebahelrpgrquest/]: Loaded 90 ambient dialogue(s).
+[14Oct2026 22:55:18.019] [Render thread/INFO] [dev.halfagod.HalfAGod/]: SHOT pressing: I know what I'm doing!
+[14Oct2026 22:55:18.161] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.21.1
+[14Oct2026 22:55:18.161] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[14Oct2026 22:55:23.566] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[14Oct2026 22:55:24.133] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[14Oct2026 22:55:24.322] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[14Oct2026 22:55:24.329] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[14Oct2026 22:55:24.330] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_a5_beneath_the_pipes disabled from random offers: structure netherman:pipes is not registered in any server world.
+[14Oct2026 22:55:24.330] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_a6_believers_house disabled from random offers: structure netherman:believer_house is not registered in any server world.
+[14Oct2026 22:55:24.330] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_a7_the_bastille disabled from random offers: structure takesapillage:bastille is not registered in any server world.
+[14Oct2026 22:55:24.330] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_br3_the_bookkeeper disabled from random offers: structure illagerinvasion:sorcerer_hut is not registered in any server world.
+[14Oct2026 22:55:24.330] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_br5_don_vasco_answers disabled from random offers: structure illagerinvasion:labyrinth is not registered in any server world.
+[14Oct2026 22:55:24.330] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_bz5_the_cell_maze disabled from random offers: structure the_bumblezone:cell_maze is not registered in any server world.
+[14Oct2026 22:55:24.330] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_bz6_the_hive_temple disabled from random offers: structure the_bumblezone:hive_temple is not registered in any server world.
+[14Oct2026 22:55:24.330] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_bz8_audience_with_the_queen disabled from random offers: structure the_bumblezone:throne_pillar is not registered in any server world.
+[14Oct2026 22:55:24.330] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_c3_the_black_ship disabled from random offers: structure block_factorys_bosses:kraken_ship is not registered in any server world.
+[14Oct2026 22:55:24.331] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_d2_the_nest_road disabled from random offers: structure block_factorys_bosses:sandworm_nest is not registered in any server world.
+[14Oct2026 22:55:24.331] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_et2_the_pretender disabled from random offers: structure netherman:mansion_nether is not registered in any server world.
+[14Oct2026 22:55:24.331] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_f1_the_last_road disabled from random offers: structure block_factorys_bosses:dragon_tower is not registered in any server world.
+[14Oct2026 22:55:24.331] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_go3_testimony disabled from random offers: structure illagerinvasion:sorcerer_hut is not registered in any server world.
+[14Oct2026 22:55:24.331] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_gt10_the_sorcerers_books disabled from random offers: structure illagerinvasion:sorcerer_hut is not registered in any server world.
+[14Oct2026 22:55:24.331] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_gt12_don_vasco disabled from random offers: structure illagerinvasion:labyrinth is not registered in any server world.
+[14Oct2026 22:55:24.332] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_h5_the_bronze_halls disabled from random offers: structure aether:bronze_dungeon is not registered in any server world.
+[14Oct2026 22:55:24.332] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_h7_medals_of_the_silver_court disabled from random offers: structure aether:silver_dungeon is not registered in any server world.
+[14Oct2026 22:55:24.332] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_h9_extinguished disabled from random offers: structure aether:gold_dungeon is not registered in any server world.
+[14Oct2026 22:55:24.332] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_i2_fire_in_the_tower disabled from random offers: structure irons_spellbooks:pyromancer_tower is not registered in any server world.
+[14Oct2026 22:55:24.332] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_i3_the_evoker_fort disabled from random offers: structure irons_spellbooks:evoker_fort is not registered in any server world.
+[14Oct2026 22:55:24.332] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_i6_the_mountain_tower disabled from random offers: structure irons_spellbooks:mountain_tower is not registered in any server world.
+[14Oct2026 22:55:24.332] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_i7_echo_of_tyros disabled from random offers: structure irons_spellbooks:citadel is not registered in any server world.
+[14Oct2026 22:55:24.332] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_lg3_the_unbreakable disabled from random offers: structure legionary:bastion_arena is not registered in any server world.
+[14Oct2026 22:55:24.332] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_m1_follow_the_crimson_bee disabled from random offers: structure netherman:mansion_nether is not registered in any server world.
+[14Oct2026 22:55:24.333] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_p9_who_pays_in_gold disabled from random offers: structure takesapillage:pillager_camp is not registered in any server world.
+[14Oct2026 22:55:24.333] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 606 ms
+[14Oct2026 22:55:24.333] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_s2_the_frozen_garrison disabled from random offers: structure block_factorys_bosses:yeti_hideout is not registered in any server world.
+[14Oct2026 22:55:24.333] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_sec_godsaw1 disabled from random offers: structure aether:gold_dungeon is not registered in any server world.
+[14Oct2026 22:55:24.333] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_sec_tongue2 disabled from random offers: structure netherman:believer_house is not registered in any server world.
+[14Oct2026 22:55:24.333] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_u1_the_soul_guard disabled from random offers: structure block_factorys_bosses:underworld_arena is not registered in any server world.
+[14Oct2026 22:55:24.334] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_u2_helvars_oath disabled from random offers: structure block_factorys_bosses:underworld_arena is not registered in any server world.
+[14Oct2026 22:55:24.334] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_v2_the_sinful_church disabled from random offers: structure sons_of_sins:sinful_church is not registered in any server world.
+[14Oct2026 22:55:24.334] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_v3_the_midwife disabled from random offers: structure sons_of_sins:sinful_church is not registered in any server world.
+[14Oct2026 22:55:24.334] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_x2_the_bastille_warden disabled from random offers: structure takesapillage:bastille is not registered in any server world.
+[14Oct2026 22:55:24.334] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_z1_caution disabled from random offers: structure netherman:maze is not registered in any server world.
+[14Oct2026 22:55:24.334] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_z2_up disabled from random offers: structure netherman:head_altar is not registered in any server world.
+[14Oct2026 22:55:24.334] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_z3_choir_of_the_whole_god disabled from random offers: structure netherman:head_altar is not registered in any server world.
+[14Oct2026 22:55:24.334] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_i5_the_dead_king disabled from random offers: structure irons_spellbooks:catacombs is not registered in any server world.
+[14Oct2026 22:55:24.337] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_sq_echoes_in_the_pipes disabled from random offers: structure netherman:pipes is not registered in any server world.
+[14Oct2026 22:55:24.337] [Server thread/INFO] [mebahelrpgrquest/]: Quest structure validation complete: 38 quest(s) unavailable.
+[14Oct2026 22:55:24.410] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 6, from 10
+[14Oct2026 22:55:24.410] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[14Oct2026 22:55:25.861] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Tester[local:E:b069413f] logged in with entity id 10 at (-9.5, 58.0, 4.5)
+[14Oct2026 22:55:26.070] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Tester joined the game
+[14Oct2026 22:55:26.570] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 2 advancements
+[14Oct2026 22:55:37.117] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 5 advancements
+[14Oct2026 22:55:39.483] [IO-Worker-7/INFO] [dev.halfagod.HalfAGod/]: SHOT 01_world: Saved screenshot as 01_world.png
+[14Oct2026 22:55:48.465] [IO-Worker-5/INFO] [dev.halfagod.HalfAGod/]: SHOT 02_dream: Saved screenshot as 02_dream.png
+[14Oct2026 22:56:03.481] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 03_trial_taken: Saved screenshot as 03_trial_taken.png
+[14Oct2026 22:56:05.124] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 04_trial_court: Saved screenshot as 04_trial_court.png
+[14Oct2026 22:56:06.484] [IO-Worker-7/INFO] [dev.halfagod.HalfAGod/]: SHOT 04c_trial_look_jury: Saved screenshot as 04c_trial_look_jury.png
+[14Oct2026 22:56:07.558] [IO-Worker-7/INFO] [dev.halfagod.HalfAGod/]: SHOT 04d_trial_look_witness: Saved screenshot as 04d_trial_look_witness.png
+[14Oct2026 22:56:08.972] [IO-Worker-7/INFO] [dev.halfagod.HalfAGod/]: SHOT 04b_trial_answer: Saved screenshot as 04b_trial_answer.png
+[14Oct2026 22:56:11.349] [IO-Worker-7/INFO] [dev.halfagod.HalfAGod/]: SHOT 05_trial_plea: Saved screenshot as 05_trial_plea.png
+[14Oct2026 22:56:13.436] [IO-Worker-3/INFO] [dev.halfagod.HalfAGod/]: SHOT 06_courtroom: Saved screenshot as 06_courtroom.png
+[14Oct2026 22:56:14.510] [IO-Worker-3/INFO] [dev.halfagod.HalfAGod/]: SHOT 06b_court_jury: Saved screenshot as 06b_court_jury.png
+[14Oct2026 22:56:15.608] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 06c_court_witness: Saved screenshot as 06c_court_witness.png
+[14Oct2026 22:56:16.722] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 06d_court_gallery: Saved screenshot as 06d_court_gallery.png
+[14Oct2026 22:56:18.853] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 06e_court_overview: Saved screenshot as 06e_court_overview.png
+[14Oct2026 22:56:21.404] [IO-Worker-5/INFO] [dev.halfagod.HalfAGod/]: SHOT 06f_court_bench: Saved screenshot as 06f_court_bench.png
+[14Oct2026 22:56:23.534] [IO-Worker-5/INFO] [dev.halfagod.HalfAGod/]: SHOT 06g_court_balcony: Saved screenshot as 06g_court_balcony.png
+[14Oct2026 22:56:31.218] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 07_verdict_votes: Saved screenshot as 07_verdict_votes.png
+[14Oct2026 22:56:38.258] [IO-Worker-7/INFO] [dev.halfagod.HalfAGod/]: SHOT 07b_verdict: Saved screenshot as 07b_verdict.png
+[14Oct2026 22:56:42.797] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 08_cell_bars: Saved screenshot as 08_cell_bars.png
+[14Oct2026 22:56:43.926] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 08b_cell_time_left: Saved screenshot as 08b_cell_time_left.png
+[14Oct2026 22:56:45.521] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 09_cell_window: Saved screenshot as 09_cell_window.png
+[14Oct2026 22:56:46.603] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 09b_cell_lava: Saved screenshot as 09b_cell_lava.png
+[14Oct2026 22:56:49.752] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 10_cell_cot: Saved screenshot as 10_cell_cot.png
+[14Oct2026 22:56:50.888] [IO-Worker-9/INFO] [dev.halfagod.HalfAGod/]: SHOT 09c_corridor: Saved screenshot as 09c_corridor.png
+[14Oct2026 22:56:53.080] [IO-Worker-9/INFO] [dev.halfagod.HalfAGod/]: SHOT 09d_cavern_prison: Saved screenshot as 09d_cavern_prison.png
+[14Oct2026 22:56:56.689] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 09e_cavern_wide: Saved screenshot as 09e_cavern_wide.png
+[14Oct2026 22:57:00.293] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 09f_cavern_falls: Saved screenshot as 09f_cavern_falls.png
+[14Oct2026 22:57:03.891] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 09g_keep_roof: Saved screenshot as 09g_keep_roof.png
+[14Oct2026 22:57:12.065] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 14_quarry: Saved screenshot as 14_quarry.png
+[14Oct2026 22:57:13.702] [IO-Worker-3/INFO] [dev.halfagod.HalfAGod/]: SHOT 14b_quarry_cart: Saved screenshot as 14b_quarry_cart.png
+[14Oct2026 22:57:18.894] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 15_cafeteria: Saved screenshot as 15_cafeteria.png
+[14Oct2026 22:57:19.343] [Render thread/INFO] [dev.halfagod.HalfAGod/]: Half a God: conversations will use Mebahel's talk screen.
+[14Oct2026 22:57:19.959] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 16_talk_maddock: Saved screenshot as 16_talk_maddock.png
+[14Oct2026 22:57:21.825] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 16b_talk_where: Saved screenshot as 16b_talk_where.png
+[14Oct2026 22:57:23.654] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 16c_talk_escape: Saved screenshot as 16c_talk_escape.png
+[14Oct2026 22:57:29.142] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 17_visitor: Saved screenshot as 17_visitor.png
+[14Oct2026 22:57:30.222] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 17b_visitor_talk: Saved screenshot as 17b_visitor_talk.png
+[14Oct2026 22:57:32.046] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 17c_visitor_next: Saved screenshot as 17c_visitor_next.png
+[14Oct2026 22:57:38.827] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 18_escape_hole: Saved screenshot as 18_escape_hole.png
+[14Oct2026 22:57:39.947] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 18b_ledge: Saved screenshot as 18b_ledge.png
+[14Oct2026 22:57:44.057] [IO-Worker-4/INFO] [dev.halfagod.HalfAGod/]: SHOT 19_walk_out: Saved screenshot as 19_walk_out.png
+[14Oct2026 22:57:46.723] [IO-Worker-3/INFO] [dev.halfagod.HalfAGod/]: SHOT 19b_the_gate: Saved screenshot as 19b_the_gate.png
+[14Oct2026 22:57:47.820] [IO-Worker-3/INFO] [dev.halfagod.HalfAGod/]: SHOT 19c_bridge_back: Saved screenshot as 19c_bridge_back.png
+[14Oct2026 22:57:50.411] [IO-Worker-3/INFO] [dev.halfagod.HalfAGod/]: SHOT 19d_the_tunnel: Saved screenshot as 19d_the_tunnel.png
+[14Oct2026 22:58:00.279] [IO-Worker-4/INFO] [dev.halfagod.HalfAGod/]: SHOT 11_home_dream: Saved screenshot as 11_home_dream.png
+[14Oct2026 22:58:03.411] [IO-Worker-3/INFO] [dev.halfagod.HalfAGod/]: SHOT 20_confession: Saved screenshot as 20_confession.png
+[14Oct2026 22:58:05.273] [IO-Worker-3/INFO] [dev.halfagod.HalfAGod/]: SHOT 20b_confessed: Saved screenshot as 20b_confessed.png
+[14Oct2026 22:58:07.141] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 21_interrogation: Saved screenshot as 21_interrogation.png
+[14Oct2026 22:58:08.977] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 21b_interrogation_answer: Saved screenshot as 21b_interrogation_answer.png
+[14Oct2026 22:58:13.926] [IO-Worker-9/INFO] [dev.halfagod.HalfAGod/]: SHOT 12_map_notes: Saved screenshot as 12_map_notes.png
+[14Oct2026 22:58:15.970] [IO-Worker-4/INFO] [dev.halfagod.HalfAGod/]: SHOT 13_codex_secrets: Saved screenshot as 13_codex_secrets.png
+[14Oct2026 22:58:18.104] [IO-Worker-4/INFO] [dev.halfagod.HalfAGod/]: SHOT 13_codex_trials: Saved screenshot as 13_codex_trials.png
+[14Oct2026 22:58:20.167] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 13_codex_dreams: Saved screenshot as 13_codex_dreams.png
+[14Oct2026 22:58:22.292] [IO-Worker-9/INFO] [dev.halfagod.HalfAGod/]: SHOT 13_codex_path: Saved screenshot as 13_codex_path.png
+[14Oct2026 22:58:24.386] [IO-Worker-9/INFO] [dev.halfagod.HalfAGod/]: SHOT 13_codex_letters: Saved screenshot as 13_codex_letters.png
+[14Oct2026 22:58:26.492] [IO-Worker-9/INFO] [dev.halfagod.HalfAGod/]: SHOT 13_codex_story: Saved screenshot as 13_codex_story.png
+[14Oct2026 22:58:31.029] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT first letter started: true; quests now: [mebahelrpgrquest:hag_the_first_letter]
+[14Oct2026 22:58:31.084] [Server thread/INFO] [mebahelrpgrquest/]: Quest progressive locate predicted candidate found: structure=minecraft:village_savanna, pos=BlockPos{x=368, y=0, z=112}.
+[14Oct2026 22:58:35.103] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT letters kept: [mebahelrpgrquest:hag_the_first_letter] 2
+[14Oct2026 22:58:35.892] [Server thread/INFO] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_the_first_letter progressive locate minecraft:full chunk ready for minecraft:village_savanna at BlockPos{x=368, y=0, z=112}.
+[14Oct2026 22:58:35.913] [Server thread/INFO] [mebahelrpgrquest/]: Quest progressive region cache stats: quest=mebahelrpgrquest:hag_the_first_letter, structure=minecraft:villages, outcome=accepted, regions=1, hits=0, positive_hits=0, negative_hits=0, misses=1, hit_rate_pct=0.0, evictions=0, direct_ms=0.1, direct_avg_ms=0.063, cached_entries=1.
+[14Oct2026 22:58:41.315] [IO-Worker-3/INFO] [dev.halfagod.HalfAGod/]: SHOT 13b_codex_letters_received: Saved screenshot as 13b_codex_letters_received.png
+[14Oct2026 22:58:48.150] [Server thread/INFO] [net.minecraft.world.entity.LivingEntity/]: Named entity Evoker['Bounty Hunter'/821, l='ServerLevel[world]', x=13.50, y=64.00, z=-10.50] died: Bounty Hunter was slain by Watch Enforcer
+[14Oct2026 22:58:49.039] [IO-Worker-9/INFO] [dev.halfagod.HalfAGod/]: SHOT 22_enforcers: Saved screenshot as 22_enforcers.png
+[14Oct2026 22:58:52.800] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT ribbit village: BlockPos{x=1216, y=0, z=992}
+[14Oct2026 22:59:06.390] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 15351ms or 307 ticks behind
+[14Oct2026 22:59:06.494] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT in the ribbit village at BlockPos{x=1222, y=72, z=983}
+[14Oct2026 22:59:06.494] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT ribbit quests: []
+[14Oct2026 22:59:06.953] [Server thread/INFO] [dev.halfagod.HalfAGod/]: Half a God: Tester walked into a Ribbit village; the Ribbits' Song begins
+[14Oct2026 22:59:07.019] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] Quest started: A Song Gone Quiet
+[14Oct2026 22:59:16.566] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT grandmother: entity.ribbits.ribbit BlockPos{x=1186, y=67, z=993}
+[14Oct2026 22:59:19.960] [IO-Worker-9/INFO] [dev.halfagod.HalfAGod/]: SHOT 23_ribbit_grandmother: Saved screenshot as 23_ribbit_grandmother.png
+[14Oct2026 22:59:21.822] [IO-Worker-4/INFO] [dev.halfagod.HalfAGod/]: SHOT 23b_ribbit_talk: Saved screenshot as 23b_ribbit_talk.png
+[14Oct2026 22:59:23.442] [IO-Worker-3/INFO] [dev.halfagod.HalfAGod/]: SHOT 23c_ribbit_talk_next: Saved screenshot as 23c_ribbit_talk_next.png
+[14Oct2026 22:59:25.220] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[14Oct2026 22:59:25.223] [Netty Server IO #1/ERROR] [net.minecraft.network.Connection/]: Exception caught in connection
+java.nio.channels.ClosedChannelException: null
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.local.LocalChannel.doWrite(LocalChannel.java:368) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:931) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:895) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1372) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:921) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.access$2200(AbstractChannelHandlerContext.java:61) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext$Tasks$4.run(AbstractChannelHandlerContext.java:1300) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+[14Oct2026 22:59:25.230] [Netty Server IO #1/ERROR] [net.minecraft.network.Connection/]: Exception caught in connection
+java.nio.channels.ClosedChannelException: null
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.local.LocalChannel.doWrite(LocalChannel.java:368) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:931) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:895) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1372) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:921) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.access$2200(AbstractChannelHandlerContext.java:61) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext$Tasks$4.run(AbstractChannelHandlerContext.java:1300) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final]
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final]
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?]
+[14Oct2026 22:59:25.286] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Tester lost connection: Internal Exception: java.nio.channels.ClosedChannelException
+[14Oct2026 22:59:25.286] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Tester left the game
+[14Oct2026 22:59:25.332] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
+[14Oct2026 22:59:25.355] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[14Oct2026 22:59:25.362] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[14Oct2026 22:59:25.362] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[14Oct2026 22:59:27.254] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[14Oct2026 22:59:27.399] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[14Oct2026 22:59:27.409] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/half_a_god:court
+[14Oct2026 22:59:27.415] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[14Oct2026 22:59:27.428] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (shots): All chunks are saved
+[14Oct2026 22:59:27.428] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[14Oct2026 22:59:27.428] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (court): All chunks are saved
+[14Oct2026 22:59:27.428] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[14Oct2026 22:59:27.428] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved

@@ -1,0 +1,300 @@
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_black.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_heart.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragon_skull_lightning.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/lightning/difficulty_legendary references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonbone.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_blood.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragonscales_copper.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:lightning_dragon_heart.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item iceandfire:dragon_skull_lightning.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:dragon/lightning/difficulty_nightmare references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item sons_of_sins:ether_ashes.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:crimson_arrow.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:faith_part.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:chance_totem.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table half_a_god:hag_legendary references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item block_factorys_bosses:kraken_tooth.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item block_factorys_bosses:dragon_bone.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table half_a_god:hag_nightmare references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:atroxiia_scale.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:atroxiia_egg.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/atroxiia references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:draconian_flesh.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:draconian_pellucida.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:ancient_dragonite_fragment.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/draconian_swarm references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:ignivorus_wing_hide.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:ignivorus_tooth.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:ignivorus_heart.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:ignivorus_egg.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/ignivorus references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:nulljaw_binder.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/nulljaw references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:raevyx_wingtalon.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:raevyx_wing_hide.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:raevyx_egg.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/raevyx references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:varasuchus_scale.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:varasuchus_egg.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/varasuchus references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:volitans_scale.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:volitans_spine.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item saintsdragons:volitans_egg.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board elite reward table mebahelrpgrquest:saints_dragons/volitans references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id takesapillage:legioner.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id takesapillage:archer.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id takesapillage:skirmisher.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id aether:cockatrice.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id aether:zephyr.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id illagerinvasion:marauder.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id illagerinvasion:inquisitor.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id illagerinvasion:basher.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id illagerinvasion:provoker.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board entity id illagerinvasion:sorcerer.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item sons_of_sins:ether_ashes.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:crimson_arrow.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:faith_part.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item netherman:chance_totem.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board spawn-group reward table half_a_god:hag_legendary references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item block_factorys_bosses:kraken_tooth.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Ignored unknown quest board reward item block_factorys_bosses:dragon_bone.
+[22:55:17] [Render thread/WARN] [mebahelrpgrquest/]: Quest board spawn-group reward table half_a_god:hag_nightmare references unavailable modded content; its global rewards will be used.
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded 8 quest board mob(s), 22 spawn group(s), 19 delivery contract(s), 4 blight incursion(s), 21 kill reward option(s), 0 kill reward table(s), 6 spawn-group reward option(s), 6 spawn-group reward table(s), 11 delivery reward option(s), 8 delivery reward table(s), and 29 equipment table(s).
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:ash_road_whisper
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:ashford_counted
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:ashford_quiet
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:bad_end
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:bastille_cells
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:bees_home
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:bells_ring
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:blood_wells
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:chapel_healer_worried
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:city_with_eye
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:cold_forge_last_heat
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:crimson_bees
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:dim_sun
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:garrison_rest
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:god_carved
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:good_end
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:headless_king
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:heaven_empty
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:knife_after_the_bell
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:knights_oath
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:mara_isnt_mara
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:mara_letters
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:maraal_forgiven
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:maraal_rejected
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:mercy_is_remembered
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:mine_smoke_below
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:moon_face
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:moon_home
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:moon_rest
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:moon_watcher
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:nether_singing
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:new_village_wrong_time
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:no_snow
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:peddler_slain
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:peddler_spared
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:ravager_horn
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:red_sky
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_climb
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_fallen
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_good
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_saint
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_saint_end
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_waver
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_wicked
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:rep_wicked_end
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:ribbits_chorus
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:ribbits_quiet
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:roads_not_safe
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:seven_dead
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:signed_m
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:start_eye
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:start_gold
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:start_tam
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: mebahelrpgrquest:strange_friend_at_dusk
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:tidecaller
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:too_many_hands
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:unbreakable
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:vael_slain
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:vael_spared
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded rumor: half_a_god:who_is_maraal
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded 60 rumor(s).
+[22:55:17] [Render thread/INFO] [mebahelrpgrquest/]: Loaded 90 ambient dialogue(s).
+[22:55:18] [Render thread/INFO] [de.ha.HalfAGod/]: SHOT pressing: I know what I'm doing!
+[22:55:18] [Server thread/INFO] [minecraft/IntegratedServer]: Starting integrated minecraft server version 1.21.1
+[22:55:18] [Server thread/INFO] [minecraft/MinecraftServer]: Generating keypair
+[22:55:23] [Server thread/INFO] [minecraft/MinecraftServer]: Preparing start region for dimension minecraft:overworld
+[22:55:24] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[22:55:24] [Server thread/INFO] [ne.ne.ne.se.pe.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[22:55:24] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Preparing spawn area: 0%
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_a5_beneath_the_pipes disabled from random offers: structure netherman:pipes is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_a6_believers_house disabled from random offers: structure netherman:believer_house is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_a7_the_bastille disabled from random offers: structure takesapillage:bastille is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_br3_the_bookkeeper disabled from random offers: structure illagerinvasion:sorcerer_hut is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_br5_don_vasco_answers disabled from random offers: structure illagerinvasion:labyrinth is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_bz5_the_cell_maze disabled from random offers: structure the_bumblezone:cell_maze is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_bz6_the_hive_temple disabled from random offers: structure the_bumblezone:hive_temple is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_bz8_audience_with_the_queen disabled from random offers: structure the_bumblezone:throne_pillar is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_c3_the_black_ship disabled from random offers: structure block_factorys_bosses:kraken_ship is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_d2_the_nest_road disabled from random offers: structure block_factorys_bosses:sandworm_nest is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_et2_the_pretender disabled from random offers: structure netherman:mansion_nether is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_f1_the_last_road disabled from random offers: structure block_factorys_bosses:dragon_tower is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_go3_testimony disabled from random offers: structure illagerinvasion:sorcerer_hut is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_gt10_the_sorcerers_books disabled from random offers: structure illagerinvasion:sorcerer_hut is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_gt12_don_vasco disabled from random offers: structure illagerinvasion:labyrinth is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_h5_the_bronze_halls disabled from random offers: structure aether:bronze_dungeon is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_h7_medals_of_the_silver_court disabled from random offers: structure aether:silver_dungeon is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_h9_extinguished disabled from random offers: structure aether:gold_dungeon is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_i2_fire_in_the_tower disabled from random offers: structure irons_spellbooks:pyromancer_tower is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_i3_the_evoker_fort disabled from random offers: structure irons_spellbooks:evoker_fort is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_i6_the_mountain_tower disabled from random offers: structure irons_spellbooks:mountain_tower is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_i7_echo_of_tyros disabled from random offers: structure irons_spellbooks:citadel is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_lg3_the_unbreakable disabled from random offers: structure legionary:bastion_arena is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_m1_follow_the_crimson_bee disabled from random offers: structure netherman:mansion_nether is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_p9_who_pays_in_gold disabled from random offers: structure takesapillage:pillager_camp is not registered in any server world.
+[22:55:24] [Render thread/INFO] [minecraft/LoggerChunkProgressListener]: Time elapsed: 606 ms
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_s2_the_frozen_garrison disabled from random offers: structure block_factorys_bosses:yeti_hideout is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_sec_godsaw1 disabled from random offers: structure aether:gold_dungeon is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_sec_tongue2 disabled from random offers: structure netherman:believer_house is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_u1_the_soul_guard disabled from random offers: structure block_factorys_bosses:underworld_arena is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_u2_helvars_oath disabled from random offers: structure block_factorys_bosses:underworld_arena is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_v2_the_sinful_church disabled from random offers: structure sons_of_sins:sinful_church is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_v3_the_midwife disabled from random offers: structure sons_of_sins:sinful_church is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_x2_the_bastille_warden disabled from random offers: structure takesapillage:bastille is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_z1_caution disabled from random offers: structure netherman:maze is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_z2_up disabled from random offers: structure netherman:head_altar is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_z3_choir_of_the_whole_god disabled from random offers: structure netherman:head_altar is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_i5_the_dead_king disabled from random offers: structure irons_spellbooks:catacombs is not registered in any server world.
+[22:55:24] [Server thread/ERROR] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_sq_echoes_in_the_pipes disabled from random offers: structure netherman:pipes is not registered in any server world.
+[22:55:24] [Server thread/INFO] [mebahelrpgrquest/]: Quest structure validation complete: 38 quest(s) unavailable.
+[22:55:24] [Server thread/INFO] [minecraft/IntegratedServer]: Changing view distance to 6, from 10
+[22:55:24] [Server thread/INFO] [minecraft/IntegratedServer]: Changing simulation distance to 12, from 0
+[22:55:25] [Server thread/INFO] [minecraft/PlayerList]: Tester[local:E:b069413f] logged in with entity id 10 at (-9.5, 58.0, 4.5)
+[22:55:26] [Server thread/INFO] [minecraft/MinecraftServer]: Tester joined the game
+[22:55:26] [Render thread/INFO] [minecraft/AdvancementTree]: Loaded 2 advancements
+[22:55:37] [Render thread/INFO] [minecraft/AdvancementTree]: Loaded 5 advancements
+[22:55:39] [IO-Worker-7/INFO] [de.ha.HalfAGod/]: SHOT 01_world: Saved screenshot as 01_world.png
+[22:55:48] [IO-Worker-5/INFO] [de.ha.HalfAGod/]: SHOT 02_dream: Saved screenshot as 02_dream.png
+[22:56:03] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 03_trial_taken: Saved screenshot as 03_trial_taken.png
+[22:56:05] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 04_trial_court: Saved screenshot as 04_trial_court.png
+[22:56:06] [IO-Worker-7/INFO] [de.ha.HalfAGod/]: SHOT 04c_trial_look_jury: Saved screenshot as 04c_trial_look_jury.png
+[22:56:07] [IO-Worker-7/INFO] [de.ha.HalfAGod/]: SHOT 04d_trial_look_witness: Saved screenshot as 04d_trial_look_witness.png
+[22:56:08] [IO-Worker-7/INFO] [de.ha.HalfAGod/]: SHOT 04b_trial_answer: Saved screenshot as 04b_trial_answer.png
+[22:56:11] [IO-Worker-7/INFO] [de.ha.HalfAGod/]: SHOT 05_trial_plea: Saved screenshot as 05_trial_plea.png
+[22:56:13] [IO-Worker-3/INFO] [de.ha.HalfAGod/]: SHOT 06_courtroom: Saved screenshot as 06_courtroom.png
+[22:56:14] [IO-Worker-3/INFO] [de.ha.HalfAGod/]: SHOT 06b_court_jury: Saved screenshot as 06b_court_jury.png
+[22:56:15] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 06c_court_witness: Saved screenshot as 06c_court_witness.png
+[22:56:16] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 06d_court_gallery: Saved screenshot as 06d_court_gallery.png
+[22:56:18] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 06e_court_overview: Saved screenshot as 06e_court_overview.png
+[22:56:21] [IO-Worker-5/INFO] [de.ha.HalfAGod/]: SHOT 06f_court_bench: Saved screenshot as 06f_court_bench.png
+[22:56:23] [IO-Worker-5/INFO] [de.ha.HalfAGod/]: SHOT 06g_court_balcony: Saved screenshot as 06g_court_balcony.png
+[22:56:31] [IO-Worker-2/INFO] [de.ha.HalfAGod/]: SHOT 07_verdict_votes: Saved screenshot as 07_verdict_votes.png
+[22:56:38] [IO-Worker-7/INFO] [de.ha.HalfAGod/]: SHOT 07b_verdict: Saved screenshot as 07b_verdict.png
+[22:56:42] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 08_cell_bars: Saved screenshot as 08_cell_bars.png
+[22:56:43] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 08b_cell_time_left: Saved screenshot as 08b_cell_time_left.png
+[22:56:45] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 09_cell_window: Saved screenshot as 09_cell_window.png
+[22:56:46] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 09b_cell_lava: Saved screenshot as 09b_cell_lava.png
+[22:56:49] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 10_cell_cot: Saved screenshot as 10_cell_cot.png
+[22:56:50] [IO-Worker-9/INFO] [de.ha.HalfAGod/]: SHOT 09c_corridor: Saved screenshot as 09c_corridor.png
+[22:56:53] [IO-Worker-9/INFO] [de.ha.HalfAGod/]: SHOT 09d_cavern_prison: Saved screenshot as 09d_cavern_prison.png
+[22:56:56] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 09e_cavern_wide: Saved screenshot as 09e_cavern_wide.png
+[22:57:00] [IO-Worker-2/INFO] [de.ha.HalfAGod/]: SHOT 09f_cavern_falls: Saved screenshot as 09f_cavern_falls.png
+[22:57:03] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 09g_keep_roof: Saved screenshot as 09g_keep_roof.png
+[22:57:12] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 14_quarry: Saved screenshot as 14_quarry.png
+[22:57:13] [IO-Worker-3/INFO] [de.ha.HalfAGod/]: SHOT 14b_quarry_cart: Saved screenshot as 14b_quarry_cart.png
+[22:57:18] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 15_cafeteria: Saved screenshot as 15_cafeteria.png
+[22:57:19] [Render thread/INFO] [de.ha.HalfAGod/]: Half a God: conversations will use Mebahel's talk screen.
+[22:57:19] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 16_talk_maddock: Saved screenshot as 16_talk_maddock.png
+[22:57:21] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 16b_talk_where: Saved screenshot as 16b_talk_where.png
+[22:57:23] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 16c_talk_escape: Saved screenshot as 16c_talk_escape.png
+[22:57:29] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 17_visitor: Saved screenshot as 17_visitor.png
+[22:57:30] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 17b_visitor_talk: Saved screenshot as 17b_visitor_talk.png
+[22:57:32] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 17c_visitor_next: Saved screenshot as 17c_visitor_next.png
+[22:57:38] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 18_escape_hole: Saved screenshot as 18_escape_hole.png
+[22:57:39] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 18b_ledge: Saved screenshot as 18b_ledge.png
+[22:57:44] [IO-Worker-4/INFO] [de.ha.HalfAGod/]: SHOT 19_walk_out: Saved screenshot as 19_walk_out.png
+[22:57:46] [IO-Worker-3/INFO] [de.ha.HalfAGod/]: SHOT 19b_the_gate: Saved screenshot as 19b_the_gate.png
+[22:57:47] [IO-Worker-3/INFO] [de.ha.HalfAGod/]: SHOT 19c_bridge_back: Saved screenshot as 19c_bridge_back.png
+[22:57:50] [IO-Worker-3/INFO] [de.ha.HalfAGod/]: SHOT 19d_the_tunnel: Saved screenshot as 19d_the_tunnel.png
+[22:58:00] [IO-Worker-4/INFO] [de.ha.HalfAGod/]: SHOT 11_home_dream: Saved screenshot as 11_home_dream.png
+[22:58:03] [IO-Worker-3/INFO] [de.ha.HalfAGod/]: SHOT 20_confession: Saved screenshot as 20_confession.png
+[22:58:05] [IO-Worker-3/INFO] [de.ha.HalfAGod/]: SHOT 20b_confessed: Saved screenshot as 20b_confessed.png
+[22:58:07] [IO-Worker-2/INFO] [de.ha.HalfAGod/]: SHOT 21_interrogation: Saved screenshot as 21_interrogation.png
+[22:58:08] [IO-Worker-2/INFO] [de.ha.HalfAGod/]: SHOT 21b_interrogation_answer: Saved screenshot as 21b_interrogation_answer.png
+[22:58:13] [IO-Worker-9/INFO] [de.ha.HalfAGod/]: SHOT 12_map_notes: Saved screenshot as 12_map_notes.png
+[22:58:15] [IO-Worker-4/INFO] [de.ha.HalfAGod/]: SHOT 13_codex_secrets: Saved screenshot as 13_codex_secrets.png
+[22:58:18] [IO-Worker-4/INFO] [de.ha.HalfAGod/]: SHOT 13_codex_trials: Saved screenshot as 13_codex_trials.png
+[22:58:20] [IO-Worker-2/INFO] [de.ha.HalfAGod/]: SHOT 13_codex_dreams: Saved screenshot as 13_codex_dreams.png
+[22:58:22] [IO-Worker-9/INFO] [de.ha.HalfAGod/]: SHOT 13_codex_path: Saved screenshot as 13_codex_path.png
+[22:58:24] [IO-Worker-9/INFO] [de.ha.HalfAGod/]: SHOT 13_codex_letters: Saved screenshot as 13_codex_letters.png
+[22:58:26] [IO-Worker-9/INFO] [de.ha.HalfAGod/]: SHOT 13_codex_story: Saved screenshot as 13_codex_story.png
+[22:58:31] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT first letter started: true; quests now: [mebahelrpgrquest:hag_the_first_letter]
+[22:58:31] [Server thread/INFO] [mebahelrpgrquest/]: Quest progressive locate predicted candidate found: structure=minecraft:village_savanna, pos=BlockPos{x=368, y=0, z=112}.
+[22:58:35] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT letters kept: [mebahelrpgrquest:hag_the_first_letter] 2
+[22:58:35] [Server thread/INFO] [mebahelrpgrquest/]: Quest mebahelrpgrquest:hag_the_first_letter progressive locate minecraft:full chunk ready for minecraft:village_savanna at BlockPos{x=368, y=0, z=112}.
+[22:58:35] [Server thread/INFO] [mebahelrpgrquest/]: Quest progressive region cache stats: quest=mebahelrpgrquest:hag_the_first_letter, structure=minecraft:villages, outcome=accepted, regions=1, hits=0, positive_hits=0, negative_hits=0, misses=1, hit_rate_pct=0.0, evictions=0, direct_ms=0.1, direct_avg_ms=0.063, cached_entries=1.
+[22:58:41] [IO-Worker-3/INFO] [de.ha.HalfAGod/]: SHOT 13b_codex_letters_received: Saved screenshot as 13b_codex_letters_received.png
+[22:58:48] [Server thread/INFO] [minecraft/LivingEntity]: Named entity Evoker['Bounty Hunter'/821, l='ServerLevel[world]', x=13.50, y=64.00, z=-10.50] died: Bounty Hunter was slain by Watch Enforcer
+[22:58:49] [IO-Worker-9/INFO] [de.ha.HalfAGod/]: SHOT 22_enforcers: Saved screenshot as 22_enforcers.png
+[22:58:52] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT ribbit village: BlockPos{x=1216, y=0, z=992}
+[22:59:06] [Server thread/WARN] [minecraft/MinecraftServer]: Can't keep up! Is the server overloaded? Running 15351ms or 307 ticks behind
+[22:59:06] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT in the ribbit village at BlockPos{x=1222, y=72, z=983}
+[22:59:06] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT ribbit quests: []
+[22:59:06] [Server thread/INFO] [de.ha.HalfAGod/]: Half a God: Tester walked into a Ribbit village; the Ribbits' Song begins
+[22:59:07] [Render thread/INFO] [minecraft/ChatComponent]: [System] [CHAT] Quest started: A Song Gone Quiet
+[22:59:16] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT grandmother: entity.ribbits.ribbit BlockPos{x=1186, y=67, z=993}
+[22:59:19] [IO-Worker-9/INFO] [de.ha.HalfAGod/]: SHOT 23_ribbit_grandmother: Saved screenshot as 23_ribbit_grandmother.png
+[22:59:21] [IO-Worker-4/INFO] [de.ha.HalfAGod/]: SHOT 23b_ribbit_talk: Saved screenshot as 23b_ribbit_talk.png
+[22:59:23] [IO-Worker-3/INFO] [de.ha.HalfAGod/]: SHOT 23c_ribbit_talk_next: Saved screenshot as 23c_ribbit_talk_next.png
+[22:59:25] [Render thread/INFO] [minecraft/Minecraft]: Stopping!
+[22:59:25] [Netty Server IO #1/ERROR] [minecraft/Connection]: Exception caught in connection
+java.nio.channels.ClosedChannelException: null
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.local.LocalChannel.doWrite(LocalChannel.java:368) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:931) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:895) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1372) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:921) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.access$2200(AbstractChannelHandlerContext.java:61) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext$Tasks$4.run(AbstractChannelHandlerContext.java:1300) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final] {}
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {re:mixin}
+[22:59:25] [Netty Server IO #1/ERROR] [minecraft/Connection]: Exception caught in connection
+java.nio.channels.ClosedChannelException: null
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.local.LocalChannel.doWrite(LocalChannel.java:368) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannel$AbstractUnsafe.flush0(AbstractChannel.java:931) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannel$AbstractUnsafe.flush(AbstractChannel.java:895) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.DefaultChannelPipeline$HeadContext.flush(DefaultChannelPipeline.java:1372) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.invokeFlush0(AbstractChannelHandlerContext.java:921) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.invokeFlush(AbstractChannelHandlerContext.java:907) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext.access$2200(AbstractChannelHandlerContext.java:61) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.AbstractChannelHandlerContext$Tasks$4.run(AbstractChannelHandlerContext.java:1300) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.AbstractEventExecutor.runTask(AbstractEventExecutor.java:174) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.AbstractEventExecutor.safeExecute(AbstractEventExecutor.java:167) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.SingleThreadEventExecutor.runAllTasks(SingleThreadEventExecutor.java:470) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.transport@4.1.97.Final/io.netty.channel.nio.NioEventLoop.run(NioEventLoop.java:569) ~[netty-transport-4.1.97.Final.jar%23150!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.concurrent.SingleThreadEventExecutor$4.run(SingleThreadEventExecutor.java:997) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final] {}
+	at MC-BOOTSTRAP/io.netty.common@4.1.97.Final/io.netty.util.internal.ThreadExecutorMap$2.run(ThreadExecutorMap.java:74) ~[netty-common-4.1.97.Final.jar%23143!/:4.1.97.Final] {}
+	at java.base/java.lang.Thread.run(Thread.java:1583) [?:?] {re:mixin}
+[22:59:25] [Server thread/INFO] [minecraft/ServerGamePacketListenerImpl]: Tester lost connection: Internal Exception: java.nio.channels.ClosedChannelException
+[22:59:25] [Server thread/INFO] [minecraft/MinecraftServer]: Tester left the game
+[22:59:25] [Server thread/INFO] [minecraft/ServerCommonPacketListenerImpl]: Stopping singleplayer server as player logged out
+[22:59:25] [Server thread/INFO] [minecraft/MinecraftServer]: Stopping server
+[22:59:25] [Server thread/INFO] [minecraft/MinecraftServer]: Saving players
+[22:59:25] [Server thread/INFO] [minecraft/MinecraftServer]: Saving worlds
+[22:59:27] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[22:59:27] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[22:59:27] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/half_a_god:court
+[22:59:27] [Server thread/INFO] [minecraft/MinecraftServer]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[22:59:27] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (shots): All chunks are saved
+[22:59:27] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[22:59:27] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (court): All chunks are saved
+[22:59:27] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[22:59:27] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage: All dimensions are saved
