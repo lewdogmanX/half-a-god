@@ -370,7 +370,10 @@ public final class ClientShots {
             dev.halfagod.core.Letters.keepBooks(sp);
             HalfAGod.LOG.info("SHOT letters kept: {} {}", Reputation.data(sp).booksKept, Reputation.data(sp).letters.size());
         }));
-        step(60, () -> server(sp -> dev.halfagod.core.Net.send(sp, new Payloads.OpenMap("letters"))));
+        step(60, () -> {
+            StoryMapScreen.testFreeze = false;   // (the real record, not the made-up one the pages above used)
+            server(sp -> dev.halfagod.core.Net.send(sp, new Payloads.OpenMap("letters")));
+        });
         step(40, () -> shot("13b_codex_letters_received"));
         // the Watch's enforcers come for you (out in the world, at night)
         step(20, () -> Minecraft.getInstance().setScreen(null));
