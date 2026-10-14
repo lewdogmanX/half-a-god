@@ -112,7 +112,7 @@
       "id": "kill_patient_fourteen",
       "kill": "minecraft:giant",
       "amount": 1,
-      "quest_giver_resistance_seconds": 60,
+      "quest_giver_resistance_until_claimed": true,
       "from_threats": true
     },
     {

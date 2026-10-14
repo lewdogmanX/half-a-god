@@ -87,7 +87,8 @@
       "id": "kill_skeletons",
       "kill": "minecraft:skeleton",
       "from_threats": false,
-      "amount": 2
+      "amount": 2,
+      "quest_giver_resistance_until_claimed": true
     }
   ],
   "optional_objectives": [

@@ -138,7 +138,8 @@
       "id": "kill_listening_dead",
       "kill": "minecraft:skeleton",
       "amount": 3,
-      "stage": 2
+      "stage": 2,
+      "quest_giver_resistance_until_claimed": true
     }
   ],
   "threats": [

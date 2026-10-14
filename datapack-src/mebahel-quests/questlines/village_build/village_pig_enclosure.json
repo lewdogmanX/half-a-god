@@ -158,7 +158,8 @@
       "id": "kill_pillagers",
       "kill": "minecraft:pillager",
       "amount": 3,
-      "stage": 1
+      "stage": 1,
+      "quest_giver_resistance_until_claimed": true
     },
     {
       "id": "kill_vindicator",

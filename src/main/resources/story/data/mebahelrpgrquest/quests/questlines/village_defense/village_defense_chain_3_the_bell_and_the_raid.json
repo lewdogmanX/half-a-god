@@ -93,7 +93,8 @@
     {
       "id": "defend_the_village",
       "type": "defend_raid",
-      "amount": 1
+      "amount": 1,
+      "quest_giver_resistance_until_claimed": true
     }
   ],
   "rewards": {

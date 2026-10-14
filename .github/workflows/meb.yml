@@ -49,7 +49,7 @@ jobs:
             curl -sfL -o "run/mods/$(basename "$u")" "$u"
           done
           curl -sfL -o run/mods/Ribbits-1.21.1-NeoForge-4.1.6.jar https://cdn.modrinth.com/data/8YcE8y4T/versions/XrUKaWrw/Ribbits-1.21.1-NeoForge-4.1.6.jar
-          curl -sfL -o run/mods/mebahelrpgrquest-3.4.4-fabric-1.21.1.jar https://cdn.modrinth.com/data/jNqtpcJu/versions/yVzM3N1c/mebahelrpgrquest-3.4.4-fabric-1.21.1.jar
+          curl -sfL -o run/mods/mebahelrpgrquest-3.5.0-fabric-1.21.1.jar https://cdn.modrinth.com/data/jNqtpcJu/versions/tE2e1Ys2/mebahelrpgrquest-3.5.0-fabric-1.21.1.jar
           ls -la run/mods
           portablemc start --help > start-help.txt 2>&1 || true
           # NeoForge, installed by its own installer (as a launcher would), into the launcher folder

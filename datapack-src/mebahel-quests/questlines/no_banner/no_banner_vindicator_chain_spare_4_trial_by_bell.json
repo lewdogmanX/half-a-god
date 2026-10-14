@@ -106,7 +106,8 @@
     {
       "id": "defend_trial_from_pillagers",
       "kill": "minecraft:pillager",
-      "amount": 4
+      "amount": 4,
+      "quest_giver_resistance_until_claimed": true
     },
     {
       "id": "defend_trial_from_vindicator",

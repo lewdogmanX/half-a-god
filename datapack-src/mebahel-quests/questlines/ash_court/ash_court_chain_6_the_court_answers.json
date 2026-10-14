@@ -164,6 +164,7 @@
       "kill": "minecraft:wither_skeleton",
       "amount": 1,
       "stage": 2,
+      "quest_giver_resistance_until_claimed": true,
       "from_threats": true
     },
     {

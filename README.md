@@ -7,7 +7,7 @@ The whole Half a God story datapack is **built into the jar**. Don't also instal
 ## Requirements
 
 - NeoForge 21.1.252 or newer (Minecraft 1.21.1)
-- Mebahel's RPG 3.4.4, running through **Sinytra Connector** + **Forgified Fabric API**
+- Mebahel's RPG 3.5.0, running through **Sinytra Connector** + **Forgified Fabric API**
 - The story's mods: Cult of Azazel, Bosses' Rise, Sons of Sins, The Aether, It Takes a Pillage Continuation, Iron's Spells 'n Spellbooks, End Remastered, Illager Invasion, Create: Addictives, The Bumblezone, Legionary
 - For the moon storyline (optional): Create: Cosmonautics, with Create, Create Aeronautics and Sable
 - For the Ribbits' Song (optional): Ribbits

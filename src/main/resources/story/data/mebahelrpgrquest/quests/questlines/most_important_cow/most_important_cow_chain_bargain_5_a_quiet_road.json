@@ -125,7 +125,7 @@
       "kill": "minecraft:pillager",
       "amount": 4,
       "stage": 1,
-      "quest_giver_resistance_seconds": 60,
+      "quest_giver_resistance_until_claimed": true,
       "from_threats": true
     },
     {
