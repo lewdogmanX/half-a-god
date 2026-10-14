@@ -52,7 +52,13 @@ public final class ModItems {
             // Cult of Azazel's guidebook (its tutorial) is gone from the game, the creative menu too
             var guide = net.minecraft.core.registries.BuiltInRegistries.ITEM.get(net.minecraft.resources.ResourceLocation.fromNamespaceAndPath("netherman", "azazel_guide_book"));
             if (guide != net.minecraft.world.item.Items.AIR) {
-                e.getEntries().remove(new ItemStack(guide));
+                // (the event's remove(stack, visibility); looked up by name so a change in NeoForge can't break the build)
+                try {
+                    e.getClass().getMethod("remove", ItemStack.class, CreativeModeTab.TabVisibility.class)
+                            .invoke(e, new ItemStack(guide), CreativeModeTab.TabVisibility.PARENT_AND_SEARCH_TABS);
+                } catch (ReflectiveOperationException | RuntimeException ignored) {
+                    // not in this tab, or no way to take it out: it still vanishes the moment anyone holds it
+                }
             }
         });
     }
