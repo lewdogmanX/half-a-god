@@ -146,7 +146,9 @@ for page, lines in BOOK.items():
 
 # ---------------------------------------------------------------- Sons of Sins: three times rarer
 # (spacing x sqrt(3): a third as many churches in the same area; same salt, so it's the same kind of spread)
+# (only when Sons of Sins is there: a structure set naming a structure that doesn't exist stops the world loading)
 EXTRA["sons_of_sins/worldgen/structure_set/sinful_church.json"] = {
+    "neoforge:conditions": [{"type": "neoforge:mod_loaded", "modid": "sons_of_sins"}],
     "structures": [{"structure": "sons_of_sins:sinful_church", "weight": 1}],
     "placement": {"type": "minecraft:random_spread", "spacing": 64, "separation": 24, "salt": 611326438}}
 
