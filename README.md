@@ -9,6 +9,7 @@ The whole Half a God story datapack is **built into the jar**. Don't also instal
 - NeoForge 21.1.252 or newer (Minecraft 1.21.1)
 - Mebahel's RPG 3.4.4, running through **Sinytra Connector** + **Forgified Fabric API**
 - The story's mods: Cult of Azazel, Bosses' Rise, Sons of Sins, The Aether, It Takes a Pillage Continuation, Iron's Spells 'n Spellbooks, End Remastered, Illager Invasion, Create: Addictives, The Bumblezone, Legionary
+- For the moon storyline (optional): Create: Cosmonautics, with Create, Create Aeronautics and Sable
 
 Install: put `half_a_god-<version>.jar` in `mods/` on the client **and** the server.
 
@@ -172,8 +173,15 @@ Five questlines that aren't on the map until you find them. Each opens when you 
 
 ## The Trial
 
-From Act II on, if you're Fallen or Wicked, the Watch can come for you in your sleep: once per act, on a random night
-(one in three). You wake in chains in the dock of the Watch's own court, a small dimension of its own: a vaulted
+From Act II on, if you're Fallen or Wicked, the Watch comes for you: once per act, on a random night (one in three),
+or at once if you go to bed, a squad of its **enforcers** marches on you wherever you are in the overworld. They're
+iron golems like the court's guards, far stronger and faster than a village's, and there are more of them for every
+conviction and every time you've fought them off. Lose and they don't kill you: they beat you down and drag you to
+court. Beat them all and you're free for now ("resisting the Watch" goes on your record, and they're back the next
+night or the one after); outrun them, leave the overworld or last till morning and they lose you, until the next night.
+Selling in the Green Trade can bring them sooner: the Watch hears things.
+
+You wake in chains in the dock of the Watch's own court, a small dimension of its own: a vaulted
 hall of deepslate and dark oak, with amber windows, chandeliers, balconies and a rose window, the judge on a raised
 bench before a crimson screen under the Watch's great eye and its rays of light, a clerk, the Watch Captain, a witness
 stand, six jurors in a two-tier box, the evidence table, two iron golem guards and a tiered gallery of onlookers. The court speaks in a panel along the bottom of the screen, one line at a time, and waits for
@@ -231,6 +239,46 @@ tool and the hole are gone. Out, you wake at home with your things; the Hand res
 
 **Broken out.** At Collector of the Hand or above, Silas's men come on the second day.
 
+## The Silver King (the moon, with Create: Cosmonautics)
+
+A storyline of its own, for when you're ready to build a rocket. High on a mountain stands **Hester Quill's
+observatory** (rare): a stone tower with a copper dome and a brass telescope pointed through its slit. Walk in and
+she'll tell you what she's been watching for thirty years: the moon is a world, you could stand on it, and there's a
+face on it with a sword in its hand.
+
+Ten quests take you from titanium and a test-fired thruster, through a probe in orbit, to the moon itself: the
+**Faithful's wreck** (their gold rocket broken in two in a ploughed trench, its pilgrims still kneeling before their
+banner, and their logbook), then **Iskar's rest**: the Silver King, the moon's dead god, sprawled in the great crater
+he made when he fell, a silver crown slipped from his brow, his mouth open, the sun's burn through his chest, and his
+sword the **Eclipse** still in his fist, chained down where the Faithful tried to break it. The Moon-Mad Faithful
+and the Eclipse Priest guard him. Then his last light asks you to choose: take the Eclipse, or lay him to rest with it.
+
+**The Eclipse** (13 damage, never wears out, can't burn) is twice as deadly to Azazel, in both his forms, and to
+anything fire can't hurt, and a quarter stronger at night, in the Nether and on the moon. Raise it (use) and the sky
+goes dark around you: everything hostile within 16 blocks is slowed, weakened and lit up, and you're stronger and
+harder to hurt, for 8 seconds, every 3 minutes. It only answers to the living: die before your feet are back on the
+overworld and it goes back to his hand, and you'll have to go up and take it again. Laying him to rest is worth a good
+name instead.
+
+## The Cult of Azazel
+
+- **Not before the story.** Azazel can't be summoned, and his altars, compass, scroll and essence won't work, until
+  the story has sent you to him. His structures still generate; they just wait. (Creative players aren't stopped.)
+- **His words, rewritten.** The guidebook (the Book of the Chariot) and his lines are the story's.
+- **The Cult's way is noticed.** Converting villagers and working the Cult Scroll's quotas cost reputation, and other
+  players see it. The Scroll only answers to those who knelt to him (or the Wicked).
+- **The Totem of Rebirth** saves you where you stand, not at spawn.
+- **Freed men remember.** Free the prisoners of the Cursed Quarries and one of them comes looking for you later.
+- **Sons of Sins' churches** are three times rarer, as fits something so late in the story.
+
+## Legends
+
+The world remembers every player's name and standing, even when they're offline. When someone with a dark name hurts
+a villager, the villagers call on the most famous hero in the world by name ("Lewis will put you in the dirt"), and if
+that hero is online somewhere else, they hear their name being called. Walk into a village as one of the Wicked and
+people whisper your name; walk in as a Saint and they say it gladly. The story's rough characters (raiders, Blackwater's
+crews, the Fixer, the prisoners) talk like it, and say so when they come for you. All of it on the action bar, never in chat.
+
 ## Your reputation travels
 
 - **Ahead of you.** Villagers you've never met have heard of you: a Saint gets better prices, the Wicked pay more
@@ -280,6 +328,8 @@ Everyone plays their own story; nothing forces a fight.
 - **Consequences that come back:** several answers send a letter later that starts its own quest.
 - **Mebahel's questlines woven in:** when you walk into a village, a resident offers the next questline that the current act is waiting on. They glow for a moment so you can find them.
 - **The Blackwater way out:** if you climb back to Good while you're deep in the Green Trade, Reeve Halden writes with a way out.
+- **A longer Green Trade:** *Purity* (put Blackwater's cook out of business and make a cleaner batch) and, a while
+  after you're king, *The Fixer's Price* (he sells your name to the Watch; find him and decide what he's owed).
 - **Mara's letters:** a letter at the end of every act, warm, careful or frightened depending on your reputation. She signs as Maraal once you forgive her, and stops writing if you don't.
 - **The First Champion:** find all eight lost Warden Journal pages to unlock it.
 - **Companion moods:** Dunn, Corwin and Ansel change how they talk to you as your reputation moves, and comment on big story moments.
@@ -322,6 +372,7 @@ Everyone plays their own story; nothing forces a fight.
 | `/halfagod test dreams reset` | forget your dreams |
 | `/halfagod test secret <tongue\|pilgrim\|godsaw\|skyfire\|clean>` | find a hidden questline now |
 | `/halfagod test trial` | the Watch takes you to court now (any reputation, any act) |
+| `/halfagod test arrest` | the Watch's enforcers come for you now |
 | `/halfagod test trial status` | where you are with the Watch and whether a trial is due |
 | `/halfagod test trial witnesses` | a trial with a made-up record: four witnesses speak, three "cannot be found" (your real story isn't changed) |
 | `/halfagod test trial day` | serve one day of your sentence now, instead of waiting 20 minutes |

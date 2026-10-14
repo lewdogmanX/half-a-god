@@ -171,7 +171,6 @@ public final class Moon {
         for (JsonElement n : t().getAsJsonArray("breathing")) {
             if (n.getAsString().equals(name)) {
                 event.setCanBreathe(true);
-                event.setCanRefillAir(true);
                 return;
             }
         }
