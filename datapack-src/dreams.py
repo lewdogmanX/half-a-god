@@ -7,7 +7,7 @@ same dream twice), you dream. Three kinds:
 
 Each dream: id, kind, title, motif (the picture behind the words: sun, eye, chains, crown, flame, bell, drop, wave),
 lines (shown one at a time), and for omens the act (chronicle act trait) / for echoes the trait that must be set.
-The mod also has two dreams it shows itself: the kidnapping before a trial, and the full fall (a hidden questline)."""
+The mod also has two dreams it shows itself: being taken by the Watch before a trial, and the full fall (a hidden questline)."""
 
 D = []
 
@@ -145,9 +145,9 @@ echo("hag_mercy_5", "True Lights", "wave",
 # ---- shown by the mod, not by chance
 SPECIAL = {
     "kidnap": {"id": "kidnap", "kind": "special", "title": "Torchlight", "motif": "chains", "lines": [
-        "Torchlight through your eyelids. Boots on the boards.",
+        "Iron boots on the road, then iron hands on your arms. There are too many of them to count.",
         "'That's them. Take them.'",
-        "A hood. Rope. The tar smell of the Watch's torches."]},
+        "A hood. Rope. The tar smell of the Watch's torches, and a cart that doesn't stop."]},
     "beaten": {"id": "beaten", "kind": "special", "title": "Iron", "motif": "chains", "lines": [
         "The last of the iron catches you across the jaw, and the ground comes up to meet you.",
         "'That's them. Get the bastard in the cart.'",
@@ -160,7 +160,7 @@ SPECIAL = {
         "All the way down, you hold her.",
         "The ground splits you in two when you land: the half that caught her, and the half that hated the sky for letting her go."]},
     "release": {"id": "release", "kind": "special", "title": "Dawn", "motif": "sun", "lines": [
-        "They drag you out at dawn, blindfolded, and leave you where they found you.",
+        "They drag you out at dawn, blindfolded, and leave you on your own doorstep like a parcel.",
         "Your things are beside you, tied in a sack with a Watch seal on it."]},
     "escape": {"id": "escape", "kind": "special", "title": "Out", "motif": "flame", "lines": [
         "A ledge of black stone, a lake of fire below, and nobody shouting yet.",

@@ -49,7 +49,7 @@ import java.util.Set;
 import java.util.UUID;
 
 /**
- * The Trial. From Act II on, if you're Fallen or Wicked, the Watch can take you in your sleep (once per act, on a random
+ * The Trial. From Act II on, if you're Fallen or Wicked, the Watch's enforcers come for you (see {@link Arrest}; once per act, on a
  * night). You wake in chains in a court of its own, hear witnesses tell what you really did (the ones you killed can't),
  * and plead. Guilty means the obsidian cells, and there's no sleeping through it and no way out: a day in the cells is a
  * real Minecraft day (twenty minutes) spent in the cell, counted only while you're there. If you're high enough in the
@@ -215,7 +215,7 @@ public final class Trial {
     public static JsonObject script(ServerPlayer player, RepData d, Set<String> traits) {
         JsonObject s = StoryData.INSTANCE.trialScript;
         JsonObject out = new JsonObject();
-        // taken by force (the enforcers beat you down) or, from older saves, in your sleep
+        // beaten down by the enforcers, or taken without a fight (older saves, operators' test)
         JsonObject kidnap = StoryData.INSTANCE.specialDreams.get(d.foughtArrest && StoryData.INSTANCE.specialDreams.containsKey("beaten") ? "beaten" : "kidnap");
         out.add("kidnap", kidnap != null ? kidnap.getAsJsonArray("lines") : new JsonArray());
         JsonArray lines = new JsonArray();

@@ -32,7 +32,7 @@ import java.util.List;
 import java.util.Set;
 
 /**
- * The Trial, as you see it from the dock: you're taken in the night (a few dark lines), then the court speaks one line
+ * The Trial, as you see it from the dock: the Watch takes you (a few dark lines), then the court speaks one line
  * at a time, waiting for you (click, Space or Enter) and the person speaking turns to you in the courtroom. After each
  * witness you answer the charge: deny it, explain it, or say nothing. Then you plead, the six jurors vote one by one,
  * and the verdict. The words go in a panel along the bottom, with the court's name on a small banner at the top.
@@ -56,7 +56,7 @@ public final class TrialScreen extends Screen {
     private final List<String> kidnap = new ArrayList<>();
     private final List<Entry> lines = new ArrayList<>();
     private JsonObject verdict;
-    /** 0 taken in the night, 1 the court speaks, 2 plead, 3 the verdict */
+    /** 0 taken by the Watch, 1 the court speaks, 2 plead, 3 the verdict */
     private int phase;
     private int shown;
     private long phaseStart = Util.getMillis();

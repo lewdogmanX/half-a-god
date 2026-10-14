@@ -1,4 +1,5 @@
-"""The Trial. From Act II on, a Fallen or Wicked player can be taken in their sleep (once per act, on a random night) and
+"""The Trial. From Act II on, the Watch's enforcers come for a Fallen or Wicked player (once per act, on a night of its
+choosing; see Arrest.java); if they beat the player down, the player is
 tried by the Watch in a court of its own. Each charge is something the player really did (a trait), told by a witness.
 A witness the player killed can't testify: the court only hears "the witness cannot be found".
 
@@ -79,7 +80,7 @@ charge("morrow", "took_the_gold", 1, "Morrow the Assayer",
 SCRIPT = {
     "open": [
         ["The Judge", "This court of the Watch is in session. The accused stands before us in chains."],
-        ["The Watch Captain", "We found them asleep, your honour. They didn't wake until we'd tied them. We have witnesses."],
+        ["The Watch Captain", "We brought them in, your honour. In irons, as the law says. We have witnesses."],
         ["The Judge", "Then let us hear them."]],
     "silent_witness": "The Captain calls {witness}. Silence. 'The witness cannot be found, your honour.'",
     "villagers": ["The Families", "{n} of our people were killed by the accused. We have their names. We will read them if you want."],
