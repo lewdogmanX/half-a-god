@@ -358,8 +358,18 @@ public final class ClientShots {
         // the Codex keeps the letters you're sent: the first letter arrives (as its courier would bring it), then the
         // Codex opens on Letters with your real record (with Mebahel's RPG installed; without it there's nothing to start)
         step(20, () -> Minecraft.getInstance().setScreen(null));
-        step(80, () -> server(sp -> dev.halfagod.core.Meb.startQuest(sp,
-                net.minecraft.resources.ResourceLocation.parse("mebahelrpgrquest:hag_the_first_letter"), true)));
+        step(80, () -> server(sp -> {
+            boolean ok = dev.halfagod.core.Meb.startQuest(sp, net.minecraft.resources.ResourceLocation.parse("mebahelrpgrquest:hag_the_first_letter"), true);
+            java.util.List<String> ids = new java.util.ArrayList<>();
+            for (dev.halfagod.core.Meb.Progress p : dev.halfagod.core.Meb.quests(sp)) {
+                ids.add(p.questId() + (p.claimed() ? "(claimed)" : ""));
+            }
+            HalfAGod.LOG.info("SHOT first letter started: {}; quests now: {}", ok, ids);
+        }));
+        step(60, () -> server(sp -> {
+            dev.halfagod.core.Letters.keepBooks(sp);
+            HalfAGod.LOG.info("SHOT letters kept: {} {}", Reputation.data(sp).booksKept, Reputation.data(sp).letters.size());
+        }));
         step(60, () -> server(sp -> dev.halfagod.core.Net.send(sp, new Payloads.OpenMap("letters"))));
         step(40, () -> shot("13b_codex_letters_received"));
         // the Watch's enforcers come for you (out in the world, at night)
