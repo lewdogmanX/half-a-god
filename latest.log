@@ -1,0 +1,379 @@
+[22:54:56] [main/INFO]: ModLauncher running: args [--username, Tester, --version, neoforge-21.1.252, --gameDir, /home/runner/work/half-a-god/half-a-god/run, --assetsDir, /home/runner/work/half-a-god/half-a-god/mc/assets, --assetIndex, 17, --uuid, 3757eb323c215a02b53c1d05b43f42f1, --accessToken, ❄❄❄❄❄❄❄❄, --clientId, , --xuid, , --userType, , --versionType, release, --width, 1280, --height, 720, --fml.neoForgeVersion, 21.1.252, --fml.fmlVersion, 4.0.44, --fml.mcVersion, 1.21.1, --fml.neoFormVersion, 20240808.144430, --launchTarget, forgeclient]
+[22:54:56] [main/INFO]: JVM identified as Eclipse Adoptium OpenJDK 64-Bit Server VM 21.0.12.1+1-LTS
+[22:54:56] [main/INFO]: ModLauncher 11.0.5+main.901c6ea8 starting: java version 21.0.12.1 by Eclipse Adoptium; OS Linux arch amd64 version 6.17.0-1022-azure
+[22:54:56] [main/INFO]: Loading ImmediateWindowProvider fmlearlywindow
+[22:54:57] [main/INFO]: Trying GL version 4.6
+[22:54:57] [main/INFO]: Trying GL version 4.5
+[22:55:00] [main/INFO]: Requested GL version 4.5 got version 4.5
+[22:55:00] [main/INFO]: SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/sponge-mixin-0.15.2+mixin.0.8.7.jar%23107!/ Service=ModLauncher Env=CLIENT
+[22:55:00] [pool-2-thread-1/INFO]: GL info: llvmpipe (LLVM 20.1.2, 256 bits) GL version 4.5 (Core Profile) Mesa 25.2.8-0ubuntu0.24.04.4, Mesa
+[22:55:01] [main/INFO]: Found mod file "client-1.21.1-20240808.144430-srg.jar" [locator: production client provider +net.neoforged:neoforge:21.1.252:client]
+[22:55:01] [main/INFO]: Found mod file "neoforge-21.1.252-universal.jar" [locator: PathBasedLocator[name=neoforge, paths=[/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/neoforge/21.1.252/neoforge-21.1.252-universal.jar]], reader: mod manifest]
+[22:55:01] [main/INFO]: Found mod file "cosmonautics-26.08.307.jar" [locator: {mods folder locator at /home/runner/work/half-a-god/half-a-god/run/mods}, reader: mod manifest]
+[22:55:01] [main/INFO]: Found mod file "create-1.21.1-6.0.10.jar" [locator: {mods folder locator at /home/runner/work/half-a-god/half-a-god/run/mods}, reader: mod manifest]
+[22:55:01] [main/INFO]: Found mod file "create-aeronautics-bundled-1.21.1-1.3.2.jar" [locator: {mods folder locator at /home/runner/work/half-a-god/half-a-god/run/mods}, reader: mod manifest]
+[22:55:01] [main/INFO]: Found mod file "half-a-god-1.0.0.jar" [locator: {mods folder locator at /home/runner/work/half-a-god/half-a-god/run/mods}, reader: mod manifest]
+[22:55:01] [main/INFO]: Found mod file "sable-neoforge-1.21.1-2.0.6.jar" [locator: {mods folder locator at /home/runner/work/half-a-god/half-a-god/run/mods}, reader: mod manifest]
+[22:55:01] [main/INFO]: Found 13 dependencies adding them to mods collection
+[22:55:01] [main/INFO]: Found gamelibrary file "mixinextras-neoforge-0.5.3.jar" [parent: neoforge-21.1.252-universal.jar, locator: jarinjar, reader: mod manifest]
+[22:55:01] [main/INFO]: Found mod file "dev.eriksonn.aeronautics.aeronautics-neoforge-1.21.1-1.3.2.jar" [parent: create-aeronautics-bundled-1.21.1-1.3.2.jar, locator: jarinjar, reader: mod manifest]
+[22:55:01] [main/INFO]: Found library file "molang-compiler-3.1.1.19.jar" [parent: veil-neoforge-1.21.1-4.3.2.jar, locator: jarinjar]
+[22:55:01] [main/INFO]: Found gamelibrary file "Registrate-MC1.21-1.3.0+67.jar" [parent: create-1.21.1-6.0.10.jar, locator: jarinjar, reader: mod manifest]
+[22:55:01] [main/INFO]: Found mod file "veil-neoforge-1.21.1-4.3.2.jar" [parent: sable-neoforge-1.21.1-2.0.6.jar, locator: jarinjar, reader: mod manifest]
+[22:55:01] [main/INFO]: Found mod file "dev.simulated_team.simulated.simulated-neoforge-1.21.1-1.3.2.jar" [parent: create-aeronautics-bundled-1.21.1-1.3.2.jar, locator: jarinjar, reader: mod manifest]
+[22:55:01] [main/INFO]: Found mod file "sable-companion-common-1.21.1-1.6.0.jar" [parent: sable-neoforge-1.21.1-2.0.6.jar, locator: jarinjar, reader: mod manifest]
+[22:55:01] [main/INFO]: Found mod file "flywheel-neoforge-1.21.1-1.0.6.jar" [parent: create-1.21.1-6.0.10.jar, locator: jarinjar, reader: mod manifest]
+[22:55:01] [main/INFO]: Found gamelibrary file "dev.ryanhcode.sable.sable-sable_rapier-1.21.1-2.0.6.jar" [parent: sable-neoforge-1.21.1-2.0.6.jar, locator: jarinjar, reader: mod manifest]
+[22:55:01] [main/INFO]: Found library file "glsl-processor-0.2.3.jar" [parent: veil-neoforge-1.21.1-4.3.2.jar, locator: jarinjar]
+[22:55:01] [main/INFO]: Found mod file "dev.ryanhcode.offroad.offroad-neoforge-1.21.1-1.3.2.jar" [parent: create-aeronautics-bundled-1.21.1-1.3.2.jar, locator: jarinjar, reader: mod manifest]
+[22:55:01] [main/INFO]: Found mod file "ponder-neoforge-1.0.82+mc1.21.1.jar" [parent: create-1.21.1-6.0.10.jar, locator: jarinjar, reader: mod manifest]
+[22:55:01] [main/INFO]: Found library file "net.neoforged.neoforge-coremods-21.1.252.jar" [parent: neoforge-21.1.252-universal.jar, locator: jarinjar, reader: mod manifest]
+[22:55:01] [main/INFO]: 
+     Mod List:
+		Name Version (Mod Id)
+
+		Create 6.0.10 (create)
+		Create Aeronautics 1.3.2 (aeronautics)
+		Create Aeronautics 1.3.2 (aeronautics_bundled)
+		Create Offroad 1.3.2 (offroad)
+		Create Simulated 1.3.2 (simulated)
+		Create: Cosmonautics 26.08.307 (rocketnautics)
+		Flywheel 1.0.6 (flywheel)
+		Half a God 1.0.0 (half_a_god)
+		Minecraft 1.21.1 (minecraft)
+		NeoForge 21.1.252 (neoforge)
+		Ponder 1.0.82+mc1.21.1 (ponder)
+		Sable 2.0.6 (sable)
+		Sable Companion 1.6.0 (sablecompanion)
+		Veil 4.3.2 (veil)
+[22:55:02] [main/INFO]: Compatibility level set to JAVA_21
+[22:55:02] [main/INFO]: Launching target 'forgeclient' with arguments [--version, neoforge-21.1.252, --gameDir, /home/runner/work/half-a-god/half-a-god/run, --assetsDir, /home/runner/work/half-a-god/half-a-god/mc/assets, --uuid, 3757eb323c215a02b53c1d05b43f42f1, --username, Tester, --assetIndex, 17, --accessToken, ❄❄❄❄❄❄❄❄, --clientId, , --xuid, , --userType, , --versionType, release, --width, 1280, --height, 720]
+[22:55:02] [main/WARN]: Reference map 'simulated.refmap.json' for simulated.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:55:02] [main/WARN]: Reference map 'aeronautics.refmap.json' for aeronautics.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:55:02] [main/WARN]: Reference map 'ponder.refmap.json' for ponder-common.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:55:02] [main/INFO]: Using Vanilla renderer mixins
+[22:55:02] [main/INFO]: Using Vanilla renderer mixins
+[22:55:02] [main/WARN]: Reference map 'offroad.refmap.json' for offroad.mixins.json could not be read. If this is a development environment you can ignore this message
+[22:55:03] [main/WARN]: Error loading class: net/irisshaders/iris/pipeline/PipelineManager (java.lang.ClassNotFoundException: net.irisshaders.iris.pipeline.PipelineManager)
+[22:55:03] [main/WARN]: @Mixin target net.irisshaders.iris.pipeline.PipelineManager was not found veil.neoforge.mixins.json:client.perspective.iris.PipelineManagerMixin from mod veil
+[22:55:03] [main/WARN]: Error loading class: com/benji/netherman/QuotaManager (java.lang.ClassNotFoundException: com.benji.netherman.QuotaManager)
+[22:55:03] [main/WARN]: Error loading class: folk/sisby/surveyor/client/SurveyorClientEvents$Invoke (java.lang.ClassNotFoundException: folk.sisby.surveyor.client.SurveyorClientEvents$Invoke)
+[22:55:03] [main/WARN]: Error loading class: net/mebahelrpgrquest/client/gui/QuestDialogueScreen (java.lang.ClassNotFoundException: net.mebahelrpgrquest.client.gui.QuestDialogueScreen)
+[22:55:03] [main/WARN]: Error loading class: net/mebahelrpgrquest/client/gui/QuestDialogueScreen (java.lang.ClassNotFoundException: net.mebahelrpgrquest.client.gui.QuestDialogueScreen)
+[22:55:03] [main/WARN]: Error loading class: org/jetbrains/annotations/ApiStatus$ScheduledForRemoval (java.lang.ClassNotFoundException: org.jetbrains.annotations.ApiStatus$ScheduledForRemoval)
+[22:55:03] [main/INFO]: Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+[14Oct2026 22:55:05.179] [Datafixer Bootstrap/INFO] [com.mojang.datafixers.DataFixerBuilder/]: 229 Datafixer optimizations took 256 milliseconds
+[14Oct2026 22:55:09.848] [main/WARN] [net.minecraft.client.main.Main/]: Unrecognized user type: 
+[14Oct2026 22:55:10.041] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-srg.jar%23181!/assets/.mcassetsroot' uses unexpected schema
+[14Oct2026 22:55:10.042] [Render thread/WARN] [net.minecraft.server.packs.VanillaPackResourcesBuilder/]: Assets URL 'union:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecraft/client/1.21.1-20240808.144430/client-1.21.1-20240808.144430-srg.jar%23181!/data/.mcassetsroot' uses unexpected schema
+[14Oct2026 22:55:10.065] [Render thread/INFO] [com.mojang.authlib.yggdrasil.YggdrasilAuthenticationService/]: Environment: Environment[sessionHost=https://sessionserver.mojang.com, servicesHost=https://api.minecraftservices.com, name=PROD]
+[14Oct2026 22:55:10.072] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Setting user: Tester
+[14Oct2026 22:55:10.173] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Backend library: LWJGL version 3.3.3+5
+[14Oct2026 22:55:10.466] [Render thread/INFO] [com.mojang.blaze3d.platform.GlDebug/]: OpenGL debug message: id=1, source=SHADER COMPILER, type=ERROR, severity=HIGH, message='0:1(10): error: GLSL 4.60 is not supported. Supported versions are: 1.10, 1.20, 1.30, 1.40, 1.50, 3.30, 4.00, 4.10, 4.20, 4.30, 4.40, 4.50, 1.00 ES, 3.00 ES, 3.10 ES, and 3.20 ES'
+[14Oct2026 22:55:10.674] [modloading-worker-0/INFO] [Veil/]: Veil is initializing.
+[14Oct2026 22:55:11.120] [modloading-worker-0/INFO] [dev.devce.rocketnautics.RocketNautics/]: Initializing Cosmonautics!
+[14Oct2026 22:55:11.346] [modloading-worker-0/INFO] [dev.devce.rocketnautics.registry.NodeDefinitionLoader/]: [NodeDefinitionLoader] Registered 57 data-driven nodes.
+[14Oct2026 22:55:11.500] [modloading-worker-0/INFO] [com.simibubi.create.Create/]: Create 6.0.10 initializing! Commit hash: ac0c444d9828da3453ae8cc65338e8de063286fb
+[14Oct2026 22:55:11.721] [modloading-worker-0/INFO] [net.neoforged.neoforge.common.NeoForgeMod/NEOFORGE-MOD]: NeoForge mod loading, version 21.1.252, for MC 1.21.1
+[14Oct2026 22:55:12.549] [modloading-worker-0/INFO] [dev.ryanhcode.sable.Sable/]: Sable loaded!
+[14Oct2026 22:55:12.561] [modloading-worker-0/WARN] [dev.ryanhcode.sable.Sable/]: NOTE: Sable is loaded with Flywheel. Sable contains extensive shader overrides and a full light-storage replacement. Expect this to cause compatibility issues. If issues arise, please report them to the Sable issue tracker (https://github.com/ryanhcode/sable/issues) instead of the Flywheel issue tracker.
+[14Oct2026 22:55:17.590] [Render thread/INFO] [Veil/]: GL Debug supported
+[14Oct2026 22:55:18.070] [Render thread/ERROR] [com.mojang.text2speech.Narrator/]: Error while loading the narrator
+com.mojang.text2speech.Narrator$InitializeException: Failed to load library flite
+	at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:69) ~[text2speech-1.17.9.jar%23138!/:?]
+	at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar%23138!/:?]
+	at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar%23138!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:21) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:609) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:214) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2398!/:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+Caused by: java.lang.UnsatisfiedLinkError: Unable to load library 'flite':
+libflite.so: cannot open shared object file: No such file or directory
+libflite.so: cannot open shared object file: No such file or directory
+Native library (linux-x86-64/libflite.so) not found in resource path (/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/fancymodloader/earlydisplay/4.0.44/earlydisplay-4.0.44.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/fancymodloader/loader/4.0.44/loader-4.0.44.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/accesstransformers/at-modlauncher/10.0.1/at-modlauncher-10.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/accesstransformers/10.0.1/accesstransformers-10.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/bus/8.0.5/bus-8.0.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/coremods/7.0.3/coremods-7.0.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/modlauncher/11.0.5/modlauncher-11.0.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/mergetool/2.0.0/mergetool-2.0.0-api.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/electronwill/night-config/toml/3.8.3/toml-3.8.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/electronwill/night-config/core/3.8.3/core-3.8.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarSelector/0.4.1/JarJarSelector-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarMetadata/0.4.1/JarJarMetadata-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/maven/maven-artifact/3.8.5/maven-artifact-3.8.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/jodah/typetools/0.6.3/typetools-0.6.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecrell/terminalconsoleappender/1.3.0/terminalconsoleappender-1.3.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/sponge-mixin-0.15.2+mixin.0.8.7.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/bootstraplauncher/2.0.2/bootstraplauncher-2.0.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/securejarhandler/3.0.8/securejarhandler-3.0.8.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-commons/9.10.1/asm-commons-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-util/9.10.1/asm-util-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-analysis/9.10.1/asm-analysis-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-tree/9.10.1/asm-tree-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm/9.10.1/asm-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarFileSystems/0.4.1/JarJarFileSystems-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/antlr/antlr4-runtime/4.13.1/antlr4-runtime-4.13.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/logging/1.2.7/logging-1.2.7.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.22.1/log4j-slf4j2-impl-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jline/jline-reader/3.20.0/jline-reader-3.20.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jline/jline-terminal/3.20.0/jline-terminal-3.20.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecraftforge/srgutils/0.4.15/srgutils-0.4.15.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/codehaus/plexus/plexus-utils/3.3.0/plexus-utils-3.3.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/machinezoo/noexception/noexception/1.7.1/noexception-1.7.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/ibm/icu/icu4j/73.2/icu4j-73.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/authlib/6.0.54/authlib-6.0.54.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/patchy/2.2.10/patchy-2.2.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/text2speech/1.17.9/text2speech-1.17.9.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-handler/4.1.97.Final/netty-handler-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-classes-epoll/4.1.97.Final/netty-transport-classes-epoll-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/it/unimi/dsi/fastutil/8.5.12/fastutil-8.5.12.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/commons/commons-compress/1.26.0/commons-compress-1.26.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jcraft/jorbis/0.0.17/jorbis-0.0.17.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/home/runner/work/half-a-god/half-a-god/mc/versions/neoforge-21.1.252/neoforge-21.1.252.jar)
+	at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:325) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+	at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+	at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+	at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar%23138!/:?]
+	... 20 more
+	Suppressed: java.lang.UnsatisfiedLinkError: libflite.so: cannot open shared object file: No such file or directory
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.Native.open(Native Method) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:213) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar%23138!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:21) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:609) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:214) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2398!/:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+	Suppressed: java.lang.UnsatisfiedLinkError: libflite.so: cannot open shared object file: No such file or directory
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.Native.open(Native Method) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:226) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar%23138!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:21) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:609) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:214) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2398!/:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+	Suppressed: java.io.IOException: Native library (linux-x86-64/libflite.so) not found in resource path (/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/fancymodloader/earlydisplay/4.0.44/earlydisplay-4.0.44.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/fancymodloader/loader/4.0.44/loader-4.0.44.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/accesstransformers/at-modlauncher/10.0.1/at-modlauncher-10.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/accesstransformers/10.0.1/accesstransformers-10.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/bus/8.0.5/bus-8.0.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/coremods/7.0.3/coremods-7.0.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/modlauncher/11.0.5/modlauncher-11.0.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/mergetool/2.0.0/mergetool-2.0.0-api.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/electronwill/night-config/toml/3.8.3/toml-3.8.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/electronwill/night-config/core/3.8.3/core-3.8.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarSelector/0.4.1/JarJarSelector-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarMetadata/0.4.1/JarJarMetadata-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/maven/maven-artifact/3.8.5/maven-artifact-3.8.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/jodah/typetools/0.6.3/typetools-0.6.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecrell/terminalconsoleappender/1.3.0/terminalconsoleappender-1.3.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/sponge-mixin-0.15.2+mixin.0.8.7.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/openjdk/nashorn/nashorn-core/15.4/nashorn-core-15.4.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/commons/commons-lang3/3.14.0/commons-lang3-3.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/bootstraplauncher/2.0.2/bootstraplauncher-2.0.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/cpw/mods/securejarhandler/3.0.8/securejarhandler-3.0.8.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-commons/9.10.1/asm-commons-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-util/9.10.1/asm-util-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-analysis/9.10.1/asm-analysis-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm-tree/9.10.1/asm-tree-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/ow2/asm/asm/9.10.1/asm-9.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/neoforged/JarJarFileSystems/0.4.1/JarJarFileSystems-0.4.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/sf/jopt-simple/jopt-simple/5.0.4/jopt-simple-5.0.4.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/slf4j/slf4j-api/2.0.9/slf4j-api-2.0.9.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/antlr/antlr4-runtime/4.13.1/antlr4-runtime-4.13.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/logging/1.2.7/logging-1.2.7.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-slf4j2-impl/2.22.1/log4j-slf4j2-impl-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-core/2.22.1/log4j-core-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/logging/log4j/log4j-api/2.22.1/log4j-api-2.22.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jline/jline-reader/3.20.0/jline-reader-3.20.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jline/jline-terminal/3.20.0/jline-terminal-3.20.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-io/commons-io/2.15.1/commons-io-2.15.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/minecraftforge/srgutils/0.4.15/srgutils-0.4.15.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/guava/32.1.2-jre/guava-32.1.2-jre.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/failureaccess/1.0.1/failureaccess-1.0.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/guava/listenablefuture/9999.0-empty-to-avoid-conflict-with-guava/listenablefuture-9999.0-empty-to-avoid-conflict-with-guava.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/code/findbugs/jsr305/3.0.2/jsr305-3.0.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/checkerframework/checker-qual/3.33.0/checker-qual-3.33.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/errorprone/error_prone_annotations/2.18.0/error_prone_annotations-2.18.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/j2objc/j2objc-annotations/2.8/j2objc-annotations-2.8.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/google/code/gson/gson/2.10.1/gson-2.10.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/codehaus/plexus/plexus-utils/3.3.0/plexus-utils-3.3.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/machinezoo/noexception/noexception/1.7.1/noexception-1.7.1.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/github/oshi/oshi-core/6.4.10/oshi-core-6.4.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/ibm/icu/icu4j/73.2/icu4j-73.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/authlib/6.0.54/authlib-6.0.54.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/blocklist/1.0.10/blocklist-1.0.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/brigadier/1.3.10/brigadier-1.3.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/datafixerupper/8.0.16/datafixerupper-8.0.16.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/patchy/2.2.10/patchy-2.2.10.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/com/mojang/text2speech/1.17.9/text2speech-1.17.9.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-codec/commons-codec/1.16.0/commons-codec-1.16.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/commons-logging/commons-logging/1.2/commons-logging-1.2.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-buffer/4.1.97.Final/netty-buffer-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-codec/4.1.97.Final/netty-codec-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-common/4.1.97.Final/netty-common-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-handler/4.1.97.Final/netty-handler-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-resolver/4.1.97.Final/netty-resolver-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-classes-epoll/4.1.97.Final/netty-transport-classes-epoll-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-aarch_64.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-epoll/4.1.97.Final/netty-transport-native-epoll-4.1.97.Final-linux-x86_64.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport-native-unix-common/4.1.97.Final/netty-transport-native-unix-common-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/io/netty/netty-transport/4.1.97.Final/netty-transport-4.1.97.Final.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/it/unimi/dsi/fastutil/8.5.12/fastutil-8.5.12.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/java/dev/jna/jna-platform/5.14.0/jna-platform-5.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/java/dev/jna/jna/5.14.0/jna-5.14.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/commons/commons-compress/1.26.0/commons-compress-1.26.0.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/httpcomponents/httpclient/4.5.13/httpclient-4.5.13.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/apache/httpcomponents/httpcore/4.4.16/httpcore-4.4.16.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/jcraft/jorbis/0.0.17/jorbis-0.0.17.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/joml/joml/1.10.5/joml-1.10.5.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-freetype/3.3.3/lwjgl-freetype-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-glfw/3.3.3/lwjgl-glfw-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-jemalloc/3.3.3/lwjgl-jemalloc-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-openal/3.3.3/lwjgl-openal-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-opengl/3.3.3/lwjgl-opengl-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-stb/3.3.3/lwjgl-stb-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl-tinyfd/3.3.3/lwjgl-tinyfd-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lwjgl/lwjgl/3.3.3/lwjgl-3.3.3-natives-linux.jar:/home/runner/work/half-a-god/half-a-god/mc/libraries/org/lz4/lz4-java/1.8.0/lz4-java-1.8.0.jar:/home/runner/work/half-a-god/half-a-god/mc/versions/neoforge-21.1.252/neoforge-21.1.252.jar)
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.Native.extractFromResourcePath(Native.java:1141) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.loadLibrary(NativeLibrary.java:297) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:481) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/com.sun.jna@5.14.0/com.sun.jna.NativeLibrary.getInstance(NativeLibrary.java:423) ~[jna-5.14.0.jar%23153!/:5.14.0 (b0)]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux$FliteLibrary.loadNative(NarratorLinux.java:67) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.NarratorLinux.<init>(NarratorLinux.java:18) ~[text2speech-1.17.9.jar%23138!/:?]
+		at MC-BOOTSTRAP/text2speech@1.17.9/com.mojang.text2speech.Narrator.getNarrator(Narrator.java:41) ~[text2speech-1.17.9.jar%23138!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.GameNarrator.<init>(GameNarrator.java:21) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.<init>(Minecraft.java:609) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+		at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:214) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+		at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+		at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.44.jar%2393!/:4.0]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2398!/:?]
+		at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2398!/:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+		at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+[14Oct2026 22:55:18.088] [Render thread/INFO] [net.minecraft.server.packs.resources.ReloadableResourceManager/]: Reloading ResourceManager: vanilla, mod_resources, mod/veil, mod/simulated, mod/half_a_god, mod/aeronautics, mod/aeronautics_bundled, mod/rocketnautics,dimensional_sable, mod/sablecompanion, mod/flywheel, mod/ponder, mod/create, mod/sable, mod/offroad, mod/neoforge, mod/half_a_god:skin
+[14Oct2026 22:55:18.103] [Worker-Main-1/INFO] [dev.devce.rocketnautics.RocketNautics/]: Cosmonautics Setup
+[14Oct2026 22:55:18.265] [Worker-Main-2/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_all_no_pua-15.1.05.hex, loading
+[14Oct2026 22:55:18.345] [NeoForge Version Check/INFO] [net.neoforged.fml.VersionChecker/]: [create] Starting version check at https://api.modrinth.com/updates/create/forge_updates.json?neoforge=only
+[14Oct2026 22:55:18.748] [NeoForge Version Check/INFO] [net.neoforged.fml.VersionChecker/]: [create] Found status: OUTDATED Current: 6.0.10 Target: 6.0.10+mc1.21.1
+[14Oct2026 22:55:19.027] [Worker-Main-2/INFO] [net.minecraft.client.gui.font.providers.UnihexProvider/]: Found unifont_jp_patch-15.1.05.hex, loading
+[14Oct2026 22:55:20.789] [Worker-Main-1/WARN] [net.minecraft.client.resources.model.ModelBakery/]: Unable to load model: 'rocketnautics:item/credits_book' referenced from: rocketnautics:item/credits_book: java.io.FileNotFoundException: rocketnautics:models/item/credits_book.json
+[14Oct2026 22:55:21.907] [Render thread/INFO] [Veil/]: Loaded 0 shader redirects, 0 replacements
+[14Oct2026 22:55:22.156] [Render thread/INFO] [Veil/]: Loaded 30 shaders from: pinwheel/shaders/program
+[14Oct2026 22:55:22.273] [Worker-Main-2/INFO] [PonderIndex/]: Registering Ponder Scenes took 88.10 ms
+[14Oct2026 22:55:22.277] [Worker-Main-2/INFO] [PonderIndex/]: Registering Ponder Tags took 4.360 ms
+[14Oct2026 22:55:22.414] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:item.goat_horn.play
+[14Oct2026 22:55:22.419] [Render thread/WARN] [net.minecraft.client.sounds.SoundEngine/]: Missing sound for event: minecraft:entity.goat.screaming.horn_break
+[14Oct2026 22:55:22.457] [Render thread/ERROR] [net.minecraft.client.sounds.SoundEngine/SOUNDS]: Error starting SoundSystem. Turning off sounds & music
+java.lang.IllegalStateException: Failed to open OpenAL device
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.audio.Library.openDeviceOrFallback(Library.java:302) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/com.mojang.blaze3d.audio.Library.init(Library.java:154) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundEngine.loadLibrary(SoundEngine.java:107) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundEngine.reload(SoundEngine.java:99) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundManager.apply(SoundManager.java:128) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundManager.apply(SoundManager.java:42) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:19) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at java.base/java.util.concurrent.CompletableFuture$UniAccept.tryFire(CompletableFuture.java:718) ~[?:?]
+	at java.base/java.util.concurrent.CompletableFuture$Completion.run(CompletableFuture.java:482) ~[?:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:69) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:148) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:23) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:122) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:111) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.runTick(Minecraft.java:1155) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:807) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[client-1.21.1-20240808.144430-srg.jar%23181!/:?]
+	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:103) ~[?:?]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.runTarget(CommonLaunchHandler.java:136) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.clientService(CommonLaunchHandler.java:124) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonClientLaunchHandler.runService(CommonClientLaunchHandler.java:32) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/fml_loader@4.0.44/net.neoforged.fml.loading.targets.CommonLaunchHandler.lambda$launchService$4(CommonLaunchHandler.java:118) ~[loader-4.0.44.jar%2393!/:4.0]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandlerDecorator.launch(LaunchServiceHandlerDecorator.java:30) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:53) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.LaunchServiceHandler.launch(LaunchServiceHandler.java:71) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.run(Launcher.java:103) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.Launcher.main(Launcher.java:74) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:26) [modlauncher-11.0.5.jar%2398!/:?]
+	at MC-BOOTSTRAP/cpw.mods.modlauncher@11.0.5/cpw.mods.modlauncher.BootstrapLaunchConsumer.accept(BootstrapLaunchConsumer.java:23) [modlauncher-11.0.5.jar%2398!/:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.run(BootstrapLauncher.java:210) [bootstraplauncher-2.0.2.jar:?]
+	at cpw.mods.bootstraplauncher@2.0.2/cpw.mods.bootstraplauncher.BootstrapLauncher.main(BootstrapLauncher.java:69) [bootstraplauncher-2.0.2.jar:?]
+[14Oct2026 22:55:22.537] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x2048x4 minecraft:textures/atlas/blocks.png-atlas
+[14Oct2026 22:55:22.560] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/signs.png-atlas
+[14Oct2026 22:55:22.561] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/shield_patterns.png-atlas
+[14Oct2026 22:55:22.563] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x4 minecraft:textures/atlas/banner_patterns.png-atlas
+[14Oct2026 22:55:22.564] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x1024x4 minecraft:textures/atlas/armor_trims.png-atlas
+[14Oct2026 22:55:22.569] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 128x64x4 minecraft:textures/atlas/decorated_pot.png-atlas
+[14Oct2026 22:55:22.570] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x256x4 minecraft:textures/atlas/chest.png-atlas
+[14Oct2026 22:55:22.570] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/beds.png-atlas
+[14Oct2026 22:55:22.571] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x4 minecraft:textures/atlas/shulker_boxes.png-atlas
+[14Oct2026 22:55:22.621] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x512x0 minecraft:textures/atlas/particles.png-atlas
+[14Oct2026 22:55:22.623] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 512x256x0 minecraft:textures/atlas/paintings.png-atlas
+[14Oct2026 22:55:22.624] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 256x128x0 minecraft:textures/atlas/mob_effects.png-atlas
+[14Oct2026 22:55:22.624] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 64x64x0 minecraft:textures/atlas/map_decorations.png-atlas
+[14Oct2026 22:55:22.624] [Render thread/INFO] [net.minecraft.client.renderer.texture.TextureAtlas/]: Created: 2048x256x0 minecraft:textures/atlas/gui.png-atlas
+[14Oct2026 22:55:22.674] [Render thread/WARN] [net.minecraft.client.renderer.ShaderInstance/]: Shader rendertype_entity_translucent_emissive could not find sampler named Sampler2 in the specified shader program.
+[14Oct2026 22:55:22.821] [Render thread/INFO] [Veil/]: Loaded 3 framebuffers
+[14Oct2026 22:55:22.847] [Render thread/INFO] [Veil/]: Loaded 7 post pipelines
+[14Oct2026 22:55:22.852] [Render thread/INFO] [Veil/]: Loaded 4 render types
+[14Oct2026 22:55:22.852] [Render thread/INFO] [Veil/]: Enabled bloom pipeline
+[14Oct2026 22:55:22.853] [Render thread/INFO] [Veil/]: Loaded 0 quasar particles
+[14Oct2026 22:55:22.853] [Render thread/INFO] [Veil/]: Loaded 0 templates
+[14Oct2026 22:55:22.853] [Render thread/INFO] [Veil/]: Loaded 0 modules
+[14Oct2026 22:55:22.895] [Render thread/INFO] [flywheel/backend/shaders/]: Loaded 77 shader sources in 36.612 ms
+[14Oct2026 22:55:22.928] [Render thread/INFO] [com.simibubi.create.Create/]: Loaded 58 train hat configurations.
+[14Oct2026 22:55:22.930] [Render thread/INFO] [net.neoforged.neoforge.client.entity.animation.json.AnimationLoader/]: Loaded 0 entity animations
+[14Oct2026 22:55:23.273] [Render thread/INFO] [Veil/]: Compiled 61 vanilla shaders in 469.0 ms
+[14Oct2026 22:55:24.319] [Render thread/INFO] [Veil/]: Finished uploading vanilla shaders
+[14Oct2026 22:55:25.676] [Render thread/INFO] [dev.halfagod.HalfAGod/]: SHOT opening the test world
+[14Oct2026 22:55:26.092] [Render thread/INFO] [com.simibubi.create.Create/]: Created 157 recipes which will be injected into the game
+[14Oct2026 22:55:26.097] [Render thread/INFO] [com.simibubi.create.Create/]: Created 0 tags which will be injected into the game
+[14Oct2026 22:55:26.106] [Render thread/INFO] [net.minecraft.server.MinecraftServer/]: Found new data pack create:dynamic_data, loading it automatically
+[14Oct2026 22:55:27.284] [Render thread/INFO] [net.minecraft.world.item.crafting.RecipeManager/]: Loaded 3006 recipes
+[14Oct2026 22:55:27.498] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 2689 advancements
+[14Oct2026 22:55:27.508] [Render thread/INFO] [dev.halfagod.HalfAGod/]: Half a God story tables: 10 choices, 22 cinematic moments, 309 story quests, 30 of Mebahel's questlines.
+[14Oct2026 22:55:27.508] [Render thread/INFO] [dev.devce.rocketnautics.RocketNautics/]: Loading universe from json files!
+[14Oct2026 22:55:27.532] [Render thread/INFO] [dev.devce.rocketnautics.RocketNautics/]: 6 planets successfully loaded
+[14Oct2026 22:55:27.533] [Render thread/INFO] [dev.devce.rocketnautics.RocketNautics/]: No planet loads failed
+[14Oct2026 22:55:27.533] [Render thread/INFO] [dev.devce.rocketnautics.RocketNautics/]: Universe load complete.
+[14Oct2026 22:55:31.402] [Render thread/INFO] [dev.halfagod.HalfAGod/]: SHOT pressing: I know what I'm doing!
+[14Oct2026 22:55:31.538] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Starting integrated minecraft server version 1.21.1
+[14Oct2026 22:55:31.538] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Generating keypair
+[14Oct2026 22:55:31.697] [Server thread/INFO] [dev.devce.rocketnautics.RocketNautics/]: Successfully expanded Sable altitude limits in ServerAboutToStartEvent.
+[14Oct2026 22:55:31.743] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:overworld] using RapierPhysicsPipelineProvider
+[14Oct2026 22:55:31.753] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Using game directory relative Sable Rapier native directory /home/runner/work/half-a-god/half-a-god/run/.sable/natives
+[14Oct2026 22:55:32.299] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / half_a_god:court] using RapierPhysicsPipelineProvider
+[14Oct2026 22:55:35.014] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / rocketnautics:moon] using RapierPhysicsPipelineProvider
+[14Oct2026 22:55:35.033] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / rocketnautics:deep_space] using RapierPhysicsPipelineProvider
+[14Oct2026 22:55:35.051] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:the_end] using RapierPhysicsPipelineProvider
+[14Oct2026 22:55:35.078] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Creating physics pipeline for ResourceKey[minecraft:dimension / minecraft:the_nether] using RapierPhysicsPipelineProvider
+[14Oct2026 22:55:35.100] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Preparing start region for dimension minecraft:overworld
+[14Oct2026 22:55:35.521] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Preparing spawn area: 0%
+[14Oct2026 22:55:35.609] [Server thread/INFO] [net.neoforged.neoforge.server.permission.PermissionAPI/]: Successfully initialized permission handler neoforge:default_handler
+[14Oct2026 22:55:35.654] [Render thread/INFO] [net.minecraft.server.level.progress.LoggerChunkProgressListener/]: Time elapsed: 485 ms
+[14Oct2026 22:55:35.699] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing view distance to 8, from 10
+[14Oct2026 22:55:35.699] [Server thread/INFO] [net.minecraft.client.server.IntegratedServer/]: Changing simulation distance to 12, from 0
+[14Oct2026 22:55:35.856] [Render thread/INFO] [dev.ryanhcode.sable.Sable/]: Adding local UDP server channel future
+[14Oct2026 22:55:35.868] [Render thread/WARN] [io.netty.bootstrap.Bootstrap/]: Unknown channel option 'SO_BROADCAST' for channel '[id: 0x0a4bca7c]'
+[14Oct2026 22:55:35.879] [Netty Server IO #1/INFO] [dev.ryanhcode.sable.Sable/]: Server UDP channel active
+[14Oct2026 22:55:35.909] [Render thread/INFO] [dev.ryanhcode.sable.Sable/]: Starting local client UDP channel future
+[14Oct2026 22:55:35.915] [Netty Local Client IO #1/INFO] [dev.ryanhcode.sable.Sable/]: Client UDP channel active
+[14Oct2026 22:55:36.209] [Render thread/INFO] [com.simibubi.create.Create/]: Created 157 recipes which will be injected into the game
+[14Oct2026 22:55:36.210] [Render thread/INFO] [com.simibubi.create.Create/]: Created 0 tags which will be injected into the game
+[14Oct2026 22:55:36.626] [Server thread/INFO] [net.minecraft.server.players.PlayerList/]: Tester[local:E:6c50885e] logged in with entity id 10 at (-2.5, 64.0, -0.5)
+[14Oct2026 22:55:36.640] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Beginning attempted authentication with player Tester
+[14Oct2026 22:55:36.663] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Tester joined the game
+[14Oct2026 22:55:36.675] [Server thread/WARN] [dev.halfagod.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$getStoryFlags). 
+[14Oct2026 22:55:36.679] [Server thread/WARN] [dev.halfagod.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$hasStoryFlag). 
+[14Oct2026 22:55:36.679] [Server thread/WARN] [dev.halfagod.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$addStoryFlag). 
+[14Oct2026 22:55:36.925] [Server thread/WARN] [dev.halfagod.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$getQuests). 
+[14Oct2026 22:55:37.205] [Server thread/WARN] [dev.halfagod.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$getTraits). 
+[14Oct2026 22:55:37.228] [Render thread/INFO] [flywheel/]: Started 1 worker threads
+[14Oct2026 22:55:37.300] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 2 advancements
+[14Oct2026 22:55:37.559] [Server thread/WARN] [dev.halfagod.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$hasTrait). 
+[14Oct2026 22:55:38.341] [Render thread/INFO] [Veil/]: Multi-Bind supported, using core
+[14Oct2026 22:55:40.079] [Render thread/INFO] [net.minecraft.client.gui.components.ChatComponent/]: [System] [CHAT] \n========================================\nWe strongly recommend limiting the world size for playing with Cosmonautics. Unfortunately, Sable is unstable at large coordinates.\n\nLimit to recommended values?\n\n   [ Yes ]      [ No ]\n========================================\n
+[14Oct2026 22:56:01.118] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT control: loading round BlockPos{x=3997, y=64, z=-4001}
+[14Oct2026 22:56:01.119] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 8656ms or 173 ticks behind
+[14Oct2026 22:56:01.467] [Render thread/INFO] [dev.halfagod.HalfAGod/]: SHOT control loaded: true
+[14Oct2026 22:56:04.606] [IO-Worker-5/INFO] [dev.halfagod.HalfAGod/]: SHOT 29_control: Saved screenshot as 29_control.png
+[14Oct2026 22:56:05.048] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT half_a_god:observatory: generates at BlockPos{x=2864, y=0, z=-6000} (126 ms)
+[14Oct2026 22:56:16.669] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT half_a_god:observatory box BoundingBox{minX=2827, minY=129, minZ=-6012, maxX=2876, maxY=172, maxZ=-5966} (pieces BoundingBox{minX=2839, minY=141, minZ=-6000, maxX=2864, maxY=160, maxZ=-5978})
+[14Oct2026 22:56:18.323] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 2210ms or 44 ticks behind
+[14Oct2026 22:56:29.072] [IO-Worker-4/INFO] [dev.halfagod.HalfAGod/]: SHOT 30_observatory_40: Saved screenshot as 30_observatory_40.png
+[14Oct2026 22:56:34.890] [IO-Worker-4/INFO] [dev.halfagod.HalfAGod/]: SHOT 30_observatory_130: Saved screenshot as 30_observatory_130.png
+[14Oct2026 22:56:40.493] [IO-Worker-4/INFO] [dev.halfagod.HalfAGod/]: SHOT 30_observatory_220: Saved screenshot as 30_observatory_220.png
+[14Oct2026 22:56:46.207] [IO-Worker-4/INFO] [dev.halfagod.HalfAGod/]: SHOT 30_observatory_310: Saved screenshot as 30_observatory_310.png
+[14Oct2026 22:56:46.597] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT observatory pier BlockPos{x=2853, y=143, z=-5991}
+[14Oct2026 22:56:52.816] [IO-Worker-7/INFO] [dev.halfagod.HalfAGod/]: SHOT 30i_observatory_inside: Saved screenshot as 30i_observatory_inside.png
+[14Oct2026 22:56:55.692] [IO-Worker-4/INFO] [dev.halfagod.HalfAGod/]: SHOT 30i_observatory_inside_dome: Saved screenshot as 30i_observatory_inside_dome.png
+[14Oct2026 22:56:59.655] [IO-Worker-7/INFO] [dev.halfagod.HalfAGod/]: SHOT 30i_observatory_inside_gallery: Saved screenshot as 30i_observatory_inside_gallery.png
+[14Oct2026 22:57:00.117] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT half_a_god:faithful_wreck: generates at BlockPos{x=80, y=0, z=16} (43 ms)
+[14Oct2026 22:57:14.739] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 14626ms or 292 ticks behind
+[14Oct2026 22:57:15.778] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT half_a_god:faithful_wreck box BoundingBox{minX=80, minY=84, minZ=-24, maxX=110, maxY=103, maxZ=16} (pieces BoundingBox{minX=80, minY=84, minZ=-24, maxX=110, maxY=103, maxZ=16})
+[14Oct2026 22:57:27.807] [IO-Worker-7/INFO] [dev.halfagod.HalfAGod/]: SHOT 31_wreck_30: Saved screenshot as 31_wreck_30.png
+[14Oct2026 22:57:33.638] [IO-Worker-7/INFO] [dev.halfagod.HalfAGod/]: SHOT 31_wreck_120: Saved screenshot as 31_wreck_120.png
+[14Oct2026 22:57:39.213] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 31_wreck_210: Saved screenshot as 31_wreck_210.png
+[14Oct2026 22:57:44.898] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 31_wreck_300: Saved screenshot as 31_wreck_300.png
+[14Oct2026 22:57:52.571] [IO-Worker-8/INFO] [dev.halfagod.HalfAGod/]: SHOT 31x_wreck_close: Saved screenshot as 31x_wreck_close.png
+[14Oct2026 22:57:53.007] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT half_a_god:iskars_rest: generates at BlockPos{x=64, y=0, z=288} (0 ms)
+[14Oct2026 22:58:04.875] [Server thread/WARN] [net.minecraft.server.MinecraftServer/]: Can't keep up! Is the server overloaded? Running 11862ms or 237 ticks behind
+[14Oct2026 22:58:05.518] [Server thread/INFO] [dev.halfagod.HalfAGod/]: SHOT half_a_god:iskars_rest box BoundingBox{minX=-20, minY=90, minZ=224, maxX=64, maxY=108, maxZ=288} (pieces BoundingBox{minX=-20, minY=90, minZ=224, maxX=64, maxY=108, maxZ=288})
+[14Oct2026 22:58:17.990] [IO-Worker-9/INFO] [dev.halfagod.HalfAGod/]: SHOT 32_iskar_20: Saved screenshot as 32_iskar_20.png
+[14Oct2026 22:58:23.624] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 32_iskar_110: Saved screenshot as 32_iskar_110.png
+[14Oct2026 22:58:29.357] [IO-Worker-6/INFO] [dev.halfagod.HalfAGod/]: SHOT 32_iskar_200: Saved screenshot as 32_iskar_200.png
+[14Oct2026 22:58:34.985] [IO-Worker-11/INFO] [dev.halfagod.HalfAGod/]: SHOT 32_iskar_290: Saved screenshot as 32_iskar_290.png
+[14Oct2026 22:58:42.694] [IO-Worker-5/INFO] [dev.halfagod.HalfAGod/]: SHOT 32x_iskar_close: Saved screenshot as 32x_iskar_close.png
+[14Oct2026 22:58:43.767] [Render thread/INFO] [net.minecraft.advancements.AdvancementTree/]: Loaded 23 advancements
+[14Oct2026 22:58:48.355] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 33_eclipse_in_hand: Saved screenshot as 33_eclipse_in_hand.png
+[14Oct2026 22:58:49.556] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 33b_eclipse_raised: Saved screenshot as 33b_eclipse_raised.png
+[14Oct2026 22:59:01.150] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 33d_eclipse_third_person: Saved screenshot as 33d_eclipse_third_person.png
+[14Oct2026 22:59:02.255] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 34_maraca_third_person: Saved screenshot as 34_maraca_third_person.png
+[14Oct2026 22:59:04.030] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 34b_maraca_shaking: Saved screenshot as 34b_maraca_shaking.png
+[14Oct2026 22:59:06.441] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 34c_maraca_first_person: Saved screenshot as 34c_maraca_first_person.png
+[14Oct2026 22:59:19.746] [IO-Worker-2/INFO] [dev.halfagod.HalfAGod/]: SHOT 33c_eclipse_tooltip: Saved screenshot as 33c_eclipse_tooltip.png
+[14Oct2026 22:59:21.291] [Render thread/INFO] [net.minecraft.client.Minecraft/]: Stopping!
+[14Oct2026 22:59:21.293] [Netty Local Client IO #1/INFO] [dev.ryanhcode.sable.Sable/]: Client UDP channel inactive
+[14Oct2026 22:59:21.293] [Netty Local Client IO #1/INFO] [dev.ryanhcode.sable.Sable/]: Closed UDP channel!
+[14Oct2026 22:59:21.320] [Server thread/INFO] [net.minecraft.server.network.ServerGamePacketListenerImpl/]: Tester lost connection: Disconnected
+[14Oct2026 22:59:21.320] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Tester left the game
+[14Oct2026 22:59:21.342] [Server thread/INFO] [net.minecraft.server.network.ServerCommonPacketListenerImpl/]: Stopping singleplayer server as player logged out
+[14Oct2026 22:59:21.368] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Stopping server
+[14Oct2026 22:59:21.371] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving players
+[14Oct2026 22:59:21.371] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving worlds
+[14Oct2026 22:59:23.337] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:overworld
+[14Oct2026 22:59:23.340] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:overworld
+[14Oct2026 22:59:23.878] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/half_a_god:court
+[14Oct2026 22:59:23.878] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/half_a_god:court
+[14Oct2026 22:59:23.884] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/rocketnautics:moon
+[14Oct2026 22:59:23.884] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/rocketnautics:moon
+[14Oct2026 22:59:23.928] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/rocketnautics:deep_space
+[14Oct2026 22:59:23.928] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/rocketnautics:deep_space
+[14Oct2026 22:59:23.934] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_end
+[14Oct2026 22:59:23.934] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:the_end
+[14Oct2026 22:59:23.938] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: Saving chunks for level 'ServerLevel[world]'/minecraft:the_nether
+[14Oct2026 22:59:23.938] [Server thread/INFO] [dev.ryanhcode.sable.Sable/]: Saving sub-levels for level 'ServerLevel[world]'/minecraft:the_nether
+[14Oct2026 22:59:23.948] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (shots): All chunks are saved
+[14Oct2026 22:59:23.948] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (court): All chunks are saved
+[14Oct2026 22:59:23.948] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (moon): All chunks are saved
+[14Oct2026 22:59:23.948] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (deep_space): All chunks are saved
+[14Oct2026 22:59:23.948] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM1): All chunks are saved
+[14Oct2026 22:59:23.948] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage (DIM-1): All chunks are saved
+[14Oct2026 22:59:23.948] [Server thread/INFO] [net.minecraft.server.MinecraftServer/]: ThreadedAnvilChunkStorage: All dimensions are saved
