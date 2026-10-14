@@ -56,6 +56,32 @@ final class MoonShots {
             s.overworld().setWeatherParameters(12000, 0, false, false);
         }));
         ClientShots.step(10, () -> Minecraft.getInstance().options.hideGui = true);
+        // a control: load somewhere far off with nothing of ours in it, the same way (does that alone stall?)
+        ClientShots.step(1, () -> {
+            loaded = false;
+            ClientShots.server(sp -> {
+                BlockPos p = sp.blockPosition().offset(4000, 0, -4000);
+                AT.put("control", p);
+                WHERE.put("control", Level.OVERWORLD);
+                int cx = SectionPos.blockToSectionCoord(p.getX()), cz = SectionPos.blockToSectionCoord(p.getZ());
+                for (int x = cx - 4; x <= cx + 4; x++) {
+                    for (int z = cz - 4; z <= cz + 4; z++) {
+                        sp.serverLevel().setChunkForced(x, z, true);
+                    }
+                }
+                HalfAGod.LOG.info("SHOT control: loading round {}", p);
+            });
+        });
+        for (int k = 0; k < 3; k++) {
+            ClientShots.until(() -> chunksIn("control"));
+        }
+        ClientShots.step(60, () -> {
+            HalfAGod.LOG.info("SHOT control loaded: {}", loaded);
+            if (!loaded) {
+                dumpServer("loading the control area");
+            }
+        });
+        ClientShots.step(10, () -> ClientShots.shot("29_control"));
         visit(Level.OVERWORLD, "half_a_god:observatory", "30_observatory", 0.95, 9, 40, 130, 220, 310);
         inside("half_a_god:observatory", "30i_observatory_inside");
         visit(MOON, "half_a_god:faithful_wreck", "31_wreck", 0.85, 9, 30, 120, 210, 300);
@@ -173,7 +199,13 @@ final class MoonShots {
                 System.currentTimeMillis() - t0);
         AT.put(id, p);
         WHERE.put(id, dim);
-        sp.teleportTo(level, p.getX() + 8.5, 200, p.getZ() + 8.5, 0f, 90f);
+        // load (and generate) the area the way the game does for a forced chunk: in the background, not in one go
+        int cx = SectionPos.blockToSectionCoord(p.getX()), cz = SectionPos.blockToSectionCoord(p.getZ());
+        for (int x = cx - 4; x <= cx + 4; x++) {
+            for (int z = cz - 4; z <= cz + 4; z++) {
+                level.setChunkForced(x, z, true);
+            }
+        }
     }
 
     /** are the chunks round it loaded (asks the server, without making it wait) */
@@ -197,6 +229,9 @@ final class MoonShots {
                 }
                 loaded = all;
                 asking = false;
+                if (all && p != null && level != null) {
+                    sp.teleportTo(level, p.getX() + 8.5, 200, p.getZ() + 8.5, 0f, 90f);   // (it's all there now: no waiting)
+                }
             });
         }
         return false;
@@ -233,12 +268,14 @@ final class MoonShots {
     /** if the server is stuck, say where */
     private static void dumpServer(String what) {
         for (var e : Thread.getAllStackTraces().entrySet()) {
-            if (e.getKey().getName().equals("Server thread")) {
+            String all = java.util.Arrays.toString(e.getValue());
+            if (e.getKey().getName().equals("Server thread") || ((e.getKey().getName().startsWith("Worker") || e.getKey().getName().contains("Chunk"))
+                    && (all.contains("getChunk") || all.contains("Structure") || all.contains("ChunkMap") || all.contains("WorldGenRegion")))) {
                 StringBuilder sb = new StringBuilder();
                 for (StackTraceElement el : e.getValue()) {
                     sb.append("\n    at ").append(el);
                 }
-                HalfAGod.LOG.error("SHOT stalled {}: the server thread is at{}", what, sb);
+                HalfAGod.LOG.error("SHOT stalled {}: {} is at{}", what, e.getKey().getName(), sb);
             }
         }
     }
