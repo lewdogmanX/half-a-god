@@ -138,7 +138,7 @@ public final class ClientShots {
         return CourtData.get(Trial.court(sp.getServer())).slot(sp.getUUID());
     }
 
-    private static void click(int times) {
+    static void click(int times) {
         Minecraft mc = Minecraft.getInstance();
         for (int i = 0; i < times && mc.screen != null; i++) {
             mc.screen.mouseClicked(1, 1, 0);
@@ -392,6 +392,10 @@ public final class ClientShots {
             }
         }));
         step(20, () -> shot("22_enforcers"));
+        // the Ribbits' Song (with the Ribbits mod installed)
+        if (net.neoforged.fml.ModList.get().isLoaded("ribbits")) {
+            RibbitShots.add();
+        }
         step(20, () -> Minecraft.getInstance().stop());
     }
 
@@ -411,11 +415,29 @@ public final class ClientShots {
         o.add("stages", new JsonObject());
         o.addProperty("rep", -70);
         o.addProperty("op", true);
-        o.add("letters", new JsonArray());
+        // letters from people with long names, to see the list headers fit
+        JsonArray fakeLetters = new JsonArray();
+        String[][] senders = {{"A Letter from Old Mara", "Old Mara"}, {"From the Quarries", "Corin Vale, of Ashford, who was in chains"},
+                {"The Steward's Ledger", "Your notes"}, {"A Second Letter", "Old Mara"}};
+        for (int i = 0; i < senders.length; i++) {
+            JsonObject l = new JsonObject();
+            l.addProperty("title", senders[i][0]);
+            l.addProperty("author", senders[i][1]);
+            JsonArray pages = new JsonArray();
+            pages.add("A page.");
+            l.add("pages", pages);
+            l.addProperty("day", 2 + i * 5);
+            fakeLetters.add(l);
+        }
+        o.add("letters", fakeLetters);
+        // several acts with long names, close together, to see their marks along the chart's foot fit
         JsonArray path = new JsonArray();
-        path.add("#Prologue: The Bell That Won't Ring");
-        for (int r : reps) {
-            path.add(Integer.toString(r));
+        String[] actMarks = {"Prologue: The Bell That Won't Ring", "Act I: Ashford", "Act II: The Skull Market", "Act III: The Light Above the Pit"};
+        for (int i = 0; i < reps.length; i++) {
+            if (i % Math.max(1, reps.length / actMarks.length) == 0 && i / Math.max(1, reps.length / actMarks.length) < actMarks.length) {
+                path.add("#" + actMarks[i / Math.max(1, reps.length / actMarks.length)]);
+            }
+            path.add(Integer.toString(reps[i]));
         }
         o.add("path", path);
         o.add("moments", new JsonObject());

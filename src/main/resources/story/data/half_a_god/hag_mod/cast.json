@@ -666,6 +666,27 @@
    "adopt": "minecraft:villager"
   },
   {
+   "quest": "mebahelrpgrquest:hag_rb1_a_song_gone_quiet",
+   "stage": 0,
+   "name": "Grandmother Pondwhistle",
+   "place": "local",
+   "adopt": "ribbits:ribbit"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rb2_reed_shell_and_hide",
+   "stage": 0,
+   "name": "Bufo the Bandleader",
+   "place": "local",
+   "adopt": "ribbits:ribbit"
+  },
+  {
+   "quest": "mebahelrpgrquest:hag_rb4_the_moonrise_chorus",
+   "stage": 0,
+   "name": "Grandmother Pondwhistle",
+   "place": "local",
+   "adopt": "ribbits:ribbit"
+  },
+  {
    "quest": "mebahelrpgrquest:hag_x1_the_informant_after",
    "stage": 0,
    "name": "Village Elder",
@@ -1852,6 +1873,36 @@
    [
     0,
     "Talk to Hester Quill"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rb1_a_song_gone_quiet": [
+   [
+    0,
+    "Talk to Grandmother Pondwhistle"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rb2_reed_shell_and_hide": [
+   [
+    0,
+    "Collect 16 x bamboo"
+   ],
+   [
+    0,
+    "Collect 4 x rabbit hide"
+   ],
+   [
+    0,
+    "Collect 8 x string"
+   ],
+   [
+    0,
+    "Talk to Bufo the Bandleader"
+   ]
+  ],
+  "mebahelrpgrquest:hag_rb4_the_moonrise_chorus": [
+   [
+    0,
+    "Talk to Grandmother Pondwhistle"
    ]
   ],
   "mebahelrpgrquest:hag_x1_the_informant_after": [

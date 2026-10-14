@@ -1,0 +1,111 @@
+{
+  "title": "Reed, Hide and String",
+  "summary": "The Hag smashed the band's instruments on her way out. Bufo the bandleader needs bamboo for the flutes, rabbit hide for the drums and string for the guitars.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "bamboo",
+      "collect": "minecraft:bamboo",
+      "amount": 16,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "rabbit_hide",
+      "collect": "minecraft:rabbit_hide",
+      "amount": 4,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "string",
+      "collect": "minecraft:string",
+      "amount": 8,
+      "stage": 0,
+      "auto_advance": true
+    },
+    {
+      "id": "bring_bufo",
+      "talk": "ribbits:ribbit",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Bufo turns a new flute over in his hands, blows one note, and has to sit down for a moment. 'Right,' he says, a bit hoarse. 'Right. Now the maraca.'",
+      "name": "Bufo the Bandleader"
+    }
+  ],
+  "rewards": {
+    "xp": 500,
+    "items": {
+      "minecraft:emerald": 6
+    }
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_rb3_the_bog_hag",
+      "delay_ticks": 200,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rb2_reed_shell_and_hide_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "ribbits:ribbit",
+      "name": "Bufo the Bandleader",
+      "stage": 0,
+      "structure": "ribbits:ribbit_village",
+      "search_radius": 12000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "golem_protected": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "If you've come for a song, there isn't one. Ribbit.",
+      "talk": [
+        [
+          "The Hag took the maraca?",
+          "Took the maraca, smashed the flutes, put her foot through the bongos and called my guitar 'a lute for toads'. I am a toad. That's not the point."
+        ],
+        [
+          "What do you need?",
+          "Bamboo for flutes, rabbit hide for the drums, string for the guitars. Then we're a band again. A band with no beat, but a band."
+        ],
+        [
+          "And the maraca?",
+          "That's the hard part. She lives alone and she's got a temper and a cauldron. I've got a flute. You see the problem."
+        ]
+      ],
+      "delivery_objectives": [
+        "bamboo",
+        "rabbit_hide",
+        "string"
+      ],
+      "delivery_choice_label": "Hand over what you brought",
+      "delivered_line": "Bufo turns a new flute over in his hands, blows one note, and has to sit down for a moment. 'Right,' he says, a bit hoarse. 'Right. Now the maraca.'"
+    }
+  ]
+}

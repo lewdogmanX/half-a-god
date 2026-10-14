@@ -1081,11 +1081,6 @@
      "road": "bad"
     },
     {
-     "id": "mebahelrpgrquest:hag_et4_morning",
-     "choice": null,
-     "road": "good"
-    },
-    {
      "id": "mebahelrpgrquest:hag_ha3_haldens_last_stand",
      "choice": {
       "spare": [
@@ -1096,6 +1091,11 @@
       ]
      },
      "road": "bad"
+    },
+    {
+     "id": "mebahelrpgrquest:hag_et4_morning",
+     "choice": null,
+     "road": "good"
     },
     {
      "id": "mebahelrpgrquest:hag_ha4_the_hand_of_azazel",

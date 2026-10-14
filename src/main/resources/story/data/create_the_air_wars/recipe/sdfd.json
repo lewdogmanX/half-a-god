@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aaa",
+    "bcb",
+    " b "
+  ],
+  "key": {
+    "a": {
+      "item": "create_the_air_wars:antenna"
+    },
+    "b": {
+      "tag": "c:ingots/titanium"
+    },
+    "c": {
+      "item": "create_the_air_wars:chip"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "create_the_air_wars:target_gunnergadget"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create_the_air_wars"
+    }
+  ]
+}

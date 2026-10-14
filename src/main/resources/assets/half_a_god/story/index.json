@@ -4449,6 +4449,61 @@
      ],
      "needs": [],
      "leads": []
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rb1_a_song_gone_quiet",
+     "title": "A Song Gone Quiet",
+     "kind": "side",
+     "summary": "Ribbit villages are never quiet. This one is. Somebody here should be playing something.",
+     "goals": [
+      "Talk to Grandmother Pondwhistle"
+     ],
+     "needs": [],
+     "leads": [
+      "Reed, Hide and String"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rb2_reed_shell_and_hide",
+     "title": "Reed, Hide and String",
+     "kind": "side",
+     "summary": "The Hag smashed the band's instruments on her way out. Bufo the bandleader needs bamboo for the flutes, rabbit hide for the drums and string for the guitars.",
+     "goals": [
+      "Collect 16 x bamboo",
+      "Collect 4 x rabbit hide",
+      "Collect 8 x string",
+      "Talk to Bufo the Bandleader"
+     ],
+     "needs": [],
+     "leads": [
+      "The Bog Hag"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rb3_the_bog_hag",
+     "title": "The Bog Hag",
+     "kind": "side",
+     "summary": "The Golden Maraca is in the Bog Hag's hut, on the stilts past the cattails. She has a temper, a cauldron, and nothing whatever to lose.",
+     "goals": [
+      "Reach a swamp hut",
+      "Defeat 1 x witch"
+     ],
+     "needs": [],
+     "leads": [
+      "if spared: The Moonrise Chorus",
+      "if killed: The Moonrise Chorus"
+     ]
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rb4_the_moonrise_chorus",
+     "title": "The Moonrise Chorus",
+     "kind": "side",
+     "summary": "You have the Golden Maraca. Take it home to Grandmother Pondwhistle, and stay for the music.",
+     "goals": [
+      "Talk to Grandmother Pondwhistle"
+     ],
+     "needs": [],
+     "leads": []
     }
    ]
   },

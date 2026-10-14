@@ -126,6 +126,23 @@ public final class Cast {
         ServerLevel level = (ServerLevel) mob.level();
         // A Cult of Azazel resident (the Preacher, the Welcomer...): the quest's one takes the place of the one who lives there
         if (entry.adopt() != null && !entry.adopt().isEmpty()) {
+            // only ever one of them: a new quest's copy steps into the last one's place (and the last one goes), and
+            // any older copy that turns up later when its chunk loads is turned away (onJoin)
+            CastData cd = CastData.get(level.getServer());
+            String key = player.getUUID() + "|adopt|" + entry.name();
+            UUID before = cd.current(key);
+            cd.setCurrent(key, mob.getUUID());
+            mob.addTag(TAG + key);
+            mob.setPersistenceRequired();
+            if (before != null && !before.equals(mob.getUUID())) {
+                Entity old = find(player, before);
+                if (old != null && old.isAlive() && !stillNeeded(player, before)) {
+                    mob.moveTo(old.getX(), old.getY(), old.getZ(), old.getYRot(), old.getXRot());
+                    old.discard();
+                    Meb.retarget(player, progress, mob.getUUID(), mob.blockPosition());
+                    return;
+                }
+            }
             for (Mob other : level.getEntitiesOfClass(Mob.class, mob.getBoundingBox().inflate(48),
                     o -> o != mob && o.isAlive() && o.getType() == mob.getType() && !Meb.isQuestThreat(o) && !o.hasCustomName())) {
                 mob.moveTo(other.getX(), other.getY(), other.getZ(), other.getYRot(), other.getXRot());

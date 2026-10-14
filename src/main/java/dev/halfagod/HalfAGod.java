@@ -69,6 +69,7 @@ public final class HalfAGod {
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Arrest.class);
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Legends.class);
         NeoForge.EVENT_BUS.register(dev.halfagod.core.Moon.class);
+        NeoForge.EVENT_BUS.register(dev.halfagod.core.Ribbits.class);
         NeoForge.EVENT_BUS.addListener((AddReloadListenerEvent e) -> e.addListener(StoryData.INSTANCE));
         if (Boolean.getBoolean("halfagod.smoketest")) {
             NeoForge.EVENT_BUS.register(dev.halfagod.test.SmokeTest.class);

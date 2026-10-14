@@ -1,0 +1,87 @@
+{
+  "title": "A Song Gone Quiet",
+  "summary": "Ribbit villages are never quiet. This one is. Somebody here should be playing something.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "meet_pondwhistle",
+      "talk": "ribbits:ribbit",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "She pats your hand with a cold, damp, very kind one. 'Go and find Bufo. He'll be glad of the company, though he won't say so.'",
+      "name": "Grandmother Pondwhistle"
+    }
+  ],
+  "rewards": {
+    "xp": 200
+  },
+  "flow": {
+    "delayed_next_quest": {
+      "quest": "mebahelrpgrquest:hag_rb2_reed_shell_and_hide",
+      "delay_ticks": 200,
+      "silent_start": false,
+      "retry_delay_ticks": 200,
+      "conditions": {
+        "player_not_in_combat": true,
+        "dimensions": [
+          "minecraft:overworld"
+        ]
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rb1_a_song_gone_quiet_done"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "ribbits:ribbit",
+      "name": "Grandmother Pondwhistle",
+      "stage": 0,
+      "structure": "ribbits:ribbit_village",
+      "search_radius": 12000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "golem_protected": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "Oh. A visitor. Mind the lily pads, dear, they're older than you are.",
+      "talk": [
+        [
+          "Why is it so quiet?",
+          "Because the band has nothing to keep time to, dear. Somebody stole our music. Well. Our maraca. Same thing, to a frog."
+        ],
+        [
+          "A maraca?",
+          "The Golden Maraca. Every Ribbit band keeps the beat on one, and ours is the oldest in the swamp. Without it the others won't play. We are very particular about rhythm. Ribbit. Excuse me."
+        ],
+        [
+          "Who took it?",
+          "The Bog Hag. She lives in the hut on the stilts, past the cattails. She says our music curdles her potions. We say her potions curdle everything."
+        ],
+        [
+          "How can I help?",
+          "Bufo will tell you. He leads the band, when there is a band. He's been sulking under a lily pad since Tuesday."
+        ]
+      ]
+    }
+  ]
+}

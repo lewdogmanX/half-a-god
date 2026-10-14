@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " A ",
+    " BC",
+    "DCD"
+  ],
+  "key": {
+    "A": {
+      "item": "create:transmitter"
+    },
+    "B": {
+      "item": "create_the_air_wars:chip"
+    },
+    "C": {
+      "item": "create:cogwheel"
+    },
+    "D": {
+      "tag": "c:ingots/titanium"
+    }
+  },
+  "result": {
+    "id": "create_the_air_wars:camera",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create_the_air_wars"
+    }
+  ]
+}

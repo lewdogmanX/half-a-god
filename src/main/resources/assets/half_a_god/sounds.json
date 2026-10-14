@@ -1,0 +1,10 @@
+{
+  "item.golden_maraca.shake": {
+    "subtitle": "subtitles.half_a_god.golden_maraca",
+    "sounds": [
+      "half_a_god:item/maraca_shake1",
+      "half_a_god:item/maraca_shake2",
+      "half_a_god:item/maraca_shake3"
+    ]
+  }
+}

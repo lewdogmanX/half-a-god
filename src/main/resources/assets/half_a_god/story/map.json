@@ -8815,7 +8815,7 @@
      "id": "main",
      "name": "Main story",
      "color": 15909198,
-     "rows": 2
+     "rows": 3
     }
    ],
    "nodes": [
@@ -8934,6 +8934,28 @@
      ]
     },
     {
+     "id": "mebahelrpgrquest:hag_ha3_haldens_last_stand",
+     "title": "Halden's Last Stand",
+     "lane": "main",
+     "col": 2,
+     "row": 2,
+     "summary": "Reeve Halden has come to stop you, alone, with his father's spear. He doesn't expect to win.",
+     "goals": [
+      "Defeat 1 x vindicator"
+     ],
+     "stages": [
+      0
+     ],
+     "icon": "minecraft:iron_sword",
+     "choice": true,
+     "group": "",
+     "note": [
+      "Halden came alone. Brave old man.",
+      "Halden's last stand.",
+      "Halden came alone. Foolish old man."
+     ]
+    },
+    {
      "id": "mebahelrpgrquest:hag_et4_morning",
      "title": "Morning",
      "lane": "main",
@@ -8956,33 +8978,11 @@
      ]
     },
     {
-     "id": "mebahelrpgrquest:hag_ha3_haldens_last_stand",
-     "title": "Halden's Last Stand",
-     "lane": "main",
-     "col": 3,
-     "row": 1,
-     "summary": "Reeve Halden has come to stop you, alone, with his father's spear. He doesn't expect to win.",
-     "goals": [
-      "Defeat 1 x vindicator"
-     ],
-     "stages": [
-      0
-     ],
-     "icon": "minecraft:iron_sword",
-     "choice": true,
-     "group": "",
-     "note": [
-      "Halden came alone. Brave old man.",
-      "Halden's last stand.",
-      "Halden came alone. Foolish old man."
-     ]
-    },
-    {
      "id": "mebahelrpgrquest:hag_ha4_the_hand_of_azazel",
      "title": "The Hand of Azazel",
      "lane": "main",
-     "col": 4,
-     "row": 1,
+     "col": 3,
+     "row": 2,
      "summary": "The roads are yours. Bring your god his tithe, and take your place at his right hand.",
      "goals": [
       "Collect 16 x gold block"
@@ -9060,6 +9060,12 @@
      "id": "moon",
      "name": "The Silver King",
      "color": 13226982,
+     "rows": 1
+    },
+    {
+     "id": "ribbits",
+     "name": "The Ribbits' Song",
+     "color": 7319386,
      "rows": 1
     }
    ],
@@ -9649,6 +9655,82 @@
      "icon": "minecraft:chest",
      "choice": false,
      "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rb1_a_song_gone_quiet",
+     "title": "A Song Gone Quiet",
+     "lane": "ribbits",
+     "col": 0,
+     "row": 0,
+     "summary": "Ribbit villages are never quiet. This one is. Somebody here should be playing something.",
+     "goals": [
+      "Talk to Grandmother Pondwhistle"
+     ],
+     "stages": [
+      0
+     ],
+     "icon": "minecraft:emerald",
+     "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rb2_reed_shell_and_hide",
+     "title": "Reed, Hide and String",
+     "lane": "ribbits",
+     "col": 1,
+     "row": 0,
+     "summary": "The Hag smashed the band's instruments on her way out. Bufo the bandleader needs bamboo for the flutes, rabbit hide for the drums and string for the guitars.",
+     "goals": [
+      "Collect 16 x bamboo",
+      "Collect 4 x rabbit hide",
+      "Collect 8 x string",
+      "Talk to Bufo the Bandleader"
+     ],
+     "stages": [
+      0,
+      0,
+      0,
+      0
+     ],
+     "icon": "minecraft:chest",
+     "choice": false,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rb3_the_bog_hag",
+     "title": "The Bog Hag",
+     "lane": "ribbits",
+     "col": 2,
+     "row": 0,
+     "summary": "The Golden Maraca is in the Bog Hag's hut, on the stilts past the cattails. She has a temper, a cauldron, and nothing whatever to lose.",
+     "goals": [
+      "Reach a swamp hut",
+      "Defeat 1 x witch"
+     ],
+     "stages": [
+      0,
+      1
+     ],
+     "icon": "minecraft:compass",
+     "choice": true,
+     "group": ""
+    },
+    {
+     "id": "mebahelrpgrquest:hag_rb4_the_moonrise_chorus",
+     "title": "The Moonrise Chorus",
+     "lane": "ribbits",
+     "col": 3,
+     "row": 0,
+     "summary": "You have the Golden Maraca. Take it home to Grandmother Pondwhistle, and stay for the music.",
+     "goals": [
+      "Talk to Grandmother Pondwhistle"
+     ],
+     "stages": [
+      0
+     ],
+     "icon": "minecraft:emerald",
+     "choice": false,
+     "group": ""
     }
    ],
    "edges": [
@@ -9701,6 +9783,26 @@
      "mebahelrpgrquest:hag_mn9_come_home_alive",
      "mebahelrpgrquest:hag_mn10_the_silver_kings_blade",
      "next"
+    ],
+    [
+     "mebahelrpgrquest:hag_rb1_a_song_gone_quiet",
+     "mebahelrpgrquest:hag_rb2_reed_shell_and_hide",
+     "next"
+    ],
+    [
+     "mebahelrpgrquest:hag_rb2_reed_shell_and_hide",
+     "mebahelrpgrquest:hag_rb3_the_bog_hag",
+     "next"
+    ],
+    [
+     "mebahelrpgrquest:hag_rb3_the_bog_hag",
+     "mebahelrpgrquest:hag_rb4_the_moonrise_chorus",
+     "kill"
+    ],
+    [
+     "mebahelrpgrquest:hag_rb3_the_bog_hag",
+     "mebahelrpgrquest:hag_rb4_the_moonrise_chorus",
+     "spare"
     ],
     [
      "mebahelrpgrquest:hag_sec_clean1",

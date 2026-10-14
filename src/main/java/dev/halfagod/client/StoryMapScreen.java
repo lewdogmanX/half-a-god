@@ -1822,9 +1822,14 @@ public final class StoryMapScreen extends Screen {
                 }
             }
             case "letters" -> {
+                Map<String, Integer> perAuthor = new HashMap<>();
+                for (JsonElement e : letters) {
+                    perAuthor.merge(e.getAsJsonObject().get("author").getAsString(), 1, Integer::sum);
+                }
                 for (int i = letters.size() - 1; i >= 0; i--) {
                     JsonObject l = letters.get(i).getAsJsonObject();
-                    out.add(new Row("From " + l.get("author").getAsString().replace("Old ", ""), letters.size() + (letters.size() == 1 ? " letter" : " letters"),
+                    int n = perAuthor.get(l.get("author").getAsString());
+                    out.add(new Row("From " + l.get("author").getAsString().replace("Old ", ""), n + (n == 1 ? " letter" : " letters"),
                             l.get("title").getAsString(), l.has("day") ? "day " + l.get("day").getAsLong() : "", 0, letterKey(l)));
                 }
             }
@@ -1968,7 +1973,13 @@ public final class StoryMapScreen extends Screen {
                 if (i > 0) {
                     y += 6;
                 }
-                g.drawString(font, group.toUpperCase(), lx, y, RED_INK, false);
+                // (a long name gets cut short with "..." rather than running into the count)
+                String head = group.toUpperCase();
+                int room = lw - font.width(row.groupNote()) - 8;
+                if (font.width(head) > room) {
+                    head = font.plainSubstrByWidth(head, Math.max(0, room - font.width("..."))) + "...";
+                }
+                g.drawString(font, head, lx, y, RED_INK, false);
                 g.drawString(font, row.groupNote(), lx + lw - font.width(row.groupNote()), y, 0xFF9A8662, false);
                 g.fill(lx, y + 10, lx + lw, y + 11, 0x406B5638);
                 y += 15;
@@ -2331,15 +2342,19 @@ public final class StoryMapScreen extends Screen {
     private void drawPath(GuiGraphics g, int lx, int lw, int rx, int rw, int top, int bottom) {
         g.drawString(font, "YOUR PATH", lx, top + 12, RED_INK, false);
         g.drawString(font, Component.literal("who you were, quest by quest").withStyle(ChatFormatting.ITALIC), lx, top + 24, 0xFF9A8662, false);
-        int cx0 = lx + 34, cx1 = lx + lw, cy0 = top + 46, cy1 = bottom - 22;
-        // the five bands, Saint at the top
+        // the five bands, Saint at the top (their names in a column as wide as the widest, so none runs off the page)
         String[] names = {"Saint", "Good", "Wavering", "Fallen", "Wicked"};
+        int nameW = 0;
+        for (String nm : names) {
+            nameW = Math.max(nameW, font.width(nm));
+        }
+        int cx0 = lx + nameW + 6, cx1 = lx + lw, cy0 = top + 46, cy1 = bottom - 22;
         int[] tint = {0x30E0B040, 0x2060A050, 0x10806040, 0x20C06030, 0x30A02020};
         int[] ink = {0xFF9A6A10, 0xFF2E6B2E, 0xFF6B5638, 0xFF8A4A1A, 0xFF7A1818};
         for (int i = 0; i < 5; i++) {
             int y0 = cy0 + (cy1 - cy0) * i / 5, y1 = cy0 + (cy1 - cy0) * (i + 1) / 5;
             g.fill(cx0, y0, cx1, y1, tint[i]);
-            g.drawString(font, names[i], lx - 2 + 32 - font.width(names[i]), (y0 + y1) / 2 - 4, ink[i], false);
+            g.drawString(font, names[i], cx0 - 3 - font.width(names[i]), (y0 + y1) / 2 - 4, ink[i], false);
         }
         g.fill(cx0, cy0, cx0 + 1, cy1, 0x806B5638);
         g.fill(cx0, (cy0 + cy1) / 2, cx1, (cy0 + cy1) / 2 + 1, 0x306B5638);
@@ -2371,10 +2386,13 @@ public final class StoryMapScreen extends Screen {
                 for (int y = cy0; y < cy1; y += 3) {
                     g.fill(x, y, x + 1, y + 1, 0x606B5638);
                 }
-                String label = actNames.get(k).replace("Act ", "");
-                if (x + 2 > lastEnd + 5) {
-                    g.drawString(font, label, x + 2, cy1 + 3, 0xFF8A6A32, false);
-                    lastEnd = x + 2 + font.width(label);
+                String label = actNames.get(k);
+                label = label.contains(":") ? label.substring(0, label.indexOf(':')) : label;
+                label = label.replace("Act ", "");
+                int lx2 = Math.min(x + 2, cx1 - font.width(label));
+                if (lx2 > lastEnd + 5 && lx2 >= cx0) {
+                    g.drawString(font, label, lx2, cy1 + 3, 0xFF8A6A32, false);
+                    lastEnd = lx2 + font.width(label);
                 }
             }
             for (int i = 1; i < n; i++) {
@@ -2469,8 +2487,11 @@ public final class StoryMapScreen extends Screen {
         ry += 11;
         int rank = ranks.has(key) ? ranks.get(key).getAsInt() : 0;
         String title = ranks.has(key + "Title") ? ranks.get(key + "Title").getAsString() : "";
-        g.drawString(font, Component.literal(rank == 0 ? "Not one of them" : title).withStyle(rank == 0 ? ChatFormatting.ITALIC : ChatFormatting.BOLD), rx, ry,
-                rank == 0 ? 0xFF9A8662 : INK, false);
+        Component shown = Component.literal(rank == 0 ? "Not one of them" : title).withStyle(rank == 0 ? ChatFormatting.ITALIC : ChatFormatting.BOLD);
+        if (font.width(shown) > rw - 40) {
+            shown = Component.literal(font.substrByWidth(shown, rw - 40 - font.width("...")).getString() + "...").withStyle(rank == 0 ? ChatFormatting.ITALIC : ChatFormatting.BOLD);
+        }
+        g.drawString(font, shown, rx, ry, rank == 0 ? 0xFF9A8662 : INK, false);
         for (int i = 0; i < 3; i++) {
             diamond(g, rx + rw - 30 + i * 10, ry + 3, 3, i < rank ? (key.equals("watch") ? 0xFF4A7AB0 : 0xFFC9A55A) : 0x406B5638);
         }

@@ -1044,6 +1044,22 @@
    "dim": "minecraft:overworld",
    "title": "Rest"
   },
+  "mebahelrpgrquest:hag_rb1_a_song_gone_quiet": {
+   "dim": "minecraft:overworld",
+   "title": "A Song Gone Quiet"
+  },
+  "mebahelrpgrquest:hag_rb2_reed_shell_and_hide": {
+   "dim": "minecraft:overworld",
+   "title": "Reed, Hide and String"
+  },
+  "mebahelrpgrquest:hag_rb3_the_bog_hag": {
+   "dim": "minecraft:overworld",
+   "title": "The Bog Hag"
+  },
+  "mebahelrpgrquest:hag_rb4_the_moonrise_chorus": {
+   "dim": "minecraft:overworld",
+   "title": "The Moonrise Chorus"
+  },
   "mebahelrpgrquest:hag_x1_the_informant": {
    "dim": "minecraft:overworld",
    "title": "The Informant"

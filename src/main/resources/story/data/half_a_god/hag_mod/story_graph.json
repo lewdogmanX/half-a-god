@@ -2054,6 +2054,38 @@
    "kill": [],
    "book": false
   },
+  "mebahelrpgrquest:hag_rb1_a_song_gone_quiet": {
+   "next": [
+    "mebahelrpgrquest:hag_rb2_reed_shell_and_hide"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rb2_reed_shell_and_hide": {
+   "next": [
+    "mebahelrpgrquest:hag_rb3_the_bog_hag"
+   ],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rb3_the_bog_hag": {
+   "next": [],
+   "spare": [
+    "mebahelrpgrquest:hag_rb4_the_moonrise_chorus"
+   ],
+   "kill": [
+    "mebahelrpgrquest:hag_rb4_the_moonrise_chorus"
+   ],
+   "book": false
+  },
+  "mebahelrpgrquest:hag_rb4_the_moonrise_chorus": {
+   "next": [],
+   "spare": [],
+   "kill": [],
+   "book": false
+  },
   "mebahelrpgrquest:hag_x1_the_informant": {
    "next": [],
    "spare": [

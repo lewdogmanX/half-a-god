@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:ribbits_quiet",
+  "weight": 8,
+  "line": "Went through the frog village in the swamp. No music. Never known it quiet. Gave me the creeps, honestly.",
+  "conditions": {
+    "forbidden_traits": [
+      "hag_rb1_a_song_gone_quiet_done"
+    ]
+  }
+}

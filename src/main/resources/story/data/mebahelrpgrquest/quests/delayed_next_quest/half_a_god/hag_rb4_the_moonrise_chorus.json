@@ -1,0 +1,60 @@
+{
+  "title": "The Moonrise Chorus",
+  "summary": "You have the Golden Maraca. Take it home to Grandmother Pondwhistle, and stay for the music.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_chorus",
+      "talk": "ribbits:ribbit",
+      "amount": 1,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "The band strikes up the moment she lifts the maraca: flutes, bongos, guitars, a bass made of a barrel. Then she puts it in your hands. 'It's yours. We've a spare. Keep the beat for us out there, wherever you go.'",
+      "name": "Grandmother Pondwhistle"
+    }
+  ],
+  "rewards": {
+    "xp": 1500,
+    "items": {
+      "half_a_god:golden_maraca": 1,
+      "minecraft:emerald": 12
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rb4_the_moonrise_chorus_done",
+      "hag_rb_chorus"
+    ]
+  },
+  "threats": [
+    {
+      "entity": "ribbits:ribbit",
+      "name": "Grandmother Pondwhistle",
+      "stage": 0,
+      "structure": "ribbits:ribbit_village",
+      "search_radius": 12000,
+      "spawn_radius": 10,
+      "spawn_on_accept": true,
+      "spare": false,
+      "glow": false,
+      "max_health": 60,
+      "respawn_on_death": true,
+      "golem_protected": true,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 1,
+          "duration_seconds": 100000,
+          "show_particles": false
+        },
+        {
+          "id": "minecraft:fire_resistance",
+          "amplifier": 0,
+          "duration_seconds": 100000,
+          "show_particles": false
+        }
+      ],
+      "target_line": "Is that...? Oh. Oh, you darling thing. Bufo! BUFO!"
+    }
+  ]
+}

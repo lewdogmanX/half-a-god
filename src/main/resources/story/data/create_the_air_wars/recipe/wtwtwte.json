@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "bcb",
+    " d "
+  ],
+  "key": {
+    "a": {
+      "item": "create_the_air_wars:activator"
+    },
+    "b": {
+      "item": "create_the_air_wars:explosive"
+    },
+    "c": {
+      "tag": "c:ingots/titanium"
+    },
+    "d": {
+      "item": "create_the_air_wars:rocketengine"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "create_the_air_wars:rim_7"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create_the_air_wars"
+    }
+  ]
+}

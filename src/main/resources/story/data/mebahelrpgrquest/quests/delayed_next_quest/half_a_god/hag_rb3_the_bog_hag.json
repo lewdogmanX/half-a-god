@@ -1,0 +1,113 @@
+{
+  "title": "The Bog Hag",
+  "summary": "The Golden Maraca is in the Bog Hag's hut, on the stilts past the cattails. She has a temper, a cauldron, and nothing whatever to lose.",
+  "sequential_objectives": true,
+  "goals": [
+    {
+      "id": "the_hut",
+      "reach": "minecraft:swamp_hut",
+      "radius": 12000,
+      "range": 48,
+      "stage": 0,
+      "auto_advance": true,
+      "say": "Something in the cauldron is singing to itself. It stops when you come in."
+    },
+    {
+      "id": "the_hag",
+      "kill": "minecraft:witch",
+      "amount": 1,
+      "stage": 1,
+      "auto_advance": true
+    }
+  ],
+  "threats": [
+    {
+      "entity": "minecraft:witch",
+      "name": "The Bog Hag",
+      "stage": 1,
+      "spawn_on_accept": true,
+      "spare": true,
+      "glow": true,
+      "spawn_origin": "player",
+      "spawn_min_radius": 2,
+      "spawn_max_radius": 8,
+      "max_health": 90,
+      "effects": [
+        {
+          "id": "minecraft:resistance",
+          "amplifier": 0,
+          "duration_seconds": 3600,
+          "show_particles": false
+        }
+      ],
+      "talk": [
+        [
+          "Give it back.",
+          "Give WHAT back? Oh, the rattle. Every full moon, all night, that bloody band. Chk-chk-chk. Do you know what that does to a delicate brew?"
+        ],
+        [
+          "They just want to play.",
+          "And I just want to sleep. I've lived in this swamp longer than their grandmothers' grandmothers. I was here first."
+        ],
+        [
+          "Then move.",
+          "...You'd let me go? Just like that? Fine. FINE. Take the damn rattle. There are quieter swamps."
+        ]
+      ],
+      "golem_protected": true
+    }
+  ],
+  "choice": {
+    "attack": {
+      "label": "She's not leaving",
+      "traits": [
+        "hag_rb_hag_killed"
+      ]
+    },
+    "spare": {
+      "label": "Let her go somewhere quieter",
+      "line": "She packs a sack, three jars and a cat, and stomps off into the fog muttering about frogs.",
+      "traits": [
+        "hag_rb_hag_spared"
+      ]
+    }
+  },
+  "rewards": {
+    "xp": 900
+  },
+  "flow": {
+    "on_kill": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rb4_the_moonrise_chorus",
+        "delay_ticks": 200,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    },
+    "on_spare": {
+      "delayed_next_quest": {
+        "quest": "mebahelrpgrquest:hag_rb4_the_moonrise_chorus",
+        "delay_ticks": 200,
+        "silent_start": false,
+        "retry_delay_ticks": 200,
+        "conditions": {
+          "player_not_in_combat": true,
+          "dimensions": [
+            "minecraft:overworld"
+          ]
+        }
+      }
+    }
+  },
+  "traits": {
+    "complete": [
+      "hag_rb3_the_bog_hag_done"
+    ]
+  }
+}

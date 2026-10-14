@@ -34,6 +34,7 @@ import net.neoforged.neoforge.event.entity.player.TradeWithVillagerEvent;
 import net.neoforged.neoforge.network.PacketDistributor;
 
 import java.util.List;
+import java.util.Map;
 import java.util.UUID;
 
 /**
@@ -118,7 +119,16 @@ public final class Reputation {
             return;
         }
         if (Meb.isQuestThreat(victim)) {
-            return; // quest choices are counted by the story, not twice here
+            // quest choices are counted by the story, not twice here; but note which of Mebahel's own quests ended with
+            // a person dead (only those count as "you chose the blade": never animals, slimes or monsters)
+            if (isPerson(victim)) {
+                for (Object p : Meb.rawQuests(player)) {
+                    if (Meb.threatUuids(p).contains(victim.getUUID())) {
+                        PEOPLE_KILLED.computeIfAbsent(player.getUUID(), k -> new java.util.HashSet<>()).add(Meb.questIdOf(p));
+                    }
+                }
+            }
+            return;
         }
         if (victim instanceof Villager) {
             change(player, -15, "you killed a villager");
@@ -247,7 +257,16 @@ public final class Reputation {
         }
     }
 
-    /** For Mebahel's own (non-story) quests: sparing counts as mercy, attacking as cruelty. */
+    /** Mebahel's own quests in which a person was killed (by player): only those count as cruelty */
+    private static final Map<UUID, java.util.Set<String>> PEOPLE_KILLED = new java.util.concurrent.ConcurrentHashMap<>();
+
+    /** someone, not something: villagers and other folk, illagers, witches, piglins */
+    static boolean isPerson(LivingEntity e) {
+        return e instanceof net.minecraft.world.entity.npc.Npc || e instanceof net.minecraft.world.entity.monster.AbstractIllager
+                || e instanceof net.minecraft.world.entity.monster.Witch || e instanceof net.minecraft.world.entity.monster.piglin.AbstractPiglin;
+    }
+
+    /** For Mebahel's own (non-story) quests: sparing counts as mercy, killing a person as cruelty. */
     public static void countMebahelChoices(ServerPlayer player) {
         RepData d = data(player);
         for (Meb.Progress p : Meb.quests(player)) {
@@ -267,6 +286,9 @@ public final class Reputation {
                 continue;
             }
             String key = p.questId() + "|" + p.acceptedAt();
+            if (p.attacked() && !p.spared() && !PEOPLE_KILLED.getOrDefault(player.getUUID(), java.util.Set.of()).contains(p.questId())) {
+                continue;   // a hunt, a cull, a pest: not a choice about anyone's life
+            }
             if (d.countedChoices.add(key)) {
                 change(player, p.spared() ? 3 : -3, p.spared() ? "you showed mercy" : "you chose the blade");
             }

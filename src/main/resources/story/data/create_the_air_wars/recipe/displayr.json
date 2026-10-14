@@ -1,0 +1,30 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    " a ",
+    "aba",
+    " c "
+  ],
+  "key": {
+    "a": {
+      "tag": "c:nuggets/titanium"
+    },
+    "b": {
+      "item": "create_the_air_wars:mirror"
+    },
+    "c": {
+      "item": "create_the_air_wars:wires"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "create_the_air_wars:display"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create_the_air_wars"
+    }
+  ]
+}

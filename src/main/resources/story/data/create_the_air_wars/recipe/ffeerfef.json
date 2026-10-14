@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba",
+    " c ",
+    " d "
+  ],
+  "key": {
+    "a": {
+      "tag": "c:ingots/titanium"
+    },
+    "b": {
+      "item": "create_the_air_wars:activator"
+    },
+    "c": {
+      "item": "create_the_air_wars:miniexplzv"
+    },
+    "d": {
+      "item": "create_the_air_wars:rocketengine"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "create_the_air_wars:nine_k_119m"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create_the_air_wars"
+    }
+  ]
+}

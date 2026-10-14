@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "a  ",
+    "aaa",
+    "a  "
+  ],
+  "key": {
+    "a": {
+      "tag": "c:nuggets/titanium"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "create_the_air_wars:chick"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create_the_air_wars"
+    }
+  ]
+}

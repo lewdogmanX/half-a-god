@@ -110,6 +110,27 @@ final class MoonShots {
         ClientShots.step(10, () -> ClientShots.shot("33_eclipse_in_hand"));
         ClientShots.step(12, () -> ClientShots.server(sp -> ModItems.ECLIPSE.get().use(sp.serverLevel(), sp, InteractionHand.MAIN_HAND)));
         ClientShots.step(10, () -> ClientShots.shot("33b_eclipse_raised"));
+        // the Eclipse and the Golden Maraca, held, from in front (third person) and in your own hand
+        ClientShots.step(220, () -> Minecraft.getInstance().options.setCameraType(net.minecraft.client.CameraType.THIRD_PERSON_FRONT));
+        ClientShots.step(10, () -> ClientShots.shot("33d_eclipse_third_person"));
+        ClientShots.step(10, () -> ClientShots.server(sp -> {
+            sp.getInventory().setItem(1, new ItemStack(ModItems.GOLDEN_MARACA.get()));
+            sp.getInventory().selected = 1;
+            sp.connection.send(new net.minecraft.network.protocol.game.ClientboundSetCarriedItemPacket(1));
+            sp.inventoryMenu.broadcastChanges();
+        }));
+        ClientShots.step(20, () -> ClientShots.shot("34_maraca_third_person"));
+        ClientShots.step(14, () -> net.minecraft.client.KeyMapping.set(Minecraft.getInstance().options.keyUse.getKey(), true));
+        ClientShots.step(10, () -> ClientShots.shot("34b_maraca_shaking"));
+        ClientShots.step(10, () -> net.minecraft.client.KeyMapping.set(Minecraft.getInstance().options.keyUse.getKey(), false));
+        ClientShots.step(10, () -> Minecraft.getInstance().options.setCameraType(net.minecraft.client.CameraType.FIRST_PERSON));
+        ClientShots.step(14, () -> net.minecraft.client.KeyMapping.set(Minecraft.getInstance().options.keyUse.getKey(), true));
+        ClientShots.step(10, () -> ClientShots.shot("34c_maraca_first_person"));
+        ClientShots.step(10, () -> net.minecraft.client.KeyMapping.set(Minecraft.getInstance().options.keyUse.getKey(), false));
+        ClientShots.step(10, () -> ClientShots.server(sp -> {
+            sp.getInventory().selected = 0;
+            sp.connection.send(new net.minecraft.network.protocol.game.ClientboundSetCarriedItemPacket(0));
+        }));
         ClientShots.step(200, () -> {
         });
         ClientShots.step(20, () -> {

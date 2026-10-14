@@ -1,7 +1,7 @@
 import json, os, shutil, sys
 sys.path.insert(0, os.path.dirname(__file__))
 from lib import *
-import act0_1, act2_4, act5_6, act7_8, side, forks, green_trade, routes, story_text, bumblezone, legionary, hidden_lines, azazel, moon  # noqa: registers quests
+import act0_1, act2_4, act5_6, act7_8, side, forks, green_trade, routes, story_text, bumblezone, legionary, hidden_lines, azazel, moon, titanium, ribbits  # noqa: registers quests
 import base_quests, consequences, dialogue, mod_tables, npc_lines
 routes.join_main_story()
 consequences.link_after_endings()
@@ -39,6 +39,7 @@ DELIVERIES = []
 ASHFORD_FOLK = {"Reeve Halden", "Ashford Survivor", "Ashford Elder", "Halden's Son", "Captain of the Watch", "Guard Captain",
                 "Freed Ashford Man", "Old Aurel"}
 OBSERVATORY_FOLK = {"Hester Quill"}
+RIBBIT_FOLK = {"Grandmother Pondwhistle", "Bufo the Bandleader"}
 HOME_FOLK = {"The Mason", "The Armourer", "The Smith", "The Cleric", "Tam the Shepherd", "Wren of the Pits"}
 SNOW_QUESTS = ("s1_", "s2_", "s3_", "x5_", "x5s_", "x5k_", "rc5_good")
 DESERT_QUESTS = ("d1_", "d2_", "d3_")
@@ -66,7 +67,7 @@ for gl in QUESTS["a9_open_the_cells"][1]["goals"]:
         gl["name"] = "Freed Ashford Man"
 
 for qkey, (_, q) in QUESTS.items():
-    talks = [gl for gl in q["goals"] if gl.get("talk") == "minecraft:villager"]
+    talks = [gl for gl in q["goals"] if gl.get("talk") in ("minecraft:villager", "ribbits:ribbit")]
     if not talks:
         continue
     talk_quests.add(qkey)
@@ -82,7 +83,7 @@ for qkey, (_, q) in QUESTS.items():
         if not greet:
             MISSING_GREET.append((qkey, name))
             greet = "There you are."
-        npc = {"entity": "minecraft:villager", "name": name, "stage": gl["stage"], "structure": "minecraft:villages",
+        npc = {"entity": gl["talk"], "name": name, "stage": gl["stage"], "structure": "minecraft:villages",
                "search_radius": 8000, "spawn_radius": 10, "spawn_on_accept": True,
                # the mod makes them glow only when it's their turn
                "spare": False, "glow": False, "max_health": 60,
@@ -112,6 +113,14 @@ for qkey, (_, q) in QUESTS.items():
             npc["delivery_choice_label"] = "Hand over what you brought"
             npc["delivered_line"] = gl.get("say") or "Thank you."
             DELIVERIES.append(qkey)
+        if name in RIBBIT_FOLK:
+            # Ribbits of a Ribbit village: the quest's one takes the place of one who lives there
+            npc["structure"] = "ribbits:ribbit_village"
+            npc["search_radius"] = 12000
+            npc.pop("min_structure_distance", None)
+            threats.append(npc)
+            CAST.append({"quest": qid(qkey), "stage": gl["stage"], "name": name, "place": "local", "adopt": "ribbits:ribbit"})
+            continue
         if name in OBSERVATORY_FOLK:
             # she lives in her observatory, not a village: the quest's Hester takes the place of the astronomer there
             npc["structure"] = "half_a_god:observatory"
@@ -170,7 +179,8 @@ for _, (_, q) in QUESTS.items():
 
 for qkey, (_, q) in QUESTS.items():
     for t in q.get("threats", []):
-        if t.get("talk") and t["entity"].split(":")[0] not in ("minecraft",) and not t.get("spare"):
+        if t.get("talk") and t["entity"].split(":")[0] not in ("minecraft",) and not t.get("spare") \
+                and not any(e["quest"] == qid(qkey) and e["name"] == t["name"] for e in CAST):
             CAST.append({"quest": qid(qkey), "stage": t.get("stage", 0), "name": t["name"], "place": "local", "adopt": t["entity"]})
 
 # Anyone you might spare or talk to is protected from iron golems and Guard Villagers (Mebahel's golem_protected)

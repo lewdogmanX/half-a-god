@@ -149,3 +149,9 @@ for cname, (name, ent, qprefix, tones) in COMPANIONS.items():
             "responses": resp, "stories": stories}
 
 COMPANION_NAMES = {key: v[0] for key, v in COMPANIONS.items()}
+
+# the mod's creative tab
+LANG.update({
+    "itemGroup.half_a_god": "Half a God",
+    "item.half_a_god.tab_icon": "Half a God",
+})

@@ -1,0 +1,9 @@
+{
+  "replace": false,
+  "values": [
+    {
+      "id": "create_the_air_wars:titaniumingot",
+      "required": false
+    }
+  ]
+}

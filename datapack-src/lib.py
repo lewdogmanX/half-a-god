@@ -6,7 +6,7 @@ QNS = "mebahelrpgrquest"  # the quest map only draws quests in this namespace
 QUESTS = {}      # id -> (folder, dict)
 EXTRA = {}       # relative path -> dict
 # other mods' namespaces the pack writes into (as they are, not under half_a_god/)
-OTHER_NS = ("minecraft/", "mebahelrpgrquest/", "sons_of_sins/", "netherman/", "rocketnautics/")
+OTHER_NS = ("minecraft/", "mebahelrpgrquest/", "sons_of_sins/", "netherman/", "rocketnautics/", "create_the_air_wars/", "c/")
 
 
 def qid(x):

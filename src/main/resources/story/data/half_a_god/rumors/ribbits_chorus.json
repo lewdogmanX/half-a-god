@@ -1,0 +1,10 @@
+{
+  "id": "half_a_god:ribbits_chorus",
+  "weight": 8,
+  "line": "The frogs in the swamp are playing again. You can hear them three hills away. Somebody's got their rattle back.",
+  "conditions": {
+    "required_traits": [
+      "hag_rb_chorus"
+    ]
+  }
+}

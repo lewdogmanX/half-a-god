@@ -1,0 +1,36 @@
+{
+  "type": "create:mechanical_crafting",
+  "accept_mirrored": true,
+  "category": "misc",
+  "pattern": [
+    "  A  ",
+    " BCB ",
+    "DDDDD",
+    "BB BB",
+    "     "
+  ],
+  "key": {
+    "A": {
+      "item": "create_the_air_wars:chip"
+    },
+    "B": {
+      "item": "create_the_air_wars:vihr_rocket"
+    },
+    "C": {
+      "item": "create_the_air_wars:wires"
+    },
+    "D": {
+      "tag": "c:ingots/titanium"
+    }
+  },
+  "result": {
+    "id": "create_the_air_wars:vihr",
+    "count": 2
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create_the_air_wars"
+    }
+  ]
+}

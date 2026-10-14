@@ -529,6 +529,8 @@ def write(out_pack, mod_root):
     dump("trade.json", green_trade.TRADE)
     import moon
     dump("moon.json", moon.mod_table())
+    import ribbits
+    dump("ribbits.json", ribbits.mod_table())
     if mod_root:
         # Cult of Azazel's English, in the story's voice (in the always-on built-in resource pack)
         nl = os.path.join(mod_root, "src/main/resources/skin/assets/netherman/lang")

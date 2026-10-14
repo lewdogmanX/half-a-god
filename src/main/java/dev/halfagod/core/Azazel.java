@@ -276,4 +276,46 @@ public final class Azazel {
         Reputation.change(p, per * Math.min(amount, 5), "the cult's work");
         say(p, text(null, "work"));
     }
+
+    // ------------------------------------------------------------------ his guidebook (the mod's tutorial): gone
+    private static boolean guide(ItemStack s) {
+        return is(s, "azazel_guide_book");
+    }
+
+    /** the Believers don't sell it */
+    @SubscribeEvent(priority = EventPriority.HIGHEST)
+    public static void onTradeWith(PlayerInteractEvent.EntityInteract event) {
+        if (!event.getLevel().isClientSide() && event.getTarget() instanceof net.minecraft.world.item.trading.Merchant m
+                && BuiltInRegistries.ENTITY_TYPE.getKey(event.getTarget().getType()).getNamespace().equals(NM)) {
+            m.getOffers().removeIf(o -> guide(o.getResult()));
+        }
+    }
+
+    /** any copy (and the talking book it opens into) crumbles to nothing */
+    @SubscribeEvent
+    public static void onGuideJoin(EntityJoinLevelEvent event) {
+        Entity e = event.getEntity();
+        if (event.getLevel().isClientSide() || !ModList.get().isLoaded(NM)) {
+            return;
+        }
+        if ((e instanceof net.minecraft.world.entity.item.ItemEntity item && guide(item.getItem())) || is(e, "azazel_guide_book")) {
+            event.setCanceled(true);
+        }
+    }
+
+    @SubscribeEvent
+    public static void onGuideTick(net.neoforged.neoforge.event.tick.PlayerTickEvent.Post event) {
+        if (!(event.getEntity() instanceof ServerPlayer p) || p.tickCount % 40 != 23 || !ModList.get().isLoaded(NM)) {
+            return;
+        }
+        var inv = p.getInventory();
+        for (int i = 0; i < inv.getContainerSize(); i++) {
+            if (guide(inv.getItem(i))) {
+                inv.setItem(i, ItemStack.EMPTY);
+            }
+        }
+        if (guide(p.containerMenu.getCarried())) {
+            p.containerMenu.setCarried(ItemStack.EMPTY);
+        }
+    }
 }

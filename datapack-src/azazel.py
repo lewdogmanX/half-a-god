@@ -8,8 +8,8 @@
   costs reputation, and the Watch hears about it at your trial. So does every villager you bring to "the faith".
 - The Totem of Rebirth turns the killing blow aside where you stand (no carrying you off to your bed).
 - His English text is rewritten in the story's voice (a built-in resource pack, so his mod is untouched): the
-  advancements, the True Azazel's speech, the tooltips, and the guidebook, which becomes the Book of the Chariot, a
-  pilgrim's primer that hints instead of spelling out how to summon him.
+  advancements, the True Azazel's speech and the tooltips.
+- His guidebook (the mod's tutorial) is gone: the Believers don't sell it, and any copy crumbles to nothing.
 - The men you free from the Cursed Quarries remember it: one of them writes, and one speaks for you if you're ever tried.
 - Sons of Sins' Sinful Church is three times rarer (it's late in the story)."""
 from lib import *
@@ -68,12 +68,10 @@ LANG = {
     "boss.netherman.azazel_human.line10": "§6Approach, half of me, and bow at my feet.",
     "message.netherman.door_locked": "§4The door wants an answer.",
     # names and tooltips
-    "item.netherman.azazel_guide_book": "§4The Book of the Chariot",
     "item.netherman.note": "The Instruction",
     "item.netherman.quota": "Cult Scroll",
     "item.netherman.altar_compass_key": "Altar Compass-Key",
     "tooltip.netherman.compass": "Points the faithful home",
-    "tooltip.netherman.guide": "Given to every pilgrim at the gate",
     "tooltip.netherman.chance_totem.line1": "Turns a killing blow aside, where you stand",
     "tooltip.netherman.essence": "[RMB] on a creature to bring it to the faith",
     "tooltip.netherman.essence.line1": "Nine pieces of faith make one",
@@ -85,64 +83,6 @@ LANG = {
     "gui.netherman.quota.pillagers": "Bring pillagers to the faith %s/%s",
     "gui.netherman.quota.villagers": "Bring villagers to the faith %s/%s",
 }
-
-# The Book of the Chariot (his guidebook's pages, line for line, same number of lines per page)
-BOOK = {
-    1: ["§4§lThe Book of the Chariot",
-        "Given to every pilgrim at the gate.",
-        "Read it on your knees.",
-        "Copied by a Preacher of the Sacred City.",
-        "§c§lWHAT HE ASKS:",
-        "Gold. Obedience. Patience.",
-        "He has waited. So can you."],
-    2: ["§c§lHIS HOUSE: §4§lthe Sacred City",
-        "Three courts, one above the other:",
-        "§6§lTHE QUARRIES",
-        "§c§lTHE SACRED CITY",
-        "§4§lTHE LAIR",
-        "§6§lTHE QUARRIES:§f§l where the faithless",
-        "dig gold until they believe. The §4Manipulators",
-        "keep them at it. Kill a Manipulator and its",
-        "workers go free. You will be remembered for it."],
-    3: ["§c§lTHE SACRED CITY:§f§l where the faithful live.",
-        "Walk softly. Two here will serve you:",
-        "",
-        "§cThe Doctor§f§l - mends the faithful, for a price",
-        "§cThe Blacksmith§f§l - mends what you carry,",
-        "and leaves its blessings where they are.",
-        "§4§lTHE LAIR:§f§l the end of the road.",
-        "What waits there is not for pilgrims.",
-        "Not until you are sent."],
-    4: ["§c§lHIS SHRINES BEYOND THE CITY",
-        "§2§lIn the world above:",
-        "Pipes in the hills. The ground cracks beneath them.",
-        "A compass, a pillar, a head. Read what's inside.",
-        "A maze. Be careful. Look up.",
-        "And past all of it: God.",
-        "Two roads to him. The faithful road takes three days."],
-    5: ["§c§lHIS CREATURES: §4the Ghastly",
-        "builds its hive in crimson stems,",
-        "makes crimson honey,",
-        "can be gentled,",
-        "and always knows the way home.",
-        "§c§lHis servants:",
-        "§6Welcomer§f§l - bows at the gate.",
-        "§6Trader§f§l - sells to the faithful.",
-        "§6Gilded Golem§f§l - drinks gold, and blood.",
-        "§4Gehinnom§f§l - do not provoke.",
-        "§4Manipulator§f§l - drives the workers."],
-    6: ["§c§lHIS GIFTS",
-        "§cTotem of Rebirth:",
-        "Turns a killing blow aside, once, where you stand.",
-        "§4Staff of Manipulation:",
-        "Bends the will, pulls the body,",
-        "and calls the dead to serve.",
-        "§e§lAZAZEL IS MY LIGHT.",
-        "§4Be praised."],
-}
-for page, lines in BOOK.items():
-    for i, line in enumerate(lines):
-        LANG[f"book.netherman.page{page}.line{i + 1}"] = line
 
 # ---------------------------------------------------------------- Sons of Sins: three times rarer
 # (spacing x sqrt(3): a third as many churches in the same area; same salt, so it's the same kind of spread)

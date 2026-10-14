@@ -1,0 +1,33 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "ABA",
+    "CDC",
+    "AAA"
+  ],
+  "key": {
+    "A": {
+      "tag": "c:ingots/titanium"
+    },
+    "B": {
+      "item": "create:transmitter"
+    },
+    "C": {
+      "item": "create_the_air_wars:wires"
+    },
+    "D": {
+      "item": "create_the_air_wars:display"
+    }
+  },
+  "result": {
+    "id": "create_the_air_wars:monitor",
+    "count": 1
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create_the_air_wars"
+    }
+  ]
+}

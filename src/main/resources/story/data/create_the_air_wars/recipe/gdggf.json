@@ -1,0 +1,25 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "aba"
+  ],
+  "key": {
+    "a": {
+      "item": "create_the_air_wars:explosive"
+    },
+    "b": {
+      "tag": "c:ingots/titanium"
+    }
+  },
+  "result": {
+    "count": 1,
+    "id": "create_the_air_wars:bigexplzv"
+  },
+  "neoforge:conditions": [
+    {
+      "type": "neoforge:mod_loaded",
+      "modid": "create_the_air_wars"
+    }
+  ]
+}

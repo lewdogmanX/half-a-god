@@ -43,6 +43,12 @@ jobs:
             u=$(mr $p); echo "$p: $u"
             curl -sfL -o "run/mods/$(basename "$u")" "$u"
           done
+          # Ribbits (and what it needs), for the Ribbits' Song
+          for p in geckolib yungs-api; do
+            u=$(mr $p); echo "$p: $u"
+            curl -sfL -o "run/mods/$(basename "$u")" "$u"
+          done
+          curl -sfL -o run/mods/Ribbits-1.21.1-NeoForge-4.1.6.jar https://cdn.modrinth.com/data/8YcE8y4T/versions/XrUKaWrw/Ribbits-1.21.1-NeoForge-4.1.6.jar
           curl -sfL -o run/mods/mebahelrpgrquest-3.4.4-fabric-1.21.1.jar https://cdn.modrinth.com/data/jNqtpcJu/versions/yVzM3N1c/mebahelrpgrquest-3.4.4-fabric-1.21.1.jar
           ls -la run/mods
           portablemc start --help > start-help.txt 2>&1 || true
