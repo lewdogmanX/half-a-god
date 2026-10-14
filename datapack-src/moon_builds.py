@@ -226,7 +226,7 @@ def observatory():
                 t = vy * ay + vz * az
                 if T0 <= t <= T1:
                     perp = math.sqrt(max(0.0, vx * vx + vy * vy + vz * vz - t * t))
-                    rad = 1.5 if t > T1 - 2.6 else 1.08
+                    rad = 1.32 if t > T1 - 2.6 else 1.05
                     if perp <= rad:
                         tube[(x, y, z)] = (t, perp)
     for (x, y, z), (t, perp) in tube.items():
@@ -504,6 +504,7 @@ def wreck():
             elif dz < w + 2.5:
                 h += 0.9 * t * (1 - (dz - w) / 2.5)
         h += 2.2 * max(0.0, 1 - math.hypot(x - 33, z - 17.5) / 4.5)
+        h += 1.6 * math.exp(-((rr(x, z) - 0.97) / 0.07) ** 2)          # the lip of the crater
         return int(round(h))
     F = {}
     for x in range(0, W + 1):

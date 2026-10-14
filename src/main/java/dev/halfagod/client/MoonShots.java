@@ -84,10 +84,10 @@ final class MoonShots {
             }
         });
         ClientShots.step(10, () -> ClientShots.shot("29_control"));
-        visit(Level.OVERWORLD, "half_a_god:observatory", "30_observatory", 0.95, 9, 40, 130, 220, 310);
+        visit(Level.OVERWORLD, "half_a_god:observatory", "30_observatory", 0.8, 6, 40, 130, 220, 310);
         inside("half_a_god:observatory", "30i_observatory_inside");
         visit(MOON, "half_a_god:faithful_wreck", "31_wreck", 0.85, 9, 30, 120, 210, 300);
-        ClientShots.step(1, () -> ClientShots.server(sp -> closeUp(sp, "half_a_god:faithful_wreck", 200, 0.42, 4)));
+        ClientShots.step(1, () -> ClientShots.server(sp -> closeUp(sp, "half_a_god:faithful_wreck", 160, 0.75, 6)));
         ClientShots.step(140, () -> {
         });
         ClientShots.step(10, () -> ClientShots.shot("31x_wreck_close"));
