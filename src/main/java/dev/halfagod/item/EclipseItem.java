@@ -2,6 +2,7 @@ package dev.halfagod.item;
 
 import dev.halfagod.net.Payloads;
 import net.minecraft.ChatFormatting;
+import net.minecraft.core.component.DataComponents;
 import net.minecraft.network.chat.Component;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.server.level.ServerPlayer;
@@ -22,6 +23,7 @@ import net.minecraft.world.item.Rarity;
 import net.minecraft.world.item.SwordItem;
 import net.minecraft.world.item.Tier;
 import net.minecraft.world.item.TooltipFlag;
+import net.minecraft.world.item.component.Unbreakable;
 import net.minecraft.world.item.crafting.Ingredient;
 import net.minecraft.world.level.Level;
 import net.neoforged.neoforge.common.SimpleTier;
@@ -36,12 +38,13 @@ import java.util.List;
  * weakened and shown up, and you're stronger and harder to hurt, for eight seconds; then it rests for three minutes.
  */
 public final class EclipseItem extends SwordItem {
-    public static final Tier TIER = new SimpleTier(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 0, 9f, 9f, 18, () -> Ingredient.EMPTY);
+    public static final Tier TIER = new SimpleTier(BlockTags.INCORRECT_FOR_NETHERITE_TOOL, 4062, 9f, 9f, 18, () -> Ingredient.EMPTY);
     public static final int COOLDOWN = 20 * 180;
     public static final int LASTS = 20 * 8;
 
     public EclipseItem() {
-        super(TIER, new Item.Properties().attributes(SwordItem.createAttributes(TIER, 3, -2.4f)).fireResistant().rarity(Rarity.EPIC));
+        super(TIER, new Item.Properties().attributes(SwordItem.createAttributes(TIER, 3, -2.4f)).fireResistant().rarity(Rarity.EPIC)
+                .component(DataComponents.UNBREAKABLE, new Unbreakable(true)));
     }
 
     @Override
