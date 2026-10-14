@@ -392,9 +392,12 @@ def observatory():
         c.set(x, 2, dz + 3, "minecraft:spruce_fence")
         c.set(x, 3, dz + 3, "minecraft:lantern[hanging=false]")
 
-    # the astronomer (the story's Hester Quill takes her place)
+    # the astronomer (the story's Hester Quill takes her place). A cartographer for the monocle, with her trades
+    # written down (none): a cartographer without any works hers out the moment the chunk is saved, and her explorer
+    # maps go looking for structures from inside world generation, which freezes the server
     c.entity(cx - 2 + 0.5, 1, cz + 2 + 0.5, {"id": "minecraft:villager", "PersistenceRequired": Byte(1),
                                              "VillagerData": {"profession": "minecraft:cartographer", "level": 3, "type": "minecraft:plains"},
+                                             "Offers": {"Recipes": []},
                                              "Rotation": [Float(180.0), Float(0.0)]})
     return c
 
