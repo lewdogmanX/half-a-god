@@ -56,7 +56,7 @@ jobs:
         continue-on-error: true
         shell: bash
         run: |
-          timeout 1800 xvfb-run -a -s "-screen 0 1280x720x24" portablemc --main-dir "$PWD/mc" --work-dir "$PWD/run" start \
+          timeout 2700 xvfb-run -a -s "-screen 0 1280x720x24" portablemc --main-dir "$PWD/mc" --work-dir "$PWD/run" start \
             --resolution 1280x720 --jvm "$JAVA_HOME/bin/java" --jvm-args="-Xmx3G -Dhalfagod.clientshots=true" \
             -u Tester neoforge-21.1.252 2>&1 | tee play.log || true
           ls run/screenshots || true
