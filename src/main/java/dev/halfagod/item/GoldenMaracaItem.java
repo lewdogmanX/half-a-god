@@ -59,7 +59,7 @@ public final class GoldenMaracaItem extends Item {
         if (t % 10 == 0) {
             // golden notes (a note particle's colour comes from its x speed, 0..1: these are the yellows and golds)
             sl.sendParticles(ParticleTypes.NOTE, who.getX() + (sl.random.nextDouble() - 0.5), who.getEyeY() + 0.4,
-                    who.getZ() + (sl.random.nextDouble() - 0.5), 0, 0.12 + sl.random.nextDouble() * 0.12, 0, 0, 1);
+                    who.getZ() + (sl.random.nextDouble() - 0.5), 0, 0.05 + sl.random.nextDouble() * 0.04, 0, 0, 1);
             sl.sendParticles(ParticleTypes.WAX_ON, who.getX(), who.getY() + 1.2, who.getZ(), 3, 0.4, 0.3, 0.4, 0.02);
         }
         if (t % 20 == 0) {

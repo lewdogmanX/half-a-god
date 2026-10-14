@@ -68,7 +68,16 @@ final class RibbitShots {
             sp.teleportTo(level, c.getX() + 0.5, y + 1, c.getZ() + 0.5, 0, 0);
             HalfAGod.LOG.info("SHOT in the ribbit village at {}", c);
         }));
-        ClientShots.step(300, () -> {
+        ClientShots.step(300, () -> ClientShots.server(sp -> {
+            java.util.List<String> ids = new java.util.ArrayList<>();
+            for (dev.halfagod.core.Meb.Progress q : dev.halfagod.core.Meb.quests(sp)) {
+                if (q.questId().contains("rb")) {
+                    ids.add(q.questId());
+                }
+            }
+            HalfAGod.LOG.info("SHOT ribbit quests: {}", ids);
+        }));
+        ClientShots.step(200, () -> {
         });
         // Grandmother Pondwhistle: stand in front of her
         ClientShots.step(1, () -> ClientShots.server(sp -> {

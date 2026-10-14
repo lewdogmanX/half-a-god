@@ -32,8 +32,11 @@ public final class Ribbits {
             return;
         }
         Structure village = level.registryAccess().registryOrThrow(Registries.STRUCTURE).get(ResourceLocation.parse(t().get("structure").getAsString()));
-        if (village != null && level.structureManager().getStructureWithPieceAt(p.blockPosition(), village).isValid()) {
-            Meb.startQuest(p, ResourceLocation.parse(start), false);
+        // anywhere within the village's bounds (its paths and the water between the huts, not only inside a hut)
+        if (village != null && level.structureManager().getStructureAt(p.blockPosition(), village).isValid()) {
+            boolean ok = Meb.startQuest(p, ResourceLocation.parse(start), false);
+            dev.halfagod.HalfAGod.LOG.info("Half a God: {} walked into a Ribbit village; the Ribbits' Song {}", p.getName().getString(),
+                    ok ? "begins" : "could not start");
         }
     }
 }
