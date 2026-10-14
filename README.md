@@ -10,6 +10,7 @@ The whole Half a God story datapack is **built into the jar**. Don't also instal
 - Mebahel's RPG 3.4.4, running through **Sinytra Connector** + **Forgified Fabric API**
 - The story's mods: Cult of Azazel, Bosses' Rise, Sons of Sins, The Aether, It Takes a Pillage Continuation, Iron's Spells 'n Spellbooks, End Remastered, Illager Invasion, Create: Addictives, The Bumblezone, Legionary
 - For the moon storyline (optional): Create: Cosmonautics, with Create, Create Aeronautics and Sable
+- For the Ribbits' Song (optional): Ribbits
 
 Install: put `half_a_god-<version>.jar` in `mods/` on the client **and** the server.
 
@@ -262,8 +263,26 @@ harder to hurt, for 8 seconds, every 3 minutes. It only answers to the living: d
 overworld and it goes back to his hand, and you'll have to go up and take it again. Laying him to rest is worth a good
 name instead.
 
+## The Ribbits' Song (with Ribbits)
+
+Ribbit villages are never quiet. This one is. Walk into a Ribbit village and Grandmother Pondwhistle, its old
+sorceress, tells you why: the Bog Hag stole the Golden Maraca the band keeps the beat on (she says their music curdles
+her potions) and smashed their instruments on her way out. Help Bufo the bandleader rebuild the band, then find the
+Hag in her hut on the stilts and decide what she's owed. The village's Ribbits talk to you on Mebahel's screen like
+everyone else.
+
+**The Golden Maraca**, your reward: hold use to shake it. Chk-chk, golden notes, and you and everyone near you move to
+the rhythm (a little speed, a little spring) while it plays.
+
+## Titanium
+
+Titanium is rare: Create: Cosmonautics' ore is seven times rarer than it ships. Create: The Air War uses the same
+titanium: its own ore doesn't generate, every Air War recipe that asked for its titanium ingot, nugget or sheet takes
+any titanium, and any Air War titanium you already have crafts straight into Cosmonautics'.
+
 ## The Cult of Azazel
 
+- **No guidebook.** His mod's tutorial book is gone: the Believers don't sell it, and any copy crumbles to nothing.
 - **Not before the story.** Azazel can't be summoned, and his altars, compass, scroll and essence won't work, until
   the story has sent you to him. His structures still generate; they just wait. (Creative players aren't stopped.)
 - **His words, rewritten.** The guidebook (the Book of the Chariot) and his lines are the story's.
@@ -318,6 +337,8 @@ Everyone plays their own story; nothing forces a fight.
 
 ## What the mod adds to the story
 
+- **Fair reputation:** in Mebahel's own quests, only killing a person you could have spared counts against you. Hunts,
+  culls and monsters never do.
 - **Choices with three or four answers:**
   - the Librarian's Bargain
   - the One Who Speaks
@@ -347,6 +368,11 @@ Everyone plays their own story; nothing forces a fight.
   - letters
   - pending choices
   - the questlines the act is waiting on
+
+## Items
+
+Everything the mod adds is in its own creative tab, **Half a God** (the seal with the eye): the Eclipse and the Golden
+Maraca so far.
 
 ## Commands
 
