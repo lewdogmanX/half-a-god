@@ -1,0 +1,115 @@
+usage: portablemc start [-h] [--dry] [--disable-mp] [--disable-chat] [--demo]
+                        [--resolution RESOLUTION] [--jvm JVM]
+                        [--jvm-args ARGS] [--no-fix] [--fabric-prefix PREFIX]
+                        [--quilt-prefix PREFIX] [--legacyfabric-prefix PREFIX]
+                        [--babric-prefix PREFIX] [--forge-prefix PREFIX]
+                        [--neoforge-prefix PREFIX] [--lwjgl LWJGL]
+                        [--exclude-lib SPEC] [--include-bin PATH]
+                        [--auth-anonymize]
+                        [--auth-service {microsoft,yggdrasil}]
+                        [--auth-no-browser] [-t] [-l LOGIN] [-u NAME]
+                        [-i UUID] [-s SERVER] [-p PORT]
+                        [version]
+
+positional arguments:
+  version                               Version identifier (default to
+                                        release): release|snapshot|<vanilla-
+                                        version>, fabric:[<vanilla-
+                                        version>[:<loader-version>]],
+                                        quilt:[<vanilla-version>[:<loader-
+                                        version>]], legacyfabric:[<vanilla-
+                                        version>[:<loader-version>]],
+                                        babric::[<loader-version>],
+                                        forge:[<forge-version>] (forge-version
+                                        >= 1.5.2), neoforge:[<neoforge-
+                                        version>] (neoforge-version >=
+                                        1.20.1).
+
+options:
+  -h, --help                            Show this help message and exit.
+  --dry                                 Simulate game starting.
+  --disable-mp                          Disable the multiplayer buttons (>=
+                                        1.16).
+  --disable-chat                        Disable the online chat (>= 1.16).
+  --demo                                Start game in demo mode.
+  --resolution RESOLUTION               Set a custom start resolution
+                                        (<width>x<height>, >= 1.6).
+  --jvm JVM                             Set a custom JVM 'java' executable
+                                        path. If this argument is omitted a
+                                        public build of a JVM is downloaded
+                                        from Mojang services (if Mojang does
+                                        not support your system, error is
+                                        returned).
+  --jvm-args ARGS                       Change the default JVM arguments.
+  --no-fix                              Flag that globally disable fixes
+                                        (proxy for old versions), enabled by
+                                        default.
+  --fabric-prefix PREFIX                Change the prefix of the version ID
+                                        when starting with Fabric
+                                        (<prefix>-<vanilla-version>-<loader-
+                                        version>).
+  --quilt-prefix PREFIX                 Change the prefix of the version ID
+                                        when starting with Quilt
+                                        (<prefix>-<vanilla-version>-<loader-
+                                        version>).
+  --legacyfabric-prefix PREFIX          Change the prefix of the version ID
+                                        when starting with LegacyFabric
+                                        (<prefix>-<vanilla-version>-<loader-
+                                        version>).
+  --babric-prefix PREFIX                Change the prefix of the version ID
+                                        when starting with Babric
+                                        (<prefix>-<vanilla-version>-<loader-
+                                        version>).
+  --forge-prefix PREFIX                 Change the prefix of the version ID
+                                        when starting with Forge
+                                        (<prefix>-<forge-version>).
+  --neoforge-prefix PREFIX              Change the prefix of the version ID
+                                        when starting with NeoForge
+                                        (<prefix>-<neoforge-version>).
+  --lwjgl LWJGL                         Change the default LWJGL version used
+                                        by Minecraft (LWJGL >= 3.2.3). This
+                                        argument makes additional changes in
+                                        order to support processor
+                                        architectures such as ARM. It's not
+                                        guaranteed to work with every version
+                                        of Minecraft and downgrading LWJGL
+                                        version is not recommended.
+  --exclude-lib SPEC                    Specify Java libraries to exclude from
+                                        the classpath (and download) before
+                                        launching the game. Follow this
+                                        pattern to specify libraries: <artifac
+                                        t>[:[<version>][:<classifier>]]. If
+                                        your system doesn't support Mojang-
+                                        provided natives, you can use both
+                                        --exclude-lib and --include-bin to
+                                        replace them with your own (e.g.
+                                        --exclude-lib lwjgl-glfw::natives
+                                        --include-bin /lib/libglfw.so).
+  --include-bin PATH                    Include binaries (.so, .dll, .dylib)
+                                        in the bin directory of the game,
+                                        given files are symlinked in the
+                                        directory if possible, copied if not.
+                                        On linux, version numbers are
+                                        discarded (e.g. /usr/lib/foo.so.1.22.2
+                                        -> foo.so). Read the --exclude-lib
+                                        help for use cases.
+  --auth-anonymize                      Anonymize your email or username for
+                                        authentication messages.
+  --auth-service {microsoft,yggdrasil}  Authentication service type to use for
+                                        logging in the game.
+  --auth-no-browser                     Prevent the authentication service to
+                                        open your system's web browser.
+  -t, --temp-login                      Flag used with -l (--login) to tell
+                                        launcher not to cache your session if
+                                        not already cached, disabled by
+                                        default.
+  -l LOGIN, --login LOGIN               Use a email (or deprecated username)
+                                        to authenticate using selected service
+                                        (with --auth-service, also overrides
+                                        --username and --uuid).
+  -u NAME, --username NAME              Set a custom user name to play.
+  -i UUID, --uuid UUID                  Set a custom user UUID to play.
+  -s SERVER, --server SERVER            Start the game and directly connect to
+                                        a multiplayer server (>= 1.6).
+  -p PORT, --server-port PORT           Set the server port (given with -s,
+                                        --server, >= 1.6).

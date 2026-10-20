@@ -1,0 +1,400 @@
+[16:45:50] [main] [INFO] SpongePowered MIXIN Subsystem Version=0.8.7 Source=union:/home/runner/work/half-a-god/half-a-god/mc/libraries/net/fabricmc/sponge-mixin/0.15.2+mixin.0.8.7/sponge-mixin-0.15.2+mixin.0.8.7.jar%23107!/ Service=ModLauncher Env=CLIENT
+[16:45:50] [main] [INFO] Found library file "~nonexistent" [locator: org.sinytra.connector.locator.ConnectorEarlyLocatorBootstrap@1827a871]
+[16:45:50] [main] [WARN] Skipping jar. File mods/mebahelrpgrquest-3.5.0-fabric-1.21.1.jar is a Fabric mod and cannot be loaded
+[16:45:51] [main] [INFO] Found gamelibrary file "mixinextras-neoforge-0.5.3.jar" [parent: neoforge-21.1.252-universal.jar, locator: jarinjar, reader: mod manifest]
+[16:45:56] [main] [INFO] Found mod file "mebahelrpgrquest-3.5.0-fabric-1.21.1_mapped_moj_1.21.1.jar" [locator: org.sinytra.connector.locator.ConnectorLocator@425357dd]
+[16:45:56] [main] [INFO] Found mod file "org.sinytra.connector-2.0.0-beta.17+1.21.1-mod.jar" [parent: , locator: org.sinytra.connector.locator.ConnectorLocator@425357dd, reader: mod manifest]
+[16:45:56] [main] [INFO] Found gamelibrary file "runtime-1.0.0+1.21.1.jar" [parent: , locator: org.sinytra.connector.locator.ConnectorLocator@425357dd, reader: mod manifest]
+		Half a God 1.0.0 (half_a_god)
+		Mebahel's RPG: Villager Quests & Companions 3.5.0-fabric-1.21.1 (mebahelrpgrquest)
+		Sinytra Connector 2.0.0-beta.17+1.21.1 (connector)
+[16:45:57] [main] [WARN] Reference map 'geckolib.refmap.json' for geckolib.mixins.json could not be read. If this is a development environment you can ignore this message
+[16:45:57] [main] [WARN] Reference map 'yungsapi.refmap.json' for yungsapi.mixins.json could not be read. If this is a development environment you can ignore this message
+[16:45:57] [main] [WARN] Reference map 'ribbits.refmap.json' for ribbits.mixins.json could not be read. If this is a development environment you can ignore this message
+[16:45:57] [main] [WARN] Reference map 'ribbits.refmap.json' for ribbits_neoforge.mixins.json could not be read. If this is a development environment you can ignore this message
+[16:45:57] [main] [WARN] Reference map '' for adapter.init.mixins.json could not be read. If this is a development environment you can ignore this message
+[16:45:57] [main] [WARN] Error loading class: com/benji/netherman/QuotaManager (java.lang.ClassNotFoundException: com.benji.netherman.QuotaManager)
+[16:45:57] [main] [WARN] Error loading class: folk/sisby/surveyor/client/SurveyorClientEvents$Invoke (java.lang.ClassNotFoundException: folk.sisby.surveyor.client.SurveyorClientEvents$Invoke)
+[16:45:58] [main] [WARN] Error loading class: com/leon/saintsdragons/server/entity/dragons/ignivorus/Ignivorus (java.lang.ClassNotFoundException: com.leon.saintsdragons.server.entity.dragons.ignivorus.Ignivorus)
+[16:45:58] [main] [WARN] Error loading class: com/leon/saintsdragons/server/entity/dragons/raevyx/Raevyx (java.lang.ClassNotFoundException: com.leon.saintsdragons.server.entity.dragons.raevyx.Raevyx)
+[16:45:58] [main] [WARN] Error loading class: com/leon/saintsdragons/server/entity/dragons/atroxiia/Atroxiia (java.lang.ClassNotFoundException: com.leon.saintsdragons.server.entity.dragons.atroxiia.Atroxiia)
+[16:45:58] [main] [WARN] Error loading class: com/leon/saintsdragons/server/entity/dragons/varasuchus/Varasuchus (java.lang.ClassNotFoundException: com.leon.saintsdragons.server.entity.dragons.varasuchus.Varasuchus)
+[16:45:58] [main] [WARN] Error loading class: com/leon/saintsdragons/server/entity/dragons/volitans/Volitans (java.lang.ClassNotFoundException: com.leon.saintsdragons.server.entity.dragons.volitans.Volitans)
+[16:45:58] [main] [INFO] Initializing MixinExtras via com.llamalad7.mixinextras.service.MixinExtrasServiceImpl(version=0.5.3).
+[16:46:13] [Render thread/ERROR] [minecraft/SoundEngine]: Error starting SoundSystem. Turning off sounds & music
+java.lang.IllegalStateException: Failed to open OpenAL device
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundEngine.loadLibrary(SoundEngine.java:107) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:ribbits.mixins.json:client.music.SoundEngineMixin from mod ribbits,pl:mixin:A,pl:connector_pre_launch:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundEngine.reload(SoundEngine.java:99) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:APP:ribbits.mixins.json:client.music.SoundEngineMixin from mod ribbits,pl:mixin:A,pl:connector_pre_launch:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundManager.apply(SoundManager.java:128) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:connector_pre_launch:A,re:classloading,pl:mixin:APP:fabric-resource-loader-v0.client.mixins.json:KeyedResourceReloadListenerClientMixin from mod fabric_resource_loader_v0,pl:mixin:APP:ribbits.mixins.json:client.music.SoundManagerMixin from mod ribbits,pl:mixin:A,pl:connector_pre_launch:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.sounds.SoundManager.apply(SoundManager.java:42) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:connector_pre_launch:A,re:classloading,pl:mixin:APP:fabric-resource-loader-v0.client.mixins.json:KeyedResourceReloadListenerClientMixin from mod fabric_resource_loader_v0,pl:mixin:APP:ribbits.mixins.json:client.music.SoundManagerMixin from mod ribbits,pl:mixin:A,pl:connector_pre_launch:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimplePreparableReloadListener.lambda$reload$1(SimplePreparableReloadListener.java:19) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:connector_pre_launch:A,re:classloading,pl:mixin:APP:fabric-resource-conditions-api-v1.mixins.json:SinglePreparationResourceReloaderMixin from mod fabric_resource_conditions_api_v1,pl:mixin:A,pl:connector_pre_launch:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.server.packs.resources.SimpleReloadInstance.lambda$new$3(SimpleReloadInstance.java:69) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:connector_pre_launch:A,re:classloading,pl:mixin:APP:fabric-resource-loader-v0.mixins.json:SimpleResourceReloadMixin from mod fabric_resource_loader_v0,pl:mixin:A,pl:connector_pre_launch:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.doRunTask(BlockableEventLoop.java:148) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:computing_frames,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:connector_pre_launch:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.ReentrantBlockableEventLoop.doRunTask(ReentrantBlockableEventLoop.java:23) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:connector_pre_launch:A,re:computing_frames,pl:connector_pre_launch:A,re:classloading,pl:connector_pre_launch:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.pollTask(BlockableEventLoop.java:122) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:computing_frames,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:connector_pre_launch:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.util.thread.BlockableEventLoop.runAllTasks(BlockableEventLoop.java:111) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,re:computing_frames,pl:accesstransformer:B,pl:connector_pre_launch:A,re:classloading,pl:accesstransformer:B,pl:connector_pre_launch:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.runTick(Minecraft.java:1155) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:A,pl:connector_pre_launch:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.Minecraft.run(Minecraft.java:807) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:mixin,pl:accesstransformer:B,pl:connector_pre_launch:A,pl:runtimedistcleaner:A,re:classloading,pl:accesstransformer:B,pl:mixin:A,pl:connector_pre_launch:A,pl:runtimedistcleaner:A}
+	at TRANSFORMER/minecraft@1.21.1/net.minecraft.client.main.Main.main(Main.java:230) ~[client-1.21.1-20240808.144430-srg.jar%23184!/:?] {re:classloading,pl:connector_pre_launch:A,pl:runtimedistcleaner:A}
+	at java.base/java.lang.reflect.Method.invoke(Method.java:580) ~[?:?] {re:mixin}
+[16:46:17] [Render thread/INFO] [de.ha.HalfAGod/]: SHOT opening the test world
+[16:46:19] [Render thread/INFO] [de.ha.HalfAGod/]: Half a God story tables: 10 choices, 22 cinematic moments, 309 story quests, 30 of Mebahel's questlines.
+[16:46:19] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_please_return_the_ship uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[16:46:19] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_please_return_the_ship uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[16:46:19] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_captains_share uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[16:46:19] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_captains_share uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[16:46:19] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_fourth_member uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[16:46:19] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_fourth_member uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[16:46:19] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_fourth_member uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[16:46:19] [Render thread/WARN] [mebahelrpgrquest/]: Quest book mebahelrpgrquest:questbook_the_fourth_member uses deprecated loot field 'chance'; use 'drop_chance' and 'weight'.
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded 59 quest book(s) and 26 quest-book loot pool(s).
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded 16 companion dialogue profile(s).
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:blaze_mineshaft_threat
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:captains_share_return_the_shares
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a10_burning_door
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a11_chains_at_the_fortress
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a12_brother_vael
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a12k_the_stewards_guard
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a12s_vaels_map
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a13_tears_for_a_ward
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a14_night_of_the_faithful
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a15_one_of_seven
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a2_what_was_left
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a3_roof_and_hearth
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a4_refugee_road
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a5_beneath_the_pipes
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a6_believers_house
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a7_the_bastille
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a8_ravagers_horn
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a9_open_the_cells
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a9i_the_invokers_fort
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_b1_bow_at_my_feet
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_b2_tithe_of_gold
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_b3_the_last_preacher
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br2_the_supply_line
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br3_the_bookkeeper
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br4_medicine_for_the_valley
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br5_don_vasco_answers
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br6_the_valley_breathes
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz10_the_honey_crown
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz2_pearls_and_patience
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz3_into_the_comb
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz4_clogged_channels
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz5_the_cell_maze
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz6_the_hive_temple
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz7_roots_that_bite
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz8_audience_with_the_queen
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz9_the_queens_desire
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_c1_nets_and_knives
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_c2_the_tidecaller
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_c3_the_black_ship
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_c4_terror_of_the_depths
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_bones
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_powder
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_rivals
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_the_bell
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_the_farmers_share
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_contract_the_tithe
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_d1_the_buried_well
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_d2_the_nest_road
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_d3_the_beast_below
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_clear_the_road
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_creeper_watch
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_feed_the_village
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_mend_the_fences
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_night_watch
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_raider_patrol
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_duty_spider_season
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e0_the_road_to_the_end
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e3_the_road_underground
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e4_the_warden_journal
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e5_free_the_end
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e6_edge_of_the_world
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e7_the_nether_is_singing
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea1_the_old_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea2_the_rogue_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea3_the_cold_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea4_the_black_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea5_the_lost_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea6_the_corrupted_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ea7_the_guardian_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb2_the_nether_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb3_the_cursed_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb4_the_wither_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb5_the_witch_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb6_the_undead_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_et1_whispers_of_a_new_god
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_et2_the_pretender
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_et3_the_last_faithful
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_et4_morning
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_f1_the_last_road
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_f2_dragon_slayer
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_f3_unbound
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_g2_ashford_rebuilt
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_go1_burn_it_down
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_go2_blackwater_sends_regards
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_go3_testimony
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt10_the_sorcerers_books
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt11_crystal
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt11b_purity
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt12_don_vasco
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt13p_the_big_shipment
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt13w_remnants
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt14_king_of_the_valley
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt1b_the_recruiters_terms
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt2_seeds_of_the_trade
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt3_first_customers
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt4_the_hash_market
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt5_blackwater_wants_a_word
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt6_the_coca_fields
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt7_white_powder_money
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt8_a_customer_goes_under
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt9_turf_war
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h10_fireproof
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h2_hostile_paradise
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h3_do_you_believe_in_magic
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h4_cockatrice_nights
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h5_the_bronze_halls
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h6_like_a_bossaru
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h7_medals_of_the_silver_court
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h8_dethroned
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h9_extinguished
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ha1_the_first_command
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ha2_ashford_must_kneel
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ha3_haldens_last_stand
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ha4_the_hand_of_azazel
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i2_fire_in_the_tower
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i3_the_evoker_fort
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i4_the_scroll_forge
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i6_the_mountain_tower
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i7_echo_of_tyros
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i8_the_arcane_anvil
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lg2_ghosts_of_the_legion
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lg3_the_unbreakable
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lg4_the_thermal_heart
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lg5_the_unbreakable_head
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m1_follow_the_crimson_bee
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m2_the_cursed_quarries
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m3_hold_the_quarry_gate
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m4_gilded_hunger
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m5_do_not_provoke_gehinnom
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m6_the_instruction
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m7_hand_over_your_weapon
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_m9_half_a_soul
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn10_the_silver_kings_blade
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn1_the_woman_who_watches_the_moon
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn2_a_metal_for_the_sky
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn3_fire_under_glass
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn4_a_little_moon_of_our_own
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn5_above_the_sky
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn6_what_the_probe_saw
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn7_the_silver_sea
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn8_the_man_in_the_moon
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn9_come_home_alive
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_mn9r_rest
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p1_the_bell
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p2_winter_stores
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p3_the_shepherd
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p4_eye_on_chapel
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p5_raise_the_watch
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p6_market_road
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p7_gold_at_double_weight
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p7b_peddlers_debt
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p7s_the_peddlers_gift
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p8_pillager_moon
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_p9_who_pays_in_gold
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_r2e_the_assayer
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_r2g_the_granary_thief
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rb1_a_song_gone_quiet
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rb2_reed_shell_and_hide
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rb3_the_bog_hag
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rb4_the_moonrise_chorus
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc1_saint
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc1_waver
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc1_wicked
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc2_fallen
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc2_good
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc2_saint
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc2_wicked
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc3_fallen
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc3_good
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc3_saint
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc3_waver
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc3_wicked
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc4_fallen
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc4_good
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc4_saint
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc4_waver
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc4_wicked
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc5_fallen
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc5_good
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc5_saint
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc5_waver
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc5_wicked
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc6_fallen
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc6_good
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc6_saint
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc6_waver
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc6_wicked
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc7_fallen
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc7_good
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc7_saint
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc7_waver
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rc7_wicked
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rep_end_fallen
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rep_end_good
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rep_end_saint
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rep_end_waver
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_rep_end_wicked
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_s2_the_frozen_garrison
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_s3_lost_in_the_snow
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_clean2
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_godsaw1
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_godsaw2
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_pilgrim1
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_pilgrim2
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_skyfire1
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_skyfire2
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_tongue1
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_tongue2
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_u1_the_soul_guard
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_u2_helvars_oath
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_u3_back_into_hell
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v10_maraal
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v10f_walking_with_maraal
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v10r_alone
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v11_the_crimson_guide
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v2_the_sinful_church
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v3_the_midwife
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v3k_the_coven
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v3s_cleansing_the_pits
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v4_original_sin
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v5_jaws_in_the_dark
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v6_what_eats_the_dead
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v7_soul_steel
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v8_sinbuster
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w0_two_roads_meet
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w2_smite_the_dead
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w3_the_skull_harvest
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w4_hold_the_black_bridge
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w5_a_grave_for_a_nail
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w6_the_withered_crown
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w7_a_light_they_cannot_dim
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w8_six_remain
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x1_the_informant
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x1_the_informant_after
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x2_the_bastille_warden
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x2_the_bastille_warden_after
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x3_the_third_skull
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x3_the_third_skull_after
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun_after
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x5_the_last_garrison_man
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x5_the_last_garrison_man_after
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_z1_caution
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_z2_up
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_z3_choir_of_the_whole_god
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:garrick_second_funeral
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:garrick_third_funeral
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:merrick_a_place_you_remember
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:merrick_remembers_you
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:merrick_the_end_remembers
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:the_sixth_voice
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:delivery_cobblestone_oak_log_other_village
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:blackthorn_chain_2_a_place_set_for_no_one
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_rusk_debt_of_breath
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_a1_ashford_burns
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_br1_the_watch_needs_eyes
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_bz1_a_letter_smelling_of_honey
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_e1_the_librarians_request
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_eb1_the_magical_eye
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_g1_maraals_last_letter
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_go0_a_way_out
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt15_the_fixers_price
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_gt1_a_note_in_the_stash
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_h1_a_light_above_the_pit
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i1_the_priests_warning
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_i5_the_dead_king
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lg1_the_golden_legion
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp1_ancient_city
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp2_end_city
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp3_jungle_temple
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp4_mansion
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp5_treasure
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp6_igloo
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp7_outpost
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp8_ruin
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_lp9_the_first_champion
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_r1_the_prisoner
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ru1_the_lantern_road
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_ru2_silas_makes_an_offer
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_s1_cold_hearths
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_sec_clean1
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_the_first_letter
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_tm1_a_generous_offer
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v1_blood_in_the_wells
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_v9_the_wrong_parcel
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_w1_the_skull_market
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x1k_wicks_sister
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x1s_wicks_back_door
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x2k_gorrans_brothers
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x2s_the_wardens_debt
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x3k_the_choir_wants_it_back
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x3s_ossians_gift
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x4k_the_sun_remembers
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x4s_sunlight_in_a_bottle
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x5k_a_widows_letter
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_x5s_brann_comes_home
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y1_what_the_last_page_said
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y2_the_hand_reads_too
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y3_free_men_remember
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y3_tomas_at_the_gate
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y4_vaels_last_letter
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:hag_y5_the_midwifes_daughter
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_a_very_reasonable_treasure_map
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_instructions_for_my_own_funeral
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_please_return_the_ship
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_ash_merchant
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_captains_share
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_fourth_member
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_house_that_owes_me_money
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_man_who_buried_himself
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:questbook_the_man_who_came_back_warm
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_1_ruined_portal
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_kill_2_seal_the_gate
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_kill_3_ashes_at_the_frame
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_spare_2_forgotten_road
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_spare_3_name_in_iron
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:armed_zombie_chain_spare_4_oath_of_ash
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_1_bones_beneath_the_village
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_2_the_bone_anchor
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_3_a_skull_for_proof
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_4_the_warm_skull
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_5_black_glass_road
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_6_the_court_answers
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_7_names_under_stone
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_chain_8_the_last_debt
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:ash_court_orr_veyl_ledger_without_chains
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:blackthorn_chain_1_the_courier_who_never_returned
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:blackthorn_chain_3_the_final_guest
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:blackthorn_chain_4_a_seat_for_the_dead
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_chain_1_a_hero_trophy
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_chain_2_the_last_witness
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_chain_kill_3_convenient_silence
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_chain_spare_3_name_beneath_medal
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_chain_spare_4_the_false_hero
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:false_hero_rusk_no_banner_behind_me
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:kill_10_skeletons
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:kill_10_zombies
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:kill_5_creepers
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_1_a_cure_for_the_common_death
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_2_the_control_group
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_3_the_assistants_last_notes
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_4_patient_thirteen
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_kill_5_the_grand_demonstration
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:mad_scientist_chain_spare_5_the_grand_demonstration
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:most_important_cow_chain_1_an_audience_with_her_majesty
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:most_important_cow_chain_2_the_cow_has_spoken
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:most_important_cow_chain_3_the_woman_who_knew_the_bell
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:most_important_cow_chain_4_the_price_of_a_queen
+[16:46:19] [Render thread/INFO] [mebahelrpgrquest/]: Loaded quest: mebahelrpgrquest:most_important_cow_chain_bargain_5_a_quiet_road
