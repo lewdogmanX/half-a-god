@@ -41,6 +41,21 @@ public final class Simulate {
     }
 
     public static String run(ServerPlayer player, String act, String mode) {
+        if (act.equalsIgnoreCase(FINAL)) {
+            return runTo(player, "end", BEFORE_THE_ALTAR, mode, true);
+        }
+        return run(player, act, mode, -1, true);
+    }
+
+    /**
+     * The whole story up to a point inside one chapter (the first {@code upTo} of its quests done), and the quest that
+     * comes next started for real. For jumping straight to a fight.
+     */
+    public static String runTo(ServerPlayer player, String chapter, int upTo, String mode, boolean startNext) {
+        return run(player, chapter, mode, upTo, startNext);
+    }
+
+    private static String run(ServerPlayer player, String act, String mode, int stopAt, boolean startNext) {
         RepData d = Reputation.data(player);
         if (d.trialState != 0) {
             return "You're on trial or in a cell: /halfagod test trial release first.";
@@ -54,10 +69,7 @@ public final class Simulate {
         if (act.equals("random")) {
             act = ACTS.get(rnd.nextInt(8)); // the prologue to Act VII
         }
-        boolean finalFight = act.equals(FINAL);
-        if (finalFight) {
-            act = "end";
-        }
+        boolean finalFight = stopAt >= 0;
         if (!ACTS.contains(act)) {
             return "Unknown point in the story: " + act + ". Try one of " + String.join(", ", acts()) + ".";
         }
@@ -88,7 +100,7 @@ public final class Simulate {
             }
             JsonArray qs = ch.getAsJsonArray("quests");
             // the act you asked for is only partly done; everything before it is finished
-            int upTo = ci < target ? qs.size() : finalFight ? BEFORE_THE_ALTAR : (act.equals("end") || act.equals("after") ? qs.size() : Math.max(1, (int) Math.round(qs.size() * (0.25 + rnd.nextFloat() * 0.45))));
+            int upTo = ci < target ? qs.size() : finalFight ? stopAt : (act.equals("end") || act.equals("after") ? qs.size() : Math.max(1, (int) Math.round(qs.size() * (0.25 + rnd.nextFloat() * 0.45))));
             int done = 0;
             for (JsonElement e : qs) {
                 JsonObject q = e.getAsJsonObject();
@@ -173,12 +185,14 @@ public final class Simulate {
         d.value = Math.max(-Reputation.MAX, Math.min(Reputation.MAX, rep));
         Reputation.sync(player, 0);
         Reputation.updateTierFlags(player);
+        if (finalFight && !next.isEmpty() && !startNext) {
+            return "Simulated the story up to " + next.replace("mebahelrpgrquest:hag_", "") + " (not started), played " + mode
+                    + ", reputation " + Math.round(d.value) + " (" + Reputation.tier(d.value) + ").";
+        }
         if (finalFight && !next.isEmpty()) {
             boolean started = Meb.startQuest(player, net.minecraft.resources.ResourceLocation.parse(next), false);
-            return "Simulated the whole story up to the head altar, played " + mode + ", reputation " + Math.round(d.value)
-                    + " (" + Reputation.tier(d.value) + "). "
-                    + (started ? "Started " : "Couldn't start ") + next.replace("mebahelrpgrquest:hag_", "")
-                    + ": the Choir waits at the head altar, then join head to body and the True Azazel wakes."
+            return "Simulated the story up to " + next.replace("mebahelrpgrquest:hag_", "") + ", played " + mode + ", reputation "
+                    + Math.round(d.value) + " (" + Reputation.tier(d.value) + "). " + (started ? "Started it." : "Couldn't start it.")
                     + " /halfagod test story clear puts your real story back.";
         }
         return "Simulated: " + label + ", played " + mode + ". " + quests + " quests done, " + decisions + " decisions made, reputation "

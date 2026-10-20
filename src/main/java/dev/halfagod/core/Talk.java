@@ -179,6 +179,7 @@ public final class Talk {
             case "line" -> Trial.onLineShown(player, parse(a));
             case "answer" -> Trial.onAnswer(player, parse(a), b);
             case "bounty" -> Rivals.askBounty(player, b);
+            case "start_quest" -> MapStates.startFromMap(player, a);
             default -> {
             }
         }

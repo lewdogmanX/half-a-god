@@ -324,4 +324,61 @@ public final class Azazel {
             p.containerMenu.setCarried(ItemStack.EMPTY);
         }
     }
+
+    // ------------------------------------------------------------------ operators: every Azazel fight, straight away
+    /**
+     * /halfagod test azazel: the story set up to the fight (Azazel unlocked), in survival, and the fight brought to you.
+     * chariot: the Divine Chariot (Act VII's "Hand Over Your Weapon"), summoned in front of you.
+     * choir: the Choir of the Whole God at the head altar (the quest starts; the Choir waits at the altar).
+     * true: the True Azazel, summoned in front of you, with his speech; kneel or kill him.
+     */
+    public static String testFight(ServerPlayer p, String which, String mode) {
+        if (!present()) {
+            return "Cult of Azazel isn't installed.";
+        }
+        String story;
+        String boss;
+        switch (which) {
+            case "chariot" -> {
+                story = Simulate.runTo(p, "act7", 6, mode, true);    // up to Hand Over Your Weapon
+                boss = "azazel";
+            }
+            case "choir" -> {
+                story = Simulate.runTo(p, "end", 2, mode, true);     // up to The Choir of the Whole God
+                boss = "";
+            }
+            case "true" -> {
+                story = Simulate.runTo(p, "end", 3, mode, false);    // the Choir beaten; the endings start from him
+                boss = "azazel_human";
+            }
+            default -> {
+                return "Pick a fight: chariot, choir or true.";
+            }
+        }
+        if (p.isCreative() || p.isSpectator()) {
+            p.setGameMode(net.minecraft.world.level.GameType.SURVIVAL);
+        }
+        if (boss.isEmpty()) {
+            return story + " The Choir is at the head altar (Mebahel's tracker points the way).";
+        }
+        var type = net.minecraft.world.entity.EntityType.byString(NM + ":" + boss);
+        if (type.isEmpty()) {
+            return story + " Couldn't find " + NM + ":" + boss + ".";
+        }
+        ServerLevel level = p.serverLevel();
+        net.minecraft.world.phys.Vec3 look = p.getLookAngle().multiply(1, 0, 1).normalize();
+        double x = p.getX() + look.x * 8, z = p.getZ() + look.z * 8;
+        int y = level.getHeight(net.minecraft.world.level.levelgen.Heightmap.Types.MOTION_BLOCKING_NO_LEAVES, (int) Math.floor(x), (int) Math.floor(z));
+        Entity e = type.get().create(level);
+        if (e == null) {
+            return story + " " + NM + ":" + boss + " wouldn't spawn.";
+        }
+        e.moveTo(x, y, z, p.getYRot() + 180f, 0f);
+        if (e instanceof net.minecraft.world.entity.Mob m) {
+            m.finalizeSpawn(level, level.getCurrentDifficultyAt(m.blockPosition()), net.minecraft.world.entity.MobSpawnType.COMMAND, null);
+        }
+        boolean in = level.addFreshEntity(e);
+        return story + (in ? (boss.equals("azazel") ? " The Divine Chariot is in front of you." : " The True Azazel is in front of you.")
+                : " He couldn't come into the world here (the story's lock?).");
+    }
 }

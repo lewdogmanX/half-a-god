@@ -467,9 +467,11 @@ for k, (_, q) in QUESTS.items():
             dim = "minecraft:the_end"
         elif r and r.split(":")[0] in DIM_OF_NS:
             dim = DIM_OF_NS[r.split(":")[0]]
-    MARKERS[qid(k)] = {"dim": dim, "title": q["title"]}
+    import story_map as _sm
+    _lane = "side" if k.startswith("sq_") else _sm._rule(k)[1]
+    MARKERS[qid(k)] = {"dim": dim, "title": q["title"], "lane": _lane}
 for name in base_quests.BASE:
-    MARKERS["mebahelrpgrquest:" + name] = {"dim": "minecraft:overworld", "title": base_quests.title_of(name)}
+    MARKERS["mebahelrpgrquest:" + name] = {"dim": "minecraft:overworld", "title": base_quests.title_of(name), "lane": "mebahel"}
 json.dump({'quests': MARKERS}, open(os.path.join(OUT, 'data/half_a_god/hag_mod/markers.json'), 'w'), indent=1)
 # what each quest with a story character asks for at each step (for "not yet" lines when you talk to them too early)
 STEPS = {}

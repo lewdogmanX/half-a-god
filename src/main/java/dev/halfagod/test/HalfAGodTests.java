@@ -552,6 +552,16 @@ public final class HalfAGodTests {
         check(h, d.simTraits.stream().noneMatch(t -> t.startsWith("hag_b1_") || t.startsWith("hag_g1_") || t.startsWith("hag_rep_")),
                 "no ending yet: " + d.simTraits.stream().filter(t -> t.startsWith("hag_b") || t.startsWith("hag_g") || t.startsWith("hag_rep_")).toList());
         dev.halfagod.core.Simulate.clear(p);
+        // the Azazel fights: the Divine Chariot comes right after The Instruction, the True Azazel right after the Choir
+        dev.halfagod.core.Simulate.runTo(p, "act7", 6, "good", true);
+        check(h, Reputation.data(p).simTraits.contains("hag_m6_the_instruction_done") && !Reputation.data(p).simTraits.contains("hag_m7_hand_over_your_weapon_done"),
+                "up to Hand Over Your Weapon");
+        dev.halfagod.core.Simulate.clear(p);
+        dev.halfagod.core.Simulate.runTo(p, "end", 3, "evil", false);
+        check(h, Reputation.data(p).simTraits.contains("hag_z3_choir_of_the_whole_god_done"), "the Choir beaten");
+        check(h, Reputation.data(p).simTraits.stream().noneMatch(t -> t.startsWith("hag_b1_") || t.startsWith("hag_g1_") || t.startsWith("hag_rep_")),
+                "the endings wait for him");
+        dev.halfagod.core.Simulate.clear(p);
         p.discard();
         h.succeed();
     }

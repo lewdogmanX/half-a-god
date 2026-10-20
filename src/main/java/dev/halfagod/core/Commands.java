@@ -214,6 +214,25 @@ public final class Commands {
                                         })
                                         .executes(c -> ok(c.getSource(), Simulate.run(c.getSource().getPlayerOrException(),
                                                 StringArgumentType.getString(c, "point"), StringArgumentType.getString(c, "as")))))))
+                .then(literal("azazel")
+                        .then(argument("fight", StringArgumentType.word())
+                                .suggests((c, b) -> {
+                                    for (String f : new String[]{"chariot", "choir", "true"}) {
+                                        b.suggest(f);
+                                    }
+                                    return b.buildFuture();
+                                })
+                                .executes(c -> ok(c.getSource(), Azazel.testFight(c.getSource().getPlayerOrException(),
+                                        StringArgumentType.getString(c, "fight"), "good")))
+                                .then(argument("as", StringArgumentType.word())
+                                        .suggests((c, b) -> {
+                                            for (String m : new String[]{"good", "evil", "waver"}) {
+                                                b.suggest(m);
+                                            }
+                                            return b.buildFuture();
+                                        })
+                                        .executes(c -> ok(c.getSource(), Azazel.testFight(c.getSource().getPlayerOrException(),
+                                                StringArgumentType.getString(c, "fight"), StringArgumentType.getString(c, "as")))))))
                 .then(literal("endcard").executes(c -> {
                     ServerPlayer p = c.getSource().getPlayerOrException();
                     Net.send(p, new Payloads.OpenMap("story"));

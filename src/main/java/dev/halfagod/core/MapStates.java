@@ -12,6 +12,57 @@ public final class MapStates {
     }
 
     public static void send(ServerPlayer player) {
+        send(player, "", "");
+    }
+
+    /**
+     * Started from the story map: a quest that's ready to start (Mebahel would offer it now) starts as if a villager
+     * had handed it over, and goes in the journal. One quest at a time on each of the story's own roads (the main story,
+     * its spare-or-kill branches, the reputation road), so you can't be on a good road and an evil one at once.
+     */
+    public static void startFromMap(ServerPlayer player, String quest) {
+        StoryData data = StoryData.INSTANCE;
+        ResourceLocation id = ResourceLocation.tryParse(quest);
+        if (id == null || !data.markers.containsKey(quest)) {
+            return;
+        }
+        if (Reputation.data(player).trialState != 0) {
+            send(player, quest, "Not from a cell.");
+            return;
+        }
+        for (Meb.Progress p : Meb.quests(player)) {
+            if (p.questId().equals(quest) && !p.failed() && !p.claimed()) {
+                send(player, quest, "You're already on this.");
+                return;
+            }
+        }
+        String lane = data.storyLane(quest);
+        if (!lane.isEmpty()) {
+            for (Meb.Progress p : Meb.quests(player)) {
+                if (!p.claimed() && !p.failed() && !p.questId().equals(quest) && lane.equals(data.storyLane(p.questId()))) {
+                    String[] m = data.markers.get(p.questId());
+                    send(player, quest, "One road at a time: finish \u201C" + (m != null ? m[1] : p.questId()) + "\u201D first.");
+                    return;
+                }
+            }
+        }
+        if (!Meb.canSee(player, id)) {
+            send(player, quest, "It isn't ready for you yet.");
+            return;
+        }
+        StoryData.Graph g = data.graph.get(quest);
+        boolean ok;
+        if (g != null && g.book()) {
+            Meb.giveBook(player, quest);
+            ok = true;
+        } else {
+            ok = Meb.startQuest(player, id, false);
+        }
+        send(player, quest, ok ? "Started. It's in your journal." : "It wouldn't start. Find whoever gives it out instead.");
+    }
+
+    /** the map's state, with a note about a quest you tried to start from it (or none) */
+    public static void send(ServerPlayer player, String noticeFor, String notice) {
         JsonObject states = new JsonObject();
         for (Meb.Progress p : Meb.quests(player)) {
             String s;
@@ -125,6 +176,10 @@ public final class MapStates {
         out.add("story", EndCard.compute(player, traits));
         // other players on the server
         out.add("others", Rivalry.info(player));
+        if (!notice.isEmpty()) {
+            out.addProperty("noticeFor", noticeFor);
+            out.addProperty("notice", notice);
+        }
         Net.send(player, new Payloads.MapState(out.toString()));
     }
 }

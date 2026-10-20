@@ -150,6 +150,9 @@ public final class StoryMapScreen extends Screen {
     /** "Your Story": a frame or two drawn alone so it can be saved as a picture */
     private int captureFrames;
     private int cardX0, cardY0, cardX1, cardY1;
+    /** what the server said about a quest you tried to start from the map, and which quest */
+    private String startNote = "";
+    private String startNoteFor = "";
     private String saveNote = "";
     private long saveNoteAt;
     private int pageScroll;
@@ -292,6 +295,10 @@ public final class StoryMapScreen extends Screen {
             o.getAsJsonObject("stages").entrySet().forEach(e -> st.put(e.getKey(), e.getValue().getAsInt()));
         }
         boolean changed = !s.equals(states);
+        if (o.has("notice")) {
+            startNote = o.get("notice").getAsString();
+            startNoteFor = o.has("noticeFor") ? o.get("noticeFor").getAsString() : "";
+        }
         states = s;
         stages = st;
         rep = o.has("rep") ? o.get("rep").getAsDouble() : 0;
@@ -1567,6 +1574,29 @@ public final class StoryMapScreen extends Screen {
         g.fill(ix, y, ix + 2, y + 12, sc);
         g.drawString(font, st, ix + 6, y + 2, sc, false);
         y += 18;
+        // ready to start: start it from here, as if whoever gives it out had handed it over
+        if (state(n.id()).equals("open")) {
+            String label = "Start this quest";
+            int bw = font.width(label) + 16;
+            boolean hb = over(mx, my, ix, y, ix + bw, y + 16);
+            g.fill(ix, y, ix + bw, y + 16, hb ? 0xFF6B4A22 : 0xFF4A3218);
+            g.fill(ix, y, ix + bw, y + 1, hb ? GILT_BRIGHT : 0xFF8A6A32);
+            g.drawString(font, label, ix + 8, y + 4, hb ? 0xFFFFF0C8 : 0xFFE8D2A0, false);
+            String quest = n.id();
+            hit(ix, y, ix + bw, y + 16, () -> {
+                startNote = "";
+                startNoteFor = quest;
+                net.neoforged.neoforge.network.PacketDistributor.sendToServer(new dev.halfagod.net.Payloads.Act("start_quest", quest, ""));
+            }, Component.literal("Start it now. It goes in your journal."));
+            y += 20;
+        }
+        if (n.id().equals(startNoteFor) && !startNote.isEmpty()) {
+            for (FormattedCharSequence line : font.split(Component.literal(startNote).withStyle(ChatFormatting.ITALIC), iw)) {
+                g.drawString(font, line, ix, y, startNote.startsWith("Started") ? 0xFF2E6B2E : RED_INK, false);
+                y += 10;
+            }
+            y += 4;
+        }
         y = divider(g, ix, iw, y);
         for (FormattedCharSequence line : font.split(Component.literal(n.summary()), iw)) {
             g.drawString(font, line, ix, y, 0xFF3B2A1A, false);
@@ -2265,6 +2295,31 @@ public final class StoryMapScreen extends Screen {
     }
 
     /** CI screenshots: press "Save image" */
+    /** CI only: open a quest's page, and press its "Start this quest" button */
+    public boolean selectForTest(String id) {
+        for (Chapter c : chapters) {
+            for (Node n : c.nodes()) {
+                if (n.id().equals(id)) {
+                    select(n);
+                    return true;
+                }
+            }
+        }
+        return false;
+    }
+
+    public String stateForTest(String id) {
+        return state(id);
+    }
+
+    public void startForTest() {
+        if (selected != null && state(selected.id()).equals("open")) {
+            startNote = "";
+            startNoteFor = selected.id();
+            net.neoforged.neoforge.network.PacketDistributor.sendToServer(new dev.halfagod.net.Payloads.Act("start_quest", selected.id(), ""));
+        }
+    }
+
     public void saveCardForTest() {
         captureFrames = 2;
     }

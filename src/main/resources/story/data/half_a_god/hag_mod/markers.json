@@ -2,1595 +2,1993 @@
  "quests": {
   "mebahelrpgrquest:hag_the_first_letter": {
    "dim": "minecraft:overworld",
-   "title": "A Letter from Old Mara"
+   "title": "A Letter from Old Mara",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_p1_the_bell": {
    "dim": "minecraft:overworld",
-   "title": "The Bell That Won't Ring"
+   "title": "The Bell That Won't Ring",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_p2_winter_stores": {
    "dim": "minecraft:overworld",
-   "title": "Winter Stores"
+   "title": "Winter Stores",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_p3_the_shepherd": {
    "dim": "minecraft:overworld",
-   "title": "The Shepherd's Path"
+   "title": "The Shepherd's Path",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_p4_eye_on_chapel": {
    "dim": "minecraft:overworld",
-   "title": "An Eye on the Chapel"
+   "title": "An Eye on the Chapel",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_p5_raise_the_watch": {
    "dim": "minecraft:overworld",
-   "title": "Raise the Watch"
+   "title": "Raise the Watch",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_p6_market_road": {
    "dim": "minecraft:overworld",
-   "title": "The Market Road"
+   "title": "The Market Road",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_p7_gold_at_double_weight": {
    "dim": "minecraft:overworld",
-   "title": "Gold at Double Weight"
+   "title": "Gold at Double Weight",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_p7b_peddlers_debt": {
    "dim": "minecraft:overworld",
-   "title": "The Peddler's Debt"
+   "title": "The Peddler's Debt",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_p8_pillager_moon": {
    "dim": "minecraft:overworld",
-   "title": "The Pillager Moon"
+   "title": "The Pillager Moon",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_p9_who_pays_in_gold": {
    "dim": "minecraft:overworld",
-   "title": "Who Pays in Gold"
+   "title": "Who Pays in Gold",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a1_ashford_burns": {
    "dim": "minecraft:overworld",
-   "title": "Ashford Burns"
+   "title": "Ashford Burns",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a2_what_was_left": {
    "dim": "minecraft:overworld",
-   "title": "What Was Left"
+   "title": "What Was Left",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a3_roof_and_hearth": {
    "dim": "minecraft:overworld",
-   "title": "Roof and Hearth"
+   "title": "Roof and Hearth",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a4_refugee_road": {
    "dim": "minecraft:overworld",
-   "title": "The Refugee Road"
+   "title": "The Refugee Road",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a5_beneath_the_pipes": {
    "dim": "minecraft:the_nether",
-   "title": "Beneath the Pipes"
+   "title": "Beneath the Pipes",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a6_believers_house": {
    "dim": "minecraft:overworld",
-   "title": "The Believer's House"
+   "title": "The Believer's House",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a7_the_bastille": {
    "dim": "minecraft:overworld",
-   "title": "The Bastille"
+   "title": "The Bastille",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a8_ravagers_horn": {
    "dim": "minecraft:overworld",
-   "title": "The Ravager's Horn"
+   "title": "The Ravager's Horn",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a9_open_the_cells": {
    "dim": "minecraft:overworld",
-   "title": "Open the Cells"
+   "title": "Open the Cells",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a10_burning_door": {
    "dim": "minecraft:overworld",
-   "title": "The Burning Door"
+   "title": "The Burning Door",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a11_chains_at_the_fortress": {
    "dim": "minecraft:the_nether",
-   "title": "Chains at the Fortress"
+   "title": "Chains at the Fortress",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a12_brother_vael": {
    "dim": "minecraft:the_nether",
-   "title": "Brother Vael"
+   "title": "Brother Vael",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a13_tears_for_a_ward": {
    "dim": "minecraft:overworld",
-   "title": "Tears for a Ward"
+   "title": "Tears for a Ward",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a14_night_of_the_faithful": {
    "dim": "minecraft:overworld",
-   "title": "Night of the Faithful"
+   "title": "Night of the Faithful",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a15_one_of_seven": {
    "dim": "minecraft:overworld",
-   "title": "One of Seven"
+   "title": "One of Seven",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_p7s_the_peddlers_gift": {
    "dim": "minecraft:overworld",
-   "title": "The Peddler's Gift"
+   "title": "The Peddler's Gift",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a12s_vaels_map": {
    "dim": "minecraft:the_nether",
-   "title": "Vael's Map"
+   "title": "Vael's Map",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a12k_the_stewards_guard": {
    "dim": "minecraft:the_nether",
-   "title": "The Steward's Guard"
+   "title": "The Steward's Guard",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_a9i_the_invokers_fort": {
    "dim": "minecraft:overworld",
-   "title": "The Invoker's Mansion"
+   "title": "The Invoker's Mansion",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_w1_the_skull_market": {
    "dim": "minecraft:the_nether",
-   "title": "The Skull Market"
+   "title": "The Skull Market",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_w2_smite_the_dead": {
    "dim": "minecraft:overworld",
-   "title": "Smite the Dead"
+   "title": "Smite the Dead",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_w3_the_skull_harvest": {
    "dim": "minecraft:the_nether",
-   "title": "The Skull Harvest"
+   "title": "The Skull Harvest",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_w4_hold_the_black_bridge": {
    "dim": "minecraft:the_nether",
-   "title": "Hold the Black Bridge"
+   "title": "Hold the Black Bridge",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_w5_a_grave_for_a_nail": {
    "dim": "minecraft:overworld",
-   "title": "A Grave for a Nail"
+   "title": "A Grave for a Nail",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_w6_the_withered_crown": {
    "dim": "minecraft:overworld",
-   "title": "The Withered Crown"
+   "title": "The Withered Crown",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_w7_a_light_they_cannot_dim": {
    "dim": "minecraft:overworld",
-   "title": "A Light They Cannot Dim"
+   "title": "A Light They Cannot Dim",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_w8_six_remain": {
    "dim": "minecraft:overworld",
-   "title": "Six Remain"
+   "title": "Six Remain",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_h1_a_light_above_the_pit": {
    "dim": "minecraft:overworld",
-   "title": "A Light Above the Pit"
+   "title": "A Light Above the Pit",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_h2_hostile_paradise": {
    "dim": "aether:the_aether",
-   "title": "Hostile Paradise"
+   "title": "Hostile Paradise",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_h3_do_you_believe_in_magic": {
    "dim": "aether:the_aether",
-   "title": "Do You Believe in Magic?"
+   "title": "Do You Believe in Magic?",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_h4_cockatrice_nights": {
    "dim": "aether:the_aether",
-   "title": "Cockatrice Nights"
+   "title": "Cockatrice Nights",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_h5_the_bronze_halls": {
    "dim": "aether:the_aether",
-   "title": "The Bronze Halls"
+   "title": "The Bronze Halls",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_h6_like_a_bossaru": {
    "dim": "aether:the_aether",
-   "title": "A Road of Cloud"
+   "title": "A Road of Cloud",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_h7_medals_of_the_silver_court": {
    "dim": "aether:the_aether",
-   "title": "Medals of the Silver Court"
+   "title": "Medals of the Silver Court",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_h8_dethroned": {
    "dim": "aether:the_aether",
-   "title": "A Cairn for the Valkyries"
+   "title": "A Cairn for the Valkyries",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_h9_extinguished": {
    "dim": "aether:the_aether",
-   "title": "Extinguished"
+   "title": "Extinguished",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_h10_fireproof": {
    "dim": "minecraft:overworld",
-   "title": "Fireproof"
+   "title": "Fireproof",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_e1_the_librarians_request": {
    "dim": "minecraft:overworld",
-   "title": "The Librarian's Request"
+   "title": "The Librarian's Request",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_e3_the_road_underground": {
    "dim": "minecraft:overworld",
-   "title": "The Road Underground"
+   "title": "The Road Underground",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_e4_the_warden_journal": {
    "dim": "minecraft:overworld",
-   "title": "The Warden Journal"
+   "title": "The Warden Journal",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_e5_free_the_end": {
    "dim": "minecraft:overworld",
-   "title": "Free the End"
+   "title": "Free the End",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_e6_edge_of_the_world": {
    "dim": "minecraft:the_end",
-   "title": "The Edge of the World"
+   "title": "The Edge of the World",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_e7_the_nether_is_singing": {
    "dim": "minecraft:overworld",
-   "title": "The Nether Is Singing"
+   "title": "The Nether Is Singing",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_s1_cold_hearths": {
    "dim": "minecraft:overworld",
-   "title": "Cold Hearths"
+   "title": "Cold Hearths",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_s2_the_frozen_garrison": {
    "dim": "minecraft:overworld",
-   "title": "The Frozen Garrison"
+   "title": "The Frozen Garrison",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_s3_lost_in_the_snow": {
    "dim": "minecraft:overworld",
-   "title": "Lost in the Snow"
+   "title": "Lost in the Snow",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_d1_the_buried_well": {
    "dim": "minecraft:overworld",
-   "title": "The Buried Well"
+   "title": "The Buried Well",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_d2_the_nest_road": {
    "dim": "minecraft:overworld",
-   "title": "The Nest Road"
+   "title": "The Nest Road",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_d3_the_beast_below": {
    "dim": "minecraft:overworld",
-   "title": "The Beast Below"
+   "title": "The Beast Below",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_c1_nets_and_knives": {
    "dim": "minecraft:overworld",
-   "title": "Nets and Knives"
+   "title": "Nets and Knives",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_c2_the_tidecaller": {
    "dim": "minecraft:overworld",
-   "title": "The Tidecaller"
+   "title": "The Tidecaller",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_c3_the_black_ship": {
    "dim": "minecraft:overworld",
-   "title": "The Black Ship"
+   "title": "The Black Ship",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_c4_terror_of_the_depths": {
    "dim": "minecraft:overworld",
-   "title": "Terror of the Depths"
+   "title": "Terror of the Depths",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_u1_the_soul_guard": {
    "dim": "minecraft:the_nether",
-   "title": "The Soul Guard"
+   "title": "The Soul Guard",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_u2_helvars_oath": {
    "dim": "minecraft:the_nether",
-   "title": "Helvar's Oath"
+   "title": "Helvar's Oath",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_u3_back_into_hell": {
    "dim": "minecraft:the_nether",
-   "title": "Out of the Underworld"
+   "title": "Out of the Underworld",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_f1_the_last_road": {
    "dim": "minecraft:overworld",
-   "title": "The Last Road"
+   "title": "The Last Road",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_f2_dragon_slayer": {
    "dim": "minecraft:overworld",
-   "title": "Dragon Slayer"
+   "title": "Dragon Slayer",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_f3_unbound": {
    "dim": "minecraft:overworld",
-   "title": "Unbound"
+   "title": "Unbound",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v1_blood_in_the_wells": {
    "dim": "minecraft:overworld",
-   "title": "Blood in the Wells"
+   "title": "Blood in the Wells",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v2_the_sinful_church": {
    "dim": "minecraft:overworld",
-   "title": "The Sinful Church"
+   "title": "The Sinful Church",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v3_the_midwife": {
    "dim": "minecraft:overworld",
-   "title": "The Midwife"
+   "title": "The Midwife",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v4_original_sin": {
    "dim": "minecraft:overworld",
-   "title": "Original Sin"
+   "title": "Original Sin",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v5_jaws_in_the_dark": {
    "dim": "minecraft:overworld",
-   "title": "Jaws in the Dark"
+   "title": "Jaws in the Dark",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v6_what_eats_the_dead": {
    "dim": "minecraft:overworld",
-   "title": "What Eats the Dead"
+   "title": "What Eats the Dead",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v7_soul_steel": {
    "dim": "minecraft:overworld",
-   "title": "Soul Steel"
+   "title": "Soul Steel",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v8_sinbuster": {
    "dim": "minecraft:overworld",
-   "title": "Sinbuster"
+   "title": "Sinbuster",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v9_the_wrong_parcel": {
    "dim": "minecraft:overworld",
-   "title": "The Wrong Parcel"
+   "title": "The Wrong Parcel",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v10_maraal": {
    "dim": "minecraft:overworld",
-   "title": "Maraal"
+   "title": "Maraal",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v11_the_crimson_guide": {
    "dim": "minecraft:overworld",
-   "title": "The Crimson Guide"
+   "title": "The Crimson Guide",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v3s_cleansing_the_pits": {
    "dim": "minecraft:overworld",
-   "title": "Cleansing the Pits"
+   "title": "Cleansing the Pits",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v3k_the_coven": {
    "dim": "minecraft:overworld",
-   "title": "The Coven"
+   "title": "The Coven",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v10f_walking_with_maraal": {
    "dim": "minecraft:overworld",
-   "title": "Walking with Maraal"
+   "title": "Walking with Maraal",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_v10r_alone": {
    "dim": "minecraft:overworld",
-   "title": "Alone"
+   "title": "Alone",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_m1_follow_the_crimson_bee": {
    "dim": "minecraft:the_nether",
-   "title": "Follow the Crimson Bee"
+   "title": "Follow the Crimson Bee",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_m2_the_cursed_quarries": {
    "dim": "minecraft:the_nether",
-   "title": "The Cursed Quarries"
+   "title": "The Cursed Quarries",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_m3_hold_the_quarry_gate": {
    "dim": "minecraft:the_nether",
-   "title": "Hold the Quarry Gate"
+   "title": "Hold the Quarry Gate",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_m4_gilded_hunger": {
    "dim": "minecraft:the_nether",
-   "title": "Gilded Hunger"
+   "title": "Gilded Hunger",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_m5_do_not_provoke_gehinnom": {
    "dim": "minecraft:the_nether",
-   "title": "Do Not Provoke Gehinnom"
+   "title": "Do Not Provoke Gehinnom",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_m6_the_instruction": {
    "dim": "minecraft:the_nether",
-   "title": "The Instruction"
+   "title": "The Instruction",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_m7_hand_over_your_weapon": {
    "dim": "minecraft:the_nether",
-   "title": "Hand Over Your Weapon"
+   "title": "Hand Over Your Weapon",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_m9_half_a_soul": {
    "dim": "minecraft:overworld",
-   "title": "Half a Soul Cannot Die"
+   "title": "Half a Soul Cannot Die",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_z1_caution": {
    "dim": "minecraft:overworld",
-   "title": "Caution"
+   "title": "Caution",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_z2_up": {
    "dim": "minecraft:overworld",
-   "title": "Up"
+   "title": "Up",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_z3_choir_of_the_whole_god": {
    "dim": "minecraft:overworld",
-   "title": "The Choir of the Whole God"
+   "title": "The Choir of the Whole God",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_b1_bow_at_my_feet": {
    "dim": "minecraft:overworld",
-   "title": "Bow at My Feet"
+   "title": "Bow at My Feet",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_b2_tithe_of_gold": {
    "dim": "minecraft:overworld",
-   "title": "Tithe of Gold"
+   "title": "Tithe of Gold",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_b3_the_last_preacher": {
    "dim": "minecraft:overworld",
-   "title": "The Last Preacher"
+   "title": "The Last Preacher",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_g1_maraals_last_letter": {
    "dim": "minecraft:overworld",
-   "title": "Maraal's Last Letter"
+   "title": "Maraal's Last Letter",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_g2_ashford_rebuilt": {
    "dim": "minecraft:overworld",
-   "title": "Ashford Rebuilt"
+   "title": "Ashford Rebuilt",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_sq_lost_lambs": {
    "dim": "minecraft:overworld",
-   "title": "Lost Lambs"
+   "title": "Lost Lambs",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_bells_tongue": {
    "dim": "minecraft:overworld",
-   "title": "The Bell's Tongue"
+   "title": "The Bell's Tongue",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_night_watch": {
    "dim": "minecraft:overworld",
-   "title": "Night Watch"
+   "title": "Night Watch",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_market_road": {
    "dim": "minecraft:overworld",
-   "title": "Safe to Market"
+   "title": "Safe to Market",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_gold_collectors": {
    "dim": "minecraft:overworld",
-   "title": "The Gold Collectors"
+   "title": "The Gold Collectors",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_ashford_orphans": {
    "dim": "minecraft:overworld",
-   "title": "Ashford's Orphans"
+   "title": "Ashford's Orphans",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_halden_records": {
    "dim": "minecraft:overworld",
-   "title": "Halden's Records"
+   "title": "Halden's Records",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_echoes_in_the_pipes": {
    "dim": "minecraft:the_nether",
-   "title": "Echoes in the Pipes"
+   "title": "Echoes in the Pipes",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_ravager_hunt": {
    "dim": "minecraft:overworld",
-   "title": "Ravager Hunt"
+   "title": "Ravager Hunt",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_bastille_survivors": {
    "dim": "minecraft:overworld",
-   "title": "Bastille Survivors"
+   "title": "Bastille Survivors",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_quartz_for_the_cleric": {
    "dim": "minecraft:overworld",
-   "title": "Quartz for the Cleric"
+   "title": "Quartz for the Cleric",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_blaze_bounty": {
    "dim": "minecraft:overworld",
-   "title": "Blaze Bounty"
+   "title": "Blaze Bounty",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_beacon_keeper": {
    "dim": "minecraft:overworld",
-   "title": "The Beacon Keeper"
+   "title": "The Beacon Keeper",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_sky_amber": {
    "dim": "minecraft:overworld",
-   "title": "Sky Amber"
+   "title": "Sky Amber",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_swet_trouble": {
    "dim": "minecraft:overworld",
-   "title": "Swet Trouble"
+   "title": "Swet Trouble",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_ambrosium_lamps": {
    "dim": "minecraft:overworld",
-   "title": "Ambrosium Lamps"
+   "title": "Ambrosium Lamps",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_ender_hunt": {
    "dim": "minecraft:overworld",
-   "title": "Ender Hunt"
+   "title": "Ender Hunt",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_copy_the_journal": {
    "dim": "minecraft:overworld",
-   "title": "Copy the Journal"
+   "title": "Copy the Journal",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_shulker_shells": {
    "dim": "minecraft:overworld",
-   "title": "Shulker Shells"
+   "title": "Shulker Shells",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_frost_patrol": {
    "dim": "minecraft:overworld",
-   "title": "Frost Patrol"
+   "title": "Frost Patrol",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_husk_plague": {
    "dim": "minecraft:overworld",
-   "title": "Husk Plague"
+   "title": "Husk Plague",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_drowned_nets": {
    "dim": "minecraft:overworld",
-   "title": "Drowned Nets"
+   "title": "Drowned Nets",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_pirate_hoard": {
    "dim": "minecraft:overworld",
-   "title": "The Pirate Hoard"
+   "title": "The Pirate Hoard",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_soul_lanterns": {
    "dim": "minecraft:overworld",
-   "title": "Soul Lanterns"
+   "title": "Soul Lanterns",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_ash_cleanup": {
    "dim": "minecraft:overworld",
-   "title": "Ash Cleanup"
+   "title": "Ash Cleanup",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_blood_tithe": {
    "dim": "minecraft:overworld",
-   "title": "The Blood Tithe"
+   "title": "The Blood Tithe",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_grub_hunt": {
    "dim": "minecraft:overworld",
-   "title": "Guzzler Hunt"
+   "title": "Guzzler Hunt",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_midwifes_debt": {
    "dim": "minecraft:overworld",
-   "title": "The Midwife's Debt"
+   "title": "The Midwife's Debt",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_pay_the_freed": {
    "dim": "minecraft:overworld",
-   "title": "Pay the Freed"
+   "title": "Pay the Freed",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_crimson_honey": {
    "dim": "minecraft:overworld",
-   "title": "Crimson Honey"
+   "title": "Crimson Honey",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_sq_the_last_raid": {
    "dim": "minecraft:overworld",
-   "title": "The Last Raid on Ashford"
+   "title": "The Last Raid on Ashford",
+   "lane": "side"
   },
   "mebahelrpgrquest:hag_i1_the_priests_warning": {
    "dim": "minecraft:overworld",
-   "title": "The Priest's Warning"
+   "title": "The Priest's Warning",
+   "lane": "arcane"
   },
   "mebahelrpgrquest:hag_i2_fire_in_the_tower": {
    "dim": "minecraft:overworld",
-   "title": "Fire in the Tower"
+   "title": "Fire in the Tower",
+   "lane": "arcane"
   },
   "mebahelrpgrquest:hag_i3_the_evoker_fort": {
    "dim": "minecraft:overworld",
-   "title": "The Evoker Fort"
+   "title": "The Evoker Fort",
+   "lane": "arcane"
   },
   "mebahelrpgrquest:hag_i4_the_scroll_forge": {
    "dim": "minecraft:overworld",
-   "title": "The Scroll Forge"
+   "title": "The Scroll Forge",
+   "lane": "arcane"
   },
   "mebahelrpgrquest:hag_w0_two_roads_meet": {
    "dim": "minecraft:overworld",
-   "title": "Two Roads Meet"
+   "title": "Two Roads Meet",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_i5_the_dead_king": {
    "dim": "minecraft:overworld",
-   "title": "The Dead King"
+   "title": "The Dead King",
+   "lane": "arcane"
   },
   "mebahelrpgrquest:hag_i6_the_mountain_tower": {
    "dim": "minecraft:overworld",
-   "title": "The Mountain Tower"
+   "title": "The Mountain Tower",
+   "lane": "arcane"
   },
   "mebahelrpgrquest:hag_i7_echo_of_tyros": {
    "dim": "minecraft:the_nether",
-   "title": "Echo of Tyros"
+   "title": "Echo of Tyros",
+   "lane": "arcane"
   },
   "mebahelrpgrquest:hag_i8_the_arcane_anvil": {
    "dim": "minecraft:overworld",
-   "title": "The Arcane Anvil"
+   "title": "The Arcane Anvil",
+   "lane": "arcane"
   },
   "mebahelrpgrquest:hag_e0_the_road_to_the_end": {
    "dim": "minecraft:overworld",
-   "title": "The Road to the End"
+   "title": "The Road to the End",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_ea1_the_old_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Old Eye"
+   "title": "The Old Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_ea2_the_rogue_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Rogue Eye"
+   "title": "The Rogue Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_ea3_the_cold_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Cold Eye"
+   "title": "The Cold Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_ea4_the_black_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Black Eye"
+   "title": "The Black Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_ea5_the_lost_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Lost Eye"
+   "title": "The Lost Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_ea6_the_corrupted_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Corrupted Eye"
+   "title": "The Corrupted Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_ea7_the_guardian_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Guardian Eye"
+   "title": "The Guardian Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_eb1_the_magical_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Magical Eye"
+   "title": "The Magical Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_eb2_the_nether_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Nether Eye"
+   "title": "The Nether Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_eb3_the_cursed_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Cursed Eye"
+   "title": "The Cursed Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_eb4_the_wither_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Wither Eye"
+   "title": "The Wither Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_eb5_the_witch_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Witch Eye"
+   "title": "The Witch Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_eb6_the_undead_eye": {
    "dim": "minecraft:overworld",
-   "title": "The Undead Eye"
+   "title": "The Undead Eye",
+   "lane": "eyes"
   },
   "mebahelrpgrquest:hag_gt1_a_note_in_the_stash": {
    "dim": "minecraft:overworld",
-   "title": "A Note in the Stash"
+   "title": "A Note in the Stash",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt2_seeds_of_the_trade": {
    "dim": "minecraft:overworld",
-   "title": "Seeds of the Trade"
+   "title": "Seeds of the Trade",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt3_first_customers": {
    "dim": "minecraft:overworld",
-   "title": "First Customers"
+   "title": "First Customers",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt4_the_hash_market": {
    "dim": "minecraft:overworld",
-   "title": "The Hash Market"
+   "title": "The Hash Market",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt5_blackwater_wants_a_word": {
    "dim": "minecraft:overworld",
-   "title": "Blackwater Wants a Word"
+   "title": "Blackwater Wants a Word",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt6_the_coca_fields": {
    "dim": "minecraft:overworld",
-   "title": "The Coca Fields"
+   "title": "The Coca Fields",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt7_white_powder_money": {
    "dim": "minecraft:overworld",
-   "title": "White Powder Money"
+   "title": "White Powder Money",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt8_a_customer_goes_under": {
    "dim": "minecraft:overworld",
-   "title": "A Customer Goes Under"
+   "title": "A Customer Goes Under",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt9_turf_war": {
    "dim": "minecraft:overworld",
-   "title": "Turf War"
+   "title": "Turf War",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt10_the_sorcerers_books": {
    "dim": "minecraft:overworld",
-   "title": "The Sorcerer's Books"
+   "title": "The Sorcerer's Books",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt11_crystal": {
    "dim": "minecraft:overworld",
-   "title": "Crystal"
+   "title": "Crystal",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt11b_purity": {
    "dim": "minecraft:overworld",
-   "title": "Purity"
+   "title": "Purity",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt12_don_vasco": {
    "dim": "minecraft:overworld",
-   "title": "Don Vasco"
+   "title": "Don Vasco",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt13w_remnants": {
    "dim": "minecraft:overworld",
-   "title": "Remnants"
+   "title": "Remnants",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt13p_the_big_shipment": {
    "dim": "minecraft:overworld",
-   "title": "The Big Shipment"
+   "title": "The Big Shipment",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt14_king_of_the_valley": {
    "dim": "minecraft:overworld",
-   "title": "King of the Valley"
+   "title": "King of the Valley",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt15_the_fixers_price": {
    "dim": "minecraft:overworld",
-   "title": "The Fixer's Price"
+   "title": "The Fixer's Price",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_go0_a_way_out": {
    "dim": "minecraft:overworld",
-   "title": "A Way Out"
+   "title": "A Way Out",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_go1_burn_it_down": {
    "dim": "minecraft:overworld",
-   "title": "Burn It Down"
+   "title": "Burn It Down",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_go2_blackwater_sends_regards": {
    "dim": "minecraft:overworld",
-   "title": "Blackwater Sends Its Regards"
+   "title": "Blackwater Sends Its Regards",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_go3_testimony": {
    "dim": "minecraft:overworld",
-   "title": "Testimony"
+   "title": "Testimony",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_tm1_a_generous_offer": {
    "dim": "minecraft:overworld",
-   "title": "A Generous Offer"
+   "title": "A Generous Offer",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_gt1b_the_recruiters_terms": {
    "dim": "minecraft:overworld",
-   "title": "The Recruiter's Terms"
+   "title": "The Recruiter's Terms",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_br1_the_watch_needs_eyes": {
    "dim": "minecraft:overworld",
-   "title": "The Watch Needs Eyes"
+   "title": "The Watch Needs Eyes",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_br2_the_supply_line": {
    "dim": "minecraft:overworld",
-   "title": "The Supply Line"
+   "title": "The Supply Line",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_br3_the_bookkeeper": {
    "dim": "minecraft:overworld",
-   "title": "The Bookkeeper"
+   "title": "The Bookkeeper",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_br4_medicine_for_the_valley": {
    "dim": "minecraft:overworld",
-   "title": "Medicine for the Valley"
+   "title": "Medicine for the Valley",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_br5_don_vasco_answers": {
    "dim": "minecraft:overworld",
-   "title": "Don Vasco Answers"
+   "title": "Don Vasco Answers",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_br6_the_valley_breathes": {
    "dim": "minecraft:overworld",
-   "title": "The Valley Breathes"
+   "title": "The Valley Breathes",
+   "lane": "underworld"
   },
   "mebahelrpgrquest:hag_r1_the_prisoner": {
    "dim": "minecraft:overworld",
-   "title": "The Prisoner"
+   "title": "The Prisoner",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_r2g_the_granary_thief": {
    "dim": "minecraft:overworld",
-   "title": "The Granary Thief"
+   "title": "The Granary Thief",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_r2e_the_assayer": {
    "dim": "minecraft:overworld",
-   "title": "The Assayer"
+   "title": "The Assayer",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc1_saint": {
    "dim": "minecraft:overworld",
-   "title": "The Lantern Oath"
+   "title": "The Lantern Oath",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc1_waver": {
    "dim": "minecraft:overworld",
-   "title": "Ash on Your Hands"
+   "title": "Ash on Your Hands",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc1_wicked": {
    "dim": "minecraft:overworld",
-   "title": "Protection Money"
+   "title": "Protection Money",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc2_saint": {
    "dim": "minecraft:overworld",
-   "title": "No One Left Behind"
+   "title": "No One Left Behind",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc2_good": {
    "dim": "minecraft:overworld",
-   "title": "Wardens of the Wall"
+   "title": "Wardens of the Wall",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc2_fallen": {
    "dim": "minecraft:overworld",
-   "title": "Wanted"
+   "title": "Wanted",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc2_wicked": {
    "dim": "minecraft:overworld",
-   "title": "Skulls for the Hand"
+   "title": "Skulls for the Hand",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc3_saint": {
    "dim": "minecraft:overworld",
-   "title": "Seeds of Heaven"
+   "title": "Seeds of Heaven",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc3_good": {
    "dim": "minecraft:overworld",
-   "title": "Petals for Medicine"
+   "title": "Petals for Medicine",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc3_waver": {
    "dim": "minecraft:overworld",
-   "title": "Penance in the Sky"
+   "title": "Penance in the Sky",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc3_fallen": {
    "dim": "minecraft:overworld",
-   "title": "Fall from Grace"
+   "title": "Fall from Grace",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc3_wicked": {
    "dim": "minecraft:overworld",
-   "title": "Gold from Heaven"
+   "title": "Gold from Heaven",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc4_saint": {
    "dim": "minecraft:overworld",
-   "title": "The Librarian's Lamp"
+   "title": "The Librarian's Lamp",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc4_good": {
    "dim": "minecraft:overworld",
-   "title": "Messenger Pearls"
+   "title": "Messenger Pearls",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc4_waver": {
    "dim": "minecraft:overworld",
-   "title": "A Letter Unanswered"
+   "title": "A Letter Unanswered",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc4_fallen": {
    "dim": "minecraft:overworld",
-   "title": "Old Debts"
+   "title": "Old Debts",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc4_wicked": {
    "dim": "minecraft:overworld",
-   "title": "The Lantern Watch"
+   "title": "The Lantern Watch",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc5_saint": {
    "dim": "minecraft:overworld",
-   "title": "The Fisher's Debt"
+   "title": "The Fisher's Debt",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc5_good": {
    "dim": "minecraft:overworld",
-   "title": "Warm Hands"
+   "title": "Warm Hands",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc5_waver": {
    "dim": "minecraft:overworld",
-   "title": "Cold Welcome"
+   "title": "Cold Welcome",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc5_fallen": {
    "dim": "minecraft:overworld",
-   "title": "Salt in the Wound"
+   "title": "Salt in the Wound",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc5_wicked": {
    "dim": "minecraft:overworld",
-   "title": "The Harbour Tax"
+   "title": "The Harbour Tax",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc6_saint": {
    "dim": "minecraft:overworld",
-   "title": "Hands That Heal"
+   "title": "Hands That Heal",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc6_good": {
    "dim": "minecraft:overworld",
-   "title": "Sanctuary"
+   "title": "Sanctuary",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc6_waver": {
    "dim": "minecraft:overworld",
-   "title": "Amends"
+   "title": "Amends",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc6_fallen": {
    "dim": "minecraft:overworld",
-   "title": "Blood Calls to Blood"
+   "title": "Blood Calls to Blood",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc6_wicked": {
    "dim": "minecraft:overworld",
-   "title": "Blood Money"
+   "title": "Blood Money",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc7_saint": {
    "dim": "minecraft:overworld",
-   "title": "The Lantern's End"
+   "title": "The Lantern's End",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc7_good": {
    "dim": "minecraft:overworld",
-   "title": "The Freed Remember"
+   "title": "The Freed Remember",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc7_waver": {
    "dim": "minecraft:overworld",
-   "title": "The Freed Don't Thank You"
+   "title": "The Freed Don't Thank You",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc7_fallen": {
    "dim": "minecraft:overworld",
-   "title": "Ash and Ember"
+   "title": "Ash and Ember",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rc7_wicked": {
    "dim": "minecraft:overworld",
-   "title": "Golden Chains"
+   "title": "Golden Chains",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rep_end_saint": {
    "dim": "minecraft:overworld",
-   "title": "The Lantern-Bearer"
+   "title": "The Lantern-Bearer",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rep_end_good": {
    "dim": "minecraft:overworld",
-   "title": "Ashford's Friend"
+   "title": "Ashford's Friend",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rep_end_waver": {
    "dim": "minecraft:overworld",
-   "title": "The Scales"
+   "title": "The Scales",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rep_end_fallen": {
    "dim": "minecraft:overworld",
-   "title": "What Remains"
+   "title": "What Remains",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_rep_end_wicked": {
    "dim": "minecraft:overworld",
-   "title": "The Gilded Throne"
+   "title": "The Gilded Throne",
+   "lane": "road"
   },
   "mebahelrpgrquest:hag_bz1_a_letter_smelling_of_honey": {
    "dim": "minecraft:overworld",
-   "title": "A Letter Smelling of Honey"
+   "title": "A Letter Smelling of Honey",
+   "lane": "bumblezone"
   },
   "mebahelrpgrquest:hag_bz2_pearls_and_patience": {
    "dim": "minecraft:overworld",
-   "title": "Pearls and Patience"
+   "title": "Pearls and Patience",
+   "lane": "bumblezone"
   },
   "mebahelrpgrquest:hag_bz3_into_the_comb": {
    "dim": "the_bumblezone:the_bumblezone",
-   "title": "Into the Comb"
+   "title": "Into the Comb",
+   "lane": "bumblezone"
   },
   "mebahelrpgrquest:hag_bz4_clogged_channels": {
    "dim": "the_bumblezone:the_bumblezone",
-   "title": "Clogged Channels"
+   "title": "Clogged Channels",
+   "lane": "bumblezone"
   },
   "mebahelrpgrquest:hag_bz5_the_cell_maze": {
    "dim": "the_bumblezone:the_bumblezone",
-   "title": "The Cell Maze"
+   "title": "The Cell Maze",
+   "lane": "bumblezone"
   },
   "mebahelrpgrquest:hag_bz6_the_hive_temple": {
    "dim": "the_bumblezone:the_bumblezone",
-   "title": "The Hive Temple"
+   "title": "The Hive Temple",
+   "lane": "bumblezone"
   },
   "mebahelrpgrquest:hag_bz7_roots_that_bite": {
    "dim": "the_bumblezone:the_bumblezone",
-   "title": "Roots That Bite"
+   "title": "Roots That Bite",
+   "lane": "bumblezone"
   },
   "mebahelrpgrquest:hag_bz8_audience_with_the_queen": {
    "dim": "the_bumblezone:the_bumblezone",
-   "title": "Audience with the Queen"
+   "title": "Audience with the Queen",
+   "lane": "bumblezone"
   },
   "mebahelrpgrquest:hag_bz9_the_queens_desire": {
    "dim": "the_bumblezone:the_bumblezone",
-   "title": "The Queen's Desire"
+   "title": "The Queen's Desire",
+   "lane": "bumblezone"
   },
   "mebahelrpgrquest:hag_bz10_the_honey_crown": {
    "dim": "minecraft:overworld",
-   "title": "The Honey Crown"
+   "title": "The Honey Crown",
+   "lane": "bumblezone"
   },
   "mebahelrpgrquest:hag_lg1_the_golden_legion": {
    "dim": "minecraft:overworld",
-   "title": "The Golden Legion"
+   "title": "The Golden Legion",
+   "lane": "legionary"
   },
   "mebahelrpgrquest:hag_lg2_ghosts_of_the_legion": {
    "dim": "minecraft:the_nether",
-   "title": "Ghosts of the Legion"
+   "title": "Ghosts of the Legion",
+   "lane": "legionary"
   },
   "mebahelrpgrquest:hag_lg3_the_unbreakable": {
    "dim": "minecraft:the_nether",
-   "title": "The Unbreakable"
+   "title": "The Unbreakable",
+   "lane": "legionary"
   },
   "mebahelrpgrquest:hag_lg4_the_thermal_heart": {
    "dim": "minecraft:overworld",
-   "title": "The Thermal Heart"
+   "title": "The Thermal Heart",
+   "lane": "legionary"
   },
   "mebahelrpgrquest:hag_lg5_the_unbreakable_head": {
    "dim": "minecraft:overworld",
-   "title": "The Unbreakable Head"
+   "title": "The Unbreakable Head",
+   "lane": "legionary"
   },
   "mebahelrpgrquest:hag_sec_tongue1": {
    "dim": "minecraft:overworld",
-   "title": "A Voice Under the Gold"
+   "title": "A Voice Under the Gold",
+   "lane": "secrets"
   },
   "mebahelrpgrquest:hag_sec_tongue2": {
    "dim": "minecraft:overworld",
-   "title": "The Name Before"
+   "title": "The Name Before",
+   "lane": "secrets"
   },
   "mebahelrpgrquest:hag_sec_pilgrim1": {
    "dim": "minecraft:the_nether",
-   "title": "The Last Pilgrim"
+   "title": "The Last Pilgrim",
+   "lane": "secrets"
   },
   "mebahelrpgrquest:hag_sec_pilgrim2": {
    "dim": "minecraft:overworld",
-   "title": "What Oren Left"
+   "title": "What Oren Left",
+   "lane": "secrets"
   },
   "mebahelrpgrquest:hag_sec_godsaw1": {
    "dim": "aether:the_aether",
-   "title": "What the God Saw"
+   "title": "What the God Saw",
+   "lane": "secrets"
   },
   "mebahelrpgrquest:hag_sec_godsaw2": {
    "dim": "minecraft:overworld",
-   "title": "Why a God Would Jump"
+   "title": "Why a God Would Jump",
+   "lane": "secrets"
   },
   "mebahelrpgrquest:hag_sec_skyfire1": {
    "dim": "minecraft:the_nether",
-   "title": "Sky and Fire"
+   "title": "Sky and Fire",
+   "lane": "secrets"
   },
   "mebahelrpgrquest:hag_sec_skyfire2": {
    "dim": "minecraft:overworld",
-   "title": "The War of Halves"
+   "title": "The War of Halves",
+   "lane": "secrets"
   },
   "mebahelrpgrquest:hag_sec_clean1": {
    "dim": "minecraft:overworld",
-   "title": "A Letter from Silas"
+   "title": "A Letter from Silas",
+   "lane": "secrets"
   },
   "mebahelrpgrquest:hag_sec_clean2": {
    "dim": "minecraft:overworld",
-   "title": "Clean Hands"
+   "title": "Clean Hands",
+   "lane": "secrets"
   },
   "mebahelrpgrquest:hag_y3_free_men_remember": {
    "dim": "minecraft:overworld",
-   "title": "Free Men Remember"
+   "title": "Free Men Remember",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_mn1_the_woman_who_watches_the_moon": {
    "dim": "minecraft:overworld",
-   "title": "The Woman Who Watches the Moon"
+   "title": "The Woman Who Watches the Moon",
+   "lane": "moon"
   },
   "mebahelrpgrquest:hag_mn2_a_metal_for_the_sky": {
    "dim": "minecraft:overworld",
-   "title": "A Metal for the Sky"
+   "title": "A Metal for the Sky",
+   "lane": "moon"
   },
   "mebahelrpgrquest:hag_mn3_fire_under_glass": {
    "dim": "minecraft:overworld",
-   "title": "Fire Under Glass"
+   "title": "Fire Under Glass",
+   "lane": "moon"
   },
   "mebahelrpgrquest:hag_mn4_a_little_moon_of_our_own": {
    "dim": "minecraft:overworld",
-   "title": "A Little Moon of Our Own"
+   "title": "A Little Moon of Our Own",
+   "lane": "moon"
   },
   "mebahelrpgrquest:hag_mn5_above_the_sky": {
    "dim": "rocketnautics:deep_space",
-   "title": "Above the Sky"
+   "title": "Above the Sky",
+   "lane": "moon"
   },
   "mebahelrpgrquest:hag_mn6_what_the_probe_saw": {
    "dim": "minecraft:overworld",
-   "title": "What the Probe Saw"
+   "title": "What the Probe Saw",
+   "lane": "moon"
   },
   "mebahelrpgrquest:hag_mn7_the_silver_sea": {
    "dim": "rocketnautics:moon",
-   "title": "The Silver Sea"
+   "title": "The Silver Sea",
+   "lane": "moon"
   },
   "mebahelrpgrquest:hag_mn8_the_man_in_the_moon": {
    "dim": "rocketnautics:moon",
-   "title": "The Man in the Moon"
+   "title": "The Man in the Moon",
+   "lane": "moon"
   },
   "mebahelrpgrquest:hag_mn9_come_home_alive": {
    "dim": "rocketnautics:moon",
-   "title": "Come Home Alive"
+   "title": "Come Home Alive",
+   "lane": "moon"
   },
   "mebahelrpgrquest:hag_mn10_the_silver_kings_blade": {
    "dim": "minecraft:overworld",
-   "title": "The Silver King's Blade"
+   "title": "The Silver King's Blade",
+   "lane": "moon"
   },
   "mebahelrpgrquest:hag_mn9r_rest": {
    "dim": "minecraft:overworld",
-   "title": "Rest"
+   "title": "Rest",
+   "lane": "moon"
   },
   "mebahelrpgrquest:hag_rb1_a_song_gone_quiet": {
    "dim": "minecraft:overworld",
-   "title": "A Song Gone Quiet"
+   "title": "A Song Gone Quiet",
+   "lane": "ribbits"
   },
   "mebahelrpgrquest:hag_rb2_reed_shell_and_hide": {
    "dim": "minecraft:overworld",
-   "title": "Reed, Hide and String"
+   "title": "Reed, Hide and String",
+   "lane": "ribbits"
   },
   "mebahelrpgrquest:hag_rb3_the_bog_hag": {
    "dim": "minecraft:overworld",
-   "title": "The Bog Hag"
+   "title": "The Bog Hag",
+   "lane": "ribbits"
   },
   "mebahelrpgrquest:hag_rb4_the_moonrise_chorus": {
    "dim": "minecraft:overworld",
-   "title": "The Moonrise Chorus"
+   "title": "The Moonrise Chorus",
+   "lane": "ribbits"
   },
   "mebahelrpgrquest:hag_x1_the_informant": {
    "dim": "minecraft:overworld",
-   "title": "The Informant"
+   "title": "The Informant",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x1_the_informant_after": {
    "dim": "minecraft:overworld",
-   "title": "The Lesson"
+   "title": "The Lesson",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x1s_wicks_back_door": {
    "dim": "minecraft:overworld",
-   "title": "Wick's Back Door"
+   "title": "Wick's Back Door",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x1k_wicks_sister": {
    "dim": "minecraft:overworld",
-   "title": "Wick's Sister"
+   "title": "Wick's Sister",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x2_the_bastille_warden": {
    "dim": "minecraft:overworld",
-   "title": "The Bastille Warden"
+   "title": "The Bastille Warden",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x2_the_bastille_warden_after": {
    "dim": "minecraft:overworld",
-   "title": "Keys Off a Dead Man"
+   "title": "Keys Off a Dead Man",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x2s_the_wardens_debt": {
    "dim": "minecraft:overworld",
-   "title": "The Warden's Debt"
+   "title": "The Warden's Debt",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x2k_gorrans_brothers": {
    "dim": "minecraft:overworld",
-   "title": "Gorran's Brothers"
+   "title": "Gorran's Brothers",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x3_the_third_skull": {
    "dim": "minecraft:the_nether",
-   "title": "The Third Skull"
+   "title": "The Third Skull",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x3_the_third_skull_after": {
    "dim": "minecraft:the_nether",
-   "title": "The Skull Remembers"
+   "title": "The Skull Remembers",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x3s_ossians_gift": {
    "dim": "minecraft:the_nether",
-   "title": "Ossian's Gift"
+   "title": "Ossian's Gift",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x3k_the_choir_wants_it_back": {
    "dim": "minecraft:overworld",
-   "title": "The Choir Wants It Back"
+   "title": "The Choir Wants It Back",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun": {
    "dim": "aether:the_aether",
-   "title": "The Pilgrim of the Sun"
+   "title": "The Pilgrim of the Sun",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x4_the_pilgrim_of_the_sun_after": {
    "dim": "aether:the_aether",
-   "title": "Embers"
+   "title": "Embers",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x4s_sunlight_in_a_bottle": {
    "dim": "minecraft:overworld",
-   "title": "Sunlight in a Bottle"
+   "title": "Sunlight in a Bottle",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x4k_the_sun_remembers": {
    "dim": "minecraft:overworld",
-   "title": "The Sun Remembers"
+   "title": "The Sun Remembers",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x5_the_last_garrison_man": {
    "dim": "minecraft:overworld",
-   "title": "The Last Garrison Man"
+   "title": "The Last Garrison Man",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x5_the_last_garrison_man_after": {
    "dim": "minecraft:overworld",
-   "title": "Snow on the Grave"
+   "title": "Snow on the Grave",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x5s_brann_comes_home": {
    "dim": "minecraft:overworld",
-   "title": "Brann Comes Home"
+   "title": "Brann Comes Home",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_x5k_a_widows_letter": {
    "dim": "minecraft:overworld",
-   "title": "A Widow's Letter"
+   "title": "A Widow's Letter",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_y1_what_the_last_page_said": {
    "dim": "minecraft:overworld",
-   "title": "What the Last Page Said"
+   "title": "What the Last Page Said",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_y2_the_hand_reads_too": {
    "dim": "minecraft:overworld",
-   "title": "The Hand Reads Too"
+   "title": "The Hand Reads Too",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_y3_tomas_at_the_gate": {
    "dim": "minecraft:overworld",
-   "title": "Tomas at the Gate"
+   "title": "Tomas at the Gate",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_y4_vaels_last_letter": {
    "dim": "minecraft:overworld",
-   "title": "Vael's Last Letter"
+   "title": "Vael's Last Letter",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_y5_the_midwifes_daughter": {
    "dim": "minecraft:overworld",
-   "title": "The Midwife's Daughter"
+   "title": "The Midwife's Daughter",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_lp1_ancient_city": {
    "dim": "minecraft:overworld",
-   "title": "Lost Page 1: The Calling"
+   "title": "Lost Page 1: The Calling",
+   "lane": "pages"
   },
   "mebahelrpgrquest:hag_lp2_end_city": {
    "dim": "minecraft:the_end",
-   "title": "Lost Page 2: The Wardens"
+   "title": "Lost Page 2: The Wardens",
+   "lane": "pages"
   },
   "mebahelrpgrquest:hag_lp3_jungle_temple": {
    "dim": "minecraft:overworld",
-   "title": "Lost Page 3: Her Name"
+   "title": "Lost Page 3: Her Name",
+   "lane": "pages"
   },
   "mebahelrpgrquest:hag_lp4_mansion": {
    "dim": "minecraft:overworld",
-   "title": "Lost Page 4: The Price"
+   "title": "Lost Page 4: The Price",
+   "lane": "pages"
   },
   "mebahelrpgrquest:hag_lp5_treasure": {
    "dim": "minecraft:overworld",
-   "title": "Lost Page 5: The Sea"
+   "title": "Lost Page 5: The Sea",
+   "lane": "pages"
   },
   "mebahelrpgrquest:hag_lp6_igloo": {
    "dim": "minecraft:overworld",
-   "title": "Lost Page 6: The Cold"
+   "title": "Lost Page 6: The Cold",
+   "lane": "pages"
   },
   "mebahelrpgrquest:hag_lp7_outpost": {
    "dim": "minecraft:overworld",
-   "title": "Lost Page 7: The Fall"
+   "title": "Lost Page 7: The Fall",
+   "lane": "pages"
   },
   "mebahelrpgrquest:hag_lp8_ruin": {
    "dim": "minecraft:overworld",
-   "title": "Lost Page 8: The Grave"
+   "title": "Lost Page 8: The Grave",
+   "lane": "pages"
   },
   "mebahelrpgrquest:hag_lp9_the_first_champion": {
    "dim": "minecraft:overworld",
-   "title": "The First Champion"
+   "title": "The First Champion",
+   "lane": "pages"
   },
   "mebahelrpgrquest:hag_et1_whispers_of_a_new_god": {
    "dim": "minecraft:overworld",
-   "title": "Whispers of a New God"
+   "title": "Whispers of a New God",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_et2_the_pretender": {
    "dim": "minecraft:the_nether",
-   "title": "The Pretender"
+   "title": "The Pretender",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_et3_the_last_faithful": {
    "dim": "minecraft:overworld",
-   "title": "The Last Faithful"
+   "title": "The Last Faithful",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_et4_morning": {
    "dim": "minecraft:overworld",
-   "title": "Morning"
+   "title": "Morning",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_ha1_the_first_command": {
    "dim": "minecraft:overworld",
-   "title": "The First Command"
+   "title": "The First Command",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_ha2_ashford_must_kneel": {
    "dim": "minecraft:overworld",
-   "title": "Ashford Must Kneel"
+   "title": "Ashford Must Kneel",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_ha3_haldens_last_stand": {
    "dim": "minecraft:overworld",
-   "title": "Halden's Last Stand"
+   "title": "Halden's Last Stand",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_ha4_the_hand_of_azazel": {
    "dim": "minecraft:overworld",
-   "title": "The Hand of Azazel"
+   "title": "The Hand of Azazel",
+   "lane": "main"
   },
   "mebahelrpgrquest:hag_ru1_the_lantern_road": {
    "dim": "minecraft:overworld",
-   "title": "The Lantern Road"
+   "title": "The Lantern Road",
+   "lane": "choices"
   },
   "mebahelrpgrquest:hag_ru2_silas_makes_an_offer": {
    "dim": "minecraft:overworld",
-   "title": "Silas Makes an Offer"
+   "title": "Silas Makes an Offer",
+   "lane": "choices"
   },
   "mebahelrpgrquest:delivery_cobblestone_oak_log_other_village": {
    "dim": "minecraft:overworld",
-   "title": "Stone and Timber for the Next Village"
+   "title": "Stone and Timber for the Next Village",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:zombie_disguise_friend": {
    "dim": "minecraft:overworld",
-   "title": "Among the Dead"
+   "title": "Among the Dead",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:blaze_mineshaft_threat": {
    "dim": "minecraft:overworld",
-   "title": "Flame in the Mineshaft"
+   "title": "Flame in the Mineshaft",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:questbook_please_return_the_ship": {
    "dim": "minecraft:overworld",
-   "title": "Please Return the Ship"
+   "title": "Please Return the Ship",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:false_hero_rusk_debt_of_breath": {
    "dim": "minecraft:overworld",
-   "title": "A Debt of Breath"
+   "title": "A Debt of Breath",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:blackthorn_chain_2_a_place_set_for_no_one": {
    "dim": "minecraft:overworld",
-   "title": "A Place Set for No One"
+   "title": "A Place Set for No One",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:questbook_the_house_that_owes_me_money": {
    "dim": "minecraft:overworld",
-   "title": "The House That Owes Me Money"
+   "title": "The House That Owes Me Money",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:questbook_the_ash_merchant": {
    "dim": "minecraft:overworld",
-   "title": "The Ash Merchant"
+   "title": "The Ash Merchant",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:questbook_the_man_who_came_back_warm": {
    "dim": "minecraft:overworld",
-   "title": "The Man Who Came Back Warm"
+   "title": "The Man Who Came Back Warm",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:questbook_instructions_for_my_own_funeral": {
    "dim": "minecraft:overworld",
-   "title": "Instructions for My Own Funeral"
+   "title": "Instructions for My Own Funeral",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:questbook_the_captains_share": {
    "dim": "minecraft:overworld",
-   "title": "The Captain's Share"
+   "title": "The Captain's Share",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:questbook_the_man_who_buried_himself": {
    "dim": "minecraft:overworld",
-   "title": "The Man Who Buried Himself"
+   "title": "The Man Who Buried Himself",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:questbook_the_fourth_member": {
    "dim": "minecraft:overworld",
-   "title": "The Fourth Member"
+   "title": "The Fourth Member",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:questbook_a_very_reasonable_treasure_map": {
    "dim": "minecraft:overworld",
-   "title": "A Very Reasonable Treasure Map"
+   "title": "A Very Reasonable Treasure Map",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:ash_court_orr_veyl_ledger_without_chains": {
    "dim": "minecraft:overworld",
-   "title": "Ledger Without Chains"
+   "title": "Ledger Without Chains",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:ash_court_chain_3_a_skull_for_proof": {
    "dim": "minecraft:overworld",
-   "title": "A Skull for Proof"
+   "title": "A Skull for Proof",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:ash_court_chain_8_the_last_debt": {
    "dim": "minecraft:overworld",
-   "title": "The Last Debt"
+   "title": "The Last Debt",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:ash_court_chain_1_bones_beneath_the_village": {
    "dim": "minecraft:overworld",
-   "title": "Bones Beneath the Village"
+   "title": "Bones Beneath the Village",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:ash_court_chain_5_black_glass_road": {
    "dim": "minecraft:overworld",
-   "title": "The Black Glass Road"
+   "title": "The Black Glass Road",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:ash_court_chain_4_the_warm_skull": {
    "dim": "minecraft:overworld",
-   "title": "The Warm Skull"
+   "title": "The Warm Skull",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:ash_court_chain_2_the_bone_anchor": {
    "dim": "minecraft:overworld",
-   "title": "The Bone Anchor"
+   "title": "The Bone Anchor",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:ash_court_chain_6_the_court_answers": {
    "dim": "minecraft:overworld",
-   "title": "The Court Answers"
+   "title": "The Court Answers",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:ash_court_chain_7_names_under_stone": {
    "dim": "minecraft:overworld",
-   "title": "Names Under Stone"
+   "title": "Names Under Stone",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:smith_last_heat_chain_1_coals_for_the_cold_forge": {
    "dim": "minecraft:overworld",
-   "title": "Coals for the Cold Forge"
+   "title": "Coals for the Cold Forge",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:smith_last_heat_chain_2_the_hammer_remembers": {
    "dim": "minecraft:overworld",
-   "title": "The Hammer Remembers"
+   "title": "The Hammer Remembers",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:smith_last_heat_chain_3_the_burnt_smith": {
    "dim": "minecraft:overworld",
-   "title": "The Burnt Smith"
+   "title": "The Burnt Smith",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:village_arrival_3_fireplace_supplies": {
    "dim": "minecraft:overworld",
-   "title": "A Very Warm Fireplace"
+   "title": "A Very Warm Fireplace",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:village_arrival_2_armour_stand": {
    "dim": "minecraft:overworld",
-   "title": "A Stand Worth Showing Off"
+   "title": "A Stand Worth Showing Off",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:village_arrival_1_clock": {
    "dim": "minecraft:overworld",
-   "title": "A Clock for a New Home"
+   "title": "A Clock for a New Home",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:false_hero_chain_spare_3_name_beneath_medal": {
    "dim": "minecraft:overworld",
-   "title": "The Name Beneath the Medal"
+   "title": "The Name Beneath the Medal",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:false_hero_rusk_no_banner_behind_me": {
    "dim": "minecraft:overworld",
-   "title": "No Banner Behind Me"
+   "title": "No Banner Behind Me",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:false_hero_chain_1_a_hero_trophy": {
    "dim": "minecraft:overworld",
-   "title": "A Hero's Trophy"
+   "title": "A Hero's Trophy",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:false_hero_chain_2_the_last_witness": {
    "dim": "minecraft:overworld",
-   "title": "The Last Witness"
+   "title": "The Last Witness",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:false_hero_chain_kill_3_convenient_silence": {
    "dim": "minecraft:overworld",
-   "title": "Convenient Silence"
+   "title": "Convenient Silence",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:false_hero_chain_spare_4_the_false_hero": {
    "dim": "minecraft:overworld",
-   "title": "The False Hero"
+   "title": "The False Hero",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:witch_chain_3_thorns_brothers": {
    "dim": "minecraft:overworld",
-   "title": "The Thorns Brothers"
+   "title": "The Thorns Brothers",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:witch_chain_1_hut_threat": {
    "dim": "minecraft:overworld",
-   "title": "The Witch at the Hut"
+   "title": "The Witch at the Hut",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:witch_chain_2_healing_brews": {
    "dim": "minecraft:overworld",
-   "title": "Healing Brews"
+   "title": "Healing Brews",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:witch_chain_4_evoker_conspiracy": {
    "dim": "minecraft:overworld",
-   "title": "The Evoker's Plot"
+   "title": "The Evoker's Plot",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:undertaker_chain_1_graves_without_names": {
    "dim": "minecraft:overworld",
-   "title": "Graves Without Names"
+   "title": "Graves Without Names",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:undertaker_chain_2_the_grave_he_cannot_fill": {
    "dim": "minecraft:overworld",
-   "title": "The Grave He Cannot Fill"
+   "title": "The Grave He Cannot Fill",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:undertaker_chain_3_where_the_dead_were_sent": {
    "dim": "minecraft:overworld",
-   "title": "Where the Dead Were Sent"
+   "title": "Where the Dead Were Sent",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:undertaker_chain_4_not_currently_available": {
    "dim": "minecraft:overworld",
-   "title": "Not Currently Available"
+   "title": "Not Currently Available",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:mad_scientist_chain_spare_5_the_grand_demonstration": {
    "dim": "minecraft:overworld",
-   "title": "The Grand Demonstration"
+   "title": "The Grand Demonstration",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:mad_scientist_chain_4_patient_thirteen": {
    "dim": "minecraft:overworld",
-   "title": "Patient Thirteen"
+   "title": "Patient Thirteen",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:mad_scientist_chain_kill_5_the_grand_demonstration": {
    "dim": "minecraft:overworld",
-   "title": "The Grand Demonstration"
+   "title": "The Grand Demonstration",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:mad_scientist_chain_3_the_assistants_last_notes": {
    "dim": "minecraft:overworld",
-   "title": "The Assistant's Last Notes"
+   "title": "The Assistant's Last Notes",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:mad_scientist_chain_2_the_control_group": {
    "dim": "minecraft:overworld",
-   "title": "The Control Group"
+   "title": "The Control Group",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:mad_scientist_chain_1_a_cure_for_the_common_death": {
    "dim": "minecraft:overworld",
-   "title": "A Cure for the Common Death"
+   "title": "A Cure for the Common Death",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:village_defense_chain_6_the_second_bell": {
    "dim": "minecraft:overworld",
-   "title": "The Ledger Must Burn"
+   "title": "The Ledger Must Burn",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:village_defense_chain_2_raise_the_iron_golems": {
    "dim": "minecraft:overworld",
-   "title": "Raise the Iron Golems"
+   "title": "Raise the Iron Golems",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:village_defense_chain_5_smoke_on_the_milestones": {
    "dim": "minecraft:overworld",
-   "title": "Names in the Quiet Ledger"
+   "title": "Names in the Quiet Ledger",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:village_defense_chain_3_the_bell_and_the_raid": {
    "dim": "minecraft:overworld",
-   "title": "The Bell and the Raid"
+   "title": "The Bell and the Raid",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:village_defense_chain_4_the_road_remembers": {
    "dim": "minecraft:overworld",
-   "title": "The Knife Behind the Praise"
+   "title": "The Knife Behind the Praise",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:village_defense_chain_1_iron_for_the_watch": {
    "dim": "minecraft:overworld",
-   "title": "Iron for the Watch"
+   "title": "Iron for the Watch",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:kill_10_zombies": {
    "dim": "minecraft:overworld",
-   "title": "Zombie Cleanup"
+   "title": "Zombie Cleanup",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:kill_5_creepers": {
    "dim": "minecraft:overworld",
-   "title": "Creeper Problem"
+   "title": "Creeper Problem",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:kill_10_skeletons": {
    "dim": "minecraft:overworld",
-   "title": "Skeleton Patrol"
+   "title": "Skeleton Patrol",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:armed_zombie_chain_spare_2_forgotten_road": {
    "dim": "minecraft:overworld",
-   "title": "The Forgotten Road"
+   "title": "The Forgotten Road",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:armed_zombie_chain_kill_2_seal_the_gate": {
    "dim": "minecraft:overworld",
-   "title": "Seal the Restless Gate"
+   "title": "Seal the Restless Gate",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:armed_zombie_chain_spare_4_oath_of_ash": {
    "dim": "minecraft:overworld",
-   "title": "Oath of Ash"
+   "title": "Oath of Ash",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:armed_zombie_chain_kill_3_ashes_at_the_frame": {
    "dim": "minecraft:overworld",
-   "title": "Ashes at the Frame"
+   "title": "Ashes at the Frame",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:armed_zombie_chain_spare_3_name_in_iron": {
    "dim": "minecraft:overworld",
-   "title": "A Name in Iron"
+   "title": "A Name in Iron",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:armed_zombie_chain_1_ruined_portal": {
    "dim": "minecraft:overworld",
-   "title": "The Armed Dead"
+   "title": "The Armed Dead",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:village_new_home": {
    "dim": "minecraft:overworld",
-   "title": "Room for New Neighbors"
+   "title": "Room for New Neighbors",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:village_pig_enclosure": {
    "dim": "minecraft:overworld",
-   "title": "A Pen for the First Herd"
+   "title": "A Pen for the First Herd",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:sculk_mineshaft_investigation": {
    "dim": "minecraft:overworld",
-   "title": "The Mine That Listens"
+   "title": "The Mine That Listens",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:most_important_cow_chain_2_the_cow_has_spoken": {
    "dim": "minecraft:overworld",
-   "title": "The Cow Has Spoken"
+   "title": "The Cow Has Spoken",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:most_important_cow_chain_1_an_audience_with_her_majesty": {
    "dim": "minecraft:overworld",
-   "title": "An Audience with Her Majesty"
+   "title": "An Audience with Her Majesty",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:most_important_cow_chain_bargain_5_a_quiet_road": {
    "dim": "minecraft:overworld",
-   "title": "A Quiet Road"
+   "title": "A Quiet Road",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:most_important_cow_chain_refuse_5_long_live_the_queen": {
    "dim": "minecraft:overworld",
-   "title": "Long Live the Queen"
+   "title": "Long Live the Queen",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:most_important_cow_chain_3_the_woman_who_knew_the_bell": {
    "dim": "minecraft:overworld",
-   "title": "The Woman Who Knew the Bell"
+   "title": "The Woman Who Knew the Bell",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:most_important_cow_chain_4_the_price_of_a_queen": {
    "dim": "minecraft:overworld",
-   "title": "The Price of a Queen"
+   "title": "The Price of a Queen",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:no_banner_vindicator_chain_spare_4_trial_by_bell": {
    "dim": "minecraft:overworld",
-   "title": "Trial by Bell"
+   "title": "Trial by Bell",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:no_banner_vindicator_chain_kill_3_ashes_without_witness": {
    "dim": "minecraft:overworld",
-   "title": "Ashes Without a Witness"
+   "title": "Ashes Without a Witness",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:no_banner_vindicator_chain_2_the_no_banner_axe": {
    "dim": "minecraft:overworld",
-   "title": "The No-Banner Axe"
+   "title": "The No-Banner Axe",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:no_banner_vindicator_chain_1_bread_at_the_shrine": {
    "dim": "minecraft:overworld",
-   "title": "Bread at the Shrine"
+   "title": "Bread at the Shrine",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:no_banner_vindicator_chain_spare_3_names_in_ash": {
    "dim": "minecraft:overworld",
-   "title": "Names in Ash"
+   "title": "Names in Ash",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:no_banner_vindicator_chain_spare_5_oath_without_banner": {
    "dim": "minecraft:overworld",
-   "title": "Oath Without Banner"
+   "title": "Oath Without Banner",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:blackthorn_chain_4_a_seat_for_the_dead": {
    "dim": "minecraft:overworld",
-   "title": "A Seat for the Dead"
+   "title": "A Seat for the Dead",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:blackthorn_chain_1_the_courier_who_never_returned": {
    "dim": "minecraft:overworld",
-   "title": "The Courier Who Never Returned"
+   "title": "The Courier Who Never Returned",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:blackthorn_chain_3_the_final_guest": {
    "dim": "minecraft:overworld",
-   "title": "The Final Guest"
+   "title": "The Final Guest",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:captains_share_return_the_shares": {
    "dim": "minecraft:overworld",
-   "title": "The Dead's Share"
+   "title": "The Dead's Share",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:garrick_second_funeral": {
    "dim": "minecraft:overworld",
-   "title": "Instructions for My Second Funeral"
+   "title": "Instructions for My Second Funeral",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:garrick_third_funeral": {
    "dim": "minecraft:overworld",
-   "title": "Instructions for My Third Funeral"
+   "title": "Instructions for My Third Funeral",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:the_sixth_voice": {
    "dim": "minecraft:overworld",
-   "title": "The Sixth Voice"
+   "title": "The Sixth Voice",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:merrick_the_end_remembers": {
    "dim": "minecraft:overworld",
-   "title": "You Remember This Part"
+   "title": "You Remember This Part",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:merrick_remembers_you": {
    "dim": "minecraft:overworld",
-   "title": "Someone You Should Remember"
+   "title": "Someone You Should Remember",
+   "lane": "mebahel"
   },
   "mebahelrpgrquest:merrick_a_place_you_remember": {
    "dim": "minecraft:overworld",
-   "title": "A Place You Remember"
+   "title": "A Place You Remember",
+   "lane": "mebahel"
   }
  }
 }

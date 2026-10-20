@@ -53,7 +53,17 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
     /** quest id -> stage -> what that step asks for (for "not yet" lines) */
     public final Map<String, Map<Integer, List<String>>> steps = new HashMap<>();
     /** quest id -> where its map marker belongs (dimension) and what it's called */
+    /** quest id -> {dimension, title, map lane} */
     public final Map<String, String[]> markers = new HashMap<>();
+
+    /**
+     * The story's own roads (the main story, its spare-or-kill branches, the reputation road): the lane, or "" for
+     * anything else. Each holds one quest at a time, so you're never on the good and the evil version of a chapter at once.
+     */
+    public String storyLane(String quest) {
+        String[] m = markers.get(quest);
+        return m != null && m.length > 2 && (m[2].equals("main") || m[2].equals("choices") || m[2].equals("road")) ? m[2] : "";
+    }
     /** Mara's letters: trigger trait -> letter per tone */
     public final List<JsonObject> letters = new ArrayList<>();
 
@@ -177,8 +187,11 @@ public final class StoryData extends SimpleJsonResourceReloadListener {
                             }
                         }
                     }
-                    case "markers" -> o.getAsJsonObject("quests").entrySet().forEach(m -> markers.put(m.getKey(),
-                            new String[]{m.getValue().getAsJsonObject().get("dim").getAsString(), m.getValue().getAsJsonObject().get("title").getAsString()}));
+                    case "markers" -> o.getAsJsonObject("quests").entrySet().forEach(m -> {
+                        JsonObject mk = m.getValue().getAsJsonObject();
+                        markers.put(m.getKey(), new String[]{mk.get("dim").getAsString(), mk.get("title").getAsString(),
+                                mk.has("lane") ? mk.get("lane").getAsString() : ""});
+                    });
                     case "settlement" -> {
                         for (JsonElement c : o.getAsJsonArray("settlers")) {
                             JsonObject j = c.getAsJsonObject();

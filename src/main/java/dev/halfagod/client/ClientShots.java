@@ -375,6 +375,41 @@ public final class ClientShots {
             server(sp -> dev.halfagod.core.Net.send(sp, new Payloads.OpenMap("letters")));
         });
         step(40, () -> shot("13b_codex_letters_received"));
+        // the next quest is ready to start: start it from the map
+        step(20, () -> Minecraft.getInstance().setScreen(null));
+        step(40, () -> server(sp -> dev.halfagod.core.Meb.giveBook(sp, "mebahelrpgrquest:hag_the_first_letter")));
+        step(20, () -> {
+            StoryMapScreen screen = new StoryMapScreen(null);
+            Minecraft.getInstance().setScreen(screen);
+        });
+        step(60, () -> {
+            if (Minecraft.getInstance().screen instanceof StoryMapScreen s) {
+                String ready = "";
+                for (String q : new String[]{"mebahelrpgrquest:hag_p1_the_bell", "mebahelrpgrquest:hag_p2_winter_stores"}) {
+                    if (ready.isEmpty() && s.stateForTest(q).equals("open")) {
+                        ready = q;
+                    }
+                }
+                HalfAGod.LOG.info("SHOT ready to start on the map: {} (p1 is {})", ready, s.stateForTest("mebahelrpgrquest:hag_p1_the_bell"));
+                if (!ready.isEmpty()) {
+                    s.selectForTest(ready);
+                }
+            }
+        });
+        step(40, () -> shot("13c_map_ready_to_start"));
+        step(10, () -> {
+            if (Minecraft.getInstance().screen instanceof StoryMapScreen s) {
+                s.startForTest();
+            }
+        });
+        step(60, () -> shot("13d_map_started"));
+        step(10, () -> server(sp -> {
+            java.util.List<String> ids = new java.util.ArrayList<>();
+            for (dev.halfagod.core.Meb.Progress p : dev.halfagod.core.Meb.quests(sp)) {
+                ids.add(p.questId() + (p.claimed() ? "(claimed)" : p.failed() ? "(failed)" : "(on)"));
+            }
+            HalfAGod.LOG.info("SHOT quests after starting from the map: {}", ids);
+        }));
         // the Watch's enforcers come for you (out in the world, at night)
         step(20, () -> Minecraft.getInstance().setScreen(null));
         step(10, () -> server(sp -> {
