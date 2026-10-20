@@ -394,6 +394,7 @@ Maraca so far.
 | Command | What |
 | --- | --- |
 | `/halfagod test story <point> [good\|evil\|waver\|random]` | jump to a believable point in the story without playing it: `prologue`, `act1` … `act7`, `end`, `after` or `random`. Everything before it is done (map, margin notes, Your Path, Wardens), decisions are made the way that kind of player would, and reputation follows. Laid over your real story; Mebahel's own quests don't move. Ashford and settlers do follow it, so use a test world. |
+| `/halfagod test story final [good\|evil\|waver]` | jump to the last fight: the whole story up to the head altar is done (Azazel unlocked), and The Choir of the Whole God starts for real. Beat the Choir, join head to body, and the True Azazel wakes. `/halfagod test story clear` puts your real story back. |
 | `/halfagod test story clear` | put your real story back exactly as it was |
 | `/halfagod test story status` | whether you're in a simulated story |
 | `/halfagod test dream` | dream now (a dream that fits where you are) |

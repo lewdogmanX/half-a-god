@@ -24,6 +24,10 @@ import java.util.Set;
  */
 public final class Simulate {
     private static final List<String> ACTS = List.of("prologue", "act1", "act2", "act3", "act4", "act5", "act6", "act7", "end", "after");
+    /** the whole story up to the head altar is done, and the last fight (the Choir, then the True Azazel) starts for real */
+    private static final String FINAL = "final";
+    /** how many of the last chapter's quests come before the Choir of the Whole God (Caution, Up) */
+    private static final int BEFORE_THE_ALTAR = 2;
     private static final String[] TIER_WORDS = {"wicked", "fallen", "waver", "good", "saint"};
 
     private Simulate() {
@@ -31,6 +35,7 @@ public final class Simulate {
 
     public static List<String> acts() {
         List<String> out = new ArrayList<>(ACTS);
+        out.add(FINAL);
         out.add("random");
         return out;
     }
@@ -48,6 +53,10 @@ public final class Simulate {
         mode = mode.toLowerCase(Locale.ROOT);
         if (act.equals("random")) {
             act = ACTS.get(rnd.nextInt(8)); // the prologue to Act VII
+        }
+        boolean finalFight = act.equals(FINAL);
+        if (finalFight) {
+            act = "end";
         }
         if (!ACTS.contains(act)) {
             return "Unknown point in the story: " + act + ". Try one of " + String.join(", ", acts()) + ".";
@@ -79,7 +88,7 @@ public final class Simulate {
             }
             JsonArray qs = ch.getAsJsonArray("quests");
             // the act you asked for is only partly done; everything before it is finished
-            int upTo = ci < target ? qs.size() : (act.equals("end") || act.equals("after") ? qs.size() : Math.max(1, (int) Math.round(qs.size() * (0.25 + rnd.nextFloat() * 0.45))));
+            int upTo = ci < target ? qs.size() : finalFight ? BEFORE_THE_ALTAR : (act.equals("end") || act.equals("after") ? qs.size() : Math.max(1, (int) Math.round(qs.size() * (0.25 + rnd.nextFloat() * 0.45))));
             int done = 0;
             for (JsonElement e : qs) {
                 JsonObject q = e.getAsJsonObject();
@@ -147,7 +156,7 @@ public final class Simulate {
             }
         }
         // the end of it all: the ending your reputation earned
-        if (target >= ACTS.indexOf("end")) {
+        if (target >= ACTS.indexOf("end") && !finalFight) {
             add(d, added, real, "hag_rep_" + TIER_WORDS[Reputation.tierIndex(rep)]);
             d.endDay = day;
         }
@@ -164,6 +173,14 @@ public final class Simulate {
         d.value = Math.max(-100, Math.min(100, rep));
         Reputation.sync(player, 0);
         Reputation.updateTierFlags(player);
+        if (finalFight && !next.isEmpty()) {
+            boolean started = Meb.startQuest(player, net.minecraft.resources.ResourceLocation.parse(next), false);
+            return "Simulated the whole story up to the head altar, played " + mode + ", reputation " + Math.round(d.value)
+                    + " (" + Reputation.tier(d.value) + "). "
+                    + (started ? "Started " : "Couldn't start ") + next.replace("mebahelrpgrquest:hag_", "")
+                    + ": the Choir waits at the head altar, then join head to body and the True Azazel wakes."
+                    + " /halfagod test story clear puts your real story back.";
+        }
         return "Simulated: " + label + ", played " + mode + ". " + quests + " quests done, " + decisions + " decisions made, reputation "
                 + Math.round(Reputation.data(player).value) + " (" + Reputation.tier(Reputation.data(player).value) + ")."
                 + (next.isEmpty() ? "" : " Next on the road: " + next.replace("mebahelrpgrquest:hag_", "") + ".")

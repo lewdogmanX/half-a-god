@@ -507,6 +507,23 @@ public final class HalfAGodTests {
         h.succeed();
     }
 
+    /** "/halfagod test story final": the whole story up to the head altar is done, and nothing after it. */
+    @GameTest(template = "empty")
+    public static void storyJumpToTheFinalFight(GameTestHelper h) {
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        dev.halfagod.core.Simulate.run(p, "final", "good");
+        RepData d = Reputation.data(p);
+        check(h, d.simTraits.contains("hag_m5_do_not_provoke_gehinnom_done"), "Azazel is unlocked (Act VII is done)");
+        check(h, d.simTraits.contains("hag_m9_half_a_soul_done"), "all of Act VII");
+        check(h, d.simTraits.contains("hag_z1_caution_done") && d.simTraits.contains("hag_z2_up_done"), "the maze and the climb are done");
+        check(h, !d.simTraits.contains("hag_z3_choir_of_the_whole_god_done"), "the Choir is still to fight");
+        check(h, d.simTraits.stream().noneMatch(t -> t.startsWith("hag_b1_") || t.startsWith("hag_g1_") || t.startsWith("hag_rep_")),
+                "no ending yet: " + d.simTraits.stream().filter(t -> t.startsWith("hag_b") || t.startsWith("hag_g") || t.startsWith("hag_rep_")).toList());
+        dev.halfagod.core.Simulate.clear(p);
+        p.discard();
+        h.succeed();
+    }
+
     /** Killing animals, slimes and pillagers moves reputation neither way; killing a villager still does. */
     @GameTest(template = "empty", timeoutTicks = 100)
     public static void killsThatDontCount(GameTestHelper h) {
