@@ -39,10 +39,13 @@ jobs:
           printf 'onboardAccessibility:false\ntutorialStep:none\njoinedFirstServer:true\nskipMultiplayerWarning:true\npauseOnLostFocus:false\nsoundCategory_master:0.0\nrenderDistance:6\nguiScale:2\nnarrator:0\n' > run/options.txt
           cp jar/*.jar run/mods/
           mr() { curl -sfL "https://api.modrinth.com/v2/project/$1/version?loaders=%5B%22neoforge%22%5D&game_versions=%5B%221.21.1%22%5D" | jq -r '.[0].files[] | select(.primary) | .url' | head -1; }
-          for p in connector forgified-fabric-api; do
+          for p in connector; do
             u=$(mr $p); echo "$p: $u"
             curl -sfL -o "run/mods/$(basename "$u")" "$u"
           done
+          # Forgified Fabric API pinned to the last version that runs on NeoForge 21.1.252, the modpack's NeoForge
+          # (0.116.15+2.3.6 needs 21.1.262 or newer)
+          curl -sfL -o run/mods/forgified-fabric-api-0.116.15+2.3.5+1.21.1.jar "https://cdn.modrinth.com/data/Aqlf1Shp/versions/V9WdDUTx/forgified-fabric-api-0.116.15%2B2.3.5%2B1.21.1.jar"
           # Ribbits (and what it needs), for the Ribbits' Song
           for p in geckolib yungs-api; do
             u=$(mr $p); echo "$p: $u"
