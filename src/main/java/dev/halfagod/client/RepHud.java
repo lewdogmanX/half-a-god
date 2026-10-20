@@ -63,10 +63,10 @@ public final class RepHud {
     }
 
     private static int tierIndex(double v) {
-        if (v >= 60) return 4;
-        if (v >= 20) return 3;
-        if (v > -20) return 2;
-        if (v > -60) return 1;
+        if (v >= 150) return 4;
+        if (v >= 50) return 3;
+        if (v > -50) return 2;
+        if (v > -150) return 1;
         return 0;
     }
 
@@ -113,18 +113,18 @@ public final class RepHud {
     }
 
     private static void draw(GuiGraphics g, Font font, int x, int y, int w, boolean labelBelow) {
-        double v = Math.max(-100, Math.min(100, shown));
+        double v = Math.max(-250, Math.min(250, shown));
         int tier = tierIndex(target);
         int tc = TIER_COLORS[tier];
 
         // track: dark frame, faint tier zones, a centre notch
         g.fill(x - 1, y - 1, x + w + 1, y + BAR_H + 1, 0xC0000000);
         for (int i = 0; i < w; i++) {
-            int c = TIER_COLORS[tierIndex(-100 + 200.0 * i / (w - 1))];
+            int c = TIER_COLORS[tierIndex(-250 + 500.0 * i / (w - 1))];
             g.fill(x + i, y, x + i + 1, y + BAR_H, (0x40 << 24) | (c & 0xFFFFFF));
         }
         int centre = x + w / 2;
-        int px = x + (int) Math.round((v + 100) / 200.0 * (w - 1));
+        int px = x + (int) Math.round((v + 250) / 500.0 * (w - 1));
         // fill from the centre to where you stand
         g.fillGradient(Math.min(centre, px), y, Math.max(centre, px) + 1, y + BAR_H, brighten(tc), tc);
         g.fill(centre, y, centre + 1, y + BAR_H, 0x80FFFFFF);

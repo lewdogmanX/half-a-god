@@ -34,12 +34,18 @@ import java.util.Map;
 import java.util.UUID;
 
 /**
- * The reputation meter: -100 (Wicked) .. +100 (Saint).
+ * The reputation meter: -250 (Wicked) .. +250 (Saint).
  * Moved by everyday play and by the story's choices; it changes villager prices (through vanilla gossip),
  * makes iron golems hostile to the Wicked, and hands out unlock traits at thresholds.
  */
 public final class Reputation {
     public static final String[] TIERS = {"Wicked", "Fallen", "Wavering", "Good", "Saint"};
+    /** the ends of the meter */
+    public static final double MAX = 250;
+    /** where the tiers begin: Good and Saint at +50 and +150, Fallen and Wicked at -50 and -150 */
+    public static final double GOOD = 50, SAINT = 150;
+    /** the meter used to run -100..+100; saves from then are scaled up by this on load */
+    public static final double OLD_SCALE = MAX / 100.0;
 
     private Reputation() {
     }
@@ -49,10 +55,10 @@ public final class Reputation {
     }
 
     public static int tierIndex(double value) {
-        if (value >= 60) return 4;
-        if (value >= 20) return 3;
-        if (value > -20) return 2;
-        if (value > -60) return 1;
+        if (value >= SAINT) return 4;
+        if (value >= GOOD) return 3;
+        if (value > -GOOD) return 2;
+        if (value > -SAINT) return 1;
         return 0;
     }
 
@@ -67,7 +73,7 @@ public final class Reputation {
         }
         RepData d = data(player);
         int before = tierIndex(d.value);
-        d.value = Mth.clamp(d.value + amount, -100, 100);
+        d.value = Mth.clamp(d.value + amount, -MAX, MAX);
         int after = tierIndex(d.value);
         sync(player, amount);
         // the bar shows the change and the new tier; nothing goes to chat
@@ -230,7 +236,7 @@ public final class Reputation {
     }
 
     private static void applyGossip(ServerPlayer player, Villager villager) {
-        double value = data(player).value;
+        double value = data(player).value / OLD_SCALE;   // the gossip amounts were tuned on the old -100..+100 meter
         GossipContainer gossip = villager.getGossips();
         UUID id = player.getUUID();
         int wantPositive = value >= 20 ? (int) Math.round((value - 10) * 1.2) : 0;   // up to ~108: cheaper trades

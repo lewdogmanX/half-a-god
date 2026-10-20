@@ -36,8 +36,8 @@ REP = {
         "hag_a2_what_was_left_done": 3, "hag_w7_a_light_they_cannot_dim_done": 3, "hag_g2_ashford_rebuilt_done": 5,
     },
     "unlocks": [
-        {"at": 60, "trait": "hag_unlock_saint", "courier": "half_a_god:unlock_saint"},
-        {"at": -60, "below": True, "trait": "hag_unlock_wicked", "courier": "half_a_god:unlock_wicked"},
+        {"at": 150, "trait": "hag_unlock_saint", "courier": "half_a_god:unlock_saint"},
+        {"at": -150, "below": True, "trait": "hag_unlock_wicked", "courier": "half_a_god:unlock_wicked"},
     ],
 }
 

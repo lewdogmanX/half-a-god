@@ -259,7 +259,7 @@ public final class HalfAGodTests {
         RepData d = Reputation.data(p);
         check(h, msg.startsWith("Simulated"), msg);
         check(h, Dreams.actIndex(dev.halfagod.core.Meb.traits(p)) == 3, "in Act III: " + msg);
-        check(h, d.value <= -20, "an evil playthrough is Fallen or worse: " + d.value);
+        check(h, d.value <= -Reputation.GOOD, "an evil playthrough is Fallen or worse: " + d.value);
         check(h, !d.doneRep.isEmpty() && d.path.size() > 10, "the map and Your Path are filled in");
         // the trial has a record to read from
         int heard = 0;
@@ -503,6 +503,38 @@ public final class HalfAGodTests {
         check(h, got.contains("past_1") && got.contains("past_6"), "the god's past, all of it: " + got);
         check(h, got.contains("echo_peddler_slain"), "the echo of the peddler: " + got);
         check(h, got.contains("omen_w1_the_skull_market"), "the omen for Act II: " + got);
+        p.discard();
+        h.succeed();
+    }
+
+    /** The meter runs -250..+250; a save from the old -100..+100 meter keeps its place on it. */
+    @GameTest(template = "empty")
+    public static void widerMeter(GameTestHelper h) {
+        check(h, Reputation.tierIndex(49) == 2 && Reputation.tierIndex(50) == 3, "Good from +50");
+        check(h, Reputation.tierIndex(149) == 3 && Reputation.tierIndex(150) == 4, "Saint from +150");
+        check(h, Reputation.tierIndex(-49) == 2 && Reputation.tierIndex(-50) == 1, "Fallen from -50");
+        check(h, Reputation.tierIndex(-149) == 1 && Reputation.tierIndex(-150) == 0, "Wicked from -150");
+        ServerPlayer p = h.makeMockServerPlayerInLevel();
+        RepData d = Reputation.data(p);
+        d.value = 0;
+        Reputation.change(p, 400, "test");
+        check(h, d.value == 250, "it tops out at +250: " + d.value);
+        Reputation.change(p, -900, "test");
+        check(h, d.value == -250, "and bottoms out at -250: " + d.value);
+        // an old save: Saint at +80, with a path through the acts
+        CompoundTag old = RepData.save(d, p.registryAccess());
+        old.remove("repScale");
+        old.putDouble("value", 80);
+        net.minecraft.nbt.ListTag path = new net.minecraft.nbt.ListTag();
+        for (String x : new String[]{"#Act I", "10", "-40"}) {
+            path.add(net.minecraft.nbt.StringTag.valueOf(x));
+        }
+        old.put("path", path);
+        RepData back = RepData.load(old, p.registryAccess());
+        check(h, back.value == 200 && Reputation.tierIndex(back.value) == 4, "still a Saint, at +200: " + back.value);
+        check(h, back.path.equals(java.util.List.of("#Act I", "25", "-100")), "the path scaled with it: " + back.path);
+        RepData again = RepData.load(RepData.save(back, p.registryAccess()), p.registryAccess());
+        check(h, again.value == 200, "and only once: " + again.value);
         p.discard();
         h.succeed();
     }

@@ -118,8 +118,8 @@ public final class Simulate {
                     decisions++;
                 }
                 // everyday life between quests: the good help out, the evil take what they want
-                rep += good ? 2.5 : evil ? -3.5 : (rnd.nextFloat() - 0.5) * 4;
-                rep = Math.max(-100, Math.min(100, rep));
+                rep += (good ? 2.5 : evil ? -3.5 : (rnd.nextFloat() - 0.5) * 4) * Reputation.OLD_SCALE;
+                rep = Math.max(-Reputation.MAX, Math.min(Reputation.MAX, rep));
                 // mod choices that this quest opens
                 for (JsonObject c : StoryData.INSTANCE.choices) {
                     if (c.get("trigger").getAsString().equals(trait)) {
@@ -152,7 +152,7 @@ public final class Simulate {
                 rep += add(d, added, real, key.isEmpty() ? id : "hag_" + key + "_done");
                 rep += decide(d, added, real, id, q.getAsJsonObject("choice"), mode, rnd);
                 decisions++;
-                rep = Math.max(-100, Math.min(100, rep));
+                rep = Math.max(-Reputation.MAX, Math.min(Reputation.MAX, rep));
             }
         }
         // the end of it all: the ending your reputation earned
@@ -170,7 +170,7 @@ public final class Simulate {
         String label = StoryData.INSTANCE.acts.getOrDefault(Dreams.actTrait(Meb.traits(player)), act);
         d.simLabel = label + ", played " + mode;
         // set straight (not through the usual change, which would hand out real unlock letters)
-        d.value = Math.max(-100, Math.min(100, rep));
+        d.value = Math.max(-Reputation.MAX, Math.min(Reputation.MAX, rep));
         Reputation.sync(player, 0);
         Reputation.updateTierFlags(player);
         if (finalFight && !next.isEmpty()) {

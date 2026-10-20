@@ -82,7 +82,7 @@ public final class Story {
                 d.value += repFor(t);
                 recordChronicle(d, t);
             }
-            d.value = Math.max(-100, Math.min(100, d.value));
+            d.value = Math.max(-Reputation.MAX, Math.min(Reputation.MAX, d.value));
             d.knownTraits.addAll(traits);
             d.initialised = true;
             Reputation.sync(player, 0);

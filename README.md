@@ -18,7 +18,10 @@ Install: put `half_a_god-<version>.jar` in `mods/` on the client **and** the ser
 
 A slim bar at the top centre of the screen, away from the hotbar where Tough As Nails, stamina and rolling mods draw. It steps down below boss bars, and shows your tier's name for a moment whenever your reputation changes.
 
-> **Wicked · Fallen · Wavering · Good · Saint** (-100 to +100)
+> **Wicked · Fallen · Wavering · Good · Saint** (-250 to +250)
+>
+> Good from +50 and Saint from +150; Fallen from -50 and Wicked from -150. (Worlds from before the meter was widened
+> keep their place on it: their numbers are scaled up the first time they load.)
 
 What moves it:
 
@@ -387,7 +390,7 @@ Maraca so far.
 | `/halfagod fates` | everyone | what became of them (after the ending) |
 | `/halfagod story` or `/halfagod unlockall` | operators | opens the whole story: every act and quest, what it needs and where it leads, with a button to start any quest |
 | `/halfagod jump <quest> [player]` | operators | start any story quest |
-| `/halfagod setrep <value> [player]` | operators | set reputation |
+| `/halfagod setrep <value> [player]` | operators | set reputation (-250 to 250) |
 
 **Testing (operators):**
 

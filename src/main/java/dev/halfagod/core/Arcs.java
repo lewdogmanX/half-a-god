@@ -56,7 +56,7 @@ public final class Arcs {
 
     /** Deep in the Green Trade but climbing back to Good: Reeve Halden writes with a way out. */
     private static void wayOut(ServerPlayer player) {
-        if (Reputation.data(player).value < 20 || Meb.hasTrait(player, "hag_act5_arc_done")
+        if (Reputation.data(player).value < Reputation.GOOD || Meb.hasTrait(player, "hag_act5_arc_done")
                 || Meb.hasTrait(player, "hag_way_out_sent") || Meb.hasTrait(player, "gt_getting_out")) {
             return;
         }

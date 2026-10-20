@@ -79,7 +79,7 @@ public final class Commands {
                                         .executes(c -> jump(c.getSource(), ResourceLocationArgument.getId(c, "quest"), EntityArgument.getPlayer(c, "player"))))))
                 .then(test())
                 .then(literal("setrep").requires(s -> s.hasPermission(2))
-                        .then(argument("value", IntegerArgumentType.integer(-100, 100))
+                        .then(argument("value", IntegerArgumentType.integer(-250, 250))
                                 .executes(c -> setRep(c.getSource().getPlayerOrException(), IntegerArgumentType.getInteger(c, "value")))
                                 .then(argument("player", EntityArgument.player())
                                         .executes(c -> setRep(EntityArgument.getPlayer(c, "player"), IntegerArgumentType.getInteger(c, "value")))))));

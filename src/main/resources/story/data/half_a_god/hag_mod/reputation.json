@@ -52,12 +52,12 @@
  },
  "unlocks": [
   {
-   "at": 60,
+   "at": 150,
    "trait": "hag_unlock_saint",
    "courier": "half_a_god:unlock_saint"
   },
   {
-   "at": -60,
+   "at": -150,
    "below": true,
    "trait": "hag_unlock_wicked",
    "courier": "half_a_god:unlock_wicked"

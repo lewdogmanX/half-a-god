@@ -1380,23 +1380,23 @@ public final class StoryMapScreen extends Screen {
     }
 
     private String repTier() {
-        if (rep <= -60) {
+        if (rep <= -150) {
             return "Wicked";
         }
-        if (rep <= -20) {
+        if (rep <= -50) {
             return "Fallen";
         }
-        if (rep < 20) {
+        if (rep < 50) {
             return "Wavering";
         }
-        if (rep < 60) {
+        if (rep < 150) {
             return "Good";
         }
         return "Saint";
     }
 
     private int tierColor() {
-        return rep <= -60 ? 0xC03030 : rep <= -20 ? 0xD06A3A : rep < 20 ? 0xC8B08A : rep < 60 ? 0x7FC07F : 0xF2D49A;
+        return rep <= -150 ? 0xC03030 : rep <= -50 ? 0xD06A3A : rep < 50 ? 0xC8B08A : rep < 150 ? 0x7FC07F : 0xF2D49A;
     }
 
     private int neighbour(int dir) {
@@ -2379,7 +2379,7 @@ public final class StoryMapScreen extends Screen {
         } else {
             int n = vals.size();
             java.util.function.IntUnaryOperator px = i -> cx0 + 3 + (int) Math.round((cx1 - cx0 - 8) * i / (double) (n - 1));
-            java.util.function.IntUnaryOperator py = v -> cy0 + (int) Math.round((cy1 - cy0) * (100 - Math.max(-100, Math.min(100, v))) / 200.0);
+            java.util.function.IntUnaryOperator py = v -> cy0 + (int) Math.round((cy1 - cy0) * (250 - Math.max(-250, Math.min(250, v))) / 500.0);
             int lastEnd = -1000;
             for (int k = 0; k < acts.size(); k++) {
                 int x = px.applyAsInt(Math.min(n - 1, acts.get(k)[0]));

@@ -152,7 +152,7 @@ public final class ClientShots {
         }
         step(40, () -> server(sp -> {
             sp.awardStat(Stats.ENTITY_KILLED.get(EntityType.VILLAGER), 9);
-            Reputation.change(sp, -70, "test");
+            Reputation.change(sp, -175, "test");
             Reputation.data(sp).handRank = 1;
             sp.getInventory().add(new ItemStack(Items.EMERALD, 20));
             sp.getInventory().add(new ItemStack(Items.IRON_SWORD));
@@ -404,7 +404,7 @@ public final class ClientShots {
         JsonObject o = new JsonObject();
         JsonObject states = new JsonObject();
         String[] done = {"the_first_letter", "p1_the_bell", "p2_winter_stores", "p3_the_shepherd", "p4_eye_on_chapel", "p5_raise_the_watch"};
-        int[] reps = {30, 25, 5, -10, -40, -70};
+        int[] reps = {75, 62, 12, -25, -100, -175};
         JsonObject doneRep = new JsonObject();
         for (int i = 0; i < done.length; i++) {
             states.addProperty("mebahelrpgrquest:hag_" + done[i], "done");
@@ -413,7 +413,7 @@ public final class ClientShots {
         states.addProperty("mebahelrpgrquest:hag_p6_market_road", "active");
         o.add("states", states);
         o.add("stages", new JsonObject());
-        o.addProperty("rep", -70);
+        o.addProperty("rep", -175);
         o.addProperty("op", true);
         // letters from people with long names, to see the list headers fit
         JsonArray fakeLetters = new JsonArray();

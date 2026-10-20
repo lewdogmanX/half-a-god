@@ -29,7 +29,7 @@ public final class RepData {
     public static final Supplier<AttachmentType<RepData>> TYPE = ATTACHMENTS.register("story",
             () -> AttachmentType.builder(RepData::new).serialize(new Serializer()).copyOnDeath().build());
 
-    /** Reputation, -100 (Wicked) to +100 (Saint). */
+    /** Reputation, -250 (Wicked) to +250 (Saint). */
     public double value;
     /** Mebahel traits already seen (so each one is reacted to once). */
     public final Set<String> knownTraits = new HashSet<>();
@@ -263,6 +263,22 @@ public final class RepData {
             d.simNext = tag.getString("simNext");
             d.simLabel = tag.getString("simLabel");
             d.simBackup = tag.getCompound("simBackup");
+            if (!tag.contains("repScale") && tag.contains("value")) {
+                // a save from when the meter ran -100..+100: the same place on the new, wider meter
+                double k = Reputation.OLD_SCALE;
+                d.value = Math.max(-Reputation.MAX, Math.min(Reputation.MAX, d.value * k));
+                d.actRep.replaceAll((a, v) -> (int) Math.round(v * k));
+                d.doneRep.replaceAll((a, v) -> (int) Math.round(v * k));
+                for (int i = 0; i < d.path.size(); i++) {
+                    String p = d.path.get(i);
+                    if (!p.startsWith("#")) {
+                        try {
+                            d.path.set(i, Long.toString(Math.round(Double.parseDouble(p) * k)));
+                        } catch (NumberFormatException ignored) {
+                        }
+                    }
+                }
+            }
             return d;
         }
 
@@ -270,6 +286,7 @@ public final class RepData {
         public CompoundTag write(RepData d, HolderLookup.Provider provider) {
             CompoundTag tag = new CompoundTag();
             tag.putDouble("value", d.value);
+            tag.putInt("repScale", (int) Reputation.MAX);
             tag.putBoolean("init", d.initialised);
             tag.putBoolean("chronicleGiven", d.chronicleGiven);
             tag.put("known", strings(d.knownTraits));

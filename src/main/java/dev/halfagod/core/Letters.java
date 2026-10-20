@@ -27,10 +27,10 @@ public final class Letters {
 
     /** bright (Good, Saint), grey (Wavering) or dark (Fallen, Wicked) */
     public static String tone(double rep) {
-        if (rep >= 20) {
+        if (rep >= Reputation.GOOD) {
             return "bright";
         }
-        return rep > -20 ? "grey" : "dark";
+        return rep > -Reputation.GOOD ? "grey" : "dark";
     }
 
     public static void onTrait(ServerPlayer player, String trait) {
