@@ -33,7 +33,7 @@ jobs:
         shell: bash
         run: |
           sudo apt-get update -qq && sudo apt-get install -y -qq xvfb libgl1-mesa-dri libglx-mesa0 mesa-utils jq > /dev/null
-          pip install -q portablemc
+          pip install -q "portablemc<5"
           mkdir -p run/mods run/saves
           cp -r world run/saves/shots
           printf 'onboardAccessibility:false\ntutorialStep:none\njoinedFirstServer:true\nskipMultiplayerWarning:true\npauseOnLostFocus:false\nsoundCategory_master:0.0\nrenderDistance:6\nguiScale:2\nnarrator:0\n' > run/options.txt
