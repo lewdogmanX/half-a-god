@@ -1,0 +1,53 @@
+		Half a God 1.0.0 (half_a_god)
+[16:45:44] [main] [WARN] Error loading class: net/irisshaders/iris/pipeline/PipelineManager (java.lang.ClassNotFoundException: net.irisshaders.iris.pipeline.PipelineManager)
+[16:45:44] [main] [WARN] Error loading class: com/benji/netherman/QuotaManager (java.lang.ClassNotFoundException: com.benji.netherman.QuotaManager)
+[16:45:44] [main] [WARN] Error loading class: folk/sisby/surveyor/client/SurveyorClientEvents$Invoke (java.lang.ClassNotFoundException: folk.sisby.surveyor.client.SurveyorClientEvents$Invoke)
+[16:45:44] [main] [WARN] Error loading class: net/mebahelrpgrquest/client/gui/QuestDialogueScreen (java.lang.ClassNotFoundException: net.mebahelrpgrquest.client.gui.QuestDialogueScreen)
+[16:45:44] [main] [WARN] Error loading class: net/mebahelrpgrquest/client/gui/QuestDialogueScreen (java.lang.ClassNotFoundException: net.mebahelrpgrquest.client.gui.QuestDialogueScreen)
+[16:45:44] [main] [WARN] Error loading class: org/jetbrains/annotations/ApiStatus$ScheduledForRemoval (java.lang.ClassNotFoundException: org.jetbrains.annotations.ApiStatus$ScheduledForRemoval)
+[16:46:00] [Render thread/ERROR] [minecraft/SoundEngine]: Error starting SoundSystem. Turning off sounds & music
+java.lang.IllegalStateException: Failed to open OpenAL device
+[16:46:03] [Render thread/INFO] [de.ha.HalfAGod/]: SHOT opening the test world
+[16:46:05] [Render thread/INFO] [de.ha.HalfAGod/]: Half a God story tables: 10 choices, 22 cinematic moments, 309 story quests, 30 of Mebahel's questlines.
+[16:46:07] [Render thread/INFO] [de.ha.HalfAGod/]: SHOT pressing: I know what I'm doing!
+[16:46:12] [Server thread/WARN] [de.ha.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$getStoryFlags). 
+[16:46:12] [Server thread/WARN] [de.ha.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$hasStoryFlag). 
+[16:46:12] [Server thread/WARN] [de.ha.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$addStoryFlag). 
+[16:46:12] [Server thread/WARN] [de.ha.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$getQuests). 
+[16:46:12] [Server thread/WARN] [de.ha.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$getTraits). 
+[16:46:13] [Server thread/WARN] [de.ha.HalfAGod/]: Half a God could not reach Mebahel's RPG (method mebahelrpgrquest$hasTrait). 
+[16:46:35] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT control: loading round BlockPos{x=3565, y=66, z=-3799}
+[16:46:35] [Render thread/INFO] [de.ha.HalfAGod/]: SHOT control loaded: true
+[16:46:39] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 29_control: Saved screenshot as 29_control.png
+[16:46:40] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT half_a_god:observatory: generates at BlockPos{x=1072, y=0, z=-7056} (679 ms)
+[16:46:49] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT half_a_god:observatory box BoundingBox{minX=1035, minY=129, minZ=-7068, maxX=1084, maxY=172, maxZ=-7022} (pieces BoundingBox{minX=1047, minY=141, minZ=-7056, maxX=1072, maxY=160, maxZ=-7034})
+[16:47:01] [IO-Worker-2/INFO] [de.ha.HalfAGod/]: SHOT 30_observatory_40: Saved screenshot as 30_observatory_40.png
+[16:47:07] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 30_observatory_130: Saved screenshot as 30_observatory_130.png
+[16:47:13] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 30_observatory_220: Saved screenshot as 30_observatory_220.png
+[16:47:18] [IO-Worker-2/INFO] [de.ha.HalfAGod/]: SHOT 30_observatory_310: Saved screenshot as 30_observatory_310.png
+[16:47:19] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT observatory pier BlockPos{x=1061, y=143, z=-7047}
+[16:47:25] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 30i_observatory_inside: Saved screenshot as 30i_observatory_inside.png
+[16:47:28] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 30i_observatory_inside_dome: Saved screenshot as 30i_observatory_inside_dome.png
+[16:47:32] [IO-Worker-9/INFO] [de.ha.HalfAGod/]: SHOT 30i_observatory_inside_gallery: Saved screenshot as 30i_observatory_inside_gallery.png
+[16:47:32] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT half_a_god:faithful_wreck: generates at BlockPos{x=64, y=0, z=112} (32 ms)
+[16:47:45] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT half_a_god:faithful_wreck box BoundingBox{minX=24, minY=87, minZ=82, maxX=64, maxY=106, maxZ=112} (pieces BoundingBox{minX=24, minY=87, minZ=82, maxX=64, maxY=106, maxZ=112})
+[16:47:57] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 31_wreck_30: Saved screenshot as 31_wreck_30.png
+[16:48:03] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 31_wreck_120: Saved screenshot as 31_wreck_120.png
+[16:48:08] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 31_wreck_210: Saved screenshot as 31_wreck_210.png
+[16:48:14] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 31_wreck_300: Saved screenshot as 31_wreck_300.png
+[16:48:22] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 31x_wreck_close: Saved screenshot as 31x_wreck_close.png
+[16:48:22] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT half_a_god:iskars_rest: generates at BlockPos{x=96, y=0, z=272} (0 ms)
+[16:48:27] [Server thread/INFO] [de.ha.HalfAGod/]: SHOT half_a_god:iskars_rest box BoundingBox{minX=96, minY=100, minZ=272, maxX=180, maxY=118, maxZ=336} (pieces BoundingBox{minX=96, minY=100, minZ=272, maxX=180, maxY=118, maxZ=336})
+[16:48:40] [IO-Worker-10/INFO] [de.ha.HalfAGod/]: SHOT 32_iskar_20: Saved screenshot as 32_iskar_20.png
+[16:48:45] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 32_iskar_110: Saved screenshot as 32_iskar_110.png
+[16:48:51] [IO-Worker-8/INFO] [de.ha.HalfAGod/]: SHOT 32_iskar_200: Saved screenshot as 32_iskar_200.png
+[16:48:57] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 32_iskar_290: Saved screenshot as 32_iskar_290.png
+[16:49:04] [IO-Worker-3/INFO] [de.ha.HalfAGod/]: SHOT 32x_iskar_close: Saved screenshot as 32x_iskar_close.png
+[16:49:10] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 33_eclipse_in_hand: Saved screenshot as 33_eclipse_in_hand.png
+[16:49:11] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 33b_eclipse_raised: Saved screenshot as 33b_eclipse_raised.png
+[16:49:23] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 33d_eclipse_third_person: Saved screenshot as 33d_eclipse_third_person.png
+[16:49:24] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 34_maraca_third_person: Saved screenshot as 34_maraca_third_person.png
+[16:49:26] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 34b_maraca_shaking: Saved screenshot as 34b_maraca_shaking.png
+[16:49:28] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 34c_maraca_first_person: Saved screenshot as 34c_maraca_first_person.png
+[16:49:41] [IO-Worker-6/INFO] [de.ha.HalfAGod/]: SHOT 33c_eclipse_tooltip: Saved screenshot as 33c_eclipse_tooltip.png
+[16:49:46] [Server thread/INFO] [minecraft/MinecraftServer]: ThreadedAnvilChunkStorage (shots): All chunks are saved
