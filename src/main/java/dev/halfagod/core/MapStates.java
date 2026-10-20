@@ -39,7 +39,9 @@ public final class MapStates {
         String lane = data.storyLane(quest);
         if (!lane.isEmpty()) {
             for (Meb.Progress p : Meb.quests(player)) {
-                if (!p.claimed() && !p.failed() && !p.questId().equals(quest) && lane.equals(data.storyLane(p.questId()))) {
+                StoryData.Graph other = data.graph.get(p.questId());
+                boolean letter = other != null && other.book();   // a letter you haven't finished reading doesn't hold up the road
+                if (!p.claimed() && !p.failed() && !letter && !p.questId().equals(quest) && lane.equals(data.storyLane(p.questId()))) {
                     String[] m = data.markers.get(p.questId());
                     send(player, quest, "One road at a time: finish \u201C" + (m != null ? m[1] : p.questId()) + "\u201D first.");
                     return;
